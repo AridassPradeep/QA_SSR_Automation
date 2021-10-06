@@ -14,8 +14,8 @@ public class RegistrationPageSteps {
 
 	@Given("user is on home page")
 	public void user_is_on_home_page() throws InterruptedException {
-		DriverFactory.getDriver().get("https://qa.msme.jswone.in/");
-		
+		DriverFactory.getDriver().get("https://qa-ssr.msme.jswone.in/");
+
 	}
 
 	@When("user clicks on loginButton")
@@ -35,17 +35,6 @@ public class RegistrationPageSteps {
 	@When("user clicks on register button")
 	public void user_clicks_on_register_button() throws InterruptedException {
 		registrationPage.clickRegisterButton();
-
-	}
-
-	@When("user clicks on signinbutton")
-	public void user_clicks_on_signinbutton() {
-
-	}
-
-	
-	@Then("user navigates to homepage")
-	public void user_navigates_to_homepage() {
 
 	}
 
@@ -82,12 +71,11 @@ public class RegistrationPageSteps {
 		registrationPage.clickNextButton();
 		Thread.sleep(2000);
 	}
-	
+
 	@Then("Guest User Navigates to Password creation page")
 	public void guest_user_navigates_to_password_creation_page() {
 		Assert.assertTrue(registrationPage.validateuserpassword());
 	}
-
 
 	@When("click on new password  {string}")
 	public void click_on_new_password(String userpwd) {
@@ -112,92 +100,80 @@ public class RegistrationPageSteps {
 		Assert.assertFalse(registrationPage.validateThankYouPage());
 
 	}
-	
+
 	@When("user enters already registered gstno with {string}")
 	public void user_enters_already_registered_gstno_with(String gst) {
 		registrationPage.enterGSTNo(gst);
 	}
 
-
-	
-
 	@Then("invalid GST no message is displayed")
 	public void invalid_gst_no_message_is_displayed() throws InterruptedException {
 		Thread.sleep(6000);
 		System.out.print(registrationPage.getErrorMessage());
-		
-	    
+
 	}
 
+	@When("user enters username {string} with {int} characters")
+	public void user_enters_username_with_characters(String name, Integer int1) throws InterruptedException {
+		registrationPage.enterUserName(name);
+		Thread.sleep(2000);
+		System.out.print(registrationPage.getErrorMessage());
+	}
 
-@When("user enters username {string} with {int} characters")
-public void user_enters_username_with_characters(String name, Integer int1) throws InterruptedException {
-	registrationPage.enterUserName(name);
-	Thread.sleep(2000);
-	System.out.print(registrationPage.getErrorMessage());
-}
+	@Then("next button is disabled")
+	public void next_button_is_disabled() throws InterruptedException {
 
-@Then("next button is disabled")
-public void next_button_is_disabled() throws InterruptedException {
-	
-	Assert.assertFalse(registrationPage.validatenextButton());
-    
-}
+		Assert.assertFalse(registrationPage.validatenextButton());
 
-@When("user enters existing  companymailid with {string}")
-public void user_enters_existing_companymailid_with(String companyid) {
-	registrationPage.entercompanyMailId(companyid);
-}
+	}
 
-@Then("email validation error to be displayed")
-public void email_validation_error_to_be_displayed() {
-	System.out.print(registrationPage.getErrorMessage());
-}
+	@When("user enters existing  companymailid with {string}")
+	public void user_enters_existing_companymailid_with(String companyid) {
+		registrationPage.entercompanyMailId(companyid);
+	}
 
-@When("user enters companymailid with more than {int} characters with {string}")
-public void user_enters_companymailid_with_more_than_characters_with(Integer int1, String companyid) {
-	registrationPage.entercompanyMailId(companyid);
-}
+	@Then("email validation error to be displayed")
+	public void email_validation_error_to_be_displayed() {
+		System.out.print(registrationPage.getErrorMessage());
+	}
 
+	@When("user enters companymailid with more than {int} characters with {string}")
+	public void user_enters_companymailid_with_more_than_characters_with(Integer int1, String companyid) {
+		registrationPage.entercompanyMailId(companyid);
+	}
 
+	@When("user enters companymailid  without @ {string}")
+	public void user_enters_companymailid_without(String companyid) {
+		registrationPage.entercompanyMailId(companyid);
+	}
 
-@When("user enters companymailid  without @ {string}")
-public void user_enters_companymailid_without(String companyid) {
-	registrationPage.entercompanyMailId(companyid);
-}
+	@When("user click on login hyper link")
+	public void user_click_on_login_hyper_link() throws InterruptedException {
 
-@When("user click on login hyper link")
-public void user_click_on_login_hyper_link() throws InterruptedException {
-	
-	
-	registrationPage.clickLoginButtonOnRegPopup();
-	Thread.sleep(2000);
-}
+		registrationPage.clickLoginButtonOnRegPopup();
+		Thread.sleep(2000);
+	}
 
-@Then("login screen is displayed")
-public void login_screen_is_displayed() throws InterruptedException {
-	Assert.assertTrue(registrationPage.validateloginPage());
-}
+	@Then("login screen is displayed")
+	public void login_screen_is_displayed() throws InterruptedException {
+		Assert.assertTrue(registrationPage.validateloginPage());
+	}
 
-@Then("proceed to home is displayed")
-public void proceed_to_home_is_displayed() {
-	Assert.assertFalse(registrationPage.validateThankYouPage());
-}
+	@Then("proceed to home is displayed")
+	public void proceed_to_home_is_displayed() {
+		Assert.assertFalse(registrationPage.validateThankYouPage());
+	}
 
+	@Then("password error messaage to be displayed")
+	public void password_error_messaage_to_be_displayed() throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.print(registrationPage.getErrorMessage());
+	}
 
-@Then("password error messaage to be displayed")
-public void password_error_messaage_to_be_displayed() throws InterruptedException {
-	Thread.sleep(2000);
-	System.out.print(registrationPage.getErrorMessage());
-}
-
-@Then("validate gstdetails")
-public void validate_gstdetails() throws InterruptedException {
-	Thread.sleep(2000);
-	registrationPage.getGstCompanyDetails();
-}
-
-
-
+	@Then("validate gstdetails")
+	public void validate_gstdetails() throws InterruptedException {
+		Thread.sleep(2000);
+		registrationPage.getGstCompanyDetails();
+	}
 
 }

@@ -18,7 +18,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 8006510100 | 33AAXPE4300J1ZT | ramya201@gmail.com | Ramya@678 |
+      | ramya    | 8238775234 | 33AAIAS3118C1ZY | ramya1347@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
@@ -31,7 +31,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 8006510203 | 33CEXPJ3962F1Z5 | ramya203@gmail.com | Ramya@678 |
+      | ramya    | 8138765401 | 32AAIAS3118C1Z0 | ramya1301@gmail.com | Ramya@678 |
 
   Scenario Outline: verify the error message is displaying if user enters Registered GSTIN Number
     When user enters username with "<username>"
@@ -50,7 +50,7 @@ Feature: Registration page feature
 
     Examples: 
       | username                        | mobileno   |
-      | ramyaramyaramyaramyaramyaramyaq | 8006510206 |
+      | ramyaramyaramyasramyaramyaramyaq | 8006510206 |
 
   Scenario Outline: Validate the proceed button is disabled if the user name is blank
     When user enters username with "<username>"
@@ -92,7 +92,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | companyemail |
-      | ramya    | 8006510108 | abcgmail.com |
+      | ramya    | 8728765410  | abcgmail.com |
 
   Scenario: Validate user navigates to login page if user clicks on login link
     When user click on login hyper link
@@ -112,7 +112,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 8006510502 | 33AEJPP1728F1ZN | ramya521@gmail.com | Ramya@678 |
+      | ramya    | 8200519502 | 07AAIAS3118C1ZT | ramya8521@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate ‘Proceed to Home’ button is activated after successful Registration.
     When user enters username with "<username>"
@@ -128,7 +128,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 8006510602 | 33AFNPT6597B1Z0 | ramya602@gmail.com | Ramya@678 |
+      | ramya    | 9246217602 | 09AAIAS3118C1ZP | ramya02602@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate error message for incorrect password
     When user enters username with "<username>"
