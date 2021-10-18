@@ -70,12 +70,10 @@ public class LoginPageSteps {
 	public void login_poppup_is_displayed() {
 		Assert.assertTrue(loginPage.validateLoginPopUp());
 	}
-	
+
 	@Then("login button is disabled")
 	public void login_button_is_disabled() {
 		Assert.assertFalse(loginPage.validateSignInEnabled());
 	}
-	
-	
 
 }

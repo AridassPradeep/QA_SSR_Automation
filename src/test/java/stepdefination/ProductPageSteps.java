@@ -13,26 +13,21 @@ import io.cucumber.java.en.When;
 public class ProductPageSteps {
 
 	ProductPage productpage = new ProductPage(DriverFactory.getDriver());
-	
-	
+
 	@When("user enters valid username and password")
 	public void user_enters_valid_username_and_password() {
-	   
+
 	}
-
-
-	
 
 	@When("user clicks on signinbutton")
 	public void user_clicks_on_signinbutton() {
-	    
-	}
-	@Then("user navigates to homepage")
-	public void user_navigates_to_homepage() {
-	    
-	   
+
 	}
 
+	@Then("user navigates to homepage")
+	public void user_navigates_to_homepage() {
+
+	}
 
 	@Then("user click on hot rolled sheet")
 	public void user_click_on_hot_rolled_sheet() throws InterruptedException {

@@ -50,6 +50,8 @@ public class ProductPage {
 		driver.findElement(By.xpath("//button[1]/span[1]/i[1]")).click();
 
 		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("//button[@class='ok-button']")).click();
 
 	}
 

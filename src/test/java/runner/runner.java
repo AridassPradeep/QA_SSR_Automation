@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/resources/features/LoginPage.feature"},
+		features = {"src/test/resources/features/HomePage.feature"},
 		glue = {"stepdefination", "hooks"},
 		//tags = "@SmokeTest" ,
 		monochrome = true,
