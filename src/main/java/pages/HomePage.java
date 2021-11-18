@@ -24,8 +24,7 @@ public class HomePage {
 			.xpath("//div[@class='single-slider bg-img align-items-center custom-d-flex']//img");
 	private By mapIcon = By.xpath("//i[@class='fas fa-map-marker-alt']");
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
-	private By arrowdropdown =By.xpath("//div[@class='arrow15 profile']");
-	
+	private By arrowdropdown = By.xpath("//div[@class='arrow15 profile']");
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -67,7 +66,7 @@ public class HomePage {
 	public String getAddress() {
 		return driver.findElement(address).getAttribute("textContent");
 	}
-	
+
 	public boolean validatemapIcon() {
 		return driver.findElement(mapIcon).isDisplayed();
 
@@ -87,53 +86,49 @@ public class HomePage {
 		return driver.findElement(helpLineNumber).isDisplayed();
 
 	}
-	
-	public void myProfile() throws InterruptedException
-	{
+
+	public void myProfile() throws InterruptedException {
 		driver.findElement(arrowdropdown).click();
 		driver.findElement(By.linkText("Profile")).click();
 		Thread.sleep(2000);
 	}
-	
-	public void distributor() throws InterruptedException
-	{
+
+	public void distributor() throws InterruptedException {
 		driver.findElement(arrowdropdown).click();
 		driver.findElement(By.linkText("Distributors")).click();
 		Thread.sleep(2000);
 	}
-	
-	public void enterEnquiryFormDetails() throws InterruptedException
-	{
+
+	public void enterEnquiryFormDetails() throws InterruptedException {
 		driver.findElement(By.name("nameChange")).clear();
 		driver.findElement(By.name("nameChange")).sendKeys("ramaaa");
 		driver.findElement(By.name("mobile")).clear();
 		driver.findElement(By.name("mobile")).sendKeys("7876767656");
+		Thread.sleep(2000);
 		driver.findElement(By.name("email")).clear();
-		driver.findElement(By.name("email")).sendKeys("ravikishan@gmail.com");
+		Thread.sleep(2000);
+		driver.findElement(By.name("email")).clear();
+		driver.findElement(By.name("email")).sendKeys("ravikishan1@gmail.com");
 		driver.findElement(By.name("message")).sendKeys("sending one test enquiry");
 		driver.findElement(By.xpath("//div[1]/div[4]/label[1]")).click();
-		driver.findElement(By.xpath("//button[@class='submit-button']")).click();
+		driver.findElement(By.xpath("//button[@id='reachoutus-submit-1']")).click();
 		Thread.sleep(19000);
-		
+
 	}
-	
-	public void extractEnquiryFormDetails() throws InterruptedException
-	{
+
+	public void extractEnquiryFormDetails() throws InterruptedException {
 		String typedNameText = driver.findElement(By.name("nameChange")).getAttribute("value");
 		String typedMobileText = driver.findElement(By.name("mobile")).getAttribute("value");
 		String typedEmailText = driver.findElement(By.name("email")).getAttribute("value");
-		System.out.println("Named inside name textfiled   " +  typedNameText);
-		System.out.println("Named inside mobile textfiled   " +  typedMobileText);
-		System.out.println("Named inside email textfiled   " +  typedEmailText);
+		System.out.println("Named inside name textfiled   " + typedNameText);
+		System.out.println("Named inside mobile textfiled   " + typedMobileText);
+		System.out.println("Named inside email textfiled   " + typedEmailText);
 	}
-	
 
-	
-	public boolean  validatequeryId() {
+	public boolean validatequeryId() {
 		return driver.findElement(thanksLanding).isDisplayed();
 
 	}
-	
 
 	public int validatefooterContainer() {
 		WebElement block = driver.findElement(footerpartContainer);
@@ -154,12 +149,10 @@ public class HomePage {
 		List<WebElement> sliderImages = driver.findElements(sliderContainerImages);
 		return sliderImages.size();
 	}
-	
-	public void scrollDown()
-	{
+
+	public void scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,350)", "");	
+		js.executeScript("window.scrollBy(0,350)", "");
 	}
-	
 
 }

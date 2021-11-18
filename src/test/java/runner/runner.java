@@ -8,13 +8,13 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/resources/features/HomePage.feature"},
+		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
-		//tags = "@SmokeTest" ,
 		monochrome = true,
+		
+		tags = "@PLPEnquirya" ,
 		plugin = {"pretty"			
 		}
-		
 		)
 
 

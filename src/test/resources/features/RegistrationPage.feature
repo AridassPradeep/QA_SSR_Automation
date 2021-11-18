@@ -18,7 +18,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 8238775234 | 33AAIAS3118C1ZY | ramya1347@gmail.com | Ramya@678 |
+      | ramya    | 9038775234 | 18DNSPK1904H1ZR | ramya9347@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
@@ -31,7 +31,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 8138765401 | 32AAIAS3118C1Z0 | ramya1301@gmail.com | Ramya@678 |
+      | ramya    | 8038065401 | 18ALNPL3824H1ZV | rbmya1301@gmail.com | Ramya@678 |
 
   Scenario Outline: verify the error message is displaying if user enters Registered GSTIN Number
     When user enters username with "<username>"
@@ -40,9 +40,9 @@ Feature: Registration page feature
     And user enters companymailid with "<companyemail>"
     Then invalid GST no message is displayed
 
-    Examples: 
-      | username | mobileno   | GSTIN           | companyemail       |
-      | ramya    | 8006510204 | 33AAXPE4300J1ZT | ramya204@gmail.com |
+      Examples: 
+      | username | mobileno   | GSTIN           | companyemail       | 
+      | ramya    | 8238775234 | 33AAIAS3118C1ZY | ramya1347@gmail.com |
 
   Scenario Outline: Validate the error message is displaying if we enters more than 30 characters for full name
     When user enters username "<username>" with 31 characters
@@ -128,7 +128,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 9246217602 | 09AAIAS3118C1ZP | ramya02602@gmail.com | Ramya@678 |
+      | ramya    | 9346212602 | 33AAIAS3118C1ZY | sfgya02602@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate error message for incorrect password
     When user enters username with "<username>"

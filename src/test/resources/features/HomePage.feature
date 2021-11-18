@@ -1,4 +1,5 @@
-Feature: Login page feature
+@functional
+Feature: Home page feature
 
   Background: User opens website
     Given user is on home page
@@ -12,7 +13,6 @@ Feature: Login page feature
     Then Verify Search Bar is displayed with search icon
     Then Verify Language Indicator is displayed
     Then Verify the Cart Icon displayed
-    Then Verify the cart is displaying the count of product added to the cart.
     Then Verify the Cart link action
     Then Verify that the count is decreasing respectvely, according to product removed from the cart.
     Then Verify that the action on cart link without count
@@ -35,6 +35,7 @@ Feature: Login page feature
     Then Verify for sub links are available under General category
     Then Verify all the social media logos are available
     Then Verify for help line number is present in footer section
+    Then Verify the cart is displaying the count of product added to the cart.
 
   Scenario: Verify enquiry form
     Then Verify the mandatory fields in Enquiry Section for Registered Users

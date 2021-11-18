@@ -1,3 +1,4 @@
+@functional
 Feature: Login page feature
 
   Background: User opens website

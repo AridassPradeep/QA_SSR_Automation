@@ -28,7 +28,7 @@ public class RegistrationPage {
 	private By LoginButtonOnRegPopup = By.xpath("//div[@class='enterprise-details']//span[@id='loginresetting']");
 
 	private By Thankyoupageerror = By.xpath("//button[@class='btn btn-secondary goto-home-err']");
-	
+
 	private By gstCompanyName = By.xpath("//div[contains(@class,'comp-name')]");
 	private By gstCompanyAddress = By.xpath("//div[contains(@class,'comp-addr')]");
 
@@ -120,7 +120,7 @@ public class RegistrationPage {
 	public void clickLoginButtonOnRegPopup() {
 		driver.findElement(LoginButtonOnRegPopup).click();
 	}
-	
+
 	public boolean validateThankYouPage() {
 		return driver.findElement(Thankyoupageerror).isEnabled();
 	}
@@ -129,12 +129,11 @@ public class RegistrationPage {
 		Thread.sleep(4000);
 		return driver.findElement(email).isEnabled();
 	}
-	
-	public void getGstCompanyDetails()
-	{
-		System.out.print(driver.findElement( gstCompanyName).getText());
-		System.out.print(driver.findElement( gstCompanyAddress).getText());
-		
+
+	public void getGstCompanyDetails() {
+		System.out.print(driver.findElement(gstCompanyName).getText());
+		System.out.print(driver.findElement(gstCompanyAddress).getText());
+
 	}
 
 }

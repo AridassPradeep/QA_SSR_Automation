@@ -15,7 +15,7 @@ public class ElementUtil {
 	public static boolean isElementPresent(String id)
 	{
 		try {
-			driver.findElement(By.id(id));
+			driver.findElement(By.xpath(id));
 			return true;
 		} catch (Exception e) {
 			return false;	
