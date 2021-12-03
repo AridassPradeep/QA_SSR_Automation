@@ -1,3 +1,4 @@
+@PLP
 Feature: Product Landing Page feature
 
   Background: User opens website

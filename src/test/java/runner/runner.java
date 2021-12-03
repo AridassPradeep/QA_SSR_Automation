@@ -10,9 +10,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
-		monochrome = true,
-		
-		tags = "@PLPEnquirya" ,
+		monochrome = true,	
+		tags = "@PLP" ,
 		plugin = {"pretty"			
 		}
 		)

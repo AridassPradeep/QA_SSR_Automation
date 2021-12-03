@@ -187,7 +187,6 @@ public class PLPEnquiryPage {
 	public boolean searchNotFound() {
 		driver.findElement(searchbar).sendKeys("ice cream");
 		driver.findElement(searchButton).click();
-
 		return driver.findElement(notfoundsearchimage).isDisplayed();
 
 	}
