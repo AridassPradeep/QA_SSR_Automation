@@ -44,11 +44,12 @@ public class PDPRegisteredUserPage {
 
 	}
 
-	public void selectProductreguser() {
+	public void selectProductreguser() throws InterruptedException {
+		Thread.sleep(2000);
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(0).click();
+		productselected.get(1).click();
 
 	}
 

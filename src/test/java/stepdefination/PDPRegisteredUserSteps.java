@@ -22,7 +22,7 @@ public class PDPRegisteredUserSteps {
 	}
 
 	@Given("user is on product detail page of colored item")
-	public void user_is_on_product_detail_page_of_colored_item() {
+	public void user_is_on_product_detail_page_of_colored_item() throws InterruptedException {
 		pdpreguser.validatesearchwithcategoryreguser();
 		pdpreguser.selectProductreguser();
 
