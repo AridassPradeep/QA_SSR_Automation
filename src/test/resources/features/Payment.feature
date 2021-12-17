@@ -1,4 +1,4 @@
-@PDPDiscountAndPayment
+@Payment
 Feature: Payment and Cart Scenarios for single and multiple product
 
   Background: User opens website
@@ -7,7 +7,6 @@ Feature: Payment and Cart Scenarios for single and multiple product
     And user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
     And user clicks on signin
 
-  
   Scenario: Single Product-Verify Payment is sucessfull
     When cart is empty or not
     When user enter "Colour coated" in search bar
@@ -15,9 +14,9 @@ Feature: Payment and Cart Scenarios for single and multiple product
     When user is on product detail page of colored product
     When user enter quantity as 3MT
     Then verify price would be displayed
-    When user add an item to cart
-    Then verify Cart icon would appear with 1
+   # When user add an item to cart
     When user click on Buy Now
+   # Then verify Cart icon would appear with 1
     And user click on proceed to pay on cart detail page
     And user select bank name to transfer from the drop down on payment page
     Then verify bank is selected

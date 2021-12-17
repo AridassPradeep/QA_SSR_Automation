@@ -23,7 +23,7 @@ public class PDPRegisteredUserSteps {
 
 	@Given("user is on product detail page of colored item")
 	public void user_is_on_product_detail_page_of_colored_item() throws InterruptedException {
-		pdpreguser.validatesearchwithcategoryreguser();
+		//pdpreguser.validatesearchwithcategoryreguser();
 		pdpreguser.selectProductreguser();
 
 	}
@@ -37,10 +37,21 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.clickAddtoCart();
 
 	}
+	
+	@When("user clicks on Add To Cart button available")
+	public void user_clicks_on_add_to_cart_button_available()
+			throws InterruptedException {
+
+		pdpreguser.clickQuantity();
+		pdpreguser.clickAddtoCart();
+
+	}
+	
+	
 
 	@Then("verify that the product should be added in the cart")
 	public void verify_that_the_product_should_be_added_in_the_cart() throws InterruptedException {
-
+               Thread.sleep(2000);
 		pdpreguser.validateAddedtoCart();
 
 	}
@@ -75,7 +86,8 @@ public class PDPRegisteredUserSteps {
 	}
 
 	@When("user enters invalid Custom Length {string} and  submits custom length")
-	public void user_enters_invalid_custom_length_and_submits_custom_length(String string) {
+	public void user_enters_invalid_custom_length_and_submits_custom_length(String string) throws InterruptedException {
+		
 		pdppage.CustomLength("80000");
 	}
 
@@ -91,9 +103,19 @@ public class PDPRegisteredUserSteps {
 	public void user_enters_less_than_minimum_custom_length_and_submits_custom_length(String string)
 			throws InterruptedException {
 		pdpreguser.selectDimensionHRPO();
-		pdppage.CustomLength(string);
+		Thread.sleep(1000);
+		pdppage.CustomLengthwithlength(string);
 		Thread.sleep(2000);
 	}
+	@When("user enters less than minimum  Custom Length {string} and  submits custom length for HR")
+	public void user_enters_less_than_minimum_custom_length_and_submits_custom_length_for_HR(String string)
+			throws InterruptedException {
+		pdpreguser.selectDimensionHR();
+		Thread.sleep(1000);
+		pdppage.CustomLengthwithlength(string);
+		Thread.sleep(2000);
+	}
+
 
 	@Then("invalid custom length error message to be displayed")
 	public void invalid_custom_length_error_message_to_be_displayed() {
@@ -102,10 +124,66 @@ public class PDPRegisteredUserSteps {
 
 	}
 
+	
+	@Then("invalid custom length error message to be displayed with length")
+	public void invalid_custom_length_error_message_to_be_displayed_with_length() {
+		pdppage.validateCustomLengthErrorMessage2();
+		Assert.assertEquals("Invalid length. Please enter standard length", pdppage.validateCustomLengthErrorMessage2());
+
+	}
+
+	
 	@Then("invalid custom length error message should not be displayed")
 	public void invalid_custom_length_error_message_should_not_be_displayed() {
 		// Assert.assertFalse(pdppage.validateCustomLtErrorMessage());
 
 	}
+	
+	
+	@Given("user is on product detail page of cold rolled sheets")
+	public void user_is_on_product_detail_page_of_cold_rolled_sheets() throws InterruptedException {
+		pdpreguser.selectProductcoldrolled();
+	}
+
+	@Given("deal is visible")
+	public void deal_is_visible() throws InterruptedException {
+		Thread.sleep(2000);
+	   pdpreguser.validateDealPill();
+	}
+
+	@When("user click on deal")
+	public void user_click_on_deal() {
+	   pdpreguser.clickDealPill();
+	}
+
+	@Then("verify lowest price seller is displayed")
+	public void verify_lowest_price_seller_is_displayed() throws InterruptedException {
+	   Thread.sleep(2000);
+		pdpreguser.validateLowestPriceSeller();
+		
+	}
+
+	@Then("verify best price is displayed on right side")
+	public void verify_best_price_is_displayed_on_right_side() {
+	    pdpreguser.validateBestPrice();
+	}
+
+	@Then("verify dimensions are selected")
+	public void verify_dimensions_are_selected() {
+		Assert.assertEquals(true, pdpreguser.checkDimensionSelected());
+		
+		
+	}
+	
+	@When("user select dimensions same as deal")
+	public void user_select_dimensions_same_as_deal() throws InterruptedException {
+	    pdpreguser.selectDimensionDeal();
+	}
+
+	@Then("deal pill gets clicked")
+	public void deal_pill_gets_clicked() {
+	    pdpreguser.validatedealPillclicked();
+	}
+	
 
 }

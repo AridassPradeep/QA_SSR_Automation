@@ -37,11 +37,18 @@ public class PDPpage {
 	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By maximizeimage = By.xpath("//img[contains(@src,'HRsheet2') and @class='prod-img prod-img-radius']");
 	private By two = By.xpath("//li[@class='product-list'][1]");
-	private By customLength = By.xpath("//div[8]/div[2]/ul[1]/button[1]");
-	private By customLengthTextBox = By.xpath("//div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]");
-	private By submitcustomLength = By.xpath("//div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/img[1]");
-	private By customLengthErrorMessage = By.xpath("//div[8]/div[2]/div[1]/div[1]/div[1]/div[2]");
-
+//	private By customLength = By.xpath("//div[8]/div[2]/ul[1]/button[1]");
+	private By customLength=By.xpath("//div[@class='dimension-size'and contains(text(),'Thickness')]/parent::div/parent::div/div[9]//following-sibling::div[1]/ul/button");
+private By customLength2= By.xpath("//div[@class='dimension-size'and contains(text(),'Width')]/parent::div/following-sibling::div/div[2]/ul/button");
+	//	private By customLengthTextBox = By.xpath("//div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]");
+	private By customLengthTextBox= By.xpath("//div[@class='dimension-size'and contains(text(),'Thickness')]/parent::div/following-sibling::div[2]/div[2]/div/div/div/div/div/input");
+private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and contains(text(),'Width')]/parent::div/following-sibling::div[1]/div/div/div/div/div/div/input");
+	//private By submitcustomLength = By.xpath("//div[8]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/img[1]");
+	private By submitcustomLength = By.xpath("//div[@class='dimension-size'and contains(text(),'Thickness')]/ancestor::div/div[9]//following-sibling::div[1]/div/div/div/div/button");
+	private By submitcustomLength2 = By.xpath("//div[@class='dimension-size'and contains(text(),'Width')]/ancestor::div/div[9]//following-sibling::div[1]/div/div/div/div/div/button");
+	
+	private By customLengthErrorMessage = By.xpath("//div[@class='dimension-size'and contains(text(),'Thickness')]/ancestor::div/div[9]//following-sibling::div[1]/div/div/div[2]");
+    private By customLengthErrorMessage2= By.xpath("//div[@class='dimension-size'and contains(text(),'Width')]/ancestor::div/div[9]//following-sibling::div[1]/div/div/div[1]/div/div[2]");
 	// private By activetab = By.xpath("//div[contains(@class,'tabActive') ]");
 	public PDPpage(WebDriver driver) {
 		this.driver = driver;
@@ -180,16 +187,33 @@ public class PDPpage {
 		driver.findElement(maximizeimage).isDisplayed();
 	}
 
-	public void CustomLength(String customlt) {
+	public void CustomLength(String customlt) throws InterruptedException {
 		driver.findElement(customLength).click();
+		Thread.sleep(2000);
 		driver.findElement(customLengthTextBox).sendKeys(customlt);
 		driver.findElement(submitcustomLength).click();
 	}
 
+	public void CustomLengthwithlength(String customlt) throws InterruptedException {
+		driver.findElement(customLength2).click();
+		Thread.sleep(2000);
+		driver.findElement(customLengthTextBox2).sendKeys(customlt);
+		driver.findElement(submitcustomLength2).click();
+	}
+	
+	
+	
 	public String validateCustomLengthErrorMessage() {
 		System.out.println(driver.findElement(customLengthErrorMessage).getText());
 		return driver.findElement(customLengthErrorMessage).getText();
 
 	}
+	
+	public String validateCustomLengthErrorMessage2() {
+		System.out.println(driver.findElement(customLengthErrorMessage2).getText());
+		return driver.findElement(customLengthErrorMessage2).getText();
+
+	}
+	
 
 }

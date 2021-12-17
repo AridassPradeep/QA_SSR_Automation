@@ -5,7 +5,7 @@ Feature: Product Detail Page feature for Guest User
     Given user is on home page
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
+   # Then Breadcrump should display Steel by categories>Hot Rolled(HR)
 
   Scenario: verify Breadcrump on top left corner of the page
     Given user is on PLP page

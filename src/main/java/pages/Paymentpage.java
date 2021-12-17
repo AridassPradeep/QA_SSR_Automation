@@ -1,6 +1,7 @@
 package pages;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -26,6 +27,9 @@ public class Paymentpage {
 	private By cartcount = By.xpath("//div[@class='count']");
 	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By payNow = By.xpath("//button[@class='btn btn-red']");
+	private By Success = By.xpath("//button[@class='success']");
+	private By successmessage = By.xpath("//div[@class='success-order-title']");
+	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
 	// private By onlycart =
 	// By.xpath("//*[@id=\"__layout\"]/div/header/div[1]/div[3]/a/img");
 
@@ -157,12 +161,44 @@ public class Paymentpage {
 		driver.findElement(By.xpath("//button[@class='success']")).click();
 
 	}
-	
+
 	public void clickPaymentFailure() {
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(1));
 		driver.findElement(By.xpath("//button[@class='danger']")).click();
+
+	}
+
+	public void validateRazorpayPage()
+
+	{
+		Set<String> windows = driver.getWindowHandles();
+		String parent = driver.getWindowHandle();
+		windows.remove(parent);
+		Iterator<String> it = windows.iterator();
+		String child = null; // This is for referencing specific child window
+		while (it.hasNext()) {
+			child = (String) it.next();
+			driver.switchTo().window(child);
+			driver.findElement(Success).isDisplayed();
+		}
+
+	}
+
+	public void validateOrderSuccessfulmsg() {
+		Set<String> handles = driver.getWindowHandles();
+		ArrayList<String> ar = new ArrayList<String>(handles);
+		driver.switchTo().window(ar.get(0));
+		driver.findElement(successmessage).isDisplayed();
+	}
+
+	public void validateunsuccessfulmsg() {
+
+		Set<String> handles = driver.getWindowHandles();
+		ArrayList<String> ar = new ArrayList<String>(handles);
+		driver.switchTo().window(ar.get(0));
+		driver.findElement(unsuccessmessage).isDisplayed();
 
 	}
 

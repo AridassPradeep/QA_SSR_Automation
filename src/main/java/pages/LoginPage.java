@@ -12,9 +12,9 @@ public class LoginPage {
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
 	private By email = By.xpath("//input[@type='email']");
 	private By password = By.xpath("//input[@type='password']");
-	private By signIn = By.xpath("//div[2]/div[2]/button[1]");
+	private By signIn = By.xpath("//div[1]/div[1]/div[2]/div[2]/button[1]");
 	private By loginuserMenu = By.xpath("//div[@class='loginusermenu profile']");
-	private By forgotPassword = By.xpath("//div[contains(text(),'FORGOT PASSWORD?')]");
+	private By forgotPassword = By.xpath("//div[1]/div[2]/div[2]/div[3]");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
 	private By errorMessage = By.xpath("//div[@class='error_message error-messages row']");

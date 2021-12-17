@@ -1,4 +1,4 @@
-@functional
+@functional @HomePage
 Feature: Home page feature
 
   Background: User opens website

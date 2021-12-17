@@ -75,7 +75,7 @@ public class PaymentSteps {
 
 	@Then("User navigates to RazorPay Page")
 	public void user_navigates_to_razor_pay_page() {
-	    
+	    pmtpage.validateRazorpayPage();
 	}
 	@Then("User click on success button")
 	public void user_click_on_success_button() throws InterruptedException {
@@ -92,23 +92,24 @@ public class PaymentSteps {
 
 	@Then("order sucessfully placed message should be displayed")
 	public void order_sucessfully_placed_message_should_be_displayed() {
-	   
+		 pmtpage.validateOrderSuccessfulmsg();
 	}
 
 
 	@Then("Verify user navigates to payment gateway page")
 	public void verify_user_navigates_to_payment_gateway_page() {
-
+                 
 	}
 
 	@Then("verify error message should be displayed on unsuccessful payment")
-	public void verify_error_message_should_be_displayed_on_unsuccessful_payment() {
-
+	public void verify_error_message_should_be_displayed_on_unsuccessful_payment() throws InterruptedException {
+     Thread.sleep(2000);
+		pmtpage.validateunsuccessfulmsg();
 	}
 
 	@Then("verify after successful payment page navigates to ORDER summary page")
 	public void verify_after_successful_payment_page_navigates_to_order_summary_page() {
-
+		 pmtpage.validateOrderSuccessfulmsg();
 	}
 
 	@When("user enter quantity and dimensions")
