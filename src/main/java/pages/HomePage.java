@@ -13,7 +13,7 @@ public class HomePage {
 	private By JSWLogo = By.xpath("//img[@alt='JSW One MSME']");
 	private By search = By.id("SearchText");
 	private By languageIndicator = By.xpath("//div[@data-value='ENG']");
-	private By cartIcon = By.xpath("//a[@href='/cart-detail']");
+	private By cartIcon = By.xpath("(//a[@href='/cart-detail'])[2]");
 	private By noofCartItems = By.xpath("//div[@class='count']");
 	private By address = By.xpath("//div[@class='header-current-add']");
 	private By connectWithUs = By.xpath("//div[@class='connectWithUs']");
@@ -110,8 +110,13 @@ public class HomePage {
 		driver.findElement(By.name("email")).clear();
 		driver.findElement(By.name("email")).sendKeys("ravikishan1@gmail.com");
 		driver.findElement(By.name("message")).sendKeys("sending one test enquiry");
+		
 		driver.findElement(By.xpath("//div[1]/div[4]/label[1]")).click();
-		driver.findElement(By.xpath("//button[@id='reachoutus-submit-1']")).click();
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;       		
+        WebElement Element = driver.findElement(By.xpath("//button[@id='reachoutus-submit-1']"));	
+        js.executeScript("window.scrollBy(0,250)", "");
+		driver.findElement(By.xpath("//button[@id='reachoutus-submit']")).click();
 		Thread.sleep(19000);
 
 	}

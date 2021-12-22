@@ -1,4 +1,4 @@
-@PDPDiscountAndPayment
+@PDPDiscount
 Feature: Product Detail Page with discount
 
   Background: User opens website

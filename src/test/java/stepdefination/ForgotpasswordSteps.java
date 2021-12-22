@@ -25,7 +25,7 @@ public class ForgotpasswordSteps {
 	@When("user enters email id with Email {string}")
 	public void user_enters_email_id_with_Email_and(String Email) throws InterruptedException {
 		forgotpassword.forgotpassword(Email);
-		user_clicks_on_submit();
+		Thread.sleep(2000);
 	}
 
 	@Then("user clicks on submit")
@@ -36,6 +36,7 @@ public class ForgotpasswordSteps {
 
 	@Then("verify the confirmation message")
 	public void verify_the_confirmation_message() throws InterruptedException {
+		Thread.sleep(4000);
 		String expectedConfirmationmessage = forgotpassword.verifyText();
 		Assert.assertEquals("Password reset link has been sent to your email address.", expectedConfirmationmessage);
 	}
@@ -43,6 +44,7 @@ public class ForgotpasswordSteps {
 	@Then("click ok")
 	public void click_on_Okay() throws InterruptedException{
 		forgotpassword.clickokay();
+		Thread.sleep(3000);
 	}
 	@Then("verify the Error message")
 	public void verify_the_Error_message() throws InterruptedException {

@@ -13,9 +13,6 @@ Feature: Home page feature
     Then Verify Search Bar is displayed with search icon
     Then Verify Language Indicator is displayed
     Then Verify the Cart Icon displayed
-    Then Verify the Cart link action
-    Then Verify that the count is decreasing respectvely, according to product removed from the cart.
-    Then Verify that the action on cart link without count
     Then Verify "Steel by Categories" section available in the Header
     Then Verify that "Connect with Us" is available on the header section
     Then Verify the contents of the "Connect with Us" drop down section

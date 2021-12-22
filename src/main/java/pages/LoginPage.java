@@ -13,7 +13,7 @@ public class LoginPage {
 	private By email = By.xpath("//input[@type='email']");
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//div[1]/div[1]/div[2]/div[2]/button[1]");
-	private By loginuserMenu = By.xpath("//div[@class='loginusermenu profile']");
+	private By loginuserMenu = By.xpath("//button[@id='__BVID__54__BV_toggle_']");
 	private By forgotPassword = By.xpath("//div[1]/div[2]/div[2]/div[3]");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");

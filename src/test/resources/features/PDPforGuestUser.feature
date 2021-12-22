@@ -1,4 +1,4 @@
-@PDP
+@PDPGuest
 Feature: Product Detail Page feature for Guest User
 
   Background: User opens website

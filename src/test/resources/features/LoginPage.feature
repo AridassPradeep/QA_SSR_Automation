@@ -1,4 +1,4 @@
-@functional
+@Login
 Feature: Login page feature
 
   Background: User opens website
@@ -24,8 +24,8 @@ Feature: Login page feature
       | 8238775234 | Ramya@678 |
 
   Scenario: verify the forget password link is properly working
-    And user clicks on forgotpassword
-    Then forgotpassword popup to be displayed
+   When user clicks on forgotpassword
+    And user clicks on proceed
 
   Scenario Outline: verify the Register link is available and properly working
     When user clicks on register button from login screen
@@ -89,7 +89,7 @@ Feature: Login page feature
       | phoneno    | password  |
       | 9218775234 | cdjfdjf84 |
 
-  @SmokeTest
+  @SmokeTestsu
   Scenario Outline: Validate User is prompted to log in screen instead of continuation of registration process for already registered in JSW One site members.
     When user closes the signin popup
     And user clicks on register button

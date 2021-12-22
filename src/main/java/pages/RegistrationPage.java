@@ -12,7 +12,7 @@ public class RegistrationPage {
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//div[2]/div[2]/button[1]");
 
-	private By register = By.xpath("//*[text()='REGISTER']");
+	private By register = By.xpath("//*[text()='Register']");
 	private By fullname = By.id("fullname");
 	private By mobile = By.xpath("//div[@class='country-code']//following::input[1]");
 	private By gstin = By.id("gstin");

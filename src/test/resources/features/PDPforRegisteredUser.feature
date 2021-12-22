@@ -1,4 +1,4 @@
-@PDP
+@PDPRegisteredUser
 Feature: Product Detail Page feature for Registered User
 
   Background: User opens website

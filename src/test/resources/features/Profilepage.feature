@@ -1,3 +1,4 @@
+@MyProfile
 Feature: Profile page feature
 
   Background: User opens website
