@@ -1,3 +1,4 @@
+@Distributor
 Feature: Distributor page feature
 
   Background: User opens website

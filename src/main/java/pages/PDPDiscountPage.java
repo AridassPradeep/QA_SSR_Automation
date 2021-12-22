@@ -77,7 +77,7 @@ public class PDPDiscountPage {
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(0).click();
+		productselected.get(1).click();
 
 	}
 

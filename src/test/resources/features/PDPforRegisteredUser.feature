@@ -101,7 +101,7 @@ Feature: Product Detail Page feature for Registered User
       
       
       
-    Scenario: Verify dimensions are selected as per deal pill
+    Scenario: Verify dimensions are selected as per deal selected and viceversa
     When cart is empty or not
     When user enter "cold rolled sheets" in search bar
     And user click on search button

@@ -20,30 +20,27 @@ public class MyOrderPages {
 	String cartEmptyMessage = "Your cart is empty.";
 	String orderCancelMessage = "Your Order has been cancelled. Any amount charged will be refunded in\r\n"
 			+ "        5-7 working days";
+	String CancelOrder = "Cancel Order\r\n"
+			+ "To cancel your order contact\r\n"
+			+ "7208055523";
 	
 	@FindBy(xpath = "//div[@class='cancel-order-message']")
 	private WebElement cancelMge;
-	
-//------------------- View details & Need help ------------------------	
+	//------------------- View details & Need help ------------------------	
 	@FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/div[4]/a")
 	private WebElement myOrder;
-	@FindBy(xpath = "(//div[text()='Order Status'])[1]")
+	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
 	private WebElement scrollViewDetails;
-	@FindBy(xpath = "(//div[@class='view-details mt-0'])[4]")
+	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
 	private WebElement viewDetails; 
 	@FindBy(xpath = "//button[@id='dropdownMenuButton']")
 	private WebElement viewPriceBreakup;
 	@FindBy(xpath = "(//a[text()='Need help '])[1]")
 	private WebElement needHelp;
-	
-//------------------- Buy again & Cancel order -----------------------	
-	@FindBy(className = "view-details mt-0")
-	private WebElement viewOrderDetails;
-	@FindBy(className = "btn btn-light-blue")
-	private WebElement cancelOrder;
-	@FindBy(className = "ok-button")
-	private WebElement okCancel;
-	@FindBy(xpath = "//button[@class='need-help-order mt-custom']")
+	//span[@class='cancel-btn cursor-pointer']
+//------------------- Buy again -----------------------	
+
+	@FindBy(xpath = "(//button[@class='need-help-order mt-custom'])[1]")
 	private WebElement buyAgain;
 	@FindBy(xpath = "//div[text()='Select dimensions']")
 	private WebElement dimensionScroll;
@@ -63,7 +60,7 @@ public class MyOrderPages {
 	private WebElement okCart;
 	@FindBy(xpath =  "//button[@class='btn cart-btn-primary']")
 	private WebElement buyNow;
-	@FindBy(xpath = "(//img[@alt='cart'])[1]")
+	@FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/a/img")
 	private WebElement myCart;
 	@FindBy(xpath = "//span[text()='Proceed to pay']")
 	private WebElement proceedToPay;
@@ -71,24 +68,53 @@ public class MyOrderPages {
 	private WebElement bankList;
 	@FindBy(xpath = "//button[@class='btn btn-red']")
 	private WebElement payNow;
-	@FindBy(xpath = "//span[text()='CANCEL ORDER']")
-	private WebElement cancelOrderButton;
-	@FindBy(xpath = "//textarea[@placeholder='Enter remarks']")
-	private WebElement remarks;
-	@FindBy(xpath = "//*[@id=\'cancel-order___BV_modal_body_\']/div[4]/button")
-	private WebElement OkButton;
 	@FindBy(xpath = "//button[@class='success']")
 	private WebElement successPayment;
 	@FindBy(xpath = "//div[@class='success-order-title']")
 	private WebElement successMge;
+	
+//------------------Cancel Order ----------------------
+	
+	@FindBy(className = "view-details mt-0")
+	private WebElement viewOrderDetails;
+	@FindBy(xpath = "//button[@class='btn btn-light-blue']")
+	private WebElement cancel;
+	@FindBy(className = "ok-button")
+	private WebElement okCancel;
+	//@FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/div[4]/a")
+	//private WebElement cancelOrder;
+	@FindBy(xpath = "(//div[@class='cancel-order-section flex-column mt-0']//span)[1]")
+	private WebElement cancelOrder;
+	@FindBy(xpath = "//span[text()='CANCEL ORDER']")
+	private WebElement cancelButton;
+		
+	@FindBy(xpath = "//textarea[@placeholder='Enter remarks']")
+	private WebElement remark;
+	@FindBy(xpath = "//div[@class='modal-body']//div[4]//button")
+	private WebElement cancelOrderB;
+		//@FindBy(xpath = "//button[@class='proceedhome-button-login mb-25 mt-25']")
+	//private WebElement cancelOrderB;
+	@FindBy(xpath = "(//li[@class='step0'])[4]")
+	private WebElement inactiveDelivery;
+	@FindBy(xpath = "(//li[@class='step0 activePro'])[4]")
+	private WebElement activeDelivery;
+	@FindBy(xpath = "//li[@class='activePro step0 activePro']")
+	private WebElement activePlacedOrder;
+	@FindBy(xpath = "//span[@class='cancel-timer ml-10']")
+	private WebElement timer;
+	@FindBy(xpath = "//div[@class='title-main']")
+	private WebElement cancelOrderID;
+	@FindBy(xpath = "//span[@class='order-value']")
+	private WebElement orderNumber;
 		
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void validateCancelmge() {
-		driver.findElement((By) cancelMge).isDisplayed();
+	public void validateCancelmge() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@class='cancel-order-message']")).isDisplayed();
 		return;
 	}
 
@@ -99,7 +125,6 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("//button[text()='Success']")).click();
 		return;
 	}
-	// /html/body/form/button[1]
 	
 	public void validateRazorpayPage()
 
@@ -121,7 +146,7 @@ public class MyOrderPages {
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
-		driver.findElement(By.xpath("//div[@class='success-order-title']")).isDisplayed();
+	//	driver.findElement(By.xpath("//div[@class='success-order-title']")).isDisplayed();
 		return;
 	}
 	
@@ -147,12 +172,71 @@ public class MyOrderPages {
 		return;
 	}
 	
+	public void placedOrder() {
+		driver.findElement((By) activePlacedOrder).isDisplayed();
+		driver.findElement((By) cancelOrder).click();
+		return;
+	}
+	
 	public void validateNeedHelp() {
 		driver.findElement(By.xpath("//div[@class='help-container']")).isDisplayed();
 		return;
 	}
 	
 	
+	public void cancelledOrderID() {
+		driver.findElement((By) cancelOrderID).isDisplayed();
+		String cancelID = driver.findElement((By) cancelOrderID).getText();
+		return;
+	}
+
+	public void orderNumber() {
+		driver.findElement((By) orderNumber).isDisplayed();
+		String number = driver.findElement((By) orderNumber).getText();
+		return;
+	}
+	
+	public WebElement getOrderNumber() {
+		return orderNumber;
+	}
+
+	
+	public WebElement getCancelButton() {
+		return cancelButton;
+	}
+
+	public WebElement getRemark() {
+		return remark;
+	}
+
+	public WebElement getCancelOrderB() {
+		return cancelOrderB;
+	}
+
+	public WebElement getActivePlacedOrder() {
+		return activePlacedOrder;
+	}
+
+	public WebElement getTimer() {
+		return timer;
+	}
+
+	
+	public WebElement getCancel() {
+		return cancel;
+	}
+
+	public WebElement getCancelOrderID() {
+		return cancelOrderID;
+	}
+
+	public WebElement getInactiveDelivery() {
+		return inactiveDelivery;
+	}
+
+	public WebElement getActiveDelivery() {
+		return activeDelivery;
+	}
 
 	public WebElement getSuccessPayment() {
 		return successPayment;
@@ -173,6 +257,7 @@ public class MyOrderPages {
 	public String getCartEmptyMessage() {
 		return cartEmptyMessage;
 	}
+	
 
 	public String getOrderCancelMessage() {
 		return orderCancelMessage;
@@ -266,18 +351,4 @@ public class MyOrderPages {
 		return payNow;
 	}
 
-		public WebElement getCancelOrderButton() {
-		return cancelOrderButton;
-	}
-
-	public WebElement getRemarks() {
-		return remarks;
-	}
-
-	public WebElement getOkButton() {
-		return OkButton;
-	}
-
-	
-	
 }

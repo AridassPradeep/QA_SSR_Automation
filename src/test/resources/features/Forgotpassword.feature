@@ -1,5 +1,4 @@
-@FP
-
+@ForgetPassword
 Feature: Forgotpassword  feature
 
   Background: User opens website
