@@ -27,11 +27,9 @@ public class PDPwithDiscountSteps {
 		
 	@When("user is on product detail page of colored product")
 	public void user_is_on_product_detail_page_of_colored_product() throws InterruptedException {
+		Thread.sleep(2000);
 		pdpdispage.selectProduct();
 	}
-
-
-
 
 
 @When("user enter quantity as 3MT")
@@ -41,9 +39,18 @@ public void user_enter_quantity_as_3mt() throws InterruptedException {
 	 pdpreguser.clickQuantity();
 }
 
+
+
+@When("user enter quantity as 2MT")
+public void user_enter_quantity_as_2mt() throws InterruptedException {
+	pdpdispage.selectDimensionreguser();
+	pdpdispage.enterQuantity2();
+	 pdpreguser.clickQuantity();
+}
+
 @Then("verify price would be displayed")
-public void verify_price_would_be_displayed() {
-	
+public void verify_price_would_be_displayed() throws InterruptedException {
+	Thread.sleep(3000);
 	pdpdispage.validatePrice();
     
 }
@@ -104,9 +111,9 @@ public void verify_coupon_would_be_applied() {
 	//pdpdispage.validateCouponApplied();
 	//price with coupon is picked up from final price in website using xpath
     //price without coupon is calculated
-	
-	double actualpricewithoutcoupon = pdpdispage.validatePriceBeforeCoupon();
-	System.out.println("Actual price without coupon"+ actualpricewithoutcoupon );
+	double actualpricewithoutcoupon2000 = pdpdispage.validatePriceBeforeCoupon2000();
+//	double actualpricewithoutcoupon = pdpdispage.validatePriceBeforeCoupon();
+//	System.out.println("Actual price without coupon"+ actualpricewithoutcoupon );
 	double expectedpricewithcoupon=pdpdispage.priceAftercoupon();
 	double carttotal=pdpdispage.cartTotal();
  	double actualpricewithcoupon;
@@ -114,13 +121,13 @@ public void verify_coupon_would_be_applied() {
     
 	 if (carttotal<=500000.00)
 	    {
-		// if((carttotal>200000.00)) 
-				//  actualpricewithcoupon= actualpricewithoutcoupon-2000-(2000*0.18);
-		// else 
-	         actualpricewithcoupon= actualpricewithoutcoupon-500-(500*0.18);
+		if((carttotal>300000.00)) 
+			  actualpricewithcoupon= actualpricewithoutcoupon2000-2000-(2000*0.18);
+		 else 
+			 actualpricewithcoupon= pdpdispage.validatePriceBeforeCoupon()-500-(500*0.18);
 	    }
 	 else {
-		 actualpricewithcoupon=actualpricewithoutcoupon-(0.05*carttotal)-(0.05*0.18*carttotal); 
+		 actualpricewithcoupon=pdpdispage.validatePriceBeforeCoupon()-(0.05*carttotal)-(0.05*0.18*carttotal); 
 	  //   actualpricewithcoupon= actualpricewithoutcoupon-2000-(2000*0.18);
 	     }
 	double delta= 1e-01;

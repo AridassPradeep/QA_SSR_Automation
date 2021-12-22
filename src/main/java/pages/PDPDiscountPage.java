@@ -25,9 +25,8 @@ public class PDPDiscountPage {
 	private By sellerPromoLabel = By.xpath("//div[@class='price-summary-row ps-intermediate-row'][2]/child::div[1]");
 	private By platformPromoLabel = By
 			.xpath("//label[@class='coupon-seller-promo-label' and contains (text(),'Platform promo')]");
-	// private By deliverycharges= By.xpath("//span[@class='text-muted
-	// delivery_amount']");
 	private By deliverycharges = By.xpath("//div[@class='price-summary-row ps-intermediate-row'][4]/child::div[2]");
+	private By deliverycharges2 = By.xpath("//div[@class='price-summary-row ps-intermediate-row'][3]/child::div[2]");
 	// private By carttotal = By.xpath("//p[@class='cart_total']");
 	// private By carttotal = By.xpath("//span[@class='price_amount']");
 	// private By carttotal= By.xpath("//span[@class='fl-right tot-cost']");
@@ -129,10 +128,16 @@ public class PDPDiscountPage {
 		Thread.sleep(3000);
 
 	}
-
 	public void enterQuantity3() throws InterruptedException {
 
 		driver.findElement(quantity).sendKeys("3");
+		Thread.sleep(3000);
+
+	}
+
+	public void enterQuantity2() throws InterruptedException {
+
+		driver.findElement(quantity).sendKeys("2");
 		Thread.sleep(3000);
 
 	}
@@ -215,6 +220,24 @@ public class PDPDiscountPage {
 		System.out.println("delivery charges" + delivery_charges);
 		return pricewithoutcoupon;
 	}
+	
+	public double validatePriceBeforeCoupon2000() {
+		String cart_total = driver.findElement(carttotal).getText();
+		int value1 = Integer.parseInt(cart_total.replaceAll("[^0-9]", ""));
+		double carttotal = (double) value1 / 100.00;
+		String charges = driver.findElement(deliverycharges2).getText();
+		int value2 = Integer.parseInt(charges.replaceAll("[^0-9]", ""));
+		double delivery_charges = value2 / 100.00;
+		double sgst = 0.09 * carttotal;
+		double cgst = 0.09 * carttotal;
+		double pricewithoutcoupon = carttotal + sgst + cgst + delivery_charges;
+		System.out.println("Cart total" + carttotal);
+		System.out.println("CGST" + cgst);
+		System.out.println("sGST" + sgst);
+		System.out.println("delivery charges" + delivery_charges);
+		return pricewithoutcoupon;
+	}
+	
 
 	public double priceAftercoupon() {
 		String totalwithcoupon = driver.findElement(totalWithCoupon).getText();

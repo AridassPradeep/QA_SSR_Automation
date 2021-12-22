@@ -1,11 +1,10 @@
-@PLPEnquirya
+@PLPEnquiryGuest
 Feature: Product Landing Page feature for Guest User
 
   Background: User opens website
     Given user is on home page
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
     When user scroll down till enquiry button
 
   Scenario: An enquiry form should be there for guest user on PLP page
@@ -28,7 +27,7 @@ Feature: Product Landing Page feature for Guest User
 
   Scenario: Verify enquiry form pop up is displayed
     When user clicks on "Enquire Now" button on enquiry banner
-    Then Verify enquiry form pop up is displayed
+    Then verify user is on enquiry form pop up
 
   Scenario: Verify user is redirected to login form
     When user clicks on "Enquire Now" button on enquiry banner
@@ -60,21 +59,15 @@ Feature: Product Landing Page feature for Guest User
     Then verify message is displayed as Below message should be displayed "Thank you for showing interest! Your query has been submitted. One of the JSWone representative will contact you within 24 hours Query Id : XXXX"
     And verify query id got generated for guest user
 
-  @ignore
-  Scenario: Verify unsuccessful enquiry submission message
-    Given user is on product detail pop up
-    When user fill in enquiry form details related to requirement , grade ,thickness ,length etc
-    And user clicks on Send Enquiry button
-    Then verify message is displayed as Below message should be displayed "We are facing technical issues, kindly refresh or try after some time"
-
-  @ignore @defect
+ 
+   @defect
   Scenario: Validate email on enquiry form
     When user clicks on "Enquire Now" button on enquiry banner
     When user is on enquiry form
     When user enter invalid emailid on Enquiry form
     Then verify user not to click on Proceed button
 
-  @ignore @defect
+  @defect
   Scenario: Validate name on enquiry form
     When user clicks on "Enquire Now" button on enquiry banner
     When user is on enquiry form

@@ -7,17 +7,12 @@ Feature: Product Detail Page with discount
     When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
     And user clicks on signin
 
-  #Then user homepage is displayed
-  #When user enter "Colour coated" in search bar
-  # And user click on search button
-  #Then Breadcrump should display Steel by categories>Colour Coated
- 
   Scenario: verify Flat 500 rs discount is applied
     When cart is empty or not
     When user enter "Colour coated" in search bar
     And user click on search button
     When user is on product detail page of colored product
-    When user enter quantity as 3MT
+    When user enter quantity as 2MT
     Then verify price would be displayed
     When user add an item to cart
     Then verify Cart icon would appear with 1
@@ -83,13 +78,13 @@ Feature: Product Detail Page with discount
     And verify product deleted from cart
     
     
-     
+  @check 
    Scenario: Verify Flat 2000 Value discount on order value more than 2 Lakh 
     When cart is empty or not
     When user enter "Colour coated" in search bar
     And user click on search button
     When user is on product detail page of colored product
-    When user enter dimension
+    When user enter quantity as 3MT
     Then verify the cart value is more than 1L
     When user add the product to cart
     Then Cart icon would appear with 1

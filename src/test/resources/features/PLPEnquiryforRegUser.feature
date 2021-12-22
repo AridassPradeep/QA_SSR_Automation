@@ -1,4 +1,4 @@
-@PLPEnquirya
+@PLPEnquiryReg
 Feature: Product Landing Page feature for RegUser
 
   Background: User opens website
@@ -9,25 +9,21 @@ Feature: Product Landing Page feature for RegUser
     Then user homepage is displayed
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
     When user scroll down till enquiry button
-
 
   Scenario: Verify message on enquiry banner
     And Below message should be displyed on enquiry form banner "Can’t find what you are looking for?  "“Can’t find what you are looking for? Tell us your specific requirements. Your query will be sent to JSW plant for the right price and we will get back to you"
-
 
   Scenario: Verify banner after searched keyword is not found for logged in user
     When user enter "ice cream" in search bar
     Then verify search result is not found
     Then verify enquiry banner is displayed
-   
 
   Scenario: Verify enquiry form from category navigation for logged in user
     When user select category from "Steel By categories"
-    Then Enquiry banner should be displayed
+    Then verify enquiry banner is displayed
 
-     Scenario: Verify successful enquiry submission message
+  Scenario: Verify successful enquiry submission message
     When user clicks on "Enquire Now" button on enquiry banner
     Then Verify enquiry form pop up is displayed
     Then verify product details pop up open with all subcategories

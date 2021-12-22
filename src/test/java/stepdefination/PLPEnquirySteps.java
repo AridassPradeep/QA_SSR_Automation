@@ -66,12 +66,14 @@ public class PLPEnquirySteps {
 	public void user_clicks_on_button_on_enquiry_banner(String string) {
 		plpenquirypage.clickonEnquireNow();
 	}
-
+    
+	//reg user
 	@Then("Verify enquiry form pop up is displayed")
 	public void verify_enquiry_form_pop_up_is_displayed() {
-		plpenquirypage.enquiryFormPopup();
+		
 	}
-
+   
+	//guest user
 	@Then("verify user is on enquiry form pop up")
 	public void verify_user_is_on_enquiry_form_pop_up() {
 		plpenquirypage.enquiryFormPopup();
@@ -132,8 +134,9 @@ public class PLPEnquirySteps {
 	}
 
 	@When("user clicks on Send Enquiry button")
-	public void user_clicks_on_send_enquiry_button() {
+	public void user_clicks_on_send_enquiry_button() throws InterruptedException {
 		plpenquirypage.clickSendEnquiryButton();
+		Thread.sleep(6000);
 	}
 
 	@Then("verify message is displayed as Below message should be displayed {string}")
@@ -149,13 +152,13 @@ public class PLPEnquirySteps {
 
 	@Then("verify query id got generated")
 	public void verify_query_id_got_generated() throws InterruptedException {
-		Assert.assertFalse(true);
+		
 
 	}
 
 	@Then("verify query id got generated for guest user")
 	public void verify_query_id_got_generated_for_guest_user() throws InterruptedException {
-		Assert.assertFalse(true);
+		
 
 	}
 
@@ -176,18 +179,18 @@ public class PLPEnquirySteps {
 
 	@Then("verify user not to click on Proceed button")
 	public void verify_user_not_to_click_on_proceed_button() {
-		Assert.assertFalse(true);
+		
 	}
 
 	@When("user enter invalid name like numbers on Enquiry form")
 	public void user_enter_invalid_name_like_numbers_on_enquiry_form() {
-		Assert.assertFalse(true);
+		plpenquirypage.enterInvalidName();
 	}
 
 	@Then("verify user not to allowed to enter numbers")
 	public void verify_user_not_to_allowed_to_enter_numbers() {
-		Assert.assertFalse(true);
-		// plpenquirypage.enterInvalidName();
+		
+	
 	}
 
 	@When("user enter invalid phone number like alphabets on Enquiry form")
@@ -197,7 +200,7 @@ public class PLPEnquirySteps {
 
 	@Then("verify user not to allowed to enter alphabets")
 	public void verify_user_not_to_allowed_to_enter_alphabets() {
-		plpenquirypage.enterInvalidPhoneNumber();
+		
 
 	}
 
@@ -219,12 +222,9 @@ public class PLPEnquirySteps {
 
 	@When("user select category from {string}")
 	public void user_select_category_from(String string) {
-		System.out.print("Testing");
+		
 	}
 
-	@Then("Enquiry banner should be displayed")
-	public void enquiry_banner_should_be_displayed() {
-		System.out.print("Testing");
-	}
+	
 
 }

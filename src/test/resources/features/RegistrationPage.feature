@@ -1,3 +1,4 @@
+@Registration
 Feature: Registration page feature
 
   Background: User opens website
