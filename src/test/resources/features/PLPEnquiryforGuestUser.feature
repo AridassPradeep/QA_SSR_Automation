@@ -10,7 +10,7 @@ Feature: Product Landing Page feature for Guest User
   Scenario: An enquiry form should be there for guest user on PLP page
     Then Enquiry form should be displayed in PLP page for guest user
     And Below message should be displyed on enquiry form banner "Can’t find what you are looking for?  "“Can’t find what you are looking for? Tell us your specific requirements. Your query will be sent to JSW plant for the right price and we will get back to you"
-
+@check
   Scenario: Verify an enquiry banner on PLP page when not signed in
     Then Verify Enquiry banner is displayed only once after 3 products if more than 3 products are displayed
     Then Verify text displayed on enquiry banner
@@ -58,28 +58,13 @@ Feature: Product Landing Page feature for Guest User
     And user clicks on Send Enquiry button
     Then verify message is displayed as Below message should be displayed "Thank you for showing interest! Your query has been submitted. One of the JSWone representative will contact you within 24 hours Query Id : XXXX"
     And verify query id got generated for guest user
-
- 
-   @defect
-  Scenario: Validate email on enquiry form
-    When user clicks on "Enquire Now" button on enquiry banner
-    When user is on enquiry form
-    When user enter invalid emailid on Enquiry form
-    Then verify user not to click on Proceed button
-
-  @defect
-  Scenario: Validate name on enquiry form
-    When user clicks on "Enquire Now" button on enquiry banner
-    When user is on enquiry form
-    When user enter invalid name like numbers on Enquiry form
-    Then verify user not to allowed to enter numbers
-
+@check
   Scenario: Validate phone on enquiry form
     When user clicks on "Enquire Now" button on enquiry banner
     When user is on enquiry form
     When user enter invalid phone number like alphabets on Enquiry form
     Then verify user not to allowed to enter alphabets
-
+@check
   Scenario: Validate mandatory field
     When user clicks on "Enquire Now" button on enquiry banner
     And user is on enquiry form

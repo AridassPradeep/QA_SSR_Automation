@@ -11,22 +11,22 @@ Feature: Product Landing Page feature
   Scenario: Display BreadCrumb for HR
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
+    Then Breadcrump should display HOME > Search Results
 
   Scenario: Display  BreadCrumb for CR
     When user enter "Cold Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>cold Rolled(CR)
+     Then Breadcrump should display HOME > Search Results
 
   Scenario: As a registered user check for Breadcrumb for HR
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
+     Then Breadcrump should display HOME > Search Results
 
   Scenario: Check BreadCrumb hyperlink is working fine
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
+     Then Breadcrump should display HOME > Search Results
     When user  click on home hyper link in breadcrumb"
     Then product page should navigate to home page"
 
@@ -43,7 +43,7 @@ Feature: Product Landing Page feature
   Scenario: Products are displaying After filters removed
     When user enter "Hot Rolled Sheet" in search bar
     And user click on search button
-    Then Breadcrump should display Steel by categories>Hot Rolled(HR)
+    Then Breadcrump should display HOME > Search Results
     When user  click on HR 2062-2011
     When user  click on Reset Hyper link"
 

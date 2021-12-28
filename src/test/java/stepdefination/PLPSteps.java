@@ -21,18 +21,10 @@ public class PLPSteps {
 		productlandingpage.Search();
 		Thread.sleep(2500);
 	}
-
-	@Then("Breadcrump should display Steel by categories>Hot Rolled\\(HR)")
-	public void breadcrump_should_display_steel_by_categories_hot_rolled_hr() {
-		String breadcrumb = productlandingpage.Validatebreadcrumb();
-		Assert.assertEquals("Hot rolled(HR)", breadcrumb);
-
-	}
-
-	@Then("Breadcrump should display Steel by categories>cold Rolled\\(CR)")
-	public void breadcrump_should_display_steel_by_categories_cold_rolled_cr() {
-		String breadcrumb = productlandingpage.ValidatebreadcrumbColdRolled();
-		Assert.assertEquals("Cold rolled(CR)", breadcrumb);
+	
+	@Then("Breadcrump should display HOME > Search Results")
+	public void breadcrump_should_display_home_search_results() {
+		Assert.assertTrue(productlandingpage.Validatebreadcrumb());
 	}
 
 	@When("user  click on home hyper link in breadcrumb\"")

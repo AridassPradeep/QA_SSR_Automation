@@ -27,13 +27,13 @@ public class PLPEnquirySteps {
 
 	@Then("Pop-up should be displayed to fill user's information")
 	public void pop_up_should_be_displayed_to_fill_user_s_information() {
-
+           plpenquirypage.validatePopUp();
 	}
 
 	@Then("Verify Enquiry banner is displayed only once after {int} products if more than {int} products are displayed")
 	public void verify_enquiry_banner_is_displayed_only_once_after_products_if_more_than_products_are_displayed(
 			Integer int1, Integer int2) {
-
+      plpenquirypage.validateBannerAfter3();
 	}
 
 	@Then("Verify text displayed on enquiry banner")
@@ -70,7 +70,7 @@ public class PLPEnquirySteps {
 	//reg user
 	@Then("Verify enquiry form pop up is displayed")
 	public void verify_enquiry_form_pop_up_is_displayed() {
-		
+		plpenquirypage.validatereguserpopup();
 	}
    
 	//guest user
@@ -152,14 +152,14 @@ public class PLPEnquirySteps {
 
 	@Then("verify query id got generated")
 	public void verify_query_id_got_generated() throws InterruptedException {
-		
-
+		Thread.sleep(20000);
+		 plpenquirypage.validateEnquiryID();
 	}
 
 	@Then("verify query id got generated for guest user")
 	public void verify_query_id_got_generated_for_guest_user() throws InterruptedException {
-		
-
+		Thread.sleep(20000);
+          plpenquirypage.validateEnquiryID();
 	}
 
 	@Given("user is on product detail pop up")
@@ -177,43 +177,35 @@ public class PLPEnquirySteps {
 		plpenquirypage.enterInvalidEmail();
 	}
 
-	@Then("verify user not to click on Proceed button")
-	public void verify_user_not_to_click_on_proceed_button() {
-		
-	}
-
+	
 	@When("user enter invalid name like numbers on Enquiry form")
 	public void user_enter_invalid_name_like_numbers_on_enquiry_form() {
 		plpenquirypage.enterInvalidName();
 	}
 
-	@Then("verify user not to allowed to enter numbers")
-	public void verify_user_not_to_allowed_to_enter_numbers() {
-		
-	
-	}
-
 	@When("user enter invalid phone number like alphabets on Enquiry form")
 	public void user_enter_invalid_phone_number_like_alphabets_on_enquiry_form() {
-		plpenquirypage.enterInvalidPhoneNumber();
+		Assert.assertTrue(plpenquirypage.enterInvalidPhoneNumber());
 	}
 
-	@Then("verify user not to allowed to enter alphabets")
-	public void verify_user_not_to_allowed_to_enter_alphabets() {
-		
-
-	}
+	
+	  @Then("verify user not to allowed to enter alphabets") public void
+	  verify_user_not_to_allowed_to_enter_alphabets() {
+	  Assert.assertTrue(plpenquirypage.enterInvalidPhoneNumber());
+	  
+	  }
+	 
 
 	@When("user does not enter values in name, phone number in enquiry form")
 	public void user_does_not_enter_values_in_name_phone_number_in_enquiry_form() {
-		plpenquirypage.enterBlankPhone();
-		plpenquirypage.enterBlankName();
+		Assert.assertTrue(plpenquirypage.enterBlankPhone());
+		Assert.assertTrue(plpenquirypage.enterBlankName());
 
 	}
 
 	@Then("verify proceed button is disabled")
 	public void verify_proceed_button_is_disabled() throws InterruptedException {
-		// plpenquirypage.clickProceed();
+		
 
 		Thread.sleep(5000);
 		Assert.assertEquals(false, plpenquirypage.disableProceed());
@@ -221,7 +213,11 @@ public class PLPEnquirySteps {
 	}
 
 	@When("user select category from {string}")
-	public void user_select_category_from(String string) {
+	public void user_select_category_from(String string) throws InterruptedException {
+		
+		plpenquirypage.selectCategory();
+		
+		
 		
 	}
 

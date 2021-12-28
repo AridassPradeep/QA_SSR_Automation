@@ -16,7 +16,7 @@ public class HomePage {
 	private By cartIcon = By.xpath("(//a[@href='/cart-detail'])[2]");
 	private By noofCartItems = By.xpath("//div[@class='count']");
 	private By address = By.xpath("//div[@class='header-current-add']");
-	private By connectWithUs = By.xpath("//div[@class='connectWithUs']");
+	private By connectWithUs = By.xpath("//div[@class='chat connect-with-us mr-3 py-3']");
 	private By helpLineNumber = By.xpath("//div[@class='ph-num']");
 	private By SociaMediaLogos = By.xpath("//span[@class='img0-facebook']");
 	private By footerpartContainer = By.xpath("//div[@class='footerpart-container']");
@@ -24,7 +24,7 @@ public class HomePage {
 			.xpath("//div[@class='single-slider bg-img align-items-center custom-d-flex']//img");
 	private By mapIcon = By.xpath("//i[@class='fas fa-map-marker-alt']");
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
-	private By arrowdropdown = By.xpath("//div[@class='arrow15 profile']");
+	private By arrowdropdown = By.xpath("//ul[@role='menu']");
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -114,9 +114,8 @@ public class HomePage {
 		driver.findElement(By.xpath("//div[1]/div[4]/label[1]")).click();
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;       		
-        WebElement Element = driver.findElement(By.xpath("//button[@id='reachoutus-submit-1']"));	
         js.executeScript("window.scrollBy(0,250)", "");
-		driver.findElement(By.xpath("//button[@id='reachoutus-submit']")).click();
+		driver.findElement(By.xpath("//button[@id='reachoutus-submit-1']")).click();
 		Thread.sleep(19000);
 
 	}

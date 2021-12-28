@@ -18,7 +18,7 @@ Feature: Product Landing Page feature for RegUser
     When user enter "ice cream" in search bar
     Then verify search result is not found
     Then verify enquiry banner is displayed
-
+@check
   Scenario: Verify enquiry form from category navigation for logged in user
     When user select category from "Steel By categories"
     Then verify enquiry banner is displayed

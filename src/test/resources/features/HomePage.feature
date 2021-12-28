@@ -15,16 +15,11 @@ Feature: Home page feature
     Then Verify the Cart Icon displayed
     Then Verify "Steel by Categories" section available in the Header
     Then Verify that "Connect with Us" is available on the header section
-    Then Verify the contents of the "Connect with Us" drop down section
     Then Verify that Header Section is displayed for Registered User
     Then Verify the JSW logo is appearing in the Header Section
     Then Verify the My Profile section link is appearing with users first name
     Then Verify that the My Profile section Link is displaying ^ icon when the drop down is clicked
-    Then Verify the drop down section of My Profile Link
-    Then Verify the action of Profile Link in My Profile drop down
-    Then Verify the action of Distributors Link in My Profile drop down
     Then Verify the action of Logout Link in My Profile drop down
-    Then Verify the action happening when clicking on the "Call Us" 📞 Link.
     Then Verify the banners are displayed on the JSW Home Page
     Then Verify the banners displaying in the home Page for Registered User.
     Then Verify all the header available in the footer section
@@ -32,7 +27,7 @@ Feature: Home page feature
     Then Verify for sub links are available under General category
     Then Verify all the social media logos are available
     Then Verify for help line number is present in footer section
-    Then Verify the cart is displaying the count of product added to the cart.
+   
 
   Scenario: Verify enquiry form
     Then Verify the mandatory fields in Enquiry Section for Registered Users
@@ -42,7 +37,6 @@ Feature: Home page feature
     Then Verify the Enquiry Headings, and labels in Enquiry Section for Registered user.
     Then Verify For logged in user on Enquiry form Name, mobile number and email id should be pre-populated.
     Then Verify that the Enquiry section available in the JSW Home Page for Registered User
-    Then Verify the UI of Enquiry form for registered user
     Then Verify the Enquiry form banner displayed on the Home Page
     Then Verify the Enquiry form banner displayed on the Home Page for registered User
     Then Verify that "Thanks Popup" is displaying based on the successful submission of enquiry form

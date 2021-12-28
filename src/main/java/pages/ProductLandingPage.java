@@ -33,15 +33,11 @@ public class ProductLandingPage {
 		driver.findElement(search).click();
 	}
 
-	public String Validatebreadcrumb() {
-		String breadcrumbTxt = driver.findElement(By.xpath("//b[contains(text(),'Hot rolled(HR)')]")).getText();
-		return breadcrumbTxt;
+	public boolean Validatebreadcrumb() {
+		return driver.findElement(By.xpath("//div[@class='breadcums_url']")).isDisplayed();
+		
 	}
 
-	public String ValidatebreadcrumbColdRolled() {
-		String breadcrumbTxt = driver.findElement(By.xpath("//b[contains(text(),'Cold rolled(CR)')]")).getText();
-		return breadcrumbTxt;
-	}
 
 	public void clickonHomeHyperLink() {
 		driver.findElement(By.xpath("//span[contains(text(),'HOME')]")).click();

@@ -37,15 +37,6 @@ public class HomePageSteps {
 		Assert.assertTrue(homePage.validateCartIcon());
 	}
 
-	@Then("Verify the cart is displaying the count of product added to the cart.")
-	public void verify_the_cart_is_displaying_the_count_of_product_added_to_the_cart() throws InterruptedException {
-		productpage.clickOnHotRolledSheets();
-		Thread.sleep(5000);
-		productpage.clickOnproductfromListingPage();
-		homePage.clickonHomePageLogo();
-		String cartItemCount = homePage.countCartItems();
-		System.out.println("Cart Item count = " + cartItemCount);
-	}
 
 	@Then("Verify the Cart link action")
 	public void verify_the_cart_link_action() throws InterruptedException {
@@ -54,10 +45,7 @@ public class HomePageSteps {
 
 	}
 
-	@Then("Verify that the count is decreasing respectvely, according to product removed from the cart.")
-	public void verify_that_the_count_is_decreasing_respectvely_according_to_product_removed_from_the_cart() {
-
-	}
+	
 
 	@Then("Verify the address not displaying for the guest user")
 	public void verify_the_address_not_displaying_for_the_guest_user() {
@@ -88,10 +76,7 @@ public class HomePageSteps {
 		Assert.assertTrue(registrationPage.validateRegisterButton());
 	}
 
-	@Then("Verify that the action on cart link without count")
-	public void verify_that_the_action_on_cart_link_without_count() {
-
-	}
+	
 
 	@Then("Verify {string} section available in the Header")
 	public void verify_section_available_in_the_header(String string) {
@@ -123,22 +108,6 @@ public class HomePageSteps {
 
 	}
 
-	@Then("Verify the drop down section of My Profile Link")
-	public void verify_the_drop_down_section_of_my_profile_link() throws InterruptedException {
-		homePage.myProfile();
-        homePage.clickonHomePageLogo();
-	}
-
-	@Then("Verify the action of Profile Link in My Profile drop down")
-	public void verify_the_action_of_profile_link_in_my_profile_drop_down() {
-
-	}
-
-	@Then("Verify the action of Distributors Link in My Profile drop down")
-	public void verify_the_action_of_distributors_link_in_my_profile_drop_down() throws InterruptedException {
-		homePage.distributor();
-        homePage.clickonHomePageLogo();
-	}
 
 	@Then("Verify the action of Logout Link in My Profile drop down")
 	public void verify_the_action_of_logout_link_in_my_profile_drop_down() {
@@ -196,21 +165,12 @@ public class HomePageSteps {
 	@Then("Verify Query id is generated once query is submitted by the registered user.")
 	public void verify_query_id_is_generated_once_query_is_submitted_by_the_registered_user()
 			throws InterruptedException {
-		homePage.clickonHomePageLogo();
 		homePage.scrollDown();
 		homePage.enterEnquiryFormDetails();
 		homePage.validatequeryId();
 	}
 
-	@Then("Verify the UI of Enquiry form for guest user")
-	public void verify_the_ui_of_enquiry_form_for_guest_user() {
-
-	}
-
-	@Then("Verify the UI of Enquiry form for registered user")
-	public void verify_the_ui_of_enquiry_form_for_registered_user() {
-
-	}
+	
 
 	@Then("Verify the action on wrong data entered")
 	public void verify_the_action_on_wrong_data_entered() {
@@ -229,11 +189,6 @@ public class HomePageSteps {
 
 	@Then("Verify that {string} is displaying based on the successful submission of enquiry form")
 	public void verify_that_is_displaying_based_on_the_successful_submission_of_enquiry_form(String string) {
-
-	}
-
-	@Then("Verify the action happening when clicking on the {string} 📞 Link.")
-	public void verify_the_action_happening_when_clicking_on_the_link(String string) {
 
 	}
 

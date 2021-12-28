@@ -1,12 +1,27 @@
 package pages;
 
+import java.util.List;
+import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+
 
 public class PLPEnquiryPage {
 
 	private WebDriver driver;
+	private By steelbycategory = By.xpath("//a[contains(text(),'Steel by categories')]");
+	// private By steelbycategory =
+	// By.xpath("//ul[@class='main-categories-first-child-menu']/parent::div/child::a");
+	private By menu = By.xpath("(//a[contains(text(),'Hot rolled')])[1]");
+	private By secondmenu = By.xpath("(//a[contains(text(),'Hot rolled coils')])");
+	//private By menu = By.xpath("//div[@class='drop-submenu']");
+	//private By secondmenu = By.xpath("//div[@class='drop-inner-sub']");
+	
 	private By enquiryBanner = By.xpath("//img[@class='bg2']");
 	private By enquireNowbutton = By.xpath("//button[@class='enquery-button plp-banner-btn']");
 	private By enquiryUserName = By.xpath("//input[@name='nameChange']");
@@ -146,36 +161,34 @@ public class PLPEnquiryPage {
 		driver.findElement(enquiryUserName).sendKeys("1234");
 	}
 
-	public void enterInvalidPhoneNumber() {
+	public boolean enterInvalidPhoneNumber() {
 		driver.findElement(mobileNo).sendKeys("ABC");
-		//JavascriptExecutor jse = (JavascriptExecutor) driver;
-	//	System.out.println(jse.executeScript("document.getElementById('mobile').innerText;"));
-	//	String value = jse.executeScript("return document.getElementById('mobile').innerText;").toString();
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		System.out.println(jse.executeScript("document.getElementById('mobile').innerText;"));
+		String value = jse.executeScript("return document.getElementById('mobile').innerText;").toString();
 		// System.out.println(value);
-	//	AssertVerify(value, "");
+		return value.equalsIgnoreCase("");
 
 	}
 
-	private void AssertVerify(String value, String string) {
+	
+	public boolean enterBlankPhone() {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		System.out.println(jse.executeScript("document.getElementById('mobile').innerText;"));
+		String value = jse.executeScript("return document.getElementById('mobile').innerText;").toString();
+		System.out.println(value);
+		return value.equalsIgnoreCase("");
 
 	}
 
-	public void enterBlankPhone() {
+	public boolean enterBlankName() {
 
-		//System.out.println(jse.executeScript("document.getElementById('mobile').innerText;"));
-		//String value = jse.executeScript("return document.getElementById('mobile').innerText;").toString();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		System.out.println(jse.executeScript("document.getElementById('nameChange').innerText;"));
+		String value = jse.executeScript("return document.getElementById('nameChange').innerText;").toString();
 		// System.out.println(value);
-		//AssertVerify(value, "");
-
-	}
-
-	public void enterBlankName() {
-
-		// jse.executeScript("document.getElementById('mobile').value='A';");
-		//System.out.println(jse.executeScript("document.getElementById('nameChange').innerText;"));
-		//String value = jse.executeScript("return document.getElementById('nameChange').innerText;").toString();
-		// System.out.println(value);
-		//AssertVerify(value, "");
+		return value.equalsIgnoreCase("");
 
 	}
 
@@ -189,6 +202,45 @@ public class PLPEnquiryPage {
 		driver.findElement(searchButton).click();
 		return driver.findElement(notfoundsearchimage).isDisplayed();
 
+	}
+
+	public void validateEnquiryID() {
+		driver.findElement(By.xpath("//input[@name='email']")).isDisplayed();
+	}
+
+	public void validatePopUp() {
+		driver.findElement(By.xpath("//strong[contains(text(),'Enquiry Form')]")).isDisplayed();
+	}
+
+	public void validatereguserpopup() {
+		driver.findElement(By.xpath("//button[@class='enquery-button']")).isDisplayed();
+	}
+
+	public void selectCategory() throws InterruptedException {
+		
+		Thread.sleep(3000);
+		Actions act= new Actions(driver);
+		WebElement steel =driver.findElement(steelbycategory);
+		WebElement Menu= driver.findElement(menu);
+		WebElement SubMenu = driver.findElement(secondmenu);
+		act.moveToElement(steel).moveToElement(Menu).moveToElement(SubMenu).click().build().perform();
+		Thread.sleep(10000);
+		
+	}
+	
+	public void validateBannerAfter3() {
+
+	List<WebElement> products=	driver.findElements(By.xpath("//div[@id='product']"));
+	if (products.size()	>0)
+	{
+		int bannerexpected = 314;
+		int banner=driver.findElement(By.xpath("//div[@class='enqueryBanner_grid']")).getLocation().y;
+		//Assert.assertEquals(bannerexpected, banner);
+		
+	}
+	
+	
+	
 	}
 
 }

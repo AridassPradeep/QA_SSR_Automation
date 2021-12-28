@@ -14,4 +14,4 @@ Feature: Guest User feature
     Then Verify the Enquiry Headings, and labels in Enquiry Section for guest user.
     Then Verify the mandatory fields in Enquiry Section for Guest Users
     Then Verify Query id is generated once query is submitted by the guest user.
-    Then Verify the UI of Enquiry form for guest user
+    
