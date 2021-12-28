@@ -5,11 +5,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.DirectOrderPage;
 import pages.PDPDiscountPage;
+import pages.Paymentpage;
 
 
 public class DirectOrderSteps {
 	DirectOrderPage doppage = new DirectOrderPage(DriverFactory.getDriver());
 	PDPDiscountPage pdpdispage = new PDPDiscountPage(DriverFactory.getDriver());
+	Paymentpage pmtpage = new Paymentpage(DriverFactory.getDriver());
 	
 
 @Then("Buy from verified sellers is displayed")
@@ -48,6 +50,12 @@ public void user_enter_dimension_for_product() throws InterruptedException {
 	doppage.enterQuantity50();
 	 doppage.clickQuantity();
 
+}
+@When("user enter quantity and dimensions for the product")
+public void user_enter_quantity_and_dimensions_for_the_product() throws InterruptedException {
+	pmtpage.selectDimensionreguser2();
+	doppage.enterQuantity50();
+	doppage.clickQuantity();
 }
 
 
@@ -89,13 +97,37 @@ public void verify_message_is_displayed(String string) throws InterruptedExcepti
     Thread.sleep(3000);
 	doppage.validateMessage();
 }
+@When("Requirement is present then remove it")
+public void requirement_is_present_then_remove_it() throws Exception {
+	if(doppage.isElementPresent())
+		 
+	{
+		doppage.clickRemoveButton();
+	}
 
+}
 	
 	
+@When("user click on My requirements on top")
+public void user_click_on_my_requirements_on_top() {
+    doppage.clickMyRequirements();
+}
 	
+@Then("verify no product in requirement list")
+public void verify_no_product_in_requirement_list() {
+   doppage.validateEmptyRequirement();
+}
+@When("user click on remove button on the product")
+public void user_click_on_remove_button_on_the_product() throws Exception {
+    doppage.clickRemoveButton();
+}
+
+
+@Then("verify delivery date is displayed from {int}-{int} days")
+public void verify_delivery_date_is_displayed_from_days(Integer int1, Integer int2) throws InterruptedException {
+   Thread.sleep(2000);
+	doppage.validateDeliveryDate();
+	Thread.sleep(3000);
 	
-	
-	
-	
-	
+}	
 }

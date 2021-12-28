@@ -16,7 +16,7 @@ public class DirectOrderPage {
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
 	private By message = By.xpath("(//*[@class='mt-14'])");
-	
+	private By deliverydate = By.xpath("//span[contains(text(),'30 - 45 days')]");
 	public DirectOrderPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -114,7 +114,62 @@ public void validateMessage()
 {
 driver.findElement(message).isDisplayed();	
 }
+public void clickMyRequirements()
+{
+	driver.findElement(By.xpath("//a[text()='My requirements']")).click();
+}
+ public void validateEmptyRequirement()
+ {
+	 
+	 driver.findElement(By.xpath("//div[@class='empty-content text-center']")).isDisplayed();
+ }
 
+public void clickRemoveButton() throws Exception
+{
+	
+	while (!isElementPresentemptycart()) {
+	
+	driver.findElement(By.xpath("(//a[@role='button'])")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).click();
+	Thread.sleep(2000);
+	}
+	
+}
+
+
+	//driver.findElement(By.xpath("(//a[@role='button'])")).isDisplayed();
+	public  boolean isElementPresent() throws Exception 
+	{
+		try {
+			driver.findElement(By.xpath("(//a[@role='button'])"));
+			return true;
+		} catch (Exception e) {
+			return false;	
+		}
+		
+	}
+
+
+	public boolean isElementPresentemptycart() throws Exception {
+		try {
+			driver.findElement((By.xpath("//div[@class='empty-content text-center']")));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+
+	public void validateDeliveryDate()
+	{
+		driver.findElement(deliverydate).isDisplayed();
+		
+	}
 
 
 }
+
+
+
+

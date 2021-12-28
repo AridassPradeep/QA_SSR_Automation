@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-		tags = "@DirectPLP",
+		tags = "@DirectOrderPDP",
 		plugin = {"pretty"			
 		}
 		)
