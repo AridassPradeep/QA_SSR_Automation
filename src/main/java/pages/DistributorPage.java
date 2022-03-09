@@ -10,7 +10,7 @@ public class DistributorPage {
 
 	private WebDriver driver;
 
-	private By MyProfileButton = By.xpath("//button[@class='btn dropdown-toggle btn-secondary']");
+	private By MyProfileButton = By.xpath("//header[@id='drop-down-head']");
 	private By distributor = By.linkText("Distributors");
 	private By add = By.className("add-button");
 	private By sel = By.id("e9f280f5-ac5a-43e9-9452-0b5a636135b3");

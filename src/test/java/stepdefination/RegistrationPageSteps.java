@@ -97,7 +97,7 @@ public class RegistrationPageSteps {
 
 	@Then("Thankyou page is displayed")
 	public void thankyou_page_is_displayed() throws InterruptedException {
-		//Assert.assertFalse(registrationPage.validateThankYouPage());
+		Assert.assertTrue(registrationPage.validateThankYouPage());
 
 	}
 
@@ -161,7 +161,7 @@ public class RegistrationPageSteps {
 
 	@Then("proceed to home is displayed")
 	public void proceed_to_home_is_displayed() {
-		Assert.assertFalse(registrationPage.validateThankYouPage());
+		Assert.assertTrue(registrationPage.validateThankYouPage());
 	}
 
 	@Then("password error messaage to be displayed")

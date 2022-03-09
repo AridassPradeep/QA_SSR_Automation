@@ -76,7 +76,16 @@ public class PDPDiscountPage {
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(1).click();
+		if (productselected.get(1).getText().contains("Coils"))
+		{
+		System.out.println("The value is " + productselected.get(1).getText());
+			productselected.get(1).click();
+		}
+		else if (productselected.get(0).getText().contains("Coils"))
+		{
+			productselected.get(0).click();
+		}
+		
 
 	}
 

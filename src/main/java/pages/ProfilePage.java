@@ -7,13 +7,15 @@ import org.openqa.selenium.WebDriver;
 public class ProfilePage {
 	private WebDriver driver;
 
-	private By MyProfileButton = By.xpath("//button[@id='__BVID__54__BV_toggle_']");
+	
+	private By MyProfileButton = By.xpath("//header[@id='drop-down-head']");
 	private By SubMenu = By.linkText("Profile");
 	private By Designation = By.id("usr");
 	private By Udyam = By.name("udyam");
 	private By Options = By.xpath("//option[contains(text(),'Select an option')]");
 	private By Msg = By.xpath("//div[contains(text(),'Your changes have been saved.')]");
-	private By Title = By.xpath("//h3[contains(text(),'My Profile')]");
+	private By Title = By.xpath("//div[contains(text(),'My Profile')]");
+	
 
 	public ProfilePage(WebDriver driver) {
 		this.driver = driver;
@@ -55,13 +57,13 @@ public class ProfilePage {
 
 	public void clickArea() throws InterruptedException {
 		driver.findElement(
-				By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[3]/label[1]/span[1]"))
+				By.xpath("//div[4]/div[1]/label[1]/input[1]"))
 				.click();
 		Thread.sleep(1000);
 	}
 
 	public void clickSave() throws InterruptedException {
-		driver.findElement(By.xpath("//button[contains(text(),'SAVE DETAILS')]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Save details')]")).click();
 		Thread.sleep(1000);
 	}
 

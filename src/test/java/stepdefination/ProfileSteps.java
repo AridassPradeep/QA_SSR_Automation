@@ -23,7 +23,6 @@ public class ProfileSteps {
 
 	@When("user click on the profile submmenu")
 	public void user_click_on_the_profile_submmenu() throws InterruptedException {
-		// Write code here that turns the phrase above into concrete actions
 		profilepage.clickSubProfile();
 
 	}

@@ -4,14 +4,15 @@ Feature: Product Detail Page feature for Registered User
   Background: User opens website
     Given user is on home page
     When user clicks on login button
+    When user click  on login by email
     When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
   Scenario: verify product quantity should be updated in the cart icon.
-    When user enter "colour" in search bar
-    And user click on search button
-    Given user is on product detail page of colored item
+    When cart is empty or not
+    When user selects Hot Rolled products
+    Given user is on product detail page of hotrolled item
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
    

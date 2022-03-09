@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class HomePage {
 
@@ -25,6 +26,8 @@ public class HomePage {
 	private By mapIcon = By.xpath("//i[@class='fas fa-map-marker-alt']");
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
 	private By arrowdropdown = By.xpath("//ul[@role='menu']");
+	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
+	
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -33,6 +36,14 @@ public class HomePage {
 	public boolean validateJSWLogo() {
 		return driver.findElement(JSWLogo).isDisplayed();
 
+	}
+	public void selectHotRolledProduct() throws InterruptedException
+	{
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).build().perform();
+		driver.findElement(By.partialLinkText("Hot rolled")).click();
+		Thread.sleep(2000);
 	}
 
 	public boolean validateSearch() {

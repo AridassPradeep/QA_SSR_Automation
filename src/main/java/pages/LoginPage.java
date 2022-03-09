@@ -12,12 +12,14 @@ public class LoginPage {
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
 	private By email = By.xpath("//input[@type='email']");
 	private By password = By.xpath("//input[@type='password']");
-	private By signIn = By.xpath("//div[1]/div[1]/div[2]/div[2]/button[1]");
-	private By loginuserMenu = By.xpath("//button[@id='__BVID__54__BV_toggle_']");
-	private By forgotPassword = By.xpath("//div[1]/div[2]/div[2]/div[3]");
+	private By signIn = By.xpath("//button[contains(text(),'Login to continue')]");
+	private By loginuserMenu = By.xpath("//header[@id='drop-down-head']");
+	private By forgotPassword = By.xpath("//div[@class='forgot-pwd-link']");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
 	private By errorMessage = By.xpath("//div[@class='error_message error-messages row']");
+	private By loginByEmail = By.xpath("//button[contains(text(),'Login via Email')]");
+	
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -39,6 +41,10 @@ public class LoginPage {
 
 	public void clickLoginButton() {
 		driver.findElement(loginButton).click();
+	}
+	
+	public void clickloginByEmail() {
+		driver.findElement(loginByEmail).click();
 	}
 
 	public void Login(String uname, String pwd) {
@@ -89,7 +95,7 @@ public class LoginPage {
 	}
 	
 	public boolean validateLoginPopUp() {
-		return driver.findElement(email).isDisplayed();
+		return driver.findElement(loginByEmail).isDisplayed();
 
 	}
 

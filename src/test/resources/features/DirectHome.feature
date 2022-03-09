@@ -1,10 +1,14 @@
+@DirectHome
 Feature: Direct home page feature
+
  Background: User opens website
     Given user is on home page
     When user clicks on login button
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
+    When user click  on login by email
+      When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
+
 
 @DirectPage
 	Scenario: Verify the user is navigate to distributor page and direct page

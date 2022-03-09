@@ -47,7 +47,6 @@ public void verify_is_displayed_below_proceed_to_pay_button(String string) {
 
 @When("user click on pickup checkbox")
 public void user_click_on_pickup_checkbox() throws InterruptedException {
-   Thread.sleep(2000);
 	cartdpage.clickCheckbox();
 }
 

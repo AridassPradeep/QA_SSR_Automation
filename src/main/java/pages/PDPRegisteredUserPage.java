@@ -19,9 +19,10 @@ public class PDPRegisteredUserPage {
 	private By steelbycategory = By.xpath("//ul[@class='main-categories-first-child-menu']/parent::div/child::a");
 	private By menu = By.xpath("//ul[@class='main-categories-first-child-menu']/child::li");
 	private By secondmenu = By.xpath("//ul[@class='main-categories-second-child-menu']/child::li/child::a");
-	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
+	private By productselect = By.xpath("//div[@class='plp-product-item']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
-	private By addtocartbutton = By.xpath("//button[@class='btn cart-btn-secondary']");
+	private By addquantity = By.xpath("//div[2]/div[1]/div[1]/div[1]/button[1]/img[1]");
+	private By addtocartbutton = By.xpath("//div[3]/div[3]/div[1]/button[1]/div[1]");
 	private By diameter = By.xpath("//div[contains(@class,'size_1')]/child::div[@class='dimension-size']");
 	private By productselectwirerod = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -54,7 +55,7 @@ public class PDPRegisteredUserPage {
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(1).click();
+		productselected.get(0).click();
 
 	}
 
@@ -65,6 +66,21 @@ public class PDPRegisteredUserPage {
 
 		productselected.get(2).click();
 
+	}
+	public void selectThicknessWidthLength() throws InterruptedException
+	{
+		
+		List<WebElement> allThickness = driver.findElements(By.xpath("//div[@class='list-group flex-row flex-wrap']//button"));
+		allThickness.get(0).click();
+		allThickness.get(11).click();
+		allThickness.get(13).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[2]/div[1]/div[1]/input[1]")).sendKeys("30");
+		Thread.sleep(2000);
+		driver.findElement(addquantity).click();
+		Thread.sleep(2000);
+
+		
 	}
 
 	public void selectDimensionreguser() throws InterruptedException {

@@ -13,7 +13,7 @@ public class ForgotpasswordSteps {
 	private Forgotpasswordpage forgotpassword = new Forgotpasswordpage(DriverFactory.getDriver());
 
 	@When("user clicks on proceed")
-	public void user_clicks_on_proceed() {
+	public void user_clicks_on_proceed() throws InterruptedException {
 		forgotpassword.clickproceed();
 	}
 

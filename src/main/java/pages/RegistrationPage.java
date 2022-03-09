@@ -9,6 +9,7 @@ public class RegistrationPage {
 
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
 	private By email = By.xpath("//input[@type='email']");
+	private By mobileno = By.xpath("//div[1]/div[1]/div[1]/div[1]/input[1]");
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//div[2]/div[2]/button[1]");
 
@@ -18,7 +19,7 @@ public class RegistrationPage {
 	private By gstin = By.id("gstin");
 	private By companyemail = By.xpath("//div[@class='email-icon']//following::input[1]");
 	private By agreeTerms = By.xpath("//*[text()='I agree to the']//preceding::label[1]");
-	private By next = By.xpath("//button[contains(@class,'register')]");
+	private By next = By.xpath("//*[@id='register-next']");
 	private By userpassword = By.xpath("//input[@name='password']");
 	private By confirmpassword = By.xpath("//input[@name='confirmPassword']");
 	private By createAccount = By.xpath("//button[@value='Register']");
@@ -28,7 +29,7 @@ public class RegistrationPage {
 	private By LoginButtonOnRegPopup = By.xpath("//div[@class='enterprise-details']//span[@id='loginresetting']");
 
 	private By Thankyoupageerror = By.xpath("//button[@class='btn btn-secondary goto-home-err']");
-
+	private By ThankyoupageHome = By.xpath("//button[@class='btn btn-secondary goto-home']");
 	private By gstCompanyName = By.xpath("//div[contains(@class,'comp-name')]");
 	private By gstCompanyAddress = By.xpath("//div[contains(@class,'comp-addr')]");
 
@@ -122,12 +123,12 @@ public class RegistrationPage {
 	}
 
 	public boolean validateThankYouPage() {
-		return driver.findElement(Thankyoupageerror).isEnabled();
+		return driver.findElement(ThankyoupageHome).isEnabled();
 	}
 
 	public boolean validateloginPage() throws InterruptedException {
 		Thread.sleep(4000);
-		return driver.findElement(email).isEnabled();
+		return driver.findElement(mobileno).isEnabled();
 	}
 
 	public void getGstCompanyDetails() {

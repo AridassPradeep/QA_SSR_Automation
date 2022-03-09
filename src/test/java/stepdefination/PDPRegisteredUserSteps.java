@@ -20,6 +20,13 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.validateLogin();
 
 	}
+	
+	@Given("user is on product detail page of hotrolled item")
+	public void user_is_on_product_detail_page_of_hotrolled_item() throws InterruptedException {
+		//pdpreguser.validatesearchwithcategoryreguser();
+		pdpreguser.selectProductreguser();
+
+	}
 
 	@Given("user is on product detail page of colored item")
 	public void user_is_on_product_detail_page_of_colored_item() throws InterruptedException {
@@ -32,8 +39,8 @@ public class PDPRegisteredUserSteps {
 	public void user_clicks_on_add_to_cart_button_available_in_the_right_side_of_the_webpage()
 			throws InterruptedException {
 
-		pdpreguser.selectDimensionreguser();
-		pdpreguser.clickQuantity();
+		pdpreguser.selectThicknessWidthLength();
+		//pdpreguser.clickQuantity();
 		pdpreguser.clickAddtoCart();
 
 	}

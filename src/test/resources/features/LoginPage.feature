@@ -4,8 +4,10 @@ Feature: Login page feature
   Background: User opens website
     Given user is on home page
     When user clicks on login button
+   When user click  on login by email
 
   Scenario Outline: verify the user able to login with Email and password
+    
     When user enters logins with username with "<email>" and  "<password>"
     And user clicks on signin
     Then user homepage is displayed
@@ -71,6 +73,7 @@ Feature: Login page feature
       | phoneno    | password |
       | 9218775234 |          |
 
+ 
   Scenario Outline: verify the Registration Button does not display after user Login
     When user enters logins with username with "<email>" and  "<password>"
     And user clicks on signin

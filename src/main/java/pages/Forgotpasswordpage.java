@@ -58,8 +58,9 @@ public class Forgotpasswordpage {
 
 	}
 
-	public void clickproceed() {
+	public void clickproceed() throws InterruptedException {
 		driver.findElement(proceed).click();
+		Thread.sleep(4000);
 	}
 
 	public boolean clickEmail() {

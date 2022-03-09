@@ -4,22 +4,23 @@ Feature: Product Landing Page feature for RegUser
   Background: User opens website
     Given user is on home page
     When user clicks on login button
+    When user click  on login by email
     When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
-    When user enter "Hot Rolled Sheet" in search bar
-    And user click on search button
+    When user selects Hot Rolled products
     When user scroll down till enquiry button
 
   Scenario: Verify message on enquiry banner
     And Below message should be displyed on enquiry form banner "Can’t find what you are looking for?  "“Can’t find what you are looking for? Tell us your specific requirements. Your query will be sent to JSW plant for the right price and we will get back to you"
 
-  Scenario: Verify banner after searched keyword is not found for logged in user
+  # Scenario: Verify banner after searched keyword is not found for logged in user
     When user enter "ice cream" in search bar
     Then verify search result is not found
     Then verify enquiry banner is displayed
-@check
-  Scenario: Verify enquiry form from category navigation for logged in user
+
+
+   # Scenario: Verify enquiry form from category navigation for logged in user
     When user select category from "Steel By categories"
     Then verify enquiry banner is displayed
 

@@ -17,6 +17,11 @@ public class LoginPageSteps {
 		loginPage.clickLoginButton();
 	}
 
+	@When("user click  on login by email")
+	public void user_click_on_login_by_email() {
+		loginPage.clickloginByEmail();
+	}
+
 	@When("user enters logins with username with {string} and  {string}")
 	public void user_enters_logins_with_username_with_and(String uname, String pwd) {
 
@@ -31,7 +36,7 @@ public class LoginPageSteps {
 
 	@Then("user homepage is displayed")
 	public void user_homepage_is_displayed() throws InterruptedException {
-	//	Assert.assertTrue(loginPage.validateLoginuserMenu());
+		// Assert.assertTrue(loginPage.validateLoginuserMenu());
 	}
 
 	@When("user clicks on forgotpassword")

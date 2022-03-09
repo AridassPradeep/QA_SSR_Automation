@@ -9,6 +9,7 @@ import pages.HomePage;
 import pages.ProductPage;
 import pages.RegistrationPage;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class HomePageSteps {
 
@@ -22,6 +23,11 @@ public class HomePageSteps {
 
 	}
 
+	@When("user selects Hot Rolled products")
+	public void user_selects_colour_coated_products() throws InterruptedException {
+		homePage.selectHotRolledProduct(); 
+	}
+	
 	@Then("Verify Search Bar is displayed with search icon")
 	public void verify_search_bar_is_displayed_with_search_icon() {
 		Assert.assertTrue(homePage.validateSearch());

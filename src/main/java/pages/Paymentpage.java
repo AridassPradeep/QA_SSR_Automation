@@ -19,19 +19,28 @@ public class Paymentpage {
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
-	private By banklist = By.xpath("//select[@id='BanksList']");
-	private By remove = By.xpath("//a[@role='button']");
-	private By confirmremove = By.xpath("//input[@class='remove_item_btn']");
+	//private By banklist = By.xpath("//select[@id='BanksList']");
+	private By banklistnew = By.xpath("//select[@id='banks']");
+	private By remove = By.xpath("//span[text()='Remove']");
+	// private By confirmremove = By.xpath("//input[@class='remove_item_btn']");
+	private By confirmremove = By.xpath("//div[@class='remove_item_btn_b']/button");
 	private By messagecartempty = By.xpath("//div[@class='empty-content text-center']");
 	// private By count1 = By.xpath("//div[@class='count' and text()=1]");
 	private By cartcount = By.xpath("//div[@class='count']");
 	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
-	private By payNow = By.xpath("//button[@class='btn btn-red']");
+	private By payNow = By.xpath("//span[contains(text(),'Proceed to pay')]");
 	private By Success = By.xpath("//button[@class='success']");
-	private By successmessage = By.xpath("//div[@class='success-order-title']");
+	private By successmessage = By.xpath("//div[contains(text(),'Payment successful')]");
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
-	// private By onlycart =
-	// By.xpath("//*[@id=\"__layout\"]/div/header/div[1]/div[3]/a/img");
+	  private By user = By.xpath("//div[@class='drop-down-whole']");
+	private By UTR = By.xpath("//div[@class='utr-field']/input");
+	private By confirmPayment = By.xpath("(//span[text()='Confirm payment'])[1]");
+	private By error = By.xpath("//span[text()=' Enter a valid UTR number.']");
+	private By error2 = By.xpath("//span[contains(text(),'Special characters are not allowed.')]");
+	private By netbankingdisabled = By.xpath("//a[@aria-disabled='true'][(text()='Net banking')]");
+	private By neftsuccessmessage = By.xpath("//div[text()='Thanks for confirming payment']");
+	private By proceedtopaypmtpage = By.xpath("//span[text()='Proceed to pay']");
+	private By myCart = By.xpath("//a[contains(text(),'My cart')]");
 
 	public Paymentpage(WebDriver driver) {
 		this.driver = driver;
@@ -49,18 +58,19 @@ public class Paymentpage {
 	}
 
 	public void clickproceedtopay() {
+
 		driver.findElement(proceedtopay).click();
 	}
 
 	public void validateBankList() {
-		driver.findElement(banklist).isDisplayed();
+		driver.findElement(banklistnew).isDisplayed();
 	}
 
 	public void clickBankList() {
 
-		WebElement dropdown = driver.findElement(banklist);
+		WebElement dropdown = driver.findElement(banklistnew);
 		Select select = new Select(dropdown);
-		select.selectByVisibleText("Bank of India");
+		select.selectByVisibleText("Catholic Syrian Bank");
 
 	}
 
@@ -121,10 +131,19 @@ public class Paymentpage {
 		int i = driver.findElements(alldimensions).size();
 		System.out.println(i);
 		Thread.sleep(3000);
-		alldimensions2.get(9).click();
-		// alldimensions2.get(1).click();
-		alldimensions2.get(13).click();
-		alldimensions2.get(15).click();
+		// alldimensions2.get(9).click();
+		alldimensions2.get(i - 7).click();
+		// alldimensions2.get(13).click();
+		alldimensions2.get(i - 3).click();
+		// alldimensions2.get(15).click();
+		alldimensions2.get(i - 1).click();
+
+	}
+
+	public void enterQuantity3() throws InterruptedException {
+
+		driver.findElement(quantity).sendKeys("3");
+		Thread.sleep(3000);
 
 	}
 
@@ -144,7 +163,14 @@ public class Paymentpage {
 
 	public void selectBank() throws InterruptedException {
 		Thread.sleep(3000);
-		Select bank = new Select(driver.findElement(By.id("BanksList")));
+		Select bank = new Select(driver.findElement(By.id("banks")));
+		bank.selectByVisibleText("Catholic Syrian Bank");
+
+	}
+
+	public void selectBankNew() throws InterruptedException {
+		Thread.sleep(3000);
+		Select bank = new Select(driver.findElement(banklistnew));
 		bank.selectByVisibleText("Catholic Syrian Bank");
 
 	}
@@ -202,4 +228,116 @@ public class Paymentpage {
 
 	}
 
+	public void enterUTR(String UTRnumber) {
+		driver.findElement(UTR).clear();
+		driver.findElement(UTR).sendKeys(UTRnumber);
+	}
+
+	public void validateConfirmPayment(String UTRnumber2) throws InterruptedException {
+		if (UTRnumber2.matches("^[a-zA-Z0-9]{1,15}$")) {
+			System.out.println("Second");
+			driver.findElement(error).isDisplayed();
+
+		} else if (UTRnumber2.matches("^[a-zA-Z]+[0-9]+{16,22}$")) {
+			System.out.println("First");
+			driver.findElement(confirmPayment).isEnabled();
+			Thread.sleep(2000);
+			System.out.println(UTRnumber2.matches("^[a-zA-Z]+[0-9]+{16,22}$"));
+			driver.findElement(confirmPayment).click();
+
+		}
+
+		else if (UTRnumber2.matches("^[0-9]+{1,22}$")) {
+			System.out.println("Third");
+			driver.findElement(error2).isDisplayed();
+
+		} else if (UTRnumber2.matches("^[a-zA-Z]+{1,22}$")) {
+			System.out.println("Fourth");
+			driver.findElement(error2).isDisplayed();
+		}
+
+	}
+
+	public String validateConfirmPayment2(String UTRnumber2) throws InterruptedException {
+		if (UTRnumber2.matches("^[a-zA-Z0-9]{1,15}$")) {
+			System.out.println("Second");
+			return driver.findElement(error).getText();
+
+		} else if (UTRnumber2.matches("^[a-zA-Z]+[0-9]+{16,22}$")) {
+			System.out.println("First");
+			driver.findElement(confirmPayment).isEnabled();
+			Thread.sleep(2000);
+			System.out.println(UTRnumber2.matches("^[a-zA-Z]+[0-9]+{16,22}$"));
+			driver.findElement(confirmPayment).click();
+
+		}
+
+		else if (UTRnumber2.matches("^[0-9]+{1,22}$")) {
+			System.out.println("Third");
+			return driver.findElement(error2).getText();
+
+		} else if (UTRnumber2.matches("^[a-zA-Z]+{1,22}$")) {
+			System.out.println("Fourth");
+			return driver.findElement(error2).getText();
+		}
+		return driver.findElement(error).getText();
+
+	}
+
+	public void validateNEFTSuccessMessage() {
+		driver.findElement(neftsuccessmessage).isDisplayed();
+	}
+
+	public void validateNetBanking() {
+		driver.findElement(netbankingdisabled).isDisplayed();
+
+	}
+
+	public void clickConfirmPayment() {
+		driver.findElement(confirmPayment).click();
+
+	}
+
+	public void clickProceedToPayPMTPage() {
+
+		driver.findElement(proceedtopaypmtpage).click();
+	}
+	public void clickLogOut() throws InterruptedException
+	{
+		
+			
+		driver.findElement(user).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//div[text()='Logout']")).click();
+		Thread.sleep(3000);		
+	}
+	
+	public boolean isElementPresentcart() throws Exception {
+		try {
+			driver.findElement(cartcount);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public void deleteProductfromCartdo() throws Exception
+
+	{
+
+		driver.findElement(cartcount).click();
+		Thread.sleep(3000);
+		driver.findElement(myCart).click();
+		while (!isElementPresentemptycart()) {
+
+			driver.findElement(remove).click();
+			Thread.sleep(2000);
+			driver.findElement(confirmremove).click();
+			Thread.sleep(2000);
+		}
+	
+	}
+	
+	
+	
 }

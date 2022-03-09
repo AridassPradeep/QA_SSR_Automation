@@ -27,7 +27,7 @@ public class MyOrderPages {
 	@FindBy(xpath = "//div[@class='cancel-order-message']")
 	private WebElement cancelMge;
 	//------------------- View details & Need help ------------------------	
-	@FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/div[4]/a")
+	@FindBy(xpath = "//a[contains(text(),'My orders')]")
 	private WebElement myOrder;
 	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
 	private WebElement scrollViewDetails;

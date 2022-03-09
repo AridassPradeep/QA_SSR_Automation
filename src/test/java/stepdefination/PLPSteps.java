@@ -15,6 +15,9 @@ public class PLPSteps {
 	ProductLandingPage productlandingpage = new ProductLandingPage(DriverFactory.getDriver());
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
 
+	
+
+
 	@When("user click on search button")
 	public void user_click_on_search_button() throws InterruptedException {
 
