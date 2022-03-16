@@ -22,7 +22,7 @@ public class PDPRegisteredUserPage {
 	private By productselect = By.xpath("//div[@class='plp-product-item']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By addquantity = By.xpath("//div[2]/div[1]/div[1]/div[1]/button[1]/img[1]");
-	private By addtocartbutton = By.xpath("//div[3]/div[3]/div[1]/button[1]/div[1]");
+	private By addtocartbutton = By.xpath("//div[3]/div[1]/button[1]/div[1]");
 	private By diameter = By.xpath("//div[contains(@class,'size_1')]/child::div[@class='dimension-size']");
 	private By productselectwirerod = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -58,6 +58,16 @@ public class PDPRegisteredUserPage {
 		productselected.get(0).click();
 
 	}
+	
+	public void selectSteelProductreguser() throws InterruptedException {
+		Thread.sleep(2000);
+
+		List<WebElement> productselected = driver.findElements(productselect);
+
+		productselected.get(2).click();
+
+	}
+
 
 	public void selectProductcoldrolled() throws InterruptedException {
 		Thread.sleep(2000);
@@ -250,4 +260,29 @@ public class PDPRegisteredUserPage {
 		return false;
 	}
 
+	public void stainlessSteelDetails() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("1000");
+		Thread.sleep(2000);
+		driver.findElement(addquantity).click();
+		Thread.sleep(2000);
+	}
+	
+	public void SteelDetails() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Coating grade - AZ (GSM)')]//following::div[1]//button")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("10");
+		Thread.sleep(2000);
+		driver.findElement(addquantity).click();
+		Thread.sleep(2000);
+	}
 }

@@ -13,8 +13,8 @@ public class LoginPageSteps {
 	private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
 
 	@When("user clicks on login button")
-	public void user_clicks_on_login_button() {
-		loginPage.clickLoginButton();
+	public void user_clicks_on_login_button() throws InterruptedException {
+		//loginPage.clickLoginButton();
 	}
 
 	@When("user click  on login by email")

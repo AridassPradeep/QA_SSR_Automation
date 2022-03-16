@@ -29,15 +29,7 @@ public class DirectOrderSteps {
 		doppage.validateBuyFromVerified();
 	}
 
-	@When("check cart is empty")
-	public void check_cart_is_empty() throws Exception {
-		if (doppage.isElementPresentcart())
-
-		{
-
-			doppage.deleteProductfromCart();
-		}
-	}
+	
 
 	@When("user login to google cloud")
 	public void user_login_to_google_cloud() {
@@ -86,13 +78,7 @@ public class DirectOrderSteps {
 		doppage.validateMyRequirements();
 	}
 
-	@When("user click on confirm payment")
-	public void user_click_on_confirm_payment() throws InterruptedException {
-		Thread.sleep(4000);
-		doppage.clickConfirmPayment();
-		Thread.sleep(5000);
 
-	}
 
 	@When("user click on make payment and confirms payment successful")
 	public void user_click_on_make_payment_and_confirms_payment_successful() throws InterruptedException {
@@ -108,16 +94,7 @@ public class DirectOrderSteps {
 		doppage.validateProceedtoPaytop();
 	}
 
-	@When("user click on Proceed to Pay and Mycart on top")
-	public void user_click_on_Proceed_to_Pay_and_Mycart_on_top() throws InterruptedException {
-		doppage.clickProceedtoPaytop();
-		Thread.sleep(3000);
-		doppage.clickMyCart();
-		Thread.sleep(2000);
-		doppage.clickProceedtoPay();
-		Thread.sleep(3000);
-	}
-
+	
 	@Then("verify Request Price is displayed on rightside")
 	public void verify_request_price_is_displayed_on_rightside() {
 		doppage.validateRequestPrice();

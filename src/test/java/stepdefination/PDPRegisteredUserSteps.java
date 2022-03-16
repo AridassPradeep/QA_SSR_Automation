@@ -39,7 +39,7 @@ public class PDPRegisteredUserSteps {
 	public void user_clicks_on_add_to_cart_button_available_in_the_right_side_of_the_webpage()
 			throws InterruptedException {
 
-		pdpreguser.selectThicknessWidthLength();
+		//pdpreguser.selectThicknessWidthLength();
 		//pdpreguser.clickQuantity();
 		pdpreguser.clickAddtoCart();
 
@@ -191,6 +191,21 @@ public class PDPRegisteredUserSteps {
 	public void deal_pill_gets_clicked() {
 	    pdpreguser.validatedealPillclicked();
 	}
+	
+	@Given("user is on product detail page of Stainless Steel item")
+	public void user_is_on_product_detail_page_of_stainless_steel_item() throws InterruptedException {
+		pdpreguser.stainlessSteelDetails();
+	    
+	}
+	
+	@Given("user is on product detail page of Steel item")
+	public void user_is_on_product_detail_page_of_steel_item() throws InterruptedException {
+		pdpreguser.SteelDetails();
+	    
+	}
+
+
+
 	
 
 }

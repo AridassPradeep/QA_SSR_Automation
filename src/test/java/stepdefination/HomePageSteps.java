@@ -197,13 +197,14 @@ public class HomePageSteps {
 	public void verify_that_is_displaying_based_on_the_successful_submission_of_enquiry_form(String string) {
 
 	}
-
+	
 	@Then("Verify the banners are displayed on the JSW Home Page")
 	public void verify_the_banners_are_displayed_on_the_jsw_home_page() throws InterruptedException {
 		homePage.clickonHomePageLogo();
 		Thread.sleep(2500);
 		System.out.println("No of banner images " + homePage.validateSliderContainerImages());
 	}
+	
 
 	@Then("Verify the Enquiry form banner displayed on the Home Page")
 	public void verify_the_enquiry_form_banner_displayed_on_the_home_page() {
@@ -247,5 +248,36 @@ public class HomePageSteps {
 	public void verify_for_help_line_number_is_present_in_footer_section() {
 		Assert.assertTrue(homePage.validatehelpLineNumber());
 	}
+	
+	@Then("Hot rolled sheets Hot rolled coils Cold rolled sheets Cold rolled coils is displayed in homepage in stainless steel section")
+	public void hot_rolled_sheets_hot_rolled_coils_cold_rolled_sheets_cold_rolled_coils_is_displayed_in_homepage_in_stainless_steel_section() {
+		Assert.assertTrue(homePage.validateHotRolledSheetsInHomePage());
+	}
+	
+	@When("user clicks on Hot Rolled Sheets Series {int} Series {int} Series {int} is displayed")
+	public void user_clicks_on_hot_rolled_sheets_series_series_series_is_displayed(Integer int1, Integer int2, Integer int3) {
+		Assert.assertTrue(homePage.validateSeries200InHomePage());
+	}
+	
+	@When("user clicks on Stainless Steel Navigation Menu")
+	public void user_clicks_on_stainless_steel_navigation_menu() throws InterruptedException {
+		homePage.clickonStainlessSteelMenu();
+	}
+
+	@When("user clicks on Steel Navigation Menu")
+	public void user_clicks_on_steel_navigation_menu() throws InterruptedException {
+		homePage.clickonSteelMenu();
+	}
+
+	@When("user clicks on homePage Logo And navigates to homepage")
+	public void user_clicks_on_home_page_logo_and_navigates_to_homepage() {
+	  
+	}
+
+
+	
+
+
+
 
 }

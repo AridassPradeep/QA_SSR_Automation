@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 
 import pages.HomePage;
+import pages.PDPRegisteredUserPage;
 import pages.ProductLandingPage;
 import factory.DriverFactory;
 
@@ -13,6 +14,7 @@ import io.cucumber.java.en.When;
 public class PLPSteps {
 
 	ProductLandingPage productlandingpage = new ProductLandingPage(DriverFactory.getDriver());
+	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
 
 	
@@ -91,7 +93,7 @@ public class PLPSteps {
 	}
 
 	@Then("All the filters should be removed All the products should display and no filters has to be selected\"")
-	public void all_the_filters_should_be_removed_all_the_products_should_display_and_no_filters_has_to_be_selected() {
+	public void all_the_filters_should_be_removed_all_the_products_should_display_and_no_filters_has_to_be_selected() throws InterruptedException {
 		productlandingpage.validateFiltersTobeRemoved();
 	}
 
@@ -127,17 +129,17 @@ public class PLPSteps {
 	}
 
 	@Then("clear all hyper link must be available after selection of more than {int} filters")
-	public void clear_all_hyper_link_must_be_available_after_selection_of_more_than_filters(Integer int1) {
+	public void clear_all_hyper_link_must_be_available_after_selection_of_more_than_filters(Integer int1) throws InterruptedException {
 		Assert.assertTrue(productlandingpage.validateClearAll());
 	}
 
 	@When("click on clear all hyper link")
-	public void click_on_clear_all_hyper_link() {
+	public void click_on_clear_all_hyper_link() throws InterruptedException {
 		productlandingpage.clickClearAll();
 	}
 
 	@Then("all the applied filters should be removed")
-	public void all_the_applied_filters_should_be_removed() {
+	public void all_the_applied_filters_should_be_removed() throws InterruptedException {
 		productlandingpage.validateFiltersTobeRemoved();
 	}
 
@@ -275,14 +277,14 @@ public class PLPSteps {
 
 
 	@When("click on cancel grade from tags")
-	public void click_on_cancel_grade_from_tags() {
+	public void click_on_cancel_grade_from_tags() throws InterruptedException {
 		Assert.assertTrue(productlandingpage.validateClearAll());
 		productlandingpage.clickClearAll();
 		
 	}
 
 	@Then("After cancelling the cancelled tag should be eliminated from the tags and products should display accordingly")
-	public void after_cancelling_the_cancelled_tag_should_be_eliminated_from_the_tags_and_products_should_display_accordingly() {
+	public void after_cancelling_the_cancelled_tag_should_be_eliminated_from_the_tags_and_products_should_display_accordingly() throws InterruptedException {
 		productlandingpage.validateFiltersTobeRemoved();
 	}
 	
@@ -296,8 +298,71 @@ public class PLPSteps {
 	  
 	}
 	
+	@Then("Stainless Steel Products are displayed")
+	public void stainless_steel_products_are_displayed() {
+		
+		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Stainless Steel");
+	   
+	}
+	
+	@Then("Steel Products are displayed")
+	public void steel_products_are_displayed() {
+		
+		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Steel");
+	   
+	}
+	@Then("Breadcrump should display Home > Metals and Alloys > Stainless Steel")
+	public void breadcrump_should_display_home_metals_and_alloys_stainless_steel() {
+		
+		Assert.assertEquals(productlandingpage.validatePLPBreadCrumb(), "Stainless Steel");
+	}
 	
 
+	@When("user clicks on home hyper link in breadcrumb")
+	public void user_clicks_on_home_hyper_link_in_breadcrumb() {
+		productlandingpage.clickonHomeHyperLink();
+	   
+	}
+	
+	@Then("products should display in grid view  and product count should be displayed")
+	public void products_should_display_in_grid_view_and_product_count_should_be_displayed() {
+		productlandingpage.TotalProductCount();
+	}
+
+
+
+	@Then("Filter with Thickness ,Width and Length to be displayed")
+	public void filter_with_thickness_width_and_length_to_be_displayed() {
+	  Assert.assertTrue(productlandingpage.validatePLPFilter());
+	}
+
+	@Then("user click on grade in filter")
+	public void user_click_on_grade_in_filter() throws InterruptedException {
+		productlandingpage.clickonGradeFilter();
+	}
+
+
+	@Then("click on reset")
+	public void click_on_reset() {
+		productlandingpage.clickResetFilter();
+	}
+	
+	@Then("all products to be displayed")
+	public void all_products_to_be_displayed() throws InterruptedException {
+		productlandingpage.validateFiltersTobeRemoved();
+
+	}
+
+	@When("user selects Stainless Steel product")
+	public void user_selects_stainless_steel_product() throws InterruptedException {
+		pdpreguser.selectProductreguser();
+	}
+
+	
+	@When("user selects Steel product")
+	public void user_selects_steel_product() throws InterruptedException {
+		pdpreguser.selectSteelProductreguser();
+	}
 
 
 }

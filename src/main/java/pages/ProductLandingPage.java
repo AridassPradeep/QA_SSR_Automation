@@ -35,12 +35,11 @@ public class ProductLandingPage {
 
 	public boolean Validatebreadcrumb() {
 		return driver.findElement(By.xpath("//div[@class='breadcums_url']")).isDisplayed();
-		
+
 	}
 
-
 	public void clickonHomeHyperLink() {
-		driver.findElement(By.xpath("//span[contains(text(),'HOME')]")).click();
+		driver.findElement(By.xpath("//span[contains(text(),'Home')]")).click();
 	}
 
 	public void categoriesTabList() throws InterruptedException {
@@ -71,14 +70,13 @@ public class ProductLandingPage {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@value='2062_2011']")).click();
 	}
-	
+
 	public void click277_2018() throws InterruptedException {
 		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@value='277_2018']")).click();
 		Thread.sleep(2000);
 	}
-
 
 	public void clickE350A() throws InterruptedException {
 		// driver.findElement(By.xpath("//span[contains(text(),'Grades and sub
@@ -107,7 +105,8 @@ public class ProductLandingPage {
 		driver.findElement(By.xpath("//a[@class='list-icon']")).click();
 	}
 
-	public void validateFiltersTobeRemoved() {
+	public void validateFiltersTobeRemoved() throws InterruptedException {
+		Thread.sleep(3000);
 		if (isElementPresent("//div[contains(text(),'Filters applied')]")) {
 			Assert.fail();
 		}
@@ -122,8 +121,8 @@ public class ProductLandingPage {
 		}
 	}
 
-	public boolean validateClearAll() {
-		return driver.findElement(By.xpath("//li[contains(text(),'CLEAR ALL')]")).isEnabled();
+	public boolean validateClearAll() throws InterruptedException {
+		return driver.findElement(By.xpath("//span[contains(text(),'×')]")).isEnabled();
 
 	}
 
@@ -135,9 +134,8 @@ public class ProductLandingPage {
 		}
 	}
 
-	public void clickClearAll() {
-		driver.findElement(By.xpath("//li[contains(text(),'CLEAR ALL')]")).click();
-
+	public void clickClearAll() throws InterruptedException {
+		driver.findElement(By.xpath("//span[contains(text(),'×')]")).click();
 	}
 
 	public void countNoofProductImages() {
@@ -165,15 +163,14 @@ public class ProductLandingPage {
 		driver.findElement(By.xpath("//div[contains(text(),'Length')]")).isDisplayed();
 
 	}
-	
-	public void validateFilters()
-	{
+
+	public void validateFilters() {
 		driver.findElement(By.xpath("//span[contains(text(),'Application Sectors')]")).isDisplayed();
 		driver.findElement(By.xpath("//div[contains(text(),'Forms')]")).isDisplayed();
 		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).isDisplayed();
 		driver.findElement(By.xpath("//span[contains(text(),'Application Sectors')]")).isDisplayed();
 		driver.findElement(By.xpath("//div[@class='thickness-container']")).isDisplayed();
-		
+
 	}
 
 	public void validateHotRolledProductName() {
@@ -190,124 +187,150 @@ public class ProductLandingPage {
 	}
 
 	public void clickonProduct() {
-    
-		List<WebElement> productList=driver.findElements(By.xpath("//div[@class='prod-plpimg1']"));
+
+		List<WebElement> productList = driver.findElements(By.xpath("//div[@class='prod-plpimg1']"));
 		productList.get(1).click();
 	}
 
 	public void validatedeliveryDate() {
-	    
-		List<WebElement> productList=driver.findElements(By.xpath("//span[@class='deliveryschedule']"));		
+
+		List<WebElement> productList = driver.findElements(By.xpath("//span[@class='deliveryschedule']"));
 		System.out.println("Delivery Date" + productList.get(1).getText());
 	}
-	
-      public void validatePrice() {
-	    
-		List<WebElement> productPrice=driver.findElements(By.xpath("//div[@class='plpprodprice']//span//span"));		
+
+	public void validatePrice() {
+
+		List<WebElement> productPrice = driver.findElements(By.xpath("//div[@class='plpprodprice']//span//span"));
 		System.out.println("Product Price" + productPrice.get(1).getText());
 	}
-      
-      public void validateInvalidSearchMessage()
-      {
-    	  String firstmsg=driver.findElement(By.xpath("//div[@class='message1']")).getText();
-    	  String secondmsg=driver.findElement(By.xpath("//div[@class='message2']")).getText();
-    	  String thirdmsg=driver.findElement(By.xpath("//div[@class='message3']")).getText();
-    	  System.out.println(firstmsg);
-    	  System.out.println(secondmsg);
-    	  System.out.println(thirdmsg);
-    	  
-      }
+
+	public void validateInvalidSearchMessage() {
+		String firstmsg = driver.findElement(By.xpath("//div[@class='message1']")).getText();
+		String secondmsg = driver.findElement(By.xpath("//div[@class='message2']")).getText();
+		String thirdmsg = driver.findElement(By.xpath("//div[@class='message3']")).getText();
+		System.out.println(firstmsg);
+		System.out.println(secondmsg);
+		System.out.println(thirdmsg);
+
+	}
+
+	public void verifyGradesAndSubgradesForHotRolled() throws InterruptedException {
+		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@value='2062_2011']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='E250A']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='E250BR']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='E350A']")).isDisplayed();
+
+	}
+
+	public void verifyFilterWithColor() throws InterruptedException {
+		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='YS_550']")).isDisplayed();
+
+	}
+
+	public void verifyDiameter() {
+		driver.findElement(By.xpath("//div[@class='thickness-container']//div[@class='thickness-img-name']"))
+				.isDisplayed();
+
+	}
+
+	public void verifyGradesAndSubgradesForColdRolled() throws InterruptedException {
+		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@value='2062_2011']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='E250A']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='513_PART1_2016']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='1079_2017']")).isDisplayed();
+
+	}
+
+	public void verifyGradesAndSubgradesForCoated() throws InterruptedException {
+		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@value='15961_2012']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='GPIF']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='GP']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='GPD']")).isDisplayed();
+
+	}
+
+	public void scrollTillEnquiryForm() {
+
+		WebElement PLPEnquiry = driver.findElement(By.xpath("//button[@class='enquery-button plp-banner-btn']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", PLPEnquiry);
+		// PLPEnquiry.click();
+		// driver.findElement(By.xpath("//input[@name='nameChange']")).sendKeys("fbhfgf");
+
+	}
+
+	public void enquiry() throws InterruptedException {
+		WebElement PLPEnquiry = driver.findElement(By.xpath("//button[@class='enquery-button plp-banner-btn']"));
+
+		PLPEnquiry.click();
+		driver.findElement(By.id("message")).sendKeys("test requirement");
+		driver.findElement(By.xpath("//button[@class='enquery-button']")).click();
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//div[@class='query-id']//following::div[2]")).getText();
+
+	}
+
+	public void guestenquiry() throws InterruptedException {
+		WebElement PLPEnquiry = driver.findElement(By.xpath("//button[@class='enquery-button plp-banner-btn']"));
+
+		PLPEnquiry.click();
+		driver.findElement(By.id("nameChange")).sendKeys("ramam");
+		driver.findElement(By.name("mobile")).sendKeys("8787898989");
+		driver.findElement(By.xpath("//*[text()='Procced']")).click();
+
+		driver.findElement(By.id("message")).sendKeys("test requirement");
+		driver.findElement(By.xpath("//button[@class='enquery-button']")).click();
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//div[@class='query-id']//following::div[2]")).getText();
+
+	}
+
+	public String validatePLPListResults() {
+		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
+		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
+
+	}
 	
-      public void verifyGradesAndSubgradesForHotRolled() throws InterruptedException {
-  		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
-  		Thread.sleep(3000);
-  		driver.findElement(By.xpath("//input[@value='2062_2011']")).isDisplayed();
-  		driver.findElement(By.xpath("//input[@value='E250A']")).isDisplayed();
-  		driver.findElement(By.xpath("//input[@value='E250BR']")).isDisplayed();
-  		driver.findElement(By.xpath("//input[@value='E350A']")).isDisplayed();
-  		  
+	public String validatePLPBreadCrumb() {
+		System.out.println(driver.findElement(By.xpath("//span[@class='home'][3]")).getText());
+		return driver.findElement(By.xpath("//span[@class='home'][3]")).getText();
 
-  	}
-      public void verifyFilterWithColor() throws InterruptedException
-      {
-    	  driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
-    	  Thread.sleep(2000);
-    	  driver.findElement(By.xpath("//input[@value='YS_550']")).isDisplayed();
-    	
-      }
-      
-      public void verifyDiameter()
-      {
-    	  driver.findElement(By.xpath("//div[@class='thickness-container']//div[@class='thickness-img-name']")).isDisplayed();
-    	
-      }
-      
-      public void verifyGradesAndSubgradesForColdRolled() throws InterruptedException {
-    		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
-    		Thread.sleep(3000);
-    		driver.findElement(By.xpath("//input[@value='2062_2011']")).isDisplayed();
-    		driver.findElement(By.xpath("//input[@value='E250A']")).isDisplayed();
-    		driver.findElement(By.xpath("//input[@value='513_PART1_2016']")).isDisplayed();
-    		driver.findElement(By.xpath("//input[@value='1079_2017']")).isDisplayed();
-    		  
-
-    	}
-      
-      public void verifyGradesAndSubgradesForCoated() throws InterruptedException {
-  		driver.findElement(By.xpath("//span[contains(text(),'Grades and sub grades')]")).click();
-  		Thread.sleep(3000);
-  		driver.findElement(By.xpath("//input[@value='15961_2012']")).isDisplayed();
-  		driver.findElement(By.xpath("//input[@value='GPIF']")).isDisplayed();
-  		driver.findElement(By.xpath("//input[@value='GP']")).isDisplayed();
-  		driver.findElement(By.xpath("//input[@value='GPD']")).isDisplayed();
-  		  
-
-  	}
-      
-      public void scrollTillEnquiryForm()
-      {
-    	  
-    	  WebElement PLPEnquiry = driver.findElement(By.xpath("//button[@class='enquery-button plp-banner-btn']"));	
-    	  JavascriptExecutor js = (JavascriptExecutor) driver;
-    	  js.executeScript("arguments[0].scrollIntoView();", PLPEnquiry);
-    	 // PLPEnquiry.click();
-    	 // driver.findElement(By.xpath("//input[@name='nameChange']")).sendKeys("fbhfgf");
-    	  
-      }
-      
-      public void enquiry() throws InterruptedException
-      {
-    	  WebElement PLPEnquiry = driver.findElement(By.xpath("//button[@class='enquery-button plp-banner-btn']"));	
-     	 
-    	  PLPEnquiry.click();
-    	  driver.findElement(By.id("message")).sendKeys("test requirement");
-    	  driver.findElement(By.xpath("//button[@class='enquery-button']")).click();
-    	  Thread.sleep(10000);
-    	  driver.findElement(By.xpath("//div[@class='query-id']//following::div[2]")).getText();
-    	  
-    	  
-    	  
-      }
-      
-      public void guestenquiry() throws InterruptedException
-      {
-    	  WebElement PLPEnquiry = driver.findElement(By.xpath("//button[@class='enquery-button plp-banner-btn']"));	
-     	 
-    	  PLPEnquiry.click();
-    	  driver.findElement(By.id("nameChange")).sendKeys("ramam");
-    	  driver.findElement(By.name("mobile")).sendKeys("8787898989");
-    	  driver.findElement(By.xpath("//*[text()='Procced']")).click();
-    	  
-    	  driver.findElement(By.id("message")).sendKeys("test requirement");
-    	  driver.findElement(By.xpath("//button[@class='enquery-button']")).click();
-    	  Thread.sleep(10000);
-    	  driver.findElement(By.xpath("//div[@class='query-id']//following::div[2]")).getText();
-    	  
-    	  
-    	  
-      }
-
+	}
 	
+	public void  TotalProductCount()
+	{
+		String totalcount=driver.findElement(By.xpath("//span[@class='right-list-value']//b")).getText();
+		System.out.println("Total no of products - " +totalcount);
+	}
+	
+	public boolean validatePLPFilter() {
+		
+		driver.findElement(By.xpath("//div[contains(text(),'WIDTH')]")).isDisplayed();
+		driver.findElement(By.xpath("//div[contains(text(),'LENGTH')]")).isDisplayed();
+		return driver.findElement(By.xpath("//div[contains(text(),'THICKNESS')]")).isDisplayed();
+
+	}
+	public void clickonGradeFilter() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//label[contains(text(),'JT')]")).click();
+	}
+	
+	public void clickResetFilter()
+	{
+		driver.findElement(By.xpath("//div[contains(text(),'Reset')]")).click();
+	}
+	
+	
+
 	public boolean isElementPresent(String xpath) {
 		try {
 			driver.findElement(By.xpath(xpath));

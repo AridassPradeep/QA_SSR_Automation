@@ -34,7 +34,7 @@ public class Paymentpage {
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
 	  private By user = By.xpath("//div[@class='drop-down-whole']");
 	private By UTR = By.xpath("//div[@class='utr-field']/input");
-	private By confirmPayment = By.xpath("(//span[text()='Confirm payment'])[1]");
+	private By confirmPayment = By.xpath("//div[1]/div[7]/button[2]/span[1]");
 	private By error = By.xpath("//span[text()=' Enter a valid UTR number.']");
 	private By error2 = By.xpath("//span[contains(text(),'Special characters are not allowed.')]");
 	private By netbankingdisabled = By.xpath("//a[@aria-disabled='true'][(text()='Net banking')]");
@@ -293,7 +293,8 @@ public class Paymentpage {
 
 	}
 
-	public void clickConfirmPayment() {
+	public void clickConfirmPayment() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.findElement(confirmPayment).click();
 
 	}

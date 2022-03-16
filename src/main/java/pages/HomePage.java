@@ -27,6 +27,10 @@ public class HomePage {
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
 	private By arrowdropdown = By.xpath("//ul[@role='menu']");
 	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
+	private By HomePageHotRolledSheet = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
+	private By HomePageHotRolledSheetSeries200 = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]");
+	
+	
 	
 
 	public HomePage(WebDriver driver) {
@@ -170,4 +174,25 @@ public class HomePage {
 		js.executeScript("window.scrollBy(0,350)", "");
 	}
 
+	public boolean validateHotRolledSheetsInHomePage() {
+		return driver.findElement(HomePageHotRolledSheet).isDisplayed();
+
+	}
+	
+	public boolean validateSeries200InHomePage() {
+		return driver.findElement(HomePageHotRolledSheetSeries200).isDisplayed();
+
+	}
+	
+	public void clickonStainlessSteelMenu() throws InterruptedException
+	{
+		Thread.sleep(3200);
+		driver.findElement(By.xpath("//div[@class='navigation-item'][2]")).click();
+	}
+	
+	public void clickonSteelMenu() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@class='navigation-item'][1]")).click();
+	}
 }

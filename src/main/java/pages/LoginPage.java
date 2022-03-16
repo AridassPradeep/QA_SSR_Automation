@@ -18,7 +18,7 @@ public class LoginPage {
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
 	private By errorMessage = By.xpath("//div[@class='error_message error-messages row']");
-	private By loginByEmail = By.xpath("//button[contains(text(),'Login via Email')]");
+	private By loginByEmail = By.xpath("//button[contains(text(),'Login via email')]");
 	
 
 	public LoginPage(WebDriver driver) {
@@ -39,7 +39,8 @@ public class LoginPage {
 
 	}
 
-	public void clickLoginButton() {
+	public void clickLoginButton() throws InterruptedException {
+		Thread.sleep(4000);
 		driver.findElement(loginButton).click();
 	}
 	
