@@ -254,10 +254,20 @@ public class HomePageSteps {
 		Assert.assertTrue(homePage.validateHotRolledSheetsInHomePage());
 	}
 	
+	@Then("Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section")
+	public void hot_rolled_cold_rolled_wire_rods_coated_colour_coated_is_displayed_in_homepage_in_steel_section() {
+		Assert.assertTrue(homePage.validateHotrolledInHomePage());
+	}
+	
 	@When("user clicks on Hot Rolled Sheets Series {int} Series {int} Series {int} is displayed")
 	public void user_clicks_on_hot_rolled_sheets_series_series_series_is_displayed(Integer int1, Integer int2, Integer int3) {
 		Assert.assertTrue(homePage.validateSeries200InHomePage());
 	}
+	@When("user clicks on Hot rolled  then coils ,sheet is displayed")
+	public void user_clicks_on_hot_rolled_then_coils_sheet_is_displayed() {
+		Assert.assertTrue(homePage.validateCoilsInHomePage());
+	}
+
 	
 	@When("user clicks on Stainless Steel Navigation Menu")
 	public void user_clicks_on_stainless_steel_navigation_menu() throws InterruptedException {

@@ -17,16 +17,13 @@ public class PLPSteps {
 	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
 
-	
-
-
 	@When("user click on search button")
 	public void user_click_on_search_button() throws InterruptedException {
 
 		productlandingpage.Search();
 		Thread.sleep(2500);
 	}
-	
+
 	@Then("Breadcrump should display HOME > Search Results")
 	public void breadcrump_should_display_home_search_results() {
 		Assert.assertTrue(productlandingpage.Validatebreadcrumb());
@@ -93,12 +90,14 @@ public class PLPSteps {
 	}
 
 	@Then("All the filters should be removed All the products should display and no filters has to be selected\"")
-	public void all_the_filters_should_be_removed_all_the_products_should_display_and_no_filters_has_to_be_selected() throws InterruptedException {
+	public void all_the_filters_should_be_removed_all_the_products_should_display_and_no_filters_has_to_be_selected()
+			throws InterruptedException {
 		productlandingpage.validateFiltersTobeRemoved();
 	}
 
 	@Then("Filters applied should be shown above the Products display applied filters should display with cross button\"")
-	public void filters_applied_should_be_shown_above_the_products_display_applied_filters_should_display_with_cross_button() throws InterruptedException {
+	public void filters_applied_should_be_shown_above_the_products_display_applied_filters_should_display_with_cross_button()
+			throws InterruptedException {
 		productlandingpage.validateFiltersTobeShown();
 	}
 
@@ -129,7 +128,8 @@ public class PLPSteps {
 	}
 
 	@Then("clear all hyper link must be available after selection of more than {int} filters")
-	public void clear_all_hyper_link_must_be_available_after_selection_of_more_than_filters(Integer int1) throws InterruptedException {
+	public void clear_all_hyper_link_must_be_available_after_selection_of_more_than_filters(Integer int1)
+			throws InterruptedException {
 		Assert.assertTrue(productlandingpage.validateClearAll());
 	}
 
@@ -152,7 +152,7 @@ public class PLPSteps {
 	public void user_click_on_e350a_filter_cross_button() {
 		productlandingpage.countNoofProductImages();
 		productlandingpage.removingfilterE350A();
-		
+
 	}
 
 	@Then("After removing filter E350A remaining filters products should display")
@@ -166,8 +166,6 @@ public class PLPSteps {
 		productlandingpage.removingfilterE350A();
 		productlandingpage.removingfilterE250A();
 	}
-
-	
 
 	@Then("Filter sections are Forms ,Grades and Sub Grades,Application sector,Thickness,Width and Length")
 	public void filter_sections_are_forms_grades_and_sub_grades_application_sector_thickness_width_and_length() {
@@ -205,7 +203,6 @@ public class PLPSteps {
 		productlandingpage.clickonProduct();
 	}
 
-
 	@Then("page navigates to PDP page")
 	public void page_navigates_to_pdp_page() {
 
@@ -231,20 +228,20 @@ public class PLPSteps {
 		productlandingpage.validatedeliveryDate();
 	}
 
-
-
 	@Then("Sorry page should display with {string}{string}{string}{string}\"")
 	public void sorry_page_should_display_with(String string, String string2, String string3, String string4) {
 		productlandingpage.validateInvalidSearchMessage();
 	}
 
 	@Then("Grade and sub grade for Hot Rolled are dispalyed {int}_{int},E250_A, E250BR, E350A")
-	public void grade_and_sub_grade_for_hot_rolled_are_dispalyed_e250_a_e250br_e350a(Integer int1, Integer int2) throws InterruptedException {
+	public void grade_and_sub_grade_for_hot_rolled_are_dispalyed_e250_a_e250br_e350a(Integer int1, Integer int2)
+			throws InterruptedException {
 		productlandingpage.verifyGradesAndSubgradesForHotRolled();
 	}
 
 	@Then("Grade and sub grade for cold Rolled are displayed {int}_part1_{int} ,CR1,E250A")
-	public void grade_and_sub_grade_for_cold_rolled_are_displayed__part1_cr1_e250a(Integer int1, Integer int2) throws InterruptedException {
+	public void grade_and_sub_grade_for_cold_rolled_are_displayed__part1_cr1_e250a(Integer int1, Integer int2)
+			throws InterruptedException {
 		productlandingpage.verifyGradesAndSubgradesForColdRolled();
 	}
 
@@ -257,7 +254,6 @@ public class PLPSteps {
 	public void filter_with_color_to_be_displayed() throws InterruptedException {
 		productlandingpage.verifyFilterWithColor();
 	}
-   
 
 	@Then("Filter with Diameter to be displayed")
 	public void filter_with_diameter_to_be_displayed() {
@@ -268,85 +264,92 @@ public class PLPSteps {
 	public void user_click_on_in_filter(Integer int1, Integer int2) throws InterruptedException {
 		productlandingpage.clickGradesAndSubgrades();
 	}
-	
+
 	@When("user click on {int}_{int} in grades and subgrades filter")
 	public void user_click_on_in_grades_and_subgrades_filter(Integer int1, Integer int2) throws InterruptedException {
 		productlandingpage.click277_2018();
 	}
 
-
-
 	@When("click on cancel grade from tags")
 	public void click_on_cancel_grade_from_tags() throws InterruptedException {
 		Assert.assertTrue(productlandingpage.validateClearAll());
 		productlandingpage.clickClearAll();
-		
+
 	}
 
 	@Then("After cancelling the cancelled tag should be eliminated from the tags and products should display accordingly")
-	public void after_cancelling_the_cancelled_tag_should_be_eliminated_from_the_tags_and_products_should_display_accordingly() throws InterruptedException {
+	public void after_cancelling_the_cancelled_tag_should_be_eliminated_from_the_tags_and_products_should_display_accordingly()
+			throws InterruptedException {
 		productlandingpage.validateFiltersTobeRemoved();
 	}
-	
+
 	@When("user scroll down till enquiry button")
 	public void user_scroll_down_till_enquiry_button() {
 		productlandingpage.scrollTillEnquiryForm();
 	}
-	
+
 	@Then("Enquiry form should be displayed in PLP page for guest user")
 	public void enquiry_form_should_be_displayed_in_plp_page_for_guest_user() {
-	  
+
 	}
-	
+
 	@Then("Stainless Steel Products are displayed")
 	public void stainless_steel_products_are_displayed() {
-		
+
 		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Stainless Steel");
-	   
+
 	}
-	
+
 	@Then("Steel Products are displayed")
 	public void steel_products_are_displayed() {
-		
+
 		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Steel");
-	   
+
 	}
+
 	@Then("Breadcrump should display Home > Metals and Alloys > Stainless Steel")
 	public void breadcrump_should_display_home_metals_and_alloys_stainless_steel() {
-		
+
 		Assert.assertEquals(productlandingpage.validatePLPBreadCrumb(), "Stainless Steel");
 	}
-	
+
+	@Then("Breadcrump should display Home > Metals and Alloys > Steel")
+	public void breadcrump_should_display_home_metals_and_alloys_steel() {
+
+		Assert.assertEquals(productlandingpage.validatePLPBreadCrumb(), "Steel");
+	}
 
 	@When("user clicks on home hyper link in breadcrumb")
 	public void user_clicks_on_home_hyper_link_in_breadcrumb() {
 		productlandingpage.clickonHomeHyperLink();
-	   
+
 	}
-	
+
 	@Then("products should display in grid view  and product count should be displayed")
 	public void products_should_display_in_grid_view_and_product_count_should_be_displayed() {
 		productlandingpage.TotalProductCount();
 	}
 
-
-
 	@Then("Filter with Thickness ,Width and Length to be displayed")
 	public void filter_with_thickness_width_and_length_to_be_displayed() {
-	  Assert.assertTrue(productlandingpage.validatePLPFilter());
+		Assert.assertTrue(productlandingpage.validatePLPFilter());
 	}
 
 	@Then("user click on grade in filter")
 	public void user_click_on_grade_in_filter() throws InterruptedException {
 		productlandingpage.clickonGradeFilter();
 	}
-
+	
+	@Then("user click on grade in SteelPLPfilter")
+	public void user_click_on_grade_in_SteelPLPfilter() throws InterruptedException {
+		productlandingpage.clickonGradeFilterinSteel();
+	}
 
 	@Then("click on reset")
 	public void click_on_reset() {
 		productlandingpage.clickResetFilter();
 	}
-	
+
 	@Then("all products to be displayed")
 	public void all_products_to_be_displayed() throws InterruptedException {
 		productlandingpage.validateFiltersTobeRemoved();
@@ -358,11 +361,9 @@ public class PLPSteps {
 		pdpreguser.selectProductreguser();
 	}
 
-	
 	@When("user selects Steel product")
 	public void user_selects_steel_product() throws InterruptedException {
 		pdpreguser.selectSteelProductreguser();
 	}
-
 
 }

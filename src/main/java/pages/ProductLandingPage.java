@@ -39,6 +39,8 @@ public class ProductLandingPage {
 	}
 
 	public void clickonHomeHyperLink() {
+		driver.findElement(By.xpath("//span[contains(text(),'Found')]")).click();
+		
 		driver.findElement(By.xpath("//span[contains(text(),'Home')]")).click();
 	}
 
@@ -294,6 +296,7 @@ public class ProductLandingPage {
 	}
 
 	public String validatePLPListResults() {
+		driver.findElement(By.xpath("//span[contains(text(),'Found')]")).click();
 		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
 		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
 
@@ -323,6 +326,13 @@ public class ProductLandingPage {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//label[contains(text(),'JT')]")).click();
 	}
+	
+	public void clickonGradeFilterinSteel() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//label[contains(text(),'277:2018')]")).click();
+	}
+	
 	
 	public void clickResetFilter()
 	{

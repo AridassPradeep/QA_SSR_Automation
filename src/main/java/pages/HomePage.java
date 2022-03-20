@@ -29,6 +29,8 @@ public class HomePage {
 	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
 	private By HomePageHotRolledSheet = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
 	private By HomePageHotRolledSheetSeries200 = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]");
+	private By HomePageHotRolled = By.xpath("//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
+	private By HomePageHotRolledCoils = By.xpath("//*[text()='Coils ']");
 	
 	
 	
@@ -179,8 +181,21 @@ public class HomePage {
 
 	}
 	
+	
+	
+	
 	public boolean validateSeries200InHomePage() {
 		return driver.findElement(HomePageHotRolledSheetSeries200).isDisplayed();
+
+	}
+	
+	public boolean validateHotrolledInHomePage() {
+		return driver.findElement(HomePageHotRolled).isDisplayed();
+
+	}
+	
+	public boolean validateCoilsInHomePage() {
+		return driver.findElement(HomePageHotRolledCoils).isDisplayed();
 
 	}
 	

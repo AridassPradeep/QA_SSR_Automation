@@ -55,7 +55,7 @@ public class PDPRegisteredUserPage {
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(0).click();
+		productselected.get(6).click();
 
 	}
 	
@@ -64,7 +64,7 @@ public class PDPRegisteredUserPage {
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(2).click();
+		productselected.get(6).click();
 
 	}
 
@@ -266,6 +266,8 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("1000");
 		Thread.sleep(2000);
 		driver.findElement(addquantity).click();
@@ -280,7 +282,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Coating grade - AZ (GSM)')]//following::div[1]//button")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("10");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("2");
 		Thread.sleep(2000);
 		driver.findElement(addquantity).click();
 		Thread.sleep(2000);
