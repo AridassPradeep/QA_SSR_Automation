@@ -16,14 +16,6 @@ Feature: Login page feature
       | email               | password  |
       | ramya1347@gmail.com | Ramya@678 |
 
-  Scenario Outline: verify the user able to login with Phone Number and password
-    When user enters logins with username with "<phoneno>" and  "<password>"
-    And user clicks on signin
-    Then user homepage is displayed
-
-    Examples: 
-      | phoneno    | password  |
-      | 8238775234 | Ramya@678 |
 
   Scenario: verify the forget password link is properly working
    When user clicks on forgotpassword

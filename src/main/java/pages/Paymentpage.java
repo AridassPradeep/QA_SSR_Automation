@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -15,7 +16,7 @@ public class Paymentpage {
 	private WebDriver driver;
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
-	private By buynow = By.xpath("//button[@class='btn cart-btn-primary']");
+	private By buynow = By.xpath("//*[text()='Buy now']");
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
@@ -41,6 +42,10 @@ public class Paymentpage {
 	private By neftsuccessmessage = By.xpath("//div[text()='Thanks for confirming payment']");
 	private By proceedtopaypmtpage = By.xpath("//span[text()='Proceed to pay']");
 	private By myCart = By.xpath("//a[contains(text(),'My cart')]");
+	
+	private By confirmlater = By.xpath("//*[@id=\'no-confirm-btn\']");
+	private By pendingmessage = By.xpath("//div[text()='Your order is awaiting payment']");
+	private By makepayment = By.xpath("//*[@id=\'confirm-btn-payment-indicator\']");
 
 	public Paymentpage(WebDriver driver) {
 		this.driver = driver;
@@ -57,20 +62,26 @@ public class Paymentpage {
 		driver.findElement(proceedtopay).isDisplayed();
 	}
 
+	public void scroll() {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("window.scrollTo(0,500)", "");
+	}
+	
 	public void clickproceedtopay() {
 
 		driver.findElement(proceedtopay).click();
 	}
 
-	public void validateBankList() {
+	public void validateBankList() throws InterruptedException {
+		Thread.sleep(4000);
 		driver.findElement(banklistnew).isDisplayed();
 	}
 
-	public void clickBankList() {
-
+	public void clickBankList() throws InterruptedException {
+		Thread.sleep(3000);
 		WebElement dropdown = driver.findElement(banklistnew);
 		Select select = new Select(dropdown);
-		select.selectByVisibleText("Catholic Syrian Bank");
+		select.selectByVisibleText("HDFC Bank");
 
 	}
 
@@ -164,14 +175,14 @@ public class Paymentpage {
 	public void selectBank() throws InterruptedException {
 		Thread.sleep(3000);
 		Select bank = new Select(driver.findElement(By.id("banks")));
-		bank.selectByVisibleText("Catholic Syrian Bank");
+		bank.selectByVisibleText("HDFC Bank");
 
 	}
 
 	public void selectBankNew() throws InterruptedException {
 		Thread.sleep(3000);
 		Select bank = new Select(driver.findElement(banklistnew));
-		bank.selectByVisibleText("Catholic Syrian Bank");
+		bank.selectByVisibleText("HDFC Bank");
 
 	}
 
@@ -217,6 +228,7 @@ public class Paymentpage {
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.findElement(successmessage).isDisplayed();
+		
 	}
 
 	public void validateunsuccessfulmsg() {
@@ -225,9 +237,9 @@ public class Paymentpage {
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.findElement(unsuccessmessage).isDisplayed();
-
+		
 	}
-
+	
 	public void enterUTR(String UTRnumber) {
 		driver.findElement(UTR).clear();
 		driver.findElement(UTR).sendKeys(UTRnumber);
@@ -336,9 +348,23 @@ public class Paymentpage {
 			driver.findElement(confirmremove).click();
 			Thread.sleep(2000);
 		}
-	
 	}
 	
+	public void clickConfirmLater() {
+		driver.findElement(confirmlater).isDisplayed();
+		driver.findElement(confirmlater).click();
+	}
+	
+	public void validatePaymentPendingmsg() {
+		Set<String> handles = driver.getWindowHandles();
+		ArrayList<String> ar = new ArrayList<String>(handles);
+		driver.switchTo().window(ar.get(0));
+		driver.findElement(pendingmessage).isDisplayed();
+	}
+	
+	public void validateMakePayment() {
+		driver.findElement(makepayment).isDisplayed();
+	}
 	
 	
 }

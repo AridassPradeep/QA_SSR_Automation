@@ -57,6 +57,7 @@ public class ProfileSteps {
 	@When("user select the industrial sector")
 	public void user_select_the_industrial_sector() throws InterruptedException {
 		profilepage.clickOption();
+
 	}
 
 	@Then("Profile should be display the interest absed on industrial sector")
@@ -75,10 +76,55 @@ public class ProfileSteps {
 		profilepage.clickSave();
 
 	}
+	
+	@When("user click the Cancel button")
+	public void user_click_the_cancel_button() throws InterruptedException {
+	   profilepage.clickCancel();
+
+	}
 
 	@Then("Profile details should be saved")
 	public void profile_details_should_be_saved() {
 		Assert.assertTrue(profilepage.compareMsg());
+
+	}
+
+	@Then("user clicks on addresses")
+	public void user_clicks_on_addresses() {
+		profilepage.clickAddresses();
+	}
+
+	@Then("user can delete existing shipping addresses")
+	public void user_can_delete_existing_shipping_addresses() {
+		profilepage.DeleteAddresses();
+	}
+
+	@When("user adds a new adresses and fill all details and save it")
+	public void user_adds_a_new_adresses_and_fill_all_details_and_save_it() throws InterruptedException {
+		profilepage.cancelNewAddress();
+		Thread.sleep(3000);
+		profilepage.addAddress();
+		Thread.sleep(3000);
+		
+	}
+
+	@Then("addrees is displayed in shipping address column")
+	public void addrees_is_displayed_in_shipping_address_column() {
+
+	}
+
+	@Then("address is mentioned in manage address column")
+	public void address_is_mentioned_in_manage_address_column() {
+
+	}
+
+	@Then("user clicks on edit billing address")
+	public void user_clicks_on_edit_billing_address() {
+
+	}
+
+	@Then("edit company adress")
+	public void edit_company_adress() {
 
 	}
 

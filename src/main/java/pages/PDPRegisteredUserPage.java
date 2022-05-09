@@ -19,10 +19,10 @@ public class PDPRegisteredUserPage {
 	private By steelbycategory = By.xpath("//ul[@class='main-categories-first-child-menu']/parent::div/child::a");
 	private By menu = By.xpath("//ul[@class='main-categories-first-child-menu']/child::li");
 	private By secondmenu = By.xpath("//ul[@class='main-categories-second-child-menu']/child::li/child::a");
-	private By productselect = By.xpath("//div[@class='plp-product-item']");
+	private By productselect = By.xpath("//a[@class='prod-plpimage1name']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By addquantity = By.xpath("//div[2]/div[1]/div[1]/div[1]/button[1]/img[1]");
-	private By addtocartbutton = By.xpath("//div[3]/div[1]/button[1]/div[1]");
+	private By addtocartbutton = By.xpath("//div[@class='fw-bold add-to-cart-out']");
 	private By diameter = By.xpath("//div[contains(@class,'size_1')]/child::div[@class='dimension-size']");
 	private By productselectwirerod = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -62,9 +62,15 @@ public class PDPRegisteredUserPage {
 	public void selectSteelProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(6).click();
+		List<WebElement> productlist = driver.findElements(productselect);
+
+		for (int i = 0; i < productlist.size(); i++) {
+			if (productlist.get(i).getText().equals("JSW Steel Hot Rolled Sheets IS 2062:2011 E250A")) {
+				productlist.get(i).click();
+			}
+			break;
+		}
 
 	}
 
@@ -263,28 +269,66 @@ public class PDPRegisteredUserPage {
 	public void stainlessSteelDetails() throws InterruptedException
 	{
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[1]")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("1000");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("100");
 		Thread.sleep(2000);
-		driver.findElement(addquantity).click();
-		Thread.sleep(2000);
+		
 	}
 	
 	public void SteelDetails() throws InterruptedException
 	{
 		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("288");
+		Thread.sleep(2000);
+		
+	}
+	
+	public void selectHRPOProductreguser() throws InterruptedException {
+		Thread.sleep(2000);
+
+		List<WebElement> productselected = driver.findElements(productselect);
+
+		productselected.get(7).click();
+
+	}
+	
+	public void HRPODetails() throws InterruptedException
+	{
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Coating grade - AZ (GSM)')]//following::div[1]//button")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("2");
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("6");
 		Thread.sleep(2000);
 		driver.findElement(addquantity).click();
 		Thread.sleep(2000);
 	}
+	
+	public void HRSteelDetails() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("60");
+		Thread.sleep(2000);
+		driver.findElement(addquantity).click();
+		Thread.sleep(2000);
+	}
+
 }

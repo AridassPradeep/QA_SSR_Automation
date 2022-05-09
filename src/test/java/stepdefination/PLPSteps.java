@@ -1,21 +1,25 @@
 package stepdefination;
 
+import java.awt.AWTException;
+
 import org.junit.Assert;
-import org.junit.Ignore;
 
-import pages.HomePage;
-import pages.PDPRegisteredUserPage;
-import pages.ProductLandingPage;
 import factory.DriverFactory;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.HomePage;
+import pages.PDPRegisteredUserPage;
+import pages.PLPNewPage;
+import pages.ProductLandingPage;
+import pages.ProductPage;
 
 public class PLPSteps {
 
 	ProductLandingPage productlandingpage = new ProductLandingPage(DriverFactory.getDriver());
 	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
+	ProductPage productpage = new ProductPage(DriverFactory.getDriver());
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
+	PLPNewPage plpn = new PLPNewPage(DriverFactory.getDriver());
 
 	@When("user click on search button")
 	public void user_click_on_search_button() throws InterruptedException {
@@ -70,7 +74,7 @@ public class PLPSteps {
 	@Then("products should display in grid view product count should per page is {int}")
 	public void products_should_display_in_grid_view_product_count_should_per_page_is(Integer int1)
 			throws InterruptedException {
-		productlandingpage.validateGridView();
+		// productlandingpage.validateGridView();
 		productlandingpage.countResultPLP();
 	}
 
@@ -199,8 +203,10 @@ public class PLPSteps {
 	}
 
 	@When("user click on product name displayed on the page")
-	public void user_click_on_product_name_displayed_on_the_page() {
+	public void user_click_on_product_name_displayed_on_the_page() throws InterruptedException {
+		Thread.sleep(5000);
 		productlandingpage.clickonProduct();
+		Thread.sleep(3000);
 	}
 
 	@Then("page navigates to PDP page")
@@ -247,12 +253,18 @@ public class PLPSteps {
 
 	@Then("Filter with Coating Grade to be displayed")
 	public void filter_with_coating_grade_to_be_displayed() throws InterruptedException {
-		productlandingpage.verifyGradesAndSubgradesForCoated();
+		plpn.validateGrades();
+		Thread.sleep(2000);
+		productlandingpage.verifyGradesForCoated();
+	
+		
 	}
 
 	@Then("Filter with Color to be displayed")
 	public void filter_with_color_to_be_displayed() throws InterruptedException {
-		productlandingpage.verifyFilterWithColor();
+		plpn.validateGrades();
+		Thread.sleep(2000);
+		productlandingpage.verifyFilterColorCoated();
 	}
 
 	@Then("Filter with Diameter to be displayed")
@@ -262,7 +274,7 @@ public class PLPSteps {
 
 	@When("user click on {int}_{int} in filter")
 	public void user_click_on_in_filter(Integer int1, Integer int2) throws InterruptedException {
-		productlandingpage.clickGradesAndSubgrades();
+		productlandingpage.clickGrades();
 	}
 
 	@When("user click on {int}_{int} in grades and subgrades filter")
@@ -303,10 +315,15 @@ public class PLPSteps {
 	@Then("Steel Products are displayed")
 	public void steel_products_are_displayed() {
 
-		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Steel");
+			Assert.assertEquals(productlandingpage.validatePLPListResults(), "Steel");
 
 	}
-
+	
+	@Then("HR Products are displayed")
+	public void hr_products_are_displayed() {
+		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Hot Rolled");
+	}
+	
 	@Then("Breadcrump should display Home > Metals and Alloys > Stainless Steel")
 	public void breadcrump_should_display_home_metals_and_alloys_stainless_steel() {
 
@@ -365,5 +382,30 @@ public class PLPSteps {
 	public void user_selects_steel_product() throws InterruptedException {
 		pdpreguser.selectSteelProductreguser();
 	}
+	
+	
+	
+	@When("user clicks HR Sheet series from Steel Categories Menu")
+	public void user_clicks_hr_sheet_series_from_steel_categories_menu() throws InterruptedException, AWTException {
+		productpage.SSMenu();
+//		productpage.hrSheets();
+//		Thread.sleep(5000);
+//		productpage.selectHRSeries300();
+	}
 
+	@Then("HR Sheet series Products are displayed")
+	public void hr_sheet_series_products_are_displayed() {
+		Assert.assertEquals(productpage.validateHRSeries300Page(), "Stainless Steel hot rolled sheets");
+	}
+
+	@When("user selects HR Sheet series product")
+	public void user_selects_hr_sheet_series_product() throws InterruptedException {
+		  
+	}
+	
+	@When("user selects HR Stainless Steel product")
+	public void user_selects_hr_stainless_steel_product() {
+		Assert.assertEquals(productpage.validateHRSeries300Page(), "Stainless Steel hot rolled sheets");
+		productpage.selectProductreguserHRS();
+	}
 }

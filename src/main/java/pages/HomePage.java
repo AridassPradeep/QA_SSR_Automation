@@ -1,6 +1,9 @@
 package pages;
 
+import java.awt.AWTException;
 import java.util.List;
+
+import javax.xml.xpath.XPath;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,42 +17,80 @@ public class HomePage {
 	private By JSWLogo = By.xpath("//img[@alt='JSW One MSME']");
 	private By search = By.id("SearchText");
 	private By languageIndicator = By.xpath("//div[@data-value='ENG']");
-	private By cartIcon = By.xpath("(//a[@href='/cart-detail'])[2]");
+	private By cartIcon = By.xpath("//img[@alt='cart']");
 	private By noofCartItems = By.xpath("//div[@class='count']");
-	private By address = By.xpath("//div[@class='header-current-add']");
-	private By connectWithUs = By.xpath("//div[@class='chat connect-with-us mr-3 py-3']");
+	private By address = By.xpath("//*[@id=\'address-dropdown\']");
+	private By connectWithUs = By.xpath("//span[text()='Connect with us']");
 	private By helpLineNumber = By.xpath("//div[@class='ph-num']");
-	private By SociaMediaLogos = By.xpath("//span[@class='img0-facebook']");
-	private By footerpartContainer = By.xpath("//div[@class='footerpart-container']");
-	private By sliderContainerImages = By
-			.xpath("//div[@class='single-slider bg-img align-items-center custom-d-flex']//img");
+	private By SociaMediaLogos = By.xpath("//div[@class='social-icons-out']");
+	private By footerpartContainer = By.xpath("//div[@id='footer-cotain']");
+	private By sliderContainerImages = By.xpath("//*[@id=\'carousel_nelosakfom\']/div[1]/div/div/div/img");// img[@class='top-br-img']
 	private By mapIcon = By.xpath("//i[@class='fas fa-map-marker-alt']");
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
-	private By arrowdropdown = By.xpath("//ul[@role='menu']");
+	private By arrowdropdown = By.xpath("//header[@id='drop-down-head']");
 	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
 	private By HomePageHotRolledSheet = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
-	private By HomePageHotRolledSheetSeries200 = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]");
+	private By HomePageHotRolledSheetSeries200 = By
+			.xpath("//div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]");
 	private By HomePageHotRolled = By.xpath("//div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
 	private By HomePageHotRolledCoils = By.xpath("//*[text()='Coils ']");
-	
-	
-	
 
+	// Header
+	private By userName = By.id("drop-down-head");
+	private By myOrder = By.xpath("//a[text()='My orders']");
+	private By steelTree = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[1]");
+	private By stainlessSteelTree = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[2]");
+	private By constructionMaterial = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[3]");
+	private By helpSupport = By.xpath("(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'Help & support')])[1]");
+	private By aboutUs = By.xpath("(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'About us')])[1]");
+	private By blogs = By.xpath("//header/div[3]/div/div[1]/div[6]/a");
+	private By toggled = By.xpath("//button[@id='direct-distributor-switchv2']");
+	private By addressIcon = By.xpath("//*[@id=\'address-dropdown\']");
+	private By manageAddress = By.xpath("(//button[@class='manage-btn mt-3'])[1]");
+
+	// Footer
+	private By footerSection = By.xpath("//div[@class='main-footer']");
+	private By footerJSWLogo = By.xpath("//img[@alt='JSW Logo']");
+	private By emailSupport = By.xpath("//*[@id=\'footer-cotain\']/div/div[1]/div/div[3]/div[2]/a");
+
+	// HomepageVerification
+	private By steelCategory = By.xpath("//*[@id=\"Steel\"]");
+	private By ssCategory = By.xpath("//*[@id=\'Stainless Steel\']");
+	private By hotRolled = By.xpath("//*/div[1]/div/div/div/div/div[1]/ul/li[1]/a");
+	private By steelHRC = By.xpath("(//div[@class='selectHead'])[1]");
+	private By steelViewall = By.xpath("(//button[contains(text(),' View all')])[1]");
+	private By hotrolledsheet = By.xpath("(//a[contains(text(),'Hot rolled sheets')])[4]");
+	private By series200 = By.xpath("(//a[contains(text(),'Series 200')])[5]");
+	private By ssViewall = By.xpath("(//button[contains(text(),' View all')])[2]");
+	private By blogsandarticles = By.xpath("//h1[contains(text(),'Browse articles & blogs')]");
+	private By bloglist = By.xpath("//div[@class='blog-list']");
+	private By blogViewall = By.xpath("//a[@class='btn view-all-articles-btn btn-outline-primary']");
+	private By videosection = By.xpath("//span[@class='play-button']");
+	private By workflow = By.xpath("(//div[@class='owl-carousel owl-theme owl-loaded owl-drag'])[4]");
+	
+	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public boolean validateJSWLogo() {
 		return driver.findElement(JSWLogo).isDisplayed();
-
 	}
-	public void selectHotRolledProduct() throws InterruptedException
-	{
+	
+	public void hotRolledPLP(WebElement element) throws AWTException {
+//		Robot r = new Robot();
+//		r.
+		Actions a = new Actions(driver);
+		a.contextClick(element).perform();
+		a.contextClick().click();
+		}
+
+	public void selectHotRolledProduct() throws InterruptedException {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
 		action.moveToElement(we).build().perform();
 		driver.findElement(By.partialLinkText("Hot rolled")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 
 	public boolean validateSearch() {
@@ -127,11 +168,11 @@ public class HomePage {
 		driver.findElement(By.name("email")).clear();
 		driver.findElement(By.name("email")).sendKeys("ravikishan1@gmail.com");
 		driver.findElement(By.name("message")).sendKeys("sending one test enquiry");
-		
+
 		driver.findElement(By.xpath("//div[1]/div[4]/label[1]")).click();
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;       		
-        js.executeScript("window.scrollBy(0,250)", "");
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,250)", "");
 		driver.findElement(By.xpath("//button[@id='reachoutus-submit-1']")).click();
 		Thread.sleep(19000);
 
@@ -180,34 +221,220 @@ public class HomePage {
 		return driver.findElement(HomePageHotRolledSheet).isDisplayed();
 
 	}
-	
-	
-	
-	
+
 	public boolean validateSeries200InHomePage() {
 		return driver.findElement(HomePageHotRolledSheetSeries200).isDisplayed();
 
 	}
-	
+
 	public boolean validateHotrolledInHomePage() {
 		return driver.findElement(HomePageHotRolled).isDisplayed();
 
 	}
-	
+
 	public boolean validateCoilsInHomePage() {
 		return driver.findElement(HomePageHotRolledCoils).isDisplayed();
 
 	}
-	
-	public void clickonStainlessSteelMenu() throws InterruptedException
-	{
+
+	public void clickonStainlessSteelMenu() throws InterruptedException {
 		Thread.sleep(3200);
 		driver.findElement(By.xpath("//div[@class='navigation-item'][2]")).click();
 	}
-	
-	public void clickonSteelMenu() throws InterruptedException
-	{
+
+	public void clickonSteelMenu() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='navigation-item'][1]")).click();
 	}
+
+// HomeVerification
+	
+	public void SteelSection() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,500)","");
+	}
+	
+	public void validateHotRolledSteel() {
+		driver.findElement(hotRolled).isDisplayed();
+		driver.findElement(HomePageHotRolledCoils).isSelected();
+	}
+	
+	public void validateViewAllSteel() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,1000)", "");
+		driver.findElement(steelViewall).isDisplayed();
+	}
+
+	public void ClickSteelViewAll() throws InterruptedException {
+		driver.findElement(steelViewall).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'Hot Rolled')]")).isDisplayed();
+		Thread.sleep(2000);
+	}
+	
+	public void SSSection() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,1200)","");
+	}
+	
+	public boolean validateHotRolledSheet() {
+		driver.findElement(hotrolledsheet).isDisplayed();
+		return driver.findElement(HomePageHotRolledCoils).isSelected();
+	}
+	
+	public boolean validateSSViewall() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,1500)", "");
+		return driver.findElement(ssViewall).isDisplayed();
+	}
+	public void SSClickViewAll() throws InterruptedException {
+		driver.findElement(ssViewall).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
+		Thread.sleep(2000);
+	}
+	
+	
+	public boolean validateblogs() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,2000)", "");
+		return driver.findElement(bloglist).isDisplayed();
+	}	
+	
+	public void blogsList() {
+		List<WebElement> items = driver.findElements(By.xpath("//div[@class='blog-item']"));
+			System.out.println("Number of articles= "+items.size());
+	}
+	
+	public boolean validateBlogsViewall() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,2300)", "");
+		return driver.findElement(blogViewall).isDisplayed();
+	}
+	
+	public boolean validatevideoSection() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,2750)", "");
+		return driver.findElement(videosection).isDisplayed();
+	}
+	
+	public void validateworkFLow() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,3350)", "");
+	}
+	
+	public boolean validateworkbanner() {
+		return driver.findElement(workflow).isDisplayed();
+	}
+	
+	// Header
+	public boolean validateUserName() {
+		return driver.findElement(userName).isDisplayed();
+	}
+
+	public boolean validateMyorder() {
+		boolean Order = driver.findElement(myOrder).isDisplayed();
+		System.out.println(Order);
+		return Order;
+	}
+
+	public boolean validateSteel() {
+		return driver.findElement(steelTree).isDisplayed();
+	}
+
+	public boolean validateStainlessSteel() {
+		return driver.findElement(stainlessSteelTree).isDisplayed();
+	}
+
+	public boolean validateConstructionMaterial() {
+		return driver.findElement(constructionMaterial).isDisplayed();
+	}
+
+	public boolean validateHelpandSupport() {
+		return driver.findElement(helpSupport).isDisplayed();
+	}
+
+	public boolean validateAboutUs() {
+		return driver.findElement(aboutUs).isDisplayed();
+	}
+
+	public boolean validateBlogs() {
+		return driver.findElement(blogs).isDisplayed();
+	}
+
+	public boolean validateToggled() {
+		return driver.findElement(toggled).isDisplayed();
+	}
+
+	public void subSteelTree() throws InterruptedException {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+		Thread.sleep(2000);
+	}
+
+	public void subSSTree() throws InterruptedException {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(stainlessSteelTree);
+		action.moveToElement(we).perform();
+		Thread.sleep(2000);
+	}
+
+	public void subConstructionTree() throws InterruptedException {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(constructionMaterial);
+		action.moveToElement(we).perform();
+		Thread.sleep(2000);
+	}
+
+	public void clickMyorder() {
+		driver.findElement(myOrder).click();
+	}
+
+	public void clickHelp() {
+		driver.findElement(helpSupport).click();
+	}
+
+	public void clickAboutUs() {
+		driver.findElement(aboutUs).click();
+	}
+
+	public boolean validateAddressIcon() {
+		return driver.findElement(addressIcon).isDisplayed();
+	}
+
+	public String validateAddress() {
+		return driver.findElement(address).getAttribute("textContent");
+	}
+
+	public void clickConnect() {
+		driver.findElement(connectWithUs).click();
+		driver.findElement(By.xpath("//span[text()='Help & support']")).click();
+	}
+
+	// Footer
+
+	public boolean validateFooter() {
+		return driver.findElement(footerpartContainer).isDisplayed();
+	}
+
+	public void scroll() {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("window.scrollBy(0,3200)", "");
+
+	}
+
+	public void socialogo() {
+		for (int i = 0; i < 5; i++) {
+			String logo = driver.findElement(SociaMediaLogos).getAttribute("title");
+			System.out.println(logo);
+		}
+	}
+
+	public boolean validateEmailID() {
+		boolean email = driver.findElement(emailSupport).isDisplayed();
+		System.out.println(email);
+		return email;
+	}
+
 }

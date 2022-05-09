@@ -34,7 +34,10 @@ public class LoginPage {
 
 	}
 
-	public boolean validateLoginuserMenu() {
+	public boolean validateLoginuserMenu() throws InterruptedException {
+		
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 		return driver.findElement(loginuserMenu).isDisplayed();
 
 	}

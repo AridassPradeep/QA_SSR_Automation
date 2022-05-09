@@ -1,10 +1,17 @@
 package pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.apache.xmlbeans.impl.common.ValidatorListener.Event;
+import org.apache.xmlbeans.impl.values.JavaStringEnumerationHolderEx;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class ProductPage {
 
@@ -13,8 +20,15 @@ public class ProductPage {
 	private By steelByCategories = By.xpath("//li[1]/div[1]/a[1]");
 	private By hotRolled = By.xpath("//div[1]/ul[1]/li[1]/a[1]");
 	private By hotRolledSheets = By.xpath("//*[text()=' Hot rolled sheets ']");
+	private By productselect = By.xpath("//a[@class='prod-plpimage1name']");
 	private By productsList = By.xpath("//div[@class='prod-plpimg1']");
-
+	private By stainlessSteelByCategories = By.xpath("//h2[contains(text(),'Stainless Steel')]");
+	private By series300 = By.xpath("(//a[contains(text(),'Series 300')])[5]");
+	private By hrseries300SS = By.xpath("//div[@class='plp-product-item']");
+	private By viewAllSS = By.xpath("(//button[@class='btn view-all btn-outline-primary primary'])[2]");
+	private By ssHRS = By.xpath("//div[@class='plp-product-item']");
+	private By stainlessSteelMenu = By.xpath("//a[contains(text(),'Stainless Steel')]");
+	
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -54,5 +68,61 @@ public class ProductPage {
 		driver.findElement(By.xpath("//button[@class='ok-button']")).click();
 
 	}
+	
+	public void hrSheets() throws InterruptedException {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("window.scrollTo(0,1300)", "");
+		Thread.sleep(5000);
+		driver.findElement(stainlessSteelByCategories).isDisplayed();
+	}
+	
+		
+	public void selectSeries300() throws InterruptedException {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()", viewAllSS);
+		driver.findElement(viewAllSS).isDisplayed();
+		Thread.sleep(3000);
+		driver.findElement(viewAllSS).click();
+	}
+	public String validateHRSeries300Page() {
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
+		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
+		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
+	}
+	
+		
+	public void SSMenu() throws InterruptedException, AWTException {
+			Actions action = new Actions(driver);
+			WebElement we = driver.findElement(stainlessSteelMenu);
+			action.moveToElement(we).build().perform();
+//			Robot r = new Robot();
+//			r.keyPress(KeyEvent.VK_DOWN);
+//			r.keyRelease(KeyEvent.VK_DOWN);
+			driver.findElement(By.partialLinkText("Hot rolled sheets")).click();
+			Thread.sleep(2000);
+	}
+		
+	public void selectProductreguserHRS() {
+		
+		List<WebElement> productlist = driver.findElements(productselect);
+
+		for (int i = 0; i < productlist.size(); i++) {
+			System.out.println(productlist.get(i).getText());
+			if (productlist.get(i).getText().equals("JSL stainless steel HRAP 304L N1 finish sheets")) {
+				productlist.get(i).click();	
+				break;
+			}
+			else
+			{
+				
+			}
+			
+			
+			
+		}
+
+	}
+
 
 }

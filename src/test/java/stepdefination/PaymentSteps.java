@@ -39,6 +39,7 @@ public class PaymentSteps {
 	public void user_click_on_proceed_to_pay_on_cart_detail_page() throws InterruptedException {
 		pmtpage.validatecartdetailpage();
 		Thread.sleep(3000);
+		pmtpage.scroll();
 		pmtpage.clickproceedtopay();
 		Thread.sleep(5000);
 	}
@@ -58,13 +59,13 @@ public class PaymentSteps {
 	}
 
 	@When("user select bank name to transfer from the drop down on payment page")
-	public void user_select_bank_name_to_transfer_from_the_drop_down_on_payment_page() {
+	public void user_select_bank_name_to_transfer_from_the_drop_down_on_payment_page() throws InterruptedException {
 		pmtpage.validateBankList();
 		pmtpage.clickBankList();
 	}
 
 	@When("user select bank name to transfer from the drop down")
-	public void user_select_bank_name_to_transfer_from_the_drop_down() {
+	public void user_select_bank_name_to_transfer_from_the_drop_down() throws InterruptedException {
 		// pmtpage.validateBankList();
 		pmtpage.clickBankList();
 	}
@@ -218,5 +219,23 @@ public class PaymentSteps {
 			pmtpage.deleteProductfromCartdo();
 		}
 	}
+	
+	@When("user click on proceed and confirm later")
+	public void user_click_on_proceed_and_confirm_later() {
+	    pmtpage.clickConfirmLater();
+	}
 
+	@Then("verify payment pending message is displayed")
+	public void verify_payment_pending_message_is_displayed() {
+		pmtpage.validatePaymentPendingmsg();
+	}
+
+	@Then("user is able to see Make payment CTA on order summary page")
+	public void user_is_able_to_see_make_payment_cta_on_order_summary_page() {
+	   pmtpage.validateMakePayment();
+	}
+	
+	
+	
+	
 }

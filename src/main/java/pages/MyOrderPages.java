@@ -33,7 +33,7 @@ public class MyOrderPages {
 	private WebElement scrollViewDetails;
 	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
 	private WebElement viewDetails; 
-	@FindBy(xpath = "//button[@id='dropdownMenuButton']")
+	@FindBy(xpath = "//*[@id='d-body']/div[4]/div[1]/div/div[2]/div[2]/button")
 	private WebElement viewPriceBreakup;
 	@FindBy(xpath = "(//a[text()='Need help '])[1]")
 	private WebElement needHelp;

@@ -14,7 +14,7 @@ public class LoginPageSteps {
 
 	@When("user clicks on login button")
 	public void user_clicks_on_login_button() throws InterruptedException {
-		//loginPage.clickLoginButton();
+		loginPage.clickLoginButton();
 	}
 
 	@When("user click  on login by email")
@@ -36,7 +36,7 @@ public class LoginPageSteps {
 
 	@Then("user homepage is displayed")
 	public void user_homepage_is_displayed() throws InterruptedException {
-		// Assert.assertTrue(loginPage.validateLoginuserMenu());
+		Assert.assertTrue(loginPage.validateLoginuserMenu());
 	}
 
 	@When("user clicks on forgotpassword")
@@ -62,7 +62,7 @@ public class LoginPageSteps {
 	}
 
 	@When("the Registration button is not displayed after user Login")
-	public void the_Registration_button_is_not_displayed_after_user_Login() {
+	public void the_Registration_button_is_not_displayed_after_user_Login() throws InterruptedException {
 		Assert.assertTrue(loginPage.validateLoginuserMenu());
 	}
 

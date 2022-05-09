@@ -29,7 +29,7 @@ public class RegistrationPage {
 	private By LoginButtonOnRegPopup = By.xpath("//div[@class='enterprise-details']//span[@id='loginresetting']");
 
 	private By Thankyoupageerror = By.xpath("//button[@class='btn btn-secondary goto-home-err']");
-	private By ThankyoupageHome = By.xpath("//button[@class='btn btn-secondary goto-home']");
+	private By ThankyoupageHome = By.xpath("//div[contains(text(),'Thank you!')]");
 	private By gstCompanyName = By.xpath("//div[contains(@class,'comp-name')]");
 	private By gstCompanyAddress = By.xpath("//div[contains(@class,'comp-addr')]");
 

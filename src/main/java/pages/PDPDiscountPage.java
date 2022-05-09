@@ -37,7 +37,7 @@ public class PDPDiscountPage {
 	private By totalWithCoupon = By.xpath("//div[@class='ps-total-value']");
 
 	private By expcouponerror = By.xpath("//div[@class='input-error-message']");
-	private By closebutton = By.xpath("//button[@class='coupon-modal-close-icon']");
+	private By closebutton = By.xpath("//button[@class='close']");
 	private By remove = By.xpath("//a[@role='button']");
 	private By confirmremove = By.xpath("//input[@class='remove_item_btn']");
 	private By messagecartempty = By.xpath("//div[@class='empty-content text-center']");
@@ -309,5 +309,64 @@ public class PDPDiscountPage {
 		Thread.sleep(5000);
 		driver.findElement(messagecartempty).isDisplayed();
 	}
+	
+	public void clickApplyCouponButton()
+	{
+		driver.findElement(By.xpath("//div[1]/div[3]/button[1]")).click();
+	}
+	
+	public void CouponList()
+	{
+		List<WebElement> couponsList=driver.findElements(By.xpath("//div[@class='applied-coupons']"));
+		for(int i=0; i<couponsList.size();i++)
+		{
+		System.out.println(couponsList.get(i).getText());
+		}
+	}
+	
+	public void enterTheCouponCode(String coupon) {
+		driver.findElement(coupontextbox).sendKeys(coupon);
+	}
+	
+	public void closeCouponDialog()
+	{
+		driver.findElement(closebutton).click();
+	}
+	
+	public void validateCouponAppplied() {
+		driver.findElement(By.xpath("//div[contains(text(),'Applied coupons')]")).isDisplayed();
+
+	}
+	public void validateremoveButton() {
+		driver.findElement(By.xpath("//button[@class='primary removeButton']")).isDisplayed();
+
+	}
+	
+	public void clickremoveButton() {
+		driver.findElement(By.xpath("//button[@class='primary removeButton']")).click();
+
+	}
+	public void clickSeeMoreButton() {
+		driver.findElement(By.xpath("//div[@class='cp_see_more']//span")).click();
+
+	}
+	
+	public void SeeMoreCouponsonPDPPage()
+	{
+		List<WebElement> couponsList=driver.findElements(By.xpath("//h1[@class='cp_code']"));
+		for(int i=0; i<couponsList.size();i++)
+		{
+		System.out.println(couponsList.get(i).getText());
+		}
+	}
+	
+	public void verifyViewCoupons() {
+		driver.findElement(By.xpath("//span[contains(text(),'View coupons')]")).click();
+		String coupon= driver.findElement(By.xpath("//div[@class='applied-coupons']//span")).getText();
+		System.out.print(coupon);
+
+	}
+	
+	
 
 }

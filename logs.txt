@@ -1,0 +1,74 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------------< com.JSW:JSW >-----------------------------
+[INFO] Building JSW 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for com.github.ralfstuckert.pdfbox-layout:pdfbox2-layout:jar:1.0.0 is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ JSW ---
+[INFO] Deleting C:\Users\admin\Pictures\SPEKOND\EclipseProjects\JSW\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ JSW ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\admin\Pictures\SPEKOND\EclipseProjects\JSW\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ JSW ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to C:\Users\admin\Pictures\SPEKOND\EclipseProjects\JSW\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ JSW ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 28 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ JSW ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to C:\Users\admin\Pictures\SPEKOND\EclipseProjects\JSW\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ JSW ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running runner.runner
+
+@sanity1 @StainlessSteel
+Scenario: Verify order placed successfully after adding a stainless product to cart # src/test/resources/features/StainlessSteel.feature:51
+browser value is: chrome
+  Given user is on home page                                                        # stepdefination.RegistrationPageSteps.user_is_on_home_page()
+  When user clicks on login button                                                  # stepdefination.LoginPageSteps.user_clicks_on_login_button()
+  When user click  on login by email                                                # stepdefination.LoginPageSteps.user_click_on_login_by_email()
+  When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678" # stepdefination.LoginPageSteps.user_enters_logins_with_username_with_and(java.lang.String,java.lang.String)
+  And user clicks on signin                                                         # stepdefination.LoginPageSteps.user_clicks_on_signin()
+  Then user homepage is displayed                                                   # stepdefination.LoginPageSteps.user_homepage_is_displayed()
+  When cart is empty or not                                                         # stepdefination.PaymentSteps.cart_is_empty_or_not()
+  When user clicks on Stainless Steel Navigation Menu                               # stepdefination.HomePageSteps.user_clicks_on_stainless_steel_navigation_menu()
+Stainless Steel
+  Then Stainless Steel Products are displayed                                       # stepdefination.PLPSteps.stainless_steel_products_are_displayed()
+  When user selects Stainless Steel product                                         # stepdefination.PLPSteps.user_selects_stainless_steel_product()
+  Given user is on product detail page of Stainless Steel item                      # stepdefination.PDPRegisteredUserSteps.user_is_on_product_detail_page_of_stainless_steel_item()
+  When user clicks on Add To Cart button available in the right side of the webpage # stepdefination.PDPRegisteredUserSteps.user_clicks_on_add_to_cart_button_available_in_the_right_side_of_the_webpage()
+  Then verify that the product should be added in the cart                          # stepdefination.PDPRegisteredUserSteps.verify_that_the_product_should_be_added_in_the_cart()
+  When user clicks on OK cart                                                       # stepdefination.CartDetailSteps.user_clicks_on_ok_cart()
+  Then verify Cart icon would appear with 1                                         # stepdefination.PDPwithDiscountSteps.verify_cart_icon_would_appear_with(java.lang.Integer)
+  When user click on Cart icon on homepage                                          # stepdefination.CartDetailSteps.user_click_on_cart_icon_on_homepage()
+  When user click on pickup checkbox                                                # stepdefination.CartDetailSteps.user_click_on_pickup_checkbox()
+  And user click on proceed to pay on cart detail page                              # stepdefination.PaymentSteps.user_click_on_proceed_to_pay_on_cart_detail_page()
+  And user select bank name to transfer from the drop down on payment page          # stepdefination.PaymentSteps.user_select_bank_name_to_transfer_from_the_drop_down_on_payment_page()
+  Then verify bank is selected                                                      # stepdefination.PaymentSteps.verify_bank_is_selected()
+  And User click on PayNow                                                          # stepdefination.PaymentSteps.user_click_on_pay_now()
+  Then User navigates to RazorPay Page                                              # stepdefination.PaymentSteps.user_navigates_to_razor_pay_page()
+  And User click on success button                                                  # stepdefination.PaymentSteps.user_click_on_success_button()
+  Then verify after successful payment page navigates to ORDER summary page         # stepdefination.PaymentSteps.verify_after_successful_payment_page_navigates_to_order_summary_page()
+  Then order sucessfully placed message should be displayed                         # stepdefination.PaymentSteps.order_sucessfully_placed_message_should_be_displayed()
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 142.651 s - in runner.runner
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:37 min
+[INFO] Finished at: 2022-04-07T02:30:19+05:30
+[INFO] ------------------------------------------------------------------------

@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-		tags = "@DirectHome",
+		tags = "@DiscountCoupon",
 		dryRun = false,
 		stepNotifications=true,
 		plugin = {
@@ -17,6 +17,6 @@ import io.cucumber.junit.CucumberOptions;
                         "html:target/cucumber-report/cucumber.html"}
 		         )
 
-public class runner {
+public class sanityRunner {
 
 }

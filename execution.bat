@@ -1,5 +1,4 @@
-@echo off
 title MSME SANITY TEST
 echo MSME SANITY TEST!
-mvn clean test
-pause
+CALL mvn clean test  > logs.txt
+pause 

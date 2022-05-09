@@ -1,0 +1,250 @@
+package pages;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class PLPNewPage {
+	
+	private WebDriver driver;
+
+	private By steelMenu = By.xpath("(//a[contains(text(),'Steel')])[2]");
+	private By steelPLP = By.xpath("//span[@class='list-title desc']");
+	private By breadcrump = By.xpath("//div[@class='breadcrumb-url']");
+	private By hotRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[1]/a");
+	private By coldRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[2]/a");
+	private By wireRodMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[3]/a");
+	private By coated = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[4]/a");
+	private By colourCoated = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[5]/a");
+	
+	private By metalAndAlloys = By.xpath("//span[contains(text(),'Metals and Alloys')]");
+	private By steel = By.xpath("//span[contains(text(),'Steel')]");
+	private By home = By.xpath("//span[contains(text(),'Home')]");
+	private By metal = By.xpath("//span[contains(@class,'list-title desc')]");
+
+	
+	
+	
+	public PLPNewPage(WebDriver driver) {
+		this.driver=driver;
+	}
+
+	public void clickSteelMenu() {
+		driver.findElement(steelMenu).click();
+	}
+	
+	public void selectHR() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(hotRolledMenu).click();
+	}
+	
+	public void selectHRC() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(hotRolledMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(By.linkText("Hot rolled coils")).click();
+	}
+	
+	public void selectHRS() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(hotRolledMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(By.linkText("Hot rolled sheets")).click();
+	}
+	
+	public void selectCR() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(coldRolledMenu).click();
+	}
+	
+	public void selectCRS() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(coldRolledMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(By.linkText("Cold rolled sheets")).click();
+	}
+	
+	public void selectWR() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(wireRodMenu).click();
+	}
+	
+	public void selectCoated() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(coated).click();
+	}
+	
+	public void selectColourCoated() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+		driver.findElement(colourCoated).click();
+	}
+	
+	public String validateSteelPLP() {
+		driver.findElement(steelPLP).isDisplayed();
+		return driver.findElement(steelPLP).getText();
+	}
+	
+	public String verifySteel() {
+		System.out.println(driver.findElement(By.xpath("//span[@class='home'][3]")).getText());
+		return driver.findElement(By.xpath("//span[@class='home'][3]")).getText();
+	}
+	
+	public String verifyHR() {
+		System.out.println(driver.findElement(By.xpath("//span[@class='home'][4]")).getText());
+		return driver.findElement(By.xpath("//span[@class='home'][4]")).getText();
+	}
+	
+	public String verifyCR() {
+		System.out.println(driver.findElement(By.xpath("//span[@class='home'][4]")).getText());
+		return driver.findElement(By.xpath("//span[@class='home'][4]")).getText();
+	}
+	
+	public void verifyHRProducts() throws InterruptedException {
+		WebElement hrs = driver.findElement(By.className("list-title desc"));
+		hrs.isDisplayed();
+		Thread.sleep(2000);
+		System.out.println(hrs.getText());
+		return;
+	}
+	
+	public void validateProductName() {
+		driver.findElement(By.className("prod-plpimage1name")).getText();
+	}
+	
+	public void validateGrades() {
+		WebElement grade = driver.findElement(By.xpath("//div[@class='forms-filter grade']//following::div[2]"));
+		System.out.println("Grades :"+grade.getText()+"\t");
+	}
+		
+	public void clickMetal() {
+		driver.findElement(metalAndAlloys).click();
+	}
+	
+	public void clickSteel() throws InterruptedException {
+		driver.findElement(steel).click();
+		Thread.sleep(2000);
+	}
+
+	public void clickClear() {
+		driver.findElement(By.xpath("(//div[contains(text(),'Clear')])[1]")).click();
+	}
+
+	public String verifyMetal() {
+		System.out.println(driver.findElement(By.xpath("//span[contains(@class,'list-title desc')]")).getText());
+		return driver.findElement(By.xpath("//span[contains(@class,'list-title desc')]")).getText();
+	}
+	
+	public void verifyHome() {
+		String homePage = driver.findElement(By.xpath("//h2[@class='category-title']")).getText();
+		System.out.println("Landing Home page: "+homePage);
+	}
+	
+	public void verifyReset() {
+		driver.findElement(By.className("reset-product-list")).isDisplayed();
+	}
+	
+	public void steel() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+	}
+
+	public String verifySubCategorySteelMenu() {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).perform();
+//		driver.findElement(By.className("menu-tree-container menu-tree-jsw")).isDisplayed();
+		String steelList = driver.findElement(By.className("menu-list-jsw")).getText();
+		System.out.println(steelList);
+		return steelList;
+	}
+	
+	public void verifyClear() {
+		driver.findElement(By.xpath("(//div[contains(text(),'Clear')])[1]")).isDisplayed();
+	}
+
+	public String verifyAllHRProducts() {
+		System.out.println(driver.findElement(By.className("right-list-value")).getText());
+		return driver.findElement(By.className("right-list-value")).getText();
+	}
+	
+	public void verifyFilterSection() {
+		driver.findElement(By.className("left-col")).isDisplayed();
+
+		 List<WebElement> filterList = driver.findElements(By.className("form-filter-shade"));
+
+	        System.out.println("Number of Filters displayed: " +filterList.size());
+
+	        for (WebElement webElement : filterList) {
+	            String name = webElement.getText();
+	            System.out.println(name);
+	        }
+	}
+
+	public void clickBrand() {
+		driver.findElement(By.xpath("//label[contains(text(),'JSW Steel')]")).click();
+	}
+	public void clickGrade() {
+		driver.findElement(By.xpath("//label[contains(text(),'2062:2011')]")).click();
+	}
+
+	public void clickReset() {
+		driver.findElement(By.className("reset-product-list")).click();
+	}
+
+	public void clickFilterX() {
+		driver.findElement(By.xpath("//button[@class='badge-close with-filter button']//span[contains(text(),'×')]"))
+				.click();
+	}
+	
+	public int countAppliedFilters() throws InterruptedException {
+		List<WebElement> close = driver.findElements(By.xpath("//span[text()='×']"));
+		System.out.println("No of filters applied: " + close.size());
+		return close.size();
+	}
+	
+	public void clearAppliedFilters() throws InterruptedException {
+		driver.findElement(By.xpath("(//span[text()='×'])[3]")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("(//span[text()='×'])[2]")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("(//span[text()='×'])[1]")).click();
+		Thread.sleep(1500);
+	}
+	
+	
+	public String countSteelProd() {
+		System.out.println(driver.findElement(By.xpath("//span[@class='right-list-value']")).getText());
+		return driver.findElement(By.xpath("//span[@class='right-list-value']")).getText();
+	}
+
+	public void thicknessMin() throws InterruptedException {
+		driver.findElement(
+				By.xpath("(//div[@class='range-left']//select[@class='custom-select rangeSelectionCss'])[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//option[contains(text(),'2.5')])[1]")).click();
+		Thread.sleep(2000);
+	}
+
+	public void thicknessMax() throws InterruptedException {
+		driver.findElement(
+				By.xpath("(//div[@class='range-right']//select[@class='custom-select rangeSelectionCss'])[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//option[contains(text(),'12.0')])[2]")).click();
+		Thread.sleep(2000);
+	}
+}

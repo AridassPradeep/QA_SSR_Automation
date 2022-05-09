@@ -205,6 +205,19 @@ public class PDPRegisteredUserSteps {
 	}
 
 
+@Given("user is on product detail page of HRPO item")
+public void user_is_on_product_detail_page_of_hrpo_item() throws InterruptedException {
+	pdpreguser.HRPODetails();
+    
+}
+
+@Given("user is on product detail page of HR Sheet item")
+public void user_is_on_product_detail_page_of_HRSheet_item() throws InterruptedException {
+	pdpreguser.HRSteelDetails();
+    
+}
+
+
 
 	
 

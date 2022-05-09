@@ -10,10 +10,10 @@ public class Forgotpasswordpage {
 	private static WebDriver driver;
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
 	private By forgotPassword = By.xpath("//div[1]/div[2]/div[2]/div[3]");
-	private By proceed = By.xpath("//button[@class=\'btn btn-danger btn-md mt-40 btn-prime\']");
+	private By proceed = By.xpath("//*[text()='Proceed']");
 	private By email = By.xpath("//input[@style]");
-	private By submit = By.xpath("//button[@class='sendotp-button-login']");
-	private By Okay = By.xpath("//button[@class='proceedhome-button-login']");
+	private By submit = By.xpath("//button[@class='sendotp-button-login btn btn-primary']");
+	private By Okay = By.xpath("//button[@class='proceedhome-button-login btn btn-primary']");
 	private By confirmation = By.xpath(
 			"//div[@class='reset-password-login' and contains(text(),'Password reset link has been sent to your email address.')]");
 	private By errorMessage = By.xpath(
