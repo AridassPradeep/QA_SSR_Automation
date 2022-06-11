@@ -180,4 +180,63 @@ public class MyOrderPageSteps {
 		order.validateCancelmge();
 	   Thread.sleep(2000);
 	}
-}
+	//DO payment history
+	
+		@When("user is able to click view details button for DO")
+		public void user_is_able_to_click_view_details_button_for_do() throws InterruptedException {
+			order.DOorder();
+			Thread.sleep(2000);
+		}
+		
+		@When("user is able to view Order summary page")
+		public void user_is_able_to_view_order_summary_page() throws InterruptedException {
+		  order.validateOrderSummaryPage();
+		  Thread.sleep(2000);
+		}
+
+		@Then("user is able to view Payment received section")
+		public void user_is_able_to_view_payment_received_section() throws InterruptedException {
+		  order.validatePaymentReceived();
+		  Thread.sleep(2000);
+		}
+
+		@When("user is able to click Payment history dropdown CTA")
+		public void user_is_able_to_click_payment_history_dropdown_cta() throws InterruptedException {
+			order.scrollPayment();
+			order.clickPaymentHistory();
+		  Thread.sleep(2000);
+		   order.clickPaymentHistory();
+		}
+
+		@Then("user is able to view Direct order payment status")
+		public void user_is_able_to_view_direct_order_payment_status() throws InterruptedException {
+		    order.paymentHistory();
+		    Thread.sleep(2000);
+		}
+		
+
+	//View applied coupons
+		
+		@When("user is able to verify view coupons displayed")
+		public void user_is_able_to_verify_view_coupons_displayed() throws InterruptedException {
+		    order.validateViewCoupons();
+		    Thread.sleep(2000);
+		}
+
+		@Then("user is able to view number of applied coupons")
+		public void user_is_able_to_view_number_of_applied_coupons() throws InterruptedException {
+		    order.couponsCount();
+		    Thread.sleep(2000);
+		}
+
+		@When("user is able to click View coupons")
+		public void user_is_able_to_click_view_coupons() throws InterruptedException {
+		    order.clcikViewCoupons();
+		    Thread.sleep(2000);
+		}
+
+		@Then("user is able to view Applied coupons pop-up")
+		public void user_is_able_to_view_applied_coupons_pop_up() throws InterruptedException {
+		    order.validateAppliedCoupon();
+		}
+	}

@@ -1,4 +1,4 @@
-@functional @HomePage
+@functional @HomePage @demo
 Feature: Home page feature
 
   Background: User opens website
@@ -29,7 +29,7 @@ Feature: Home page feature
     Then Verify all the social media logos are available
     Then Verify for help line number is present in footer section
 
-  @Header
+  @Header 
   Scenario: Verify Header section elements
     Then Verify the JSW logo is appearing in the Header Section
     Then Verify Search Bar is displayed with search icon
@@ -43,7 +43,7 @@ Feature: Home page feature
     Then Verify "Stainless Steel" Category tree is displayed
     Then verify "Construction Material" category tree is displayed in Header section
     Then Verify "Help & support" is displayed in Header section
-    Then Verify user is navigate to "Help" page and back to home page
+   # Then Verify user is navigate to "Help" page and back to home page
     Then Verify "About us" is displayed in header Section
     Then Verify user is able to view "Manage address" and navigate to address section in Profile page
     Then Verify that "Connect with Us" is available on the header section

@@ -3,14 +3,14 @@ Feature: Product Detail Page feature for Guest User
 
   Background: User opens website
     Given user is on home page
-    When user enter "Hot Rolled Sheet" in search bar
-    And user click on search button
+   # When user enter "Hot Rolled Sheet" in search bar
+   # And user click on search button
    # Then Breadcrump should display Steel by categories>Hot Rolled(HR)
 
   Scenario: verify Breadcrump on top left corner of the page
-    Given user is on PLP page
-    And user select any product example HR
-    Then user is redirected to PDP Page
+     When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    #Then user is redirected to PDP Page
     Then Breadcrump is displayed on top left corner of the page
 
   Scenario: Verify primary and optional images are displayed

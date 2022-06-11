@@ -1,13 +1,20 @@
-@Login
+@Login @demo
 Feature: Login page feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
-   When user click  on login by email
+    When user click  on login by email
+
+  @Otp
+  Scenario: verify OTP Login functionality works perfectly
+    When user click  on login by otp
+    And user enter phone no
+    And user click on getOTP
+    And user enter otp
+    Then user homepage should be displayed
 
   Scenario Outline: verify the user able to login with Email and password
-    
     When user enters logins with username with "<email>" and  "<password>"
     And user clicks on signin
     Then user homepage is displayed
@@ -16,9 +23,8 @@ Feature: Login page feature
       | email               | password  |
       | ramya1347@gmail.com | Ramya@678 |
 
-
   Scenario: verify the forget password link is properly working
-   When user clicks on forgotpassword
+    When user clicks on forgotpassword
     And user clicks on proceed
 
   Scenario Outline: verify the Register link is available and properly working
@@ -65,7 +71,6 @@ Feature: Login page feature
       | phoneno    | password |
       | 9218775234 |          |
 
- 
   Scenario Outline: verify the Registration Button does not display after user Login
     When user enters logins with username with "<email>" and  "<password>"
     And user clicks on signin

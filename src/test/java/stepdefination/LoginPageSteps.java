@@ -1,9 +1,12 @@
 package stepdefination;
 
+import java.net.MalformedURLException;
+
 import org.junit.Assert;
 
 import factory.DriverFactory;
 import pages.LoginPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,6 +40,11 @@ public class LoginPageSteps {
 	@Then("user homepage is displayed")
 	public void user_homepage_is_displayed() throws InterruptedException {
 		Assert.assertTrue(loginPage.validateLoginuserMenu());
+	}
+	
+	@Then("user homepage should be displayed")
+	public void user_homepage_shouldbedisplayed() throws InterruptedException {
+		Assert.assertTrue(loginPage.validateuserMenu());
 	}
 
 	@When("user clicks on forgotpassword")
@@ -80,5 +88,30 @@ public class LoginPageSteps {
 	public void login_button_is_disabled() {
 		Assert.assertFalse(loginPage.validateSignInEnabled());
 	}
+	
+	@When("user click  on login by otp")
+	public void user_click_on_loginbyotp() {
+		loginPage.clickLoginByOtp();
+		
+	}
+	
+	@And("user enter phone no")
+	public void user_enter_phoneno() {
+		loginPage.enterPhoneNo();
+		
+	}
+	
+	@And("user click on getOTP")
+	public void user_clickon_getOTP() {
+		loginPage.clickGetOTP();
+		
+	}
+	
+	@And("user enter otp")
+	public void user_enter_otp() throws InterruptedException, MalformedURLException {
+		loginPage.enterOTP();
+		
+	}
+	
 
 }

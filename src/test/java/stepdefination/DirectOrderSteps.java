@@ -29,7 +29,11 @@ public class DirectOrderSteps {
 		doppage.validateBuyFromVerified();
 	}
 
-	
+	@Then("click on buy directly from jsw steel")
+	public void click_on_buy_directly_from_jsw_steel() {
+		doppage.clickonJswSteel();
+	}
+
 
 	@When("user login to google cloud")
 	public void user_login_to_google_cloud() {

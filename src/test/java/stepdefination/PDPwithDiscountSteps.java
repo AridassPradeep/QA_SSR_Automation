@@ -239,6 +239,14 @@ public class PDPwithDiscountSteps {
 		pdpdispage.validateCouponAppplied();
 
 	}
+	
+	@Then("close the coupon window box")
+	public void close_the_coupon_windowbox() {
+
+		pdpdispage.closeCouponDialog();
+
+	}
+
 
 	@Then("remove button is displayed")
 	public void remove_button_is_displayed() {

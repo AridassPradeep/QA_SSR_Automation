@@ -330,11 +330,11 @@ public class PDPDiscountPage {
 	
 	public void closeCouponDialog()
 	{
-		driver.findElement(closebutton).click();
+		driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
 	}
 	
 	public void validateCouponAppplied() {
-		driver.findElement(By.xpath("//div[contains(text(),'Applied coupons')]")).isDisplayed();
+	   driver.findElement(By.xpath("//div[contains(text(),'Applied coupons')]")).isDisplayed();
 
 	}
 	public void validateremoveButton() {

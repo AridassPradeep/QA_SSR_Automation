@@ -1,31 +1,39 @@
 package pages;
 
-import org.apache.hc.core5.util.Asserts;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class ProfilePage {
 	private WebDriver driver;
 
-	
-	private By MyProfileButton = By.xpath("//header[@id='drop-down-head']");
+	private By MyProfileButton = By.className("drop-heading");
 	private By SubMenu = By.linkText("Profile");
-	private By Designation = By.id("usr");
+	private By Designation = By.name("designation");
 	private By Udyam = By.name("udyam");
 	private By Options = By.xpath("//option[contains(text(),'Select an option')]");
+	private By Interest = By.xpath("//div[@id='__nuxt']");
 	private By Msg = By.xpath("//div[contains(text(),'Your changes have been saved.')]");
-	private By Title = By.xpath("//div[contains(text(),'My Profile')]");
-	private By Addresses = By.xpath("//*[text()='Addresses']");
-	private By DeleteAddress = By.xpath("(//div[@class='delete-button'])[3]");
+	private By Title = By.xpath("//a[@id='__BVID__389___BV_tab_button__']");
+	private By Bname = By.xpath("//span[contains(text(),'Jsw One Platforms Limited')]");
+	private By Bcopy = By.xpath(" (//div[@class='copy-icon'])[1]");
+	private By Accountnumber = By.xpath("//span[contains(text(),'1112220024427425')]");
+	private By Acopy = By.xpath(" (//div[@class='copy-icon'])[2]");
+	private By IFSC = By.xpath("//span[contains(text(),'RAZR0000001')]");
+	private By Icopy = By.xpath(" (//div[@class='copy-icon'])[3]");
+	private By Save = By.xpath("//button[contains(text(),'Save details')]");
+	private By Ok = By.xpath("//button[contains(text(),'Ok')]");
 	private By addAddress = By.xpath("//*[text()='+ Add a new address']");
+	private By DeleteAddress = By.xpath("(//div[@class='delete-button'])[3]");
+	private By Addresses = By.xpath("//*[text()='Addresses']");
 
 	public ProfilePage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void clickMyProfileButton() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.findElement(MyProfileButton).click();
@@ -44,10 +52,10 @@ public class ProfilePage {
 		Thread.sleep(1000);
 	}
 
-	public boolean compareTitle() {
-		return driver.findElement(Title).isDisplayed();
-	}
-
+	/*
+	 * public boolean compareTitle() { return
+	 * driver.findElement(Title).isDisplayed(); }
+	 */
 	public void clickUdyam() throws InterruptedException {
 		driver.findElement(Udyam).sendKeys("U1233243543543543");
 		Thread.sleep(1000);
@@ -58,42 +66,79 @@ public class ProfilePage {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//option[contains(text(),'General Engineering & Fabrication')]")).click();
 		Thread.sleep(1000);
+		driver.findElement(Interest).click();
 	}
 
 	public void clickArea() throws InterruptedException {
-		driver.findElement(
-				By.xpath("//div[4]/div[1]/label[1]/input[1]"))
-				.click();
+		driver.findElement(By.xpath("(//input[@class='form-check-input'])[1]")).click();
 		Thread.sleep(1000);
 	}
 
-	public void clickSave() throws InterruptedException {
-		driver.findElement(By.xpath("//button[contains(text(),'Save details')]")).click();
-		Thread.sleep(1000);
+	public void clickaccount() throws InterruptedException {
+		driver.findElement(Bname).click();
+		driver.findElement(Bcopy).click();
+		Thread.sleep(3000);
 	}
-	
-	public void clickCancel() {
-		driver.findElement(By.xpath("//button[contains(text(),'Cancel')]")).click();
+
+	public void verifycopyicon() throws InterruptedException {
+		/* driver.findElement(Bname).getText(); */
+
+		System.out.println(driver.findElement(Bname).getText());
+	}
+
+	public void clickaccnumber() throws InterruptedException {
+		driver.findElement(Accountnumber).click();
+		driver.findElement(Acopy).click();
+		Thread.sleep(3000);
+	}
+
+	public void verifycopyacc() throws InterruptedException {
+
+		System.out.println(driver.findElement(Accountnumber).getText());
+	}
+
+	public void clickIFSC() throws InterruptedException {
+		driver.findElement(IFSC).click();
+		driver.findElement(Icopy).click();
+		Thread.sleep(3000);
+	}
+
+	public void verifycopyifsc() throws InterruptedException {
+		/* driver.findElement(Bname).getText(); */
+
+		System.out.println(driver.findElement(IFSC).getText());
+	}
+
+	public void clickSave() throws InterruptedException {
+		driver.findElement(Save).click();
+		Thread.sleep(1000);
 	}
 
 	public boolean compareMsg() {
 		return driver.findElement(Msg).isDisplayed();
-
-		// driver.findElement(By.className("ok-button")).click();
 	}
-	
-	public void clickAddresses()
-	{
+
+	public void ok() {
+
+		driver.findElement(Ok).click();
+	}
+	/*
+	 * public void clickCancel() throws InterruptedException {
+	 * driver.findElement(By.xpath(
+	 * "//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[4]/div[3]/label[1]/span[1]"
+	 * )).click(); Thread.sleep(1000); }
+	 */
+
+	public void clickAddresses() {
 		driver.findElement(Addresses).click();
 	}
-	
-	public void DeleteAddresses()
-	{
+
+	public void DeleteAddresses() {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,800)", "");
 		driver.findElement(DeleteAddress).click();
 	}
-	
+
 	public void addAddress() {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,400)", "");
@@ -105,7 +150,7 @@ public class ProfilePage {
 		driver.findElement(By.id("state")).sendKeys("Tamil Nadu");
 		driver.findElement(By.xpath("//button[text()='Save address']")).click();
 	}
-	
+
 	public void cancelNewAddress() {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,400)", "");
@@ -117,6 +162,25 @@ public class ProfilePage {
 		driver.findElement(By.id("state")).sendKeys("Tamil Nadu");
 		driver.findElement(By.xpath("//div[text()='Cancel']")).click();
 	}
+	public void ClickEditBillingAddress() throws InterruptedException
+	{
+		
+		driver.findElement(By.xpath("//div[@class='edit-button']")).click();
+		
+		//List<WebElement> editAddressButtons=driver.findElements(By.xpath("//div[@class='edit-button']"));
+		// editAddressButtons.get(1).click();
+	}
 	
+	public void EditBillingAddress() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//input[@id='company']")).clear();
+		driver.findElement(By.xpath("//input[@id='company']")).sendKeys("EditedCompany");
+		driver.findElement(By.xpath("//input[@id='mobile']")).clear();
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("9898987878");
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//button[contains(text(),'Save address')]")).click();
+		
+		
+	}
 
 }

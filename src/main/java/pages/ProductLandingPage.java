@@ -181,7 +181,9 @@ public class ProductLandingPage {
 
 	}
 
-	public void validateHotRolledProductName() {
+	public void validateHotRolledProductName() throws InterruptedException {
+		
+		Thread.sleep(2500);
 		List<WebElement> productNameList = driver
 				.findElements(By.xpath("//div[@class='plp-prod-img']//following::div[1]"));
 

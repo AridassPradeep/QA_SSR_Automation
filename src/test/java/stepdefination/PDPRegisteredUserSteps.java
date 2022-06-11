@@ -1,10 +1,14 @@
 package stepdefination;
 
 import factory.DriverFactory;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 
@@ -20,17 +24,17 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.validateLogin();
 
 	}
-	
+
 	@Given("user is on product detail page of hotrolled item")
 	public void user_is_on_product_detail_page_of_hotrolled_item() throws InterruptedException {
-		//pdpreguser.validatesearchwithcategoryreguser();
+		// pdpreguser.validatesearchwithcategoryreguser();
 		pdpreguser.selectProductreguser();
 
 	}
 
 	@Given("user is on product detail page of colored item")
 	public void user_is_on_product_detail_page_of_colored_item() throws InterruptedException {
-		//pdpreguser.validatesearchwithcategoryreguser();
+		// pdpreguser.validatesearchwithcategoryreguser();
 		pdpreguser.selectProductreguser();
 
 	}
@@ -39,26 +43,23 @@ public class PDPRegisteredUserSteps {
 	public void user_clicks_on_add_to_cart_button_available_in_the_right_side_of_the_webpage()
 			throws InterruptedException {
 
-		//pdpreguser.selectThicknessWidthLength();
-		//pdpreguser.clickQuantity();
+		// pdpreguser.selectThicknessWidthLength();
+		// pdpreguser.clickQuantity();
 		pdpreguser.clickAddtoCart();
 
 	}
-	
+
 	@When("user clicks on Add To Cart button available")
-	public void user_clicks_on_add_to_cart_button_available()
-			throws InterruptedException {
+	public void user_clicks_on_add_to_cart_button_available() throws InterruptedException {
 
 		pdpreguser.clickQuantity();
 		pdpreguser.clickAddtoCart();
 
 	}
-	
-	
 
 	@Then("verify that the product should be added in the cart")
 	public void verify_that_the_product_should_be_added_in_the_cart() throws InterruptedException {
-               Thread.sleep(2000);
+		Thread.sleep(2000);
 		pdpreguser.validateAddedtoCart();
 
 	}
@@ -94,7 +95,7 @@ public class PDPRegisteredUserSteps {
 
 	@When("user enters invalid Custom Length {string} and  submits custom length")
 	public void user_enters_invalid_custom_length_and_submits_custom_length(String string) throws InterruptedException {
-		
+
 		pdppage.CustomLength("80000");
 	}
 
@@ -114,6 +115,7 @@ public class PDPRegisteredUserSteps {
 		pdppage.CustomLengthwithlength(string);
 		Thread.sleep(2000);
 	}
+
 	@When("user enters less than minimum  Custom Length {string} and  submits custom length for HR")
 	public void user_enters_less_than_minimum_custom_length_and_submits_custom_length_for_HR(String string)
 			throws InterruptedException {
@@ -123,7 +125,6 @@ public class PDPRegisteredUserSteps {
 		Thread.sleep(2000);
 	}
 
-
 	@Then("invalid custom length error message to be displayed")
 	public void invalid_custom_length_error_message_to_be_displayed() {
 		pdppage.validateCustomLengthErrorMessage();
@@ -131,22 +132,20 @@ public class PDPRegisteredUserSteps {
 
 	}
 
-	
 	@Then("invalid custom length error message to be displayed with length")
 	public void invalid_custom_length_error_message_to_be_displayed_with_length() {
 		pdppage.validateCustomLengthErrorMessage2();
-		Assert.assertEquals("Invalid length. Please enter standard length", pdppage.validateCustomLengthErrorMessage2());
+		Assert.assertEquals("Invalid length. Please enter standard length",
+				pdppage.validateCustomLengthErrorMessage2());
 
 	}
 
-	
 	@Then("invalid custom length error message should not be displayed")
 	public void invalid_custom_length_error_message_should_not_be_displayed() {
 		// Assert.assertFalse(pdppage.validateCustomLtErrorMessage());
 
 	}
-	
-	
+
 	@Given("user is on product detail page of cold rolled sheets")
 	public void user_is_on_product_detail_page_of_cold_rolled_sheets() throws InterruptedException {
 		pdpreguser.selectProductcoldrolled();
@@ -155,70 +154,111 @@ public class PDPRegisteredUserSteps {
 	@Given("deal is visible")
 	public void deal_is_visible() throws InterruptedException {
 		Thread.sleep(2000);
-	   pdpreguser.validateDealPill();
+		pdpreguser.validateDealPill();
 	}
 
 	@When("user click on deal")
 	public void user_click_on_deal() {
-	   pdpreguser.clickDealPill();
+		pdpreguser.clickDealPill();
 	}
 
 	@Then("verify lowest price seller is displayed")
 	public void verify_lowest_price_seller_is_displayed() throws InterruptedException {
-	   Thread.sleep(2000);
+		Thread.sleep(2000);
 		pdpreguser.validateLowestPriceSeller();
-		
+
 	}
 
 	@Then("verify best price is displayed on right side")
 	public void verify_best_price_is_displayed_on_right_side() {
-	    pdpreguser.validateBestPrice();
+		pdpreguser.validateBestPrice();
 	}
 
 	@Then("verify dimensions are selected")
 	public void verify_dimensions_are_selected() {
 		Assert.assertEquals(true, pdpreguser.checkDimensionSelected());
-		
-		
+
 	}
-	
+
 	@When("user select dimensions same as deal")
 	public void user_select_dimensions_same_as_deal() throws InterruptedException {
-	    pdpreguser.selectDimensionDeal();
+		pdpreguser.selectDimensionDeal();
 	}
 
 	@Then("deal pill gets clicked")
 	public void deal_pill_gets_clicked() {
-	    pdpreguser.validatedealPillclicked();
+		pdpreguser.validatedealPillclicked();
 	}
-	
+
 	@Given("user is on product detail page of Stainless Steel item")
 	public void user_is_on_product_detail_page_of_stainless_steel_item() throws InterruptedException {
 		pdpreguser.stainlessSteelDetails();
-	    
+
 	}
-	
+
+	@Given("user is on product detail page of Stainless Steel item and add dimensions")
+	public void user_is_on_product_detail_page_of_stainless_steel_itemand_add_dimensions() throws InterruptedException {
+		pdpreguser.stainlessSteelDetailsDimensions();
+
+	}
+
+	@Then("user add quantity and validate MOQ messages")
+	public void user_add_quantity(DataTable Moq) throws InterruptedException {
+
+		List<Map<String, String>> data = Moq.asMaps(String.class, String.class);
+		for (Map<String, String> form : data) {
+
+			String quantity = form.get("quantity");
+			pdpreguser.stainlessSteelDetailsAddquantity(quantity);
+
+			String moqMsg = form.get("MOQMessage");
+			String actualErrorMessage = pdpreguser.MOQErrorMessage();
+			System.out.println("Expected MOQ Message " + moqMsg);
+			System.out.println("Actual MOQ Message" + actualErrorMessage);
+			Assert.assertTrue(actualErrorMessage.contains(moqMsg));
+
+		}
+
+	}
+
 	@Given("user is on product detail page of Steel item")
 	public void user_is_on_product_detail_page_of_steel_item() throws InterruptedException {
 		pdpreguser.SteelDetails();
-	    
+
+	}
+	
+	@When("user is on product detail page of Steel item and add dimensions")
+	public void user_is_on_productdetail_pageofSteelitemand_add_dimensionsm() throws InterruptedException {
+		pdpreguser.SteelDetailsDimension();
+
+	}
+	@Given("validate add to cart button is disabled")
+	public void validate_add_to_cartbuttondisabled() throws InterruptedException {
+		
+		Assert.assertTrue(pdpreguser.validateAddToCartisDisabled());
+
 	}
 
+	@Given("user is on product detail page of HRPO item")
+	public void user_is_on_product_detail_page_of_hrpo_item() throws InterruptedException {
+		pdpreguser.HRPODetails();
 
-@Given("user is on product detail page of HRPO item")
-public void user_is_on_product_detail_page_of_hrpo_item() throws InterruptedException {
-	pdpreguser.HRPODetails();
-    
-}
+	}
 
-@Given("user is on product detail page of HR Sheet item")
-public void user_is_on_product_detail_page_of_HRSheet_item() throws InterruptedException {
-	pdpreguser.HRSteelDetails();
-    
-}
+	@Given("user is on product detail page of HR Sheet item")
+	public void user_is_on_product_detail_page_of_HRSheet_item() throws InterruptedException {
+		pdpreguser.HRSteelDetails();
 
+	}
+	
+	@Then("click on ResetSelection button")
+	public void click_on_ResetSelectionbutton() throws InterruptedException {
+		
+		pdpreguser.clickResetSelection();
 
+	}
 
 	
-
+	
+	
 }

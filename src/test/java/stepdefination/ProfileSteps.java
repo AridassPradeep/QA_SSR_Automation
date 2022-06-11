@@ -23,6 +23,7 @@ public class ProfileSteps {
 
 	@When("user click on the profile submmenu")
 	public void user_click_on_the_profile_submmenu() throws InterruptedException {
+		// Write code here that turns the phrase above into concrete actions
 		profilepage.clickSubProfile();
 
 	}
@@ -38,10 +39,13 @@ public class ProfileSteps {
 	}
 
 	@Then("Profile should be added with new designation")
-	public void profile_should_be_added_with_new_designation() {
-		Assert.assertTrue(profilepage.compareTitle());
-
-	}
+	/*
+	 * public void profile_should_be_added_with_new_designation() {
+	 * Assert.assertTrue(profilepage.compareTitle());
+	 * 
+	 * 
+	 * }
+	 */
 
 	@When("user clicks on text box  clear the data and add the new Udyam Number")
 	public void user_clicks_on_text_box_clear_the_data_and_add_the_new_udyam_number() throws InterruptedException {
@@ -49,21 +53,64 @@ public class ProfileSteps {
 	}
 
 	@Then("Profile should be added with new Udyam Number")
-	public void profile_should_be_added_with_new_udyam_number() {
-		Assert.assertTrue(profilepage.compareTitle());
+	/*
+	 * public void profile_should_be_added_with_new_udyam_number() {
+	 * Assert.assertTrue(profilepage.compareTitle());
+	 * 
+	 * 
+	 * }
+	 */
+
+	/*
+	 * @Then("Profile should be display the interest absed on industrial sector")
+	 * public void
+	 * profile_should_be_display_the_interest_absed_on_industrial_sector() {
+	 * Assert.assertTrue(profilepage.compareTitle());
+	 * 
+	 * 
+	 * }
+	 */
+	@When("user  click the Beneficiary name")
+	public void user_click_the_beneficiary_name() throws InterruptedException {
+
+		profilepage.clickaccount();
+
+	}
+
+	@Then("Copy icon is populated")
+	public void copy_icon_is_populated() throws InterruptedException {
+		profilepage.verifycopyicon();
+	}
+
+	@When("user click the Account number")
+	public void user_click_the_Account_number() throws InterruptedException {
+
+		profilepage.clickaccnumber();
+
+	}
+
+	@Then("Account Copy icon is populated")
+	public void Account_Copy_icon_is_populated() throws InterruptedException {
+		profilepage.verifycopyacc();
+
+	}
+
+	@When("user  click the IFSC")
+	public void user_click_the_IFSC() throws InterruptedException {
+
+		profilepage.clickIFSC();
+
+	}
+
+	@Then("IFSC Copy icon is populated")
+	public void copyifsc_is_populated() throws InterruptedException {
+		profilepage.verifycopyifsc();
 
 	}
 
 	@When("user select the industrial sector")
 	public void user_select_the_industrial_sector() throws InterruptedException {
 		profilepage.clickOption();
-
-	}
-
-	@Then("Profile should be display the interest absed on industrial sector")
-	public void profile_should_be_display_the_interest_absed_on_industrial_sector() {
-		Assert.assertTrue(profilepage.compareTitle());
-
 	}
 
 	@Then("interest area should be selected")
@@ -76,19 +123,14 @@ public class ProfileSteps {
 		profilepage.clickSave();
 
 	}
-	
-	@When("user click the Cancel button")
-	public void user_click_the_cancel_button() throws InterruptedException {
-	   profilepage.clickCancel();
-
-	}
 
 	@Then("Profile details should be saved")
 	public void profile_details_should_be_saved() {
 		Assert.assertTrue(profilepage.compareMsg());
+		profilepage.ok();
 
 	}
-
+	
 	@Then("user clicks on addresses")
 	public void user_clicks_on_addresses() {
 		profilepage.clickAddresses();
@@ -107,7 +149,7 @@ public class ProfileSteps {
 		Thread.sleep(3000);
 		
 	}
-
+	
 	@Then("addrees is displayed in shipping address column")
 	public void addrees_is_displayed_in_shipping_address_column() {
 
@@ -119,13 +161,15 @@ public class ProfileSteps {
 	}
 
 	@Then("user clicks on edit billing address")
-	public void user_clicks_on_edit_billing_address() {
+	public void user_clicks_on_edit_billing_address() throws InterruptedException {
+		profilepage.ClickEditBillingAddress();
 
 	}
 
 	@Then("edit company adress")
-	public void edit_company_adress() {
+	public void edit_company_adress() throws InterruptedException {
+		
+		profilepage.EditBillingAddress();
 
 	}
-
 }

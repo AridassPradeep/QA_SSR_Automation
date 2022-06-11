@@ -1,4 +1,4 @@
-@Steel
+ @sanityExe @Steel @demo
 Feature: Steel feature
 
   Background: User opens website
@@ -53,7 +53,7 @@ Feature: Steel feature
   Scenario: Verify Buy Now button and net banking with an order placed unsuccessfully
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
-    Then HR Products are displayed
+    #Then HR Products are displayed
     When user selects Steel product
     Given user is on product detail page of Steel item
     When user click on Buy Now
@@ -107,6 +107,7 @@ Feature: Steel feature
     And user click on proceed and confirm later
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
+
 
   Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment with confirmation payment
     When cart is empty or not

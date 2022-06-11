@@ -12,7 +12,7 @@ public class PLPNewPage {
 	
 	private WebDriver driver;
 
-	private By steelMenu = By.xpath("(//a[contains(text(),'Steel')])[2]");
+	private By steelMenu = By.xpath("//header/div[3]/div[1]/div[1]/div[1]/a[1]");
 	private By steelPLP = By.xpath("//span[@class='list-title desc']");
 	private By breadcrump = By.xpath("//div[@class='breadcrumb-url']");
 	private By hotRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[1]/a");
@@ -73,10 +73,12 @@ public class PLPNewPage {
 	}
 	
 	public void selectWR() {
+		
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
-		action.moveToElement(we).perform();
-		driver.findElement(wireRodMenu).click();
+		action.moveToElement(we).build().perform();
+		driver.findElement(By.partialLinkText("Wire")).click();
+		
 	}
 	
 	public void selectCoated() {

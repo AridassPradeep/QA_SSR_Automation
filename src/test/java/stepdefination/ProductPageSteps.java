@@ -3,6 +3,7 @@ package stepdefination;
 import org.junit.Assert;
 
 import pages.LoginPage;
+import pages.PDPRegisteredUserPage;
 import pages.ProductPage;
 import factory.DriverFactory;
 
@@ -13,6 +14,7 @@ import io.cucumber.java.en.When;
 public class ProductPageSteps {
 
 	ProductPage productpage = new ProductPage(DriverFactory.getDriver());
+	PDPRegisteredUserPage pdp = new PDPRegisteredUserPage(DriverFactory.getDriver());
 
 
 	@Then("user click on hot rolled sheet")
@@ -30,4 +32,21 @@ public class ProductPageSteps {
 
 	}
 
+	@Then("user select wire rod product in PLP page")
+	public void user_select_wire_rod_produc_in_PLP_page() throws InterruptedException
+	{
+		pdp.selectWireRodProduct();
+	}
+	  
+	@Then("user select the dimensions of selected wire rod product")
+	public void user_select_the_dimensions_of_selected_wire_rod_product() throws InterruptedException
+	{
+		pdp.selectWRDimensions();
+	}
+	
+	@Then("user select the dimensions of selected wire rod product for directorder user")
+	public void user_select_the_dimensions_of_selected_wire_rod_productfordirectorderuser() throws InterruptedException
+	{
+		pdp.selectWRDimensionsForDirectOrderUser();
+	}
 }

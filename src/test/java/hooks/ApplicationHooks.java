@@ -27,7 +27,7 @@ public class ApplicationHooks {
 	}
 
 	@Before(order = 1)
-	public void launchBrowser() {
+	public void launchBrowser() throws Exception {
 		String browserName = prop.getProperty("browser");
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);

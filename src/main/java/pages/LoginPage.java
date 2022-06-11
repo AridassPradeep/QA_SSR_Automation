@@ -1,9 +1,13 @@
 package pages;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import util.OtpUtil;
 
 public class LoginPage {
 
@@ -37,6 +41,12 @@ public class LoginPage {
 	public boolean validateLoginuserMenu() throws InterruptedException {
 		
 		driver.navigate().refresh();
+		Thread.sleep(3000);
+		return driver.findElement(loginuserMenu).isDisplayed();
+
+	}
+	
+public boolean validateuserMenu() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(loginuserMenu).isDisplayed();
 
@@ -102,6 +112,32 @@ public class LoginPage {
 		return driver.findElement(loginByEmail).isDisplayed();
 
 	}
+	
+	public void clickLoginByOtp()
+	{
+		driver.findElement(By.xpath("//button[contains(text(),'Login via OTP')]")).click();
+	}
+	
+	public void enterPhoneNo()
+	{
+		driver.findElement(By.xpath("//input[@placeholder='Enter your mobile number']")).sendKeys("8095424663");
+	}
+	
+	
+	public void clickGetOTP()
+	{
+		driver.findElement(By.xpath("//button[contains(text(),'Get OTP')]")).click();
+		
+	}
+	
+	
+	public void enterOTP() throws InterruptedException, MalformedURLException
+	{
+		String otp=OtpUtil.getOTP();
+		System.out.println("The OTP is " + otp);
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(otp);
+	}
+	
 
 
 }

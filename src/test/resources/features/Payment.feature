@@ -1,4 +1,4 @@
-  @Payment
+  @Payment @demo
 Feature: Payment and Cart Scenarios for single and multiple product
 
   Background: User opens website

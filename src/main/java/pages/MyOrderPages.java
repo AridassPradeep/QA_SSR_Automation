@@ -2,6 +2,7 @@ package pages;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -195,6 +196,71 @@ public class MyOrderPages {
 		String number = driver.findElement((By) orderNumber).getText();
 		return;
 	}
+	
+	//Payment History
+	
+		public void DOorder() throws InterruptedException {
+			WebElement scroll = driver.findElement(By.xpath("//div[text()='TEST999-11363']"));
+			JavascriptExecutor j = (JavascriptExecutor) driver;
+			j.executeScript("arguments[0].scrollIntoView()", scroll);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//div[3]/div/div[3]/div[1]/div[3]/div[2]/div")).click();
+		}
+		
+		
+		public void validateOrderSummaryPage() {
+			driver.findElement(By.xpath("//div[text()='Order details']")).isDisplayed();
+		}
+		
+		public void validatePaymentReceived() {
+			driver.findElement(By.xpath("//span[text()='Payment received']")).isDisplayed();
+		}
+		
+		public void clickPaymentHistory() {
+			driver.findElement(By.xpath("//button[contains(text(),'Payment history')]")).click();
+		}	
+		
+		public void paymentHistory() {
+			List<WebElement> payment = driver.findElements(By.xpath("//div[@class='payment-details']"));
+			System.out.println("Number of payment history: " +payment.size());
+			for (Iterator iterator = payment.iterator(); iterator.hasNext();) {
+				WebElement webElement = (WebElement) iterator.next();
+				System.out.println(webElement.getText());
+			}
+		}
+		
+		public void scrollPayment() {
+			WebElement paymentReceived = driver.findElement(By.xpath("//span[text()='Payment received']"));
+			JavascriptExecutor j = (JavascriptExecutor) driver;
+			j.executeScript("arguments[0].scrollIntoView()", paymentReceived);
+				return;
+		}
+		
+	// Applied coupons view	
+		
+		public void validateViewCoupons() {
+			WebElement coupons = driver.findElement(By.xpath("//span[text()='View coupons']"));
+			System.out.println(coupons.isDisplayed());
+			System.out.println(coupons.getText());
+		}
+		
+		public void couponsCount() {
+			WebElement count = driver.findElement(By.xpath("//div[@class='applied-coupons']"));
+			System.out.println(count.getText());
+		}
+		
+		public void clcikViewCoupons() {
+			driver.findElement(By.xpath("//span[text()='View coupons']")).click();
+		}
+		
+		public void validateAppliedCoupon() throws InterruptedException {
+			System.out.println(driver.findElement(By.xpath("//h1[@class='coupon-modal-heading']")).getText());
+			System.out.println(driver.findElement(By.xpath("//div[@class='applied-coupon']")).getText());
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='close']")).click();
+			Thread.sleep(2000);
+		}
+		
 	
 	public WebElement getOrderNumber() {
 		return orderNumber;

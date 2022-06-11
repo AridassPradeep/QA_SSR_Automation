@@ -21,6 +21,8 @@ public class CartDetailPage {
     private By checkbox= By.xpath("//input[@id='termsCondition']");
     private By techspec= By.xpath("//input[@id='termsCondition']//following::label[1]");
     private By deliverydate= By.xpath("//strong[contains(text(),'2-5 days')]");
+    private By apply = By.xpath("(//div[@class='coupon-persuasion-container'])[1]");
+    private By applied = By.xpath("(//div[@class='coupon-applied-container'])[1]");
     
 	public CartDetailPage(WebDriver driver) {
 		this.driver = driver;
@@ -79,4 +81,56 @@ public class CartDetailPage {
 		Assert.assertEquals(str, "2-5 days");
 	}
 	
-}
+	//Discount	
+		public void validateCartPage() {
+			WebElement cartPage = driver.findElement(By.xpath("//ul[@class='nav nav-tabs requirements-nav']"));
+			System.out.println(cartPage.getText());
+		}
+		
+		public void applySteel250() throws InterruptedException {
+			driver.findElement(By.xpath("(//button[@class='primary apply-button'])[1]")).click();
+			Thread.sleep(2000);
+		//	driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
+		}
+		
+		public void removeProduct() throws InterruptedException {
+			driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
+			WebElement remove = driver.findElement(By.xpath("//div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/span[1]"));
+			JavascriptExecutor j = (JavascriptExecutor) driver;
+//			j.executeScript("window.scrollTo(0,700)", "");
+			j.executeScript("arguments[0].scrollIntoView()", remove);
+			Thread.sleep(2000);
+			remove.click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("//span[contains(text(),'Remove item')]")).click();
+			Thread.sleep(10000);
+		}
+		
+		public boolean priceverification() {
+//			driver.findElement(By.xpath("//span[@class='strike']").isDisplayed();
+			driver.findElement(By.xpath("//div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/span[1]")).isDisplayed();
+			return true;
+		}
+		
+		public boolean apply() {
+			return driver.findElement(apply).isDisplayed();
+		}	
+		
+		public boolean applied() {
+			return driver.findElement(applied).isDisplayed();
+		}	
+		
+		public void validateApplyCoupons() {
+			WebElement coupons = driver.findElement(By.xpath("(//div[@class='coupon-persuasion-container'])[1]"));
+			JavascriptExecutor j = (JavascriptExecutor) driver;
+			j.executeScript("arguments[0].scrollIntoView()", coupons);
+			System.out.println(coupons.getText());
+		}
+		
+		public void validateAppliedCoupons() {
+			WebElement coupons = driver.findElement(By.xpath("(//div[@class='coupon-applied-container'])[1]"));
+			JavascriptExecutor j = (JavascriptExecutor) driver;
+			j.executeScript("arguments[0].scrollIntoView()", coupons);
+			System.out.println(coupons.getText());
+		}
+	}

@@ -331,7 +331,8 @@ public class HomePageSteps {
 
 	@Then("Verify user is navigate to {string} page and back to home page")
 	public void verify_user_is_navigate_to_page_and_back_to_home_page(String string) throws InterruptedException {
-	    homePage.clickHelp();
+	   
+		homePage.clickHelp();
 	    Thread.sleep(3000);
 	    homePage.clickonHomePageLogo();
 	  	    

@@ -1,12 +1,12 @@
 #1)change 1st scenario data-change mobile no,email and gstin otherwise it will throw error
-@Registration
+@Registration @demo
 Feature: Registration page feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on register button
 
-  @sanity1
+  @sanityExe 
   Scenario Outline: Validate Registration with success message and proceed to home button is displayed
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -22,7 +22,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 7012010301 | 33AHRPS1687F3ZU  | xamyTEST10091@gmail.com | Ramya@678 |
+      | ramya    | 7112010101 | 33AAAAI0847A1ZE  | demoTES003091@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"

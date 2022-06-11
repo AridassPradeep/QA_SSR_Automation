@@ -25,16 +25,16 @@ public class DirectOrderPage {
 
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By quantity = By.xpath("//input[@class='input-quant']");
-	private By buyfromverified = By.xpath("//button[@id=\"direct-distributor-switch\"]");
-	private By directlyfromJSW = By.xpath("//button[@id=\"direct-distributor-switch\"]//span//span");
+	private By buyfromverified = By.xpath("//span[contains(text(),'Buy from verified sellers')]");
+	private By directlyfromJSW = By.xpath("//span[contains(text(),'Buy directly from')]");
 	private By myrequirements = By.xpath("(//a[@class='links'])[2]");
 	private By requestprice = By.xpath("(//button[@id='direct-order-request-price'])[1]");
 	private By viewrequirementlist = By.xpath("//span[text()='View requirements list']");
-	private By requestforprice = By.xpath("//button[@class='btn purchase-button primary']");
+	private By requestforprice = By.xpath("//span[contains(text(),'Request for price')]");
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
 	private By message = By.xpath("(//*[@class='mt-14'])[1]");
-	private By deliverydate = By.xpath("//span[contains(text(),'30 - 45 days')]");
+	private By deliverydate = By.xpath("//strong[contains(text(),'30-45 days')]");
 	private By clickpasswordNext = By.xpath("//*[@id='passwordNext']/div/button/span");
 	private By uploadFiles = By.xpath("(//span[contains(text(),'Upload files')])[1]");
 	private By proceedtopaytop = By.xpath("//button[@id='oi-proceed-to-pay-notification']");
@@ -68,6 +68,11 @@ public class DirectOrderPage {
 
 	public void validateBuyFromVerified() {
 		driver.findElement(buyfromverified).isDisplayed();
+
+	}
+	
+	public void clickonJswSteel() {
+		driver.findElement(By.xpath("//span[contains(text(),'Buy directly from')]")).click();
 
 	}
 

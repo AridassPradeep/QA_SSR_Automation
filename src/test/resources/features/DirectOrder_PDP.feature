@@ -1,10 +1,10 @@
-@DirectOrderPDP
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
+    When user click  on login by email
+    When user enters logins with username with "qatestuser@jsw.in" and  "Admin@123$"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -14,14 +14,15 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Buy from verified sellers
     Then verify Buy directly from JSWsteel is displayed
     When user click on Buy directly from JSWsteel
-    Then verify My requirements are displayed on top
+    #Then verify My requirements are displayed on top
+    Then Buy from verified sellers is displayed
 
   Scenario: Verify Request for Price is submitted successfully
     When Buy from verified sellers is displayed
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension for product
+    When user clicks HR from Steel Navigation Menu
+    #Then HR Products are displayed
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -33,34 +34,27 @@ Feature: Direct Order for PDP feature for registered user
 
   Scenario: Delivery 30-45 days is displayed
     When Buy from verified sellers is displayed
-    When user click on cart on top and then Requirements tab
-    When Requirement is present then remove it
-    Then verify no product in requirement list
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension for product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
     When user click View requirements list
     Then verify Request for price is displayed
-    Then verify Requirement list is displayed
     Then verify delivery date is displayed from 30-45 days
 
   Scenario: Verify multiple products added before Request for price
     When Buy from verified sellers is displayed
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension for product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter quantity and dimensions for the product
+    And user is able to select Wire rods from Steel Menu
+    Then user select wire rod product in PLP page
+    Then user select the dimensions of selected wire rod product for directorder user
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -73,25 +67,27 @@ Feature: Direct Order for PDP feature for registered user
   Scenario: Verify product is added to cart
     When cart is empty or not
     When Buy from verified sellers is displayed
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter quantity and dimensions for the product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     When user click on Buy from verified sellers
     Then verify Buy directly from JSWsteel is displayed
-    Then verify price would be displayed
-    When user add an item to cart
-    Then verify Cart icon would appear with 1
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
 
-  Scenario: Verify product is removed from requirements list
+  Scenario: NOT WORKING-Verify product is removed from requirements list
     When Buy from verified sellers is displayed
     When user click on cart on top and then Requirements tab
     When Requirement is present then remove it
     Then verify no product in requirement list
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension for product
+    When Buy from verified sellers is displayed
+    When user clicks HR from Steel Navigation Menu
+    #Then HR Products are displayed
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -103,19 +99,15 @@ Feature: Direct Order for PDP feature for registered user
 
   Scenario Outline: Verify multiple products from different seller added before Request for price
     When Buy from verified sellers is displayed
-    When user click on cart on top and then Requirements tab
-    When Requirement is present then remove it
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension for product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
-    When user enter "<search>" in search bar
-    And user click on search button
-    Given user is on product detail page
-    When user enter dimension and quantity
+    And user is able to select Wire rods from Steel Menu
+    Then user select wire rod product in PLP page
+    Then user select the dimensions of selected wire rod product for directorder user
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -125,16 +117,12 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Request for price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
-    Examples: 
-      | search    |
-      | HR sheets |
-
+ 
   Scenario Outline: Verify Confirm payment is made successfully
     When Buy from verified sellers is displayed
-    When user enter "Colour" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension for product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -151,18 +139,18 @@ Feature: Direct Order for PDP feature for registered user
     When user is on home page
     When homepage refreshes
     Then verify Proceed to Pay is displayed on top
-    When user click on Proceed to Pay and Mycart on top
+    # When user click on Proceed to Pay and Mycart on top
     When user click on confirm payment
     When user click on make payment and confirms payment successful
 
     Examples: 
-      | Email             | Password   | Gmail             |
-      | qatestuser@jsw.in | Admin@123$ | qatestuser@jsw.in |
+      | Gmail      | Password          |
+      | qatestuser@jsw.in | Admin@123$ |
 
-  @Advance
+  @Advance  @DirectOrderPDP
   Scenario Outline: Verify Payment status to be changed to "Advance recieved"
     When Buy from verified sellers is displayed
-    When check cart is empty
+    Then user navigate to Home page
     When user login to google cloud
     And login to google cloud with gmail "<Gmail>"
     And login to google cloud with password "<Password>"
@@ -171,7 +159,10 @@ Feature: Direct Order for PDP feature for registered user
     And user is on home page
     And homepage refreshes
     And user click on cart on top
-    And user click on Mycart and then Proceed to pay
+    #And user click on Mycart and then Proceed to pay
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
+    And user click on proceed to pay on cart detail page
     And user click on confirm payment
     And user clicks on My order and select order details like orderid
     And user login to merchant centre username with "v_laxminarayan.jena@jsw.in" and  "123Tmnas$"
@@ -179,14 +170,14 @@ Feature: Direct Order for PDP feature for registered user
     And capture paymentid from payment tab in order
     And paste paymentid in Transaction Excel
     And login to Transaction URL
-     And user upload transaction file
+    And user upload transaction file
     And paste paymentid and orderid in payment Excel
     And Login to Payment URL
     And user upload payment file
     And user is on home page
     And homepage refreshes
     And user clicks on My order and select order details
-    Then Verify Payment status 
+    Then Verify Payment status
 
     Examples: 
       | Email             | Password   | Gmail             |

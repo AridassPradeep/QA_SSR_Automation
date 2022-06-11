@@ -1,4 +1,4 @@
-@cart
+@cart @demo
 Feature: Cart Detail Page feature
 
     Background: User opens website

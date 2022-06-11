@@ -192,13 +192,13 @@ public class PLPSteps {
 	}
 
 	@Then("Hot Rolled coil Related products will display")
-	public void hot_rolled_coil_related_products_will_display() {
+	public void hot_rolled_coil_related_products_will_display() throws InterruptedException {
 		productlandingpage.validateHotRolledProductName();
 	}
 
 	@Then("product name should be for Hot Rolled Sheet is \"\"Hot Rolled sheets[{int}:{int}]-E250A-HR CTLF")
 	public void product_name_should_be_for_hot_rolled_sheet_is_hot_rolled_sheets_e250a_hr_ctlf(Integer int1,
-			Integer int2) {
+			Integer int2) throws InterruptedException {
 		productlandingpage.validateHotRolledProductName();
 	}
 
@@ -408,4 +408,6 @@ public class PLPSteps {
 		Assert.assertEquals(productpage.validateHRSeries300Page(), "Stainless Steel hot rolled sheets");
 		productpage.selectProductreguserHRS();
 	}
+	
+	
 }
