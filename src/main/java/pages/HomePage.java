@@ -362,8 +362,10 @@ public class HomePage {
 		return driver.findElement(blogs).isDisplayed();
 	}
 
-	public boolean validateToggled() {
-		return driver.findElement(toggled).isDisplayed();
+	public void validateToggled() {
+//		return driver.findElement(toggled).getText();
+		System.out.println(driver.findElement(toggled).getText());
+		
 	}
 
 	public void subSteelTree() throws InterruptedException {

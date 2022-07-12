@@ -18,7 +18,8 @@ public class PDPRegisteredUserPage {
 	private By menu = By.xpath("//ul[@class='main-categories-first-child-menu']/child::li");
 	private By secondmenu = By.xpath("//ul[@class='main-categories-second-child-menu']/child::li/child::a");
 	private By productselect = By.xpath("//a[@class='prod-plpimage1name']");
-	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
+	private By alldimensions = By
+			.xpath("//button[contains(@class,'list-group-item list-group-item-action in-active')]");
 	private By addquantity = By.xpath("//div[2]/div[1]/div[1]/div[1]/button[1]/img[1]");
 	private By addtocartbutton = By.xpath("//div[@class='fw-bold add-to-cart-out']");
 	private By diameter = By.xpath("//div[contains(@class,'size_1')]/child::div[@class='dimension-size']");
@@ -54,7 +55,12 @@ public class PDPRegisteredUserPage {
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(6).click();
+		for (int i = 0; i < productselected.size(); i++) {
+			if (productselected.get(i).getText().equals("JSW Steel Hot Rolled Sheets IS 2062:2011 E250A")) {
+				productselected.get(i).click();
+			}
+			break;
+		}
 
 	}
 
@@ -85,14 +91,14 @@ public class PDPRegisteredUserPage {
 
 		List<WebElement> allThickness = driver
 				.findElements(By.xpath("//div[@class='list-group flex-row flex-wrap']//button"));
-		allThickness.get(0).click();
+		allThickness.get(1).click();
 		allThickness.get(11).click();
-		allThickness.get(13).click();
+		allThickness.get(14).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[2]/div[1]/div[1]/input[1]")).sendKeys("30");
+		driver.findElement(By.xpath("//div[2]/div[1]/div[1]/input[1]")).sendKeys("150");
 		Thread.sleep(2000);
-		driver.findElement(addquantity).click();
-		Thread.sleep(2000);
+		// driver.findElement(addquantity).click();
+		// Thread.sleep(2000);
 
 	}
 
@@ -179,11 +185,12 @@ public class PDPRegisteredUserPage {
 		List<WebElement> alldimensions2 = driver.findElements(alldimensions);
 		int i = driver.findElements(alldimensions).size();
 		System.out.println(i);
-		alldimensions2.get(5).click();
+		alldimensions2.get(1).click();
 		Thread.sleep(1000);
-		alldimensions2.get(16).click();
-		alldimensions2.get(19).click();
-		driver.findElement(By.xpath("//input[@class='input-quant']")).sendKeys("1234");
+		alldimensions2.get(11).click();
+		Thread.sleep(1000);
+		alldimensions2.get(12).click();
+		driver.findElement(By.xpath("//input[@class='input-quant']")).sendKeys("120");
 		Thread.sleep(3000);
 
 	}
@@ -263,21 +270,21 @@ public class PDPRegisteredUserPage {
 
 	public void stainlessSteelDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("106");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("120");
 		Thread.sleep(2000);
 
 	}
 
 	public void stainlessSteelDetailsDimensions() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
@@ -306,23 +313,24 @@ public class PDPRegisteredUserPage {
 
 	}
 
+	//
 	public void SteelDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[3]//div//button[2]"))
 				.click();
-		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[2]//div//button[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("288");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("200");
 		Thread.sleep(2000);
 
 	}
 
 	public void SteelDetailsDimension() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[2]"))
 				.click();
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
 		Thread.sleep(2000);
@@ -343,7 +351,7 @@ public class PDPRegisteredUserPage {
 
 	public void HRPODetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[2]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
@@ -359,7 +367,7 @@ public class PDPRegisteredUserPage {
 
 	public void HRSteelDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[2]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[2]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
@@ -382,7 +390,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void selectWRDimensions() throws InterruptedException {
-		driver.findElement(By.xpath("//button[contains(text(),'6.5')]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'5.5')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//input[@class='form-control'])[2]")).sendKeys("5");
 		Thread.sleep(1000);
@@ -397,7 +405,7 @@ public class PDPRegisteredUserPage {
 
 	public void HRSteelDetails01() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
@@ -414,5 +422,13 @@ public class PDPRegisteredUserPage {
 
 	}
 
+	public void CTLafterentered(String string) {
+		driver.findElement(By.xpath("(//input[@id='customLen'])[3]")).sendKeys(string);
+		System.out.println("Entered input value: " + string);
+	}
 
+	public void validateErrorMessage() {
+		String mge = driver.findElement(By.xpath("(//div[@class='error-message'])[3]")).getText();
+		System.out.println("Error message :" + mge);
+	}
 }

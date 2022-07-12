@@ -1,12 +1,8 @@
 package pages;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.List;
 
-import org.apache.xmlbeans.impl.common.ValidatorListener.Event;
-import org.apache.xmlbeans.impl.values.JavaStringEnumerationHolderEx;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +24,7 @@ public class ProductPage {
 	private By viewAllSS = By.xpath("(//button[@class='btn view-all btn-outline-primary primary'])[2]");
 	private By ssHRS = By.xpath("//div[@class='plp-product-item']");
 	private By stainlessSteelMenu = By.xpath("//a[contains(text(),'Stainless Steel')]");
-	
+
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -64,19 +60,18 @@ public class ProductPage {
 		driver.findElement(By.xpath("//button[1]/span[1]/i[1]")).click();
 
 		Thread.sleep(5000);
-		
+
 		driver.findElement(By.xpath("//button[@class='ok-button']")).click();
 
 	}
-	
+
 	public void hrSheets() throws InterruptedException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,1300)", "");
 		Thread.sleep(5000);
 		driver.findElement(stainlessSteelByCategories).isDisplayed();
 	}
-	
-		
+
 	public void selectSeries300() throws InterruptedException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("arguments[0].scrollIntoView()", viewAllSS);
@@ -84,45 +79,77 @@ public class ProductPage {
 		Thread.sleep(3000);
 		driver.findElement(viewAllSS).click();
 	}
+
 	public String validateHRSeries300Page() {
-		
+
 		driver.findElement(By.xpath("//span[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
 		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
 		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
 	}
-	
-		
+
 	public void SSMenu() throws InterruptedException, AWTException {
-			Actions action = new Actions(driver);
-			WebElement we = driver.findElement(stainlessSteelMenu);
-			action.moveToElement(we).build().perform();
-//			Robot r = new Robot();
-//			r.keyPress(KeyEvent.VK_DOWN);
-//			r.keyRelease(KeyEvent.VK_DOWN);
-			driver.findElement(By.partialLinkText("Hot rolled sheets")).click();
-			Thread.sleep(2000);
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(stainlessSteelMenu);
+		action.moveToElement(we).build().perform();
+		// Robot r = new Robot();
+		// r.keyPress(KeyEvent.VK_DOWN);
+		// r.keyRelease(KeyEvent.VK_DOWN);
+		driver.findElement(By.partialLinkText("Hot rolled sheets")).click();
+		Thread.sleep(2000);
 	}
-		
+
 	public void selectProductreguserHRS() {
-		
+
 		List<WebElement> productlist = driver.findElements(productselect);
 
 		for (int i = 0; i < productlist.size(); i++) {
 			System.out.println(productlist.get(i).getText());
 			if (productlist.get(i).getText().equals("JSL stainless steel HRAP 304L N1 finish sheets")) {
-				productlist.get(i).click();	
+				productlist.get(i).click();
 				break;
+			} else {
+
 			}
-			else
-			{
-				
-			}
-			
-			
-			
+
 		}
 
 	}
 
+	// Customer length watermark
+
+	public void SheetDimension() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[2]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		Thread.sleep(2000);
+		// driver.findElement(By.xpath("//div[contains(text(),'Length
+		// (mm)')]//following::div[1]//div//button[1]")).click();
+		// Thread.sleep(2000);
+	}
+
+	public void clickCustomerLength() throws InterruptedException {
+		driver.findElement(By.xpath("//button[contains(text(),'Custom length')]")).click();
+		Thread.sleep(2000);
+
+	}
+
+	public void validateCTL() throws InterruptedException {
+		String ctl = driver.findElement(By.xpath("(//*[@id=\"customLen\"])[3]")).getAttribute("placeholder");
+		System.out.println("CTL watermark: " + ctl);
+		Thread.sleep(2000);
+	}
+
+	public void selectHotRolledSheet() throws InterruptedException {
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]")).click();
+		Thread.sleep(2000);
+	}
+
+	public void selectColdRolledSheet() throws InterruptedException {
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Cold Rolled Sheets IS 513 (Part 1):2016 ')]"))
+				.click();
+		Thread.sleep(2000);
+	}
 
 }

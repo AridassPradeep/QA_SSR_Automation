@@ -25,9 +25,9 @@ public class HomePageSteps {
 
 	@When("user selects Hot Rolled products")
 	public void user_selects_colour_coated_products() throws InterruptedException {
-		homePage.selectHotRolledProduct(); 
+		homePage.selectHotRolledProduct();
 	}
-	
+
 	@Then("Verify Search Bar is displayed with search icon")
 	public void verify_search_bar_is_displayed_with_search_icon() {
 		Assert.assertTrue(homePage.validateSearch());
@@ -43,15 +43,12 @@ public class HomePageSteps {
 		Assert.assertTrue(homePage.validateCartIcon());
 	}
 
-
 	@Then("Verify the Cart link action")
 	public void verify_the_cart_link_action() throws InterruptedException {
 		String myCartText = homePage.clickonCart().validateMyCart();
 		System.out.println("myCartText = " + myCartText);
 
 	}
-
-	
 
 	@Then("Verify the address not displaying for the guest user")
 	public void verify_the_address_not_displaying_for_the_guest_user() {
@@ -82,8 +79,6 @@ public class HomePageSteps {
 		Assert.assertTrue(registrationPage.validateRegisterButton());
 	}
 
-	
-
 	@Then("Verify {string} section available in the Header")
 	public void verify_section_available_in_the_header(String string) {
 
@@ -106,14 +101,13 @@ public class HomePageSteps {
 
 	@Then("Verify the My Profile section link is appearing with users first name")
 	public void verify_the_my_profile_section_link_is_appearing_with_users_first_name() throws InterruptedException {
-           
+
 	}
 
 	@Then("Verify that the My Profile section Link is displaying ^ icon when the drop down is clicked")
 	public void verify_that_the_my_profile_section_link_is_displaying_icon_when_the_drop_down_is_clicked() {
 
 	}
-
 
 	@Then("Verify the action of Logout Link in My Profile drop down")
 	public void verify_the_action_of_logout_link_in_my_profile_drop_down() {
@@ -176,8 +170,6 @@ public class HomePageSteps {
 		homePage.validatequeryId();
 	}
 
-	
-
 	@Then("Verify the action on wrong data entered")
 	public void verify_the_action_on_wrong_data_entered() {
 
@@ -189,7 +181,8 @@ public class HomePageSteps {
 	}
 
 	@Then("Verify For logged in user on Enquiry form Name, mobile number and email id should be pre-populated.")
-	public void verify_for_logged_in_user_on_enquiry_form_name_mobile_number_and_email_id_should_be_pre_populated() throws InterruptedException {
+	public void verify_for_logged_in_user_on_enquiry_form_name_mobile_number_and_email_id_should_be_pre_populated()
+			throws InterruptedException {
 		homePage.extractEnquiryFormDetails();
 	}
 
@@ -197,14 +190,13 @@ public class HomePageSteps {
 	public void verify_that_is_displaying_based_on_the_successful_submission_of_enquiry_form(String string) {
 
 	}
-	
+
 	@Then("Verify the banners are displayed on the JSW Home Page")
 	public void verify_the_banners_are_displayed_on_the_jsw_home_page() throws InterruptedException {
 		homePage.clickonHomePageLogo();
 		Thread.sleep(2500);
 		System.out.println("No of banner images " + homePage.validateSliderContainerImages());
 	}
-	
 
 	@Then("Verify the Enquiry form banner displayed on the Home Page")
 	public void verify_the_enquiry_form_banner_displayed_on_the_home_page() {
@@ -249,27 +241,28 @@ public class HomePageSteps {
 	public void verify_for_help_line_number_is_present_in_footer_section() {
 		Assert.assertTrue(homePage.validatehelpLineNumber());
 	}
-	
+
 	@Then("Hot rolled sheets Hot rolled coils Cold rolled sheets Cold rolled coils is displayed in homepage in stainless steel section")
 	public void hot_rolled_sheets_hot_rolled_coils_cold_rolled_sheets_cold_rolled_coils_is_displayed_in_homepage_in_stainless_steel_section() {
 		Assert.assertTrue(homePage.validateHotRolledSheetsInHomePage());
 	}
-	
+
 	@Then("Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section")
 	public void hot_rolled_cold_rolled_wire_rods_coated_colour_coated_is_displayed_in_homepage_in_steel_section() {
 		Assert.assertTrue(homePage.validateHotrolledInHomePage());
 	}
-	
+
 	@When("user clicks on Hot Rolled Sheets Series {int} Series {int} Series {int} is displayed")
-	public void user_clicks_on_hot_rolled_sheets_series_series_series_is_displayed(Integer int1, Integer int2, Integer int3) {
+	public void user_clicks_on_hot_rolled_sheets_series_series_series_is_displayed(Integer int1, Integer int2,
+			Integer int3) {
 		Assert.assertTrue(homePage.validateSeries200InHomePage());
 	}
+
 	@When("user clicks on Hot rolled  then coils ,sheet is displayed")
 	public void user_clicks_on_hot_rolled_then_coils_sheet_is_displayed() {
 		Assert.assertTrue(homePage.validateCoilsInHomePage());
 	}
 
-	
 	@When("user clicks on Stainless Steel Navigation Menu")
 	public void user_clicks_on_stainless_steel_navigation_menu() throws InterruptedException {
 		homePage.clickonStainlessSteelMenu();
@@ -282,211 +275,204 @@ public class HomePageSteps {
 
 	@When("user clicks on homePage Logo And navigates to homepage")
 	public void user_clicks_on_home_page_logo_and_navigates_to_homepage() {
-	  
+
 	}
-//Header
-	
+	// Header
+
 	@Then("Verify User name is displayed in the Header Section")
 	public void verify_user_name_is_displayed_in_the_header_section() throws InterruptedException {
-	    Assert.assertTrue(homePage.validateUserName());
-	    homePage.myProfile();
-	    homePage.clickonHomePageLogo();
-	    
+		Assert.assertTrue(homePage.validateUserName());
+		homePage.myProfile();
+		homePage.clickonHomePageLogo();
+
 	}
 
 	@Then("Verify Myorders is displayed in the Header Section")
 	public void verify_myorders_is_displayed_in_the_header_section() throws InterruptedException {
-	    Assert.assertTrue(homePage.validateMyorder());
-	    homePage.clickMyorder();
-	    Thread.sleep(5000);
-	    homePage.clickonHomePageLogo();
+		Assert.assertTrue(homePage.validateMyorder());
+		homePage.clickMyorder();
+		Thread.sleep(5000);
+		homePage.clickonHomePageLogo();
 	}
 
 	@Then("Verify Cart Icon displayed")
 	public void verify_cart_icon_displayed() throws InterruptedException {
-	    Assert.assertTrue(homePage.validateCartIcon());
-	    homePage.clickonCart();
-	    Thread.sleep(5000);
-	    homePage.clickonHomePageLogo();
-	    
+		Assert.assertTrue(homePage.validateCartIcon());
+		homePage.clickonCart();
+		Thread.sleep(5000);
+		homePage.clickonHomePageLogo();
+
 	}
 
 	@Then("Verify {string} Category tree is displayed")
 	public void verify_category_tree_is_displayed(String string) throws InterruptedException {
-	    homePage.subSteelTree();
-	    
+		homePage.subSteelTree();
+
 	}
 
 	@Then("verify {string} category tree is displayed in Header section")
 	public void verify_category_tree_is_displayed_in_header_section(String string) throws InterruptedException {
-	    homePage.subSSTree();
-	    
+		homePage.subSSTree();
+
 	}
 
 	@Then("Verify {string} is displayed in Header section")
 	public void verify_is_displayed_in_header_section(String string) throws InterruptedException {
-	    homePage.subConstructionTree();
-	    
+		homePage.subConstructionTree();
+
 	}
 
 	@Then("Verify user is navigate to {string} page and back to home page")
 	public void verify_user_is_navigate_to_page_and_back_to_home_page(String string) throws InterruptedException {
-	   
-		homePage.clickHelp();
-	    Thread.sleep(3000);
-	    homePage.clickonHomePageLogo();
-	  	    
-	}
 
+		homePage.clickHelp();
+		Thread.sleep(3000);
+		homePage.clickonHomePageLogo();
+
+	}
 
 	@Then("Verify {string} is displayed in header Section")
 	public void verify_is_displayed_in_header_section1(String string) throws InterruptedException {
-//		Assert.assertTrue(homePage.validateAboutUs());
-	    homePage.clickAboutUs();
-	    Thread.sleep(5000);
-	    homePage.clickonHomePageLogo();
+		// Assert.assertTrue(homePage.validateAboutUs());
+		homePage.clickAboutUs();
+		Thread.sleep(5000);
+		homePage.clickonHomePageLogo();
 	}
-		
-	
+
 	@Then("Verify user is able to view {string} and navigate to address section in Profile page")
 	public void verify_user_is_able_to_view_and_navigate_to_address_section_in_profile_page(String string) {
 		homePage.validateAddress();
 	}
 
 	@Then("Verify user is navigate to {string} page by clicking {string} CTA")
-	public void verify_user_is_navigate_to_page_by_clicking_cta(String string, String string2) throws InterruptedException {
-	    Assert.assertTrue(homePage.validateConnectWithUs());
-	    homePage.clickConnect();
-	    Thread.sleep(2000);
-	    homePage.clickonHomePageLogo();
-	    
-	    
+	public void verify_user_is_navigate_to_page_by_clicking_cta(String string, String string2)
+			throws InterruptedException {
+		Assert.assertTrue(homePage.validateConnectWithUs());
+		homePage.clickConnect();
+		Thread.sleep(2000);
+		homePage.clickonHomePageLogo();
+
 	}
 
 	@Then("Verify user is able to view toggled CTA on Header section")
 	public void verify_user_is_able_to_view_toggled_cta_on_header_section() {
-	    Assert.assertFalse(homePage.validateToggled());
-	    
+		homePage.validateToggled();
+
 	}
-	
-	
-//Footer
-	
-	
+
+	// Footer
 
 	@When("user verify the footer section headers")
 	public void user_verify_the_footer_section_headers() {
-	    homePage.scroll();
-	    Assert.assertTrue(homePage.validateFooter());
-	    homePage.validatefooterContainer();
-	   
+		homePage.scroll();
+		Assert.assertTrue(homePage.validateFooter());
+		homePage.validatefooterContainer();
+
 	}
 
 	@Then("Verify JSW logo is appearing in the Footer section")
 	public void verify_jsw_logo_is_appearing_in_the_footer_section() {
-	    homePage.socialogo();
-	   
+		homePage.socialogo();
+
 	}
 
 	@Then("Verify for sub links are available under Legal category")
 	public void verify_for_sub_links_are_available_under_legal_category() {
-	    
-	   
+
 	}
 
 	@Then("Verify for support email address is present in footer section")
 	public void verify_for_support_email_address_is_present_in_footer_section() {
 		homePage.validateEmailID();
 	}
-	
-//Homepage verification
-	
+
+	// Homepage verification
+
 	@When("user is able to view Steel category section")
 	public void user_is_able_to_view_steel_category_section() {
-	    homePage.SteelSection();
-	    
+		homePage.SteelSection();
+
 	}
-	
+
 	@When("user is able to view Hot rolled coil products")
 	public void user_is_able_to_view_hot_rolled_coil_products() throws InterruptedException {
-	    homePage.validateHotRolledSteel();
-	    Thread.sleep(2000);
-	    
+		homePage.validateHotRolledSteel();
+		Thread.sleep(2000);
+
 	}
-	
+
 	@Then("user is able to view View all CTA on Steel section")
 	public void user_is_able_to_view_view_all_cta_on_steel_section() throws InterruptedException {
-	    homePage.validateViewAllSteel();
-	    Thread.sleep(2000);
-	    homePage.ClickSteelViewAll();
-	    Thread.sleep(2000);
-	    homePage.clickonHomePageLogo();
-	    
+		homePage.validateViewAllSteel();
+		Thread.sleep(2000);
+		homePage.ClickSteelViewAll();
+		Thread.sleep(2000);
+		homePage.clickonHomePageLogo();
+
 	}
-	
+
 	@When("user is able to view Stainless Steel category section")
 	public void user_is_able_to_view_stainless_steel_category_section() {
-	    homePage.SSSection();
-	    
+		homePage.SSSection();
+
 	}
-	
+
 	@When("user is able to view Hot rolled Sheet with series {int} subcategory products")
 	public void user_is_able_to_view_hot_rolled_sheet_with_series_subcategory_products(Integer int1) {
-	    homePage.validateHotRolledSheet();
-	    
+		homePage.validateHotRolledSheet();
+
 	}
-	
+
 	@Then("user is able to view View all CTA in Stainless Steel section")
 	public void user_is_able_to_view_view_all_cta_in_stainless_steel_section() throws InterruptedException {
 		Assert.assertTrue(homePage.validateSSViewall());
 		homePage.SSClickViewAll();
-	    homePage.clickonHomePageLogo();
-	  	    
+		homePage.clickonHomePageLogo();
+
 	}
-	
+
 	@When("user is able to view blog and article section")
 	public void user_is_able_to_view_blog_and_article_section() {
 		Assert.assertTrue(homePage.validateblogs());
-	 	    
+
 	}
-	
+
 	@Then("user is able to view View all in Blog section")
 	public void user_is_able_to_view_view_all_in_blog_section() {
-	    Assert.assertTrue(homePage.validateBlogsViewall());
-	    
+		Assert.assertTrue(homePage.validateBlogsViewall());
+
 	}
-	
+
 	@Then("verify article banners are displayed")
 	public void verify_article_banners_are_displayed() throws InterruptedException {
 		Thread.sleep(2000);
 		homePage.blogsList();
-	    
+
 	}
-	
+
 	@Then("user is able to view video section")
 	public void user_is_able_to_view_video_section() throws InterruptedException {
 		homePage.validatevideoSection();
 		Assert.assertTrue(homePage.validatevideoSection());
 		Thread.sleep(2000);
-	    
+
 	}
-	
+
 	@Then("user is able to view work flow section")
 	public void user_is_able_to_view_work_flow_section() {
 		homePage.validateworkFLow();
-	//	Assert.assertTrue(homePage.validateworkbanner());
-	    
+		// Assert.assertTrue(homePage.validateworkbanner());
+
 	}
 
 	@When("user clicks HR from Steel Navigation Menu")
 	public void user_clicks_hr_from_steel_navigation_menu() throws InterruptedException {
-	    homePage.selectHotRolledProduct();
+		homePage.selectHotRolledProduct();
 	}
-	
-	
+
 	@Then("user navigate to Home page")
 	public void user_navigate_to_home_page() {
-	   homePage.clickonHomePageLogo();
+		homePage.clickonHomePageLogo();
 	}
-	
+
 }

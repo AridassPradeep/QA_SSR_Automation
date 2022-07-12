@@ -11,25 +11,25 @@ public class DirectPLPPage {
 	
 	private WebDriver driver;
 
-	@FindBy(xpath = "//a[@class='anchor-tag py-3 nuxt-link-exact-active nuxt-link-active']")
+	@FindBy(xpath = "//a[@class='nav-link-jsw nav-active-link-jsw']")
 	private WebElement steelOfCategories;
-	@FindBy(xpath = "//*[@id=\'left\']/div[2]/div/div/div[1]/a")
+	@FindBy(xpath = "//header/div[3]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]")
 	private WebElement hotRolled;
-	@FindBy(xpath = "//h2[text()='All Categories']")
-	private WebElement allCategories;
-	@FindBy(xpath = "//input[@value='View all']")
+	@FindBy(xpath = "//h2[text()='Steel']")
+	private WebElement steel;
+	@FindBy(xpath = "//button[@class='btn view-all btn-outline-primary primary']")
 	private WebElement viewAll;
-	@FindBy(xpath = "//div[@class='product-content-filter']")
+	@FindBy(xpath = "//div[@class='prodduct-list-inner-container']")
 	private WebElement plpPage;
 	@FindBy(xpath = "//span[text()='Buy from verified sellers']")
 	private WebElement verifiedSeller;
-	@FindBy(xpath = "//*[@id=\'__layout\']/div/div[2]/div[1]/div[3]")
+	@FindBy(xpath = "//div[@class='prodduct-list-inner-container']")
 	private WebElement sellerPLPPage;
-	@FindBy(xpath = "//span[text()='Buy directly from']")
+	@FindBy(xpath = "//span[text()='Buy directly from ']")
 	private WebElement doPLPpage;
-	@FindBy(xpath = "//div[@class='filter-img-name']")
+	@FindBy(xpath = "//div[@class='filter-label']")
 	private WebElement fliter;
-	@FindBy(xpath = "(//span[text()='Configure and request price'])[1]")
+	@FindBy(xpath = "(//span[text()='Configure & request price'])[1]")
 	private WebElement configureAndRequestPrice;
 	@FindBy(xpath = "(//span[@class='deliveryschedule'])[1]")
 	private WebElement deliveryDay;
@@ -63,8 +63,8 @@ public class DirectPLPPage {
 	}
 
 
-	public WebElement getAllCategories() {
-		return allCategories;
+	public WebElement getSteelCategories() {
+		return steel;
 	}
 
 

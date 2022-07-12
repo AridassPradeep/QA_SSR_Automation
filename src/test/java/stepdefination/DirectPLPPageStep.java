@@ -13,8 +13,9 @@ public class DirectPLPPageStep {
 	@When("user is able to select product from Steel by categories")
 	public void user_is_able_to_select_product_from_steel_by_categories() throws InterruptedException {
 	    plp.moveToElement(plp.getSteelOfCategories());
-	    Thread.sleep(15000);
-	   
+	    Thread.sleep(1000);
+	    plp.getSteelOfCategories().click();
+	    
 	}
 
 	@Then("user is navigate to PLP page from direct homepage")
@@ -26,7 +27,7 @@ public class DirectPLPPageStep {
 
 	@When("user is able to scroll down to all categories")
 	public void user_is_able_to_scroll_down_to_all_categories() throws InterruptedException {
-	    plp.scroll(plp.getAllCategories());
+	    plp.scroll(plp.getSteelCategories());
 	    Thread.sleep(5000);
 	   
 	}
@@ -52,7 +53,9 @@ public class DirectPLPPageStep {
 
 	@When("user is able to view PLP page of current seller order")
 	public void user_is_able_to_view_plp_page_of_current_seller_order() throws InterruptedException {
-	    plp.getSellerPLPPage().isDisplayed();
+	    plp.getSteelOfCategories().click();
+	    Thread.sleep(2000);
+		plp.getSellerPLPPage().isDisplayed();
 	    Thread.sleep(5000);
 	}
 

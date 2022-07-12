@@ -266,16 +266,18 @@ public class DirectOrderPage {
 
 	public void validateEmptyRequirement() {
 
-		driver.findElement(By.xpath("//div[@class='empty-content text-center']")).isDisplayed();
+		driver.findElement(By.xpath("//a[@class='nav-link active requirements-tab-link active-tab-class']")).isDisplayed();
 	}
 
 	public void clickRemoveButton() throws Exception {
 
 		while (!isElementPresentemptycart()) {
 
-			driver.findElement(By.xpath("(//a[@role='button'])")).click();
+//			driver.findElement(By.xpath("(//a[@role='button'])")).click();
+			driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).click();
+//			driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).click();
+			driver.findElement(By.xpath("//span[text()='Remove item']")).click();
 			Thread.sleep(2000);
 		}
 

@@ -22,13 +22,13 @@ private WebDriver driver;
 
 
 
-	@FindBy(xpath = "//*[@id=\'__layout\']/div/div[2]/div[2]/div/div[1]/h2")
-	private WebElement categories;
+	@FindBy(xpath = "//a[contains(text(),'Steel')]")
+	private WebElement steelCategories;
 	@FindBy(xpath = "//span[text()='Buy from verified sellers']")
 	private WebElement distributorHomePage;
 	@FindBy(xpath = "//*[@id=\'product\']/div[76]/span[17]/span")
 	private WebElement distributorDeliveryTime;
-	@FindBy(xpath = "//*[@id=\'direct-distributor-switch\']/span[2]/span")
+	@FindBy(xpath = "//span[text()='Buy directly from ']")
 	private WebElement directHomePage;
 	@FindBy(xpath = "//img[@alt='JSW One MSME']")
 	private WebElement homePage;
@@ -39,25 +39,25 @@ private WebDriver driver;
 	private WebElement Mycart;
 	@FindBy(xpath = "//h2[text()='All Categories']")
 	private WebElement allCategories;
-	@FindBy(xpath = "(//span[text()='Configure and request price'])[1]")
+	@FindBy(xpath = "(//span[text()='Configure & request price'])[1]")
 	private WebElement price;
 	@FindBy(className = "deliveryschedule")
 	private WebElement deliveryTime;
-	@FindBy(xpath = "//div[@class='product-content-filter']")
+	@FindBy(xpath = "//div[@class='prodduct-list-inner-container']")
 	private WebElement PLP;
-	@FindBy(xpath = "(//span[text()='Configure and request price'])[1]")
+	@FindBy(xpath = "(//span[text()='Configure & request price'])[1]")
 	private WebElement configure;
 	@FindBy(xpath = "//span[text()='Request price']")
 	private WebElement requestPrice;
-	@FindBy(xpath = "//div[@class='blogContainer1']")
+	@FindBy(xpath = "//div[@class='blog-container-out']")
 	private WebElement blogsArticles;
-	@FindBy(xpath =  "(//button[@class='btn btn-light])[1]")
+	@FindBy(xpath =  "(//button[contains(text(),'Read now')])[1]")
 	private WebElement readFuture;
-	@FindBy(xpath =  "//*[@id=\'__layout\']/div/div[2]/div[3]/div[2]/div[1]/div[2]/div/div/div[2]/button")
+	@FindBy(xpath =  "(//button[contains(text(),'Read now')])[2]")
 	private WebElement readTransport;
-	@FindBy(xpath =  "(//button[@class='btn btn-light])[3]")
+	@FindBy(xpath =  "(//button[contains(text(),'Read now')])[3]")
 	private WebElement readScheme;
-	@FindBy(xpath = "//a[@class='btn btn-outline-danger text-danger pl-4 pr-4']")
+	@FindBy(xpath = "//a[@class='btn view-all-articles-btn btn-outline-primary']")
 	private WebElement viewMoreArticle;
 //	@FindBy(xpath = "//div[@class='col-sm-12 col-md-8 col-12']")
 	@FindBy(xpath = "//span[text()='The future of MSMEs in India: an exploration']")
@@ -66,7 +66,7 @@ private WebDriver driver;
 	private WebElement transport;
 	@FindBy(linkText = "The PLI scheme: specialty steel gets special incentives")
 	private WebElement scheme;
-	@FindBy(xpath = "//div[@class='col col-12']")
+	@FindBy(xpath = "//div[@class='container container container--fluid']")
 	private WebElement blogsPage;
 //	@FindBy(xpath = "//div[@class='custum-details']")
 	@FindBy(xpath = "//*[@id=\'__layout\']/div/div[2]/div[3]/div[2]/div[2]/a")
@@ -83,7 +83,7 @@ private WebDriver driver;
 	private WebElement enquiry;
 	@FindBy(className = "how-direct-works")
 	private WebElement workFlowBanner;
-	@FindBy(xpath = "//input[@value='View all']")
+	@FindBy(xpath = "(//button[contains(text(),'View all')])[1]")
 	private WebElement viewAll;
 	
 	
@@ -133,8 +133,8 @@ private WebDriver driver;
 		return;
 	}
 
-	public WebElement getCategories() {
-		return categories;
+	public WebElement getSteelCategories() {
+		return steelCategories;
 	}
 
 	public WebElement getDistributorHomePage() {

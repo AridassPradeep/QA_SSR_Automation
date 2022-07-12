@@ -1,4 +1,4 @@
- @sanityExe @Steel @demo
+@sanityExe @demo @steel
 Feature: Steel feature
 
   Background: User opens website
@@ -9,8 +9,7 @@ Feature: Steel feature
     And user clicks on signin
     Then user homepage is displayed
 
-  Scenario: 
-    Verify Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section
+  Scenario: Verify Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section
 
     And Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section
     When user clicks on Hot rolled  then coils ,sheet is displayed
@@ -66,12 +65,11 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-  Scenario: 
-    Verify Buy Now button and net banking with an order placed successfully
+@steelnetbanking
+  Scenario: Verify Buy Now button and net banking with an order placed successfully
 
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
-    # Then HR Products are displayed
     When user selects Steel product
     Given user is on product detail page of Steel item
     When user click on Buy Now
@@ -84,8 +82,8 @@ Feature: Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-  Scenario: 
-    Verify user is able to add steel and stainless steel from same seller and do a NEFT payment
+@neft 
+  Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment
 
     When cart is empty or not
     Then user navigate to Home page
@@ -108,7 +106,7 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-
+@neftPayment
   Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment with confirmation payment
     When cart is empty or not
     Then user navigate to Home page

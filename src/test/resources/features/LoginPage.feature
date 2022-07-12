@@ -6,13 +6,21 @@ Feature: Login page feature
     When user clicks on login button
     When user click  on login by email
 
-  @Otp
+  
   Scenario: verify OTP Login functionality works perfectly
     When user click  on login by otp
     And user enter phone no
     And user click on getOTP
     And user enter otp
     Then user homepage should be displayed
+    
+    @Otp
+    Scenario: verify invalid OTP Login functionality 
+    When user click  on login by otp
+    And user enter phone no
+    And user click on getOTP
+    And user enter wrong otp
+    Then user homepage should not be displayed
 
   Scenario Outline: verify the user able to login with Email and password
     When user enters logins with username with "<email>" and  "<password>"

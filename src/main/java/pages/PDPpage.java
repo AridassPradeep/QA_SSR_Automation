@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -17,24 +18,24 @@ public class PDPpage {
 	private By secondmenu = By.xpath("//ul[@class='main-categories-second-child-menu']/child::li/child::a");
 	private By productdetails = By.xpath("//div[@id='product']");
 	private By dimensions = By.xpath("//div[@class='dimension-txt']");
-	private By breadcrumbcatalog = By.xpath("//div[@class='col bread-crumb']/child::span");
-	private By breadcrumb = By.xpath("//div[@class='col bread-crumb']");
-	private By primaryimage = By.xpath("//img[@class='prod-img prod-img-radius']");
+	private By breadcrumbcatalog = By.xpath("//div[@class='breadcrumb-url']/child::span");
+	private By breadcrumb = By.xpath("//div[@class='breadcrumb-url']");
+	private By primaryimage = By.xpath("//img[@class='big-image']");
 	private By optionalimage = By.xpath("//img[@class=\"mt-20 prod-img1-radius\"]");
 	private By grade = By.xpath("//span[@class='anchor']");
-	private By composition = By.xpath("//div[contains(@class,'col-md-3 sub-title-2')]");
-	private By alldimensions = By.xpath("//li[@class='product-list']");
-	private By buynow = By.xpath("//button[@class='btn cart-btn-primary']");
+	private By composition = By.xpath("//div[contains(@class,'desktop-tabs pb-3')]");
+	private By alldimensions = By.xpath("//button[@class='list-group-item list-group-item-action in-active']");
+	private By buynow = By.xpath("//button[@class='btn btn-primary radius-10 w-100']");
 	private By loginpage = By.xpath("//div[@class='welcome-name']");
 	private By etdelivery = By.xpath("//div[@class='est-del']");
-	private By addtocart = By.xpath("//button[@class='btn cart-btn-secondary']");
-	private By price = By.xpath("//div[@class='price-txt']");
-	private By loginbutton = By.xpath("//span[@id='loginresetting1']");
-	private By registerbutton = By.xpath("//span[@id='loginresetting1']/following-sibling::span");
+	private By addtocart = By.xpath("//button[@class='btn btn-outline-primary w-100 mb-3 radius-10']");
+	private By price = By.xpath("//div[@class='prod-price-main box d-none d-md-block']");
+	private By loginbutton = By.xpath("//span[text()='Login']");
+	private By registerbutton = By.xpath("//span[text()='Login']/following-sibling::span");
 	private By nextbutton = By.xpath("//button[@class='register-button']");
 	private By searchbar = By.xpath("//input[@id='SearchText']");
 	private By searchbutton = By.xpath("//i[@class='search-icon1']");
-	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
+	private By productselect = By.xpath("//a[@class='prod-plpimage1name']");
 	private By maximizeimage = By.xpath("//img[contains(@src,'HRsheet2') and @class='prod-img prod-img-radius']");
 	private By two = By.xpath("//li[@class='product-list'][1]");
 //	private By customLength = By.xpath("//div[8]/div[2]/ul[1]/button[1]");
@@ -50,7 +51,21 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 	private By customLengthErrorMessage = By.xpath("//div[@class='dimension-size'and contains(text(),'Thickness')]/ancestor::div/div[9]//following-sibling::div[1]/div/div/div[2]");
     private By customLengthErrorMessage2= By.xpath("//div[@class='dimension-size'and contains(text(),'Width')]/ancestor::div/div[9]//following-sibling::div[1]/div/div/div[1]/div/div[2]");
 	// private By activetab = By.xpath("//div[contains(@class,'tabActive') ]");
-	public PDPpage(WebDriver driver) {
+	
+ //NewPDPGuest
+    
+    private By viewAll = By.xpath("//button[@class='btn view-all btn-outline-primary primary']");
+	private By productCard = By.xpath("//*[@id=\'product\']/div/div[1]");
+	private By thickness = By.xpath("//buton[contains(text(),'4')]");
+	private By width = By.xpath("//button[contains(text(),'1250')]");
+	private By length = By.xpath("//button[contains(text(),'2500')]");
+	private By quantity = By.xpath("//div[@class='input-group quantity-input-box specify-qty-out']");
+	private By closebutton = By.xpath("//button[@class='btn modal-close btn-secondary']");    
+    
+	private By message = By.xpath("//div[@class='select-msg']/child::span");
+    
+    
+    public PDPpage(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -70,12 +85,12 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 	}
 
 	public boolean validateBreadCrumb() {
-		return driver.findElement(breadcrumb).isDisplayed();
+			return driver.findElement(breadcrumb).isDisplayed();
 	}
 
 	public void validatePrimaryandOptional() {
 		driver.findElement(primaryimage).isDisplayed();
-		driver.findElement(optionalimage).isDisplayed();
+//		driver.findElement(optionalimage).isDisplayed();
 
 	}
 
@@ -96,13 +111,15 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 
 	}
 
-	public void selectDimension() {
+	public void selectDimension() throws InterruptedException {
 
-		driver.findElement(By.xpath("//input[@class='input-quant']")).sendKeys("123");
-
-		driver.findElements(alldimensions).get(8).click();
-		driver.findElements(alldimensions).get(15).click();
-		driver.findElements(alldimensions).get(17).click();
+		driver.findElements(alldimensions).get(0).click();
+		Thread.sleep(1500);
+		driver.findElements(alldimensions).get(11).click();
+//		driver.findElements(alldimensions).get(13).click();
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("5");
+		driver.findElement(By.xpath("//button[@class='btn modal-close btn-secondary']")).click();
+		
 	}
 
 	public void clickAddtoCart() {
@@ -172,7 +189,7 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 
 		List<WebElement> productselected = driver.findElements(productselect);
 
-		productselected.get(1).click();
+		productselected.get(0).click();
 
 	}
 
@@ -216,6 +233,59 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 	}
 	
 	
+//NewPDPGuest
+	
+	public void clickClose() {
+		driver.findElement(closebutton).click();
+	}
+	
+	public boolean validatetheLogInPage() {
+
+		return driver.findElement(loginpage).isDisplayed();
+	}
+	
+	public void clickviewAll() throws InterruptedException {
+		driver.findElement(viewAll).click();
+		Thread.sleep(5000);
+	}
+	
+	public void scrollDown() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)", "");
+	}
+	public void clickproductCard() {
+		driver.findElement(productCard).click();
+	}
+	
+	public void clickthickness() {
+		driver.findElement(thickness).click();
+	}
+
+	public void clickwidth() {
+		driver.findElement(width).click();
+	}
+
+	public void clicklength() {
+		driver.findElement(length).click();
+
+	}
+
+	public void enterQuantity() {
+		driver.findElement(quantity).sendKeys("enterQuantity");
+	}
+
+	public boolean validateloginpage() {
+		return driver.findElement(loginpage).isDisplayed();
+	}
+
+	public void clickBuynow() {
+		driver.findElement(buynow).click();
+	}
+
+	public void validateMessage() {
+		String mge = driver.findElement(message).getText();
+		System.out.println("Message= "+mge);
+	}
 	
 	
 

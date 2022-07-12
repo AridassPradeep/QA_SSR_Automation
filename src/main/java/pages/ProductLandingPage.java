@@ -208,7 +208,8 @@ public class ProductLandingPage {
 		System.out.println("Delivery Date: " + productList.get(1).getText());
 	}
 
-	public void validatePrice() {
+	public void validatePrice() throws InterruptedException {
+		Thread.sleep(3000);
 
 		List<WebElement> productPrice = driver.findElements(By.xpath("//div[@class='product-cost']//span"));
 		System.out.println("Product Price: " + productPrice.get(0).getText());
@@ -242,7 +243,7 @@ public class ProductLandingPage {
 	}
 	
 	public void verifyFilterColorCoated() throws InterruptedException {
-		driver.findElement(By.xpath("//div[contains(text(),'GRADE')]"));
+		driver.findElement(By.xpath("//div[contains(text(),'Grade')]"));
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[contains(@value,'15965_2012')]")).isDisplayed();
 		driver.findElement(By.xpath("//label[contains(text(),'15965_2012')]")).click();
@@ -275,7 +276,7 @@ public class ProductLandingPage {
 	}
 	
 	public void verifyGradesForCoated() throws InterruptedException {
-		driver.findElement(By.xpath("//div[contains(text(),'GRADE')]"));
+		driver.findElement(By.xpath("//div[contains(text(),'Grade')]"));
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@value='15961:2012']")).isDisplayed();
 		driver.findElement(By.xpath("//label[contains(text(),'15961:2012')]")).click();
@@ -340,9 +341,9 @@ public class ProductLandingPage {
 	
 	public boolean validatePLPFilter() {
 		
-		driver.findElement(By.xpath("//div[contains(text(),'WIDTH')]")).isDisplayed();
-		driver.findElement(By.xpath("//div[contains(text(),'LENGTH')]")).isDisplayed();
-		return driver.findElement(By.xpath("//div[contains(text(),'THICKNESS')]")).isDisplayed();
+		driver.findElement(By.xpath("//div[contains(text(),'Width')]")).isDisplayed();
+		driver.findElement(By.xpath("//div[contains(text(),'Length')]")).isDisplayed();
+		return driver.findElement(By.xpath("//div[contains(text(),'Thickness')]")).isDisplayed();
 
 	}
 	public void clickonGradeFilter() throws InterruptedException

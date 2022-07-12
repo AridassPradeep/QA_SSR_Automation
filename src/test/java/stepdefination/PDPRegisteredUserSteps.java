@@ -5,8 +5,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static org.junit.Assert.assertTrue;
-
 import java.util.List;
 import java.util.Map;
 
@@ -14,10 +12,12 @@ import org.junit.Assert;
 
 import pages.PDPRegisteredUserPage;
 import pages.PDPpage;
+import pages.ProductPage;
 
 public class PDPRegisteredUserSteps {
 	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
 	PDPpage pdppage = new PDPpage(DriverFactory.getDriver());
+	ProductPage p = new ProductPage(DriverFactory.getDriver());
 
 	@Given("user is logged in as registered user")
 	public void user_is_logged_in_as_registered_user() {
@@ -226,15 +226,16 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.SteelDetails();
 
 	}
-	
+
 	@When("user is on product detail page of Steel item and add dimensions")
 	public void user_is_on_productdetail_pageofSteelitemand_add_dimensionsm() throws InterruptedException {
 		pdpreguser.SteelDetailsDimension();
 
 	}
+
 	@Given("validate add to cart button is disabled")
 	public void validate_add_to_cartbuttondisabled() throws InterruptedException {
-		
+
 		Assert.assertTrue(pdpreguser.validateAddToCartisDisabled());
 
 	}
@@ -250,15 +251,55 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.HRSteelDetails();
 
 	}
-	
+
 	@Then("click on ResetSelection button")
 	public void click_on_ResetSelectionbutton() throws InterruptedException {
-		
+
 		pdpreguser.clickResetSelection();
 
 	}
 
-	
-	
-	
+	@When("user enters invalid Custom Length {string} and  submits custom length for HR")
+	public void user_enters_invalid_custom_length_and_submits_custom_length_for_HR(String string)
+			throws InterruptedException {
+		pdpreguser.CTLafterentered(string);
+		Thread.sleep(2000);
+	}
+
+	@Then("invalid custom length error message should not be displayed with entered length")
+	public void invalid_custom_length_error_message_should_not_be_displayed_with_entered_length()
+			throws InterruptedException {
+
+	}
+
+	// customerLength
+
+	@When("user select hot\\/cold sheet products")
+	public void user_select_hot_cold_sheet_products() throws InterruptedException {
+		p.selectHotRolledSheet();
+
+	}
+
+	@Then("user select the dimension of the selected product")
+	public void user_select_the_dimension_of_the_selected_product() throws InterruptedException {
+		p.SheetDimension();
+
+	}
+
+	@When("user click the customer length of the selected product")
+	public void user_click_the_customer_length_of_the_selected_product() throws InterruptedException {
+		p.clickCustomerLength();
+
+	}
+
+	@Then("validate the customer length example value in the input field")
+	public void validate_the_customer_length_example_value_in_the_input_field() throws InterruptedException {
+		p.validateCTL();
+	}
+
+	@Then("validate the customer length error message displayed")
+	public void validate_the_customer_length_error_message_displayed() {
+		pdpreguser.validateErrorMessage();
+	}
+
 }

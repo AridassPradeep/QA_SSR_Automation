@@ -220,12 +220,12 @@ public class PLPSteps {
 	}
 
 	@Then("product price range should be display")
-	public void product_price_range_should_be_display() {
+	public void product_price_range_should_be_display() throws InterruptedException {
 		productlandingpage.validatePrice();
 	}
 
 	@Then("Rupee symbol should be display at before every price")
-	public void rupee_symbol_should_be_display_at_before_every_price() {
+	public void rupee_symbol_should_be_display_at_before_every_price() throws InterruptedException {
 		productlandingpage.validatePrice();
 	}
 

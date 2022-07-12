@@ -18,6 +18,7 @@ import pages.ProductLandingPage;
 public class PDPforGuestUserSteps {
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
 	PDPpage pdppage = new PDPpage(DriverFactory.getDriver());
+	
 
 	@Given("user is on PLP page")
 	public void user_is_on_plp_page() {
@@ -76,13 +77,13 @@ public class PDPforGuestUserSteps {
 	}
 
 	@When("user Select thickness,width , height and Minimum Quantity.")
-	public void user_select_thickness_width_height_and_minimum_quantity() {
+	public void user_select_thickness_width_height_and_minimum_quantity() throws InterruptedException {
 
 		pdppage.selectDimension();
 	}
 
 	@When("user select dimensions and specific quantity.")
-	public void user_select_dimensions_and_specific_quantity() {
+	public void user_select_dimensions_and_specific_quantity() throws InterruptedException {
 		pdppage.selectDimension();
 	}
 
@@ -214,5 +215,43 @@ public class PDPforGuestUserSteps {
 	public void verify_user_able_to_purchase_the_product_on_the_basis_of_selected_input() {
 
 	}
+	
+	
+//Guest
+	
+	@When("user select any product")
+	public void user_selects_any_product() {
+		pdppage.scrollDown();
+		pdppage.clickproductCard();
+	}
+	
 
+	@When("user select the dimensions and specific quantity.")
+	public void user_select_the_dimensions_and_specific_quantity() throws InterruptedException {
+		pdppage.selectDimension();
+		Thread.sleep(2000);
+	}
+
+	@When("User clicks on Add to cart button")
+	public void user_clicks_on_Add_to_cart_button() throws InterruptedException {
+		pdppage.clickAddtoCart();
+		Thread.sleep(2000);
+	}
+	@Then("User click on close button")
+	public void user_click_on_close_button() {
+	   pdppage.clickClose();
+	}
+	
+		
+	@Then("verify that User should redirect to the login page")
+	public void verify_that_user_should_redirect_to_the_login_page() {
+		pdppage.validatetheLogInPage();
+	}
+
+	
+	@Then("user is able to view the message in the thickness section")
+	public void user_is_able_to_view_the_message_in_the_thickness_section() throws InterruptedException {
+		pdppage.validateMessage();
+		Thread.sleep(1000);
+	}
 }

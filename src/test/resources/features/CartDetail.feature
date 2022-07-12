@@ -1,7 +1,7 @@
-@cart @demo
+@demo @cart
 Feature: Cart Detail Page feature
 
-    Background: User opens website
+  Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
@@ -65,3 +65,22 @@ Feature: Cart Detail Page feature
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
+
+  @weldingelectrodes
+  Scenario: Verify delivery charges calculated for welding electrodes
+    When cart is empty or not
+    When user clicks Welding electordes from Welding Consummables Navigation Menu
+    And  user is on product detail page of Welding electordes item
+    And user click on Buy Now
+    Then verify freight charges are displayed
+    And verify subtotal is equal to sum of price,tax and freight charges
+
+  @weldingwire
+  Scenario: Verify delivery charges calculated for welding wires
+    When cart is empty or not
+    When user clicks Welding wire from Welding Consummables Navigation Menu
+    And user is on product detail page of Welding wire item
+    And user click on Buy Now
+    Then verify freight charges are displayed
+    And verify subtotal is equal to sum of price,tax and freight charges
+    

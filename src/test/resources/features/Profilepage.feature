@@ -1,13 +1,14 @@
- @MyProfile @demo
+ @demo  @MyProfile
 Feature: Profile page feature
 
-  Background: User opens website
+   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "qasnnjsw@yopmail.com" and  "Test@123"
+    When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
+
 
   Scenario: Verify the user able to save profile details
     When user click on the profile menu

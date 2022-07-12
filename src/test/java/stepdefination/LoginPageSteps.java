@@ -46,6 +46,11 @@ public class LoginPageSteps {
 	public void user_homepage_shouldbedisplayed() throws InterruptedException {
 		Assert.assertTrue(loginPage.validateuserMenu());
 	}
+	
+	@Then("user homepage should not be displayed")
+	public void user_homepage_shouldnotbedisplayed() throws InterruptedException {
+		Assert.assertFalse(loginPage.validateuserMenu());
+	}
 
 	@When("user clicks on forgotpassword")
 	public void user_clicks_on_forgotpassword() {
@@ -110,6 +115,12 @@ public class LoginPageSteps {
 	@And("user enter otp")
 	public void user_enter_otp() throws InterruptedException, MalformedURLException {
 		loginPage.enterOTP();
+		
+	}
+	
+	@And("user enter wrong otp")
+	public void user_enter_wrongotp() throws InterruptedException, MalformedURLException {
+		loginPage.enterInvalidOTP();
 		
 	}
 	

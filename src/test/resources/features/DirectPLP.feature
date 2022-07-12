@@ -5,13 +5,13 @@ Feature: Direct PLP page navigation
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "Qasnnjsw@yopmail.com" and  "Test@123"
+    When user enters logins with username with "demoqa1@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
     
 @PLPPage
-Scenario: Verify to navigate from Direct Homapage to PLP page
+Scenario: Verify to navigate from Direct Homepage to PLP page
 	When user is able to select product from Steel by categories 
 	Then user is navigate to PLP page from direct homepage
 	

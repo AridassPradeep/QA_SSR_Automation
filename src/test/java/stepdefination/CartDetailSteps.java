@@ -1,6 +1,7 @@
 package stepdefination;
 
 import factory.DriverFactory;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CartDetailPage;
@@ -101,6 +102,55 @@ public class CartDetailSteps {
 	@When("user is on second product detail page of Steel item")
 	public void user_is_on_second_product_detail_page_of_Steel_item() throws InterruptedException {
 		pdp.HRSteelDetails01();
+	}
+
+	@When("user is removed Steel products from cart line")
+	public void user_is_removed_steel_products_from_cart_line() throws InterruptedException {
+		myOrder.couponsCount();
+		Thread.sleep(2000);
+		cartdpage.removeHRInCart();
+	}
+
+	@Then("Applied coupons remain active after removed if applicable to the modified cart context")
+	public void applied_coupons_remain_active_after_removed_if_applicable_to_the_modified_cart_context() {
+		cartdpage.validateAppliedCoupons();
+	}
+
+	@When("user is removed HR products from cart line")
+	public void user_is_removed_hr_products_from_cart_line() throws InterruptedException {
+		myOrder.couponsCount();
+		Thread.sleep(2000);
+		cartdpage.removeHRInCart();
+	}
+
+	@When("^user clicks Welding electordes from Welding Consummables Navigation Menu$")
+	public void user_clicks_welding_electordes_from_welding_consummables_navigation_menu() throws Throwable {
+
+	}
+
+	@Then("^verify freight charges are displayed$")
+	public void verify_freight_charges_are_displayed() throws Throwable {
+
+	}
+
+	@And("user is on product detail page of Welding electordes item")
+	public void user_is_on_product_detail_page_of_welding_electordes_item() throws Throwable {
+
+	}
+
+	@And("^verify subtotal is equal to sum of price,tax and freight charges$")
+	public void verify_subtotal_is_equal_to_sum_of_pricetax_and_freight_charges() throws Throwable {
+
+	}
+
+	@When("^user clicks Welding wire from Welding Consummables Navigation Menu$")
+	public void user_clicks_welding_wire_from_welding_consummables_navigation_menu() throws Throwable {
+
+	}
+
+	@And("^user is on product detail page of Welding wire item$")
+	public void user_is_on_product_detail_page_of_welding_wire_item() throws Throwable {
+
 	}
 
 }

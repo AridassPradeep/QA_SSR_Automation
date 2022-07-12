@@ -20,7 +20,7 @@ public class CartDetailPage {
     private By TandCimgtext= By.xpath("//div[@class='img_p']");
     private By checkbox= By.xpath("//input[@id='termsCondition']");
     private By techspec= By.xpath("//input[@id='termsCondition']//following::label[1]");
-    private By deliverydate= By.xpath("//strong[contains(text(),'2-5 days')]");
+    private By deliverydate= By.xpath("//div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/span[1]");
     private By apply = By.xpath("(//div[@class='coupon-persuasion-container'])[1]");
     private By applied = By.xpath("(//div[@class='coupon-applied-container'])[1]");
     
@@ -78,7 +78,7 @@ public class CartDetailPage {
 	{
 		String str=driver.findElement(deliverydate).getText();
 	    System.out.println(str); 
-		Assert.assertEquals(str, "2-5 days");
+		Assert.assertEquals(str, "Delivery in 2 - 5 days");
 	}
 	
 	//Discount	
@@ -132,5 +132,14 @@ public class CartDetailPage {
 			JavascriptExecutor j = (JavascriptExecutor) driver;
 			j.executeScript("arguments[0].scrollIntoView()", coupons);
 			System.out.println(coupons.getText());
+		}
+		
+		public void removeHRInCart() throws InterruptedException {
+			driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
+			Thread.sleep(2000);
+			WebElement remove = driver.findElement(By.xpath("(//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::span[contains(text(),'Remove')])[1]"));
+			remove.click();
+			driver.findElement(By.xpath("//span[contains(text(),'Remove item')]")).click();
+			Thread.sleep(8000);
 		}
 	}

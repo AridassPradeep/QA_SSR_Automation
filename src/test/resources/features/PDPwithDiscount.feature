@@ -2,19 +2,23 @@
 Feature: Product Detail Page with discount
 
   Background: User opens website
-    Given user is on home page
+     Given user is on home page
     When user clicks on login button
-    When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
+    When user click  on login by email
+    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
     And user clicks on signin
+    Then user homepage is displayed
+
 
   Scenario: verify Flat 500 rs discount is applied
-    When cart is empty or not
-    When user enter "Colour coated" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter quantity as 2MT
-    Then verify price would be displayed
-    When user add an item to cart
+  
+   When cart is empty or not
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
     When user click on cart icon with 1
     And user click view offers on cart detail page
@@ -27,12 +31,12 @@ Feature: Product Detail Page with discount
 
   Scenario: Verify Flat 5% discount on order value 5L
     When cart is empty or not
-    When user enter "Colour coated" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension
-    Then verify the cart value is more than 5L
-    When user add the product to cart
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
     When user click on cart icon with 1
     And user click view offers on cart detail page
@@ -46,13 +50,13 @@ Feature: Product Detail Page with discount
 
   Scenario: Verify an expired coupon is used then an error message should be displayed
     When cart is empty or not
-    When user enter "Colour coated" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension
-    Then verify the cart value is more than 1L
-    When user add the product to cart
-    Then Cart icon would appear with 1
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
     When user click on cart icon with 1
     And user click view offers on cart detail page
     And user enter the expire coupon code on apply coupon dialog
@@ -80,11 +84,15 @@ Feature: Product Detail Page with discount
     
   @check 
    Scenario: Verify Flat 2000 Value discount on order value more than 2 Lakh 
-    When cart is empty or not
-    When user enter "Colour coated" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter quantity as 3MT
+     When cart is empty or not
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on cart icon with 1
     Then verify the cart value is more than 1L
     When user add the product to cart
     Then Cart icon would appear with 1

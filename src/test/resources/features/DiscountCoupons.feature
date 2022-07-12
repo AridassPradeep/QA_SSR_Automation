@@ -5,7 +5,7 @@ Feature: Product Detail Page with discount
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "hari5465@gmail.com" and  "Hari5465@"
+    When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -85,7 +85,7 @@ Feature: Product Detail Page with discount
       | STEEL250 |
 
   @RetainOfferwithsamecoupon
-  Scenario: Verify remove product in cart line and price will be update
+  Scenario: Verify the applied coupon is still available in cart
    When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
@@ -106,24 +106,24 @@ Feature: Product Detail Page with discount
     Then List of coupons to be displayed
     And user is able to apply STEEL250 coupon code
     Then coupon is applied and price gets updated
-    When user is removed products from cart line
+    When user is removed HR products from cart line
     Then User shall see modified pricing of the cart
-    And Applied coupons remain active if applicable to the modified cart context
+    And Applied coupons remain active after removed if applicable to the modified cart context
     And Count of applied coupons remains the same
 
-  @RetainOfferwithupdatecoupons
-  Scenario: Verify remove product in cart line and price will be update
-    When user is on cart page
-    And user click on apply coupon
-    Then List of coupons to be displayed
-    And user is able to apply STEEL250 coupon code
-    Then coupon is applied and price gets updated
-    When user is removed products from cart line
-    Then User shall see modified pricing of the cart
-    And Applied coupons remain in active if applicable to the modified cart context
+#  @RetainOfferwithupdatecoupons
+#  Scenario: Verify remove product in cart line and price will be update
+#    When user is on cart page
+#    And user click on apply coupon
+#    Then List of coupons to be displayed
+#    And user is able to apply STEEL250 coupon code
+#    Then coupon is applied and price gets updated
+#    When user is removed products from cart line
+#    Then User shall see modified pricing of the cart
+#    And Applied coupons remain in active if applicable to the modified cart context
 
   @RetainOfferwithupdatecoupon
-  Scenario: Verify remove product in cart line and price will be update
+  Scenario: Verify the applied coupon is removed in cart
      When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
@@ -139,6 +139,6 @@ Feature: Product Detail Page with discount
     Then List of coupons to be displayed
     And user is able to apply STEEL250 coupon code
     Then coupon is applied and price gets updated
-    When user is removed products from cart line
+    When user is removed Steel products from cart line
     Then User shall see modified pricing of the cart
     And Applied coupons remain in active if applicable to the modified cart context

@@ -1,10 +1,11 @@
+@DirectPDP
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "qatestuser@jsw.in" and  "Admin@123$"
+    When user enters logins with username with "demoqa1@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -138,6 +139,7 @@ Feature: Direct Order for PDP feature for registered user
     And user click on upload files
     When user is on home page
     When homepage refreshes
+    And user click on cart on top
     Then verify Proceed to Pay is displayed on top
     # When user click on Proceed to Pay and Mycart on top
     When user click on confirm payment

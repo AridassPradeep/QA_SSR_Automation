@@ -3,6 +3,7 @@ package pages;
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -133,9 +134,18 @@ public boolean validateuserMenu() throws InterruptedException {
 	
 	public void enterOTP() throws InterruptedException, MalformedURLException
 	{
+		
+		Thread.sleep(60000);
+		/*
 		String otp=OtpUtil.getOTP();
 		System.out.println("The OTP is " + otp);
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(otp);
+		*/
+	}
+	
+	public void enterInvalidOTP() throws InterruptedException, MalformedURLException
+	{
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("0000");
 	}
 	
 
