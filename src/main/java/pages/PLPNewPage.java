@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import junit.framework.Assert;
+
 public class PLPNewPage {
 	
 	private WebDriver driver;
@@ -25,7 +27,15 @@ public class PLPNewPage {
 	private By steel = By.xpath("//span[contains(text(),'Steel')]");
 	private By home = By.xpath("//span[contains(text(),'Home')]");
 	private By metal = By.xpath("//span[contains(@class,'list-title desc')]");
-
+//TMT
+	private By constructionSteel = By.xpath("//span[contains(text(),'Construction Steel')]");
+	private By constructionMaterials = By.xpath("//span[contains(text(),'Construction materials')]");
+	private By gradeTMT = By.xpath("//label[contains(text(),'IS 1786:2008 Fe 550D')]");
+	private By diameterMin = By.xpath("//div[@class='range-left']");
+	private By minValue = By.xpath("//option[@value='8.0']");
+	private By maxValue = By.xpath("//option[text()='Max']//following::option[@value='40.0']");
+	private By diameterMax = By.xpath("//div[@class='range-right']");
+	private By clearDiameter = By.xpath("//div[contains(text(),'Diameter')]//following::div[@class='clearButton']");
 	
 	
 	
@@ -220,12 +230,18 @@ public class PLPNewPage {
 	}
 	
 	public void clearAppliedFilters() throws InterruptedException {
-		driver.findElement(By.xpath("(//span[text()='×'])[3]")).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath("(//span[text()='×'])[2]")).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath("(//span[text()='×'])[1]")).click();
-		Thread.sleep(1500);
+		List<WebElement> close = driver.findElements(By.xpath("//span[contains(text(),'×')]"));
+		close.size();
+		for (int i = 0; i < close.size(); i++) {
+			driver.findElement(By.xpath("//span[contains(text(),'×')]")).click();
+			Thread.sleep(3000);
+		}
+//		driver.findElement(By.xpath("(//span[text()='×'])[3]")).click();
+//		Thread.sleep(1500);
+//		driver.findElement(By.xpath("(//span[text()='×'])[2]")).click();
+//		Thread.sleep(1500);
+//		driver.findElement(By.xpath("(//span[text()='×'])[1]")).click();
+//		Thread.sleep(1500);
 	}
 	
 	
@@ -249,4 +265,78 @@ public class PLPNewPage {
 		driver.findElement(By.xpath("(//option[contains(text(),'12.0')])[2]")).click();
 		Thread.sleep(2000);
 	}
+
+// TMT Products
+	
+	public void valiadtePLP() {
+		String PLPpage = driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
+		System.out.println("Landing on PLP page :"+PLPpage);
+	}
+	
+	public void TMTGrade() throws InterruptedException {
+		driver.findElement(gradeTMT).click();
+		Thread.sleep(2000);
+	}
+
+	public void diameterMin() throws InterruptedException {
+		driver.findElement(diameterMin).click();
+		Thread.sleep(2000);
+		driver.findElement(minValue).click();
+		Thread.sleep(1500);
+	}
+
+	public void diameterMax() throws InterruptedException {
+		driver.findElement(diameterMax).click();
+		Thread.sleep(2000);
+		driver.findElement(maxValue).click();
+		Thread.sleep(1500);
+	}
+	
+	public void diameterClear() throws InterruptedException {
+		boolean clear = driver.findElement(clearDiameter).isDisplayed();
+		System.out.println("Available diamter clear: "+clear );
+		Thread.sleep(2000);
+	}
+
+	public void Pdpnavigate() throws InterruptedException {
+		List<WebElement> TMTproducts = driver.findElements(By.xpath("//a[@class='prod-plpimage1name']"));
+		System.out.println("No. of TMT products: " +TMTproducts.size());
+		driver.findElement(By.xpath("//a[@title='JSW Neosteel Fe550D TMT Rebar']")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void verifyTMTPDPpage() throws InterruptedException {
+		boolean TMTpdp = driver.findElement(By.xpath("//div[@class='prod-price-main box d-none d-md-block']")).isDisplayed();
+		System.out.println("PDP page: "+TMTpdp);
+		Thread.sleep(1500);
+	}
+	
+	public void clickConstructionSteel() throws InterruptedException {
+		driver.findElement(constructionSteel).click();
+		Thread.sleep(3000);
+	}
+
+	public void clickConstructionMaterials() throws InterruptedException {
+		driver.findElement(constructionMaterials).click();
+		Thread.sleep(3000);
+	}
+
+	public void verifyTMTProd() throws InterruptedException {
+		String titleProd = driver.findElement(By.xpath("//a[@title='JSW Neosteel Fe550D TMT Rebar']")).getText();
+		 Assert.assertEquals(titleProd, "JSW Neosteel Fe550D TMT Rebar");
+		 Thread.sleep(2000);
+	}
+	
+	
+	public void removeDiamterTMT() throws InterruptedException {
+		driver.findElement(By.xpath("//span[contains(text(),'8.0 - 40.0')]//following::span[contains(text(),'×')]"));
+		Thread.sleep(2000);
+	}
+	
+	public void priceRangeTMT() throws InterruptedException {
+		String price = driver.findElement(By.xpath("//a[@title='JSW Neosteel Fe550D TMT Rebar']//following::span[@class='price-range']")).getText();
+		System.out.println("Product Price: "+price);
+		Thread.sleep(2000);
+	}
+
 }

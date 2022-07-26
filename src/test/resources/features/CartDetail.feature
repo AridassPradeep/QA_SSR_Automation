@@ -68,7 +68,7 @@ Feature: Cart Detail Page feature
 
   @weldingelectrodes
   Scenario: Verify delivery charges calculated for welding electrodes
-    When cart is empty or not
+   # When cart is empty or not
     When user clicks Welding electordes from Welding Consummables Navigation Menu
     And  user is on product detail page of Welding electordes item
     And user click on Buy Now

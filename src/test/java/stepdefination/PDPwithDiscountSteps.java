@@ -239,7 +239,7 @@ public class PDPwithDiscountSteps {
 		pdpdispage.validateCouponAppplied();
 
 	}
-	
+
 	@Then("close the coupon window box")
 	public void close_the_coupon_windowbox() {
 
@@ -247,13 +247,12 @@ public class PDPwithDiscountSteps {
 
 	}
 
-
 	@Then("remove button is displayed")
 	public void remove_button_is_displayed() {
 		pdpdispage.validateremoveButton();
 
 	}
-	
+
 	@Then("user click on remove button")
 	public void user_click_on_remove_button() {
 		pdpdispage.clickremoveButton();
@@ -268,22 +267,22 @@ public class PDPwithDiscountSteps {
 	public void price_gets_updated() {
 
 	}
-	
+
 	@Given("user clicks on See more")
 	public void user_clicks_on_see_more() {
 		pdpdispage.clickSeeMoreButton();
 	}
-	
+
 	@Then("list of other coupons also displayed")
 	public void list_of_other_coupons_also_displayed() {
-		
+
 		pdpdispage.SeeMoreCouponsonPDPPage();
-	   
+
 	}
-	
+
 	@Then("old price is strikethrough and new price amount is displayed in both Price section and cart line")
 	public void old_price_is_strikethrough_and_new_price_amount_is_displayed_in_both_price_section_and_cart_line() {
-	   
+
 	}
 
 	@Then("user clicks on view coupons in order page then applied coupon to be displayed")
@@ -291,9 +290,34 @@ public class PDPwithDiscountSteps {
 		pdpdispage.verifyViewCoupons();
 	}
 
+	@Then("user clicks on Know more")
+	public void user_clicks_on_know_more() throws InterruptedException {
+		pdpreguser.clickDigitalorderKnowMore();
+		Thread.sleep(1500);
+	}
 
+	@Then("user is able to view details of the coupon code")
+	public void user_is_able_to_view_details_of_the_coupon_code() {
+		pdpreguser.couponDetails();
 
+	}
 
+	@Given("user is able to view Coupons section on PDP page")
+	public void user_is_able_to_view_coupons_section_on_pdp_page() throws InterruptedException {
+		pdpdispage.verifyDiscountSection();
 
+	}
+
+	@Then("user is able to view details of the list of coupon code")
+	public void user_is_able_to_view_details_of_the_list_of_coupon_code() throws InterruptedException {
+		pdpdispage.listCouponCode();
+
+	}
+
+	@Then("user is able to verify the coupons code displayed as Caps")
+	public void user_is_able_to_verify_the_coupons_code_displayed_as_caps() throws InterruptedException {
+		pdpdispage.verifyCouponCasing();
+		Thread.sleep(1500);
+	}
 
 }

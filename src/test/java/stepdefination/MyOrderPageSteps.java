@@ -239,4 +239,108 @@ public class MyOrderPageSteps {
 		public void user_is_able_to_view_applied_coupons_pop_up() throws InterruptedException {
 		    order.validateAppliedCoupon();
 		}
+		
+//Filter Functionality
+		
+		@When("user is able to view Myorders CTA")
+		public void user_is_able_to_view_myorders_cta() throws InterruptedException {
+		 System.out.println(order.getMyOrder().getText());
+		 Thread.sleep(2000);
+		    
+		}
+
+		@When("user is able to click the Myorders CTA")
+		public void user_is_able_to_click_the_myorders_cta() throws InterruptedException {
+		 order.getMyOrder().click();
+		 Thread.sleep(3000);
+		    
+		}
+
+		@When("user is navigate to MyOrder page")
+		public void user_is_navigate_to_my_order_page() throws InterruptedException {
+		    order.verifyMyOrderPage();
+		    Thread.sleep(1500);
+		    
+		}
+
+		@Then("user is able to verify the message displayed on the Filter icon")
+		public void user_is_able_to_verify_the_message_displayed_on_the_filter_icon() throws InterruptedException {
+		    order.invoiceMessage();
+		    Thread.sleep(2000);
+		    
+		}
+
+		@Then("user is able to click Filter icon on MyOrder page")
+		public void user_is_able_to_click_filter_icon_on_my_order_page() {
+		    order.clickFilter();
+		    
+		}
+
+		@Then("user is able to verify the filter pop-up displayed")
+		public void user_is_able_to_verify_the_filter_pop_up_displayed() throws InterruptedException {
+		    order.verifyFilterPopup();
+		    Thread.sleep(1500);
+		    
+		}
+
+		@When("user is able select the any one status from the status dropdown menu")
+		public void user_is_able_select_the_any_one_status_from_the_status_dropdown_menu() throws InterruptedException {
+		    order.selectedPlaced();
+		    
+		}
+
+		@Then("user is able click Apply CTA")
+		public void user_is_able_click_apply_cta() {
+		    order.clickApply();
+		    
+		}
+
+		@Then("user is able to view the applied filter option below the My orders")
+		public void user_is_able_to_view_the_applied_filter_option_below_the_my_orders() throws InterruptedException {
+		    order.verifyFilterApplied();
+		    
+		}
+
+		@When("user is able to select the duration of ordered products to be filtered")
+		public void user_is_able_to_select_the_duration_of_ordered_products_to_be_filtered() throws InterruptedException {
+		 order.durationDefault();
+		    
+		}
+
+		@When("user is able select the custom date range of ordered products to be displayed")
+		public void user_is_able_select_the_custom_date_range_of_ordered_products_to_be_displayed() throws InterruptedException {
+		    order.customFromDuration();
+		    order.customToDuration();
+		}
+
+		@When("user is able to select the pre-defined duration range of ordered products to be filtered")
+		public void user_is_able_to_select_the_pre_defined_duration_range_of_ordered_products_to_be_filtered() throws InterruptedException {
+		    order.durationDefault();
+		    
+		}
+
+		@Then("user is able to view Clear all CTA and clickable")
+		public void user_is_able_to_view_clear_all_cta_and_clickable() throws InterruptedException {
+		    order.clickClearAll();
+		    
+		}
+
+		@Then("user is verify that applied filters are cleared")
+		public void user_is_verify_that_applied_filters_are_cleared() throws InterruptedException {
+		    order.clearedAppliedFilter();
+		    Thread.sleep(2000);
+		    
+		}
+
+		@Then("user is able to click Reset CTA to clear the selected filter option")
+		public void user_is_able_to_click_reset_cta_to_clear_the_selected_filter_option() throws InterruptedException {
+		    order.clickReset();
+		    
+		}
+		
+		@When("user is able to click the MyOrder CTA")
+		public void user_is_able_to_click_the_myorder_cta() {
+			order.getMyOrder().click();
+		}
+
 	}

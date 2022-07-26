@@ -190,3 +190,102 @@ Scenario: Check for selected color products are displayed after filters applied
 	When user is on Steel Menu on header section 
 	And user is able to select Colour coated from Steel Menu 
 	Then Filter with Color to be displayed
+	
+	@TMTProducts
+Scenario: Check navigation of PLP page for TMT
+	When user click TMT Menu on header section 
+	And user is able to view TMT Steel products on PLP page 
+
+Scenario: Display BreadCrumb for Construction Steel 
+	When user click TMT Menu on header section 
+	And user is able to view TMT Steel products on PLP page 
+	Then Breadcrump should display HOME > Construction materials > Construction Steel > TMT
+
+Scenario: Check BreadCrumb hyperlink is working fine 
+	When user click TMT Menu on header section 
+	And user is able to view TMT Steel products on PLP page 
+	Then Breadcrump should display HOME > Construction materials > Construction Steel > TMT 
+	When user click on Construction Steel hyper link in breadcrumb 
+	Then product page should navigate to Construction Steel 
+	When user click on Construction materials hyper link in breadcrumb 
+	Then product page should navigate to Construction materials
+
+Scenario: Filer Section for TMT Category 
+	When user click TMT Menu on header section  
+	Then Filter sections are Brand, Grade and Diameter
+
+Scenario: Check product name format should be "Brand  grade subgrade" 
+	When user click TMT Menu on header section  
+	And product name should be for TMT Steel is "JSW Neosteel Fe55D TMT Rebar" 
+	
+Scenario: check Product name is clickable and page navigates to PDP page 
+	When user click TMT Menu on header section 
+	And user click on product name of TMT Steel product displayed on the page 
+	Then page navigates to PDP page 
+	
+Scenario: Check price range is shown for each product 
+	When user click TMT Menu on header section 
+	Then product price range should be display for TMT
+	And Rupee symbol should be display at before every price 
+	
+Scenario: Check for Delivery is mentioned with estimated days 
+	When user click TMT Menu on header section 
+	Then Delivery in should display with days range ie Delivery in 2-5 days
+
+Scenario: Check JSW brand selection of Filters 
+	When user click TMT Menu on header section
+	Then user is select JSW Brand at Filter section for TMT 
+	Then Reset link should be available above the filters section for TMT 
+
+Scenario: Products are displaying After filters removed 
+	When user click TMT Menu on header section
+	Then user is select Grade at Filter section for TMT 
+	When user is able to view on Reset Hyper link CTA 
+
+Scenario: Check for Reset Hyperlink availability on page 
+	When user click TMT Menu on header section
+	Then user is select JSW Steel from Brand at Filter section 
+	Then user is select IS 1786:2008 Fe 550D from Grade at Filter section for TMT
+	When user  click on Reset Hyper link 
+	Then All the filters should be removed and products should display and no filters has to be selected" 
+	
+Scenario: Check applied Filters are shown above the products 
+	When user click TMT Menu on header section
+	Then user is select JSW Steel from Brand at Filter section
+	Then user is select IS 1786:2008 Fe 550D from Grade at Filter section for TMT
+	Then Filters applied should be shown above the Products display applied filters should display with cross button" 
+ 
+Scenario: Check for Reset CTA enabled if filters applied more than 2 filters 
+	When user click TMT Menu on header section
+	Then user is select JSW Steel from Brand at Filter section 
+	Then user is select Grade at Filter section for TMT 
+	Then Filters applied should be shown above the Products display 
+	Then all the applied filters should display 
+	When user  click on Reset Hyper link
+	
+Scenario: Check Clear all hyper link is clickable and clears the applied filters 
+	When user click TMT Menu on header section
+	Then user is select JSW Steel from Brand at Filter section 
+	Then user is select Grade at Filter section for TMT 
+	Then user is select the Diameter - Min and Max values for TMT
+	And check clear hyper link is displayed on Diameter section for TMT
+	And click Clear huper link 
+
+Scenario: Remove atlest one applied filter and check displayed products 
+	When user click TMT Menu on header section
+	Then user is select JSW Steel from Brand at Filter section 
+	Then user is select Grade at Filter section for TMT 
+	Then user is select the Diameter - Min and Max values for TMT
+	Then Filters applied should be shown above the Products display 
+	And After removing filter Diamter remaining filters products should display 
+	
+Scenario: cancel/close all filters shown above the prodcts 
+	When user click TMT Menu on header section
+	Then user is select JSW Steel from Brand at Filter section 
+	Then user is select IS 1786:2008 Fe 550D from Grade at Filter section for TMT 
+	Then user is select the Diameter - Min and Max values for TMT 
+	Then Filters applied should be shown above the Products display 
+	And user click on cross mark for all filters shown 
+	And all the applied filters should be removed for TMT
+	And all the products should display for TMT
+	

@@ -172,4 +172,31 @@ public class ProfileSteps {
 		profilepage.EditBillingAddress();
 
 	}
+	//MH pincode
+	
+		@Then("user is able to click Add a new address CTA")
+		public void user_is_able_to_click_add_a_new_address_cta() throws InterruptedException {
+			profilepage.addNewAddress();
+		}
+		
+		@Then("user is able to enter Company name, Pincode, Address, City and State")
+		public void user_is_able_to_enter_company_name_pincode_address_city_and_state() throws InterruptedException {
+			profilepage.MHaddress();
+		}
+		
+		@Then("user is able to make this address as a default address")
+		public void user_is_able_to_make_this_address_as_a_default_address() throws InterruptedException {
+			profilepage.defaultAddress();
+		}
+		
+		@Then("user is able to delete the existing MH pincode address")
+		public void user_is_able_to_delete_the_existing_MH_pincode_address() throws InterruptedException {
+			profilepage.deleteExistingAddress();
+			Thread.sleep(3000);
+		}
+		
+		@When("user is able check the default address is in MH pincode")
+	    public void user_is_able_check_the_default_address_is_in_MH_pincode() throws InterruptedException {
+	    	profilepage.clickMHDefaultAddress();
+	    }
 }

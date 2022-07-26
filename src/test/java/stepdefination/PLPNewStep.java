@@ -271,4 +271,141 @@ public class PLPNewStep {
 	    
 	}
 	
+//TMT Product
+	
+	@When("user click TMT Menu on header section")
+	public void user_click_tmt_menu_on_header_section() throws InterruptedException {
+	    homePage.validateTMT();
+	    
+	}
+
+	@When("user is able to view TMT Steel products on PLP page")
+	public void user_is_able_to_view_tmt_steel_products_on_plp_page() throws InterruptedException {
+	    homePage.validateTMT();
+	    
+	}
+
+	@Then("Breadcrump should display HOME > Construction materials > Construction Steel > TMT")
+	public void breadcrump_should_display_home_construction_materials_construction_steel_tmt() {
+	    productlandingpage.Validatebreadcrumb();
+	    
+	}
+
+	@When("user click on Construction Steel hyper link in breadcrumb")
+	public void user_click_on_construction_steel_hyper_link_in_breadcrumb() throws InterruptedException {
+	    plpn.clickConstructionSteel();
+	    
+	}
+
+	@Then("product page should navigate to Construction Steel")
+	public void product_page_should_navigate_to_construction_steel() throws InterruptedException {
+	    plpn.valiadtePLP();
+	    Thread.sleep(2000);
+	    
+	}
+
+	@When("user click on Construction materials hyper link in breadcrumb")
+	public void user_click_on_construction_materials_hyper_link_in_breadcrumb() throws InterruptedException {
+	    plpn.clickConstructionMaterials();
+	    
+	}
+
+	@Then("product page should navigate to Construction materials")
+	public void product_page_should_navigate_to_construction_materials() throws InterruptedException {
+	    plpn.valiadtePLP();
+	    Thread.sleep(2000);
+	    
+	}
+
+	@Then("Filter sections are Brand, Grade and Diameter")
+	public void filter_sections_are_brand_grade_and_diameter() throws InterruptedException {
+	    plpn.verifyFilterSection();
+	    Thread.sleep(2000);
+	    
+	}
+
+	@When("product name should be for TMT Steel is {string}")
+	public void product_name_should_be_for_tmt_steel_is(String string) throws InterruptedException {
+	    plpn.verifyTMTProd();
+	    
+	}
+
+	@When("user click on product name of TMT Steel product displayed on the page")
+	public void user_click_on_product_name_of_tmt_steel_product_displayed_on_the_page() throws InterruptedException {
+	    plpn.Pdpnavigate();
+	    plpn.verifyTMTPDPpage();
+	    
+	}
+
+	@Then("product price range should be display for TMT")
+	public void product_price_range_should_be_display_for_tmt() throws InterruptedException {
+		plpn.priceRangeTMT();
+	}
+	
+	@Then("user is select JSW Brand at Filter section for TMT")
+	public void user_is_select_jsw_brand_at_filter_section_for_tmt() throws InterruptedException {
+	    plpn.clickBrand();
+	    Thread.sleep(1500);
+	    
+	}
+
+	@Then("Reset link should be available above the filters section for TMT")
+	public void reset_link_should_be_available_above_the_filters_section_for_tmt() throws InterruptedException {
+	    plpn.clickReset();
+	    Thread.sleep(1500);
+	    
+	}
+
+	@Then("user is select Grade at Filter section for TMT")
+	public void user_is_select_grade_at_filter_section_for_tmt() throws InterruptedException {
+	    plpn.TMTGrade();
+	    
+	}
+
+	@Then("user is select IS {int}:{int} Fe 550D from Grade at Filter section for TMT")
+	public void user_is_select_is_fe_550d_from_grade_at_filter_section_for_tmt(Integer int1, Integer int2) throws InterruptedException {
+	    plpn.TMTGrade();
+	    
+	}
+
+	@Then("All the filters should be removed and products should display and no filters has to be selected\"")
+	public void all_the_filters_should_be_removed_and_products_should_display_and_no_filters_has_to_be_selected() throws InterruptedException {
+	    plpn.clickReset();
+	    Thread.sleep(2000);
+	    
+	}
+
+	@Then("user is select the Diameter - Min and Max values for TMT")
+	public void user_is_select_the_diameter_min_and_max_values_for_tmt() throws InterruptedException {
+	    plpn.diameterMin();
+	    Thread.sleep(2000);
+	    plpn.diameterMax();
+	}
+
+	@Then("check clear hyper link is displayed on Diameter section for TMT")
+	public void check_clear_hyper_link_is_displayed_on_diameter_section_for_tmt() throws InterruptedException {
+	    plpn.diameterClear();
+	    
+	}
+
+	@Then("After removing filter Diamter remaining filters products should display")
+	public void after_removing_filter_diamter_remaining_filters_products_should_display() throws InterruptedException {
+	    plpn.valiadtePLP();
+		plpn.removeDiamterTMT();
+	}
+
+	@Then("all the applied filters should be removed for TMT")
+	public void all_the_applied_filters_should_be_removed_for_tmt() throws InterruptedException {
+	    plpn.clickReset();
+	    Thread.sleep(2000);
+	    
+	}
+
+	@Then("all the products should display for TMT")
+	public void all_the_products_should_display_for_tmt() {
+	    plpn.valiadtePLP();
+	    
+	}
+
+	
 }

@@ -42,6 +42,9 @@ public class PDPDiscountPage {
 	private By confirmremove = By.xpath("//input[@class='remove_item_btn']");
 	private By messagecartempty = By.xpath("//div[@class='empty-content text-center']");
 	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
+	private By couponSection = By.xpath("//div[@class='pdp_coupons mt-3']");
+	private By couponsList = By.xpath("//li[@class='cp_description']");
+	private By couponCode = By.xpath("//h1[@class='cp_code']");
 
 	// private By subtotal= By.xpath("//*[@id='collapsePrice1']/div/ul/li[5]/span");
 	public PDPDiscountPage(WebDriver driver) {
@@ -367,6 +370,24 @@ public class PDPDiscountPage {
 
 	}
 	
+	public void verifyDiscountSection() throws InterruptedException {
+		driver.findElement(couponSection).isDisplayed();
+		String couponArea = driver.findElement(By.xpath("//h1[@class='cp_head']")).getText();
+		System.out.println(couponArea);
+		Thread.sleep(1500);
+	}
 	
+	public void listCouponCode() throws InterruptedException {
+		int size = driver.findElements(couponsList).size();
+		System.out.println("No. of coupons listed: "+size);
+		Thread.sleep(1500);
+	}
+	
+	public void verifyCouponCasing() {
+			String code = driver.findElement(couponCode).getText();
+			System.out.println("Coupon code: "+code);
+		
+	
+	}
 
 }

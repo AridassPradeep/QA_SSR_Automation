@@ -66,16 +66,17 @@ public class PDPRegisteredUserPage {
 
 	public void selectSteelProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
-
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]")).click();
+     
+		/*
 		List<WebElement> productlist = driver.findElements(productselect);
-
 		for (int i = 0; i < productlist.size(); i++) {
 			if (productlist.get(i).getText().equals("JSW Steel Hot Rolled Sheets IS 2062:2011 E250A")) {
 				productlist.get(i).click();
 			}
 			break;
 		}
-
+*/
 	}
 
 	public void selectProductcoldrolled() throws InterruptedException {
@@ -209,7 +210,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void validatedealPillclicked() {
-		driver.findElement(By.xpath("//div[@class='deals-pill selected']")).isDisplayed();
+		driver.findElement(By.xpath("//div[@class='deals-pill']")).isDisplayed();
 
 	}
 
@@ -270,25 +271,25 @@ public class PDPRegisteredUserPage {
 
 	public void stainlessSteelDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[3]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
-		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[2]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("120");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("130");
 		Thread.sleep(2000);
 
 	}
 
 	public void stainlessSteelDetailsDimensions() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[3]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
-		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[2]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
 
@@ -316,25 +317,25 @@ public class PDPRegisteredUserPage {
 	//
 	public void SteelDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[3]//div//button[2]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[2]"))
 				.click();
-		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[2]//div//button[2]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Width')]//following::div[2]//div//button[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[2]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("200");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("251");
 		Thread.sleep(2000);
 
 	}
 
 	public void SteelDetailsDimension() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness (mm)')]//following::div[2]//div//button[2]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[2]"))
 				.click();
-		driver.findElement(By.xpath("//div[contains(text(),'Width (mm)')]//following::div[1]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Width')]//following::div[2]//div//button[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[1]//div//button[1]"))
+		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
 
@@ -430,5 +431,19 @@ public class PDPRegisteredUserPage {
 	public void validateErrorMessage() {
 		String mge = driver.findElement(By.xpath("(//div[@class='error-message'])[3]")).getText();
 		System.out.println("Error message :" + mge);
+	}
+	
+	public void clickDigitalorderKnowMore() {
+		driver.findElement(By.xpath("//h1[text()='DIGITALORDER']//following::span[text()=' Know more']")).click();
+	}
+	
+	public void clickSteel250KnowMore() {
+		driver.findElement(By.xpath("//h1[text()='STEEL250']//following::span[text()=' Know more']")).click();
+
+	}
+	
+	public void couponDetails() {
+		String know = driver.findElement(By.xpath("//div[@class='coupon-section']")).getText();
+		System.out.println("KnowMore: "+know);
 	}
 }

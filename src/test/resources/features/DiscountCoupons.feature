@@ -5,7 +5,7 @@ Feature: Product Detail Page with discount
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
+    When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -30,6 +30,27 @@ Feature: Product Detail Page with discount
       | coupon   |
       | STEEL250 |
 
+  @Couponsection
+  Scenario: Check Discount section displayed on PDP page
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    Then HR Products are displayed
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    And user is able to view Coupons section on PDP page
+    Then user is able to view details of the list of coupon code
+    Then user is able to verify the coupons code displayed as Caps
+
+  @Knowmore
+  Scenario: Check Discount coupons view on PDP page and able to know more about coupon description by clicking know more
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    Then HR Products are displayed
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    And user clicks on Know more
+    Then user is able to view details of the coupon code
+
   #Scenario: Check Discount coupons view on PDP page and able to view more about coupon description by clicking know more
   #  When cart is empty or not
   # When user clicks HR from Steel Navigation Menu
@@ -38,7 +59,6 @@ Feature: Product Detail Page with discount
   #Given user is on product detail page of Steel item
   #And user clicks on See more
   #Then list of other coupons also displayed
-  
   Scenario Outline: Check for old price is strikethrough and new price amount is displayed in both Price section and cart line
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -59,7 +79,7 @@ Feature: Product Detail Page with discount
       | STEEL250 |
 
   Scenario Outline: Verify In my order page, the applied coupons are able to view after the order placed
-   When cart is empty or not
+    When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
     When user selects Steel product
@@ -85,8 +105,8 @@ Feature: Product Detail Page with discount
       | STEEL250 |
 
   @RetainOfferwithsamecoupon
-  Scenario: Verify the applied coupon is still available in cart
-   When cart is empty or not
+  Scenario: Verify remove product in cart line and price will be update
+    When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
     When user selects Steel product
@@ -111,20 +131,19 @@ Feature: Product Detail Page with discount
     And Applied coupons remain active after removed if applicable to the modified cart context
     And Count of applied coupons remains the same
 
-#  @RetainOfferwithupdatecoupons
-#  Scenario: Verify remove product in cart line and price will be update
-#    When user is on cart page
-#    And user click on apply coupon
-#    Then List of coupons to be displayed
-#    And user is able to apply STEEL250 coupon code
-#    Then coupon is applied and price gets updated
-#    When user is removed products from cart line
-#    Then User shall see modified pricing of the cart
-#    And Applied coupons remain in active if applicable to the modified cart context
-
+  #  @RetainOfferwithupdatecoupons
+  #  Scenario: Verify remove product in cart line and price will be update
+  #    When user is on cart page
+  #    And user click on apply coupon
+  #    Then List of coupons to be displayed
+  #    And user is able to apply STEEL250 coupon code
+  #    Then coupon is applied and price gets updated
+  #    When user is removed products from cart line
+  #    Then User shall see modified pricing of the cart
+  #    And Applied coupons remain in active if applicable to the modified cart context
   @RetainOfferwithupdatecoupon
-  Scenario: Verify the applied coupon is removed in cart
-     When cart is empty or not
+  Scenario: Verify remove product in cart line and price will be update
+    When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
     When user selects Steel product

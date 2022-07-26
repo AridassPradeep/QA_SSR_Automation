@@ -9,6 +9,67 @@ Feature: MyOrder page feature
     And user clicks on signin
     Then user homepage is displayed
 
+Scenario: Verify the message displayed in Order History page
+When user is able to view Myorders CTA
+When user is able to click the Myorders CTA
+And user is navigate to MyOrder page
+Then user is able to verify the message displayed on the Filter icon
+
+Scenario: Verify the Status filter option is working
+When user is able to click the MyOrder CTA
+Then user is able to click Filter icon on MyOrder page
+Then user is able to verify the filter pop-up displayed
+When user is able select the any one status from the status dropdown menu
+Then user is able click Apply CTA
+Then user is able to view the applied filter option below the My orders
+
+Scenario: Verify the pre-defined duration filter option is working
+When user is able to click the MyOrder CTA
+Then user is able to click Filter icon on MyOrder page
+Then user is able to verify the filter pop-up displayed
+When user is able to select the duration of ordered products to be filtered
+Then user is able click Apply CTA
+Then user is able to view the applied filter option below the My orders
+
+Scenario: Verify the custom date range filter option is working
+When user is able to click the MyOrder CTA
+Then user is able to click Filter icon on MyOrder page
+Then user is able to verify the filter pop-up displayed
+When user is able select the custom date range of ordered products to be displayed
+Then user is able click Apply CTA
+Then user is able to view the applied filter option below the My orders
+
+Scenario: Verify the all the Filter options are working
+When user is able to click the MyOrder CTA
+Then user is able to click Filter icon on MyOrder page
+Then user is able to verify the filter pop-up displayed
+When user is able select the any one status from the status dropdown menu
+When user is able to select the pre-defined duration range of ordered products to be filtered
+When user is able select the custom date range of ordered products to be displayed
+Then user is able click Apply CTA
+Then user is able to view the applied filter option below the My orders
+
+Scenario: Verify the clear all CTA is working
+When user is able to click the MyOrder CTA
+Then user is able to click Filter icon on MyOrder page
+Then user is able to verify the filter pop-up displayed
+When user is able select the any one status from the status dropdown menu
+When user is able to select the pre-defined duration range of ordered products to be filtered
+When user is able select the custom date range of ordered products to be displayed
+Then user is able click Apply CTA
+Then user is able to view the applied filter option below the My orders
+Then user is able to view Clear all CTA and clickable
+Then user is verify that applied filters are cleared
+@orderTest
+Scenario: Verify the reset all the selected options in the filter popup window
+When user is able to click the MyOrder CTA
+Then user is able to click Filter icon on MyOrder page
+Then user is able to verify the filter pop-up displayed
+When user is able select the any one status from the status dropdown menu
+When user is able to select the duration of ordered products to be filtered
+When user is able select the custom date range of ordered products to be displayed
+Then user is able to click Reset CTA to clear the selected filter option
+
   @ViewDetails
   Scenario: verify user view the view details button
     When user is able to click my order button

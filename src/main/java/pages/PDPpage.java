@@ -186,10 +186,13 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 	}
 
 	public void selectProduct() {
-
+/*
 		List<WebElement> productselected = driver.findElements(productselect);
 
 		productselected.get(0).click();
+		*/
+		
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]")).click();
 
 	}
 

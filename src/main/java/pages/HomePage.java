@@ -67,6 +67,12 @@ public class HomePage {
 	private By blogViewall = By.xpath("//a[@class='btn view-all-articles-btn btn-outline-primary']");
 	private By videosection = By.xpath("//span[@class='play-button']");
 	private By workflow = By.xpath("(//div[@class='owl-carousel owl-theme owl-loaded owl-drag'])[4]");
+	private By tmt = By.xpath("//div[3]/div[1]/div[1]/div[3]/a[1]");
+	private By welding = By.xpath("//div[1]/div[5]/a[1]");
+	private By weldingCategory = By.xpath("//h2[@id='Welding Consumables']");
+	private By weldingProductsList = By.xpath("//h2[@id='Welding Consumables']//following::ul[@class='categorylist']");
+	private By viewAllWelding = By.xpath("//h2[@id='Welding Consumables']//following::button[text()=' View all']");
+	
 	
 	
 	public HomePage(WebDriver driver) {
@@ -439,4 +445,42 @@ public class HomePage {
 		return email;
 	}
 
-}
+	//TMT and Welding Consumables
+	
+		public void validateTMT() throws InterruptedException {
+			driver.findElement(tmt).isDisplayed();
+			driver.findElement(tmt).click();
+			Thread.sleep(3000);
+		}
+		
+		public void validateWelding() throws InterruptedException {
+			driver.findElement(welding).isDisplayed();
+			driver.findElement(welding).click();
+			Thread.sleep(3000);
+		}
+		
+		
+		public void verifyWeldingCategory() {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollTo(0,2100)","");
+			driver.findElement(weldingCategory).isDisplayed();
+		}
+		
+		public void weldingCategoryList() throws InterruptedException {
+//			List<WebElement> products = driver.findElements(weldingProductsList);
+//			int no = products.size();
+//			for (int i = 0; i < no; i++) {
+//				driver.findElement(weldingProductsList).getText();
+//			}
+			String product = driver.findElement(weldingProductsList).getText();
+			System.out.println("Welding Products :"+product);
+			Thread.sleep(2000);
+		}
+		
+		public void viewAllWelding() {
+			driver.findElement(viewAllWelding).isDisplayed();
+			driver.findElement(viewAllWelding).click();
+		}
+		
+	}
+

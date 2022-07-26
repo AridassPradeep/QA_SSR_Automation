@@ -48,6 +48,7 @@ Feature: Stainless Steel feature
     And click on reset
     Then all products to be displayed
 
+
   Scenario: Verify order placed successfully after adding a stainless product to cart
     When cart is empty or not
     Then user navigate to Home page

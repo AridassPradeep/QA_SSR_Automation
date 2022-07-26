@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-	//	tags = "@weldingwire",
+	    //tags = "@neft",
 		dryRun = false,
 		stepNotifications=true,
 		plugin = {

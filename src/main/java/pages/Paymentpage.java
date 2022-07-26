@@ -20,7 +20,7 @@ public class Paymentpage {
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
-	//private By banklist = By.xpath("//select[@id='BanksList']");
+	// private By banklist = By.xpath("//select[@id='BanksList']");
 	private By banklistnew = By.xpath("//select[@id='banks']");
 	private By remove = By.xpath("//span[text()='Remove']");
 	// private By confirmremove = By.xpath("//input[@class='remove_item_btn']");
@@ -33,7 +33,7 @@ public class Paymentpage {
 	private By Success = By.xpath("//button[@class='success']");
 	private By successmessage = By.xpath("//div[contains(text(),'Payment successful')]");
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
-	  private By user = By.xpath("//div[@class='drop-down-whole']");
+	private By user = By.xpath("//div[@class='drop-down-whole']");
 	private By UTR = By.xpath("//div[@class='utr-field']/input");
 	private By confirmPayment = By.xpath("//div[1]/div[7]/button[2]/span[1]");
 	private By error = By.xpath("//span[text()=' Enter a valid UTR number.']");
@@ -42,7 +42,7 @@ public class Paymentpage {
 	private By neftsuccessmessage = By.xpath("//div[text()='Thanks for confirming payment']");
 	private By proceedtopaypmtpage = By.xpath("//span[text()='Proceed to pay']");
 	private By myCart = By.xpath("//a[contains(text(),'My cart')]");
-	
+
 	private By confirmlater = By.xpath("//*[@id=\'no-confirm-btn\']");
 	private By pendingmessage = By.xpath("//div[text()='Your order is awaiting payment']");
 	private By makepayment = By.xpath("//*[@id=\'confirm-btn-payment-indicator\']");
@@ -66,7 +66,7 @@ public class Paymentpage {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,500)", "");
 	}
-	
+
 	public void clickproceedtopay() {
 
 		driver.findElement(proceedtopay).click();
@@ -94,14 +94,21 @@ public class Paymentpage {
 	{
 
 		driver.findElement(cartcount).click();
+		driver.findElement(By.xpath("//span[contains(text(),'Clear cart')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@id='clear-cart-cnf']")).click();
 
-		while (!isElementPresentemptycart()) {
-
-			driver.findElement(remove).click();
-			Thread.sleep(2000);
-			driver.findElement(confirmremove).click();
-			Thread.sleep(2000);
-		}
+		/*
+		 * 
+		 * 
+		 * driver.findElement(cartcount).click();
+		 * 
+		 * while (!isElementPresentemptycart()) {
+		 * 
+		 * driver.findElement(By.xpath("//span[contains(text(),'Clear cart')]")).click()
+		 * ; Thread.sleep(2000); //driver.findElement(confirmremove).click();
+		 * //Thread.sleep(4500); }
+		 */
 
 	}
 
@@ -228,7 +235,7 @@ public class Paymentpage {
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.findElement(successmessage).isDisplayed();
-		
+
 	}
 
 	public void validateunsuccessfulmsg() {
@@ -237,9 +244,9 @@ public class Paymentpage {
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.findElement(unsuccessmessage).isDisplayed();
-		
+
 	}
-	
+
 	public void enterUTR(String UTRnumber) {
 		driver.findElement(UTR).clear();
 		driver.findElement(UTR).sendKeys(UTRnumber);
@@ -301,30 +308,31 @@ public class Paymentpage {
 	}
 
 	public void validateNetBanking() {
-		driver.findElement(netbankingdisabled).isDisplayed();
+		//driver.findElement(netbankingdisabled).isDisplayed();
+		driver.findElement(By.linkText("NEFT/RTGS")).click();
 
 	}
 
 	public void clickConfirmPayment() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(confirmPayment).click();
-
 	}
+
+	
 
 	public void clickProceedToPayPMTPage() {
 
 		driver.findElement(proceedtopaypmtpage).click();
 	}
-	public void clickLogOut() throws InterruptedException
-	{
-		
-			
+
+	public void clickLogOut() throws InterruptedException {
+
 		driver.findElement(user).click();
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//div[text()='Logout']")).click();
-		Thread.sleep(3000);		
+		Thread.sleep(3000);
 	}
-	
+
 	public boolean isElementPresentcart() throws Exception {
 		try {
 			driver.findElement(cartcount);
@@ -333,7 +341,7 @@ public class Paymentpage {
 			return false;
 		}
 	}
-	
+
 	public void deleteProductfromCartdo() throws Exception
 
 	{
@@ -349,22 +357,21 @@ public class Paymentpage {
 			Thread.sleep(2000);
 		}
 	}
-	
+
 	public void clickConfirmLater() {
 		driver.findElement(confirmlater).isDisplayed();
 		driver.findElement(confirmlater).click();
 	}
-	
+
 	public void validatePaymentPendingmsg() {
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.findElement(pendingmessage).isDisplayed();
 	}
-	
+
 	public void validateMakePayment() {
 		driver.findElement(makepayment).isDisplayed();
 	}
-	
-	
+
 }

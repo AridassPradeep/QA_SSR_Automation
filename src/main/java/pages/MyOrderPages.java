@@ -107,6 +107,27 @@ public class MyOrderPages {
 	private WebElement cancelOrderID;
 	@FindBy(xpath = "//span[@class='order-value']")
 	private WebElement orderNumber;
+	
+//Filter Functionality
+	
+	private By filterIcon = By.xpath("//div[@class='filter-myorder']");
+	private By invoiceMessage = By.xpath("//div[@class='note']");
+	private By filterWindow = By.xpath("//div[@id='filter-order___BV_modal_body_']");
+	private By orderStatus = By.xpath("//div[text()='Status']");
+	private By placedStatus = By.xpath("(//input[@class='vh-product'])[2]");
+	private By statusDropdown = By.xpath("//span[@class='anchor']");
+	private By sevenDays = By.xpath("//button[contains(text(),'Last 7 days')]");
+	private By oneMonth = By.xpath("//button[contains(text(),'Last 1 month')]");
+	private By threeMonths = By.xpath("//button[contains(text(),'Last 3 months')]");
+	private By sixMonths = By.xpath("//button[contains(text(),'Last 6 months')]");
+	private By fromDate = By.id("from-datepicker__value_");
+	private By toDate = By.id("to-datepicker__value_");
+	private By apply = By.xpath("//div[1]/div[2]/div[6]/button[1]");
+	private By reset = By.xpath("(//span[contains(@class,'reset-btn')])[1]");
+	private By clearAll = By.xpath("//button[@class='btn clearAllbtn ml-0 mt-1']");
+	private By filterApplied = By.xpath("//div[@class='d-md-inline-flex d-lg-inline-flex my-4']");
+	
+	
 		
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
@@ -200,7 +221,7 @@ public class MyOrderPages {
 	//Payment History
 	
 		public void DOorder() throws InterruptedException {
-			WebElement scroll = driver.findElement(By.xpath("//div[text()='TEST999-11363']"));
+			WebElement scroll = driver.findElement(By.xpath("//div[text()='TEST999-12284']"));
 			JavascriptExecutor j = (JavascriptExecutor) driver;
 			j.executeScript("arguments[0].scrollIntoView()", scroll);
 			Thread.sleep(2000);
@@ -245,7 +266,7 @@ public class MyOrderPages {
 		}
 		
 		public void couponsCount() {
-			WebElement count = driver.findElement(By.xpath("//div[@class='applied-coupons']"));
+			WebElement count = driver.findElement(By.xpath("//div[@class='coupon-applied-message']"));
 			System.out.println(count.getText());
 		}
 		
@@ -261,7 +282,81 @@ public class MyOrderPages {
 			Thread.sleep(2000);
 		}
 		
-	
+//Filter Functionality
+		
+		public void clickFilter() {
+			driver.findElement(filterIcon).isDisplayed();
+			driver.findElement(filterIcon).click();
+		}
+		
+		public boolean verifyFilterPopup() {
+			boolean popup = driver.findElement(filterWindow).isDisplayed();
+			return popup;
+		}
+		
+		public void invoiceMessage() {
+			driver.findElement(invoiceMessage).isDisplayed();
+			System.out.println(driver.findElement(invoiceMessage).getText());
+		}
+		
+		public void selectedPlaced() throws InterruptedException {
+			driver.findElement(statusDropdown).click();
+			Thread.sleep(1000);
+			driver.findElement(placedStatus).click();
+			Thread.sleep(1500);
+		}
+		
+		public void durationDefault() throws InterruptedException {
+			driver.findElement(threeMonths).click();
+			Thread.sleep(2000);
+		}
+		
+		public void customFromDuration() throws InterruptedException {
+			driver.findElement(fromDate).click();
+			driver.findElement(By.xpath("(//div[@aria-hidden='true'])[2]")).click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("(//span[@class='btn border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold'])[1]")).click();
+			Thread.sleep(1500);
+		}
+		
+		public void customToDuration() throws InterruptedException {
+			driver.findElement(toDate).click();
+			driver.findElement(By.xpath("(//span[@class='btn border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold'])[1]")).click();
+			Thread.sleep(1500);
+		}
+		
+		public void clickApply() {
+			driver.findElement(apply).click();
+		}
+		
+		public void verifyFilterApplied() throws InterruptedException {
+			String applied = driver.findElement(filterApplied).getText();
+			System.out.println(applied);
+			Thread.sleep(2000);
+		}
+		
+		public void clickReset() throws InterruptedException {
+			driver.findElement(reset).click();
+			Thread.sleep(1500);
+		}
+		
+		public void clickClearAll() throws InterruptedException {
+			driver.findElement(clearAll).click();
+			Thread.sleep(1500);
+		}
+		
+		public String verifyMyOrderPage() {
+			return driver.findElement(By.xpath("//h1[@class='page-title']")).getText();
+		}
+		
+		public void clearedAppliedFilter() {
+			boolean cleared = driver.findElement(By.xpath("//div[@class='showorderCount mt-1']")).isDisplayed();
+			System.out.println("Cleared Applied filter: "+cleared);
+		}
+		
+		
+		
+		
 	public WebElement getOrderNumber() {
 		return orderNumber;
 	}

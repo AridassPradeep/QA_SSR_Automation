@@ -10,10 +10,11 @@ Feature: Product Detail Page feature for Registered User
     Then user homepage is displayed
 
   Scenario: verify user able to view message on thickness section
-    And user select any product example HR
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    #Given user is on product detail page of Steel item
     Then user is able to view the message in the thickness section
 
-  @check1
   Scenario: verify product quantity should be updated in the cart icon.
     When cart is empty or not
     Then user navigate to Home page
@@ -108,22 +109,22 @@ Feature: Product Detail Page feature for Registered User
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
-    Given user is on product detail page of Steel item
+    # Given user is on product detail page of Steel item
     And deal is visible
     When user click on deal
-    Then verify lowest price seller is displayed
-    Then verify best price is displayed on right side
+    #Then verify lowest price seller is displayed
+    # Then verify best price is displayed on right side
     Then verify dimensions are selected
     When user select dimensions same as deal
     Then deal pill gets clicked
 
   @ctl
-  Scenario Outline: Verify customer length watermark for all the products
+  Scenario: Verify customer length watermark for all the products
     When cart is empty or not
-    Then user navigate to Home page
-    When user click Steel Menu on header section
-    When user select hot/cold sheet products
-    Then user select the dimension of the selected product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    When user click the customer length of the selected product
     When user click the customer length of the selected product
     Then validate the customer length example value in the input field
 
@@ -136,7 +137,7 @@ Feature: Product Detail Page feature for Registered User
     And user is on product detail page of Stainless Steel item and add dimensions
     And user add quantity and validate MOQ messages
       | quantity | MOQMessage                                                        |
-      |        0 | Required quantity is below MoQ. Please add quantity above 100.0kg |
+      |      000 | Required quantity is below MoQ. Please add quantity above 100.0kg |
       |      999 | The maximum available quantity for your selection is 10000.0kg    |
       |   999999 | quantity more than 9999 kg                                        |
     And validate add to cart button is disabled
@@ -150,8 +151,8 @@ Feature: Product Detail Page feature for Registered User
     Given user is on product detail page of Steel item and add dimensions
     And user add quantity and validate MOQ messages
       | quantity | MOQMessage                                                      |
-      |        1 | Required quantity is below MoQ. Please add quantity above 2.0MT |
-      |     1000 | The maximum available quantity for your selection is 12.5MT     |
+      |        1 | Required quantity is below MoQ. Please add quantity above 1.0MT |
+      |     1000 | The maximum available quantity for your selection is 27.5MT     |
       | 10000000 | quantity more than 9999 MT                                      |
     And validate add to cart button is disabled
 
@@ -164,23 +165,12 @@ Feature: Product Detail Page feature for Registered User
     And click on ResetSelection button
     Then validate add to cart button is disabled
 
-  @ctl
-  Scenario Outline: Verify customer length watermark for all the products
-    When cart is empty or not
-    Then user navigate to Home page
-    When user click Steel Menu on header section
-    When user select hot/cold sheet products
-    Then user select the dimension of the selected product
-    When user click the customer length of the selected product
-    Then validate the customer length example value in the input field
-
   @ctl1
   Scenario Outline: Verify invalid length error message value for custom length
     When cart is empty or not
-    Then user navigate to Home page
-    When user click Steel Menu on header section
-    When user select hot/cold sheet products
-    Then user select the dimension of the selected product
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
     When user click the customer length of the selected product
     When user enters invalid Custom Length "<customlength>" and  submits custom length for HR
     Then invalid custom length error message should not be displayed with entered length
@@ -190,3 +180,21 @@ Feature: Product Detail Page feature for Registered User
       | customlength | search    |
       |          249 | HR sheets |
       |         6301 | HR sheets |
+
+ @ctl
+  Scenario: Verify customer length watermark for all the products
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    When user click the customer length of the selected product
+    When user click the customer length of the selected product
+    Then validate the customer length example value in the input field
+  @form
+  Scenario: Verify form section is visible for TMT products
+    When cart is empty or not
+    Then user navigate to Home page
+    When user click Cement Menu on header section
+    When user select TMT products
+    And user is on TMT Product page
+    And Straight, bent button is visible

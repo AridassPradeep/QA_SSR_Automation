@@ -216,6 +216,7 @@ public class PDPRegisteredUserSteps {
 			System.out.println("Expected MOQ Message " + moqMsg);
 			System.out.println("Actual MOQ Message" + actualErrorMessage);
 			Assert.assertTrue(actualErrorMessage.contains(moqMsg));
+			Thread.sleep(1000);
 
 		}
 
@@ -301,5 +302,28 @@ public class PDPRegisteredUserSteps {
 	public void validate_the_customer_length_error_message_displayed() {
 		pdpreguser.validateErrorMessage();
 	}
+	
+	@When("user click Cement Menu on header section")
+	public void user_click_cement_menu_on_header_section() {
+	    
+	}
+	
+	@When("user select TMT products")
+	public void user_select_tmt_products() {
+	  
+	}
+	
+	@When("user is on TMT Product page")
+	public void user_is_on_tmt_product_page() {
+	   
+	}
+	
+	@When("Straight, bent button is visible")
+	public void straight_bent_button_is_visible() {
+	  
+	}
+
+
+
 
 }
