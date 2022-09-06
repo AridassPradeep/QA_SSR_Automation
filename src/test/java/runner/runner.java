@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-	    //tags = "@neft",
+	   // tags = " @DirectneftPaymentMultiSeller",
 		dryRun = false,
 		stepNotifications=true,
 		plugin = {
@@ -20,3 +20,5 @@ import io.cucumber.junit.CucumberOptions;
 public class runner {
 
 }
+
+//CUCUMBER_PUBLISH_TOKEN=e5a3df1c-aa53-4e31-8246-69f7ea912bc1

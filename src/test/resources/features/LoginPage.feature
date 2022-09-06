@@ -6,7 +6,7 @@ Feature: Login page feature
     When user clicks on login button
     When user click  on login by email
 
-  
+   @sanityExe 
   Scenario: verify OTP Login functionality works perfectly
     When user click  on login by otp
     And user enter phone no

@@ -24,6 +24,7 @@ public class ProductPage {
 	private By viewAllSS = By.xpath("(//button[@class='btn view-all btn-outline-primary primary'])[2]");
 	private By ssHRS = By.xpath("//div[@class='plp-product-item']");
 	private By stainlessSteelMenu = By.xpath("//a[contains(text(),'Stainless Steel')]");
+	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
 
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;
@@ -96,6 +97,21 @@ public class ProductPage {
 		// r.keyRelease(KeyEvent.VK_DOWN);
 		driver.findElement(By.partialLinkText("Hot rolled sheets")).click();
 		Thread.sleep(2000);
+	}
+	
+	public void CRMenu() throws InterruptedException, AWTException {
+		
+		
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).build().perform();
+
+		WebElement we1 = driver.findElement(By.partialLinkText("Cold rolled"));
+		action.moveToElement(we1).build().perform();
+
+		driver.findElement(By.xpath("//div[1]/div[1]/ul[1]/li[2]/div[1]/ul[1]/li[2]/a[1]")).click();
+		Thread.sleep(3600);
+		
 	}
 
 	public void selectProductreguserHRS() {

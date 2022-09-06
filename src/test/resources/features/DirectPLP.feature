@@ -12,7 +12,7 @@ Feature: Direct PLP page navigation
     
 @PLPPage
 Scenario: Verify to navigate from Direct Homepage to PLP page
-	When user is able to select product from Steel by categories 
+	When user is able to select HotRolledproduct from Steel by categories 
 	Then user is navigate to PLP page from direct homepage
 	
 @PLPFormat
@@ -26,8 +26,8 @@ Scenario: Verify PLP page is in correct format
 	
 @PriceView
 Scenario: Verify price of the product can't show in the PLP page
-	When user is able to select product from Steel by categories 
-	And user is navigate to PLP page from direct homepage
+	When user is able to select HotRolledproduct from Steel by categories 
+	Then user is navigate to PLP page from direct homepage
 	Then user is able to see the price amount in the PLP page of the products
 
 @PDPPage

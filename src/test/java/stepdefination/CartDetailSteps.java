@@ -1,21 +1,27 @@
 package stepdefination;
 
+import org.junit.Assert;
+
 import factory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CartDetailPage;
+import pages.HomePage;
 import pages.MyOrderPages;
 import pages.PDPDiscountPage;
 import pages.PDPRegisteredUserPage;
+import pages.PDPpage;
 import pages.Paymentpage;
 
 public class CartDetailSteps {
+	private HomePage homePage = new HomePage(DriverFactory.getDriver());
 	PDPDiscountPage pdpdispage = new PDPDiscountPage(DriverFactory.getDriver());
 	Paymentpage pmtpage = new Paymentpage(DriverFactory.getDriver());
 	CartDetailPage cartdpage = new CartDetailPage(DriverFactory.getDriver());
 	MyOrderPages myOrder = new MyOrderPages(DriverFactory.getDriver());
 	PDPRegisteredUserPage pdp = new PDPRegisteredUserPage(DriverFactory.getDriver());
+	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
 
 	@When("user click on Cart icon on homepage")
 	public void user_click_on_cart_icon_on_homepage() {
@@ -91,7 +97,7 @@ public class CartDetailSteps {
 	@Then("Applied coupons remain in active if applicable to the modified cart context")
 	public void applied_coupons_remain_in_active_if_applicable_to_the_modified_cart_context()
 			throws InterruptedException {
-		cartdpage.validateApplyCoupons();
+		cartdpage.validateAppliedCoupons();
 	}
 
 	@Then("Count of applied coupons remains the same")
@@ -122,35 +128,72 @@ public class CartDetailSteps {
 		Thread.sleep(2000);
 		cartdpage.removeHRInCart();
 	}
+	
+	@When("user click on change address to thrissur")
+	public void user_click_on_change_address_to_thrissur() {
+		cartdpage.changeAddress(0);
+	   
+	}
+	
+	@When("user click on change address to chandigarh")
+	public void user_click_on_change_address_to_chandigarh() {
+		cartdpage.changeAddress(1);
+	   
+	}
+	@When("user click on change address to chennai")
+	public void user_click_on_change_address_to_chennai() {
+		cartdpage.changeAddress(2);
+	   
+	}
+	
+	@And("select for delivery")
+	public void select_for_delivery() throws InterruptedException {
+		cartdpage.selectDelivery();
+	   
+	}
+	
+	@And("verify tax matches in mc and UI")
+    public void verify_tax_matches_in_mc_and_ui() throws Throwable {
+       
+    }
+	
+	 @Then("^verify 9% CGST and 9% SGST is displayed$")
+	    public void verify_9_cgst_and_9_sgst_is_displayed() throws Throwable {
+		 cartdpage.verifyCgstSgst();
+	       
+	    }
+
+
 
 	@When("^user clicks Welding electordes from Welding Consummables Navigation Menu$")
 	public void user_clicks_welding_electordes_from_welding_consummables_navigation_menu() throws Throwable {
-
+		homePage.selectWeldingElectrodes();
 	}
 
 	@Then("^verify freight charges are displayed$")
 	public void verify_freight_charges_are_displayed() throws Throwable {
-
+		String deliverychargeText=cartdpage.verifydeliveryCharges();
+		Assert.assertEquals("Delivery charges (incl. of all taxes)", deliverychargeText);
 	}
 
 	@And("user is on product detail page of Welding electordes item")
 	public void user_is_on_product_detail_page_of_welding_electordes_item() throws Throwable {
-
+		pdpreguser.WeldingElectrodeDetails() ;
 	}
 
 	@And("^verify subtotal is equal to sum of price,tax and freight charges$")
 	public void verify_subtotal_is_equal_to_sum_of_pricetax_and_freight_charges() throws Throwable {
-
+		cartdpage.verifysubTotal();
 	}
 
 	@When("^user clicks Welding wire from Welding Consummables Navigation Menu$")
 	public void user_clicks_welding_wire_from_welding_consummables_navigation_menu() throws Throwable {
-
+		homePage.selectWeldingWire();
 	}
 
 	@And("^user is on product detail page of Welding wire item$")
 	public void user_is_on_product_detail_page_of_welding_wire_item() throws Throwable {
-
+		pdpreguser.WeldingWireDetails() ;
 	}
 
 }

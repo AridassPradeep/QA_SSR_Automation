@@ -202,8 +202,9 @@ public class ProductLandingPage {
 		productList.get(1).click();
 	}
 
-	public void validatedeliveryDate() {
-
+	public void validatedeliveryDate() throws InterruptedException {
+         
+		Thread.sleep(2200);
 		List<WebElement> productList = driver.findElements(By.xpath("//span[@class='deliveryschedule']"));
 		System.out.println("Delivery Date: " + productList.get(1).getText());
 	}
@@ -321,7 +322,7 @@ public class ProductLandingPage {
 	}
 
 	public String validatePLPListResults() {
-		driver.findElement(By.xpath("//span[contains(text(),'Found')]")).click();
+		//driver.findElement(By.xpath("//span[contains(text(),'Found')]")).click();
 		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
 		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
 

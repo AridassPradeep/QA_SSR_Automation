@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +34,7 @@ public class DirectPLPPage {
 	private WebElement configureAndRequestPrice;
 	@FindBy(xpath = "(//span[@class='deliveryschedule'])[1]")
 	private WebElement deliveryDay;
+	
 	
 	
 	public DirectPLPPage(WebDriver driver2) {
@@ -105,6 +107,8 @@ public class DirectPLPPage {
 	public WebElement getDeliveryDay() {
 		return deliveryDay;
 	}
+	
+
 	
 	
 }

@@ -29,6 +29,8 @@ public class HomePage {
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
 	private By arrowdropdown = By.xpath("//header[@id='drop-down-head']");
 	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
+	private By WeldingConsumables = By.xpath("//div[@class='navigation-item'][6]");
+
 	private By HomePageHotRolledSheet = By.xpath("//div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
 	private By HomePageHotRolledSheetSeries200 = By
 			.xpath("//div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]");
@@ -41,8 +43,10 @@ public class HomePage {
 	private By steelTree = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[1]");
 	private By stainlessSteelTree = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[2]");
 	private By constructionMaterial = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[3]");
-	private By helpSupport = By.xpath("(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'Help & support')])[1]");
-	private By aboutUs = By.xpath("(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'About us')])[1]");
+	private By helpSupport = By.xpath(
+			"(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'Help & support')])[1]");
+	private By aboutUs = By.xpath(
+			"(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'About us')])[1]");
 	private By blogs = By.xpath("//header/div[3]/div/div[1]/div[6]/a");
 	private By toggled = By.xpath("//button[@id='direct-distributor-switchv2']");
 	private By addressIcon = By.xpath("//*[@id=\'address-dropdown\']");
@@ -72,9 +76,7 @@ public class HomePage {
 	private By weldingCategory = By.xpath("//h2[@id='Welding Consumables']");
 	private By weldingProductsList = By.xpath("//h2[@id='Welding Consumables']//following::ul[@class='categorylist']");
 	private By viewAllWelding = By.xpath("//h2[@id='Welding Consumables']//following::button[text()=' View all']");
-	
-	
-	
+
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -82,20 +84,50 @@ public class HomePage {
 	public boolean validateJSWLogo() {
 		return driver.findElement(JSWLogo).isDisplayed();
 	}
-	
+
 	public void hotRolledPLP(WebElement element) throws AWTException {
-//		Robot r = new Robot();
-//		r.
+		// Robot r = new Robot();
+		// r.
 		Actions a = new Actions(driver);
 		a.contextClick(element).perform();
 		a.contextClick().click();
-		}
+	}
 
 	public void selectHotRolledProduct() throws InterruptedException {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
 		action.moveToElement(we).build().perform();
-		driver.findElement(By.partialLinkText("Hot rolled")).click();
+
+		WebElement we1 = driver.findElement(By.partialLinkText("Hot rolled"));
+		action.moveToElement(we1).build().perform();
+
+		driver.findElement(By.xpath("//div[1]/div/ul/li[1]/div/ul/li[1]/a")).click();
+		Thread.sleep(3000);
+	}
+
+	public void selectWeldingElectrodes() throws InterruptedException {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(WeldingConsumables);
+		action.moveToElement(we).build().perform();
+
+		WebElement we1 = driver.findElement(By.partialLinkText("Welding Electrodes"));
+		action.moveToElement(we1).build().perform();
+
+		we1.click();
+
+		Thread.sleep(3000);
+	}
+	
+	public void selectWeldingWire() throws InterruptedException {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(WeldingConsumables);
+		action.moveToElement(we).build().perform();
+
+		WebElement we1 = driver.findElement(By.partialLinkText("Welding Wires"));
+		action.moveToElement(we1).build().perform();
+
+		we1.click();
+
 		Thread.sleep(3000);
 	}
 
@@ -253,18 +285,18 @@ public class HomePage {
 		driver.findElement(By.xpath("//div[@class='navigation-item'][1]")).click();
 	}
 
-// HomeVerification
-	
+	// HomeVerification
+
 	public void SteelSection() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,500)","");
+		js.executeScript("window.scrollTo(0,500)", "");
 	}
-	
+
 	public void validateHotRolledSteel() {
 		driver.findElement(hotRolled).isDisplayed();
 		driver.findElement(HomePageHotRolledCoils).isSelected();
 	}
-	
+
 	public void validateViewAllSteel() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,1000)", "");
@@ -277,62 +309,62 @@ public class HomePage {
 		driver.findElement(By.xpath("//span[contains(text(),'Hot Rolled')]")).isDisplayed();
 		Thread.sleep(2000);
 	}
-	
+
 	public void SSSection() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,1200)","");
+		js.executeScript("window.scrollTo(0,1200)", "");
 	}
-	
+
 	public boolean validateHotRolledSheet() {
 		driver.findElement(hotrolledsheet).isDisplayed();
 		return driver.findElement(HomePageHotRolledCoils).isSelected();
 	}
-	
+
 	public boolean validateSSViewall() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,1500)", "");
 		return driver.findElement(ssViewall).isDisplayed();
 	}
+
 	public void SSClickViewAll() throws InterruptedException {
 		driver.findElement(ssViewall).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
 		Thread.sleep(2000);
 	}
-	
-	
+
 	public boolean validateblogs() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,2000)", "");
 		return driver.findElement(bloglist).isDisplayed();
-	}	
-	
+	}
+
 	public void blogsList() {
 		List<WebElement> items = driver.findElements(By.xpath("//div[@class='blog-item']"));
-			System.out.println("Number of articles= "+items.size());
+		System.out.println("Number of articles= " + items.size());
 	}
-	
+
 	public boolean validateBlogsViewall() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,2300)", "");
 		return driver.findElement(blogViewall).isDisplayed();
 	}
-	
+
 	public boolean validatevideoSection() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,2750)", "");
 		return driver.findElement(videosection).isDisplayed();
 	}
-	
+
 	public void validateworkFLow() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,3350)", "");
 	}
-	
+
 	public boolean validateworkbanner() {
 		return driver.findElement(workflow).isDisplayed();
 	}
-	
+
 	// Header
 	public boolean validateUserName() {
 		return driver.findElement(userName).isDisplayed();
@@ -369,9 +401,9 @@ public class HomePage {
 	}
 
 	public void validateToggled() {
-//		return driver.findElement(toggled).getText();
+		// return driver.findElement(toggled).getText();
 		System.out.println(driver.findElement(toggled).getText());
-		
+
 	}
 
 	public void subSteelTree() throws InterruptedException {
@@ -445,42 +477,53 @@ public class HomePage {
 		return email;
 	}
 
-	//TMT and Welding Consumables
-	
-		public void validateTMT() throws InterruptedException {
-			driver.findElement(tmt).isDisplayed();
-			driver.findElement(tmt).click();
-			Thread.sleep(3000);
-		}
-		
-		public void validateWelding() throws InterruptedException {
-			driver.findElement(welding).isDisplayed();
-			driver.findElement(welding).click();
-			Thread.sleep(3000);
-		}
-		
-		
-		public void verifyWeldingCategory() {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("window.scrollTo(0,2100)","");
-			driver.findElement(weldingCategory).isDisplayed();
-		}
-		
-		public void weldingCategoryList() throws InterruptedException {
-//			List<WebElement> products = driver.findElements(weldingProductsList);
-//			int no = products.size();
-//			for (int i = 0; i < no; i++) {
-//				driver.findElement(weldingProductsList).getText();
-//			}
-			String product = driver.findElement(weldingProductsList).getText();
-			System.out.println("Welding Products :"+product);
-			Thread.sleep(2000);
-		}
-		
-		public void viewAllWelding() {
-			driver.findElement(viewAllWelding).isDisplayed();
-			driver.findElement(viewAllWelding).click();
-		}
-		
+	// TMT and Welding Consumables
+
+	public void validateTMT() throws InterruptedException {
+		driver.findElement(tmt).isDisplayed();
+		driver.findElement(tmt).click();
+		Thread.sleep(3000);
 	}
 
+	public void validateWelding() throws InterruptedException {
+		driver.findElement(welding).isDisplayed();
+		driver.findElement(welding).click();
+		Thread.sleep(3000);
+	}
+
+	public void verifyWeldingCategory() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,2100)", "");
+		driver.findElement(weldingCategory).isDisplayed();
+	}
+
+	public void weldingCategoryList() throws InterruptedException {
+		// List<WebElement> products = driver.findElements(weldingProductsList);
+		// int no = products.size();
+		// for (int i = 0; i < no; i++) {
+		// driver.findElement(weldingProductsList).getText();
+		// }
+		String product = driver.findElement(weldingProductsList).getText();
+		System.out.println("Welding Products :" + product);
+		Thread.sleep(2000);
+	}
+
+	public void viewAllWelding() {
+		driver.findElement(viewAllWelding).isDisplayed();
+		driver.findElement(viewAllWelding).click();
+	}
+	
+	public void selectHotRolled() throws InterruptedException {
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(steelMenu);
+		action.moveToElement(we).build().perform();
+
+		WebElement we1 = driver.findElement(By.partialLinkText("Hot rolled"));
+		action.moveToElement(we1).build().perform();
+
+		we1.click();
+
+		Thread.sleep(3000);
+	}
+
+}

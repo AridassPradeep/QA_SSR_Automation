@@ -7,10 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PDPDiscountPage {
 
 	private WebDriver driver;
+	private WebDriverWait wait;
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	// private By searchTextBox = By.id("SearchText");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
@@ -337,7 +340,10 @@ public class PDPDiscountPage {
 	}
 	
 	public void validateCouponAppplied() {
-	   driver.findElement(By.xpath("//div[contains(text(),'Applied coupons')]")).isDisplayed();
+	
+	    wait = new WebDriverWait(driver,60);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Coupon applied successfully')]")));
+	   driver.findElement(By.xpath("//*[contains(text(),'Coupon applied successfully')]")).isDisplayed();
 
 	}
 	public void validateremoveButton() {

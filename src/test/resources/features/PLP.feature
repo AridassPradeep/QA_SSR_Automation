@@ -1,4 +1,4 @@
-@PLP
+
 Feature: Verification of PLP functionality feature
 
   Background: User opens website
@@ -51,7 +51,7 @@ Scenario: Products are displaying After filters removed
 	When user is able to select Hot Rolled from Steel Menu 
 	Then user is select Grade at Filter section 
 	When user is able to view on Reset Hyper link CTA 
-@P	
+
 Scenario: Check for Total product found count is displaying for the Steel products 
 	When user is able to select Hot Rolled from Steel Menu 
 	Then check Found "count(*)" total product number of Steel products displayed 
@@ -69,6 +69,7 @@ Scenario: Check applied Filters are shown above the products
 	Then user is select 2062:2011 from Grade at Filter section 
 	Then Filters applied should be shown above the Products display applied filters should display with cross button" 
  
+
 Scenario: Check for Reset CTA enabled if filters applied more than 2 filters 
 	When user is on Steel Menu on header section 
 	And user is able to select Hot Rolled from Steel Menu 
@@ -78,6 +79,7 @@ Scenario: Check for Reset CTA enabled if filters applied more than 2 filters
 	Then all the applied filters should display 
 	Then clear all hyper link must be available after selection of more than 2 filters 
 	
+
 Scenario: Check Clear all hyper link is clickable and clears the applied filters 
 	When user is on Steel Menu on header section 
 	And user is able to select Hot Rolled from Steel Menu 
@@ -86,6 +88,7 @@ Scenario: Check Clear all hyper link is clickable and clears the applied filters
 	Then user is select the Thickness - Min and Max values 
 	And check clear hyper link is displayed on Thickness section 
 	And click Clear huper link 
+	
 	
 Scenario: Check Clear all hyper link is clickable and clears the applied filters 
 	When user is on Steel Menu on header section 
@@ -97,6 +100,7 @@ Scenario: Check Clear all hyper link is clickable and clears the applied filters
 	And all the applied filters should be removed 
 	And all the products should display" 
 	
+
 Scenario: Remove atlest one applied filter and check displayed products 
 	When user is on Steel Menu on header section 
 	And user is able to select Hot Rolled from Steel Menu 
@@ -105,6 +109,7 @@ Scenario: Remove atlest one applied filter and check displayed products
 	Then user is select the Thickness - Min and Max values 
 	Then Filters applied should be shown above the Products display 
 	And After removing filter Thickness remaining filters products should display 
+	
 	
 Scenario: cancel/close all filters shown above the prodcts 
 	When user is on Steel Menu on header section 
@@ -191,7 +196,7 @@ Scenario: Check for selected color products are displayed after filters applied
 	And user is able to select Colour coated from Steel Menu 
 	Then Filter with Color to be displayed
 	
-	@TMTProducts
+	
 Scenario: Check navigation of PLP page for TMT
 	When user click TMT Menu on header section 
 	And user is able to view TMT Steel products on PLP page 
@@ -228,6 +233,7 @@ Scenario: Check price range is shown for each product
 	Then product price range should be display for TMT
 	And Rupee symbol should be display at before every price 
 	
+	@PLP
 Scenario: Check for Delivery is mentioned with estimated days 
 	When user click TMT Menu on header section 
 	Then Delivery in should display with days range ie Delivery in 2-5 days

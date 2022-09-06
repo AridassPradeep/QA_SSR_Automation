@@ -41,7 +41,7 @@ public class DirectOrderSteps {
 	}
 
 	@When("user click on upload files")
-	public void user_click_on_upload_files() throws AWTException {
+	public void user_click_on_upload_files() throws AWTException, InterruptedException {
 		doppage.uploadFile();
 	}
 
@@ -181,8 +181,10 @@ public class DirectOrderSteps {
 	}
 
 	@Then("verify no product in requirement list")
-	public void verify_no_product_in_requirement_list() {
-		doppage.validateEmptyRequirement();
+	public void verify_no_product_in_requirement_list() throws Exception {
+		boolean a=doppage.validateEmptyRequirement();
+		Assert.assertEquals(a, true);
+	
 	}
 
 	@When("user click on remove button on the product")
@@ -193,7 +195,8 @@ public class DirectOrderSteps {
 	@Then("verify delivery date is displayed from {int}-{int} days")
 	public void verify_delivery_date_is_displayed_from_days(Integer int1, Integer int2) throws InterruptedException {
 		Thread.sleep(2000);
-		doppage.validateDeliveryDate();
+		String deliverydateText=doppage.validateDeliveryDate();
+		Assert.assertEquals(deliverydateText, "Delivery in 30 - 45 days");
 		Thread.sleep(3000);
 
 	}

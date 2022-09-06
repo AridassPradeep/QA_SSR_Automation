@@ -1,15 +1,16 @@
 @DiscountCoupon
-Feature: Product Detail Page with discount
+Feature: NewCoupons-Product Detail Page with discount
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
+    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
-  Scenario Outline: Check for coupon code can be  entered manually and can be removed also in coupons overlay
+  Scenario Outline: Check for coupon code can be  entered manually
+    # Check for coupon code can be  entered manually and can be removed also in coupons overlay
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
@@ -20,8 +21,8 @@ Feature: Product Detail Page with discount
     Then List of coupons to be displayed
     And user enters the "<coupon>" manually and click on apply
     Then coupon is applied and price gets updated
-    And remove button is displayed
-    And user click on remove button
+    # And remove button is displayed
+    # And user click on remove button
     And user closes coupon overlay
     And price gets updated
     And user click on proceed to pay on cart detail page
@@ -104,32 +105,37 @@ Feature: Product Detail Page with discount
       | coupon   |
       | STEEL250 |
 
-  @RetainOfferwithsamecoupon
-  Scenario: Verify remove product in cart line and price will be update
+  
+  Scenario Outline: Verify add product in cart line and price will be update and coupons remain active
     When cart is empty or not
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on Cart icon on homepage
+    And user click on apply coupon
+    Then List of coupons to be displayed
+    And user enters the "<coupon>" manually and click on apply
+    Then coupon is applied and price gets updated
+    And close the coupon window box
+    Then user navigate to Home page
     When user clicks HR from Steel Navigation Menu
-    # Then HR Products are displayed
     When user selects Steel product
     Given user is on product detail page of Steel item
     When user clicks on Add To Cart button available in the right side of the webpage
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    When user is on second product detail page of Steel item
-    When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
-    And user is able to select Wire rods from Steel Menu
-    Then user select wire rod product in PLP page
-    Then user select the dimensions of selected wire rod product
-    When user clicks on Add To Cart button available in the right side of the webpage
-    When user is on cart page
-    And user click on apply coupon
-    Then List of coupons to be displayed
-    And user is able to apply STEEL250 coupon code
-    Then coupon is applied and price gets updated
-    When user is removed HR products from cart line
+    When user click on Cart icon on homepage
     Then User shall see modified pricing of the cart
+    And Applied coupons remain in active if applicable to the modified cart context
     And Applied coupons remain active after removed if applicable to the modified cart context
     And Count of applied coupons remains the same
+
+    Examples: 
+      | coupon   |
+      | STEEL250 |
 
   #  @RetainOfferwithupdatecoupons
   #  Scenario: Verify remove product in cart line and price will be update
@@ -141,23 +147,30 @@ Feature: Product Detail Page with discount
   #    When user is removed products from cart line
   #    Then User shall see modified pricing of the cart
   #    And Applied coupons remain in active if applicable to the modified cart context
-  @RetainOfferwithupdatecoupon
-  Scenario: Verify remove product in cart line and price will be update
+  
+  Scenario Outline: Verify remove product in cart line and price will be update and coupons remain active
     When cart is empty or not
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
     When user clicks HR from Steel Navigation Menu
-    # Then HR Products are displayed
     When user selects Steel product
     Given user is on product detail page of Steel item
     When user clicks on Add To Cart button available in the right side of the webpage
-    And user is able to select Wire rods from Steel Menu
-    Then user select wire rod product in PLP page
-    Then user select the dimensions of selected wire rod product
-    When user clicks on Add To Cart button available in the right side of the webpage
-    When user is on cart page
+    Then verify that the product should be added in the cart
+    When user click on Cart icon on homepage
     And user click on apply coupon
     Then List of coupons to be displayed
-    And user is able to apply STEEL250 coupon code
+    And user enters the "<coupon>" manually and click on apply
     Then coupon is applied and price gets updated
     When user is removed Steel products from cart line
     Then User shall see modified pricing of the cart
     And Applied coupons remain in active if applicable to the modified cart context
+
+    Examples: 
+      | coupon   |
+      | STEEL250 |

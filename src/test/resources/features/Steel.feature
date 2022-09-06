@@ -1,3 +1,7 @@
+#va_IYQmzJQHLDMvoB
+#https://dashboard.razorpay.com/app/smartcollect/virtualaccounts?count=25&id=va_IYQmzJQHLDMvoB
+#username: jsw.one@jsw.in
+#password: Jsw@1234
 @sanityExe @demo @steel
 Feature: Steel feature
 
@@ -10,7 +14,6 @@ Feature: Steel feature
     Then user homepage is displayed
 
   Scenario: Verify Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section
-
     And Hot rolled, cold rolled ,wire rods,coated,colour coated is displayed in homepage in  steel section
     When user clicks on Hot rolled  then coils ,sheet is displayed
 
@@ -65,9 +68,8 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-@steelnetbanking
+  @steelnetbanking
   Scenario: Verify Buy Now button and net banking with an order placed successfully
-
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
@@ -82,9 +84,8 @@ Feature: Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-@neft 
+  @neft
   Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment
-
     When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
@@ -106,7 +107,7 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-@neftPayment
+  @neftPayment
   Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment with confirmation payment
     When cart is empty or not
     Then user navigate to Home page
@@ -119,6 +120,32 @@ Feature: Steel feature
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
+    And user click on proceed to pay on cart detail page
+    Then verify netbanking is disabled
+    When user enter UTR and validate it
+      | A12345678901234556 |
+    And user click on confirm payment
+    Then verify payment success message is displayed
+
+  @neftPaymentMultiSeller
+  Scenario: Verify user is able to add products from multi seller
+    When cart is empty or not
+    Then user navigate to Home page
+    When user clicks CR Coil from Steel Categories Menu
+    When user selects CR Coil Steel product
+    Given user is on product detail page of CR Coil item
+    Then verify seller name
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    Then verify seller name
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage

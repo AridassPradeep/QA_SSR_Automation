@@ -1,5 +1,5 @@
 @PDPDiscount
-Feature: Product Detail Page with discount
+Feature: OldCoupons-Product Detail Page with discount
 
   Background: User opens website
      Given user is on home page
@@ -66,11 +66,12 @@ Feature: Product Detail Page with discount
     
     
    Scenario: Verify user should not avail the discount if limit is breached
-    When cart is empty or not
-    When user enter "Colour coated" in search bar
-    And user click on search button
-    When user is on product detail page of colored product
-    When user enter dimension
+   
+   When cart is empty or not
+    Then user navigate to Home page
+    When user clicks HR Sheet series from Steel Categories Menu
+    When user selects HR Stainless Steel product
+    Given user is on product detail page of Stainless Steel item
     Then verify the cart value is more than 1L
     When user add the product to cart
     Then Cart icon would appear with 1
@@ -84,7 +85,8 @@ Feature: Product Detail Page with discount
     
   @check 
    Scenario: Verify Flat 2000 Value discount on order value more than 2 Lakh 
-     When cart is empty or not
+   
+   When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
     When user selects HR Stainless Steel product

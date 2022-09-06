@@ -230,7 +230,7 @@ public class PLPSteps {
 	}
 
 	@Then("Delivery in should display with days range ie Delivery in {int}-{int} days")
-	public void delivery_in_should_display_with_days_range_ie_delivery_in_days(Integer int1, Integer int2) {
+	public void delivery_in_should_display_with_days_range_ie_delivery_in_days(Integer int1, Integer int2) throws InterruptedException {
 		productlandingpage.validatedeliveryDate();
 	}
 
@@ -321,7 +321,7 @@ public class PLPSteps {
 	
 	@Then("HR Products are displayed")
 	public void hr_products_are_displayed() {
-		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Hot Rolled");
+		Assert.assertEquals(productlandingpage.validatePLPListResults(), "Hot Rolled Sheets");
 	}
 	
 	@Then("Breadcrump should display Home > Metals and Alloys > Stainless Steel")
@@ -383,14 +383,29 @@ public class PLPSteps {
 		pdpreguser.selectSteelProductreguser();
 	}
 	
+	@When("user selects CR Coil Steel product")
+	public void user_selects_CRCoilSteel_product() throws InterruptedException {
+		pdpreguser.selectCRCoilSteelProductreguser() ;
+	}
 	
+	@When("user selects WeldingElectrode product")
+	public void user_selects_WeldingElectrode_product() throws InterruptedException {
+		pdpreguser.selectWeldingElectrodeProductreguser();
+	}
+	
+	@When("user selects WeldingWire product")
+	public void user_selects_WeldingWire_product() throws InterruptedException {
+		pdpreguser.selectWeldingWireProductreguser();
+	}
+	
+	@When("user clicks CR Coil from Steel Categories Menu")
+	public void user_clicks_CRCoil_from_SteelCategoriesMenu() throws InterruptedException, AWTException {
+		productpage.CRMenu();
+	}
 	
 	@When("user clicks HR Sheet series from Steel Categories Menu")
 	public void user_clicks_hr_sheet_series_from_steel_categories_menu() throws InterruptedException, AWTException {
 		productpage.SSMenu();
-//		productpage.hrSheets();
-//		Thread.sleep(5000);
-//		productpage.selectHRSeries300();
 	}
 
 	@Then("HR Sheet series Products are displayed")

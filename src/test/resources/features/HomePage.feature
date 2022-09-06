@@ -8,7 +8,7 @@ Feature: Home page feature
     When user enters logins with username with "hari5465@yopmail.com" and  "Hari5465#"
     And user clicks on signin
     Then user homepage is displayed
-
+ @sanityExe 
   Scenario: Verify different elements in homepage
     Then Verify the JSW logo is appearing in the Header Section
     Then Verify Search Bar is displayed with search icon

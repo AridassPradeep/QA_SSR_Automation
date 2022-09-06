@@ -7,8 +7,11 @@ import io.cucumber.java.en.*;
 import pages.MyOrderPages;
 
 public class MyOrderPageSteps {
+	
 
 	MyOrderPages order = new MyOrderPages(DriverFactory.getDriver());
+	public String Orderno;
+	public String tax;
 
 	@When("user is able to click my order button")
 	public void user_is_able_to_click_my_order_button() {
@@ -342,5 +345,21 @@ public class MyOrderPageSteps {
 		public void user_is_able_to_click_the_myorder_cta() {
 			order.getMyOrder().click();
 		}
+		
+		@And("gets the order details")
+		public void get_the_order_details() {
+			Orderno = order.getOrderNo();
+			//tax=order.gettax();
+			//System.out.print("tax"+ tax);
+		}
+		@When("user click on order and search orderno in mc")
+		public void user_click_on_order_and_search_ordernoMc() throws InterruptedException {
+			order.clickOrder();
+			if (order.isElementPresentpopup()) {
+				order.checkPopup();
+			}
+			Thread.sleep(2000);
+			order.enterOrdernoSearchBox(Orderno);
 
+		}
 	}

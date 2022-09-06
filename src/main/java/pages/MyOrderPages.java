@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 public class MyOrderPages {
 	private WebDriver driver;
 	
+	
 	String expectedStatus = "Your order has been successfully placed";
 	String cartEmptyMessage = "Your cart is empty.";
 	String orderCancelMessage = "Your Order has been cancelled. Any amount charged will be refunded in\r\n"
@@ -127,7 +128,9 @@ public class MyOrderPages {
 	private By clearAll = By.xpath("//button[@class='btn clearAllbtn ml-0 mt-1']");
 	private By filterApplied = By.xpath("//div[@class='d-md-inline-flex d-lg-inline-flex my-4']");
 	
-	
+	private By order = By.xpath("//div[contains(text(),'Orders')]");
+	private By searchBox = By.xpath("//input[@name='search-text']");
+	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
 		
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
@@ -510,6 +513,52 @@ public class MyOrderPages {
 
 	public WebElement getPayNow() {
 		return payNow;
+	}
+
+	public String getOrderNo() {
+		String orderNo= driver.findElement(By.xpath("//span[contains(text(),'Order number')]//following::span[1]")).getText();
+		System.out.println("order number" + orderNo);
+		return orderNo;
+	}
+	
+	public String gettax() {
+		driver.findElement(By.xpath("//div[1]/div[1]/div[2]/div[2]/button[1]")).click();
+		String tax= driver.findElement(By.xpath("//div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]")).getText();
+		return tax;
+	}
+	
+	public void clickOrder() throws InterruptedException {
+
+		driver.findElement(order).click();
+		Thread.sleep(1000);
+		driver.findElement(order).click();
+
+	}
+	public boolean isElementPresentpopup() {
+		try {
+			driver.findElement(By.xpath("//button[@label='Close dialog']"));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+	
+	public void checkPopup() {
+
+		driver.findElement(By.xpath("//button[@label='Close dialog']")).click();
+
+	}
+
+	public void enterOrdernoSearchBox(String orderno) throws InterruptedException {
+
+		driver.findElement(searchBox).sendKeys(orderno);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@data-testid='search-button']")).click();
+		Thread.sleep(2000);
+		driver.findElement(FirstOrderNo).click();
+		Thread.sleep(10000);
+
 	}
 
 }

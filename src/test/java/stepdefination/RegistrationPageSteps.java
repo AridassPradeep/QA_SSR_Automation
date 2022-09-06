@@ -176,4 +176,39 @@ public class RegistrationPageSteps {
 		registrationPage.getGstCompanyDetails();
 	}
 
+	@When("user clicks on Blogs in header menu")
+	public void user_clicks_on_blogs_in_header_menu() {
+		System.out.print("hello");
+	    
+	}
+	
+	@Then("user is able to navigate to blog page through homepage")
+	public void user_is_able_to_navigate_to_blog_page_through_homepage() {
+		System.out.print("hello");
+	}
+	
+
+@Then("user is able to see All, Business,Sustainaibilty,Technology,News,Product in header")
+public void user_is_able_to_see_all_business_sustainaibilty_technology_news_product_in_header() {
+	System.out.print("hello");
+}
+
+@Then("user click on a section like product")
+public void user_click_on_a_section_like_product() {
+	System.out.print("hello");
+}
+
+@Then("recent blogs is displayed")
+public void recent_blogs_is_displayed() {
+	System.out.print("hello");
+}
+
+@Then("pagination is displayed in blogs")
+public void pagination_displayed() {
+	System.out.print("hello");
+}
+
+
+
+
 }

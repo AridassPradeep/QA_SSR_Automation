@@ -1,5 +1,5 @@
 #1)change 1st scenario data-change mobile no,email and gstin otherwise it will throw error
-@Registration @demo
+@Registration
 Feature: Registration page feature
 
   Background: User opens website
@@ -22,7 +22,8 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 8481823656 | 33AALFM3923B1ZO  | x2xTESTh132@gmail.com | Ramya@678 |
+      | ramya    | 8002093611 | 33AABCV9886D1Z1  | TEST991@gmail.com | Ramya@678 |
+
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
@@ -101,7 +102,7 @@ Feature: Registration page feature
   Scenario: Validate user navigates to login page if user clicks on login link
     When user click on login hyper link
     Then login screen is displayed
-
+@Registration
   Scenario Outline: Validate error message for incorrect password
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"

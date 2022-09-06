@@ -1,4 +1,4 @@
-@DirectPDP
+@DirectOrderPDP
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website
@@ -15,15 +15,14 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Buy from verified sellers
     Then verify Buy directly from JSWsteel is displayed
     When user click on Buy directly from JSWsteel
-    #Then verify My requirements are displayed on top
     Then Buy from verified sellers is displayed
-
+   
+   @sanityExe
   Scenario: Verify Request for Price is submitted successfully
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
-    #Then HR Products are displayed
     When user selects Steel product
-    Given user is on product detail page of Steel item
+    Given user is on product detail page of Steel item for DirectOrder
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -33,11 +32,12 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Request for price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
+
   Scenario: Delivery 30-45 days is displayed
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
-    Given user is on product detail page of Steel item
+   Given user is on product detail page of Steel item for DirectOrder
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -45,11 +45,14 @@ Feature: Direct Order for PDP feature for registered user
     Then verify Request for price is displayed
     Then verify delivery date is displayed from 30-45 days
 
+
   Scenario: Verify multiple products added before Request for price
+    
+    Then user navigate to Home page
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
-    Given user is on product detail page of Steel item
+      Given user is on product detail page of Steel item for DirectOrder
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -65,8 +68,9 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Request for price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
+
   Scenario: Verify product is added to cart
-    When cart is empty or not
+    #When cart is empty or not
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
@@ -79,16 +83,13 @@ Feature: Direct Order for PDP feature for registered user
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
 
-  Scenario: NOT WORKING-Verify product is removed from requirements list
-    When Buy from verified sellers is displayed
-    When user click on cart on top and then Requirements tab
-    When Requirement is present then remove it
-    Then verify no product in requirement list
-    When Buy from verified sellers is displayed
+
+  Scenario: Verify user is able to remove product from requirement
+   
+     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
-    #Then HR Products are displayed
     When user selects Steel product
-    Given user is on product detail page of Steel item
+   Given user is on product detail page of Steel item for DirectOrder
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -97,18 +98,21 @@ Feature: Direct Order for PDP feature for registered user
     Then verify Requirement list is displayed
     When user click on remove button on the product
     Then verify no product in requirement list
-
+    
+    @DirectneftPaymentMultiSeller
   Scenario Outline: Verify multiple products from different seller added before Request for price
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
-    Given user is on product detail page of Steel item
+    Given user is on product detail page of Steel item for DirectOrder
+    Then verify seller name
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
     And user is able to select Wire rods from Steel Menu
     Then user select wire rod product in PLP page
     Then user select the dimensions of selected wire rod product for directorder user
+    Then verify seller name
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -118,12 +122,12 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Request for price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
- 
+ @DirectPDP
   Scenario Outline: Verify Confirm payment is made successfully
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
-    Given user is on product detail page of Steel item
+    Given user is on product detail page of Steel item for DirectOrder
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -140,14 +144,18 @@ Feature: Direct Order for PDP feature for registered user
     When user is on home page
     When homepage refreshes
     And user click on cart on top
-    Then verify Proceed to Pay is displayed on top
-    # When user click on Proceed to Pay and Mycart on top
-    When user click on confirm payment
-    When user click on make payment and confirms payment successful
+   And user click on proceed to pay on cart detail page
+    And user select bank name to transfer from the drop down on payment page
+    Then verify bank is selected
+    And User click on PayNow
+    Then User navigates to RazorPay Page
+    And User click on success button
+    Then verify after successful payment page navigates to ORDER summary page
+    Then order sucessfully placed message should be displayed
 
     Examples: 
       | Gmail      | Password          |
-      | qatestuser@jsw.in | Admin@123$ |
+      | qatestuser@jsw.in | Admin@123$  |
 
   @Advance  @DirectOrderPDP
   Scenario Outline: Verify Payment status to be changed to "Advance recieved"
@@ -183,4 +191,7 @@ Feature: Direct Order for PDP feature for registered user
 
     Examples: 
       | Email             | Password   | Gmail             |
-      | qatestuser@jsw.in | Admin@123$ | qatestuser@jsw.in |
+      | qatestuser@jsw.in |  Admin@123$ | qatestuser@jsw.in |
+      
+      
+        

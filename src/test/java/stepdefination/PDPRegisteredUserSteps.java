@@ -227,6 +227,25 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.SteelDetails();
 
 	}
+	
+	@Given("user is on product detail page of CR Coil item")
+	public void user_is_on_product_detail_page_of_CRCoilsteel_item() throws InterruptedException {
+		pdpreguser.CRCoilSteelDetails();
+
+	}
+	
+	
+	@Then("verify seller name")
+	public void verify_seller_name() throws InterruptedException {
+		pdpreguser.sellerName();
+
+	}
+	
+	@Given("user is on product detail page of Steel item for DirectOrder")
+	public void user_is_on_product_detail_page_of_steel_itemDirectOrder() throws InterruptedException {
+		pdpreguser.DirectOrderSteelDetails();
+
+	}
 
 	@When("user is on product detail page of Steel item and add dimensions")
 	public void user_is_on_productdetail_pageofSteelitemand_add_dimensionsm() throws InterruptedException {

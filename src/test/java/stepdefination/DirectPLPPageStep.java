@@ -5,10 +5,12 @@ import org.junit.Assert;
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import pages.DirectPLPPage;
+import pages.HomePage;
 
 public class DirectPLPPageStep {
 	
 	DirectPLPPage plp = new DirectPLPPage(DriverFactory.getDriver());
+	HomePage hp = new HomePage(DriverFactory.getDriver());
 	
 	@When("user is able to select product from Steel by categories")
 	public void user_is_able_to_select_product_from_steel_by_categories() throws InterruptedException {
@@ -17,11 +19,17 @@ public class DirectPLPPageStep {
 	    plp.getSteelOfCategories().click();
 	    
 	}
+	
+	@When("user is able to select HotRolledproduct from Steel by categories")
+	public void user_is_able_to_select_HotRolledproduct_from_steel_by_categories() throws InterruptedException {
+		hp.selectHotRolled();
+	    
+	}
 
 	@Then("user is navigate to PLP page from direct homepage")
 	public void user_is_navigate_to_plp_page_from_direct_homepage() throws InterruptedException {
-	   plp.getHotRolled().click();
-	    Thread.sleep(15000);
+	   
+	    Thread.sleep(3000);
 		Assert.assertTrue("\r\n" + "              \"Hot rolled\"", true);
 	}
 

@@ -208,7 +208,7 @@ public class PLPNewPage {
 	}
 
 	public void clickBrand() {
-		driver.findElement(By.xpath("//label[contains(text(),'JSW Steel')]")).click();
+		driver.findElement(By.xpath("//*[text()='JSW Steel']")).click();
 	}
 	public void clickGrade() {
 		driver.findElement(By.xpath("//label[contains(text(),'2062:2011')]")).click();

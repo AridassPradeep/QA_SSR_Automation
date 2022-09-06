@@ -34,7 +34,7 @@ public class DirectOrderPage {
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
 	private By message = By.xpath("(//*[@class='mt-14'])[1]");
-	private By deliverydate = By.xpath("//strong[contains(text(),'30-45 days')]");
+	private By deliverydate = By.xpath("//div[2]/div/div/div[3]/div/div[1]/div/div/span");
 	private By clickpasswordNext = By.xpath("//*[@id='passwordNext']/div/button/span");
 	private By uploadFiles = By.xpath("(//span[contains(text(),'Upload files')])[1]");
 	private By proceedtopaytop = By.xpath("//button[@id='oi-proceed-to-pay-notification']");
@@ -59,7 +59,7 @@ public class DirectOrderPage {
 	private By order = By.xpath("//div[contains(text(),'Orders')]");
 	private By searchBox = By.xpath("//input[@name='search-text']");
 	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
-	private By paymentstab = By.xpath("//a[contains(text(),'Payments')]");
+	private By paymentstab = By.xpath("//*[contains(text(),'Payments')]");
 	private By paymentId = By.xpath("//h4[contains(text(),'Payment #1')]/parent::span/div");
 
 	public DirectOrderPage(WebDriver driver) {
@@ -107,19 +107,21 @@ public class DirectOrderPage {
 	}
 
 	public void goToGoogleCloud() {
-		driver.get(
-				"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa/new/cart;tab=objects?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=modular-bucksaw-305821&prefix=&forceOnObjectsSortingFiltering=false&pli=1");
+		//driver.get(
+		//		"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa/new/cart;tab=objects?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=modular-bucksaw-305821&prefix=&forceOnObjectsSortingFiltering=false&pli=1");
+	
+		driver.get("https://console.cloud.google.com/storage/browser/data-importer-bucket-qa-1/new/cart?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false");
 	}
 
 	public void gotoGoogleCloudforTransaction() {
 
 		driver.get(
-				"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa/new/transaction?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=modular-bucksaw-305821&prefix=&forceOnObjectsSortingFiltering=false");
+				"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa-1/new/transaction?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false");
 	}
 
 	public void gotoGoogleCloudforPayment() {
 		driver.get(
-				"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa/new/payment?project=modular-bucksaw-305821&pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false");
+				"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa-1/new/payment?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false");
 	}
 
 	public void clickUploadFiles() {
@@ -132,12 +134,13 @@ public class DirectOrderPage {
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 	}
 
-	public void uploadFile() throws AWTException {
+	public void uploadFile() throws AWTException, InterruptedException {
+		Thread.sleep(38000);
 		driver.findElement(uploadFiles).click();
-		setClipboardData(System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\Cart-Import-Enhancements.xlsx");
+		setClipboardData(System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\cartimport.xlsx");
 
 		Robot robot = new Robot();
-		robot.delay(1000);
+		robot.delay(2000);
 
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_V);
@@ -264,21 +267,43 @@ public class DirectOrderPage {
 		driver.findElement(By.xpath("//a[text()='My requirements']")).click();
 	}
 
-	public void validateEmptyRequirement() {
-
-		driver.findElement(By.xpath("//a[@class='nav-link active requirements-tab-link active-tab-class']")).isDisplayed();
+	public boolean validateEmptyRequirement() throws Exception {
+		
+		if(isElementAvailable("//*[text()='Requirement list (1 Item)']"))
+		{
+			System.out.print("requirement list has not been emptied");
+			return false;
+		}
+		else
+		{
+			System.out.print("requirement list has  been emptied");
+			return true;
+		}
+		
 	}
 
 	public void clickRemoveButton() throws Exception {
+		
+		List<WebElement>lt=driver.findElements(By.xpath("//div[@class='product-name-price']//div[2]//div"));
+		for(int i=0;i<lt.size();i++)
+		{
+			driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//span[text()='Remove item']")).click();
+			Thread.sleep(2000);
+		}
 
 		while (!isElementPresentemptycart()) {
 
-//			driver.findElement(By.xpath("(//a[@role='button'])")).click();
+/*		driver.findElement(By.xpath("(//a[@role='button'])")).click();
 			driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
 			Thread.sleep(2000);
 //			driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).click();
 			driver.findElement(By.xpath("//span[text()='Remove item']")).click();
 			Thread.sleep(2000);
+			
+			*/
+			
 		}
 
 	}
@@ -304,8 +329,9 @@ public class DirectOrderPage {
 
 	}
 
-	public void validateDeliveryDate() {
-		driver.findElement(deliverydate).isDisplayed();
+	public String validateDeliveryDate() {
+		return driver.findElement(deliverydate).getText();
+		
 
 	}
 
@@ -528,6 +554,15 @@ public class DirectOrderPage {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		robot.delay(4000);
+	}
+	
+	public boolean isElementAvailable(String xpath) throws Exception {
+		try {
+			driver.findElement(By.xpath(xpath));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }

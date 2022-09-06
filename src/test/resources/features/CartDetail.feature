@@ -68,8 +68,9 @@ Feature: Cart Detail Page feature
 
   @weldingelectrodes
   Scenario: Verify delivery charges calculated for welding electrodes
-   # When cart is empty or not
+    When cart is empty or not
     When user clicks Welding electordes from Welding Consummables Navigation Menu
+    When user selects WeldingElectrode product
     And  user is on product detail page of Welding electordes item
     And user click on Buy Now
     Then verify freight charges are displayed
@@ -79,6 +80,7 @@ Feature: Cart Detail Page feature
   Scenario: Verify delivery charges calculated for welding wires
     When cart is empty or not
     When user clicks Welding wire from Welding Consummables Navigation Menu
+    When user selects WeldingWire product
     And user is on product detail page of Welding wire item
     And user click on Buy Now
     Then verify freight charges are displayed
