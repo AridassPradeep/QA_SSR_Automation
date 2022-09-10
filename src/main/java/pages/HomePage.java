@@ -76,7 +76,7 @@ public class HomePage {
 	private By weldingCategory = By.xpath("//h2[@id='Welding Consumables']");
 	private By weldingProductsList = By.xpath("//h2[@id='Welding Consumables']//following::ul[@class='categorylist']");
 	private By viewAllWelding = By.xpath("//h2[@id='Welding Consumables']//following::button[text()=' View all']");
-
+    private By Blogs =By.linkText("Blogs");
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -524,6 +524,11 @@ public class HomePage {
 		we1.click();
 
 		Thread.sleep(3000);
+	}
+	
+	public void clickOnBlogs() throws InterruptedException {
+		driver.findElement(Blogs).click();
+		Thread.sleep(4000);
 	}
 
 }
