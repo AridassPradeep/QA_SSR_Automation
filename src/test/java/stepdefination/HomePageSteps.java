@@ -8,6 +8,7 @@ import factory.DriverFactory;
 import pages.HomePage;
 import pages.ProductPage;
 import pages.RegistrationPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -60,7 +61,7 @@ public class HomePageSteps {
 
 	@Then("Verify the Login button is displaying in the Home Page Header")
 	public void verify_the_login_button_is_displaying_in_the_home_page_header() {
-		Assert.assertTrue(registrationPage.validateLoginButton());
+		Assert.assertFalse(registrationPage.validateLoginButton());
 	}
 
 	@Then("Verify the action of Login button")
@@ -474,5 +475,15 @@ public class HomePageSteps {
 	public void user_navigate_to_home_page() {
 		homePage.clickonHomePageLogo();
 	}
+	
+	@And("^user refresh the page$")
+    public void user_refresh_the_page() throws Throwable {
+		homePage.refreshPage();
+    }
+	
+	 @And("^user wait for sometime$")
+	    public void user_wait_for_sometime() throws Throwable {
+	       Thread.sleep(6000);
+	    }
 
 }

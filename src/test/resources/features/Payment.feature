@@ -1,4 +1,4 @@
-  @Payment @demo
+ @demo @Payment
 Feature: Payment and Cart Scenarios for single and multiple product
 
   Background: User opens website
@@ -9,7 +9,7 @@ Feature: Payment and Cart Scenarios for single and multiple product
     And user clicks on signin
     Then user homepage is displayed
 
-
+  
   Scenario: Single Product-User navigate to payment page
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

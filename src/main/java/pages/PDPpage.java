@@ -18,8 +18,9 @@ public class PDPpage {
 	private By secondmenu = By.xpath("//ul[@class='main-categories-second-child-menu']/child::li/child::a");
 	private By productdetails = By.xpath("//div[@id='product']");
 	private By dimensions = By.xpath("//div[@class='dimension-txt']");
-	private By breadcrumbcatalog = By.xpath("//div[@class='breadcrumb-url']/child::span");
-	private By breadcrumb = By.xpath("//div[@class='breadcrumb-url']");
+	private By breadcrumbcatalog = By.xpath("//div[@class='breadcrumb-out with-pdp']//child::span[3]");
+	private By breadcrumb = By.xpath("//div[@class='breadcrumb-out with-plp']");
+	private By breadcrumbPDP = By.xpath("//div[@class='breadcrumb-out with-pdp']");
 	private By primaryimage = By.xpath("//img[@class='big-image']");
 	private By optionalimage = By.xpath("//img[@class=\"mt-20 prod-img1-radius\"]");
 	private By grade = By.xpath("//span[@class='anchor']");
@@ -87,6 +88,10 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 	public boolean validateBreadCrumb() {
 			return driver.findElement(breadcrumb).isDisplayed();
 	}
+	public boolean validateBreadCrumbPDP() {
+		return driver.findElement(breadcrumbPDP).isDisplayed();
+}
+
 
 	public void validatePrimaryandOptional() {
 		driver.findElement(primaryimage).isDisplayed();

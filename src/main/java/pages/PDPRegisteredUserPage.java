@@ -407,7 +407,7 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("1");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		
 
 	}
@@ -415,7 +415,7 @@ public class PDPRegisteredUserPage {
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("60");
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 
 	}
 	

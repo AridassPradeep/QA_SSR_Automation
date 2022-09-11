@@ -19,7 +19,7 @@ public class PLPNewStep {
 	PLPNewPage plpn = new PLPNewPage(DriverFactory.getDriver());
 
 	@When("user click Steel Menu on header section")
-	public void user_click_steel_menu_on_header_section() {
+	public void user_click_steel_menu_on_header_section() throws InterruptedException {
 		plpn.clickSteelMenu();
 
 	}

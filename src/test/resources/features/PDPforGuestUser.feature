@@ -3,15 +3,11 @@ Feature: Product Detail Page feature for Guest User
 
   Background: User opens website
     Given user is on home page
-    
 
-  # When user enter "Hot Rolled Sheet" in search bar
-  # And user click on search button
-  # Then Breadcrump should display Steel by categories>Hot Rolled(HR)
   Scenario: verify Breadcrump on top left corner of the page
-    When user click Steel Menu on header section
-    And user is able to view Steel products on PLP page
-    Then Breadcrump is displayed on top left corner of the page
+    When user is able to select Hot Rolled from Steel Menu
+    And user refresh the page
+    Then Breadcrump should display HOME > Metals and Alloys > Steel > HR
 
   Scenario: Verify primary and optional images are displayed
     When user clicks HR from Steel Navigation Menu
@@ -37,6 +33,7 @@ Feature: Product Detail Page feature for Guest User
 
   Scenario: verify User should redirect to the login page on clicking add to cart button
     When user clicks HR from Steel Navigation Menu
+    And user refresh the page
     When user selects Steel product
     Given user is on product detail page of Steel item
     #And user click on the add to cart button.
@@ -44,9 +41,9 @@ Feature: Product Detail Page feature for Guest User
 
   Scenario: verify User should redirect to the login page on clicking buy now button
     When user clicks HR from Steel Navigation Menu
-   When user selects Steel product
-   Given user is on product detail page of Steel item
-   # And user click on the Buy Now button
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    # And user click on the Buy Now button
     Then verify User should redirect to the login page
 
   #  Scenario: verify the delivary /ETD is displayed at the bottom
@@ -54,7 +51,8 @@ Feature: Product Detail Page feature for Guest User
   #    Then User is redirected to the PDP page.
   #    Then verify the delivery /ETD is displayed at the bottom of the specific quantity.
   Scenario: verify the price range is displayed in right side of the page
-   When user clicks HR from Steel Navigation Menu
+    When user clicks HR from Steel Navigation Menu
+    And user refresh the page
     When user selects Steel product
     Given user is on product detail page of Steel item
     Then verify the price range is displayed in right side of the page in the form of ht Rupees/Metric. 8000-10,000 Rupees/Metric Ton
@@ -74,7 +72,6 @@ Feature: Product Detail Page feature for Guest User
     When user click on catalog hierarchy link shown in the breadcrumb
     Then Verify user should navigate by clicking catalog hierarchy in the breadcrumb
 
-  @Tst12
   Scenario: Verify the Enabled button Design for 'add to cart' & 'Buy now'
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product

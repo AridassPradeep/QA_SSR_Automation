@@ -269,7 +269,7 @@ public class MyOrderPages {
 		}
 		
 		public void couponsCount() {
-			WebElement count = driver.findElement(By.xpath("//div[@class='coupon-applied-message']"));
+			WebElement count = driver.findElement(By.xpath("//div[@class='applied-coupons']"));
 			System.out.println(count.getText());
 		}
 		
@@ -279,7 +279,7 @@ public class MyOrderPages {
 		
 		public void validateAppliedCoupon() throws InterruptedException {
 			System.out.println(driver.findElement(By.xpath("//h1[@class='coupon-modal-heading']")).getText());
-			System.out.println(driver.findElement(By.xpath("//div[@class='applied-coupon']")).getText());
+			System.out.println(driver.findElement(By.xpath("//div[@class='applied-coupons']")).getText());
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//button[@class='close']")).click();
 			Thread.sleep(2000);

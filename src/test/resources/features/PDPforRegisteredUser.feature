@@ -1,3 +1,4 @@
+@PDPRegisteredUser
 Feature: Product Detail Page feature for Registered User
 
   Background: User opens website
@@ -14,8 +15,9 @@ Feature: Product Detail Page feature for Registered User
     #Given user is on product detail page of Steel item
     Then user is able to view the message in the thickness section
 
+@Test
   Scenario: verify product quantity should be updated in the cart icon.
-    When cart is empty or not
+   When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
     When user selects HR Stainless Steel product
@@ -141,17 +143,18 @@ Feature: Product Detail Page feature for Registered User
       |   999999 | quantity more than 9999 kg                                        |
     And validate add to cart button is disabled
 
-  @MOQSteel @PDPRegisteredUser
+  @MOQSteel 
   Scenario: Verify MOQ for  Steel Product
-    When cart is empty or not
+  
+   When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item and add dimensions
+    When user is on Steel Menu on header section 
+	  And user is able to select Wire rods from Steel Menu 
+    And user click on product name of Wire product displayed on the page
+    And user is on Wire Product page
     And user add quantity and validate MOQ messages
       | quantity | MOQMessage                                                      |
-      |        1 | Required quantity is below MoQ. Please add quantity above 1.0MT |
-      |     1000 | The maximum available quantity for your selection is 27.5MT     |
+      |        1 | Required quantity is below MoQ. Please add quantity above 3.0MT |
       | 10000000 | quantity more than 9999 MT                                      |
     And validate add to cart button is disabled
 
@@ -190,7 +193,7 @@ Feature: Product Detail Page feature for Registered User
     When user click the customer length of the selected product
     Then validate the customer length example value in the input field
 
-  @TMT
+  @TMT @Test
   Scenario: Verify form section is visible for TMT products
     When cart is empty or not
     Then user navigate to Home page
@@ -202,7 +205,7 @@ Feature: Product Detail Page feature for Registered User
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
 
-  @Cement
+  @Cement @Test
   Scenario: Verify cement product can be added to cart
     When cart is empty or not
     Then user navigate to Home page

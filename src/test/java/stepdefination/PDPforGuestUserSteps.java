@@ -166,7 +166,7 @@ public class PDPforGuestUserSteps {
 
 	@Then("verify breadcrumb is available on product detail page")
 	public void verify_breadcrumb_is_available_on_product_detail_page() {
-		pdppage.validateBreadCrumb();
+		pdppage.validateBreadCrumbPDP();
 	}
 
 	@When("user click on catalog hierarchy link shown in the breadcrumb")

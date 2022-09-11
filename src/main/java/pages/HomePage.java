@@ -538,5 +538,10 @@ public class HomePage {
 		driver.findElement(cement).click();
 		Thread.sleep(3000);
 	}
+	
+	public void refreshPage() {
+		driver.navigate().refresh();;
+	}
+
 
 }
