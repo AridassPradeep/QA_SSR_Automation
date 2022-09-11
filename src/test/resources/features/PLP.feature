@@ -1,4 +1,4 @@
-
+@PLP
 Feature: Verification of PLP functionality feature
 
   Background: User opens website
@@ -135,7 +135,8 @@ Scenario: Filter Section for CR Category
 Scenario: Filter Section for WR Category 
 	When user is on Steel Menu on header section 
 	And user is able to select Wire rods from Steel Menu 
-	Then Filter sections are Brand, Grade, Diameter 	
+	Then Filter sections are Brand, Grade, Diameter 
+		
 Scenario: Filer Section for coated Category 
 	When user is on Steel Menu on header section 
 	And user is able to select Coated from Steel Menu 

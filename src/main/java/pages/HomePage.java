@@ -76,7 +76,9 @@ public class HomePage {
 	private By weldingCategory = By.xpath("//h2[@id='Welding Consumables']");
 	private By weldingProductsList = By.xpath("//h2[@id='Welding Consumables']//following::ul[@class='categorylist']");
 	private By viewAllWelding = By.xpath("//h2[@id='Welding Consumables']//following::button[text()=' View all']");
-    private By Blogs =By.linkText("Blogs");
+	private By Blogs = By.linkText("Blogs");
+	private By cement = By.xpath("//div[@class='navigation-item'][4]");
+
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -117,7 +119,7 @@ public class HomePage {
 
 		Thread.sleep(3000);
 	}
-	
+
 	public void selectWeldingWire() throws InterruptedException {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(WeldingConsumables);
@@ -512,7 +514,7 @@ public class HomePage {
 		driver.findElement(viewAllWelding).isDisplayed();
 		driver.findElement(viewAllWelding).click();
 	}
-	
+
 	public void selectHotRolled() throws InterruptedException {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
@@ -525,10 +527,16 @@ public class HomePage {
 
 		Thread.sleep(3000);
 	}
-	
+
 	public void clickOnBlogs() throws InterruptedException {
 		driver.findElement(Blogs).click();
 		Thread.sleep(4000);
+	}
+	
+	public void validateCement() throws InterruptedException {
+		driver.findElement(cement).isDisplayed();
+		driver.findElement(cement).click();
+		Thread.sleep(3000);
 	}
 
 }

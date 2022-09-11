@@ -1,4 +1,4 @@
-@sanityExe @StainlessSteel @demo
+@sanityExe @demo @StainlessSteel
 Feature: Stainless Steel feature
 
   Background: User opens website
@@ -48,7 +48,6 @@ Feature: Stainless Steel feature
     And click on reset
     Then all products to be displayed
 
-
   Scenario: Verify order placed successfully after adding a stainless product to cart
     When cart is empty or not
     Then user navigate to Home page
@@ -69,7 +68,7 @@ Feature: Stainless Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-@TestStainless
+  @TestStainless
   Scenario: Verify user is able to add steel and stainless steel from same seller
     When cart is empty or not
     Then user navigate to Home page

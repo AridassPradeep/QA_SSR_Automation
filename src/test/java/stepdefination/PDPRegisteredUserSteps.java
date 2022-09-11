@@ -2,6 +2,7 @@ package stepdefination;
 
 import factory.DriverFactory;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,6 +11,7 @@ import java.util.Map;
 
 import org.junit.Assert;
 
+import pages.HomePage;
 import pages.PDPRegisteredUserPage;
 import pages.PDPpage;
 import pages.ProductPage;
@@ -18,6 +20,7 @@ public class PDPRegisteredUserSteps {
 	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
 	PDPpage pdppage = new PDPpage(DriverFactory.getDriver());
 	ProductPage p = new ProductPage(DriverFactory.getDriver());
+	HomePage homePage = new HomePage(DriverFactory.getDriver());
 
 	@Given("user is logged in as registered user")
 	public void user_is_logged_in_as_registered_user() {
@@ -227,20 +230,29 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.SteelDetails();
 
 	}
-	
+
+	@And("^user is on Cement Product page$")
+	public void user_is_on_cement_product_page() throws Throwable {
+		pdpreguser.CementDetails();
+	}
+
+	@And("^user is on Wire Product page$")
+	public void user_is_on_wire_product_page() throws Throwable {
+		pdpreguser.WireDetails();
+	}
+
 	@Given("user is on product detail page of CR Coil item")
 	public void user_is_on_product_detail_page_of_CRCoilsteel_item() throws InterruptedException {
 		pdpreguser.CRCoilSteelDetails();
 
 	}
-	
-	
+
 	@Then("verify seller name")
 	public void verify_seller_name() throws InterruptedException {
 		pdpreguser.sellerName();
 
 	}
-	
+
 	@Given("user is on product detail page of Steel item for DirectOrder")
 	public void user_is_on_product_detail_page_of_steel_itemDirectOrder() throws InterruptedException {
 		pdpreguser.DirectOrderSteelDetails();
@@ -321,28 +333,20 @@ public class PDPRegisteredUserSteps {
 	public void validate_the_customer_length_error_message_displayed() {
 		pdpreguser.validateErrorMessage();
 	}
-	
-	@When("user click Cement Menu on header section")
-	public void user_click_cement_menu_on_header_section() {
-	    
-	}
-	
-	@When("user select TMT products")
-	public void user_select_tmt_products() {
-	  
-	}
-	
+
 	@When("user is on TMT Product page")
-	public void user_is_on_tmt_product_page() {
-	   
+	public void user_is_on_tmt_product_page() throws InterruptedException {
+		pdpreguser.TMTDetails();
 	}
-	
+
 	@When("Straight, bent button is visible")
-	public void straight_bent_button_is_visible() {
-	  
+	public void straight_bent_button_is_visible() throws InterruptedException {
+		pdpreguser.verifyTMTStraightBent();
 	}
 
-
-
+	@When("user click Cement Menu on header section")
+	public void user_click_cement_menu_on_header_section() throws InterruptedException {
+		homePage.validateCement();
+	}
 
 }

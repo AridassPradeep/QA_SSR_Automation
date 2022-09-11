@@ -231,9 +231,11 @@ public class Paymentpage {
 	}
 
 	public void validateOrderSuccessfulmsg() {
+		
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
+		driver.navigate().refresh();
 		driver.findElement(successmessage).isDisplayed();
 
 	}

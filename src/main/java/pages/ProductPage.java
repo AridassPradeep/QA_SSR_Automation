@@ -146,7 +146,7 @@ public class ProductPage {
 	}
 
 	public void clickCustomerLength() throws InterruptedException {
-		driver.findElement(By.xpath("//button[contains(text(),'Custom length')]")).click();
+		driver.findElement(By.xpath("//span[contains(text(),'Custom length :')]")).click();
 		Thread.sleep(2000);
 
 	}

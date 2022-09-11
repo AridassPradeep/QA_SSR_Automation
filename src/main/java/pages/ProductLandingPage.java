@@ -31,7 +31,7 @@ public class ProductLandingPage {
 	}
 
 	public boolean Validatebreadcrumb() {
-		return driver.findElement(By.xpath("//div[@class='breadcrumb-url']")).isDisplayed();
+		return driver.findElement(By.xpath("//div[@class='breadcrumb-out with-plp']")).isDisplayed();
 
 	}
 

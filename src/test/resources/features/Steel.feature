@@ -52,6 +52,7 @@ Feature: Steel feature
     And click on reset
     Then all products to be displayed
 
+
   Scenario: Verify Buy Now button and net banking with an order placed unsuccessfully
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -68,10 +69,11 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-  @steelnetbanking
+  @steelnetbanking 
   Scenario: Verify Buy Now button and net banking with an order placed successfully
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
+    #Then HR Products are displayed
     When user selects Steel product
     Given user is on product detail page of Steel item
     When user click on Buy Now
@@ -131,7 +133,7 @@ Feature: Steel feature
     And user click on confirm payment
     Then verify payment success message is displayed
 
-  @neftPaymentMultiSeller
+  @neftPaymentMultiSeller 
   Scenario: Verify user is able to add products from multi seller
     When cart is empty or not
     Then user navigate to Home page

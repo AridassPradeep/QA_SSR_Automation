@@ -85,7 +85,7 @@ public class PaymentSteps {
 	public void user_click_on_pay_now() throws InterruptedException {
 
 		pmtpage.clickPayNow();
-		Thread.sleep(9000);
+		Thread.sleep(11000);
 	}
 
 	@Then("User navigates to RazorPay Page")

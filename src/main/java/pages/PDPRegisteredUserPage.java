@@ -323,7 +323,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public String MOQErrorMessage() {
-		String actualErrorMessage = driver.findElement(By.xpath("//div[5]/div[1]/div[3]/div[1]")).getText();
+		String actualErrorMessage = driver.findElement(By.xpath("//div[@class='error-message']")).getText();
 		return actualErrorMessage;
 	}
 
@@ -363,7 +363,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("50");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("60");
 		Thread.sleep(2000);
 
 	}
@@ -397,6 +397,41 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("5");
 		Thread.sleep(2000);
+
+	}
+	
+	public void TMTDetails() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("1");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).click();
+		Thread.sleep(2000);
+		
+
+	}
+	
+	public void CementDetails() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("60");
+		Thread.sleep(2000);
+
+	}
+	
+	public void WireDetails() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("5");
+		Thread.sleep(2000);
+
+	}
+	
+	public void verifyTMTStraightBent() throws InterruptedException {
+		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).isDisplayed();
+		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[2]")).isDisplayed();
+		
 
 	}
 
@@ -506,7 +541,7 @@ public class PDPRegisteredUserPage {
 
 	public void sellerName() throws InterruptedException {
 		Thread.sleep(3000);
-		String sellerName = driver.findElement(By.xpath("//span[@class='h2 ml-2 seller-title']")).getText();
+		String sellerName = driver.findElement(By.xpath("//div[@class='amt-details box py-3 mt-3']//div//span[@class='ml-1 seller-title']")).getText();
 		System.out.println("SellerName: " + sellerName);
 
 	}
