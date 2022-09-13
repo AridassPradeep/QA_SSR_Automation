@@ -1,4 +1,4 @@
-@demo @cart
+@demo  @cart
 Feature: Cart Detail Page feature
 
   Background: User opens website
@@ -66,6 +66,25 @@ Feature: Cart Detail Page feature
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
 
+
+ Scenario: Verify selfpickup
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    #Then HR Products are displayed
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    When user click on Buy Now
+    And user click on selfpickup
+    Then pickup from to be displayed
+    And user click on proceed to pay on cart detail page
+    And user select bank name to transfer from the drop down on payment page
+    Then verify bank is selected
+    And User click on PayNow
+    Then User navigates to RazorPay Page
+    And User click on success button
+    Then verify after successful payment page navigates to ORDER summary page
+    Then order sucessfully placed message should be displayed
+ 
   @weldingelectrodes
   Scenario: Verify delivery charges calculated for welding electrodes
     When cart is empty or not

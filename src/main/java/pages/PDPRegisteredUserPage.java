@@ -298,7 +298,7 @@ public class PDPRegisteredUserPage {
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("130");
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 
 	}
 
@@ -364,7 +364,7 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("60");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 	}
 
@@ -526,7 +526,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void clickDigitalorderKnowMore() {
-		driver.findElement(By.xpath("//span[@class='cp_know_more']")).click();
+		driver.findElement(By.xpath("//div[@class='d-desktop-coupon']//h1[@class='cp_code'][normalize-space()='DIGITALORDER']//following::article[1]//span")).click();
 	}
 
 	public void clickSteel250KnowMore() {

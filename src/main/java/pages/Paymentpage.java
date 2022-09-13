@@ -58,6 +58,18 @@ public class Paymentpage {
 		driver.findElement(buynow).click();
 
 	}
+	
+	public void clickSelfPickup() {
+
+		driver.findElement(By.xpath("//input[@id='Pickuprom']")).click();
+
+	}
+	
+	public void verifyPickupFrom() {
+
+		driver.findElement(By.xpath("//div[@class='delivery-add-wrap mb-3']//label[@for='Pickuprom'][normalize-space()='Pickup from']")).isDisplayed();
+
+	}
 
 	public void validatecartdetailpage() {
 

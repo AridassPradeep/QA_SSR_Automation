@@ -16,6 +16,7 @@ Feature: NewCoupons-Product Detail Page with discount
     # Then HR Products are displayed
     When user selects Steel product
     Given user is on product detail page of Steel item
+     And user wait for sometime
     When user click on Buy Now
     And user click on apply coupon
     Then List of coupons to be displayed
@@ -105,9 +106,8 @@ Feature: NewCoupons-Product Detail Page with discount
       | coupon   |
       | STEEL250 |
 
-  
   Scenario Outline: Verify add product in cart line and price will be update and coupons remain active
-    When cart is empty or not
+   When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
     When user selects HR Stainless Steel product
@@ -125,6 +125,7 @@ Feature: NewCoupons-Product Detail Page with discount
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item
+    And user wait for sometime
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
@@ -148,10 +149,12 @@ Feature: NewCoupons-Product Detail Page with discount
   #    Then User shall see modified pricing of the cart
   #    And Applied coupons remain in active if applicable to the modified cart context
   
+  
   Scenario Outline: Verify remove product in cart line and price will be update and coupons remain active
-    When cart is empty or not
+   When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
+    And user refresh the page
     When user selects HR Stainless Steel product
     Given user is on product detail page of Stainless Steel item
     When user clicks on Add To Cart button available in the right side of the webpage
@@ -160,6 +163,7 @@ Feature: NewCoupons-Product Detail Page with discount
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item
+    And user wait for sometime
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage

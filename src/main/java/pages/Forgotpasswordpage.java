@@ -28,7 +28,7 @@ public class Forgotpasswordpage {
 	private By clickNext = By.xpath("//*[@id='identifierNext']/div/button/span");
 	private By enterPassword = By.xpath("//*[@id='password']/div[1]/div/div[1]/input");
 	private By clickpasswordNext = By.xpath("//*[@id='passwordNext']/div/button/span");
-	private By inboxFirstrecord = By.xpath("//table[@id=':1k']/tbody/tr[1]");
+	private By inboxFirstrecord = By.xpath("//table[@role='grid']//tr[1]");
 	private By clickResetLink = By.xpath("//img[@class='ajT']");
 	private By clickResetNow = By.partialLinkText("Reset now");
 	private By clicknewPassword = By.xpath("//input[@id='password']");

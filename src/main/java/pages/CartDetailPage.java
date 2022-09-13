@@ -135,7 +135,7 @@ public class CartDetailPage {
 		WebElement remove = driver.findElement(By.xpath(
 				"//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::div[2]"));
 		remove.click();
-		driver.findElement(By.xpath("//span[contains(text(),'Remove item')]")).click();
+		driver.findElement(By.xpath("//*[text()='Proceed']")).click();
 		Thread.sleep(8000);
 	}
 

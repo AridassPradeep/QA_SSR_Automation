@@ -96,6 +96,8 @@ public class ProductPage {
 		// r.keyPress(KeyEvent.VK_DOWN);
 		// r.keyRelease(KeyEvent.VK_DOWN);
 		driver.findElement(By.partialLinkText("Hot rolled sheets")).click();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 	}
 	

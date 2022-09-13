@@ -269,7 +269,7 @@ public class MyOrderPages {
 		}
 		
 		public void couponsCount() {
-			WebElement count = driver.findElement(By.xpath("//div[@class='applied-coupons']"));
+			WebElement count = driver.findElement(By.xpath("//div[@class='coupon-applied-message']"));
 			System.out.println(count.getText());
 		}
 		

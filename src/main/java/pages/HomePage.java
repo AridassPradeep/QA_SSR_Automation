@@ -148,8 +148,9 @@ public class HomePage {
 
 	}
 
-	public void clickonHomePageLogo() {
+	public void clickonHomePageLogo() throws InterruptedException {
 		driver.findElement(JSWLogo).click();
+		Thread.sleep(2000);
 	}
 
 	public String countCartItems() {
@@ -539,7 +540,8 @@ public class HomePage {
 		Thread.sleep(3000);
 	}
 	
-	public void refreshPage() {
+	public void refreshPage() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.navigate().refresh();;
 	}
 

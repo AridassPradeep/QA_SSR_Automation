@@ -6,6 +6,7 @@ import java.util.Map;
 import org.junit.Assert;
 
 import factory.DriverFactory;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.PDPRegisteredUserPage;
@@ -34,6 +35,19 @@ public class PaymentSteps {
 		Thread.sleep(3000);
 		pmtpage.clickBuyNow();
 	}
+	
+	
+
+    @And("^user click on selfpickup$")
+    public void user_click_on_selfpickup() throws Throwable {
+    	pmtpage.clickSelfPickup();
+    }
+    
+    @Then("^pickup from to be displayed$")
+    public void pickup_from_to_be_displayed() throws Throwable {
+    	pmtpage.verifyPickupFrom();
+        
+    }
 
 	@When("user click on proceed to pay on cart detail page")
 	public void user_click_on_proceed_to_pay_on_cart_detail_page() throws InterruptedException {
