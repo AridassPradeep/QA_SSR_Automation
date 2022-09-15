@@ -211,6 +211,7 @@ public class ProfilePage {
 			driver.findElement(By.xpath("//input[@id='defaultAddress']")).click();
 			Thread.sleep(1500);
 			driver.findElement(By.xpath("//button[text()='Save address']")).click();
+			Thread.sleep(5500);
 		}
 		
 		public void deleteExistingAddress() {

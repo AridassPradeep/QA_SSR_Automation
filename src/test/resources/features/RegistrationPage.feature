@@ -22,7 +22,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 9001093032 | 33AAACJ8486E1ZI  | TEST17DN@gmail.com | Ramya@678 |
+      | ramya    | 9001094322 | 33BDIPJ2227E1Z1  | TEST3037DN@gmail.com | Ramya@678 |
 
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page

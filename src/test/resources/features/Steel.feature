@@ -134,13 +134,13 @@ Feature: Steel feature
     Then verify payment success message is displayed
 
   @neftPaymentMultiSeller 
-  Scenario: Verify user is able to add products from multi seller
+  Scenario: Verify user is able to add products from multi seller=
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks CR Coil from Steel Categories Menu
-    When user selects CR Coil Steel product
-    Given user is on product detail page of CR Coil item
-    Then verify seller name
+    When user is on Steel Menu on header section 
+	  And user is able to select Wire rods from Steel Menu 
+    And user click on product name of Wire product displayed on the page
+    And user is on Wire Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1

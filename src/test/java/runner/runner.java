@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-	    tags = "@GuestUser",
+	    //tags = "@neftPaymentMultiSeller ",
 		dryRun = false,
 		stepNotifications=true,
 		plugin = {
