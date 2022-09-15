@@ -99,20 +99,20 @@ Feature: Direct Order for PDP feature for registered user
     When user click on remove button on the product
     Then verify no product in requirement list
     
-    @DirectneftPaymentMultiSeller
+    @DirectneftPaymentMultiSeller 
   Scenario Outline: Verify multiple products from different seller added before Request for price
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item for DirectOrder
-    Then verify seller name
+    #Then verify seller name
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
     And user is able to select Wire rods from Steel Menu
     Then user select wire rod product in PLP page
     Then user select the dimensions of selected wire rod product for directorder user
-    Then verify seller name
+    #Then verify seller name
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
@@ -157,7 +157,7 @@ Feature: Direct Order for PDP feature for registered user
       | Gmail      | Password          |
       | qatestuser@jsw.in | Admin@123$  |
 
-  @Advance  @DirectOrderPDP
+  @Advance  
   Scenario Outline: Verify Payment status to be changed to "Advance recieved"
     When Buy from verified sellers is displayed
     Then user navigate to Home page

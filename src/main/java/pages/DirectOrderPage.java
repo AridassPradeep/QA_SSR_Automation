@@ -50,7 +50,7 @@ public class DirectOrderPage {
 	private By paymentStatus = By.xpath("(//span[@class='label-field-value'])[3]");
 	private By merchantEmail = By.xpath("//input[@name='email']");
 	private By merchantPassword = By.xpath("//input[@name='password']");
-	private By merchantloginButton = By.xpath("//span[contains(text(),'Login')]");
+	private By merchantloginButton = By.xpath("//span[contains(text(),'Sign in')]");
 	private By cartcount = By.xpath("//div[@class='count']");
 	// private By selectDev= By.xpath("(//div[@class='
 	// css-d58yad-singleValue']/parent::div/div)[2]");
@@ -289,7 +289,7 @@ public class DirectOrderPage {
 		{
 			driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[text()='Remove item']")).click();
+			driver.findElement(By.xpath("//*[text()='Proceed']")).click();
 			Thread.sleep(2000);
 		}
 

@@ -60,18 +60,18 @@ public class HomePageSteps {
 	}
 
 	@Then("Verify the Login button is displaying in the Home Page Header")
-	public void verify_the_login_button_is_displaying_in_the_home_page_header() {
-		Assert.assertFalse(registrationPage.validateLoginButton());
+	public void verify_the_login_button_is_displaying_in_the_home_page_header() throws InterruptedException {
+		Thread.sleep(5000);
+		Assert.assertTrue(registrationPage.validateLoginButton());
 	}
 
 	@Then("Verify the action of Login button")
-	public void verify_the_action_of_login_button() {
-
+	public void verify_the_action_of_login_button() throws InterruptedException {
 		Assert.assertTrue(registrationPage.validateLoginButton());
 	}
 
 	@Then("Verify the Register Button is displaying in Home Page header.")
-	public void verify_the_register_button_is_displaying_in_home_page_header() {
+	public void verify_the_register_button_is_displaying_in_home_page_header() throws InterruptedException {
 		Assert.assertTrue(registrationPage.validateRegisterButton());
 	}
 
@@ -118,26 +118,6 @@ public class HomePageSteps {
 	@Then("Verify the map icon displayed along with the address")
 	public void verify_the_map_icon_displayed_along_with_the_address() {
 		Assert.assertTrue(homePage.validatemapIcon());
-	}
-
-	@Then("Verify that the Enquiry section available in the JSW Home Page for Guest User")
-	public void verify_that_the_enquiry_section_available_in_the_jsw_home_page_for_guest_user() {
-
-	}
-
-	@Then("Verify that the Enquiry section available in the JSW Home Page for Registered User")
-	public void verify_that_the_enquiry_section_available_in_the_jsw_home_page_for_registered_user() {
-
-	}
-
-	@Then("Verify the Enquiry Headings, and labels in Enquiry Section for guest user.")
-	public void verify_the_enquiry_headings_and_labels_in_enquiry_section_for_guest_user() {
-
-	}
-
-	@Then("Verify the Enquiry Headings, and labels in Enquiry Section for Registered user.")
-	public void verify_the_enquiry_headings_and_labels_in_enquiry_section_for_registered_user() {
-
 	}
 
 	@Then("Verify the mandatory fields in Enquiry Section for Guest Users")
@@ -475,15 +455,15 @@ public class HomePageSteps {
 	public void user_navigate_to_home_page() throws InterruptedException {
 		homePage.clickonHomePageLogo();
 	}
-	
+
 	@And("^user refresh the page$")
-    public void user_refresh_the_page() throws Throwable {
+	public void user_refresh_the_page() throws Throwable {
 		homePage.refreshPage();
-    }
-	
-	 @And("^user wait for sometime$")
-	    public void user_wait_for_sometime() throws Throwable {
-	       Thread.sleep(6000);
-	    }
+	}
+
+	@And("^user wait for sometime$")
+	public void user_wait_for_sometime() throws Throwable {
+		Thread.sleep(6000);
+	}
 
 }
