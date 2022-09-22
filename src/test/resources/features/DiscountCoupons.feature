@@ -9,6 +9,7 @@ Feature: NewCoupons-Product Detail Page with discount
     And user clicks on signin
     Then user homepage is displayed
 
+
   Scenario Outline: Check for coupon code can be  entered manually
     # Check for coupon code can be  entered manually and can be removed also in coupons overlay
     When cart is empty or not
@@ -80,6 +81,7 @@ Feature: NewCoupons-Product Detail Page with discount
       | coupon   |
       | STEEL250 |
 
+@sanityExe @coupon
   Scenario Outline: Verify In my order page, the applied coupons are able to view after the order placed
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

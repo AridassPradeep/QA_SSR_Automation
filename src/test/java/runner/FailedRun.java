@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/resources/features/"},
+		
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
 	    tags = "@blogs",
@@ -15,10 +15,11 @@ import io.cucumber.junit.CucumberOptions;
                         "pretty",
                         "json:target/cucumber-report/cucumber.json",
                         "html:target/cucumber-report/cucumber.html",
-                        "rerun:target/failedrerun.txt"}
+                        "rerun:target/failedrerun.txt"},
+		features = {"@target/failedrerun.txt"}
 		         )
 
-public class runner {
+public class FailedRun {
 
 }
 

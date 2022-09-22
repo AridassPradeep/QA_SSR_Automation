@@ -76,7 +76,7 @@ Feature: Payment and Cart Scenarios for single and multiple product
       | ASD232342        | Enter a valid UTR number.          |
     And user click on confirm payment
 
-  @check
+  @check @sanityExe
   Scenario: Successful NEFT Payment for product that is added to cart
      When cart is empty or not
     Then user navigate to Home page
@@ -100,6 +100,7 @@ Feature: Payment and Cart Scenarios for single and multiple product
     And user click on confirm payment
     Then verify payment success message is displayed
 
+@sanityExe
   Scenario: Bank Payment for product that is added to cart
     When cart is empty or not
     Then user navigate to Home page
