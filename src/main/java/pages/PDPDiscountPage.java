@@ -1,13 +1,18 @@
 package pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PDPDiscountPage {
@@ -281,7 +286,7 @@ public class PDPDiscountPage {
 
 	public void clickApplyButton2() throws InterruptedException {
 		driver.findElement(applyButton).click();
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 
 	}
 
@@ -341,9 +346,24 @@ public class PDPDiscountPage {
 	
 	public void validateCouponAppplied() {
 	
-	    wait = new WebDriverWait(driver,60);
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Coupon applied successfully')]")));
-	   driver.findElement(By.xpath("//*[contains(text(),'Coupon applied successfully')]")).isDisplayed();
+	   // wait = new WebDriverWait(driver,60);
+	   // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Coupon applied successfully')]")));
+	   //driver.findElement(By.xpath("//*[contains(text(),'Coupon applied successfully')]")).isDisplayed();
+		
+		
+		@SuppressWarnings("deprecation")
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)							
+				.withTimeout(30, TimeUnit.SECONDS) 			
+				.pollingEvery(1, TimeUnit.SECONDS) 			
+				.ignoring(NoSuchElementException.class);
+		
+	WebElement button = wait.until(new Function<WebDriver, WebElement>(){
+		
+			public WebElement apply(WebDriver driver ) {
+				return driver.findElement(By.xpath("//*[contains(text(),'Coupon applied successfully')]"));
+			}
+		});
+		
 
 	}
 	public void validateremoveButton() {

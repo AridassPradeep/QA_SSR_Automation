@@ -128,42 +128,41 @@ public class CartDetailSteps {
 		Thread.sleep(2000);
 		cartdpage.removeHRInCart();
 	}
-	
+
 	@When("user click on change address to thrissur")
 	public void user_click_on_change_address_to_thrissur() {
 		cartdpage.changeAddress(0);
-	   
+
 	}
-	
+
 	@When("user click on change address to chandigarh")
 	public void user_click_on_change_address_to_chandigarh() {
 		cartdpage.changeAddress(1);
-	   
+
 	}
+
 	@When("user click on change address to chennai")
 	public void user_click_on_change_address_to_chennai() {
 		cartdpage.changeAddress(2);
-	   
+
 	}
-	
+
 	@And("select for delivery")
 	public void select_for_delivery() throws InterruptedException {
 		cartdpage.selectDelivery();
-	   
+
 	}
-	
+
 	@And("verify tax matches in mc and UI")
-    public void verify_tax_matches_in_mc_and_ui() throws Throwable {
-       
-    }
-	
-	 @Then("^verify 9% CGST and 9% SGST is displayed$")
-	    public void verify_9_cgst_and_9_sgst_is_displayed() throws Throwable {
-		 cartdpage.verifyCgstSgst();
-	       
-	    }
+	public void verify_tax_matches_in_mc_and_ui() throws Throwable {
 
+	}
 
+	@Then("^verify 9% CGST and 9% SGST is displayed$")
+	public void verify_9_cgst_and_9_sgst_is_displayed() throws Throwable {
+		cartdpage.verifyCgstSgst();
+
+	}
 
 	@When("^user clicks Welding electordes from Welding Consummables Navigation Menu$")
 	public void user_clicks_welding_electordes_from_welding_consummables_navigation_menu() throws Throwable {
@@ -172,13 +171,18 @@ public class CartDetailSteps {
 
 	@Then("^verify freight charges are displayed$")
 	public void verify_freight_charges_are_displayed() throws Throwable {
-		String deliverychargeText=cartdpage.verifydeliveryCharges();
+		String deliverychargeText = cartdpage.verifydeliveryCharges();
 		Assert.assertEquals("Delivery charges (incl. of all taxes)", deliverychargeText);
 	}
 
 	@And("user is on product detail page of Welding electordes item")
 	public void user_is_on_product_detail_page_of_welding_electordes_item() throws Throwable {
-		pdpreguser.WeldingElectrodeDetails() ;
+		pdpreguser.WeldingElectrodeDetails();
+	}
+
+	@And("^user clicks on switch quantity$")
+	public void user_clicks_on_switch_quantity() throws Throwable {
+		pdpreguser.switchQuantity();
 	}
 
 	@And("^verify subtotal is equal to sum of price,tax and freight charges$")
@@ -193,7 +197,7 @@ public class CartDetailSteps {
 
 	@And("^user is on product detail page of Welding wire item$")
 	public void user_is_on_product_detail_page_of_welding_wire_item() throws Throwable {
-		pdpreguser.WeldingWireDetails() ;
+		pdpreguser.WeldingWireDetails();
 	}
 
 }

@@ -148,9 +148,10 @@ Feature: MyOrder page feature
     #And user is able to click view details button
     And user is able to verify view coupons displayed
     And user clicks on view coupons in order page then applied coupon to be displayed
-    Then user is able to view number of applied coupons
+    #Then user is able to view number of applied coupons
     #When user is able to click View coupons
     Then user is able to view Applied coupons pop-up
+    
 
     Examples: 
       | coupon   |

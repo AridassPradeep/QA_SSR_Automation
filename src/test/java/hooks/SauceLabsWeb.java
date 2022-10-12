@@ -30,7 +30,7 @@ public class SauceLabsWeb {
 			e.printStackTrace();
 		}
 
-        driver.navigate().to("https://www.yahoo.com");
+        driver.navigate().to("https://www.jswonemsme.com/");
         driver.quit();
     }
 }

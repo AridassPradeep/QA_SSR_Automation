@@ -98,6 +98,14 @@ public class Paymentpage {
 		select.selectByVisibleText("HDFC Bank");
 
 	}
+	
+	public void clickSelectedBank(String bank) throws InterruptedException {
+		Thread.sleep(3000);
+		WebElement dropdown = driver.findElement(banklistnew);
+		Select select = new Select(dropdown);
+		select.selectByVisibleText(bank);
+
+	}
 
 	public void validateBankSelected() {
 		// driver.findElement(banklist).isSelected();
@@ -206,6 +214,13 @@ public class Paymentpage {
 		bank.selectByVisibleText("HDFC Bank");
 
 	}
+	
+	public void selectBankNew(String bankname) throws InterruptedException {
+		Thread.sleep(3000);
+		Select bank = new Select(driver.findElement(banklistnew));
+		bank.selectByVisibleText(bankname);
+
+	}
 
 	public void clickPayNow() {
 		driver.findElement(payNow).click();
@@ -228,10 +243,11 @@ public class Paymentpage {
 
 	}
 
-	public void validateRazorpayPage()
+	public void validateRazorpayPage() throws InterruptedException
 
 	{
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		Set<String> windows = driver.getWindowHandles();
 		String parent = driver.getWindowHandle();

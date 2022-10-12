@@ -77,6 +77,12 @@ public class PaymentSteps {
 		pmtpage.validateBankList();
 		pmtpage.clickBankList();
 	}
+	
+	@And("^user select \"([^\"]*)\" to transfer from the drop down on payment page$")
+    public void user_select_something_to_transfer_from_the_drop_down_on_payment_page(String bank) throws Throwable {
+		pmtpage.clickSelectedBank(bank);
+		//pmtpage.clickBankList();
+    }
 
 	@When("user select bank name to transfer from the drop down")
 	public void user_select_bank_name_to_transfer_from_the_drop_down() throws InterruptedException {
@@ -89,6 +95,12 @@ public class PaymentSteps {
 		// pmtpage.validateBankSelected();
 		pmtpage.selectBankNew();
 	}
+	
+
+    @Then("^verify \"([^\"]*)\" is selected$")
+    public void verify_something_is_selected(String bank) throws Throwable {
+    	pmtpage.selectBankNew(bank);
+    }
 
 	@When("user click on {string} on cart detail page")
 	public void user_click_on_on_cart_detail_page(String string) {
@@ -103,7 +115,7 @@ public class PaymentSteps {
 	}
 
 	@Then("User navigates to RazorPay Page")
-	public void user_navigates_to_razor_pay_page() {
+	public void user_navigates_to_razor_pay_page() throws InterruptedException {
 		pmtpage.validateRazorpayPage();
 	}
 

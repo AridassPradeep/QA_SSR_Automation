@@ -138,9 +138,9 @@ Feature: Product Detail Page feature for Registered User
     And user is on product detail page of Stainless Steel item and add dimensions
     And user add quantity and validate MOQ messages
       | quantity | MOQMessage                                                        |
-      |      000 | Required quantity is below MoQ. Please add quantity above 100.0kg |
+      |      000 | Required quantity is below MoQ. Please add quantity above 330.0kg |
       |      999 | The maximum available quantity for your selection is 10000.0kg    |
-      |   999999 | quantity more than 9999 kg                                        |
+      |   999999 | Please enter quantity below 9999 kg                                       |
     And validate add to cart button is disabled
 
   @MOQSteel 
@@ -155,7 +155,7 @@ Feature: Product Detail Page feature for Registered User
     And user add quantity and validate MOQ messages
       | quantity | MOQMessage                                                      |
       |        1 | Required quantity is below MoQ. Please add quantity above 3.0MT |
-      | 10000000 | quantity more than 9999 MT                                      |
+      | 10000000 | Please enter quantity below 9999 MT                                     |
     And validate add to cart button is disabled
 
   @ResetSelection @PDPRegisteredUser

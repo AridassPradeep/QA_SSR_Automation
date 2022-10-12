@@ -230,6 +230,13 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.SteelDetails();
 
 	}
+	
+	@Given("^user is on product detail page of Steel item and enters \"([^\"]*)\"$")
+    public void user_is_on_product_detail_page_of_steel_item_and_enters_something(String quantity) throws Throwable {
+		 pdpreguser.SteelDetails(quantity);
+    }
+	
+	
 
 	@And("^user is on Cement Product page$")
 	public void user_is_on_cement_product_page() throws Throwable {
