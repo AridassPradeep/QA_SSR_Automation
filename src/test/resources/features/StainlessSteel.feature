@@ -1,4 +1,4 @@
-@sanityExe @demo @StainlessSteel
+@sanityExe @demo @TestStainless
 Feature: Stainless Steel feature
 
   Background: User opens website
@@ -48,6 +48,7 @@ Feature: Stainless Steel feature
     And click on reset
     Then all products to be displayed
 
+@StainlessSteel
   Scenario: Verify order placed successfully after adding a stainless product to cart
     When cart is empty or not
     Then user navigate to Home page
@@ -68,7 +69,7 @@ Feature: Stainless Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-  @TestStainless
+  
   Scenario: Verify user is able to add steel and stainless steel from same seller
     When cart is empty or not
     Then user navigate to Home page
@@ -86,8 +87,8 @@ Feature: Stainless Steel feature
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page
-    Then verify netbanking is disabled
-    When user enter UTR and validate it
-      | A12345678901234556 |
-    And user click on confirm payment
-    Then verify payment success message is displayed
+    #Then verify netbanking is disabled
+    #When user enter UTR and validate it
+      #| A12345678901234556 |
+    #And user click on confirm payment
+    #Then verify payment success message is displayed

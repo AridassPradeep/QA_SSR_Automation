@@ -390,8 +390,10 @@ public class PDPDiscountPage {
 	}
 	
 	public void verifyViewCoupons() {
-		driver.findElement(By.xpath("//span[contains(text(),'View coupons')]")).click();
-		String coupon= driver.findElement(By.xpath("//div[@class='applied-coupons']//span")).getText();
+		driver.findElement(By.xpath("//button[normalize-space()='View details']")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='View details']")).click();
+		
+		String coupon= driver.findElement(By.xpath("//div[@class='applied-coupon-code']")).getText();
 		System.out.print(coupon);
 
 	}

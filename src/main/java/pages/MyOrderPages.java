@@ -8,8 +8,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -35,7 +37,7 @@ public class MyOrderPages {
 	private WebElement scrollViewDetails;
 	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
 	private WebElement viewDetails; 
-	@FindBy(xpath = "//*[@id='d-body']/div[4]/div[1]/div/div[2]/div[2]/button")
+	@FindBy(xpath = "//button[normalize-space()='View details']")
 	private WebElement viewPriceBreakup;
 	@FindBy(xpath = "(//a[text()='Need help '])[1]")
 	private WebElement needHelp;
@@ -516,7 +518,7 @@ public class MyOrderPages {
 	}
 
 	public String getOrderNo() {
-		String orderNo= driver.findElement(By.xpath("//span[contains(text(),'Order number')]//following::span[1]")).getText();
+		String orderNo= driver.findElement(By.xpath("//*[contains(text(),'Order number')]//following::div[1]")).getText();
 		System.out.println("order number" + orderNo);
 		return orderNo;
 	}
@@ -559,6 +561,11 @@ public class MyOrderPages {
 		driver.findElement(FirstOrderNo).click();
 		Thread.sleep(10000);
 
+	}
+	public void closePopup()
+	{
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ESCAPE).build().perform();
 	}
 
 }

@@ -55,6 +55,7 @@ public class PaymentSteps {
 		Thread.sleep(3000);
 		pmtpage.scroll();
 		pmtpage.clickproceedtopay();
+		pmtpage.clickpayViaNetBanking();
 		Thread.sleep(5000);
 	}
 
@@ -210,9 +211,10 @@ public class PaymentSteps {
 		//Thread.sleep(15000);
 	}
 
-	@Then("verify netbanking is disabled")
-	public void verify_netbanking_is_disabled() throws InterruptedException {
-		pmtpage.validateNetBanking();
+	@Then("verify neftbanking is disabled")
+	public void verify_neftbanking_is_disabled() throws InterruptedException {
+		//pmtpage.validateNetBanking();
+		pmtpage.validateNeftBanking();
 	}
 
 	@Then("verify payment success message is displayed")

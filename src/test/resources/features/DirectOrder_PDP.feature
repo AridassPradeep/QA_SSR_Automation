@@ -194,4 +194,12 @@ Feature: Direct Order for PDP feature for registered user
       | qatestuser@jsw.in |  Admin@123$ | qatestuser@jsw.in |
       
       
+      @DirectPaymentHistory
+  Scenario: Verify payment history for Direct order
+    When user is able to click my order button
+    And user is able to click view details button for DO
+    And user is able to view Order summary page
+    Then user is able to view Payment received section
+    When user is able to click Payment history dropdown CTA
+    Then user is able to view Direct order payment status
         

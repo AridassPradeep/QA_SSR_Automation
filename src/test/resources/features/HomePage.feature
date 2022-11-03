@@ -29,16 +29,16 @@ Feature: Home page feature
     Then Verify all the social media logos are available
     Then Verify for help line number is present in footer section
 
-  @Header 
+  @HomePageHeader 
   Scenario: Verify Header section elements
     Then Verify the JSW logo is appearing in the Header Section
+    Then Verify Cart Icon displayed
     Then Verify Search Bar is displayed with search icon
     Then Verify User name is displayed in the Header Section
     Then Verify the My Profile section link is appearing with users first name
     Then Verify that the My Profile section Link is displaying ^ icon when the drop down is clicked
     Then Verify the action of Logout Link in My Profile drop down
     Then Verify Myorders is displayed in the Header Section
-    Then Verify Cart Icon displayed
     Then Verify "Steel" Category tree is displayed
     Then Verify "Stainless Steel" Category tree is displayed
     Then verify "Construction Material" category tree is displayed in Header section

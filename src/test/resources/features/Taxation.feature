@@ -1,4 +1,4 @@
-
+@Taxation
 Feature: Tax calculation on Order summary & My Order pages
 
 Background: User opens website
@@ -54,7 +54,7 @@ Background: User opens website
     Then verify 9% CGST and 9% SGST is displayed
     And  verify tax matches in mc and UI
     
-    
+    @thrissur
     Scenario: Verify tax components when shipping adress is thrissur
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

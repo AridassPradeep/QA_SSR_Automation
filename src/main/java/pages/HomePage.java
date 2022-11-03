@@ -10,6 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
@@ -17,7 +19,7 @@ public class HomePage {
 	private By JSWLogo = By.xpath("//img[@alt='JSW One MSME']");
 	private By search = By.id("SearchText");
 	private By languageIndicator = By.xpath("//div[@data-value='ENG']");
-	private By cartIcon = By.xpath("//img[@alt='cart']");
+	private By cartIcon = By.xpath("//a[@class='cart']");
 	private By noofCartItems = By.xpath("//div[@class='count']");
 	private By address = By.xpath("//*[@id=\'address-dropdown\']");
 	private By connectWithUs = By.xpath("//span[text()='Connect with us']");
@@ -27,7 +29,7 @@ public class HomePage {
 	private By sliderContainerImages = By.xpath("//*[@id=\'carousel_nelosakfom\']/div[1]/div/div/div/img");// img[@class='top-br-img']
 	private By mapIcon = By.xpath("//i[@class='fas fa-map-marker-alt']");
 	private By thanksLanding = By.xpath("//div[@class='thanks-landing']");
-	private By arrowdropdown = By.xpath("//header[@id='drop-down-head']");
+	private By arrowdropdown = By.xpath("//*[@id='drop-down-head']");
 	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
 	private By WeldingConsumables = By.xpath("//div[@class='navigation-item'][6]");
 
@@ -96,6 +98,7 @@ public class HomePage {
 	}
 
 	public void selectHotRolledProduct() throws InterruptedException {
+		Thread.sleep(1000);
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
 		action.moveToElement(we).build().perform();
@@ -158,7 +161,10 @@ public class HomePage {
 	}
 
 	public CartDetailPage clickonCart() {
-		driver.findElement(cartIcon).click();
+		//driver.findElement(cartIcon).click();
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(cartIcon)).click();
 		return new CartDetailPage(driver);
 	}
 

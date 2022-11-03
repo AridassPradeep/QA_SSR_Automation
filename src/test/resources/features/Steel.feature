@@ -86,8 +86,31 @@ Feature: Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-  @neft
-  Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment
+  #@neft
+  #Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment
+    #When cart is empty or not
+    #Then user navigate to Home page
+    #When user clicks HR Sheet series from Steel Categories Menu
+    #When user selects HR Stainless Steel product
+    #Given user is on product detail page of Stainless Steel item
+    #When user clicks on Add To Cart button available in the right side of the webpage
+    #Then verify that the product should be added in the cart
+    #Then verify Cart icon would appear with 1
+    #When user clicks HR from Steel Navigation Menu
+    #When user selects Steel product
+    #Given user is on product detail page of Steel item
+    #When user clicks on Add To Cart button available in the right side of the webpage
+    #Then verify that the product should be added in the cart
+    #When user click on Cart icon on homepage
+    #When user click on pickup checkbox
+    #And user click on proceed to pay on cart detail page
+    #Then verify netbanking is disabled
+    #And user click on proceed and confirm later
+    #Then verify payment pending message is displayed
+    #Then user is able to see Make payment CTA on order summary page
+
+  @samesellerNetBanking
+  Scenario: Verify user is able to add steel and stainless steel from same seller and do a net banking with confirmation payment
     When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
@@ -104,41 +127,20 @@ Feature: Steel feature
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page
-    Then verify netbanking is disabled
-    And user click on proceed and confirm later
-    Then verify payment pending message is displayed
-    Then user is able to see Make payment CTA on order summary page
+    And user select bank name to transfer from the drop down on payment page
+    Then verify bank is selected
+    And User click on PayNow
+    Then User navigates to RazorPay Page
+    And User click on success button
+    Then verify after successful payment page navigates to ORDER summary page
+    Then order sucessfully placed message should be displayed
 
-  @neftPayment
-  Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment with confirmation payment
+  @PaymentMultiSeller
+  Scenario: Verify user is able to add products from multi seller and proceed to payment page
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
-    When user clicks on Add To Cart button available in the right side of the webpage
-    Then verify that the product should be added in the cart
-    Then verify Cart icon would appear with 1
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-    When user clicks on Add To Cart button available in the right side of the webpage
-    Then verify that the product should be added in the cart
-    When user click on Cart icon on homepage
-    When user click on pickup checkbox
-    And user click on proceed to pay on cart detail page
-    Then verify netbanking is disabled
-    When user enter UTR and validate it
-      | A12345678901234556 |
-    And user click on confirm payment
-    Then verify payment success message is displayed
-
-  @neftPaymentMultiSeller 
-  Scenario: Verify user is able to add products from multi seller=
-    When cart is empty or not
-    Then user navigate to Home page
-    When user is on Steel Menu on header section 
-	  And user is able to select Wire rods from Steel Menu 
+    When user is on Steel Menu on header section
+    And user is able to select Wire rods from Steel Menu
     And user click on product name of Wire product displayed on the page
     And user is on Wire Product page
     When user clicks on Add To Cart button available in the right side of the webpage
@@ -153,8 +155,8 @@ Feature: Steel feature
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page
-    Then verify netbanking is disabled
-    When user enter UTR and validate it
-      | A12345678901234556 |
-    And user click on confirm payment
-    Then verify payment success message is displayed
+    #Then verify netbanking is disabled
+    #When user enter UTR and validate it
+      #| A12345678901234556 |
+    #And user click on confirm payment
+    #Then verify payment success message is displayed

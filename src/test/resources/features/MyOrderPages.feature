@@ -98,29 +98,30 @@ Feature: MyOrder page feature
   #And User is able to click on success button
   #Then verify after successful payment navigates to ORDER summary page
   #Then user verify your order is confirmed message
-  @CancelOrder
-  Scenario: Verify user able to cancel the order
-    When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
+  
+  #@CancelOrder
+  #Scenario: Verify user able to cancel the order
+    #When cart is empty or not
+    #When user clicks HR from Steel Navigation Menu
     # Then HR Products are displayed
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-    And user wait for sometime
-    When user click on Buy Now
-    And user click on proceed to pay on cart detail page
-    And user select bank name to transfer from the drop down on payment page
-    Then verify bank is selected
-    And User click on PayNow
-    Then User navigates to RazorPay Page
-    And User click on success button
-    Then verify after successful payment page navigates to ORDER summary page
-    Then order sucessfully placed message should be displayed
-    And user is able to click canel order button
-    And user is able to click My order button on home page
-    And user is able to click cancel button in my order page
-    And user is able to write remark
-    And user is able to click cancelorder button
-    Then user is able to view cancelled message
+    #When user selects Steel product
+    #Given user is on product detail page of Steel item
+    #And user wait for sometime
+    #When user click on Buy Now
+    #And user click on proceed to pay on cart detail page
+    #And user select bank name to transfer from the drop down on payment page
+    #Then verify bank is selected
+    #And User click on PayNow
+    #Then User navigates to RazorPay Page
+    #And User click on success button
+    #Then verify after successful payment page navigates to ORDER summary page
+    #Then order sucessfully placed message should be displayed
+    #And user is able to click canel order button
+    #And user is able to click My order button on home page
+    #And user is able to click cancel button in my order page
+    #And user is able to write remark
+    #And user is able to click cancelorder button
+    #Then user is able to view cancelled message
 
   @ViewCoupons
   Scenario Outline: Verify In my order page, the applied coupons are able to view after the order placed
@@ -143,25 +144,18 @@ Feature: MyOrder page feature
     And User click on success button
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
-    #And user clicks on view coupons in order page then applied coupon to be displayed
+    And user clicks on view coupons in order page then applied coupon to be displayed
+    
     # When user is able to click my order button
     #And user is able to click view details button
-    And user is able to verify view coupons displayed
-    And user clicks on view coupons in order page then applied coupon to be displayed
+    #And user is able to verify view coupons displayed
+    #And user clicks on view coupons in order page then applied coupon to be displayed
     #Then user is able to view number of applied coupons
     #When user is able to click View coupons
-    Then user is able to view Applied coupons pop-up
-    
+    #Then user is able to view Applied coupons pop-up
+   
 
     Examples: 
       | coupon   |
       | STEEL250 |
 
-  @DirectPaymentHistory
-  Scenario: Verify payment history for Direct order
-    When user is able to click my order button
-    And user is able to click view details button for DO
-    And user is able to view Order summary page
-    Then user is able to view Payment received section
-    When user is able to click Payment history dropdown CTA
-    Then user is able to view Direct order payment status

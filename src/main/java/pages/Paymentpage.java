@@ -20,6 +20,7 @@ public class Paymentpage {
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By buynow = By.xpath("//*[text()='Buy now']");
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
+	private By payViaNetBanking = By.xpath("//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
 	// private By banklist = By.xpath("//select[@id='BanksList']");
@@ -33,7 +34,7 @@ public class Paymentpage {
 	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By payNow = By.xpath("//span[contains(text(),'Proceed to pay')]");
 	private By Success = By.xpath("//button[@class='success']");
-	private By successmessage = By.xpath("//div[contains(text(),'Payment successful')]");
+	private By successmessage = By.xpath("//div[contains(text(),'Your order payment is successful')]");
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
 	private By user = By.xpath("//div[@class='drop-down-whole']");
 	private By UTR = By.xpath("//div[@class='utr-field']/input");
@@ -46,7 +47,7 @@ public class Paymentpage {
 	private By myCart = By.xpath("//a[contains(text(),'My cart')]");
 
 	private By confirmlater = By.xpath("//*[@id=\'no-confirm-btn\']");
-	private By pendingmessage = By.xpath("//div[text()='Your order is awaiting payment']");
+	private By pendingmessage = By.xpath("//*[contains(text(),'Your order is awaiting payment')]");
 	private By makepayment = By.xpath("//*[@id=\'confirm-btn-payment-indicator\']");
 
 	public Paymentpage(WebDriver driver) {
@@ -84,6 +85,11 @@ public class Paymentpage {
 	public void clickproceedtopay() {
 
 		driver.findElement(proceedtopay).click();
+	}
+	
+	public void clickpayViaNetBanking() {
+
+		driver.findElement(payViaNetBanking).click();
 	}
 
 	public void validateBankList() throws InterruptedException {
@@ -346,6 +352,11 @@ public class Paymentpage {
 		driver.findElement(By.linkText("NEFT/RTGS")).click();
 
 	}
+	public void validateNeftBanking() {
+		//driver.findElement(netbankingdisabled).isDisplayed();
+		driver.findElement(By.linkText("NEFT/RTGS")).isEnabled();
+
+	}
 
 	public void clickConfirmPayment() throws InterruptedException {
 		Thread.sleep(3000);
@@ -405,7 +416,7 @@ public class Paymentpage {
 	}
 
 	public void validateMakePayment() {
-		driver.findElement(makepayment).isDisplayed();
+		driver.findElement(payViaNetBanking).isDisplayed();
 	}
 
 }

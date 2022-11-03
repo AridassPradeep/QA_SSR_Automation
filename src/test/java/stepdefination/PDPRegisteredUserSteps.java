@@ -213,6 +213,7 @@ public class PDPRegisteredUserSteps {
 
 			String quantity = form.get("quantity");
 			pdpreguser.stainlessSteelDetailsAddquantity(quantity);
+			
 
 			String moqMsg = form.get("MOQMessage");
 			String actualErrorMessage = pdpreguser.MOQErrorMessage();

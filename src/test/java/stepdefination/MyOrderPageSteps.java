@@ -28,13 +28,14 @@ public class MyOrderPageSteps {
 	@When("user is able to click view price breakup button to view detailed cost list of the ordered product")
 	public void user_is_able_to_click_view_price_breakup_button_to_view_detailed_cost_list_of_the_ordered_product() throws InterruptedException {
 		order.scrollingDown(order.getViewPriceBreakup());
+		Thread.sleep(2000);
 		order.getViewPriceBreakup().click();
 		Thread.sleep(2000);
 	}
 
 	@Then("user is again click the  view price breakup button to close")
 	public void user_is_again_click_the_view_price_breakup_button_to_close() throws InterruptedException {
-		order.getViewPriceBreakup().click();
+		order.closePopup();
 		Thread.sleep(2000);
 	}
 
