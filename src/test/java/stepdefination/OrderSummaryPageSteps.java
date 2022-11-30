@@ -20,35 +20,31 @@ public class OrderSummaryPageSteps {
 
 	@Then("verify Order number,Order total,Payment received,Delivery type\\(delivery,pickup),Pending payment")
 	public void verify_order_number_order_total_payment_received_delivery_type_delivery_pickup_pending_payment() throws InterruptedException {
-	   Thread.sleep(6000);
 	  String deliveryType= order.validateOrderDetails();
 	  assertThat(deliveryType.contains("Delivery"));
 	}
 	
 	@Then("verify  NEFT\\/RTGS ,Beneficiary name,Account Number,IFSC Code")
 	public void verify_neft_rtgs_beneficiary_name_account_number_ifsc_code() throws InterruptedException {
-		 Thread.sleep(6000);
-		   System.out.print("hello");
+		order.validateNetBankingAndNeft();
+		
 	}
 	
 	@Then("verify Your order is awaiting payment status")
 	public void verify_your_order_is_awaiting_payment_status() throws InterruptedException {
-		Thread.sleep(1000);
-		   System.out.print("hello");
+		assertThat(order.validateOrderAwaitingMessage() .contains("Your order is awaiting payment"));
 	}
 	
 	@Then("user can minimise  item details and billing adress")
 	public void user_can_minimise_item_details_and_billing_adress() throws InterruptedException {
 	   
-		Thread.sleep(1000);
-		   System.out.print("hello");
+		order.validateMinimiseOfItemDetails();
 	}
 	
 	@Then("verify netbanking is disabled")
 	public void verify_netbanking_is_disabled() throws InterruptedException {
 
-		Thread.sleep(1000);
-		   System.out.print("hello");
+		order.validateNetBankingDisabled();
 	}
 	
 	@When("user click on view details")

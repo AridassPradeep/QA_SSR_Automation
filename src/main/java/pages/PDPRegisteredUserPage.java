@@ -21,7 +21,7 @@ public class PDPRegisteredUserPage {
 	private By alldimensions = By
 			.xpath("//button[contains(@class,'list-group-item list-group-item-action in-active')]");
 	private By addquantity = By.xpath("//div[2]/div[1]/div[1]/div[1]/button[1]/img[1]");
-	private By addtocartbutton = By.xpath("//div[@class='fw-bold add-to-cart-out']");
+	private By addtocartbutton = By.xpath("//*[@id='product-add-to-cart']");
 	private By diameter = By.xpath("//div[contains(@class,'size_1')]/child::div[@class='dimension-size']");
 	private By productselectwirerod = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -440,7 +440,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("5");
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("17");
 		Thread.sleep(2000);
 
 	}
