@@ -48,6 +48,16 @@ public class PaymentSteps {
     	pmtpage.verifyPickupFrom();
         
     }
+    
+    @When("user click on proceed to pay on cart detail page and navigate to ordersummary page")
+	public void user_click_on_proceed_to_pay_on_cart_detail_pageand_navigate_to_ordersummarypag() throws InterruptedException {
+		pmtpage.validatecartdetailpage();
+		Thread.sleep(3000);
+		pmtpage.scroll();
+		pmtpage.clickproceedtopay();
+		
+	}
+
 
 	@When("user click on proceed to pay on cart detail page")
 	public void user_click_on_proceed_to_pay_on_cart_detail_page() throws InterruptedException {

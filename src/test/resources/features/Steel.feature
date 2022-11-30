@@ -2,7 +2,7 @@
 #https://dashboard.razorpay.com/app/smartcollect/virtualaccounts?count=25&id=va_IYQmzJQHLDMvoB
 #username: jsw.one@jsw.in
 #password: Jsw@1234
-@sanityExe @demo @steel
+@sanityExe @demo @steel 
 Feature: Steel feature
 
   Background: User opens website
@@ -135,7 +135,7 @@ Feature: Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-  @PaymentMultiSeller
+  @PaymentMultiSeller 
   Scenario: Verify user is able to add products from multi seller and proceed to payment page
     When cart is empty or not
     Then user navigate to Home page

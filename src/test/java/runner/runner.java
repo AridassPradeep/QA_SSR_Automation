@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"src/test/resources/features/"},
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-	    tags = "@DirectOrderPDP",
+	    tags = " @OrderSummary1",
 		dryRun = false,
 		stepNotifications=true,
 		plugin = {
