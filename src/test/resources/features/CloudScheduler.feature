@@ -4,7 +4,7 @@ Feature: Order Summary page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "ravitest@gmail.com" and  "123Tmnas*"
+    When user enters logins with username with "ravitest1@gmail.com" and  "123Tmnas*"
     And user clicks on signin
     Then user homepage is displayed
     When cart is empty or not

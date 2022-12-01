@@ -95,14 +95,13 @@ public class OrderSummaryPageSteps {
 
 	@And("^verify Your order payment is successful message$")
 	public void verify_your_order_payment_is_successful_message() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
+		order.validateSucessfulMsg();
 	}
 
 	@And("^payment status is full$")
 	public void payment_status_is_full() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
+		String pymntStatus = order.validatePaymentStatus();
+		assertThat(pymntStatus.contentEquals("Full"));
 	}
 
 }

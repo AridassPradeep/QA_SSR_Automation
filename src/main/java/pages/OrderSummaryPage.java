@@ -2,11 +2,18 @@ package pages;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OrderSummaryPage {
@@ -41,7 +48,6 @@ public class OrderSummaryPage {
 	private By Shipping = By.xpath("//div[@class='shipping-address']");
 	private By Billing = By.xpath("//div[normalize-space()='Billing address:']");
 	private By BatchQuery = By.xpath("//a[normalize-space()='process-customer-balance']//following::td[9]//button");
-	
 
 	public OrderSummaryPage(WebDriver driver) {
 		this.driver = driver;
@@ -128,46 +134,51 @@ public class OrderSummaryPage {
 	public void validateOrderNoinURL() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(DeliveryDays));
-		url = driver.getCurrentUrl();	
+		url = driver.getCurrentUrl();
 		String order_num = url.substring(url.lastIndexOf("=") + 1);
 		System.out.print("order num" + order_num);
 		assertThat(order_num.contains("JOO"));
 	}
-	
-	public String validatePaymentStatus() throws InterruptedException
-	{
-		
+
+	public String validatePaymentStatus() throws InterruptedException {
+
 		driver.navigate().refresh();
 		driver.findElement(PaymentStatus).isDisplayed();
-		String paymntStatus=driver.findElement(PaymentStatus).getText();
+		String paymntStatus = driver.findElement(PaymentStatus).getText();
 		return paymntStatus;
 	}
-	
-	public void loginToCloudScheduler()
-	{
+
+	public void loginToCloudScheduler() {
 		driver.get("https://console.cloud.google.com/cloudscheduler?project=jswone-qa-356112");
-		
+
 	}
-	
-	public void runBatchQuery() throws InterruptedException
-	{
-		driver.findElement(BatchQuery).click();	
+
+	public void runBatchQuery() throws InterruptedException {
+		driver.findElement(BatchQuery).click();
 		driver.findElement(By.xpath("//div[contains(text(),'Force a job run')]")).click();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
+
+	}
+
+	public void navigateToOrder() throws InterruptedException {
+		driver.get(url);
 		
 	}
 	
-	public void navigateToOrder() throws InterruptedException
+	public void validateSucessfulMsg()
 	{
-		driver.get(url);
-		Thread.sleep(9000);
-		driver.navigate().refresh();
-		Thread.sleep(6000);
+		while (true) {
+			try {
+				WebElement element = driver.findElement(By.xpath("//*[text()='Your order payment is successful']"));
+				if (element.isDisplayed()) {
+					break;
+				}
+			} catch (Exception e) {
+				driver.navigate().refresh();
+			}
+		}
+
 	}
-	
-	
-	
-	
 	
 
 }
