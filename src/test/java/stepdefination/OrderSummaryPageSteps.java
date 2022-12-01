@@ -66,36 +66,31 @@ public class OrderSummaryPageSteps {
 	public void verifying_shipping_and_billing_and_delivery_adresss() throws InterruptedException {
 		order.validateShippingAndBilling();
 	}
-	
+
 	@Then("^user can see order number in url instead of order id$")
 	public void user_can_see_order_number_in_url_instead_of_order_id() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
+		order.validateOrderNoinURL();
 	}
 
-	
-	@Then("^Verifying payment status as partial$")
+	@Then("^Verifying payment status as Pending$")
 	public void verifying_payment_status_as_partial() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
-	}
-
-	@Then("^navigate to orders and the order$")
-	public void navigate_to_orders_and_the_order() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
+		String pymntStatus = order.validatePaymentStatus();
+		assertThat(pymntStatus.contentEquals("Pending"));
 	}
 
 	@And("^user logins to cloud scheduler$")
 	public void user_logins_to_cloud_scheduler() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
+		order.loginToCloudScheduler();
 	}
 
 	@And("^run process customer balance batch query$")
 	public void run_process_customer_balance_batch_query() throws Throwable {
-		Thread.sleep(1000);
-		System.out.print("hello");
+		order.runBatchQuery();
+	}
+
+	@Then("^navigate to orders and the order$")
+	public void navigate_to_orders_and_the_order() throws Throwable {
+		order.navigateToOrder();
 	}
 
 	@And("^verify Your order payment is successful message$")

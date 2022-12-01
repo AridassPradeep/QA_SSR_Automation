@@ -119,7 +119,6 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then Verifying shipping and billing and delivery adresss
 
-  @OrderSummary1
   Scenario: order id to ordernum in url
     When user click Cement Menu on header section
     And user click on product name of Cement product displayed on the page
@@ -130,14 +129,7 @@ Feature: Order Summary page feature
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
+    Then Verifying delivery days
     Then user can see order number in url instead of order id
 
-  @OrderSummary
-  Scenario: Verifying NEFT Payment
-    And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    Then Verifying payment status as partial
-    And user logins to cloud scheduler
-    And run process customer balance batch query
-    Then navigate to orders and the order
-    And verify Your order payment is successful message
-    And payment status is full
+ 
