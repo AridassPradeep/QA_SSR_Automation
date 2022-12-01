@@ -34,7 +34,6 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user can minimise  item details and billing adress
 
-  
   Scenario: Verifying netbanking is disabled for order more than 10 lakhs
     When user is on Steel Menu on header section
     And user is able to select Wire rods from Steel Menu
@@ -47,7 +46,6 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then verify netbanking is disabled
 
-  @OrderSummary1
   Scenario Outline: Verifying coupons
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
@@ -60,37 +58,46 @@ Feature: Order Summary page feature
     Then coupon is applied and price gets updated
     And user closes coupon overlay
     And price gets updated
-    And user click on proceed to pay on cart detail page
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    When user click on view details
-    Then user can see coupon got applied
+    When user click on view details and can see coupon got applied
 
     Examples: 
       | coupon   |
       | STEEL250 |
 
-  @OrderSummary
   Scenario: Verifying item details
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then Verifying item details
 
-  @OrderSummary
   Scenario: Verifying delivery days
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then Verifying delivery days
 
-  @OrderSummary
-  Scenario: Verifying shipping and billing and delivery adresss
-    And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    Then Verifying shipping and billing and delivery adresss
-
-  @OrderSummary
-  Scenario: order id to ordernum in url
-    And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    Then user can see order number in url instead of order id
-
-  @OrderSummary
   Scenario: Veifying user can make netbanking payment for amount less than ₹10,00,000
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
     And user click on proceed to pay on cart detail page
     And user select bank name to transfer from the drop down on payment page
     Then verify bank is selected
@@ -99,6 +106,31 @@ Feature: Order Summary page feature
     And User click on success button
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
+
+  Scenario: Verifying shipping and billing and delivery adresss
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
+    And user click on proceed to pay on cart detail page and navigate to ordersummary page
+    Then Verifying shipping and billing and delivery adresss
+
+  @OrderSummary1
+  Scenario: order id to ordernum in url
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
+    And user click on proceed to pay on cart detail page and navigate to ordersummary page
+    Then user can see order number in url instead of order id
 
   @OrderSummary
   Scenario: Verifying NEFT Payment
