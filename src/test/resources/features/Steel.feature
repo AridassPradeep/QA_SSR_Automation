@@ -149,7 +149,7 @@ Feature: Steel feature
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item
-    Then verify seller name
+    #Then verify seller name
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage

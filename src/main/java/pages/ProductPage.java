@@ -84,8 +84,8 @@ public class ProductPage {
 	public String validateHRSeries300Page() {
 
 		driver.findElement(By.xpath("//*[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
-		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
-		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
+		System.out.println(driver.findElement(By.xpath("//*[@class='list-title desc']")).getText());
+		return driver.findElement(By.xpath("//*[@class='list-title desc']")).getText();
 	}
 
 	public void SSMenu() throws InterruptedException, AWTException {

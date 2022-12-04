@@ -323,14 +323,14 @@ public class ProductLandingPage {
 
 	public String validatePLPListResults() {
 		//driver.findElement(By.xpath("//span[contains(text(),'Found')]")).click();
-		System.out.println(driver.findElement(By.xpath("//span[@class='list-title desc']")).getText());
-		return driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
+		System.out.println(driver.findElement(By.xpath("//*[@class='list-title desc']")).getText());
+		return driver.findElement(By.xpath("//*[@class='list-title desc']")).getText();
 
 	}
 	
 	public String validatePLPBreadCrumb() {
-		System.out.println(driver.findElement(By.xpath("//span[@class='home'][3]")).getText());
-		return driver.findElement(By.xpath("//span[@class='home'][3]")).getText();
+		System.out.println(driver.findElement(By.xpath("//*[@class='home'][3]")).getText());
+		return driver.findElement(By.xpath("//*[@class='home'][3]")).getText();
 
 	}
 	
