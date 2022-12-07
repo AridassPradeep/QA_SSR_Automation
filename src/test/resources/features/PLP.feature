@@ -180,7 +180,7 @@ Scenario: check for Grade section in filters are displayed as selected products 
 	And user is able to select Hot rolled from Steel Menu 
 	Then Grade for Hot Rolled are dispalyed 2062:2011, 3502:2004 
 	
-Scenario: check for Gade section in filters are displayed as selected products with Cold rolled 
+Scenario: check for Grade section in filters are displayed as selected products with Cold rolled 
 	When user is on Steel Menu on header section 
 	And user is able to select Cold rolled from Steel Menu 
 	Then Grade for Cold Rolled are dispalyed 1079:2017, 513 (Part1):2016, 5062:2011, 10748:2004 

@@ -54,13 +54,13 @@ public class ProductLandingPage {
 
 	public boolean validateReset() throws InterruptedException {
 		Thread.sleep(2000);
-		return driver.findElement(By.xpath("//div[contains(text(),'Reset')]")).isEnabled();
+		return driver.findElement(By.className("reset-product-list")).isEnabled();
 
 	}
 
 	public void clickReset() throws InterruptedException {
 
-		driver.findElement(By.xpath("//div[contains(text(),'RESET')]")).click();
+		driver.findElement(By.className("reset-product-list")).click();
 
 	}
 

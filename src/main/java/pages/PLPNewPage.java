@@ -14,7 +14,7 @@ public class PLPNewPage {
 	private WebDriver driver;
 
 	private By steelMenu = By.xpath("//header/div[3]/div[1]/div[1]/div[1]/a[1]");
-	private By steelPLP = By.xpath("//span[@class='list-title desc']");
+	private By steelPLP = By.xpath("//*[@class='list-title desc']");
 	private By breadcrump = By.xpath("//div[@class='breadcrumb-url']");
 	private By hotRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[1]/a");
 	private By coldRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[2]/a");
@@ -135,7 +135,7 @@ public class PLPNewPage {
 	}
 
 	public void validateGrades() {
-		WebElement grade = driver.findElement(By.xpath("//div[@class='forms-filter grade']//following::div[2]"));
+		WebElement grade = driver.findElement(By.xpath("//div[contains(text(),'Grade')]//following::label[1]"));
 		System.out.println("Grades :" + grade.getText() + "\t");
 	}
 
@@ -153,8 +153,8 @@ public class PLPNewPage {
 	}
 
 	public String verifyMetal() {
-		System.out.println(driver.findElement(By.xpath("//span[contains(@class,'list-title desc')]")).getText());
-		return driver.findElement(By.xpath("//span[contains(@class,'list-title desc')]")).getText();
+		System.out.println(driver.findElement(By.xpath("//*[contains(@class,'list-title desc')]")).getText());
+		return driver.findElement(By.xpath("//*[contains(@class,'list-title desc')]")).getText();
 	}
 
 	public void verifyHome() {
@@ -267,7 +267,7 @@ public class PLPNewPage {
 	// TMT Products
 
 	public void valiadtePLP() {
-		String PLPpage = driver.findElement(By.xpath("//span[@class='list-title desc']")).getText();
+		String PLPpage = driver.findElement(By.xpath("//*[@class='list-title desc']")).getText();
 		System.out.println("Landing on PLP page :" + PLPpage);
 	}
 

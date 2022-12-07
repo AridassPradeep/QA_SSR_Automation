@@ -92,7 +92,7 @@ Feature: Cart Detail Page feature
     When user clicks Welding electordes from Welding Consummables Navigation Menu
     When user selects WeldingElectrode product
     And  user is on product detail page of Welding electordes item
-    And user clicks on switch quantity
+    #And user clicks on switch quantity
     And user click on Buy Now
     Then verify freight charges are displayed
     And verify subtotal is equal to sum of price,tax and freight charges
