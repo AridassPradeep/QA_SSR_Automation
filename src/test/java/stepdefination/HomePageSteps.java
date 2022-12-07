@@ -204,7 +204,7 @@ public class HomePageSteps {
 	@Then("Verify all the header available in the footer section after user logs in to the application")
 	public void verify_all_the_header_available_in_the_footer_section_after_user_logs_in_to_the_application() {
 		int footerItemCount = homePage.validatefooterContainer();
-		Assert.assertEquals(footerItemCount, 17);
+		Assert.assertEquals(footerItemCount, 16);
 		System.out.println(footerItemCount);
 	}
 

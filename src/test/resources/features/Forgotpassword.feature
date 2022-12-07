@@ -1,4 +1,4 @@
-@ForgetPassword
+ @ForgetPassword
 Feature: Forgotpassword  feature
 
   Background: User opens website
@@ -43,7 +43,7 @@ Feature: Forgotpassword  feature
       | test@test |
 
 
- 
+
   Scenario Outline: Change the password with Reset link
     When user clicks on forgotpassword
     And user clicks on proceed

@@ -1,5 +1,5 @@
 @CloudNeftPayment
-Feature: Order Summary page feature
+Feature: CloudScheduler and NeftPayment
 
   Background: User opens website
     Given user is on home page

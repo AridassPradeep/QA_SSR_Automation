@@ -79,7 +79,7 @@ Feature: Product Detail Page feature for Guest User
     And User click on close button
     And User clicks on Add to cart button
     And User click on close button
-    And user click on the Buy Now button
+    And user click on Buy Now
     Then verify that User should redirect to the login page
 
   Scenario: Verify the Disabled button Design for 'add to cart' & 'Buy now'
@@ -89,7 +89,7 @@ Feature: Product Detail Page feature for Guest User
     And User click on close button
     And User clicks on Add to cart button
     And User click on close button
-    And user click on the Buy Now button
+    And user click on Buy Now
     And User click on close button
     And click on ResetSelection button
     Then validate add to cart button is disabled

@@ -24,12 +24,12 @@ public class PDPpage {
 	private By primaryimage = By.xpath("//img[@class='big-image']");
 	private By optionalimage = By.xpath("//img[@class=\"mt-20 prod-img1-radius\"]");
 	private By grade = By.xpath("//span[@class='anchor']");
-	private By composition = By.xpath("//div[contains(@class,'desktop-tabs pb-3')]");
+	private By composition = By.xpath("//div[contains(@class,'desktop-tabs')]");
 	private By alldimensions = By.xpath("//button[@class='list-group-item list-group-item-action in-active']");
 	private By buynow = By.xpath("//button[@class='btn btn-primary radius-10 w-100']");
 	private By loginpage = By.xpath("//div[@class='welcome-name']");
 	private By etdelivery = By.xpath("//div[@class='est-del']");
-	private By addtocart = By.xpath("//button[@class='btn btn-outline-primary w-100 mb-3 radius-10']");
+	private By addtocart = By.xpath("//*[@id='product-add-to-cart']");
 	private By price = By.xpath("//div[@class='prod-price-main box d-none d-md-block']");
 	private By loginbutton = By.xpath("//span[text()='Login']");
 	private By registerbutton = By.xpath("//span[text()='Login']/following-sibling::span");

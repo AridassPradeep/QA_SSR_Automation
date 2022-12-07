@@ -29,7 +29,7 @@ public class Forgotpasswordpage {
 	private By enterPassword = By.xpath("//*[@id='password']/div[1]/div/div[1]/input");
 	private By clickpasswordNext = By.xpath("//*[@id='passwordNext']/div/button/span");
 	private By inboxFirstrecord = By.xpath("//table[@role='grid']//tr[1]");
-	private By clickResetLink = By.xpath("//img[@class='ajT']");
+	private By clickResetLink = By.xpath("//a[contains(text(),'Reset')]");
 	private By clickResetNow = By.partialLinkText("Reset now");
 	private By clicknewPassword = By.xpath("//input[@id='password']");
 	private By clickconfirmPassword = By.id("confirmPassword");
@@ -172,9 +172,30 @@ public class Forgotpasswordpage {
 
 	public void clickRestLink() throws InterruptedException {
 		Thread.sleep(4000);
+		 if(isElementPresent("//img[@class='ajT']"))
+			 
+		 {
+			 driver.findElement(By.xpath("//img[@class='ajT']")).click();
+		 }
+		 else
+		 {
+			
+				
+		 }
 		driver.findElement(clickResetLink).click();
 		Thread.sleep(10000);
 		driver.findElement(clickResetNow).click();
+	}
+	
+	public static boolean isElementPresent(String id)
+	{
+		try {
+			driver.findElement(By.xpath(id));
+			return true;
+		} catch (Exception e) {
+			return false;	
+		}
+		
 	}
 
 }

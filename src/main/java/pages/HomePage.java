@@ -19,7 +19,7 @@ public class HomePage {
 	private By JSWLogo = By.xpath("//img[@alt='JSW One MSME']");
 	private By search = By.id("SearchText");
 	private By languageIndicator = By.xpath("//div[@data-value='ENG']");
-	private By cartIcon = By.xpath("//a[@class='cart']");
+	private By cartIcon = By.xpath("//img[@alt='cart']");
 	private By noofCartItems = By.xpath("//div[@class='count']");
 	private By address = By.xpath("//*[@id=\'address-dropdown\']");
 	private By connectWithUs = By.xpath("//span[text()='Connect with us']");
@@ -315,7 +315,7 @@ public class HomePage {
 	public void ClickSteelViewAll() throws InterruptedException {
 		driver.findElement(steelViewall).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'Hot Rolled')]")).isDisplayed();
+		driver.findElement(By.xpath("//*[contains(text(),'Hot Rolled')]")).isDisplayed();
 		Thread.sleep(2000);
 	}
 
@@ -338,7 +338,7 @@ public class HomePage {
 	public void SSClickViewAll() throws InterruptedException {
 		driver.findElement(ssViewall).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
+		driver.findElement(By.xpath("//*[contains(text(),'Stainless Steel hot rolled sheets')]")).isDisplayed();
 		Thread.sleep(2000);
 	}
 
