@@ -147,7 +147,7 @@ public class CartDetailPage {
 
 	public void selectDelivery() throws InterruptedException {
 		driver.findElement(By.xpath("//button[contains(text(),'Select for delivery')]")).click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 	}
 

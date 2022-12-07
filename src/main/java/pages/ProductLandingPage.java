@@ -362,7 +362,8 @@ public class ProductLandingPage {
 	
 	public void clickResetFilter()
 	{
-		driver.findElement(By.xpath("//div[contains(text(),'Reset')]")).click();
+		
+		driver.findElement(By.className("reset-product-list")).click();
 	}
 	
 	

@@ -1,4 +1,4 @@
-@OrderSummary
+@CloudNeftPayment
 Feature: Order Summary page feature
 
   Background: User opens website
@@ -10,7 +10,7 @@ Feature: Order Summary page feature
     Then user homepage is displayed
     When cart is empty or not
 
-  @OrderSummary1
+  
   Scenario Outline: Verifying NEFT Payment
     When user click Cement Menu on header section
     And user click on product name of Cement product displayed on the page

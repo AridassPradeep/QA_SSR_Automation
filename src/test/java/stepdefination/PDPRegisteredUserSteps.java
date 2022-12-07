@@ -276,7 +276,7 @@ public class PDPRegisteredUserSteps {
 	@Given("validate add to cart button is disabled")
 	public void validate_add_to_cartbuttondisabled() throws InterruptedException {
 
-		Assert.assertTrue(pdpreguser.validateAddToCartisDisabled());
+		Assert.assertFalse(pdpreguser.validateAddToCartisDisabled());
 
 	}
 
