@@ -1,5 +1,5 @@
 @Product
-Feature: Product Detail Page feature for Registered User
+Feature: Product Detail Page -All Products
 
   Background: User opens website
     Given user is on home page
@@ -41,24 +41,3 @@ Feature: Product Detail Page feature for Registered User
     And user is on Wire Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
-
-  @weldingelectrodes
-  Scenario: Verify delivery charges calculated for welding electrodes
-    When cart is empty or not
-    When user clicks Welding electordes from Welding Consummables Navigation Menu
-    When user selects WeldingElectrode product
-    And  user is on product detail page of Welding electordes item
-    #And user clicks on switch quantity
-    And user click on Buy Now
-    Then verify freight charges are displayed
-    And verify subtotal is equal to sum of price,tax and freight charges
-
-  @weldingwire 
-  Scenario: Verify delivery charges calculated for welding wires
-    When cart is empty or not
-    When user clicks Welding wire from Welding Consummables Navigation Menu
-    When user selects WeldingWire product
-    And user is on product detail page of Welding wire item
-    And user click on Buy Now
-    Then verify freight charges are displayed
-    And verify subtotal is equal to sum of price,tax and freight charges
