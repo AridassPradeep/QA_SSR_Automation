@@ -35,9 +35,20 @@ Feature: Product Detail Page -All Products
   Scenario: Verify WireRod product can be added to cart
     When cart is empty or not
     Then user navigate to Home page
-    When user is on Steel Menu on header section 
-	  And user is able to select Wire rods from Steel Menu 
+    When user is on Steel Menu on header section
+    And user is able to select Wire rods from Steel Menu
     And user click on product name of Wire product displayed on the page
     And user is on Wire Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+
+  @WeldingFlux
+  Scenario: Verify WeldingFlux product can be added to cart
+    When cart is empty or not
+    Then user navigate to Home page
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart

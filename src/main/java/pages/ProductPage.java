@@ -25,6 +25,7 @@ public class ProductPage {
 	private By ssHRS = By.xpath("//div[@class='plp-product-item']");
 	private By stainlessSteelMenu = By.xpath("//a[contains(text(),'Stainless Steel')]");
 	private By steelMenu = By.xpath("//div[@class='navigation-item'][1]");
+	private By WeldingConsumables = By.xpath("//a[contains(text(),'Welding consumables')]");
 
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;
@@ -100,10 +101,9 @@ public class ProductPage {
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 	}
-	
+
 	public void CRMenu() throws InterruptedException, AWTException {
-		
-		
+
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
 		action.moveToElement(we).build().perform();
@@ -113,7 +113,7 @@ public class ProductPage {
 
 		driver.findElement(By.xpath("//div[1]/div[1]/ul[1]/li[2]/div[1]/ul[1]/li[2]/a[1]")).click();
 		Thread.sleep(3600);
-		
+
 	}
 
 	public void selectProductreguserHRS() {
@@ -168,6 +168,35 @@ public class ProductPage {
 		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Cold Rolled Sheets IS 513 (Part 1):2016 ')]"))
 				.click();
 		Thread.sleep(2000);
+	}
+
+	public void ClickWeldingConsumables() throws InterruptedException {
+
+		Actions action = new Actions(driver);
+		WebElement we = driver.findElement(WeldingConsumables);
+		action.moveToElement(we).build().perform();
+
+	}
+
+	public void ClickWeldingFlux() throws InterruptedException {
+
+		WebElement we1 = driver.findElement(By.partialLinkText("Welding Fluxes"));
+		we1.click();
+		Thread.sleep(3000);
+	}
+
+	public void clickWeldingFluxProduct() {
+		driver.findElement(By.xpath("//a[contains(text(),'Ador AUTOMELT B-71 Steel F7A4/P4-EM12K SAW Welding Flux')]"))
+				.click();
+
+	}
+	
+	public void WeldingFluxDetails() throws InterruptedException
+	{
+		//Thread.sleep(5000);
+		//driver.findElement(By.xpath("//button[normalize-space()='30']")).click();
+	    Thread.sleep(5000);
+	    driver.findElement(By.xpath("(//input[@id='inputQty'])[1]")).sendKeys("10");
 	}
 
 }

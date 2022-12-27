@@ -4,6 +4,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class PDPRegisteredUserPage {
 
@@ -344,10 +345,10 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 
 	}
-	
+
 	public void switchQuantity() throws InterruptedException {
-		
-    driver.findElement(By.xpath("(//button[contains(text(),'Switch quantity')])[1]")).click();
+
+		driver.findElement(By.xpath("(//button[contains(text(),'Switch quantity')])[1]")).click();
 	}
 
 	public void WeldingWireDetails() throws InterruptedException {
@@ -372,7 +373,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(3500);
 
 	}
-	
+
 	public void SteelDetails(String quantity) throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[2]")).click();
@@ -416,7 +417,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(4000);
 
 	}
-	
+
 	public void TMTDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
@@ -425,17 +426,16 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).click();
 		Thread.sleep(6000);
-		
 
 	}
-	
+
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("3600");
 		Thread.sleep(6000);
 
 	}
-	
+
 	public void WireDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
@@ -444,11 +444,10 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 
 	}
-	
+
 	public void verifyTMTStraightBent() throws InterruptedException {
 		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).isDisplayed();
 		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[2]")).isDisplayed();
-		
 
 	}
 
@@ -543,7 +542,9 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void clickDigitalorderKnowMore() {
-		driver.findElement(By.xpath("//div[@class='d-desktop-coupon']//h1[@class='cp_code'][normalize-space()='DIGITALORDER']//following::article[1]//span")).click();
+		driver.findElement(By.xpath(
+				"//div[@class='d-desktop-coupon']//h1[@class='cp_code'][normalize-space()='DIGITALORDER']//following::article[1]//span"))
+				.click();
 	}
 
 	public void clickSteel250KnowMore() {
@@ -558,9 +559,14 @@ public class PDPRegisteredUserPage {
 
 	public void sellerName() throws InterruptedException {
 		Thread.sleep(3000);
-		String sellerName = driver.findElement(By.xpath("//div[@class='amt-details box py-3 mt-3']//div//span[@class='ml-1 seller-title']")).getText();
+		String sellerName = driver
+				.findElement(
+						By.xpath("//div[@class='amt-details box py-3 mt-3']//div//span[@class='ml-1 seller-title']"))
+				.getText();
 		System.out.println("SellerName: " + sellerName);
 
 	}
+
+	
 
 }
