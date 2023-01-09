@@ -195,8 +195,9 @@ public class ProductPage {
 	{
 		//Thread.sleep(5000);
 		//driver.findElement(By.xpath("//button[normalize-space()='30']")).click();
-	    Thread.sleep(5000);
+	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("(//input[@id='inputQty'])[1]")).sendKeys("10");
+	    Thread.sleep(1500);
 	}
 
 }
