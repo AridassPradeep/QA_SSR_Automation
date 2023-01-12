@@ -1,0 +1,72 @@
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/notification/sms/send
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "sms-for": "Successfully Registered",
+    "mobileNumber": "8095424663",
+    "data": {
+        "userEmail": "dddda",
+        "phoneNumber": "8095424663"
+    }
+}
+HTTP/1.1 200 OK
+content-type: application/json
+date: Thu, 12 Jan 2023 06:49:39 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+Transfer-Encoding: chunked
+
+{
+    "status": {
+        "code": 200,
+        "desc": "Request accepted"
+    },
+    "time": "2023-01-12 12:19:39",
+    "ackid": "2098527619396447000"
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/notification/sms/send
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "sms-for": "Successfully Registered",
+    "mobileNumber": "8095424663",
+    "data": {
+        "userEmail": "dddda",
+        "phoneNumber": "8095424663"
+    }
+}
+HTTP/1.1 200 OK
+content-type: application/json
+date: Thu, 12 Jan 2023 06:49:39 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+Transfer-Encoding: chunked
+
+{
+    "status": {
+        "code": 200,
+        "desc": "Request accepted"
+    },
+    "time": "2023-01-12 12:19:39",
+    "ackid": "2098527619396449400"
+}
