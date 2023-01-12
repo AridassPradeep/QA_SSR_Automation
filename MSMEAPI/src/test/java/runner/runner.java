@@ -28,7 +28,7 @@ public class runner {
 		jsonFiles.add("target/cucumber-report/cucumber.json");
 
 		String buildNumber = "1";
-		String projectName = "JSW MSME Prod";
+		String projectName = "JSW MSME  API";
 
 		Configuration configuration = new Configuration(reportOutputDirectory, projectName);
 
