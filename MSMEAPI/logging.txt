@@ -1,5 +1,5 @@
 Request method:	POST
-Request URI:	https://qa.msme.jswone.in/notification/sms/send
+Request URI:	https://qa.msme.jswone.in/notification/email/send/order
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -11,62 +11,1252 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "sms-for": "Successfully Registered",
-    "mobileNumber": "8095424663",
-    "data": {
-        "userEmail": "dddda",
-        "phoneNumber": "8095424663"
+    "emailTemplateType": "CART",
+    "to": "v_laxminarayan.jena@jsw.in",
+    "cc": "v_laxminarayan.jena@jsw.in",
+    "subject": "Your cart is ready for payment",
+    "template": "ENQUIRY_CUSTOMER_SINGLE",
+    "orderSummaryData": {
+        "identifier": {
+            "type": "CART",
+            "id": "cae21eba-7fa6-4f27-8a9b-86ace193cc2c",
+            "category": "DISTRIBUTED",
+            "version": 27
+        },
+        "orderNumber": null,
+        "orderDate": "10 Nov 2022",
+        "orderPaymentStatus": null,
+        "customerData": {
+            "customerId": "feb5a3bd-b11e-45aa-b138-ff35d48108b6",
+            "name": "Ankit Kumar",
+            "email": "ankit.kumar3@jsw.in",
+            "phoneNumber": "8340429435",
+            "companyName": "ODISHA CONSUMERS CO OPERATIVE FEDERATION LIMITED",
+            "gstIn": "21AAAAO0683L1ZO",
+            "beneficiaryName": "JSW ONE PLATFORMS LIMITED",
+            "beneficiaryAccountNum": "ba_KPieID06fE81g3",
+            "ifscCode": "RAZR0000001",
+            "customerVAN": "1112220097609923",
+            "virtualAccountId": "va_KPieI0VYUXTaAm",
+            "salesClassification": "nonsuccess",
+            "bankName": "RBL Bank",
+            "testUser": false
+        },
+        "orderStatus": null,
+        "totalOrderAmount": {
+            "centAmount": 312766074,
+            "currency": "INR",
+            "displayAmount": "35,27,660.74",
+            "absoluteDisplayAmount": "35,27,660",
+            "precisionAmount": 352766074000,
+            "precision": 5
+        },
+        "shippingMode": "Delivery",
+        "appliedDiscounts": [
+            
+        ],
+        "appliedDiscountsV2": [
+            
+        ],
+        "shippingAddress": {
+            "id": "LHIi4otj",
+            "streetLine": "HOLDING NO-2934 WARD NO-10",
+            "postalCode": "751001",
+            "city": "BHUBANESWAR",
+            "region": "KHORDHA",
+            "state": "ODISHA",
+            "company": null,
+            "mobile": null
+        },
+        "billingAddress": {
+            "id": "LHIi4otj",
+            "streetLine": "HOLDING NO-2934 WARD NO-10",
+            "postalCode": "751001",
+            "city": "BHUBANESWAR",
+            "region": "KHORDHA",
+            "state": "ODISHA",
+            "company": null,
+            "mobile": null
+        },
+        "distributorAddresses": [
+            {
+                "id": "q-FxNdYn",
+                "streetLine": "1/176, ",
+                "postalCode": "410501",
+                "city": "Pune",
+                "region": "Maharashtra",
+                "state": "Tamil Nadu",
+                "company": "Bhanu Enterprise",
+                "mobile": "6362261134"
+            },
+            {
+                "id": "q-FxNdYn",
+                "streetLine": "1/176, ",
+                "postalCode": "410501",
+                "city": "Pune",
+                "region": "Maharashtra",
+                "state": "Tamil Nadu",
+                "company": "Bhanu Enterprise",
+                "mobile": "6362261134"
+            }
+        ],
+        "totalQuantityDelivered": null,
+        "totalReadyForDispatch": null,
+        "totalQuantity": null,
+        "totalRemainingToBeDelivered": null,
+        "totalPaymentReceived": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "totalAmountOutstanding": {
+            "centAmount": 312766074,
+            "currency": "INR",
+            "displayAmount": "35,27,660.74",
+            "absoluteDisplayAmount": "35,27,660",
+            "precisionAmount": 352766074000,
+            "precision": 5
+        },
+        "paymentSummaryList": [
+            {
+                "identifier": {
+                    "type": "CART",
+                    "id": "cae21eba-7fa6-4f27-8a9b-86ace193cc2c",
+                    "plantName": "Test Steel Agencies",
+                    "category": "DISTRIBUTED",
+                    "key": null
+                },
+                "totalLineItemPrice": {
+                    "centAmount": 294992200,
+                    "currency": "INR",
+                    "displayAmount": "29,49,922.00",
+                    "absoluteDisplayAmount": "29,49,922",
+                    "precisionAmount": 294992200000,
+                    "precision": 5
+                },
+                "totalDiscountedLineItemPrice": {
+                    "centAmount": 294992200,
+                    "currency": "INR",
+                    "displayAmount": "29,49,922.00",
+                    "absoluteDisplayAmount": "29,49,922",
+                    "precisionAmount": 294992200000,
+                    "precision": 5
+                },
+                "totalLineItemTax": {
+                    "centAmount": 53098596,
+                    "currency": "INR",
+                    "displayAmount": "5,30,985.96",
+                    "absoluteDisplayAmount": "5,30,985",
+                    "precisionAmount": 53098596000,
+                    "precision": 5
+                },
+                "totalOrderAmount": {
+                    "centAmount": 352766074,
+                    "currency": "INR",
+                    "displayAmount": "35,27,660.74",
+                    "absoluteDisplayAmount": "35,27,660",
+                    "precisionAmount": 352766074000,
+                    "precision": 5
+                },
+                "totalPrice": {
+                    "centAmount": 352766074,
+                    "currency": "INR",
+                    "displayAmount": "35,27,660.74",
+                    "absoluteDisplayAmount": "35,27,660",
+                    "precisionAmount": 352766074000,
+                    "precision": 5
+                },
+                "totalReceivedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalDueAmount": {
+                    "centAmount": 352766074,
+                    "currency": "INR",
+                    "displayAmount": "35,27,660.74",
+                    "absoluteDisplayAmount": "35,27,660",
+                    "precisionAmount": 352766074000,
+                    "precision": 5
+                },
+                "totalRequestedAmount": {
+                    "centAmount": 352766074,
+                    "currency": "INR",
+                    "displayAmount": "35,27,660.74",
+                    "absoluteDisplayAmount": "35,27,660",
+                    "precisionAmount": 352766074000,
+                    "precision": 5
+                },
+                "netAdvancePayable": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "paymentBeforeDelivery": {
+                    "centAmount": 352766074,
+                    "currency": "INR",
+                    "displayAmount": "35,27,660.74",
+                    "absoluteDisplayAmount": "35,27,660",
+                    "precisionAmount": 352766074000,
+                    "precision": 5
+                },
+                "discounts": {
+                    "sellerDiscount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "platformDiscount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "adjustments": {
+                    "advance": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "credit": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "tolerance": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "charges": {
+                    "delivery": {
+                        "centAmount": 4675278,
+                        "currency": "INR",
+                        "displayAmount": "46,752.78",
+                        "absoluteDisplayAmount": "46,752",
+                        "precisionAmount": 4675278000,
+                        "precision": 5
+                    },
+                    "other": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedDelivery": {
+                        "centAmount": 4675278,
+                        "currency": "INR",
+                        "displayAmount": "46,752.78",
+                        "absoluteDisplayAmount": "46,752",
+                        "precisionAmount": 4675278000,
+                        "precision": 5
+                    }
+                },
+                "paymentAwaited": {
+                    "id": "d06f2a37-e194-47aa-a2c5-a1cfaa385aa1",
+                    "type": "FINAL",
+                    "version": 2,
+                    "amount": {
+                        "centAmount": 352766074,
+                        "currency": "INR",
+                        "displayAmount": "35,27,660.74",
+                        "absoluteDisplayAmount": "35,27,660",
+                        "precisionAmount": 352766074000,
+                        "precision": 5
+                    },
+                    "state": "INITIAL",
+                    "paymentMethod": null,
+                    "paymentInterface": null,
+                    "transactions": [
+                        
+                    ],
+                    "paymentLink": null
+                },
+                "lastSuccessfulPayment": null,
+                "lastConfirmedPayment": null,
+                "payments": [
+                    {
+                        "id": "d06f2a37-e194-47aa-a2c5-a1cfaa385aa1",
+                        "type": "FINAL",
+                        "version": 2,
+                        "amount": {
+                            "centAmount": 352766074,
+                            "currency": "INR",
+                            "displayAmount": "35,27,660.74",
+                            "absoluteDisplayAmount": "35,27,660",
+                            "precisionAmount": 352766074000,
+                            "precision": 5
+                        },
+                        "state": "INITIAL",
+                        "paymentMethod": null,
+                        "paymentInterface": null,
+                        "transactions": [
+                            
+                        ],
+                        "paymentLink": "https://qa-ssr.msme.jswone.in/payment"
+                    }
+                ],
+                "associatedSkus": [
+                    "JSW Pragati+ Pre-Painted Galvalume Coils IS 15965:2012 YS550 - 0.5 - 1250 - 150 - Sky Blue",
+                    "Hot Rolled Sheets IS 2062:2011 E250BR - 2 - 900 - 2500"
+                ]
+            }
+        ],
+        "lineItemList": [
+            {
+                "lineItemIdentifier": {
+                    "ctLineItemId": "51f8ed6b-0018-4f55-9071-451eb95c6e7e",
+                    "sapLineItemId": "10"
+                },
+                "productSlug": "JSW_Pragati-15965_2012-ys_550-01",
+                "productForm": "PPGLCF",
+                "variantId": 14,
+                "variantKey": "JSW_Pragati-PPGLCF-15965_2012-YS_550-0.5-1250-150-Sky_Blue",
+                "sku": "JSW Pragati+ Pre-Painted Galvalume Coils IS 15965:2012 YS550 - 0.5 - 1250 - 150 - Sky Blue",
+                "imageUrl": "//images.ctfassets.net/o0otttl8ele8/1h1SyMftavoq6dDFEv6kRj/804dbfb58acb384c2666bc49bfc3a7a9/colour_coated_prod.jpeg",
+                "name": "JSW Pragati+ Pre-Painted Galvalume Coils IS 15965:2012 YS550",
+                "sellerName": "Test Steel Authority",
+                "sellerKey": "TSA",
+                "attributes": {
+                    "Thickness": "0.5 mm",
+                    "Width": "1250 mm",
+                    "Colour": "Sky_Blue-#87ceeb",
+                    "Coating grade (AZ)": "150 GSM"
+                },
+                "deliveryStatus": [
+                    {
+                        "state": "DIRECT_ORDER_DELIVERED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCH_READY",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_PICKED_UP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DELIVERED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_CONFIRMED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DISPATCH",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "CONFIRMED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "PLACED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCHED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_STOCK_READY",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    }
+                ],
+                "quantity": {
+                    "primaryQuantity": "23 MT",
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 23.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 23000,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": null
+                },
+                "totalQuantityReadyForDispatch": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": null,
+                    "ctUom": null,
+                    "secondaryUom": null
+                },
+                "payableAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "ctAttributes": {
+                    "THICKNESS_MM": "0.5 mm",
+                    "WIDTH_MM": "1250 mm",
+                    "S_COLOUR_CODE_TOP": "Sky_Blue-#87ceeb",
+                    "S_AL_ZN_COATING_GSM_MIN": "150 GSM"
+                },
+                "availableQuantity": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 29.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 29000,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": null
+                },
+                "freightInclusivePrice": false,
+                "brand": "JSW Steel",
+                "channelName": "Test Steel Agencies",
+                "channelKey": "TSA",
+                "channelAddress": {
+                    "id": "c9f608fa-0f62-40a9-b328-6a21a986180a",
+                    "streetLine": "520 Test",
+                    "postalCode": "600040",
+                    "city": "Chennai",
+                    "region": "Chennai",
+                    "state": "Tamil Nadu",
+                    "company": null,
+                    "mobile": null
+                },
+                "productType": "Steel PPGL Coil",
+                "grade": "15965_2012",
+                "subGrade": "YS_550",
+                "lineItemTaxRatio": 0.18,
+                "lineItemAmount": {
+                    "centAmount": 158700000,
+                    "currency": "INR",
+                    "displayAmount": "15,87,000.00",
+                    "absoluteDisplayAmount": "15,87,000",
+                    "precisionAmount": 158700000000,
+                    "precision": 5
+                },
+                "lineItemTaxedAmount": {
+                    "centAmount": 187266000,
+                    "currency": "INR",
+                    "displayAmount": "18,72,660.00",
+                    "absoluteDisplayAmount": "18,72,660",
+                    "precisionAmount": 187266000000,
+                    "precision": 5
+                },
+                "lineItemAmounts": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 158700000,
+                        "currency": "INR",
+                        "displayAmount": "15,87,000.00",
+                        "absoluteDisplayAmount": "15,87,000",
+                        "precisionAmount": 158700000000,
+                        "precision": 5
+                    },
+                    "taxedAmount": {
+                        "centAmount": 187266000,
+                        "currency": "INR",
+                        "displayAmount": "18,72,660.00",
+                        "absoluteDisplayAmount": "18,72,660",
+                        "precisionAmount": 187266000000,
+                        "precision": 5
+                    },
+                    "discountedAmount": {
+                        "centAmount": 158700000,
+                        "currency": "INR",
+                        "displayAmount": "15,87,000.00",
+                        "absoluteDisplayAmount": "15,87,000",
+                        "precisionAmount": 158700000000,
+                        "precision": 5
+                    },
+                    "discountedTaxedAmount": {
+                        "centAmount": 187266000,
+                        "currency": "INR",
+                        "displayAmount": "18,72,660.00",
+                        "absoluteDisplayAmount": "18,72,660",
+                        "precisionAmount": 187266000000,
+                        "precision": 5
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 6900000,
+                        "currency": "INR",
+                        "displayAmount": "69,000.00",
+                        "absoluteDisplayAmount": "69,000",
+                        "precisionAmount": 6900000000,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 6900000,
+                        "currency": "INR",
+                        "displayAmount": "69,000.00",
+                        "absoluteDisplayAmount": "69,000",
+                        "precisionAmount": 6900000000,
+                        "precision": 5
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 6900000,
+                        "currency": "INR",
+                        "displayAmount": "69,000.00",
+                        "absoluteDisplayAmount": "69,000",
+                        "precisionAmount": 6900000000,
+                        "precision": 5
+                    },
+                    "discountedTaxAmount": null,
+                    "lineItemTaxAmount": null
+                },
+                "lineItemAmountsV2": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 158700000,
+                        "currency": "INR",
+                        "displayAmount": "15,87,000.00",
+                        "absoluteDisplayAmount": "15,87,000",
+                        "precisionAmount": 158700000000,
+                        "precision": 5
+                    },
+                    "discountedAmount": {
+                        "centAmount": 158700000,
+                        "currency": "INR",
+                        "displayAmount": "15,87,000.00",
+                        "absoluteDisplayAmount": "15,87,000",
+                        "precisionAmount": 158700000000,
+                        "precision": 5
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 6900000,
+                        "currency": "INR",
+                        "displayAmount": "69,000.00",
+                        "absoluteDisplayAmount": "69,000",
+                        "precisionAmount": 6900000000,
+                        "precision": 5
+                    },
+                    "perUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 1242000,
+                            "currency": "INR",
+                            "displayAmount": "12,420.00",
+                            "absoluteDisplayAmount": "12,420",
+                            "precisionAmount": 1242000000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 1242000,
+                                    "currency": "INR",
+                                    "displayAmount": "12,420.00",
+                                    "absoluteDisplayAmount": "12,420",
+                                    "precisionAmount": 1242000000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 6900000,
+                        "currency": "INR",
+                        "displayAmount": "69,000.00",
+                        "absoluteDisplayAmount": "69,000",
+                        "precisionAmount": 6900000000,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 1242000,
+                            "currency": "INR",
+                            "displayAmount": "12,420.00",
+                            "absoluteDisplayAmount": "12,420",
+                            "precisionAmount": 1242000000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 1242000,
+                                    "currency": "INR",
+                                    "displayAmount": "12,420.00",
+                                    "absoluteDisplayAmount": "12,420",
+                                    "precisionAmount": 1242000000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 6900000,
+                        "currency": "INR",
+                        "displayAmount": "69,000.00",
+                        "absoluteDisplayAmount": "69,000",
+                        "precisionAmount": 6900000000,
+                        "precision": 5
+                    },
+                    "taxOnDiscountAmount": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 28566000,
+                            "currency": "INR",
+                            "displayAmount": "2,85,660.00",
+                            "absoluteDisplayAmount": "2,85,660",
+                            "precisionAmount": 28566000000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 28566000,
+                                    "currency": "INR",
+                                    "displayAmount": "2,85,660.00",
+                                    "absoluteDisplayAmount": "2,85,660",
+                                    "precisionAmount": 28566000000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "taxOnlineItemAmount": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 28566000,
+                            "currency": "INR",
+                            "displayAmount": "2,85,660.00",
+                            "absoluteDisplayAmount": "2,85,660",
+                            "precisionAmount": 28566000000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 28566000,
+                                    "currency": "INR",
+                                    "displayAmount": "2,85,660.00",
+                                    "absoluteDisplayAmount": "2,85,660",
+                                    "precisionAmount": 28566000000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "partingCharge": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "partingChargeTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "bendingCharge": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                }
+            },
+            {
+                "lineItemIdentifier": {
+                    "ctLineItemId": "e34fb644-359e-4756-a948-ba01dd01c77e",
+                    "sapLineItemId": "10"
+                },
+                "productSlug": "2062_2011-e250br-02",
+                "productForm": "HRCTLF",
+                "variantId": 2,
+                "variantKey": "HRCTLF-2062_2011-E250BR-2-900-2500",
+                "sku": "Hot Rolled Sheets IS 2062:2011 E250BR - 2 - 900 - 2500",
+                "imageUrl": "//images.ctfassets.net/o0otttl8ele8/uybdfpXojK0HzeFIhZb3T/0180291f86e3b9ef80c0a7ef10be96f7/shutterstock_391558495.jpg",
+                "name": "JSW Steel Hot Rolled Sheets IS 2062:2011 E250BR",
+                "sellerName": "Test Steel Agencies",
+                "sellerKey": "TSA",
+                "attributes": {
+                    "Thickness": "2 mm",
+                    "Width (mm)": "900 mm",
+                    "Length": "2500 mm"
+                },
+                "deliveryStatus": [
+                    {
+                        "state": "DIRECT_ORDER_DELIVERED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCH_READY",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_PICKED_UP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DELIVERED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_CONFIRMED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DISPATCH",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "CONFIRMED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "PLACED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCHED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_STOCK_READY",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    }
+                ],
+                "quantity": {
+                    "primaryQuantity": "16.621 MT",
+                    "secondaryQuantity": "456 sheets",
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 16.621,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 16621,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": {
+                        "unit": "NUMBER_OF_SHEETS",
+                        "value": 455.9945,
+                        "label": "sheets",
+                        "priceLabel": null
+                    }
+                },
+                "totalQuantityReadyForDispatch": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": null,
+                    "ctUom": null,
+                    "secondaryUom": null
+                },
+                "payableAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "ctAttributes": {
+                    "THICKNESS_MM": "2 mm",
+                    "WIDTH_MM": "900 mm",
+                    "LENGTH_MM": "2500 mm"
+                },
+                "availableQuantity": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 19.5,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 19500,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": {
+                        "unit": "NUMBER_OF_SHEETS",
+                        "value": 535.0,
+                        "label": "sheets",
+                        "priceLabel": null
+                    }
+                },
+                "freightInclusivePrice": false,
+                "brand": "JSW Steel",
+                "channelName": "Test Steel Agencies",
+                "channelKey": "TSA",
+                "channelAddress": {
+                    "id": "c9f608fa-0f62-40a9-b328-6a21a986180a",
+                    "streetLine": "520 Test",
+                    "postalCode": "600040",
+                    "city": "Chennai",
+                    "region": "Chennai",
+                    "state": "Tamil Nadu",
+                    "company": null,
+                    "mobile": null
+                },
+                "productType": "Steel HR Sheets",
+                "grade": "2062:2011",
+                "subGrade": "E250BR",
+                "lineItemTaxRatio": 0.18,
+                "lineItemAmount": {
+                    "centAmount": 136292200,
+                    "currency": "INR",
+                    "displayAmount": "13,62,922.00",
+                    "absoluteDisplayAmount": "13,62,922",
+                    "precisionAmount": 136292200000,
+                    "precision": 5
+                },
+                "lineItemTaxedAmount": {
+                    "centAmount": 160824796,
+                    "currency": "INR",
+                    "displayAmount": "16,08,247.96",
+                    "absoluteDisplayAmount": "16,08,247",
+                    "precisionAmount": 160824796000,
+                    "precision": 5
+                },
+                "lineItemAmounts": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 136292200,
+                        "currency": "INR",
+                        "displayAmount": "13,62,922.00",
+                        "absoluteDisplayAmount": "13,62,922",
+                        "precisionAmount": 136292200000,
+                        "precision": 5
+                    },
+                    "taxedAmount": {
+                        "centAmount": 160824796,
+                        "currency": "INR",
+                        "displayAmount": "16,08,247.96",
+                        "absoluteDisplayAmount": "16,08,247",
+                        "precisionAmount": 160824796000,
+                        "precision": 5
+                    },
+                    "discountedAmount": {
+                        "centAmount": 136292200,
+                        "currency": "INR",
+                        "displayAmount": "13,62,922.00",
+                        "absoluteDisplayAmount": "13,62,922",
+                        "precisionAmount": 136292200000,
+                        "precision": 5
+                    },
+                    "discountedTaxedAmount": {
+                        "centAmount": 160824796,
+                        "currency": "INR",
+                        "displayAmount": "16,08,247.96",
+                        "absoluteDisplayAmount": "16,08,247",
+                        "precisionAmount": 160824796000,
+                        "precision": 5
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 8200000,
+                        "currency": "INR",
+                        "displayAmount": "82,000.00",
+                        "absoluteDisplayAmount": "82,000",
+                        "precisionAmount": 8200000000,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 8200000,
+                        "currency": "INR",
+                        "displayAmount": "82,000.00",
+                        "absoluteDisplayAmount": "82,000",
+                        "precisionAmount": 8200000000,
+                        "precision": 5
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 8200000,
+                        "currency": "INR",
+                        "displayAmount": "82,000.00",
+                        "absoluteDisplayAmount": "82,000",
+                        "precisionAmount": 8200000000,
+                        "precision": 5
+                    },
+                    "discountedTaxAmount": null,
+                    "lineItemTaxAmount": null
+                },
+                "lineItemAmountsV2": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 136292200,
+                        "currency": "INR",
+                        "displayAmount": "13,62,922.00",
+                        "absoluteDisplayAmount": "13,62,922",
+                        "precisionAmount": 136292200000,
+                        "precision": 5
+                    },
+                    "discountedAmount": {
+                        "centAmount": 136292200,
+                        "currency": "INR",
+                        "displayAmount": "13,62,922.00",
+                        "absoluteDisplayAmount": "13,62,922",
+                        "precisionAmount": 136292200000,
+                        "precision": 5
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 8200000,
+                        "currency": "INR",
+                        "displayAmount": "82,000.00",
+                        "absoluteDisplayAmount": "82,000",
+                        "precisionAmount": 8200000000,
+                        "precision": 5
+                    },
+                    "perUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 1476000,
+                            "currency": "INR",
+                            "displayAmount": "14,760.00",
+                            "absoluteDisplayAmount": "14,760",
+                            "precisionAmount": 1476000000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 1476000,
+                                    "currency": "INR",
+                                    "displayAmount": "14,760.00",
+                                    "absoluteDisplayAmount": "14,760",
+                                    "precisionAmount": 1476000000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 8200000,
+                        "currency": "INR",
+                        "displayAmount": "82,000.00",
+                        "absoluteDisplayAmount": "82,000",
+                        "precisionAmount": 8200000000,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 1476000,
+                            "currency": "INR",
+                            "displayAmount": "14,760.00",
+                            "absoluteDisplayAmount": "14,760",
+                            "precisionAmount": 1476000000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 1476000,
+                                    "currency": "INR",
+                                    "displayAmount": "14,760.00",
+                                    "absoluteDisplayAmount": "14,760",
+                                    "precisionAmount": 1476000000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 8200000,
+                        "currency": "INR",
+                        "displayAmount": "82,000.00",
+                        "absoluteDisplayAmount": "82,000",
+                        "precisionAmount": 8200000000,
+                        "precision": 5
+                    },
+                    "taxOnDiscountAmount": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 24532596,
+                            "currency": "INR",
+                            "displayAmount": "2,45,325.96",
+                            "absoluteDisplayAmount": "2,45,325",
+                            "precisionAmount": 24532596000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 24532596,
+                                    "currency": "INR",
+                                    "displayAmount": "2,45,325.96",
+                                    "absoluteDisplayAmount": "2,45,325",
+                                    "precisionAmount": 24532596000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "taxOnlineItemAmount": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 24532596,
+                            "currency": "INR",
+                            "displayAmount": "2,45,325.96",
+                            "absoluteDisplayAmount": "2,45,325",
+                            "precisionAmount": 24532596000,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 24532596,
+                                    "currency": "INR",
+                                    "displayAmount": "2,45,325.96",
+                                    "absoluteDisplayAmount": "2,45,325",
+                                    "precisionAmount": 24532596000,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "partingCharge": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "partingChargeTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "bendingCharge": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                }
+            }
+        ],
+        "summaryLink": "https://qa-ssr.msme.jswone.in/cart-detail",
+        "shipments": [
+            
+        ],
+        "sapInfo": {
+            "contractNumber": null,
+            "contractCreationDate": null,
+            "sapMetadata": null,
+            "orderCreationDate": null,
+            "validStartDate": null,
+            "validEndDate": null
+        },
+        "summaryComments": {
+            "errors": null,
+            "warnings": null,
+            "messages": [
+                
+            ]
+        },
+        "customOrderStatus": {
+            "key": null,
+            "label": null,
+            "lastModifiedBy": null,
+            "lastModifiedDate": 0
+        },
+        "customPaymentStatus": {
+            "key": null,
+            "label": null,
+            "ctKey": null,
+            "lastModifiedBy": null,
+            "lastModifiedDate": 0
+        }
+    },
+    "otherData": null,
+    "data": null,
+    "freightChargeData": null,
+    "otherObjectData": {
+        "salesforceOpportunityId": "0069D00000Q4sq0QAB",
+        "pdfToBeSent": true
     }
 }
 HTTP/1.1 200 OK
-content-type: application/json
-date: Thu, 12 Jan 2023 12:47:38 GMT
+x-cloud-trace-context: 01cdbc2ffa42366324c5d7f5387bda89;o=1
+date: Thu, 12 Jan 2023 15:35:27 GMT
+content-type: text/html
 server: Google Frontend
+Content-Length: 0
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-Transfer-Encoding: chunked
-
-{
-    "status": {
-        "code": 200,
-        "desc": "Request accepted"
-    },
-    "time": "2023-01-12 18:17:38",
-    "ackid": "2088528217387430900"
-}
-Request method:	POST
-Request URI:	https://qa.msme.jswone.in/notification/sms/send
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "sms-for": "Successfully Registered",
-    "mobileNumber": "9090909090",
-    "data": {
-        "userEmail": "dddda",
-        "phoneNumber": "9090909090"
-    }
-}
-HTTP/1.1 200 OK
-content-type: application/json
-date: Thu, 12 Jan 2023 12:47:39 GMT
-server: Google Frontend
-via: 1.1 google
-Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-Transfer-Encoding: chunked
-
-{
-    "status": {
-        "code": 200,
-        "desc": "Request accepted"
-    },
-    "time": "2023-01-12 18:17:39",
-    "ackid": "2088528217397436800"
-}

@@ -16,7 +16,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/java/features/" }, glue = { "stepDefinations", "hooks" }, monochrome = true,
-tags = "@msme", 
+tags = "@msme1", 
 		dryRun = false, stepNotifications = true, plugin = { "pretty", "json:target/cucumber-report/cucumber.json",
 				"html:target/cucumber-report/cucumber.html", "rerun:target/failedrerun.txt" })
 

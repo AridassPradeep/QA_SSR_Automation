@@ -27,9 +27,19 @@ public class Notfication extends Utils {
 	TestDataBuild data = new TestDataBuild();
 
 	@When("user calls {string} with {string} http request with {string}")
-	public void user_calls_with_http_request_with(String resource, String method, String phoneno) throws IOException {
+	public void user_calls_with_http_request_forSMSverification(String resource, String method, String phone) throws IOException {
 
-		res = given().spec(requestSpecification()).body(data.notoficationRegistrationSmsPayload(phoneno));
+		res = given().spec(requestSpecification()).body(data.notoficationRegistrationSmsPayload(phone));
+		APIResources resourceAPI = APIResources.valueOf(resource);
+		response = res.when().post(resourceAPI.getResource());
+		System.out.println(response.asPrettyString());
+
+	}
+	
+	@When("user calls {string} with {string} http request with {string} for emailverification")
+	public void user_calls_with_http_request_forEmailverification(String resource, String method, String email) throws IOException {
+
+		res = given().spec(requestSpecification()).body(data.notificationEmailPayload(email));
 		APIResources resourceAPI = APIResources.valueOf(resource);
 		response = res.when().post(resourceAPI.getResource());
 		System.out.println(response.asPrettyString());

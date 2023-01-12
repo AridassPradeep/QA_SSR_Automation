@@ -1,7 +1,7 @@
 Feature: Validating Notification
 
-  @msme
-  Scenario Outline: Verify notfication sms
+  
+  Scenario Outline: SMS Verification
   
     When user calls "notificationRegistrationsmsAPI" with "Post" http request with "<PhoneNo>"
     Then the API call is success with status code 200
@@ -12,3 +12,20 @@ Feature: Validating Notification
       | PhoneNo    |
       | 8095424663 |
       | 9090909090 |
+
+
+  @msme1
+  Scenario Outline: Email Verification
+  
+    When user calls "notificationEmailAPI" with "Post" http request with "<Email>" for emailverification
+    Then the API call is success with status code 200
+    #And validate the response time is less than 500 ms
+
+    Examples: 
+      | Email    |
+      | v_laxminarayan.jena@jsw.in |
+
+
+
+  
+ 
