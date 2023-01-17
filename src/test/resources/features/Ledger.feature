@@ -15,4 +15,5 @@ Feature: Ledger Information validation
     Then validate Ledger request sent message is displayed
     And validate previous statement is displayed
     And validate user is able to download ledger statement
+    And validate companyname and GSTNo
     

@@ -34,7 +34,12 @@ public class LedgerPageSteps {
 
     @And("^validate user is able to download ledger statement$")
     public void validate_user_is_able_to_download_ledger_statement() throws Throwable {
-      
+    	ledgerPage.validateDownload();
+    }
+    
+    @And("^validate companyname and GSTNo")
+    public void validate_companyname_andGSTNo() throws Throwable {
+      ledgerPage.validateCompanyNameAndGSTNo();
     }
 
 

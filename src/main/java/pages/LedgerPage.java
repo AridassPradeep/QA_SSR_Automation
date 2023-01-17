@@ -14,6 +14,7 @@ public class LedgerPage {
 	private By FromRequestStatement = By.xpath("//input[@id='request-ledger-statement-from-mobile']");
 	private By ToRequestStatement = By.xpath("//input[@id='request-ledger-statement-to-mobile']");
 	private By Request = By.xpath("//button[@id='request-ledger-statement-submit-btn']");
+	private By Download = By.xpath("(//button[@class='text-btn'])[1]");
 
 	public LedgerPage(WebDriver driver) {
 		this.driver = driver;
@@ -51,7 +52,14 @@ public class LedgerPage {
 	}
 
 	public void validateDownload() {
-		driver.findElement(By.xpath("(//button[@class='text-btn'])[1]")).isEnabled();
+		driver.findElement(Download).isEnabled();
 	}
+	
+	public void validateCompanyNameAndGSTNo() {
+		driver.findElement(By.xpath("//*[text()='M FLORIST")).isDisplayed();
+		driver.findElement(By.partialLinkText("27AMRPM7455L1Z5")).isDisplayed();
+	}
+	
+
 
 }
