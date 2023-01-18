@@ -9,6 +9,7 @@ Feature: Ledger Information validation
     And user clicks on signin
     Then user homepage is displayed
 
+
   Scenario: Verify ledger information in ledger page
     When user navigates to ledger page
     Then user request date for specific period
@@ -16,4 +17,11 @@ Feature: Ledger Information validation
     And validate previous statement is displayed
     And validate user is able to download ledger statement
     And validate companyname and GSTNo
-    
+
+@Ledger
+  Scenario: Verify ledger page is accesible from myorders page
+    Given user is able to view Myorders CTA
+    When user is able to click the Myorders CTA
+    And user is navigate to MyOrder page
+    And user clicks on view ledger
+    Then verify user navigates to ledger page

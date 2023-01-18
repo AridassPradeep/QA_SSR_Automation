@@ -32,6 +32,11 @@ public class LedgerPage {
 		driver.navigate().to(ledgerUrl);
 		Thread.sleep(5000);
 	}
+	
+	public String validateLedgerPage()
+	{
+		return driver.findElement(By.xpath("(//*[text()='Ledger'])[2]")).getText();
+	}
 
 	public void requestStatement() {
 		driver.findElement(FromRequestStatement).sendKeys("12112021");
@@ -55,10 +60,20 @@ public class LedgerPage {
 		driver.findElement(Download).isEnabled();
 	}
 	
-	public void validateCompanyNameAndGSTNo() {
-		driver.findElement(By.xpath("//*[text()='M FLORIST")).isDisplayed();
-		driver.findElement(By.partialLinkText("27AMRPM7455L1Z5")).isDisplayed();
+	public String validateCompanyNameAndGSTNo() {
+		driver.findElement(By.xpath("//*[text()='ICICI BANK LIMITED']")).isDisplayed();
+		String GstNo=driver.findElement(By.xpath("//*[text()='ICICI BANK LIMITED']//following::div[1]")).getText();
+		return GstNo;
+		
 	}
+	
+	
+	public void clickonLedger() {
+		
+		driver.findElement(By.xpath("//button[normalize-space()='View Ledger']")).click();
+	}
+	
+	
 	
 
 

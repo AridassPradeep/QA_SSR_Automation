@@ -351,7 +351,7 @@ public class MyOrderPages {
 		}
 		
 		public String verifyMyOrderPage() {
-			return driver.findElement(By.xpath("//h1[@class='page-title']")).getText();
+			return driver.findElement(By.xpath("(//*[text()='My orders'])[1]")).getText();
 		}
 		
 		public void clearedAppliedFilter() {
