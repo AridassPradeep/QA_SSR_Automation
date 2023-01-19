@@ -1,18 +1,17 @@
-Feature: Validating Notification
+Feature: Validating CustomerAPI
 
-  @msme
-  Scenario Outline: Verify notfication sms
-  
-    When user calls "notificationRegistrationsmsAPI" with "Post" http request with "<PhoneNo>"
+  @customer @Login
+  Scenario Outline: Verify valid login
+    When user calls "loginAPI" with "Post" http request
     Then the API call is success with status code 200
-    And validate the payload structure
+    And validate the payload structure has "access_token"
     And validate the response time is less than 500 ms
 
-    Examples: 
-      | PhoneNo    |
-      | 8095424663 |
-      | 9090909090 |
-
-
-  
- 
+@registration
+  Scenario: Validate registration Verification
+    When user calls "registerAPI" with "Post" http request
+    Then the API call is success with status code 200
+    And validate the payload structure
+    And validate the login response time is less than 500 ms
+    
+    

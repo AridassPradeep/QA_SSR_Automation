@@ -13,8 +13,6 @@ public class TestDataBuild {
 	            + "}";
 	}
 	
-	
-	
 	public String notificationEmailPayload(String email) {
 	    return "{\r\n"
 	    		+ " \"emailTemplateType\": \"CART\",\r\n"
@@ -1248,5 +1246,27 @@ public class TestDataBuild {
 	    		+ "}";
 	}
 
+	
+	public String LoginPayload() {
+	    return "{\r\n"
+	    		+ "    \"email\": \"pradeep.mani99@gmail.com\",\r\n"
+	    		+ "    \"password\": \"QWRtaW5AMTIz\",\r\n"
+	    		+ "    \"storeKey\": \"msme\"\r\n"
+	    		+ "}";
+	}
+	
+	
+	public String registerationPayload() {
+	    return "{\r\n"
+	    		+ "    \"fullName\": \"GLOBAL NET COMPUTER\",\r\n"
+	    		+ "    \"email\": \"kaummexuwi56656nne-2423@yopmail.com\",\r\n"
+	    		+ "    \"password\": \"UGFzc0AxMjM=\",\r\n"
+	    		+ "    \"phoneNumber\": 9967867676,\r\n"
+	    		+ "    \"isPhoneVerified\": true,\r\n"
+	    		+ "    \"gstin\": \"33AOOPM6831M1ZF\",\r\n"
+	    		+ "    \"storeKey\": \"msme\"\r\n"
+	    		+ "}";
+	}
+	
 }
 
