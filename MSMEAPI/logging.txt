@@ -1,22 +1,17 @@
 Request method:	POST
-Request URI:	https://qa.msme.jswone.in/customer/login/
+Request URI:	https://qa.msme.jswone.in/customer/register
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjIvMTIvMjAgMTE6MDE6MDgiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMzE1NDUwM2UtNTI3NC00NzMxLWI0M2UtMDAyZmNlYTg4ZTMyIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjc0MTI2MDY4LCJ1c2VySWQiOiJjZWFlZTBhZi1hNjdiLTRjNTAtYmM1Yy05MGU4MDc5ZWFlNWMiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wMS8xOSAxMTowMTowOCIsImlhdCI6MTY3MTUxNDI2OH0.sadOe66tacwniHuXzYCqiqSfWL0JuFFu1NCcRSZqko5PnA0WorZ2UVDbmwNFj3kqZw8knrEGQF-t9v2K9kuNoQ
-				Accept=*/*
+Headers:		Accept=*/*
 				Content-Type=application/json
 Cookies:		<none>
 Multiparts:		<none>
 Body:
-{
-    "email": "pradeep.mani99@gmail.com",
-    "password": "QWRtaW5AMTIz",
-    "storeKey": "msme"
-}
-HTTP/1.1 200 OK
+src\test\resources\payloads\registration.json
+HTTP/1.1 412 Precondition Failed
 vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
 x-content-type-options: nosniff
 x-xss-protection: 1; mode=block
@@ -24,18 +19,12 @@ cache-control: no-cache, no-store, max-age=0, must-revalidate
 pragma: no-cache
 expires: 0
 x-frame-options: DENY
-content-type: application/json
-date: Thu, 19 Jan 2023 04:00:53 GMT
+content-type: application/octet-stream
+x-cloud-trace-context: ba83387cf16dda2490d2df99eafca797
+date: Thu, 19 Jan 2023 07:17:07 GMT
 server: Google Frontend
+Content-Length: 158
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-Transfer-Encoding: chunked
 
-{
-    "expired": false,
-    "access_token": "EMvoOrFQlRHvUxRr7z-Figc-YQdIbMWe",
-    "token_type": "Bearer",
-    "expires_in": 172800,
-    "scope": "view_categories:one_ecom_dev view_shipping_methods:one_ecom_dev view_tax_categories:one_ecom_dev create_anonymous_token:one_ecom_dev manage_my_payments:one_ecom_dev customer_id:ceaee0af-a67b-4c50-bc5c-90e8079eae5c manage_my_orders:one_ecom_dev manage_my_profile:one_ecom_dev view_published_products:one_ecom_dev manage_my_shopping_lists:one_ecom_dev",
-    "refresh_token": "one_ecom_dev:kXtatr2E9et3TDjXeMwQnstxwVdqVBxSpO6yKfn18OY"
-}
+{"statusCode":412,"message":"E-mail ID already in use, please sign in with your user id","error":"PRECONDITION_FAILED","error_description":null,"errors":null}

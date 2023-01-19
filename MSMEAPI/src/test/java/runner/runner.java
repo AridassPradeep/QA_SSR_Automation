@@ -12,7 +12,7 @@ plugin = {
         "json:target/cucumber-report/cucumber.json",
         "html:target/cucumber-report/cucumber.html"},
 monochrome = true,
-tags = "@Login",
+tags = "@registration",
 glue= {"stepDefinations"})
 public class runner {
 	
