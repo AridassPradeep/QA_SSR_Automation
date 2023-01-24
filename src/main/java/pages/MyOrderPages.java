@@ -567,5 +567,16 @@ public class MyOrderPages {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ESCAPE).build().perform();
 	}
+	
+	public void validateOrdersAwaitingPaymentHeader()
+	{
+		driver.findElement(By.xpath("//*[normalize-space()='Orders awaiting payment']")).isDisplayed();
+	}
+	
+	public void validateAllOrdersHeader()
+	{
+		driver.findElement(By.xpath("//*[normalize-space()='All orders']")).isDisplayed();
+	}
+	
 
 }

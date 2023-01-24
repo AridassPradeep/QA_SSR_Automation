@@ -363,4 +363,15 @@ public class MyOrderPageSteps {
 			order.enterOrdernoSearchBox(Orderno);
 
 		}
+		
+
+	    @Then("^user is able to view Orders awaiting payment header$")
+	    public void user_is_able_to_view_orders_awaiting_payment_header() throws Throwable {
+	    	order.validateOrdersAwaitingPaymentHeader();
+	    }
+
+	    @And("^user is able to view All orders header$")
+	    public void user_is_able_to_view_all_orders_header() throws Throwable {
+	        order.validateAllOrdersHeader();
+	    }
 	}
