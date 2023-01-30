@@ -45,21 +45,19 @@ public class Customer extends Utils {
 		response = res.when().post(resourceAPI.getResource());
 		System.out.println(response.asPrettyString());
 	}
-	
+
 	@Then("the API call response is success with status code {int}")
 	public void the_api_call_response_is_success_with_status_code(Integer int1) {
 		assertEquals(response.getStatusCode(), 200);
 	}
-	
+
 	@Then("validate the login response time is less than {string} ms")
 	public void validate_the_login_response_time_is_less_than_ms(String expectedTime) {
-	    
+
 		int time = Long.valueOf(response.getTime()).intValue();
 		System.out.println("time" + time);
 		assert time < Integer.decode(expectedTime);
 	}
-
-
 
 	@And("^validate the payload structure has \"([^\"]*)\"$")
 	public void validate_the_payload_structure_has_something(String validationKeyword) throws Throwable {
@@ -69,6 +67,4 @@ public class Customer extends Utils {
 		assertEquals(reponseMsg, validationKeyword);
 	}
 
-
-	
 }
