@@ -7,6 +7,7 @@ public enum APIResources {
     notificationEmailAPI("/notification/email/send/order"),
     loginAPI("/customer/login/"),
     registerAPI("/customer/register"),
+    cartSizeAPI("/cart/cart-size"),
 	addToCartAPI("/cart/addtocart");
 	private String resource;
 	

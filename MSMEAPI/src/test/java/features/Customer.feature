@@ -14,5 +14,7 @@ Feature: Validating CustomerAPI
     Then the API call response is success with status code 200
    # And validate the payload structure has "customerId"
     And validate the login response time is less than "15000" ms
+    And user calls "registerAPI" with "Post" http request for registration
+    
 
     

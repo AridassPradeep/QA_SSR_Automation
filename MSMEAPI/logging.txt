@@ -21,7 +21,7 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Mon, 30 Jan 2023 11:12:06 GMT
+date: Tue, 31 Jan 2023 04:20:33 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
@@ -31,12 +31,12 @@ Transfer-Encoding: chunked
     "orderCartSummary": {
         "identifier": {
             "type": "CART",
-            "id": "fcf0f960-65b9-4699-883f-ef4d93826eaa",
+            "id": "9af5e291-53dd-429a-82f4-505a2c9e28d6",
             "category": "DISTRIBUTED",
             "version": 26
         },
         "orderNumber": null,
-        "orderDate": "30 Jan 2023",
+        "orderDate": "31 Jan 2023",
         "orderPaymentStatus": null,
         "customerData": {
             "customerId": "ceaee0af-a67b-4c50-bc5c-90e8079eae5c",
@@ -128,7 +128,7 @@ Transfer-Encoding: chunked
             {
                 "identifier": {
                     "type": "CART",
-                    "id": "fcf0f960-65b9-4699-883f-ef4d93826eaa",
+                    "id": "9af5e291-53dd-429a-82f4-505a2c9e28d6",
                     "plantName": "Test Steel Agencies - Channel",
                     "category": "DISTRIBUTED",
                     "key": null
@@ -284,7 +284,7 @@ Transfer-Encoding: chunked
                     }
                 },
                 "paymentAwaited": {
-                    "id": "cf96d6cc-a8aa-46a3-822f-71604ecb1f4c",
+                    "id": "155483bd-bf39-4a57-bc16-fc2ed11d9492",
                     "type": "FINAL",
                     "version": 2,
                     "amount": {
@@ -307,7 +307,7 @@ Transfer-Encoding: chunked
                 "lastConfirmedPayment": null,
                 "payments": [
                     {
-                        "id": "cf96d6cc-a8aa-46a3-822f-71604ecb1f4c",
+                        "id": "155483bd-bf39-4a57-bc16-fc2ed11d9492",
                         "type": "FINAL",
                         "version": 2,
                         "amount": {
@@ -335,7 +335,7 @@ Transfer-Encoding: chunked
         "lineItemList": [
             {
                 "lineItemIdentifier": {
-                    "ctLineItemId": "e1ba53b7-2b38-4648-8176-72aa96ccab57",
+                    "ctLineItemId": "cdcd4ec5-ac54-4b63-b467-8b10251cd65c",
                     "sapLineItemId": "10"
                 },
                 "productSlug": "jsw-neosteel-fe650-tmt-rebar",
@@ -357,32 +357,12 @@ Transfer-Encoding: chunked
                         "quantity": null
                     },
                     {
-                        "state": "DIRECT_ORDER_CONFIRMED",
-                        "stage": "COMPLETE",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
-                        "stage": "COMPLETE",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_PICKED_UP",
-                        "stage": "COMPLETE",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DISPATCH",
+                        "state": "CONFIRMED",
                         "stage": "COMPLETE",
                         "quantity": null
                     },
                     {
                         "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
-                        "stage": "COMPLETE",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
                         "stage": "COMPLETE",
                         "quantity": null
                     },
@@ -397,12 +377,17 @@ Transfer-Encoding: chunked
                         "quantity": null
                     },
                     {
+                        "state": "DIRECT_ORDER_CONFIRMED",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
                         "state": "DIRECT_ORDER_DISPATCH_READY",
                         "stage": "COMPLETE",
                         "quantity": null
                     },
                     {
-                        "state": "DELIVERED",
+                        "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
                         "stage": "COMPLETE",
                         "quantity": null
                     },
@@ -412,7 +397,22 @@ Transfer-Encoding: chunked
                         "quantity": null
                     },
                     {
-                        "state": "CONFIRMED",
+                        "state": "DIRECT_ORDER_PICKED_UP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DISPATCH",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
+                        "stage": "COMPLETE",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DELIVERED",
                         "stage": "COMPLETE",
                         "quantity": null
                     }
@@ -808,4 +808,44 @@ Transfer-Encoding: chunked
         "salesForceOpportunityId": null
     },
     "enquiryCartSummary": null
+}
+Request method:	GET
+Request URI:	https://qa.msme.jswone.in/cart/cart-size
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDEvMzAgMTU6NDI6MjQiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiOWQwZGQ1YTEtMzE3OC00ZjFiLTg0ODItMTg3YTZmYWQ3MTc3IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjc3Njg1MzQ0LCJ1c2VySWQiOiJjZWFlZTBhZi1hNjdiLTRjNTAtYmM1Yy05MGU4MDc5ZWFlNWMiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wMy8wMSAxNTo0MjoyNCIsImlhdCI6MTY3NTA3MzU0NH0.fKN8wAy0x3L3v54iizoj8tpIQuAi7I7A3xf6J-3VlH4vwkUabGmkftU_hnrM1udb-1mvGeq0SnDeebotrsa8FQ
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Tue, 31 Jan 2023 04:20:34 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+Transfer-Encoding: chunked
+
+{
+    "enquiryCart": {
+        "id": null,
+        "version": null,
+        "lineItemCount": 0
+    },
+    "orderCart": {
+        "id": "9af5e291-53dd-429a-82f4-505a2c9e28d6",
+        "version": "26",
+        "lineItemCount": 1
+    }
 }
