@@ -32,22 +32,21 @@ public class Cart extends Utils {
 					.contentType(ContentType.JSON).body(Utils.getJsonData(payloadBody));
 			APIResources resourceAPI = APIResources.valueOf(resource);
 			response = res.when().post(resourceAPI.getResource());
-			
+
 		} else if (method.equalsIgnoreCase("Get")) {
 
 			res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"));
 			APIResources resourceAPI = APIResources.valueOf(resource);
 			response = res.when().get(resourceAPI.getResource());
-			
-			
-			
+
 		}
 		System.out.println(response.asPrettyString());
 	}
 
-	@Then("^validate the \"([^\"]*)\"  call response is success with status code 200$")
-	public void validate_the_something_call_response_is_success_with_status_code_200(String strArg1) throws Throwable {
-		assertEquals(response.getStatusCode(), 200);
+	@Then("^validate that the \"([^\"]*)\"  call response is success with status code \"([^\"]*)\"$")
+	public void validate_that_the_something_call_response_is_success_with_status_code_something(String strArg1,
+			String responseCode) throws Throwable {
+		assertEquals(response.getStatusCode(), Integer.parseInt(responseCode));
 	}
 
 	@And("^validate the \"([^\"]*)\" response time is less than \"([^\"]*)\" ms$")

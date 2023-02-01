@@ -8,7 +8,9 @@ public enum APIResources {
     loginAPI("/customer/login/"),
     registerAPI("/customer/register"),
     cartSizeAPI("/cart/cart-size"),
-	addToCartAPI("/cart/addtocart");
+	addToCartAPI("/cart/addtocart"),
+	clearCartAPI("/cart/delete-cart?cartType=cart");
+	
 	private String resource;
 	
 	APIResources(String resource)
