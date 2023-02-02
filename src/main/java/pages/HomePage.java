@@ -19,7 +19,7 @@ public class HomePage {
 	private By JSWLogo = By.xpath("//img[@alt='JSW One MSME']");
 	private By search = By.id("SearchText");
 	private By languageIndicator = By.xpath("//div[@data-value='ENG']");
-	private By cartIcon = By.xpath("//img[@alt='cart']");
+	private By cartIcon = By.xpath("//a[@href='/cart-detail']");
 	private By noofCartItems = By.xpath("//div[@class='count']");
 	private By address = By.xpath("//*[@id=\'address-dropdown\']");
 	private By connectWithUs = By.xpath("//span[text()='Connect with us']");

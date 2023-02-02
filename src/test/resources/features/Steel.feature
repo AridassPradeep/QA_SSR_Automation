@@ -2,14 +2,14 @@
 #https://dashboard.razorpay.com/app/smartcollect/virtualaccounts?count=25&id=va_IYQmzJQHLDMvoB
 #username: jsw.one@jsw.in
 #password: Jsw@1234
-@sanityExe @demo @steel 
+@sanityExe @demo @steel
 Feature: Steel feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-     When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
+    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -52,7 +52,6 @@ Feature: Steel feature
     And click on reset
     Then all products to be displayed
 
-
   Scenario: Verify Buy Now button and net banking with an order placed unsuccessfully
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -69,7 +68,7 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-  @steelnetbanking 
+  @steelnetbanking
   Scenario: Verify Buy Now button and net banking with an order placed successfully
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -88,27 +87,26 @@ Feature: Steel feature
 
   #@neft
   #Scenario: Verify user is able to add steel and stainless steel from same seller and do a NEFT payment
-    #When cart is empty or not
-    #Then user navigate to Home page
-    #When user clicks HR Sheet series from Steel Categories Menu
-    #When user selects HR Stainless Steel product
-    #Given user is on product detail page of Stainless Steel item
-    #When user clicks on Add To Cart button available in the right side of the webpage
-    #Then verify that the product should be added in the cart
-    #Then verify Cart icon would appear with 1
-    #When user clicks HR from Steel Navigation Menu
-    #When user selects Steel product
-    #Given user is on product detail page of Steel item
-    #When user clicks on Add To Cart button available in the right side of the webpage
-    #Then verify that the product should be added in the cart
-    #When user click on Cart icon on homepage
-    #When user click on pickup checkbox
-    #And user click on proceed to pay on cart detail page
-    #Then verify netbanking is disabled
-    #And user click on proceed and confirm later
-    #Then verify payment pending message is displayed
-    #Then user is able to see Make payment CTA on order summary page
-
+  #When cart is empty or not
+  #Then user navigate to Home page
+  #When user clicks HR Sheet series from Steel Categories Menu
+  #When user selects HR Stainless Steel product
+  #Given user is on product detail page of Stainless Steel item
+  #When user clicks on Add To Cart button available in the right side of the webpage
+  #Then verify that the product should be added in the cart
+  #Then verify Cart icon would appear with 1
+  #When user clicks HR from Steel Navigation Menu
+  #When user selects Steel product
+  #Given user is on product detail page of Steel item
+  #When user clicks on Add To Cart button available in the right side of the webpage
+  #Then verify that the product should be added in the cart
+  #When user click on Cart icon on homepage
+  #When user click on pickup checkbox
+  #And user click on proceed to pay on cart detail page
+  #Then verify netbanking is disabled
+  #And user click on proceed and confirm later
+  #Then verify payment pending message is displayed
+  #Then user is able to see Make payment CTA on order summary page
   @samesellerNetBanking
   Scenario: Verify user is able to add steel and stainless steel from same seller and do a net banking with confirmation payment
     When cart is empty or not
@@ -135,7 +133,7 @@ Feature: Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-  @PaymentMultiSeller 
+  @PaymentMultiSeller
   Scenario: Verify user is able to add products from multi seller and proceed to payment page
     When cart is empty or not
     Then user navigate to Home page
