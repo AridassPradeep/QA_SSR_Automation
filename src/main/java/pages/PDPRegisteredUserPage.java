@@ -431,7 +431,7 @@ public class PDPRegisteredUserPage {
 
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("3600");
+		driver.findElement(By.xpath("(//input[@id='inputQty'])[2]")).sendKeys("3600");
 		Thread.sleep(6000);
 
 	}

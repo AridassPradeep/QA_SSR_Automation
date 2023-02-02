@@ -43,7 +43,7 @@ public class PaymentSteps {
     	pmtpage.clickSelfPickup();
     }
     
-    @Then("^pickup from to be displayed$")
+    @Then("^Pickup address will be available msg to be displayed$")
     public void pickup_from_to_be_displayed() throws Throwable {
     	pmtpage.verifyPickupFrom();
         

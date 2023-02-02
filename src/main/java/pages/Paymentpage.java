@@ -68,7 +68,7 @@ public class Paymentpage {
 	
 	public void verifyPickupFrom() {
 
-		driver.findElement(By.xpath("//div[@class='delivery-add-wrap mb-3']//label[@for='Pickuprom'][normalize-space()='Pickup from']")).isDisplayed();
+		driver.findElement(By.xpath("//p[@class='typography-sub-heading typography-md-h6 typography-font-medium typography-text-black s-ml-8']")).isDisplayed();
 
 	}
 

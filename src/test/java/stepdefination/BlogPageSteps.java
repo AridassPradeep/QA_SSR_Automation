@@ -26,7 +26,7 @@ public class BlogPageSteps {
 	@Then("user is able to navigate to blog page through homepage")
 	public void user_is_able_to_navigate_to_blog_page_through_homepage() {
 		String title = blogPage.validateBlogPageisDisplayed();
-		Assert.assertEquals(title, "JSW-Blogs");
+		Assert.assertEquals(title, "Steel, Welding Consumables, TMT , Cement Blogs | JSW One MSME Blog");
 
 	}
 
