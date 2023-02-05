@@ -1,9 +1,73 @@
-# README #
 
-This README is for MSME Automation 
+# MSME Automation
 
-### Framework ? ###
+This project is for automating UI, API for SSR and Prod
 
-* Cucumber With PageObject model
+
+## Tech Stack
+
+**Framework:** Cucumber With PageObject Model Design 
+
+**Language:** Java
+
+
+## Screenshots
+
+![Report](![image](https://user-images.githubusercontent.com/92700205/216804624-ca0514d1-50f3-4d72-9cef-fe6bfa0cf590.png)
+)
+
+
+## Framework Capabilities
+
+- Cross browser testing support. </br>
+- Added browserstack support for CrossBrowser testing. </br>
+- Running tests in docker containers selenium grid. </br>
+- Rest Api and GraphQL testing support powered by RestAssured. </br>
+- Visual regression testing using percy.io. </br>
+- Accessibility testing using axe-selenium. </br>
+- Stubbed api testing using WireMock. </br>
+- Database testing support. </br>
+
+
+## Authors
+
+- [@LaxminarayanJena](https://github.com/laxminarayanJena)
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at 
+Repo owner or admin (v_laxminarayan.jena@jsw.in)
+Other community or team contact
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/JSWOne/jsw_msme_Automation
+```
+
+Go to the project directory
+
+```bash
+  cd jsw_msme_Automation
+```
+
+Install dependencies
+
+```bash
+  mvn install 
+```
+
+Start the project
+
+```bash
+  mvn clean test
+```
+
+
+
 
 
