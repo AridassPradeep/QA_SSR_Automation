@@ -10,13 +10,6 @@ This project is for automating UI, API for SSR and Prod
 
 **Language:** Java
 
-
-## Screenshots
-
-![Report](![image](https://user-images.githubusercontent.com/92700205/216804624-ca0514d1-50f3-4d72-9cef-fe6bfa0cf590.png)
-)
-
-
 ## Framework Capabilities
 
 - Cross browser testing support. </br>
@@ -28,6 +21,8 @@ This project is for automating UI, API for SSR and Prod
 - Stubbed api testing using WireMock. </br>
 - Database testing support. </br>
 
+## Screenshots
+![Report](https://user-images.githubusercontent.com/92700205/216805111-90ffd88e-364d-4679-8dd9-c5014ad6cbc7.png)
 
 ## Authors
 
