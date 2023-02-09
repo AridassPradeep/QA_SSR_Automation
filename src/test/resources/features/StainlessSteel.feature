@@ -5,7 +5,7 @@ Feature: Stainless Steel feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
+    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
     And user clicks on signin
     Then user homepage is displayed
 

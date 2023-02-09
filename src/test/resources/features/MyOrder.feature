@@ -1,4 +1,4 @@
-
+ @MyOrder
 Feature: MyOrder page feature
 
   Background: User opens website
@@ -9,7 +9,7 @@ Feature: MyOrder page feature
     And user clicks on signin
     Then user homepage is displayed
 
- @MyOrder
+
   Scenario: Verify the message displayed in Order History page
     Given user is able to view Myorders CTA
     When user is able to click the Myorders CTA

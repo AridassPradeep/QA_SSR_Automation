@@ -1,4 +1,4 @@
- @demo  @MyProfile
+ @demo    @MyProfile
 Feature: Profile page feature
 
    Background: User opens website
@@ -31,7 +31,7 @@ Feature: Profile page feature
     When user click the Save button
     Then Profile details should be saved
 
-  
+
   Scenario: Verify the user able to add shipping and billing address
     When user click on the profile menu
     Then Dropdown should be lsited

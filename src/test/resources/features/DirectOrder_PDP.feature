@@ -1,4 +1,4 @@
-@DirectOrderPDP
+
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website
@@ -17,7 +17,7 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Buy directly from JSWsteel
     Then Buy from verified sellers is displayed
    
-   @sanityExe
+   @sanityExe @DirectOrderPDP
   Scenario: Verify Request for Price is submitted successfully
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu

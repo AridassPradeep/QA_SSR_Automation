@@ -1,23 +1,20 @@
-@DiscountCoupon
 Feature: NewCoupons-Product Detail Page with discount
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Admin@123"
+    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
     And user clicks on signin
     Then user homepage is displayed
-
 
   Scenario Outline: Check for coupon code can be  entered manually
     # Check for coupon code can be  entered manually and can be removed also in coupons overlay
     When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
-    # Then HR Products are displayed
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-     And user wait for sometime
+    Then user navigate to Home page
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
     When user click on Buy Now
     And user click on apply coupon
     Then List of coupons to be displayed
@@ -30,8 +27,8 @@ Feature: NewCoupons-Product Detail Page with discount
     And user click on proceed to pay on cart detail page
 
     Examples: 
-      | coupon   |
-      | STEEL250 |
+      | coupon  |
+      | CEMENT5 |
 
   @Couponsection
   Scenario: Check Discount section displayed on PDP page
@@ -64,10 +61,10 @@ Feature: NewCoupons-Product Detail Page with discount
   #Then list of other coupons also displayed
   Scenario Outline: Check for old price is strikethrough and new price amount is displayed in both Price section and cart line
     When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
-    # Then HR Products are displayed
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    Then user navigate to Home page
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
     When user click on Buy Now
     And user click on apply coupon
     Then List of coupons to be displayed
@@ -78,16 +75,16 @@ Feature: NewCoupons-Product Detail Page with discount
     And old price is strikethrough and new price amount is displayed in both Price section and cart line
 
     Examples: 
-      | coupon   |
-      | STEEL250 |
+      | coupon  |
+      | CEMENT5 |
 
-@sanityExe @coupon
+  @sanityExe @coupon
   Scenario Outline: Verify In my order page, the applied coupons are able to view after the order placed
     When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
-    # Then HR Products are displayed
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    Then user navigate to Home page
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
     When user click on Buy Now
     And user click on apply coupon
     Then List of coupons to be displayed
@@ -105,11 +102,11 @@ Feature: NewCoupons-Product Detail Page with discount
     And user clicks on view coupons in order page then applied coupon to be displayed
 
     Examples: 
-      | coupon   |
-      | STEEL250 |
+      | coupon  |
+      | CEMENT5 |
 
   Scenario Outline: Verify add product in cart line and price will be update and coupons remain active
-   When cart is empty or not
+    When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
     When user selects HR Stainless Steel product
@@ -137,8 +134,8 @@ Feature: NewCoupons-Product Detail Page with discount
     And Count of applied coupons remains the same
 
     Examples: 
-      | coupon   |
-      | STEEL250 |
+      | coupon  |
+      | CEMENT5 |
 
   #  @RetainOfferwithupdatecoupons
   #  Scenario: Verify remove product in cart line and price will be update
@@ -150,15 +147,13 @@ Feature: NewCoupons-Product Detail Page with discount
   #    When user is removed products from cart line
   #    Then User shall see modified pricing of the cart
   #    And Applied coupons remain in active if applicable to the modified cart context
-  
-  
+  @DiscountCoupon
   Scenario Outline: Verify remove product in cart line and price will be update and coupons remain active
-   When cart is empty or not
+    When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    And user refresh the page
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
@@ -178,5 +173,5 @@ Feature: NewCoupons-Product Detail Page with discount
     And Applied coupons remain in active if applicable to the modified cart context
 
     Examples: 
-      | coupon   |
-      | STEEL250 |
+      | coupon  |
+      | CEMENT5 |

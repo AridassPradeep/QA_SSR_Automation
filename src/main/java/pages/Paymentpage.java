@@ -34,7 +34,7 @@ public class Paymentpage {
 	private By productselect = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By payNow = By.xpath("//span[contains(text(),'Proceed to pay')]");
 	private By Success = By.xpath("//button[@class='success']");
-	private By successmessage = By.xpath("//div[contains(text(),'Your order payment is successful')]");
+	private By successmessage = By.xpath("//div[@class='order-details-field-value payment-status-success']");
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
 	private By user = By.xpath("//div[@class='drop-down-whole']");
 	private By UTR = By.xpath("//div[@class='utr-field']/input");
