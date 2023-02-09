@@ -48,10 +48,9 @@ Feature: Order Summary page feature
     Then verify netbanking is disabled
 
   Scenario Outline: Verifying coupons
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-    And user wait for sometime
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
     When user click on Buy Now
     And user click on apply coupon
     Then List of coupons to be displayed
@@ -63,8 +62,8 @@ Feature: Order Summary page feature
     When user click on view details and can see coupon got applied
 
     Examples: 
-      | coupon   |
-      | STEEL250 |
+      | coupon  |
+      | CEMENT5 |
 
   Scenario: Verifying item details
     When user click Cement Menu on header section
@@ -132,5 +131,3 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then Verifying delivery days
     Then user can see order number in url instead of order id
-
- 
