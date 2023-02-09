@@ -1,3 +1,4 @@
+@DiscountCoupon
 Feature: NewCoupons-Product Detail Page with discount
 
   Background: User opens website
@@ -30,7 +31,7 @@ Feature: NewCoupons-Product Detail Page with discount
       | coupon  |
       | CEMENT5 |
 
-  @Couponsection
+  @Couponsection 
   Scenario: Check Discount section displayed on PDP page
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -41,7 +42,7 @@ Feature: NewCoupons-Product Detail Page with discount
     Then user is able to view details of the list of coupon code
     Then user is able to verify the coupons code displayed as Caps
 
-  @Knowmore
+  @Knowmore 
   Scenario: Check Discount coupons view on PDP page and able to know more about coupon description by clicking know more
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -108,9 +109,9 @@ Feature: NewCoupons-Product Detail Page with discount
   Scenario Outline: Verify add product in cart line and price will be update and coupons remain active
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
@@ -147,7 +148,8 @@ Feature: NewCoupons-Product Detail Page with discount
   #    When user is removed products from cart line
   #    Then User shall see modified pricing of the cart
   #    And Applied coupons remain in active if applicable to the modified cart context
-  @DiscountCoupon
+  
+
   Scenario Outline: Verify remove product in cart line and price will be update and coupons remain active
     When cart is empty or not
     Then user navigate to Home page

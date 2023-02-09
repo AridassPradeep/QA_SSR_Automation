@@ -553,7 +553,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void couponDetails() {
-		String know = driver.findElement(By.xpath("//*[@class='coupon-description']")).getText();
+		String know = driver.findElement(By.xpath("//div[contains(@class,'coupon-description')]")).getText();
 		System.out.println("KnowMore: " + know);
 	}
 
