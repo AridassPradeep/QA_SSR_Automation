@@ -324,7 +324,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public String MOQErrorMessage() {
-		String actualErrorMessage = driver.findElement(By.xpath("//div[@class='error-message']")).getText();
+		String actualErrorMessage = driver.findElement(By.xpath("//div[5]/div[2]/div/div[2]/div[2]/div[1]")).getText();
 		return actualErrorMessage;
 	}
 

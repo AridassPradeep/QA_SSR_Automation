@@ -154,8 +154,8 @@ public class ProductPage {
 	}
 
 	public void validateCTL() throws InterruptedException {
-		String ctl = driver.findElement(By.xpath("(//*[@id=\"customLen\"])[3]")).getAttribute("placeholder");
-		System.out.println("CTL watermark: " + ctl);
+		String ctl = driver.findElement(By.xpath("//div[contains(text(),'Enter a value between 2500 to 6300')]")).getText();
+		System.out.println("CTL msg: " + ctl);
 		Thread.sleep(2000);
 	}
 

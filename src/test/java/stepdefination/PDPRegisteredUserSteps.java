@@ -220,7 +220,7 @@ public class PDPRegisteredUserSteps {
 			System.out.println("Expected MOQ Message " + moqMsg);
 			System.out.println("Actual MOQ Message" + actualErrorMessage);
 			Assert.assertTrue(actualErrorMessage.contains(moqMsg));
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 
 		}
 
@@ -326,13 +326,13 @@ public class PDPRegisteredUserSteps {
 
 	}
 
-	@When("user click the customer length of the selected product")
+	@When("user click the custom length of the selected product")
 	public void user_click_the_customer_length_of_the_selected_product() throws InterruptedException {
 		p.clickCustomerLength();
 
 	}
 
-	@Then("validate the customer length example value in the input field")
+	@Then("validate the custom length msg in the input field")
 	public void validate_the_customer_length_example_value_in_the_input_field() throws InterruptedException {
 		p.validateCTL();
 	}
