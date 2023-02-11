@@ -393,7 +393,7 @@ public class PLPSteps {
 		pdpreguser.selectWeldingElectrodeProductreguser();
 	}
 	
-	@When("user selects WeldingWire product")
+	@When("user selects WeldingFlux product")
 	public void user_selects_WeldingWire_product() throws InterruptedException {
 		pdpreguser.selectWeldingWireProductreguser();
 	}

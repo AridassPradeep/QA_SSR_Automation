@@ -128,7 +128,7 @@ public class HomePage {
 		WebElement we = driver.findElement(WeldingConsumables);
 		action.moveToElement(we).build().perform();
 
-		WebElement we1 = driver.findElement(By.partialLinkText("Welding Wires"));
+		WebElement we1 = driver.findElement(By.partialLinkText("Welding Fluxes"));
 		action.moveToElement(we1).build().perform();
 
 		we1.click();

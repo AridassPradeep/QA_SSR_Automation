@@ -13,6 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import factory.DriverFactory;
+import util.ElementUtil;
+
 public class Paymentpage {
 
 	private WebDriver driver;
@@ -45,7 +48,6 @@ public class Paymentpage {
 	private By neftsuccessmessage = By.xpath("//div[text()='Thanks for confirming payment']");
 	private By proceedtopaypmtpage = By.xpath("//span[text()='Proceed to pay']");
 	private By myCart = By.xpath("//a[contains(text(),'My cart')]");
-
 	private By confirmlater = By.xpath("//*[@id=\'no-confirm-btn\']");
 	private By pendingmessage = By.xpath("//*[contains(text(),'Your order is awaiting payment')]");
 	private By makepayment = By.xpath("//*[@id=\'confirm-btn-payment-indicator\']");
@@ -57,6 +59,8 @@ public class Paymentpage {
 	public void clickBuyNow() {
 
 		driver.findElement(buynow).click();
+		ElementUtil elementUtil = new ElementUtil(DriverFactory.getDriver());
+		elementUtil.MigrationUtil(proceedtopay);
 
 	}
 	
@@ -73,7 +77,7 @@ public class Paymentpage {
 	}
 
 	public void validatecartdetailpage() {
-
+		
 		driver.findElement(proceedtopay).isDisplayed();
 	}
 

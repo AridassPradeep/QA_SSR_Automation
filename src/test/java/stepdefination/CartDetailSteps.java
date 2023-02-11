@@ -190,14 +190,14 @@ public class CartDetailSteps {
 		cartdpage.verifysubTotal();
 	}
 
-	@When("^user clicks Welding wire from Welding Consummables Navigation Menu$")
+	@When("^user clicks Welding flux from Welding Consummables Navigation Menu$")
 	public void user_clicks_welding_wire_from_welding_consummables_navigation_menu() throws Throwable {
 		homePage.selectWeldingWire();
 	}
 
-	@And("^user is on product detail page of Welding wire item$")
+	@And("^user is on product detail page of Welding Flux item$")
 	public void user_is_on_product_detail_page_of_welding_wire_item() throws Throwable {
-		pdpreguser.WeldingWireDetails();
+		pdpreguser.WeldingFluxDetails();
 	}
 
 }

@@ -1,11 +1,11 @@
-@demo  @cart
+@demo @cart
 Feature: Cart Detail Page feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-     When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
+    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -33,7 +33,6 @@ Feature: Cart Detail Page feature
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     Then Verify "Technical Specification" is displayed below Proceed to pay button
-
 
   Scenario: Verify order placed successfully after pickup checkbox
     When cart is empty or not
@@ -67,8 +66,7 @@ Feature: Cart Detail Page feature
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
 
-@cart
- Scenario: Verify selfpickup
+  Scenario: Verify selfpickup
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
     #Then HR Products are displayed
@@ -85,25 +83,24 @@ Feature: Cart Detail Page feature
     And User click on success button
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
- 
+
   @weldingelectrodes
   Scenario: Verify delivery charges calculated for welding electrodes
     When cart is empty or not
     When user clicks Welding electordes from Welding Consummables Navigation Menu
     When user selects WeldingElectrode product
-    And  user is on product detail page of Welding electordes item
+    And user is on product detail page of Welding electordes item
     #And user clicks on switch quantity
     And user click on Buy Now
     Then verify freight charges are displayed
     And verify subtotal is equal to sum of price,tax and freight charges
 
-  @weldingwire 
-  Scenario: Verify delivery charges calculated for welding wires
+  @weldingFlux
+  Scenario: Verify delivery charges calculated for welding Flux
     When cart is empty or not
-    When user clicks Welding wire from Welding Consummables Navigation Menu
-    When user selects WeldingWire product
-    And user is on product detail page of Welding wire item
+    When user clicks Welding flux from Welding Consummables Navigation Menu
+    When user selects WeldingFlux product
+    And user is on product detail page of Welding Flux item
     And user click on Buy Now
     Then verify freight charges are displayed
     And verify subtotal is equal to sum of price,tax and freight charges
-    
