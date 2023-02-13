@@ -7,7 +7,6 @@ import org.junit.Assert;
 import factory.DriverFactory;
 import pages.LoginPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

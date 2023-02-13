@@ -47,7 +47,7 @@ private WebDriver driver;
 	private WebElement PLP;
 	@FindBy(xpath = "(//span[text()='Configure & request price'])[1]")
 	private WebElement configure;
-	@FindBy(xpath = "//span[text()='Request price']")
+	@FindBy(xpath = "//span[text()='Request for price']")
 	private WebElement requestPrice;
 	@FindBy(xpath = "//div[@class='blog-container-out']")
 	private WebElement blogsArticles;

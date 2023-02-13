@@ -28,8 +28,8 @@ public class DirectOrderPage {
 	private By buyfromverified = By.xpath("//span[contains(text(),'Buy from verified sellers')]");
 	private By directlyfromJSW = By.xpath("//span[contains(text(),'Buy directly from')]");
 	private By myrequirements = By.xpath("(//a[@class='links'])[2]");
-	private By requestprice = By.xpath("(//button[@id='direct-order-request-price'])[1]");
-	private By viewrequirementlist = By.xpath("//span[text()='View requirements list']");
+	private By requestprice = By.xpath("//span[text()='Request for price']");
+	private By viewrequirementlist = By.xpath("//*[contains(text(),'Requirement list')]");
 	private By requestforprice = By.xpath("//span[contains(text(),'Request for price')]");
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -70,7 +70,7 @@ public class DirectOrderPage {
 		driver.findElement(buyfromverified).isDisplayed();
 
 	}
-	
+
 	public void clickonJswSteel() {
 		driver.findElement(By.xpath("//span[contains(text(),'Buy directly from')]")).click();
 
@@ -107,10 +107,11 @@ public class DirectOrderPage {
 	}
 
 	public void goToGoogleCloud() {
-		//driver.get(
-		//		"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa/new/cart;tab=objects?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=modular-bucksaw-305821&prefix=&forceOnObjectsSortingFiltering=false&pli=1");
-	
-		driver.get("https://console.cloud.google.com/storage/browser/data-importer-bucket-qa-1/new/cart?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false");
+		// driver.get(
+		// "https://console.cloud.google.com/storage/browser/data-importer-bucket-qa/new/cart;tab=objects?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=modular-bucksaw-305821&prefix=&forceOnObjectsSortingFiltering=false&pli=1");
+
+		driver.get(
+				"https://console.cloud.google.com/storage/browser/data-importer-bucket-qa-1/new/cart?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false");
 	}
 
 	public void gotoGoogleCloudforTransaction() {
@@ -137,7 +138,7 @@ public class DirectOrderPage {
 	public void uploadFile() throws AWTException, InterruptedException {
 		Thread.sleep(38000);
 		driver.findElement(uploadFiles).click();
-		setClipboardData(System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\cartimport.xlsx");
+		setClipboardData(System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\cartimport.xlsx");
 
 		Robot robot = new Robot();
 		robot.delay(2000);
@@ -214,6 +215,36 @@ public class DirectOrderPage {
 
 	}
 
+	public void DirectOrderHRCoilDetails() throws InterruptedException
+
+	{
+		List<WebElement> Thicknessbtns = driver
+				.findElements(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button"));
+		Thicknessbtns.get(1).click();
+		Thread.sleep(2000);
+		List<WebElement> Widthbtns = driver
+				.findElements(By.xpath("//div[contains(text(),'Width')]//following::div[2]//div//button"));
+		Widthbtns.get(1).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("100");
+	}
+
+	public void clickAddToRequirementCart() throws InterruptedException
+
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//span[contains(text(),'Add to requirement cart')])[1]")).click();
+		
+	}
+
+	public void clickViewRequirementCart() throws InterruptedException
+
+	{
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("(//*[text()='View requirement cart'])[1]")).click();
+		Thread.sleep(3000);
+	}
+
 	public void validateRequestPrice() {
 
 		driver.findElement(requestprice).isDisplayed();
@@ -268,25 +299,21 @@ public class DirectOrderPage {
 	}
 
 	public boolean validateEmptyRequirement() throws Exception {
-		
-		if(isElementAvailable("//*[text()='Requirement list (1 Item)']"))
-		{
+
+		if (isElementAvailable("//*[text()='Requirement list (1 Item)']")) {
 			System.out.print("requirement list has not been emptied");
 			return false;
-		}
-		else
-		{
+		} else {
 			System.out.print("requirement list has  been emptied");
 			return true;
 		}
-		
+
 	}
 
 	public void clickRemoveButton() throws Exception {
-		
-		List<WebElement>lt=driver.findElements(By.xpath("//div[@class='product-name-price']//div[2]//div"));
-		for(int i=0;i<lt.size();i++)
-		{
+
+		List<WebElement> lt = driver.findElements(By.xpath("//div[@class='product-name-price']//div[2]//div"));
+		for (int i = 0; i < lt.size(); i++) {
 			driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[text()='Proceed']")).click();
@@ -295,15 +322,17 @@ public class DirectOrderPage {
 
 		while (!isElementPresentemptycart()) {
 
-/*		driver.findElement(By.xpath("(//a[@role='button'])")).click();
-			driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
-			Thread.sleep(2000);
-//			driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).click();
-			driver.findElement(By.xpath("//span[text()='Remove item']")).click();
-			Thread.sleep(2000);
-			
-			*/
-			
+			/*
+			 * driver.findElement(By.xpath("(//a[@role='button'])")).click();
+			 * driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
+			 * Thread.sleep(2000); //
+			 * driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).
+			 * click();
+			 * driver.findElement(By.xpath("//span[text()='Remove item']")).click();
+			 * Thread.sleep(2000);
+			 * 
+			 */
+
 		}
 
 	}
@@ -331,7 +360,6 @@ public class DirectOrderPage {
 
 	public String validateDeliveryDate() {
 		return driver.findElement(deliverydate).getText();
-		
 
 	}
 
@@ -453,7 +481,7 @@ public class DirectOrderPage {
 
 	public void sendPaymentIdTransExcel(String PaymentId) throws IOException, AWTException {
 		try {
-			String strPath = System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\TransactionDTO.xlsx";
+			String strPath = System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\TransactionDTO.xlsx";
 			// Robot robot = new Robot();
 			fis = new FileInputStream(strPath);
 			XSSFWorkbook book = new XSSFWorkbook(fis);
@@ -488,7 +516,8 @@ public class DirectOrderPage {
 	public void sendPaymentidOrderidPaymentExcel(String orderId, String PaymentId) throws IOException {
 
 		try {
-			String strPath2 = System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\Payment ImportDO1.xlsx";
+			String strPath2 = System.getProperty("user.dir")
+					+ "\\src\\test\\resources\\testData\\Payment ImportDO1.xlsx";
 			// Robot robot = new Robot();
 			fis = new FileInputStream(strPath2);
 			XSSFWorkbook book = new XSSFWorkbook(fis);
@@ -525,7 +554,7 @@ public class DirectOrderPage {
 	public void uploadTransactionfile() throws AWTException, InterruptedException {
 		driver.findElement(uploadFiles).click();
 		Thread.sleep(3000);
-		setClipboardData(System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\TransactionDTO.xlsx");
+		setClipboardData(System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\TransactionDTO.xlsx");
 
 		Robot robot = new Robot();
 		robot.delay(1000);
@@ -542,7 +571,7 @@ public class DirectOrderPage {
 	public void uploadPaymentfile() throws AWTException, InterruptedException {
 		driver.findElement(uploadFiles).click();
 		Thread.sleep(3000);
-		setClipboardData(System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\Payment ImportDO1.xlsx");
+		setClipboardData(System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\Payment ImportDO1.xlsx");
 
 		Robot robot = new Robot();
 		robot.delay(1000);
@@ -555,7 +584,7 @@ public class DirectOrderPage {
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		robot.delay(4000);
 	}
-	
+
 	public boolean isElementAvailable(String xpath) throws Exception {
 		try {
 			driver.findElement(By.xpath(xpath));

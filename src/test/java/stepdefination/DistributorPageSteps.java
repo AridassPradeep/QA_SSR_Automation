@@ -6,7 +6,6 @@ import factory.DriverFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.DistributorPage;
-import pages.LoginPage;
 
 public class DistributorPageSteps {
 

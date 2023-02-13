@@ -48,10 +48,13 @@ Feature: Direct home page feature
 	When user is able to click view all button in All categories section
 	And user is able to navigate to PLP page
 	Then user is able to navigate to direct home page from PLP page
-	And user is able to navigate PDP page by clicking Configure and request 
+	And user is able to navigate PDP page by clicking Configure and request
+	And user fills directorder product details 
+	And user is able to click Add to requirement cart
+	And user is able to click View requirement cart
 	And user is able to view request price button 
 	And user is able to veify and validate Configure and request price on the All categories section
-
+	
 @Blogs	
 	Scenario: Verify user is able navigate blog & article page
 	When user is able to navigate blog by clicking Read now 

@@ -11,7 +11,6 @@ import pages.HomePage;
 import pages.MyOrderPages;
 import pages.PDPDiscountPage;
 import pages.PDPRegisteredUserPage;
-import pages.PDPpage;
 import pages.Paymentpage;
 
 public class CartDetailSteps {

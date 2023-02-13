@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.testng.Assert;
 
 import factory.DriverFactory;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.DirectOrderPage;
@@ -111,6 +112,22 @@ public class DirectOrderSteps {
 		doppage.clickQuantity();
 
 	}
+	
+	
+	@Then("user fills directorder product details")
+	public void user_fills_directorder_product_details() throws InterruptedException {
+		doppage.DirectOrderHRCoilDetails();
+	}
+	
+	@And("^user is able to click Add to requirement cart$")
+	public void user_is_able_to_click_add_to_requirement_cart() throws Throwable {
+		doppage.clickAddToRequirementCart() ;
+	}
+	
+	@And("^user is able to click View requirement cart$")
+	public void user_is_able_to_click_view_requirement_cart() throws Throwable {
+		doppage.clickViewRequirementCart() ;
+	}
 
 	@When("user enter quantity and dimensions for the product")
 	public void user_enter_quantity_and_dimensions_for_the_product() throws InterruptedException {
@@ -121,7 +138,7 @@ public class DirectOrderSteps {
 
 	@When("user click Request Price")
 	public void user_click_request_price() throws InterruptedException {
-		Thread.sleep(10000);
+		Thread.sleep(2000);
 		doppage.clickRequestPrice();
 	}
 
