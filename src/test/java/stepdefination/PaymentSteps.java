@@ -10,10 +10,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.PDPRegisteredUserPage;
-import pages.PDPpage;
 import pages.Paymentpage;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.DataTableType;
 
 public class PaymentSteps {
 	Paymentpage pmtpage = new Paymentpage(DriverFactory.getDriver());

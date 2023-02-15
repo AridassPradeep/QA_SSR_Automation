@@ -5,7 +5,7 @@ Feature: Direct Order for PDP feature for registered user
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "demoqa1@yopmail.com" and  "Admin@123"
+    When user enters logins with username with "qasnnjsw@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -29,9 +29,8 @@ Feature: Direct Order for PDP feature for registered user
     When user click Request Price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
-
   Scenario: Delivery 30-45 days is displayed
-   When Buy from verified sellers is displayed
+    When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item for DirectOrder
@@ -46,19 +45,17 @@ Feature: Direct Order for PDP feature for registered user
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item for DirectOrder
-    Then verify Request Price is displayed on rightside
-    When user click Request Price
+    And user is able to click Add to requirement cart
+    And user is able to click View requirement cart
     Then verify View requirements list is displayed
+    When user click Request Price
     And user is able to select Wire rods from Steel Menu
     Then user select wire rod product in PLP page
     Then user select the dimensions of selected wire rod product for directorder user
-    Then verify Request Price is displayed on rightside
-    When user click Request Price
+    And user is able to click Add to requirement cart
+    And user is able to click View requirement cart
     Then verify View requirements list is displayed
-    When user click View requirements list
-    Then verify Request for price is displayed
-    Then verify Requirement list is displayed
-    When user click on Request for price
+    When user click Request Price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
   Scenario: Verify product is added to cart
@@ -80,36 +77,31 @@ Feature: Direct Order for PDP feature for registered user
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item for DirectOrder
-    Then verify Request Price is displayed on rightside
-    When user click Request Price
+    And user is able to click Add to requirement cart
+    And user is able to click View requirement cart
     Then verify View requirements list is displayed
-    When user click View requirements list
-    Then verify Request for price is displayed
-    Then verify Requirement list is displayed
+    Then verify delivery date is displayed from 30-45 days
     When user click on remove button on the product
     Then verify no product in requirement list
 
-  @DirectneftPaymentMultiSeller
+  @DirectneftPaymentMultiSeller 
   Scenario Outline: Verify multiple products from different seller added before Request for price
     When Buy from verified sellers is displayed
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item for DirectOrder
-    #Then verify seller name
-    Then verify Request Price is displayed on rightside
-    When user click Request Price
+    And user is able to click Add to requirement cart
+    And user is able to click View requirement cart
     Then verify View requirements list is displayed
+    #Then verify seller name
     And user is able to select Wire rods from Steel Menu
     Then user select wire rod product in PLP page
     Then user select the dimensions of selected wire rod product for directorder user
     #Then verify seller name
-    Then verify Request Price is displayed on rightside
-    When user click Request Price
+    And user is able to click Add to requirement cart
+    And user is able to click View requirement cart
     Then verify View requirements list is displayed
-    When user click View requirements list
-    Then verify Request for price is displayed
-    Then verify Requirement list is displayed
-    When user click on Request for price
+    When user click Request Price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
   @DirectPDP

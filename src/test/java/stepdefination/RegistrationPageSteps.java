@@ -3,7 +3,6 @@ package stepdefination;
 import org.junit.Assert;
 
 import factory.DriverFactory;
-import pages.BlogsPage;
 import pages.HomePage;
 import pages.RegistrationPage;
 import io.cucumber.java.en.Given;

@@ -1,8 +1,6 @@
 package stepdefination;
 
 import org.junit.Assert;
-import org.junit.Ignore;
-import static org.fest.assertions.api.Assertions.*;
 import pages.HomePage;
 import pages.PLPEnquiryPage;
 import pages.ProductLandingPage;
