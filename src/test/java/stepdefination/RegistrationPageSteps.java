@@ -161,6 +161,11 @@ public class RegistrationPageSteps {
 	public void login_screen_is_displayed() throws InterruptedException {
 		Assert.assertTrue(registrationPage.validateloginPage());
 	}
+	
+	@Then("registration screen is displayed")
+	public void registration_screen_is_displayed() throws InterruptedException {
+		Assert.assertTrue(registrationPage.validateRegistationPopup());
+	}
 
 	@Then("proceed to home is displayed")
 	public void proceed_to_home_is_displayed() {

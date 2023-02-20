@@ -19,7 +19,7 @@ public class LoginPage {
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//button[@id='login-to-continue']");
 	private By loginuserMenu = By.xpath("//*[@id='drop-down-head']");
-	private By forgotPassword = By.xpath("//div[@class='forgot-pwd-link']");
+	private By forgotPassword = By.xpath("//*[contains(text(),'Forgot')]");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
 	private By errorMessage = By.xpath("//div[@class='error_message error-messages row']");

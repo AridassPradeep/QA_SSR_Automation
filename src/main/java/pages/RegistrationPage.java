@@ -128,8 +128,14 @@ public class RegistrationPage {
 
 	public boolean validateloginPage() throws InterruptedException {
 		Thread.sleep(4000);
-		return driver.findElement(mobileno).isEnabled();
+		return driver.findElement(By.xpath("//*[text()='Login']")).isEnabled();
 	}
+	
+	public boolean validateRegistationPopup() throws InterruptedException {
+		Thread.sleep(4000);
+		return driver.findElement(By.xpath("(//*[text()='Register Now'])[1]")).isEnabled();
+	}
+
 
 	public void getGstCompanyDetails() {
 		System.out.print(driver.findElement(gstCompanyName).getText());

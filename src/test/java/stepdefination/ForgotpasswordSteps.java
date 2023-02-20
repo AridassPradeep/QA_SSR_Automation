@@ -36,7 +36,7 @@ public class ForgotpasswordSteps {
 	public void verify_the_confirmation_message() throws InterruptedException {
 		Thread.sleep(4000);
 		String expectedConfirmationmessage = forgotpassword.verifyText();
-		Assert.assertEquals("Password reset link has been sent to your email address.", expectedConfirmationmessage);
+		Assert.assertEquals("Password reset link has been sent to your registered email address", expectedConfirmationmessage);
 	}
 
 	@Then("click ok")
@@ -58,7 +58,7 @@ public class ForgotpasswordSteps {
 	@Then("verify wrong email error")
 	public void verify_wrong_email_error() throws InterruptedException {
 		String expectedError = forgotpassword.verifyEmail();
-		Assert.assertEquals("Enter the valid email address", expectedError);
+		Assert.assertEquals("You have entered a wrong email address", expectedError);
 		forgotpassword.verifyEmail();
 	}
 

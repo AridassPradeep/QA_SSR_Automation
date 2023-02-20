@@ -11,15 +11,15 @@ public class Forgotpasswordpage {
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
 	private By forgotPassword = By.xpath("//div[1]/div[2]/div[2]/div[3]");
 	private By proceed = By.xpath("//*[text()='Proceed']");
-	private By email = By.xpath("//input[@style]");
-	private By submit = By.xpath("//button[@class='sendotp-button-login btn btn-primary']");
+	private By email = By.xpath("//input[@id='email']");
+	private By submit = By.xpath("//button[@id='login-via-otp']");
 	private By Okay = By.xpath("//button[@class='proceedhome-button-login btn btn-primary']");
 	private By confirmation = By.xpath(
-			"//div[@class='reset-password-login' and contains(text(),'Password reset link has been sent to your email address.')]");
+			"//*[contains(text(),'Password reset link has been sent to your registered email address')]");
 	private By errorMessage = By.xpath(
 			"//div[@class='reset-password-login' and contains(text(),'Kindly register yourself to proceed further for JSW One journey')]");
 	private By validEmail = By
-			.xpath("//div[@class='error-messages' and contains(text(),'Enter the valid email address')]");
+			.xpath("//div[contains(text(),'You have entered a wrong email address')]");
 	private By passwordSubmit = By.xpath("//button[@class='submit-button-login no-empty']");
 	private By passwordConfirmtionText = By
 			.xpath("//div[@class='bottom-source']/h6/b[contains(text(),'You have successfully reset your password')]");
@@ -33,7 +33,7 @@ public class Forgotpasswordpage {
 	private By clickResetNow = By.partialLinkText("Reset now");
 	private By clicknewPassword = By.xpath("//input[@id='password']");
 	private By clickconfirmPassword = By.id("confirmPassword");
-	private By clickSubmit = By.xpath("//button[@class='submit-button-login no-empty']");
+	private By clickSubmit = By.xpath("//button[normalize-space()='Submit']");
 
 	public Forgotpasswordpage(WebDriver driver) {
 		Forgotpasswordpage.driver = driver;
@@ -78,6 +78,7 @@ public class Forgotpasswordpage {
 
 	public void forgotpassword(String Email) {
 		driver.findElement(email).sendKeys(Email);
+		driver.findElement(By.xpath("//*[contains(text(),'Password')]")).click();
 	}
 
 	public void newPassword(String NewPassword) throws InterruptedException {
