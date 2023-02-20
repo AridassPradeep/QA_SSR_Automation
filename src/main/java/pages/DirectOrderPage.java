@@ -232,7 +232,6 @@ public class DirectOrderPage {
 	public void clickAddToRequirementCart() throws InterruptedException
 
 	{
-		Thread.sleep(6000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Add to requirement cart')])[1]")).click();
 		
 	}
@@ -240,9 +239,7 @@ public class DirectOrderPage {
 	public void clickViewRequirementCart() throws InterruptedException
 
 	{	
-		Thread.sleep(5000);
 		driver.findElement(By.xpath("(//*[contains(text(),'View requirement cart')])[1]")).click();
-		Thread.sleep(3000);
 		
 	}
 

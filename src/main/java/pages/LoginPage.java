@@ -15,9 +15,9 @@ public class LoginPage {
 	private WebDriver driver;
 
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
-	private By email = By.xpath("//input[@type='email']");
+	private By email = By.xpath("//input[@id='email']");
 	private By password = By.xpath("//input[@type='password']");
-	private By signIn = By.xpath("//button[contains(text(),'Login to continue')]");
+	private By signIn = By.xpath("//button[@id='login-to-continue']");
 	private By loginuserMenu = By.xpath("//*[@id='drop-down-head']");
 	private By forgotPassword = By.xpath("//div[@class='forgot-pwd-link']");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");

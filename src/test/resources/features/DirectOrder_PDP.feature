@@ -5,7 +5,7 @@ Feature: Direct Order for PDP feature for registered user
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "qasnnjsw@yopmail.com" and  "Admin@123"
+    When user enters logins with username with "shalin.shah@royalcyber.com" and  "Test@1234"
     And user clicks on signin
     Then user homepage is displayed
 
