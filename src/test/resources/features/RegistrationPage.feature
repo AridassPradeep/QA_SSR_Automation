@@ -1,12 +1,11 @@
 #1)change 1st scenario data-change mobile no,email and gstin otherwise it will throw error
-@Registration
 Feature: Registration page feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on register button
 
-  @sanityExe 
+  @sanityExe
   Scenario Outline: Validate Registration with success message and proceed to home button is displayed
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -21,10 +20,10 @@ Feature: Registration page feature
     Then proceed to home is displayed
 
     Examples: 
-      | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 9131098132 | 33AACPB7965M1ZI | TE000r@gmail.com | Ramya@678 |
+      | username | mobileno   | GSTIN           | companyemail       | password  |
+      | ramya    | 9101097132 | 33CPPPM1208G1Z2 | TE01001r@gmail.com | Ramya@678 |
 
-
+ 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -38,6 +37,7 @@ Feature: Registration page feature
       | username | mobileno   | GSTIN           | companyemail       | password  |
       | ramya    | 9001000234 | 01ABHFA9731E1ZT | camya901@gmail.com | Ramya@678 |
 
+ @Registration
   Scenario Outline: verify the error message is displaying if user enters Registered GSTIN Number
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -102,7 +102,7 @@ Feature: Registration page feature
   Scenario: Validate user navigates to login page if user clicks on login link
     When user click on login hyper link
     Then login screen is displayed
-@Registration
+
   Scenario Outline: Validate error message for incorrect password
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"

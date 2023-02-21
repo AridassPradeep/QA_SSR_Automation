@@ -1,4 +1,4 @@
-@Login @demo
+ @demo
 Feature: Login page feature
 
   Background: User opens website
@@ -14,13 +14,14 @@ Feature: Login page feature
     And user enter otp
     Then user homepage should be displayed
     
-    @Otp
+    @Otp 
     Scenario: verify invalid OTP Login functionality 
     When user click  on login by otp
     And user enter phone no
     And user click on getOTP
     And user enter wrong otp
     Then user homepage should not be displayed
+
 
   Scenario Outline: verify the user able to login with Email and password
     When user enters logins with username with "<email>" and  "<password>"
@@ -31,9 +32,16 @@ Feature: Login page feature
       | email               | password  |
       | ramya1347@gmail.com | Ramya@678 |
 
-  Scenario: verify the forget password link is properly working
+
+  Scenario Outline: verify the forget password link is properly working
     When user clicks on forgotpassword
-    And user clicks on proceed
+    And user enters email id with Email "<Email>"
+    And user clicks on submit
+    Then verify the confirmation message
+    Examples: 
+      | Email                          |
+      | v_sreenivas.gundlapalli@jsw.in |
+
 
   Scenario Outline: verify the Register link is available and properly working
     When user clicks on register button from login screen
@@ -43,14 +51,16 @@ Feature: Login page feature
       | username |
       | ramya    |
 
+@Login
   Scenario Outline: verify the proper error message is displaying if the user enters non registered Phone Number
-    When user enters logins with username with "<phoneno>" and  "<password>"
+    When user click  on login by otp
+    And user enter "<phoneno>"
     And user clicks on signin
     Then proper alert message is displayed for login screen
 
     Examples: 
-      | phoneno    | password  |
-      | 9218775234 | Ramya@678 |
+      | phoneno    |
+      | 9218775234 |
 
   Scenario Outline: verify the proper error message is displaying if the user enters registered phone number and wrong password
     When user enters logins with username with "<phoneno>" and  "<password>"

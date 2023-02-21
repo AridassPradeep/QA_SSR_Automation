@@ -22,7 +22,7 @@ public class LoginPage {
 	private By forgotPassword = By.xpath("//*[contains(text(),'Forgot')]");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
-	private By errorMessage = By.xpath("//div[@class='error_message error-messages row']");
+	private By errorMessage = By.xpath("//div[contains(text(),'Please enter your registered mobile to login')]");
 	private By loginByEmail = By.xpath("//button[contains(text(),'Login via email')]");
 	
 
@@ -121,8 +121,16 @@ public boolean validateuserMenu() throws InterruptedException {
 	
 	public void enterPhoneNo()
 	{
-		driver.findElement(By.xpath("//input[@placeholder='Enter your mobile number']")).sendKeys("8095424663");
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("8095424663");
+		driver.findElement(By.xpath("//*[text()='or']")).click();
 	}
+	
+	public void enterPhoneNo(String phNo)
+	{
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys(phNo);
+		driver.findElement(By.xpath("//*[text()='or']")).click();
+	}
+	
 	
 	
 	public void clickGetOTP()
@@ -145,7 +153,7 @@ public boolean validateuserMenu() throws InterruptedException {
 	
 	public void enterInvalidOTP() throws InterruptedException, MalformedURLException
 	{
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("0000");
+		driver.findElement(By.xpath("(//input[@type='number'])[1]")).sendKeys("0000");
 	}
 	
 

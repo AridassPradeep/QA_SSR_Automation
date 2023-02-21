@@ -105,6 +105,11 @@ public class LoginPageSteps {
 		
 	}
 	
+	@When("user enter {string}")
+	public void user_enter(String phno) {
+		loginPage.enterPhoneNo(phno);
+	}
+	
 	@And("user click on getOTP")
 	public void user_clickon_getOTP() {
 		loginPage.clickGetOTP();
