@@ -12,7 +12,6 @@ public class RegistrationPage {
 	private By mobileno = By.xpath("//div[1]/div[1]/div[1]/div[1]/input[1]");
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//div[2]/div[2]/button[1]");
-
 	private By register = By.xpath("//*[text()='Register']");
 	private By fullName = By.xpath("//input[@id='fullName']");
 	private By mobile = By.xpath("//input[@id='mobile']");
@@ -23,11 +22,11 @@ public class RegistrationPage {
 	private By userpassword = By.xpath("//input[@name='password']");
 	private By confirmpassword = By.xpath("//input[@name='confirmPassword']");
 	private By createAccount = By.xpath("//button[@value='Register']");
-
-	private By errorMessage = By.xpath("//div[contains(@class,'error-messages')]");
-
-	private By LoginButtonOnRegPopup = By.xpath("//div[@class='enterprise-details']//span[@id='loginresetting']");
-
+	private By errorMessage = By.xpath("//div[contains(@class,'warning-icon')]//following::div[1]");
+	private By EmailerrorMessage = By.xpath("//div[contains(text(),'Please enter correct email address')]");
+	private By PasswordErrorMessage = By.xpath("//div[contains(text(),'Your password must contain')]");
+	private By PasswordDoNotMatchErrorMessage = By.xpath("//div[contains(text(),'Password doesn’t match')]");
+	private By LoginButtonOnRegPopup = By.xpath("//button[@id='register-next']//following::div[3]");
 	private By Thankyoupageerror = By.xpath("//button[@class='btn btn-secondary goto-home-err']");
 	private By ThankyoupageHome = By.xpath("//div[contains(text(),'Thank you!')]");
 	private By gstCompanyName = By.xpath("//div[contains(@class,'comp-name')]");
@@ -112,6 +111,24 @@ public class RegistrationPage {
 		return errorMsg;
 	}
 
+	public String getEmailErrorMessage() {
+		String errorMsg = driver.findElement(EmailerrorMessage).getText();
+
+		return errorMsg;
+	}
+	
+	public String getPasswordErrorMessage() {
+		String errorMsg = driver.findElement(PasswordErrorMessage).getText();
+
+		return errorMsg;
+	}
+	
+	public String getPasswordDoNotMatchErrorMessage() {
+		String errorMsg = driver.findElement(PasswordDoNotMatchErrorMessage).getText();
+
+		return errorMsg;
+	}
+
 	public boolean validatenextButton() throws InterruptedException {
 		Thread.sleep(2000);
 		return driver.findElement(next).isEnabled();
@@ -130,12 +147,11 @@ public class RegistrationPage {
 		Thread.sleep(4000);
 		return driver.findElement(By.xpath("//*[text()='Login']")).isEnabled();
 	}
-	
+
 	public boolean validateRegistationPopup() throws InterruptedException {
 		Thread.sleep(4000);
 		return driver.findElement(By.xpath("(//*[text()='Register Now'])[1]")).isEnabled();
 	}
-
 
 	public void getGstCompanyDetails() {
 		System.out.print(driver.findElement(gstCompanyName).getText());
