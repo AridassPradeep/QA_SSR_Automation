@@ -125,6 +125,12 @@ public class LoginPageSteps {
 		
 	}
 	
+	@Then("loginViaOTP popup is displayed")
+	public void login_via_otp_popup_is_displayed() throws InterruptedException {
+		loginPage.validateLoginViaOTP();
+		
+	}
+	
 	@And("user enter otp")
 	public void user_enter_otp() throws InterruptedException, MalformedURLException {
 		loginPage.enterOTP();

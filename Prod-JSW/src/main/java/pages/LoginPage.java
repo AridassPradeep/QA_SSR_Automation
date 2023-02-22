@@ -59,7 +59,7 @@ public boolean validateuserMenu() throws InterruptedException {
 	}
 	
 	public void clickloginByEmail() throws InterruptedException {
-		//Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.findElement(loginByEmail).click();
 	}
 
@@ -143,6 +143,11 @@ public boolean validateuserMenu() throws InterruptedException {
 	{
 		driver.findElement(By.xpath("//button[contains(text(),'Get OTP')]")).click();
 		
+	}
+	
+	public void validateLoginViaOTP()
+	{
+		driver.findElement(By.xpath("//button[contains(text(),'Login via OTP')]")).isDisplayed();
 	}
 	
 	

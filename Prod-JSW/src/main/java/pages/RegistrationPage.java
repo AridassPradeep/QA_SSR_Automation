@@ -133,6 +133,11 @@ public class RegistrationPage {
 		Thread.sleep(4000);
 		return driver.findElement(mobileno).isEnabled();
 	}
+	
+	public boolean validateRegistationPopup() throws InterruptedException {
+		Thread.sleep(4000);
+		return driver.findElement(By.xpath("(//*[text()='Register Now'])[1]")).isEnabled();
+	}
 
 	public void getGstCompanyDetails() {
 		System.out.print(driver.findElement(gstCompanyName).getText());

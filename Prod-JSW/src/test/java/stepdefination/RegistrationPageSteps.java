@@ -3,8 +3,8 @@ package stepdefination;
 import org.junit.Assert;
 
 import factory.DriverFactory;
-import pages.BlogsPage;
 import pages.HomePage;
+import pages.LoginPage;
 import pages.RegistrationPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +14,6 @@ public class RegistrationPageSteps {
 
 	private RegistrationPage registrationPage = new RegistrationPage(DriverFactory.getDriver());
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
-	
 
 	@Given("user is on home page")
 	public void user_is_on_home_page() throws InterruptedException {
@@ -168,6 +167,11 @@ public class RegistrationPageSteps {
 		Assert.assertTrue(registrationPage.validateThankYouPage());
 	}
 
+	@Then("registration screen is displayed")
+	public void registration_screen_is_displayed() throws InterruptedException {
+		Assert.assertTrue(registrationPage.validateRegistationPopup());
+	}
+
 	@Then("password error messaage to be displayed")
 	public void password_error_messaage_to_be_displayed() throws InterruptedException {
 		Thread.sleep(2000);
@@ -179,9 +183,5 @@ public class RegistrationPageSteps {
 		Thread.sleep(2000);
 		registrationPage.getGstCompanyDetails();
 	}
-
-	
-
-
 
 }

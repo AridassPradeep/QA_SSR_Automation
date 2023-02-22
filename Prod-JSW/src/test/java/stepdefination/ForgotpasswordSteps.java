@@ -60,7 +60,7 @@ public class ForgotpasswordSteps {
 	@Then("verify wrong email error")
 	public void verify_wrong_email_error() throws InterruptedException {
 		String expectedError = forgotpassword.verifyEmail();
-		Assert.assertEquals("Enter the valid email address", expectedError);
+		Assert.assertEquals("You have entered a wrong email address", expectedError);
 		forgotpassword.verifyEmail();
 	}
 
