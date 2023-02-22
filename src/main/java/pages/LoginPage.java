@@ -23,6 +23,7 @@ public class LoginPage {
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
 	private By errorMessage = By.xpath("//div[contains(text(),'Please enter your registered mobile to login')]");
+	private By WrongPasswordErrorMessage = By.xpath("//div[contains(text(),'Wrong password. Please try again with the correct password')]");
 	private By loginByEmail = By.xpath("//button[contains(text(),'Login via email')]");
 	
 
@@ -91,6 +92,11 @@ public boolean validateuserMenu() throws InterruptedException {
 	public String validateErrorMessage() {
 
 		return driver.findElement(errorMessage).getText();
+	}
+	
+	public String validateWrongPasswordErrorMessage() {
+
+		return driver.findElement(WrongPasswordErrorMessage).getText();
 	}
 	
 	public boolean validateloginBox() {

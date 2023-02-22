@@ -1,5 +1,5 @@
 #1)change 1st scenario data-change mobile no,email and gstin otherwise it will throw error
-
+@Registration
 Feature: Registration page feature
 
   Background: User opens website
@@ -48,7 +48,6 @@ Feature: Registration page feature
       | username | mobileno   | GSTIN           | companyemail        |
       | ramya    | 7000000234 | 22AAIAS3118C1Z1 | xzzya1347@gmail.com |
 
-  @bug @Registration
   Scenario Outline: Validate the error message is displaying if we enters more than 30 characters for full name
     When user enters username "<username>" with 31 characters
     Then validation error for character restriction to be displayed
@@ -81,7 +80,6 @@ Feature: Registration page feature
       | username | mobileno   | companyemail        | password  |
       | ramya    | 7006500108 | xamy00060@gmail.com | Ramya@678 |
 
-@Registration
   Scenario Outline: Verify the user enters more than 80 characters for email then proper error message will be displayed
     When user enters username with "<username>"
     And user enters companymailid with more than 80 characters with "<companyemail>"

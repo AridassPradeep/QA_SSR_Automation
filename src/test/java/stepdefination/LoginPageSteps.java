@@ -72,6 +72,12 @@ public class LoginPageSteps {
 	public void proper_alert_message_is_displayed_for_login_screen() {
 		System.out.println(loginPage.validateErrorMessage());
 	}
+	
+	@Then("proper alert message for wrong password is displayed for login screen")
+	public void proper_alert_message_for_wrong_password_is_displayed_for_login_screen() {
+		String errorMsg=(loginPage.validateWrongPasswordErrorMessage());
+		Assert.assertEquals(errorMsg, "Wrong password. Please try again with the correct password");
+	}
 
 	@When("the Registration button is not displayed after user Login")
 	public void the_Registration_button_is_not_displayed_after_user_Login() throws InterruptedException {
