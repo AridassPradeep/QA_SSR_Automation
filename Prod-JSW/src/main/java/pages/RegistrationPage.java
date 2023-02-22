@@ -12,27 +12,30 @@ public class RegistrationPage {
 	private By mobileno = By.xpath("//div[1]/div[1]/div[1]/div[1]/input[1]");
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//div[2]/div[2]/button[1]");
-
 	private By register = By.xpath("//*[text()='Register']");
-	private By fullname = By.id("fullname");
-	private By mobile = By.xpath("//div[@class='country-code']//following::input[1]");
-	private By gstin = By.id("gstin");
-	private By companyemail = By.xpath("//div[@class='email-icon']//following::input[1]");
-	private By agreeTerms = By.xpath("//*[text()='I agree to the']//preceding::label[1]");
+	private By fullName = By.xpath("//input[@id='fullName']");
+	private By mobile = By.xpath("//input[@id='mobile']");
+	private By gstin = By.xpath("//input[@id='mobile']//following::input[1]");
+	private By companyemail = By.xpath("//input[@id='mobile']//following::input[2]");
+	private By agreeTerms = By.xpath("//label[@for='terms']");
 	private By next = By.xpath("//*[@id='register-next']");
 	private By userpassword = By.xpath("//input[@name='password']");
 	private By confirmpassword = By.xpath("//input[@name='confirmPassword']");
 	private By createAccount = By.xpath("//button[@value='Register']");
-
-	private By errorMessage = By.xpath("//div[contains(@class,'error-messages')]");
-
-	private By LoginButtonOnRegPopup = By.xpath("//div[@class='enterprise-details']//span[@id='loginresetting']");
-
+	private By errorMessage = By.xpath("//div[contains(@class,'warning-icon')]//following::div[1]");
+	private By EmailerrorMessage = By.xpath("//div[contains(text(),'Please enter correct email address')]");
+	private By PasswordErrorMessage = By.xpath("//div[contains(text(),'Your password must contain')]");
+	private By PasswordDoNotMatchErrorMessage = By.xpath("//div[contains(text(),'Password doesn’t match')]");
+	private By getCharacterRestrictionErrorMessage = By.xpath("//div[contains(text(),'You can enter')]");
+	private By LoginButtonOnRegPopup = By.xpath("//button[@id='register-next']//following::div[3]");
 	private By Thankyoupageerror = By.xpath("//button[@class='btn btn-secondary goto-home-err']");
 	private By ThankyoupageHome = By.xpath("//div[contains(text(),'Thank you!')]");
 	private By gstCompanyName = By.xpath("//div[contains(@class,'comp-name')]");
 	private By gstCompanyAddress = By.xpath("//div[contains(@class,'comp-addr')]");
 
+	
+	
+	
 	public RegistrationPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -66,7 +69,7 @@ public class RegistrationPage {
 	}
 
 	public void enterUserName(String name) {
-		driver.findElement(fullname).sendKeys(name);
+		driver.findElement(fullName).sendKeys(name);
 	}
 
 	public void enterMobileNo(String mobileno) {

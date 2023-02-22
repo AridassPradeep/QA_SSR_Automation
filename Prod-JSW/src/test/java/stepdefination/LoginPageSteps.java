@@ -21,7 +21,7 @@ public class LoginPageSteps {
 	}
 
 	@When("user click  on login by email")
-	public void user_click_on_login_by_email() {
+	public void user_click_on_login_by_email() throws InterruptedException {
 		loginPage.clickloginByEmail();
 	}
 
@@ -73,6 +73,13 @@ public class LoginPageSteps {
 	public void proper_alert_message_is_displayed_for_login_screen() {
 		System.out.println(loginPage.validateErrorMessage());
 	}
+	
+	@Then("proper alert message for wrong password is displayed for login screen")
+	public void proper_alert_message_for_wrong_password_is_displayed_for_login_screen() {
+		String errorMsg=(loginPage.validateWrongPasswordErrorMessage());
+		Assert.assertEquals(errorMsg, "Wrong password. Please try again with the correct password");
+	}
+
 
 	@When("the Registration button is not displayed after user Login")
 	public void the_Registration_button_is_not_displayed_after_user_Login() throws InterruptedException {
@@ -105,6 +112,12 @@ public class LoginPageSteps {
 		loginPage.enterPhoneNo();
 		
 	}
+	
+	@When("user enter {string}")
+	public void user_enter(String phno) {
+		loginPage.enterPhoneNo(phno);
+	}
+	
 	
 	@And("user click on getOTP")
 	public void user_clickon_getOTP() {
