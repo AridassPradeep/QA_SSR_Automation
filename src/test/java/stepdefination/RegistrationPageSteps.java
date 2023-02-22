@@ -13,7 +13,6 @@ public class RegistrationPageSteps {
 
 	private RegistrationPage registrationPage = new RegistrationPage(DriverFactory.getDriver());
 	private HomePage homePage = new HomePage(DriverFactory.getDriver());
-	
 
 	@Given("user is on home page")
 	public void user_is_on_home_page() throws InterruptedException {
@@ -120,7 +119,12 @@ public class RegistrationPageSteps {
 	public void user_enters_username_with_characters(String name, Integer int1) throws InterruptedException {
 		registrationPage.enterUserName(name);
 		Thread.sleep(2000);
-		System.out.print(registrationPage.getErrorMessage());
+	}
+
+	@Then("validation error for character restriction to be displayed")
+	public void validation_error_for_character_restriction_to_be_displayed() {
+		String errorMsg=registrationPage.getCharacterRestrictionErrorMessage();
+		Assert.assertTrue(errorMsg.contains("You can enter")); 
 	}
 
 	@Then("next button is disabled")
@@ -161,7 +165,7 @@ public class RegistrationPageSteps {
 	public void login_screen_is_displayed() throws InterruptedException {
 		Assert.assertTrue(registrationPage.validateloginPage());
 	}
-	
+
 	@Then("registration screen is displayed")
 	public void registration_screen_is_displayed() throws InterruptedException {
 		Assert.assertTrue(registrationPage.validateRegistationPopup());
@@ -177,22 +181,16 @@ public class RegistrationPageSteps {
 		Thread.sleep(2000);
 		System.out.print(registrationPage.getPasswordErrorMessage());
 	}
-	
+
 	@Then("password do not match error messaage to be displayed")
 	public void password_do_not_match_error_messaage_to_be_displayed() {
 		System.out.print(registrationPage.getPasswordDoNotMatchErrorMessage());
 	}
 
-	
-	
 	@Then("validate gstdetails")
 	public void validate_gstdetails() throws InterruptedException {
 		Thread.sleep(2000);
 		registrationPage.getGstCompanyDetails();
 	}
-
-	
-
-
 
 }

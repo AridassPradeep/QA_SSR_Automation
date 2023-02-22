@@ -26,6 +26,7 @@ public class RegistrationPage {
 	private By EmailerrorMessage = By.xpath("//div[contains(text(),'Please enter correct email address')]");
 	private By PasswordErrorMessage = By.xpath("//div[contains(text(),'Your password must contain')]");
 	private By PasswordDoNotMatchErrorMessage = By.xpath("//div[contains(text(),'Password doesn’t match')]");
+	private By getCharacterRestrictionErrorMessage = By.xpath("//div[contains(text(),'You can enter')]");
 	private By LoginButtonOnRegPopup = By.xpath("//button[@id='register-next']//following::div[3]");
 	private By Thankyoupageerror = By.xpath("//button[@class='btn btn-secondary goto-home-err']");
 	private By ThankyoupageHome = By.xpath("//div[contains(text(),'Thank you!')]");
@@ -107,25 +108,26 @@ public class RegistrationPage {
 
 	public String getErrorMessage() {
 		String errorMsg = driver.findElement(errorMessage).getText();
-
 		return errorMsg;
 	}
 
 	public String getEmailErrorMessage() {
 		String errorMsg = driver.findElement(EmailerrorMessage).getText();
-
 		return errorMsg;
 	}
-	
+
 	public String getPasswordErrorMessage() {
 		String errorMsg = driver.findElement(PasswordErrorMessage).getText();
-
 		return errorMsg;
 	}
-	
+
 	public String getPasswordDoNotMatchErrorMessage() {
 		String errorMsg = driver.findElement(PasswordDoNotMatchErrorMessage).getText();
+		return errorMsg;
+	}
 
+	public String getCharacterRestrictionErrorMessage() {
+		String errorMsg = driver.findElement(getCharacterRestrictionErrorMessage).getText();
 		return errorMsg;
 	}
 
