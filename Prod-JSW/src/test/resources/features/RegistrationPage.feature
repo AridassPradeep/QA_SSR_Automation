@@ -19,10 +19,16 @@ Feature: Registration page feature
     And click on create account
     Then Thankyou page is displayed
     Then proceed to home is displayed
+    And user is on home page
+    When user clicks on login button
+    When user click  on login by email
+    When user enters logins with username with "<companyemail>" and  "<password>"
+    And user clicks on signin
+    Then user homepage is displayed
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 9029109126 | 21AAECS6786N1ZS | TESTProd4@gmail.com | Ramya@678 |
+      | ramya    | 9901798000 | 33AGLPN1660Q1ZX | testprod6@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"

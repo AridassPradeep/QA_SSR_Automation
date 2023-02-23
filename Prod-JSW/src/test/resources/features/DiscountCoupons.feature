@@ -5,7 +5,7 @@ Feature: NewCoupons-Product Detail Page with discount
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "distramyatest@gmail.com" and  "Ramya@123"
+    When user enters logins with username with "testprod6@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -27,7 +27,7 @@ Feature: NewCoupons-Product Detail Page with discount
     And user click on proceed to pay on cart detail page
 
     Examples: 
-      | coupon  |
+      | coupon       |
       | DIGITALORDER |
 
   @Couponsection
@@ -75,7 +75,7 @@ Feature: NewCoupons-Product Detail Page with discount
     And old price is strikethrough and new price amount is displayed in both Price section and cart line
 
     Examples: 
-      | coupon  |
+      | coupon       |
       | DIGITALORDER |
 
   Scenario Outline: Verify In my order page, the applied coupons are able to view after the order is pending
@@ -101,7 +101,7 @@ Feature: NewCoupons-Product Detail Page with discount
     And user clicks on view coupons in order page then applied coupon to be displayed
 
     Examples: 
-      | coupon  |
+      | coupon       |
       | DIGITALORDER |
 
   Scenario Outline: Verify add product in cart line and price will be update and coupons remain active
@@ -131,10 +131,10 @@ Feature: NewCoupons-Product Detail Page with discount
     Then User shall see modified pricing of the cart
     And Applied coupons remain in active if applicable to the modified cart context
     And Applied coupons remain active after removed if applicable to the modified cart context
-    #And Count of applied coupons remains the same
 
+    #And Count of applied coupons remains the same
     Examples: 
-      | coupon  |
+      | coupon       |
       | DIGITALORDER |
 
   #  @RetainOfferwithupdatecoupons
@@ -173,5 +173,5 @@ Feature: NewCoupons-Product Detail Page with discount
     And Applied coupons remain in active if applicable to the modified cart context
 
     Examples: 
-      | coupon  |
+      | coupon       |
       | DIGITALORDER |

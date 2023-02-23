@@ -534,12 +534,12 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void CTLafterentered(String string) {
-		driver.findElement(By.xpath("(//input[@id='customLen'])[3]")).sendKeys(string);
+		driver.findElement(By.xpath("//input[@id='customLen']")).sendKeys(string);
 		System.out.println("Entered input value: " + string);
 	}
 
 	public void validateErrorMessage() {
-		String mge = driver.findElement(By.xpath("(//div[@class='error-message'])[3]")).getText();
+		String mge = driver.findElement(By.xpath("//div[@class='error-message']")).getText();
 		System.out.println("Error message :" + mge);
 	}
 
@@ -553,7 +553,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void couponDetails() {
-		String know = driver.findElement(By.xpath("//*[@class='coupon-description']")).getText();
+		String know = driver.findElement(By.xpath("//div[contains(@class,'coupon-description')]")).getText();
 		System.out.println("KnowMore: " + know);
 	}
 

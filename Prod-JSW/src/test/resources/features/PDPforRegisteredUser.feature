@@ -15,7 +15,6 @@ Feature: Product Detail Page feature for Registered User
     #Given user is on product detail page of Steel item
     Then user is able to view the message in the thickness section
 
-  @Test
   Scenario: verify product quantity should be updated in the cart icon.
     When cart is empty or not
     Then user navigate to Home page
