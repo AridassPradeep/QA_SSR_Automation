@@ -34,7 +34,6 @@ Feature: Cart Detail Page feature
     When user click on Cart icon on homepage
     Then Verify "Technical Specification" is displayed below Proceed to pay button
 
-  
   Scenario: Verify order placed successfully after pickup checkbox
     When cart is empty or not
     Then user navigate to Home page
@@ -52,7 +51,6 @@ Feature: Cart Detail Page feature
     And User click on PayNow
     Then User navigates to RazorPay Page
 
-  
   Scenario: Verify Delivery by 2-5 days
     When cart is empty or not
     Then user navigate to Home page
@@ -80,7 +78,6 @@ Feature: Cart Detail Page feature
     And User click on PayNow
     Then User navigates to RazorPay Page
 
-  
   Scenario: Verify delivery charges calculated for welding electrodes
     When cart is empty or not
     When user clicks Welding electordes from Welding Consummables Navigation Menu
@@ -90,7 +87,6 @@ Feature: Cart Detail Page feature
     Then verify freight charges are displayed
     And verify subtotal is equal to sum of price,tax and freight charges
 
- 
   Scenario: Verify delivery charges calculated for welding wires
     When cart is empty or not
     When user clicks Welding wire from Welding Consummables Navigation Menu

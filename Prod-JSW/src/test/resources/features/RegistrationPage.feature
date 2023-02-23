@@ -6,7 +6,7 @@ Feature: Registration page feature
     Given user is on home page
     When user clicks on register button
 
-  @sanityExe @Reg
+  @sanityExe
   Scenario Outline: Validate Registration with success message and proceed to home button is displayed
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -20,9 +20,9 @@ Feature: Registration page feature
     Then Thankyou page is displayed
     Then proceed to home is displayed
 
- Examples: 
+    Examples: 
       | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 9039109133 | 33AAHCD9794J1Z1 | TESz5100@gmail.com | Ramya@678 |
+      | ramya    | 9029109126 | 21AAECS6786N1ZS | TESTProd4@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
@@ -50,11 +50,12 @@ Feature: Registration page feature
 
   Scenario Outline: Validate the error message is displaying if we enters more than 30 characters for full name
     When user enters username "<username>" with 31 characters
+    Then validation error for character restriction to be displayed
     And user enters mobile with "<mobileno>"
 
     Examples: 
-      | username                         | mobileno   |
-      | ramyaramyaramyasramyaramyaramyaq | 8006510206 |
+      | username                              | mobileno   |
+      | Chinnaswami Muthuswami Venugopal Iyer | 8006510206 |
 
   Scenario Outline: Validate the proceed button is disabled if the user name is blank
     When user enters username with "<username>"
@@ -72,7 +73,7 @@ Feature: Registration page feature
     When user enters username with "<username>"
     And user enters existing  companymailid with "<companyemail>"
     And user enters mobile with "<mobileno>"
-    Then email validation error to be displayed
+    Then login popup is displayed
 
     Examples: 
       | username | mobileno   | companyemail        | password  |
@@ -82,7 +83,7 @@ Feature: Registration page feature
     When user enters username with "<username>"
     And user enters companymailid with more than 80 characters with "<companyemail>"
     And user enters mobile with "<mobileno>"
-    Then email validation error to be displayed
+    Then validation error for character restriction to be displayed
 
     Examples: 
       | username | mobileno   | companyemail                                                                                                 | password  |
@@ -102,7 +103,6 @@ Feature: Registration page feature
     When user click on login hyper link
     Then login screen is displayed
 
-  @Registration
   Scenario Outline: Validate error message for incorrect password
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -130,7 +130,7 @@ Feature: Registration page feature
     And click on new password  "<password1>"
     And click on confirm password "<password2>"
     And click on create account
-    Then password error messaage to be displayed
+    Then password do not match error messaage to be displayed
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password1 | password1 |

@@ -29,7 +29,7 @@ public class PLPNewPage {
 	// TMT
 	private By constructionSteel = By.xpath("//div[@class='breadcrumb-url d-none d-md-block']//span[@class='home'][normalize-space()='Construction materials']");
 	private By constructionMaterials = By.xpath("//span[contains(text(),'Construction materials')]");
-	private By gradeTMT = By.xpath("//label[contains(text(),'IS 1786:2008 Fe 550D')]");
+	private By gradeTMT = By.xpath("//label[contains(text(),'IS')]");
 	private By diameterMin = By.xpath("//div[@class='range-left']");
 	private By minValue = By.xpath("//option[@value='8.0']");
 	private By maxValue = By.xpath("//option[text()='Max']//following::option[@value='40.0']");

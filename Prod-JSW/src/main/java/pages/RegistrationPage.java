@@ -114,6 +114,26 @@ public class RegistrationPage {
 
 		return errorMsg;
 	}
+	
+	public String getEmailErrorMessage() {
+		String errorMsg = driver.findElement(EmailerrorMessage).getText();
+		return errorMsg;
+	}
+
+	public String getPasswordErrorMessage() {
+		String errorMsg = driver.findElement(PasswordErrorMessage).getText();
+		return errorMsg;
+	}
+
+	public String getPasswordDoNotMatchErrorMessage() {
+		String errorMsg = driver.findElement(PasswordDoNotMatchErrorMessage).getText();
+		return errorMsg;
+	}
+
+	public String getCharacterRestrictionErrorMessage() {
+		String errorMsg = driver.findElement(getCharacterRestrictionErrorMessage).getText();
+		return errorMsg;
+	}
 
 	public boolean validatenextButton() throws InterruptedException {
 		Thread.sleep(2000);
@@ -131,7 +151,7 @@ public class RegistrationPage {
 
 	public boolean validateloginPage() throws InterruptedException {
 		Thread.sleep(4000);
-		return driver.findElement(mobileno).isEnabled();
+		return driver.findElement(By.xpath("//*[text()='Login']")).isEnabled();
 	}
 	
 	public boolean validateRegistationPopup() throws InterruptedException {

@@ -120,7 +120,12 @@ public class RegistrationPageSteps {
 	public void user_enters_username_with_characters(String name, Integer int1) throws InterruptedException {
 		registrationPage.enterUserName(name);
 		Thread.sleep(2000);
-		System.out.print(registrationPage.getErrorMessage());
+	}
+
+	@Then("validation error for character restriction to be displayed")
+	public void validation_error_for_character_restriction_to_be_displayed() {
+		String errorMsg = registrationPage.getCharacterRestrictionErrorMessage();
+		Assert.assertTrue(errorMsg.contains("You can enter"));
 	}
 
 	@Then("next button is disabled")
@@ -137,7 +142,7 @@ public class RegistrationPageSteps {
 
 	@Then("email validation error to be displayed")
 	public void email_validation_error_to_be_displayed() {
-		System.out.print(registrationPage.getErrorMessage());
+		System.out.print(registrationPage.getEmailErrorMessage());
 	}
 
 	@When("user enters companymailid with more than {int} characters with {string}")
@@ -175,7 +180,12 @@ public class RegistrationPageSteps {
 	@Then("password error messaage to be displayed")
 	public void password_error_messaage_to_be_displayed() throws InterruptedException {
 		Thread.sleep(2000);
-		System.out.print(registrationPage.getErrorMessage());
+		System.out.print(registrationPage.getPasswordErrorMessage());
+	}
+
+	@Then("password do not match error messaage to be displayed")
+	public void password_do_not_match_error_messaage_to_be_displayed() {
+		System.out.print(registrationPage.getPasswordDoNotMatchErrorMessage());
 	}
 
 	@Then("validate gstdetails")

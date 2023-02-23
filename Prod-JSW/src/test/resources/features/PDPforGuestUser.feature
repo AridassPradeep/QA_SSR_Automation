@@ -4,7 +4,6 @@ Feature: Product Detail Page feature for Guest User
   Background: User opens website
     Given user is on home page
 
-  
   Scenario: verify Breadcrump on top left corner of the page
     When user is able to select Hot Rolled from Steel Menu
     And user refresh the page
@@ -94,7 +93,6 @@ Feature: Product Detail Page feature for Guest User
     And User click on close button
     And click on ResetSelection button
     Then validate add to cart button is disabled
-
 #  Scenario: verify the other images are maximized
 #    Given user is on product detail page
 #    Then verify the primary image of the product is visible on the left side of the screen
