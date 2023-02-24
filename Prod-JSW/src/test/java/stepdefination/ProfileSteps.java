@@ -27,6 +27,14 @@ public class ProfileSteps {
 		profilepage.clickSubProfile();
 
 	}
+	
+	@When("user click on the ledger submmenu")
+	public void user_click_on_the_ledger_submmenu() throws InterruptedException {
+		// Write code here that turns the phrase above into concrete actions
+		profilepage.clickLedgerMenu();
+
+	}
+	
 
 	@Then("Profile page  should be lsited")
 	public void profile_page_should_be_lsited() {

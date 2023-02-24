@@ -12,6 +12,7 @@ public class ProfilePage {
 
 	private By MyProfileButton = By.className("drop-heading");
 	private By SubMenu = By.linkText("Profile");
+	private By LedgerMenu = By.linkText("Ledger");
 	private By Designation = By.name("designation");
 	private By Udyam = By.name("udyam");
 	private By Options = By.xpath("//option[contains(text(),'Select an option')]");
@@ -43,6 +44,12 @@ public class ProfilePage {
 
 		driver.findElement(SubMenu).click();
 		Thread.sleep(5000);
+	}
+	
+	public void clickLedgerMenu() throws InterruptedException {
+
+		driver.findElement(LedgerMenu).click();
+		Thread.sleep(2000);
 	}
 
 	public void clickDesignation() throws InterruptedException {

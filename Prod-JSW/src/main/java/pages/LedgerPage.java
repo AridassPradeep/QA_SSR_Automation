@@ -7,11 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
+import util.ElementUtil;
+
 public class LedgerPage {
 
 	private WebDriver driver;
 	private By RecentBlogs = By.xpath("//UL[@class='v-pagination theme--light']");
-	private By FromRequestStatement = By.xpath("//input[@id='request-ledger-statement-from-mobile']");
+	private By FromRequestStatement = By.xpath("//label[@for='fromDate']//following::input[1]");
 	private By ToRequestStatement = By.xpath("//input[@id='request-ledger-statement-to-mobile']");
 	private By Request = By.xpath("//button[@id='request-ledger-statement-submit-btn']");
 
@@ -32,7 +34,8 @@ public class LedgerPage {
 		Thread.sleep(5000);
 	}
 
-	public void requestStatement() {
+	public void requestStatement() throws InterruptedException {
+		Thread.sleep(5000);
 		driver.findElement(FromRequestStatement).sendKeys("12112021");
 		driver.findElement(ToRequestStatement).sendKeys("12122022");
 		driver.findElement(Request).click();

@@ -1,4 +1,4 @@
-
+@DirectPDP
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website
@@ -120,7 +120,7 @@ Feature: Direct Order for PDP feature for registered user
   #Then verify Requirement list is displayed
   #When user click on Request for price
   #Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
-  @DirectPDP @Cloud
+   @Cloud
   Scenario Outline: Verify Confirm payment is made successfully
     When Buy from verified sellers is displayed
     When user click TMT Menu on header section

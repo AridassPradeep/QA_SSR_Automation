@@ -1,13 +1,14 @@
-@MyOrder
+
 Feature: MyOrder page feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "distramyatest@gmail.com" and  "Ramya@123"
+    When user enters logins with username with "testprod6@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
+
 
   Scenario: Verify the message displayed in Order History page
     Given user is able to view Myorders CTA
@@ -16,15 +17,15 @@ Feature: MyOrder page feature
     Then user is able to view Orders awaiting payment header
     And user is able to view All orders header
 
-  #Then user is able to verify the message displayed on the Filter icon
-  @ViewDetails
+
+  @ViewDetails 
   Scenario: verify user view the view details button
     When user is able to click my order button
     And user is able to click view details button
     And user is able to click view price breakup button to view detailed cost list of the ordered product
     Then user is again click the  view price breakup button to close
 
-  @ViewCoupons
+  @ViewCoupons @MyOrder
   Scenario Outline: Verify In my order page, the applied coupons are able to view after the order placed
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -46,3 +47,7 @@ Feature: MyOrder page feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
     And user clicks on view coupons in order page then applied coupon to be displayed
+    
+    Examples: 
+      | coupon       |
+      | DIGITALORDER |
