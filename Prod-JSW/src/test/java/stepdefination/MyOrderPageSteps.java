@@ -382,6 +382,11 @@ public class MyOrderPageSteps {
 	public void user_clicks_on_ledger() {
 		order.clickViewLedger();
 	}
+	
+	@When("user clicks on ReviewAndPay")
+	public void user_clicks_on_review_and_pay() {
+		order.clickReviewAndPay();
+	}
 
 
 

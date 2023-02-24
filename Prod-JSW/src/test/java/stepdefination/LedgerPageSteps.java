@@ -31,11 +31,19 @@ public class LedgerPageSteps {
     public void validate_previous_statement_is_displayed() throws Throwable {
     	ledgerPage.validatePreviousStatement();
     }
+    
+    @When("switch to ledger window")
+    public void switch_to_ledger_window() {
+    	ledgerPage.switchToLedgerWindow();
+    }
+
 
     @And("^validate user is able to download ledger statement$")
     public void validate_user_is_able_to_download_ledger_statement() throws Throwable {
       
     }
+    
+    
 
 
 

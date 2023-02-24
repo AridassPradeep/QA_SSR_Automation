@@ -577,5 +577,11 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("//button[normalize-space()='View Ledger']")).click();
 
 	}
+	
+	public void clickReviewAndPay() {
+
+		driver.findElement(By.xpath("(//*[contains(text(),'Review & pay')])[1]")).click();
+
+	}
 
 }

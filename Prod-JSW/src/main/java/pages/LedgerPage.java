@@ -35,7 +35,7 @@ public class LedgerPage {
 	}
 
 	public void requestStatement() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		driver.findElement(FromRequestStatement).sendKeys("12112021");
 		driver.findElement(ToRequestStatement).sendKeys("12122022");
 		driver.findElement(Request).click();
@@ -55,6 +55,13 @@ public class LedgerPage {
 
 	public void validateDownload() {
 		driver.findElement(By.xpath("(//button[@class='text-btn'])[1]")).isEnabled();
+	}
+	
+	public void switchToLedgerWindow() {
+		Set<String> handles=driver.getWindowHandles();
+		ArrayList<String> ar= new ArrayList<String>(handles);
+		System.out.print(ar);
+		driver.switchTo().window(ar.get(1));
 	}
 
 }
