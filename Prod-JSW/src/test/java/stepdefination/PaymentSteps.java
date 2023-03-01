@@ -67,7 +67,7 @@ public class PaymentSteps {
 		Thread.sleep(5000);
 	}
 	
-	  @When("user click on proceed to pay on cart detail page and navigate to ordersummary page")
+	@When("user click on proceed to pay on cart detail page and navigate to ordersummary page")
 		public void user_click_on_proceed_to_pay_on_cart_detail_pageand_navigate_to_ordersummarypag() throws InterruptedException {
 			pmtpage.validatecartdetailpage();
 			Thread.sleep(3000);

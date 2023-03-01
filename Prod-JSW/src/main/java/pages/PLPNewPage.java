@@ -358,5 +358,23 @@ public class PLPNewPage {
 		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Cold Rolled Coils IS 513 (Part 1):2016 CR2')]")).click();
 
 	}
+	
+	public void selectPPGLCoilProduct() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Pragati+ Pre-Painted Galvalume Coils IS 15965:')]")).click();
+
+	}
+	
+	public void PPGLCoilProductDetails(String qty) throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[1]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Width')]//following::div[2]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Coating')]//following::div[2]//div//button[1]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='Select colour']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Sky Blue']")).click();
+		driver.findElement(By.xpath("(//input[@id='inputQty'])[1]")).sendKeys(qty);
+		Thread.sleep(4000);
+	}
 
 }

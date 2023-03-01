@@ -1,4 +1,3 @@
-
 Feature: Order Summary page feature
 
   Background: User opens website
@@ -8,12 +7,12 @@ Feature: Order Summary page feature
     When user enters logins with username with "distramyatest@gmail.com" and  "Ramya@123"
     And user clicks on signin
     Then user homepage is displayed
-    When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-    When user click on Buy Now
 
+  #When cart is empty or not
+  #When user clicks HR from Steel Navigation Menu
+  #When user selects Steel product
+  #Given user is on product detail page of Steel item
+  #When user click on Buy Now
   Scenario: Verifying order details Order number,Order total,Payment received,Delivery typedelivery,pickup,Pending payment
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then verify Order number,Order total,Payment received,Delivery type(delivery,pickup),Pending payment
@@ -27,11 +26,24 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user can minimise  item details and billing adress
 
-  Scenario: Verifying netbanking is disabled for order more than 10 lakhs
+  @OrderSummary
+  Scenario Outline: Validate  netbanking is disabled for order more than 10 lakhs
+    When cart is empty or not
+    Then user navigate to Home page
+    When user is on Steel Menu on header section
+    And user is able to select Colour coated from Steel Menu
+    And user selects Colour coated product
+    And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    When user click on Cart icon on homepage
+    When user click on pickup checkbox
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    Then verify netbanking is disabled
 
-@OrderSummary
+    Examples: 
+      | productQuanity |
+      |              8 |
+
   Scenario: Verifying coupons
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user click on view details and can see coupon got applied
@@ -58,7 +70,6 @@ Feature: Order Summary page feature
     Then verify bank is selected
     And User click on PayNow
     Then User navigates to RazorPay Page
-
   #Scenario: Verifying NEFT Payment
     #And user click on proceed to pay on cart detail page and navigate to ordersummary page
     #Then Verifying payment status as partial
