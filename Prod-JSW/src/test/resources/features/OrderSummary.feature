@@ -1,3 +1,4 @@
+@OrderSummary
 Feature: Order Summary page feature
 
   Background: User opens website
@@ -7,12 +8,12 @@ Feature: Order Summary page feature
     When user enters logins with username with "distramyatest@gmail.com" and  "Ramya@123"
     And user clicks on signin
     Then user homepage is displayed
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    When user click on Buy Now
 
-  #When cart is empty or not
-  #When user clicks HR from Steel Navigation Menu
-  #When user selects Steel product
-  #Given user is on product detail page of Steel item
-  #When user click on Buy Now
   Scenario: Verifying order details Order number,Order total,Payment received,Delivery typedelivery,pickup,Pending payment
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then verify Order number,Order total,Payment received,Delivery type(delivery,pickup),Pending payment
@@ -26,7 +27,6 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user can minimise  item details and billing adress
 
-  @OrderSummary
   Scenario Outline: Validate  netbanking is disabled for order more than 10 lakhs
     When cart is empty or not
     Then user navigate to Home page
@@ -39,14 +39,31 @@ Feature: Order Summary page feature
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
+    Then verify netbanking is disabled
 
     Examples: 
       | productQuanity |
-      |              8 |
+      |             11 |
 
-  Scenario: Verifying coupons
+  Scenario Outline: Verifying coupons
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    And user wait for sometime
+    When user click on Buy Now
+    And user click on apply coupon
+    Then List of coupons to be displayed
+    And user enters the "<coupon>" manually and click on apply
+    Then coupon is applied and price gets updated
+    And user closes coupon overlay
+    And price gets updated
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user click on view details and can see coupon got applied
+
+    Examples: 
+      | coupon       |
+      | DIGITALORDER |
 
   Scenario: Verifying item details
     And user click on proceed to pay on cart detail page and navigate to ordersummary page

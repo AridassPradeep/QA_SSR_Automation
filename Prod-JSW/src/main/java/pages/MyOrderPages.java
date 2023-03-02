@@ -568,7 +568,7 @@ public class MyOrderPages {
 
 	public void validateMYOrders() {
 
-		driver.findElement(By.xpath("//*[text()='My orders'")).isDisplayed();
+		driver.findElement(By.xpath("//*[text()='My orders']")).isDisplayed();
 
 	}
 
