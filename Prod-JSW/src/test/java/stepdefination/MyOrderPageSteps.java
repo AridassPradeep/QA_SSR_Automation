@@ -384,7 +384,7 @@ public class MyOrderPageSteps {
 	}
 	
 	@When("user clicks on ReviewAndPay")
-	public void user_clicks_on_review_and_pay() {
+	public void user_clicks_on_review_and_pay() throws InterruptedException {
 		order.clickReviewAndPay();
 	}
 

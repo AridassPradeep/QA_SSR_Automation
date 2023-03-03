@@ -98,7 +98,8 @@ public class PDPRegisteredUserPage {
 	public void selectWeldingWireProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//a[contains(text(),'Ador AUTOMIG FC E71T-1 C-Mn Steel FCA Welding Wire')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Ador AUTOMIG FC E71T-1 C-Mn Steel FCA Welding Wire')]"))
+				.click();
 
 	}
 
@@ -336,6 +337,7 @@ public class PDPRegisteredUserPage {
 
 	public boolean validateAddToCartisDisabled() throws InterruptedException {
 		Thread.sleep(5000);
+		driver.findElement(By.xpath("(//div[contains(text(),'To see total pricing please')])[1]")).isDisplayed();
 		return driver.findElement(addtocartbutton).isEnabled();
 
 	}
@@ -408,26 +410,25 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(4000);
 
 	}
-	
+
 	public void TMTDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("41");
 		Thread.sleep(2000);
-		//driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).click();
+		// driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).click();
 		Thread.sleep(4000);
-		
 
 	}
-	
+
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("300");
 		Thread.sleep(6000);
 
 	}
-	
+
 	public void WireDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
@@ -436,7 +437,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 
 	}
-	
+
 	public void ColdRolledDetails() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'2 X 1250')]")).click();
@@ -445,11 +446,10 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 
 	}
-	
+
 	public void verifyTMTStraightBent() throws InterruptedException {
 		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[1]")).isDisplayed();
 		driver.findElement(By.xpath("//div[contains(text(),'Form')]//following::div[1]//button[2]")).isDisplayed();
-		
 
 	}
 
@@ -544,7 +544,9 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void clickDigitalorderKnowMore() {
-		driver.findElement(By.xpath("//div[@class='d-desktop-coupon']//span[@class='cp_know_more'][normalize-space()='Know more']")).click();
+		driver.findElement(By
+				.xpath("//div[@class='d-desktop-coupon']//span[@class='cp_know_more'][normalize-space()='Know more']"))
+				.click();
 	}
 
 	public void clickSteel250KnowMore() {
@@ -559,7 +561,10 @@ public class PDPRegisteredUserPage {
 
 	public void sellerName() throws InterruptedException {
 		Thread.sleep(3000);
-		String sellerName = driver.findElement(By.xpath("//div[@class='amt-details box py-3 mt-3']//div//span[@class='ml-1 seller-title']")).getText();
+		String sellerName = driver
+				.findElement(
+						By.xpath("//div[@class='amt-details box py-3 mt-3']//div//span[@class='ml-1 seller-title']"))
+				.getText();
 		System.out.println("SellerName: " + sellerName);
 
 	}

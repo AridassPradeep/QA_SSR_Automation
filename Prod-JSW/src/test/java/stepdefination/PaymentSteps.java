@@ -75,6 +75,12 @@ public class PaymentSteps {
 			pmtpage.clickproceedtopay();
 			
 		}
+	
+	@When("user clicks on netBanking")
+	public void user_clicks_on_net_banking() throws InterruptedException {
+		pmtpage.clickpayViaNetBanking();
+	}
+
 
 	@When("user enter quantity as 30MT")
 	public void user_enter_quantity_as_30mt() throws InterruptedException {

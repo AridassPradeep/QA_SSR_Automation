@@ -1,13 +1,10 @@
 package pages;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class PDPpage {
 	private WebDriver driver;
@@ -27,7 +24,7 @@ public class PDPpage {
 	private By composition = By.xpath("//*[text()='Chemical composition']");
 	private By alldimensions = By.xpath("//button[@class='list-group-item list-group-item-action in-active']");
 	private By buynow = By.xpath("//button[@id='btn-buy-now']");
-	private By loginpage = By.xpath("//div[@class='welcome-name']");
+	private By loginpage = By.xpath("//button[@id='login-via-otp']");
 	private By etdelivery = By.xpath("//div[@class='est-del']");
 	private By addtocart = By.xpath("//button[@id='product-add-to-cart']");
 	private By price = By.xpath("//div[@class='prod-price-main box d-none d-md-block']");
@@ -61,7 +58,7 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 	private By width = By.xpath("//button[contains(text(),'1250')]");
 	private By length = By.xpath("//button[contains(text(),'2500')]");
 	private By quantity = By.xpath("//div[@class='input-group quantity-input-box specify-qty-out']");
-	private By closebutton = By.xpath("//button[@class='btn modal-close btn-secondary']");    
+	private By closebutton = By.xpath("//button[@class='close']");    
     
 	private By message = By.xpath("//div[@class='select-msg']/child::span");
     
@@ -244,7 +241,9 @@ private By customLengthTextBox2= By.xpath("//div[@class='dimension-size'and cont
 //NewPDPGuest
 	
 	public void clickClose() {
-		driver.findElement(closebutton).click();
+		//driver.findElement(closebutton).click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ESCAPE).build().perform();
 	}
 	
 	public boolean validatetheLogInPage() {

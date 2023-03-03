@@ -86,9 +86,10 @@ public class Paymentpage {
 
 		driver.findElement(proceedtopay).click();
 	}
-	public void clickpayViaNetBanking() {
+	public void clickpayViaNetBanking() throws InterruptedException {
 
 		driver.findElement(payViaNetBanking).click();
+		Thread.sleep(15000);
 	}
 
 	public void validateBankList() throws InterruptedException {
