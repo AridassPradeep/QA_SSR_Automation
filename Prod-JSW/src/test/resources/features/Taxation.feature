@@ -1,4 +1,5 @@
-@taxation
+
+
 Feature: Tax calculation on Order summary & My Order pages
 
   Background: User opens website
@@ -9,6 +10,7 @@ Feature: Tax calculation on Order summary & My Order pages
     And user clicks on signin
     Then user homepage is displayed
 
+@taxation
   Scenario: Verify Tax calculation when shipping adress is chennai
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

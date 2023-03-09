@@ -428,7 +428,7 @@ public class DirectOrderPage {
 	
 	public void changeEnvironment() throws InterruptedException {
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//div[@class=' css-ackcql']")).click();
+		driver.findElement(By.xpath("(//div[contains(@class,'control')])[2]")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[text()='JSWOne MSME Prod']")).click();
 		
