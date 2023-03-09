@@ -141,7 +141,7 @@ public class CartDetailPage {
 
 	public void changeAddress(int index) {
 		driver.findElement(By.xpath("//a[contains(text(),'Change address')]")).click();
-		List<WebElement> deladress = driver.findElements(By.xpath("//input[@name='sel-address']"));
+		List<WebElement> deladress = driver.findElements(By.xpath("//div[contains(@class,'change-address-list')]"));
 		deladress.get(index).click();
 	}
 

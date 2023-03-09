@@ -30,13 +30,8 @@ Feature: Loading MH pincode
     When user is able check the default address is in MH pincode
     Then Verify the JSW logo is appearing in the Header Section
     When cart is empty or not
-    When user clicks Welding electordes from Welding Consummables Navigation Menu
-    When user selects WeldingElectrode product
-    And user is on product detail page of Welding electordes item
-    When user click on Buy Now
-    And user click on proceed to pay on cart detail page
-    And user select bank name to transfer from the drop down on payment page
-    Then verify bank is selected
-    And User click on PayNow
-    Then User navigates to RazorPay Page
-    
+    Then user navigate to Home page
+    When user is on Steel Menu on header section
+    And user is able to select Cold rolled from Steel Menu
+    And user click on product name of Cold rolled product displayed on the page
+    And user is on ColdRolled Product page
