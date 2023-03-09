@@ -19,7 +19,8 @@ public class Paymentpage {
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By buynow = By.xpath("//*[text()='Buy now']");
-	private By payViaNetBanking = By.xpath("//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
+	private By payViaNetBanking = By.xpath(
+			"//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
@@ -48,7 +49,8 @@ public class Paymentpage {
 
 	private By confirmlater = By.xpath("//*[@id=\'no-confirm-btn\']");
 	private By pendingmessage = By.xpath("//*[contains(text(),'Your order is awaiting payment')]");
-	private By makepayment = By.xpath("//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
+	private By makepayment = By.xpath(
+			"//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
 
 	public Paymentpage(WebDriver driver) {
 		this.driver = driver;
@@ -59,16 +61,18 @@ public class Paymentpage {
 		driver.findElement(buynow).click();
 
 	}
-	
+
 	public void clickSelfPickup() {
 
 		driver.findElement(By.xpath("//input[@id='Pickuprom']")).click();
 
 	}
-	
+
 	public void verifyPickupFrom() {
 
-		driver.findElement(By.xpath("//*[contains(text(),'Pickup address will be available before the shipment is ready for pickup')]")).isDisplayed();
+		driver.findElement(By.xpath(
+				"//*[contains(text(),'Pickup address will be available before the shipment is ready for pickup')]"))
+				.isDisplayed();
 
 	}
 
@@ -86,6 +90,7 @@ public class Paymentpage {
 
 		driver.findElement(proceedtopay).click();
 	}
+
 	public void clickpayViaNetBanking() throws InterruptedException {
 
 		driver.findElement(payViaNetBanking).click();
@@ -131,35 +136,30 @@ public class Paymentpage {
 		 */
 
 	}
-	
+
 	public void deleteDirectOrderProductfromCart() throws Exception
 
 	{
 
 		driver.findElement(cartcount).click();
-		List<WebElement>lt=driver.findElements(By.xpath("//div[@class='product-name-price']//div[2]//div"));
-		for(int i=0;i<lt.size();i++)
-		{
-			driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//*[text()='Proceed']")).click();
-			Thread.sleep(2000);
-		}
+		driver.findElement(By.xpath("//span[contains(text(),'Clear cart')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@id='clear-cart-cnf']")).click();
 
 		while (!isElementPresentemptycart()) {
 
-/*		driver.findElement(By.xpath("(//a[@role='button'])")).click();
-			driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
-			Thread.sleep(2000);
-//			driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).click();
-			driver.findElement(By.xpath("//span[text()='Remove item']")).click();
-			Thread.sleep(2000);
-			
-			*/
-			
-		}
+			/*
+			 * driver.findElement(By.xpath("(//a[@role='button'])")).click();
+			 * driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
+			 * Thread.sleep(2000); //
+			 * driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).
+			 * click();
+			 * driver.findElement(By.xpath("//span[text()='Remove item']")).click();
+			 * Thread.sleep(2000);
+			 * 
+			 */
 
-	
+		}
 
 	}
 
@@ -268,7 +268,7 @@ public class Paymentpage {
 	public String validateRazorpayPage() throws InterruptedException
 
 	{
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		Set<String> windows = driver.getWindowHandles();
 		String parent = driver.getWindowHandle();
@@ -278,18 +278,17 @@ public class Paymentpage {
 		while (it.hasNext()) {
 			child = (String) it.next();
 			driver.switchTo().window(child);
-			
-			
+
 		}
 		Thread.sleep(4000);
-		String title=driver.getTitle();
-		System.out.print("poltu" +title);
+		String title = driver.getTitle();
+		System.out.print("poltu" + title);
 		return title;
 
 	}
 
 	public void validateOrderSuccessfulmsg() {
-		
+
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
@@ -368,7 +367,7 @@ public class Paymentpage {
 	}
 
 	public void clickNEFT() throws InterruptedException {
-		//driver.findElement(netbankingdisabled).isDisplayed();
+		// driver.findElement(netbankingdisabled).isDisplayed();
 		driver.findElement(By.linkText("NEFT/RTGS")).click();
 		Thread.sleep(2500);
 
@@ -378,8 +377,6 @@ public class Paymentpage {
 		Thread.sleep(3000);
 		driver.findElement(confirmPayment).click();
 	}
-
-	
 
 	public void clickProceedToPayPMTPage() {
 

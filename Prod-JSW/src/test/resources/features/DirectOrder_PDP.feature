@@ -1,4 +1,3 @@
-@DirectPDP
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website
@@ -17,7 +16,7 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Buy directly from JSWsteel
     Then Buy from verified sellers is displayed
 
-  @sanityExe @DirectOrde
+  @sanityExe
   Scenario: Verify Request for Price is submitted successfully
     When cart is empty or not
     Then user navigate to Home page
@@ -40,11 +39,13 @@ Feature: Direct Order for PDP feature for registered user
     Then user is able to view TMT Steel products on PLP page
     And user click on product name of TMT Steel product displayed on the page
     And user is on TMT Product page
+    And user is able to view Add to requirement cart
+    And user click on Add to requirement cart
+    And user click on ViewRequirement
     Then verify Request Price is displayed on rightside
     When user click Request Price
     Then verify View requirements list is displayed
     When user click View requirements list
-    Then verify Request for price is displayed
     Then verify delivery date is displayed from 30-45 days
 
   #Scenario: Verify multiple products added before Request for price
@@ -74,27 +75,28 @@ Feature: Direct Order for PDP feature for registered user
     Then user is able to view TMT Steel products on PLP page
     And user click on product name of TMT Steel product displayed on the page
     And user is on TMT Product page
-    Then verify Request Price is displayed on rightside
+    And user is able to view Add to requirement cart
     When user click on Buy from verified sellers
     Then verify Buy directly from JSWsteel is displayed
-    When user click Cement Menu on header section
-    And user click on product name of Cement product displayed on the page
-    And user is on Cement Product page
+    When user is on Steel Menu on header section
+    And user is able to select Cold rolled from Steel Menu
+    And user click on product name of Cold rolled product displayed on the page
+    And user is on ColdRolled Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    Then verify Cart icon would appear with 1
 
+  @DirectPDP
   Scenario: Verify user is able to remove product from requirement
     When Buy from verified sellers is displayed
     When user click TMT Menu on header section
     Then user is able to view TMT Steel products on PLP page
     And user click on product name of TMT Steel product displayed on the page
     And user is on TMT Product page
+    And user is able to view Add to requirement cart
+    And user click on Add to requirement cart
+    And user click on ViewRequirement
     Then verify Request Price is displayed on rightside
-    When user click Request Price
-    Then verify View requirements list is displayed
-    When user click View requirements list
-    Then verify Request for price is displayed
-    Then verify Requirement list is displayed
     When user click on remove button on the product
     Then verify no product in requirement list
 
@@ -120,7 +122,7 @@ Feature: Direct Order for PDP feature for registered user
   #Then verify Requirement list is displayed
   #When user click on Request for price
   #Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
-   @Cloud
+  @Cloud
   Scenario Outline: Verify Confirm payment is made successfully
     When Buy from verified sellers is displayed
     When user click TMT Menu on header section
