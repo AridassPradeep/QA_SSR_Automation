@@ -231,6 +231,12 @@ public class PDPRegisteredUserSteps {
 
 	}
 
+	@Given("user is on product detail page of DirectOrderSteel item")
+	public void user_is_on_product_detail_page_of_DirectOrdersteel_item() throws InterruptedException {
+		pdpreguser.DirectOrderSteelDetails();
+
+	}
+
 	@And("^user is on Cement Product page$")
 	public void user_is_on_cement_product_page() throws Throwable {
 		pdpreguser.CementDetails();
@@ -240,7 +246,7 @@ public class PDPRegisteredUserSteps {
 	public void user_is_on_wire_product_page() throws Throwable {
 		pdpreguser.WireDetails();
 	}
-	
+
 	@And("^user is on ColdRolled Product page$")
 	public void user_is_on_ColdRolled_product_page() throws Throwable {
 		pdpreguser.ColdRolledDetails();
