@@ -44,10 +44,10 @@ Feature: Direct Order for PDP feature for registered user
     And user click on Add to requirement cart
     And user click on ViewRequirement
     Then verify Request Price is displayed on rightside
+    Then verify delivery date is displayed from 30-45 days
     When user click Request Price
     Then verify View requirements list is displayed
     When user click View requirements list
-    Then verify delivery date is displayed from 30-45 days
 
   Scenario: Verify multiple products added before Request for price
     When cart is empty or not

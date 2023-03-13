@@ -2,7 +2,7 @@
 #https://dashboard.razorpay.com/app/smartcollect/virtualaccounts?count=25&id=va_IYQmzJQHLDMvoB
 #username: jsw.one@jsw.in
 #password: Jsw@1234
-@sanityExe @demo  @steel 
+@sanityExe @demo @steel
 Feature: Steel feature
 
   Background: User opens website
@@ -45,14 +45,12 @@ Feature: Steel feature
     And click on cancel grade from tags
     Then After cancelling the cancelled tag should be eliminated from the tags and products should display accordingly
 
-
   Scenario: Check for ClearFilter is  working properly in  Steel PLP
     When user clicks on Steel Navigation Menu
     Then Steel Products are displayed
     And user click on grade in SteelPLPfilter
     And click on clearFilter
     Then all products to be displayed
-
 
   Scenario: Verify Buy Now button and net banking with an order placed unsuccessfully
     When cart is empty or not
@@ -70,7 +68,7 @@ Feature: Steel feature
     Then verify payment pending message is displayed
     Then user is able to see Make payment CTA on order summary page
 
-  @steelnetbanking 
+  @steelnetbanking
   Scenario: Verify Buy Now button and net banking  page
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -84,24 +82,23 @@ Feature: Steel feature
     And User click on PayNow
     Then User navigates to RazorPay Page
 
-  #@neft 
+  #@neft
   #Scenario: Verify user is able to add steel and click on NEFT and confirm payment later
-    #When cart is empty or not
-    #Then user navigate to Home page
-    #When user clicks HR from Steel Navigation Menu
-    #When user selects Steel product
-    #Given user is on product detail page of Steel item
-    #When user clicks on Add To Cart button available in the right side of the webpage
-    #Then verify that the product should be added in the cart
-    #When user click on Cart icon on homepage
-    #When user click on pickup checkbox
-    #And user click on proceed to pay on cart detail page
-    #And user clicks on NEFTRTGS
-    #And user click on proceed and confirm later
-    #Then verify payment pending message is displayed
-    #Then user is able to see Make payment CTA on order summary page
-
-  @neftPaymentMultiSeller 
+  #When cart is empty or not
+  #Then user navigate to Home page
+  #When user clicks HR from Steel Navigation Menu
+  #When user selects Steel product
+  #Given user is on product detail page of Steel item
+  #When user clicks on Add To Cart button available in the right side of the webpage
+  #Then verify that the product should be added in the cart
+  #When user click on Cart icon on homepage
+  #When user click on pickup checkbox
+  #And user click on proceed to pay on cart detail page
+  #And user clicks on NEFTRTGS
+  #And user click on proceed and confirm later
+  #Then verify payment pending message is displayed
+  #Then user is able to see Make payment CTA on order summary page
+  @neftPaymentMultiSeller
   Scenario: Verify user is able to add products from multi seller and do NEFT
     When cart is empty or not
     Then user navigate to Home page

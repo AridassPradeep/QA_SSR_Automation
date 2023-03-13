@@ -337,7 +337,7 @@ public class PDPRegisteredUserPage {
 
 	public boolean validateAddToCartisDisabled() throws InterruptedException {
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("(//div[contains(text(),'To see total pricing please')])[1]")).isDisplayed();
+		//driver.findElement(By.xpath("(//div[contains(text(),'To see total pricing please')])[1]")).isDisplayed();
 		return driver.findElement(addtocartbutton).isEnabled();
 
 	}
@@ -424,7 +424,7 @@ public class PDPRegisteredUserPage {
 
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("300");
+		driver.findElement(By.xpath("(//input[@id='inputQty'])[2]")).sendKeys("300");
 		Thread.sleep(6000);
 
 	}

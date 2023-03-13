@@ -28,7 +28,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail        | password  |
-      | ramya    | 9901798000 | 33AGLPN1660Q1ZX | testprod6@gmail.com | Ramya@678 |
+      | ramya    | 9902798100 | 33AGLPN1660Q1ZX | testprod6@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
@@ -140,7 +140,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail       | password1 | password1 |
-      | ramya    | 8086511002 | 33ALMPA3620R1Z0 | ramya452@gmail.com | asWDNDG@1 | asWE@dff  |
+      | ramya    | 8086511603 | 33AABCH6766L1Z9 | ramya603@gmail.com | asWDNDG@1 | asWE@dff  |
 
   Scenario Outline: Validate GSTIN owner name along with bill to address and bill to pin code should be displayed on the screen below the 'Enter GSTIN' field as per the wireframe.
     When user enters username with "<username>"
