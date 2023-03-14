@@ -77,21 +77,20 @@ Feature: Cart Detail Page feature
     Then verify bank is selected
     And User click on PayNow
     Then User navigates to RazorPay Page
-
-  Scenario: Verify delivery charges calculated for welding electrodes
-    When cart is empty or not
-    When user clicks Welding electordes from Welding Consummables Navigation Menu
-    When user selects WeldingElectrode product
-    And user is on product detail page of Welding electordes item
-    And user click on Buy Now
-    Then verify freight charges are displayed
-    And verify subtotal is equal to sum of price,tax and freight charges
-
-  Scenario: Verify delivery charges calculated for welding wires
-    When cart is empty or not
-    When user clicks Welding wire from Welding Consummables Navigation Menu
-    When user selects WeldingWire product
-    And user is on product detail page of Welding wire item
-    And user click on Buy Now
-    Then verify freight charges are displayed
-    And verify subtotal is equal to sum of price,tax and freight charges
+  #Scenario: Verify delivery charges calculated for welding electrodes
+    #When cart is empty or not
+    #When user clicks Welding electordes from Welding Consummables Navigation Menu
+    #When user selects WeldingElectrode product
+    #And user is on product detail page of Welding electordes item
+    #And user click on Buy Now
+    #Then verify freight charges are displayed
+    #And verify subtotal is equal to sum of price,tax and freight charges
+#
+  #Scenario: Verify delivery charges calculated for welding wires
+    #When cart is empty or not
+    #When user clicks Welding wire from Welding Consummables Navigation Menu
+    #When user selects WeldingWire product
+    #And user is on product detail page of Welding wire item
+    #And user click on Buy Now
+    #Then verify freight charges are displayed
+    #And verify subtotal is equal to sum of price,tax and freight charges

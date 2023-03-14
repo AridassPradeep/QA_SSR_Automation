@@ -151,7 +151,7 @@ public class ProfileSteps {
 
 	@When("user adds a new adresses and fill all details and save it")
 	public void user_adds_a_new_adresses_and_fill_all_details_and_save_it() throws InterruptedException {
-		profilepage.cancelNewAddress();
+		//profilepage.cancelNewAddress();
 		Thread.sleep(3000);
 		profilepage.addAddress();
 		Thread.sleep(3000);
