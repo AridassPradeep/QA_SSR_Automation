@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegistrationPage {
 
@@ -104,6 +106,12 @@ public class RegistrationPage {
 
 	public void clickcreateAccount() {
 		driver.findElement(createAccount).click();
+		long startTime = System.currentTimeMillis();
+		new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Thank you!')]")));
+		long endTime = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println("Total Registration Load Time: " + totalTime + " milliseconds");
+			
 	}
 
 	public String getErrorMessage() {
@@ -143,6 +151,7 @@ public class RegistrationPage {
 
 	public boolean validateThankYouPage() {
 		return driver.findElement(ThankyoupageHome).isEnabled();
+		
 	}
 
 	public boolean validateloginPage() throws InterruptedException {

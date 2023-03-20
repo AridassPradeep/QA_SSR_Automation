@@ -21,9 +21,9 @@ Feature: Registration page feature
     Then proceed to home is displayed
 
     Examples: 
-      | username | mobileno   | GSTIN           | companyemail       | password  |
-      | ramya    | 9101097132 | 33CPPPM1208G1Z2 | TE01001r@gmail.com | Ramya@678 |
-
+      | username | mobileno   | GSTIN           | companyemail          | password  |
+      | ramya    | 9901799005 | 27EKPPS5725D1ZP | TEST990905@gmail.com  | Ramya@678 |
+     
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"

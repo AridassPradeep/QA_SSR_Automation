@@ -93,7 +93,7 @@ public class RegistrationPageSteps {
 	@When("click on create account")
 	public void click_on_create_account() throws InterruptedException {
 		registrationPage.clickcreateAccount();
-		Thread.sleep(20000);
+		//Thread.sleep(20000);
 
 	}
 
