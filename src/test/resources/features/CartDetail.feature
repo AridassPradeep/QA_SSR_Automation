@@ -1,11 +1,11 @@
-@demo @cart
+@cart
 Feature: Cart Detail Page feature
 
   Background: User opens website
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -66,6 +66,7 @@ Feature: Cart Detail Page feature
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
 
+  @cart
   Scenario: Verify selfpickup
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -95,7 +96,7 @@ Feature: Cart Detail Page feature
     Then verify freight charges are displayed
     And verify subtotal is equal to sum of price,tax and freight charges
 
-  @weldingFlux
+  @weldingFlux @cart
   Scenario: Verify delivery charges calculated for welding Flux
     When cart is empty or not
     When user clicks Welding flux from Welding Consummables Navigation Menu

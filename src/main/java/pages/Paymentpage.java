@@ -22,8 +22,10 @@ public class Paymentpage {
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By buynow = By.xpath("//*[text()='Buy now']");
+	private By payViaNetBanking = By.xpath(
+			"//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
-	private By payViaNetBanking = By.xpath("//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
+		
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
 	// private By banklist = By.xpath("//select[@id='BanksList']");
