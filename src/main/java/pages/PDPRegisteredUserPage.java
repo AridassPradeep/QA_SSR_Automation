@@ -324,7 +324,7 @@ public class PDPRegisteredUserPage {
 	}
 
 	public String MOQErrorMessage() {
-		String actualErrorMessage = driver.findElement(By.xpath("//div[5]/div[2]/div/div[2]/div[2]/div[1]")).getText();
+		String actualErrorMessage = driver.findElement(By.xpath("(//input[@id='inputQty'])[1]//following::div[4]")).getText();
 		return actualErrorMessage;
 	}
 
@@ -528,12 +528,12 @@ public class PDPRegisteredUserPage {
 	}
 
 	public void CTLafterentered(String string) {
-		driver.findElement(By.xpath("(//input[@id='customLen'])[3]")).sendKeys(string);
+		driver.findElement(By.xpath("//input[@id='customLen']")).sendKeys(string);
 		System.out.println("Entered input value: " + string);
 	}
 
 	public void validateErrorMessage() {
-		String mge = driver.findElement(By.xpath("(//div[@class='error-message'])[3]")).getText();
+		String mge = driver.findElement(By.xpath("//div[@class='error-message']")).getText();
 		System.out.println("Error message :" + mge);
 	}
 

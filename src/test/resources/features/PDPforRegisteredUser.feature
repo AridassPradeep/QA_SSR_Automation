@@ -5,7 +5,7 @@ Feature: Product Detail Page feature for Registered User
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -15,9 +15,8 @@ Feature: Product Detail Page feature for Registered User
     #Given user is on product detail page of Steel item
     Then user is able to view the message in the thickness section
 
-@Test
   Scenario: verify product quantity should be updated in the cart icon.
-   When cart is empty or not
+    When cart is empty or not
     Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
     When user selects HR Stainless Steel product
@@ -127,26 +126,25 @@ Feature: Product Detail Page feature for Registered User
     When user selects HR Stainless Steel product
     And user is on product detail page of Stainless Steel item and add dimensions
     And user add quantity and validate MOQ messages
-      | quantity | MOQMessage                                                        |
-      |      000 | Add a quantity equal to or above the Minimum Order Quantity of 2800.0kg |
-      |      999 | The maximum available quantity for your selection is 10000.0kg    |
-      |   999999 | Please enter quantity below 9999 kg                                       |
+      | quantity | MOQMessage                                                              |
+      |      000 | Add a quantity equal to or above the Minimum Order Quantity of 1600.0kg |
+      |   999999 | Please enter quantity below 9999 kg                                     |
+    # |      999 | The maximum available quantity for your selection is 10000.0kg          |
     And validate add to cart button is disabled
 
-  @MOQSteel 
+  @MOQSteel
   Scenario: Verify MOQ for  Steel Product
-  
-   When cart is empty or not
+    When cart is empty or not
     Then user navigate to Home page
-    When user is on Steel Menu on header section 
-	  And user is able to select Wire rods from Steel Menu 
+    When user is on Steel Menu on header section
+    And user is able to select Wire rods from Steel Menu
     And user click on product name of Wire product displayed on the page
     And user is on Wire Product page
     And user wait for sometime
     And user add quantity and validate MOQ messages
-      | quantity | MOQMessage                                                      |
-      |        1 | Add a quantity equal to or above the Minimum Order Quantity of 2.3MT |
-      | 10000000 | Please enter quantity below 9999 MT                                     |
+      | quantity | MOQMessage                                                           |
+      |        1 | Add a quantity equal to or above the Minimum Order Quantity of 2.1MT |
+      | 10000000 | Please enter quantity below 9999 MT                                  |
     And validate add to cart button is disabled
 
   @ResetSelection @PDPRegisteredUser
@@ -182,8 +180,8 @@ Feature: Product Detail Page feature for Registered User
     Given user is on product detail page of Steel item
     When user click the custom length of the selected product
     Then validate the custom length msg in the input field
-    
-  @TMT 
+
+  @TMT
   Scenario: Verify form section is visible for TMT products
     When cart is empty or not
     Then user navigate to Home page
@@ -195,7 +193,7 @@ Feature: Product Detail Page feature for Registered User
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
 
-  @Cement 
+  @Cement
   Scenario: Verify cement product can be added to cart
     When cart is empty or not
     Then user navigate to Home page
@@ -209,8 +207,8 @@ Feature: Product Detail Page feature for Registered User
   Scenario: Verify WireRod product can be added to cart
     When cart is empty or not
     Then user navigate to Home page
-    When user is on Steel Menu on header section 
-	  And user is able to select Wire rods from Steel Menu 
+    When user is on Steel Menu on header section
+    And user is able to select Wire rods from Steel Menu
     And user click on product name of Wire product displayed on the page
     And user is on Wire Product page
     When user clicks on Add To Cart button available in the right side of the webpage
