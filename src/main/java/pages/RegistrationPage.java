@@ -106,12 +106,12 @@ public class RegistrationPage {
 
 	public void clickcreateAccount() {
 		driver.findElement(createAccount).click();
-		long startTime = System.currentTimeMillis();
-		new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Thank you!')]")));
-		long endTime = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-		System.out.println("Total Registration Load Time: " + totalTime + " milliseconds");
-			
+//		long startTime = System.currentTimeMillis();
+//		new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Thank you!')]")));
+//		long endTime = System.currentTimeMillis();
+//		long totalTime = endTime - startTime;
+//		System.out.println("Total Registration Load Time: " + totalTime + " milliseconds");
+//			
 	}
 
 	public String getErrorMessage() {

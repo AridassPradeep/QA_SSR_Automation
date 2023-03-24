@@ -5,10 +5,11 @@ Feature: Home page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "hari5465@yopmail.com" and  "Hari5465#"
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
- @sanityExe 
+
+  @sanityExe
   Scenario: Verify different elements in homepage
     Then Verify the JSW logo is appearing in the Header Section
     Then Verify Search Bar is displayed with search icon
@@ -29,7 +30,7 @@ Feature: Home page feature
     Then Verify all the social media logos are available
     Then Verify for help line number is present in footer section
 
-  @HomePageHeader 
+  @HomePageHeader
   Scenario: Verify Header section elements
     Then Verify the JSW logo is appearing in the Header Section
     Then Verify Cart Icon displayed
@@ -43,7 +44,7 @@ Feature: Home page feature
     Then Verify "Stainless Steel" Category tree is displayed
     Then verify "Construction Material" category tree is displayed in Header section
     Then Verify "Help & support" is displayed in Header section
-   # Then Verify user is navigate to "Help" page and back to home page
+    # Then Verify user is navigate to "Help" page and back to home page
     Then Verify "About us" is displayed in header Section
     Then Verify user is able to view "Manage address" and navigate to address section in Profile page
     Then Verify that "Connect with Us" is available on the header section
@@ -73,7 +74,6 @@ Feature: Home page feature
     Then Verify for sub links are available under Legal category
     Then Verify for help line number is present in footer section
     Then Verify for support email address is present in footer section
-
  # Scenario: Verify enquiry form
  #   Then Verify the mandatory fields in Enquiry Section for Registered Users
  #   Then Verify the submit button is enabled only once all the mandatory fields entered

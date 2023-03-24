@@ -21,7 +21,7 @@ public class Paymentpage {
 	private WebDriver driver;
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
-	private By buynow = By.xpath("//*[text()='Buy now']");
+	private By buynow = By.xpath("//button[@id='btn-buy-now']");
 	private By payViaNetBanking = By.xpath(
 			"//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
@@ -61,8 +61,8 @@ public class Paymentpage {
 	public void clickBuyNow() {
 
 		driver.findElement(buynow).click();
-		ElementUtil elementUtil = new ElementUtil(DriverFactory.getDriver());
-		elementUtil.MigrationUtil(proceedtopay);
+//		ElementUtil elementUtil = new ElementUtil(DriverFactory.getDriver());
+//		elementUtil.MigrationUtil(proceedtopay);
 
 	}
 	

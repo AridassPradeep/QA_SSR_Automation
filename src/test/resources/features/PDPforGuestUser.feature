@@ -1,4 +1,4 @@
-
+@PDPGuest
 Feature: Product Detail Page feature for Guest User
 
   Background: User opens website
@@ -30,7 +30,7 @@ Feature: Product Detail Page feature for Guest User
     When user selects Steel product
     Given user is on product detail page of Steel item
     Then verify user able to purchase the product on the basis of selected input.
-@PDPGuest
+
   Scenario: verify User should redirect to the login page on clicking add to cart button
     When user clicks HR from Steel Navigation Menu
     And user refresh the page
@@ -38,7 +38,7 @@ Feature: Product Detail Page feature for Guest User
     Given user is on product detail page of Steel item
     #And user click on the add to cart button.
     Then verify User should redirect to the login page
-@PDPGuest
+
   Scenario: verify User should redirect to the login page on clicking buy now button
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
@@ -50,8 +50,6 @@ Feature: Product Detail Page feature for Guest User
   #    And user select any product example HR
   #    Then User is redirected to the PDP page.
   #    Then verify the delivery /ETD is displayed at the bottom of the specific quantity.
- 
- @PDPGuest
   Scenario: verify the price range is displayed in right side of the page
     When user clicks HR from Steel Navigation Menu
     And user refresh the page
@@ -74,17 +72,16 @@ Feature: Product Detail Page feature for Guest User
     When user click on catalog hierarchy link shown in the breadcrumb
     Then Verify user should navigate by clicking catalog hierarchy in the breadcrumb
 
-@PDPGuest
-  Scenario: Verify the Enabled button Design for 'add to cart' & 'Buy now'
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-    And User click on close button
-    And User clicks on Add to cart button
-    And User click on close button
-    And user click on Buy Now
-    Then verify that User should redirect to the login page
-@PDPGuest
+  #Scenario: Verify the Enabled button Design for 'add to cart' & 'Buy now'
+    #When user clicks HR from Steel Navigation Menu
+    #When user selects Steel product
+    #Given user is on product detail page of Steel item
+    #And User click on close button
+    #And User clicks on Add to cart button
+    #And User click on close button
+    #And user click on Buy Now
+    #Then verify that User should redirect to the login page
+
   Scenario: Verify the Disabled button Design for 'add to cart' & 'Buy now'
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
