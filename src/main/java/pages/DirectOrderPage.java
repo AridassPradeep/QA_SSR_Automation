@@ -232,6 +232,7 @@ public class DirectOrderPage {
 	public void clickAddToRequirementCart() throws InterruptedException
 
 	{
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Add to requirement cart')])[1]")).click();
 		
 	}

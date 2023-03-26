@@ -147,7 +147,6 @@ public class ProfilePage {
 		driver.findElement(By.id("pincode")).sendKeys("600032");
 		driver.findElement(By.id("address")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
 		driver.findElement(By.id("city")).sendKeys("Chennai");
-		driver.findElement(By.id("state")).sendKeys("Tamil Nadu");
 		driver.findElement(By.xpath("//button[text()='Save address']")).click();
 	}
 
@@ -162,86 +161,86 @@ public class ProfilePage {
 		driver.findElement(By.id("state")).sendKeys("Tamil Nadu");
 		driver.findElement(By.xpath("//div[text()='Cancel']")).click();
 	}
-	public void ClickEditBillingAddress() throws InterruptedException
-	{
-		
+
+	public void ClickEditBillingAddress() throws InterruptedException {
+
 		driver.findElement(By.xpath("//div[@class='edit-button']")).click();
-		
-		//List<WebElement> editAddressButtons=driver.findElements(By.xpath("//div[@class='edit-button']"));
+
+		// List<WebElement>
+		// editAddressButtons=driver.findElements(By.xpath("//div[@class='edit-button']"));
 		// editAddressButtons.get(1).click();
 	}
-	
-	public void EditBillingAddress() throws InterruptedException
-	{
+
+	public void EditBillingAddress() throws InterruptedException {
 		driver.findElement(By.xpath("//input[@id='company']")).clear();
 		driver.findElement(By.xpath("//input[@id='company']")).sendKeys("EditedCompany");
 		driver.findElement(By.xpath("//input[@id='mobile']")).clear();
 		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("9898987878");
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//button[contains(text(),'Save address')]")).click();
-		
-		
+
 	}
 
-	//MH Pincode
-	
-		public void addNewAddress() throws InterruptedException {
-			JavascriptExecutor j = (JavascriptExecutor) driver;
-			j.executeScript("window.scrollTo(0,400)", "");
-			WebElement add = driver.findElement(By.xpath("//button[contains(text(),'+ Add a new address')]"));
-			System.out.println(add.isDisplayed());
-			add.click();
+	// MH Pincode
+
+	public void addNewAddress() throws InterruptedException {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("window.scrollTo(0,400)", "");
+		WebElement add = driver.findElement(By.xpath("//button[contains(text(),'+ Add a new address')]"));
+		System.out.println(add.isDisplayed());
+		add.click();
+		Thread.sleep(2000);
+	}
+
+	public void MHaddress() throws InterruptedException {
+		driver.findElement(By.id("company")).sendKeys("Maharashtra Steel");
+		Thread.sleep(1500);
+		driver.findElement(By.id("pincode")).sendKeys("411002");
+		Thread.sleep(1500);
+		driver.findElement(By.id("address")).sendKeys("1051/52, New Nana Peth, Bhawani Peth");
+		Thread.sleep(1500);
+		driver.findElement(By.id("city")).sendKeys("Pune");
+		Thread.sleep(1500);
+		driver.findElement(By.id("state")).sendKeys("Maharashtra");
+		Thread.sleep(1500);
+	}
+
+	public void defaultAddress() throws InterruptedException {
+		driver.findElement(By.xpath("//input[@id='defaultAddress']")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//button[text()='Save address']")).click();
+		Thread.sleep(5500);
+	}
+
+	public void deleteExistingAddress() {
+		WebElement pincode = driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]"));
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()", pincode);
+		WebElement mh = driver.findElement(
+				By.xpath("//div[@class='delete-button']//following::div[contains(text(),'Maharashtra Steel')]"));
+		boolean delete = mh.isDisplayed();
+		if (delete == true) {
+			mh.click();
+		} else {
+			System.out.println(delete);
+		}
+	}
+
+	public void clickMHDefaultAddress() throws InterruptedException {
+		WebElement pincode = driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]"));
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()", pincode);
+		j.executeScript("window.scrollTo(0,0)", "");
+		WebElement defaultMH = driver.findElement(By.xpath(
+				"//div[contains(text(),'Maharashtra Steel')]//following::div[contains(text(),'Default address')]"));
+		boolean p = defaultMH.isDisplayed();
+		if (p == true) {
+			System.out.println(p);
+			Thread.sleep(2000);
+		} else {
+			driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]")).click();
 			Thread.sleep(2000);
 		}
-		
-		public void MHaddress() throws InterruptedException {
-			driver.findElement(By.id("company")).sendKeys("Maharashtra Steel");
-			Thread.sleep(1500);
-			driver.findElement(By.id("pincode")).sendKeys("411002");
-			Thread.sleep(1500);
-			driver.findElement(By.id("address")).sendKeys("1051/52, New Nana Peth, Bhawani Peth");
-			Thread.sleep(1500);
-			driver.findElement(By.id("city")).sendKeys("Pune");
-			Thread.sleep(1500);
-			driver.findElement(By.id("state")).sendKeys("Maharashtra");
-			Thread.sleep(1500);		
-		}
-		
-		public void defaultAddress() throws InterruptedException {
-			driver.findElement(By.xpath("//input[@id='defaultAddress']")).click();
-			Thread.sleep(1500);
-			driver.findElement(By.xpath("//button[text()='Save address']")).click();
-			Thread.sleep(5500);
-		}
-		
-		public void deleteExistingAddress() {
-			WebElement pincode = driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]"));
-			JavascriptExecutor j = (JavascriptExecutor) driver;
-			j.executeScript("arguments[0].scrollIntoView()",pincode);
-			WebElement mh = driver.findElement(By.xpath("//div[@class='delete-button']//following::div[contains(text(),'Maharashtra Steel')]"));
-			boolean delete = mh.isDisplayed();
-			if (delete==true) {
-				mh.click();
-			}else {
-				System.out.println(delete);
-			}
-		}
-		
-	    public void clickMHDefaultAddress() throws InterruptedException {
-	    	WebElement pincode = driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]"));
-			JavascriptExecutor j = (JavascriptExecutor) driver;
-			j.executeScript("arguments[0].scrollIntoView()",pincode);
-					j.executeScript("window.scrollTo(0,0)", "");
-	    	WebElement defaultMH = driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]//following::div[contains(text(),'Default address')]"));
-	    	boolean p = defaultMH.isDisplayed();
-	    	if (p==true) {
-	    		System.out.println(p);
-	    		Thread.sleep(2000);
-			}else {
-				driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]")).click();
-				Thread.sleep(2000);
-			}
-		}
-	    
 	}
 
+}
