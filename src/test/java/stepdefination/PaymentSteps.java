@@ -272,6 +272,9 @@ public class PaymentSteps {
 	}
 	
 	
-	
+	@When("user clicks on netBanking")
+	public void user_clicks_on_net_banking() throws InterruptedException {
+		pmtpage.clickpayViaNetBanking();
+	}
 	
 }

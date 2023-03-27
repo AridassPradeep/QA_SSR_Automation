@@ -374,4 +374,10 @@ public class MyOrderPageSteps {
 	    public void user_is_able_to_view_all_orders_header() throws Throwable {
 	        order.validateAllOrdersHeader();
 	    }
+	    
+	    @When("user clicks on ReviewAndPay")
+		public void user_clicks_on_review_and_pay() throws InterruptedException {
+			order.clickReviewAndPay();
+		}
+
 	}

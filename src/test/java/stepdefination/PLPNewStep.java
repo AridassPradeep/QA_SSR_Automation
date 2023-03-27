@@ -415,5 +415,18 @@ public class PLPNewStep {
 		plpn.valiadtePLP();
 
 	}
+	
+	@When("user selects Colour coated product")
+	public void user_selects_colour_coated_product() throws InterruptedException {
+		
+		plpn.selectPPGLCoilProduct() ;
+	    
+	}
+	
+	@When("user is on product detail page of colour coated product and add quantiy with quantity {string}")
+	public void user_is_on_product_detail_page_of_colour_coated_product_and_add_quantiy_with_quantity(String qty) throws InterruptedException {
+		plpn.PPGLCoilProductDetails(qty) ;
+	}
+
 
 }

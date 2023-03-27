@@ -578,5 +578,12 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("//*[normalize-space()='All orders']")).isDisplayed();
 	}
 	
+	public void clickReviewAndPay() throws InterruptedException {
+
+		driver.findElement(By.xpath("(//*[contains(text(),'Review & pay')])[1]")).click();
+		Thread.sleep(10000);
+
+	}
+	
 
 }
