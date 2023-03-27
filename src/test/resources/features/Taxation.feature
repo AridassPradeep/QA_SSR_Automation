@@ -31,7 +31,7 @@ Background: User opens website
     Then verify 9% CGST and 9% SGST is displayed
     And  verify tax matches in mc and UI
     
-    @taxation
+   
     Scenario: Verify Tax calculation when shipping adress is chandigarh
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

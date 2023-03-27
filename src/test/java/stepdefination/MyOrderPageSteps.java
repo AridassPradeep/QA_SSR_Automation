@@ -20,7 +20,7 @@ public class MyOrderPageSteps {
 
 	@When("user is able to click view details button")
 	public void user_is_able_to_click_view_details_button() throws InterruptedException {
-		order.scrollingDown(order.getViewDetails());
+		//order.scrollingDown(order.getViewDetails());
 		Thread.sleep(2000);
 		order.getViewDetails().click();
 	}

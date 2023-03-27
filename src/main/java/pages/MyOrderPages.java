@@ -18,30 +18,29 @@ import org.openqa.selenium.support.ui.Select;
 
 public class MyOrderPages {
 	private WebDriver driver;
-	
-	
+
 	String expectedStatus = "Your order has been successfully placed";
 	String cartEmptyMessage = "Your cart is empty.";
 	String orderCancelMessage = "Your Order has been cancelled. Any amount charged will be refunded in\r\n"
 			+ "        5-7 working days";
-	String CancelOrder = "Cancel Order\r\n"
-			+ "To cancel your order contact\r\n"
-			+ "7208055523";
-	
+	String CancelOrder = "Cancel Order\r\n" + "To cancel your order contact\r\n" + "7208055523";
+
 	@FindBy(xpath = "//div[@class='cancel-order-message']")
 	private WebElement cancelMge;
-	//------------------- View details & Need help ------------------------	
+
+	// ------------------- View details & Need help ------------------------
 	@FindBy(xpath = "//a[contains(text(),'My orders')]")
 	private WebElement myOrder;
 	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
 	private WebElement scrollViewDetails;
-	@FindBy(xpath = "(//div[@class='view-details mt-0'])[2]")
-	private WebElement viewDetails; 
-	@FindBy(xpath = "//button[normalize-space()='View details']")
+	@FindBy(xpath = "(//*[text()='Total amount:']//following::div[1]//following::button[1]//p[1])[1]")
+	private WebElement viewDetails;
+	@FindBy(xpath = "//span[normalize-space()='Price details']")
 	private WebElement viewPriceBreakup;
 	@FindBy(xpath = "(//a[text()='Need help '])[1]")
 	private WebElement needHelp;
-	//span[@class='cancel-btn cursor-pointer']
+	// span[@class='cancel-btn cursor-pointer']
+
 //------------------- Buy again -----------------------	
 
 	@FindBy(xpath = "(//button[@class='need-help-order mt-custom'])[1]")
@@ -60,9 +59,9 @@ public class MyOrderPages {
 	private WebElement arrow;
 	@FindBy(xpath = "//button[@class='btn cart-btn-secondary']")
 	private WebElement addToCart;
-	@FindBy(xpath =  "//button[@class='ok-button']")
+	@FindBy(xpath = "//button[@class='ok-button']")
 	private WebElement okCart;
-	@FindBy(xpath =  "//button[@class='btn cart-btn-primary']")
+	@FindBy(xpath = "//button[@class='btn cart-btn-primary']")
 	private WebElement buyNow;
 	@FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/a/img")
 	private WebElement myCart;
@@ -76,28 +75,28 @@ public class MyOrderPages {
 	private WebElement successPayment;
 	@FindBy(xpath = "//div[@class='success-order-title']")
 	private WebElement successMge;
-	
+
 //------------------Cancel Order ----------------------
-	
+
 	@FindBy(className = "view-details mt-0")
 	private WebElement viewOrderDetails;
 	@FindBy(xpath = "//button[@class='btn btn-light-blue']")
 	private WebElement cancel;
 	@FindBy(className = "ok-button")
 	private WebElement okCancel;
-	//@FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/div[4]/a")
-	//private WebElement cancelOrder;
+	// @FindBy(xpath = "//*[@id=\'__layout\']/div/header/div[1]/div[3]/div[4]/a")
+	// private WebElement cancelOrder;
 	@FindBy(xpath = "(//div[@class='cancel-order-section flex-column mt-0']//span)[1]")
 	private WebElement cancelOrder;
 	@FindBy(xpath = "//span[text()='CANCEL ORDER']")
 	private WebElement cancelButton;
-		
+
 	@FindBy(xpath = "//textarea[@placeholder='Enter remarks']")
 	private WebElement remark;
 	@FindBy(xpath = "//div[@class='modal-body']//div[4]//button")
 	private WebElement cancelOrderB;
-		//@FindBy(xpath = "//button[@class='proceedhome-button-login mb-25 mt-25']")
-	//private WebElement cancelOrderB;
+	// @FindBy(xpath = "//button[@class='proceedhome-button-login mb-25 mt-25']")
+	// private WebElement cancelOrderB;
 	@FindBy(xpath = "(//li[@class='step0'])[4]")
 	private WebElement inactiveDelivery;
 	@FindBy(xpath = "(//li[@class='step0 activePro'])[4]")
@@ -110,9 +109,9 @@ public class MyOrderPages {
 	private WebElement cancelOrderID;
 	@FindBy(xpath = "//span[@class='order-value']")
 	private WebElement orderNumber;
-	
+
 //Filter Functionality
-	
+
 	private By filterIcon = By.xpath("//div[@class='filter-myorder']");
 	private By invoiceMessage = By.xpath("//div[@class='note']");
 	private By filterWindow = By.xpath("//div[@id='filter-order___BV_modal_body_']");
@@ -129,16 +128,16 @@ public class MyOrderPages {
 	private By reset = By.xpath("(//span[contains(@class,'reset-btn')])[1]");
 	private By clearAll = By.xpath("//button[@class='btn clearAllbtn ml-0 mt-1']");
 	private By filterApplied = By.xpath("//div[@class='d-md-inline-flex d-lg-inline-flex my-4']");
-	
+
 	private By order = By.xpath("//div[contains(text(),'Orders')]");
 	private By searchBox = By.xpath("//input[@name='search-text']");
 	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
-		
+
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void validateCancelmge() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='cancel-order-message']")).isDisplayed();
@@ -152,7 +151,7 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("//button[text()='Success']")).click();
 		return;
 	}
-	
+
 	public void validateRazorpayPage()
 
 	{
@@ -173,44 +172,43 @@ public class MyOrderPages {
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
-	//	driver.findElement(By.xpath("//div[@class='success-order-title']")).isDisplayed();
+		// driver.findElement(By.xpath("//div[@class='success-order-title']")).isDisplayed();
 		return;
 	}
-	
+
 	public void scrollingDown(WebElement element) {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("arguments[0].scrollIntoView()", element);
-			return;
-		}
-	
+		return;
+	}
+
 	public void dropDownValue(WebElement element, String colour) {
 		Select s = new Select(element);
 		s.selectByValue(colour);
 		return;
 	}
-	
+
 	public void implicitWaitSec(long sec) {
 		driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
 		return;
 	}
-	
+
 	public void implicitWaitMin(long min) {
 		driver.manage().timeouts().implicitlyWait(min, TimeUnit.MINUTES);
 		return;
 	}
-	
+
 	public void placedOrder() {
 		driver.findElement((By) activePlacedOrder).isDisplayed();
 		driver.findElement((By) cancelOrder).click();
 		return;
 	}
-	
+
 	public void validateNeedHelp() {
 		driver.findElement(By.xpath("//div[@class='help-container']")).isDisplayed();
 		return;
 	}
-	
-	
+
 	public void cancelledOrderID() {
 		driver.findElement((By) cancelOrderID).isDisplayed();
 		String cancelID = driver.findElement((By) cancelOrderID).getText();
@@ -222,151 +220,150 @@ public class MyOrderPages {
 		String number = driver.findElement((By) orderNumber).getText();
 		return;
 	}
-	
-	//Payment History
-	
-		public void DOorder() throws InterruptedException {
-			WebElement scroll = driver.findElement(By.xpath("//div[text()='TEST999-12284']"));
-			JavascriptExecutor j = (JavascriptExecutor) driver;
-			j.executeScript("arguments[0].scrollIntoView()", scroll);
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//div[3]/div/div[3]/div[1]/div[3]/div[2]/div")).click();
+
+	// Payment History
+
+	public void DOorder() throws InterruptedException {
+		WebElement scroll = driver.findElement(By.xpath("//div[text()='TEST999-12284']"));
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()", scroll);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[3]/div/div[3]/div[1]/div[3]/div[2]/div")).click();
+	}
+
+	public void validateOrderSummaryPage() {
+		driver.findElement(By.xpath("//div[text()='Order details']")).isDisplayed();
+	}
+
+	public void validatePaymentReceived() {
+		driver.findElement(By.xpath("//span[text()='Payment received']")).isDisplayed();
+	}
+
+	public void clickPaymentHistory() {
+		driver.findElement(By.xpath("//button[contains(text(),'Payment history')]")).click();
+	}
+
+	public void paymentHistory() {
+		List<WebElement> payment = driver.findElements(By.xpath("//div[@class='payment-details']"));
+		System.out.println("Number of payment history: " + payment.size());
+		for (Iterator iterator = payment.iterator(); iterator.hasNext();) {
+			WebElement webElement = (WebElement) iterator.next();
+			System.out.println(webElement.getText());
 		}
-		
-		
-		public void validateOrderSummaryPage() {
-			driver.findElement(By.xpath("//div[text()='Order details']")).isDisplayed();
-		}
-		
-		public void validatePaymentReceived() {
-			driver.findElement(By.xpath("//span[text()='Payment received']")).isDisplayed();
-		}
-		
-		public void clickPaymentHistory() {
-			driver.findElement(By.xpath("//button[contains(text(),'Payment history')]")).click();
-		}	
-		
-		public void paymentHistory() {
-			List<WebElement> payment = driver.findElements(By.xpath("//div[@class='payment-details']"));
-			System.out.println("Number of payment history: " +payment.size());
-			for (Iterator iterator = payment.iterator(); iterator.hasNext();) {
-				WebElement webElement = (WebElement) iterator.next();
-				System.out.println(webElement.getText());
-			}
-		}
-		
-		public void scrollPayment() {
-			WebElement paymentReceived = driver.findElement(By.xpath("//span[text()='Payment received']"));
-			JavascriptExecutor j = (JavascriptExecutor) driver;
-			j.executeScript("arguments[0].scrollIntoView()", paymentReceived);
-				return;
-		}
-		
-	// Applied coupons view	
-		
-		public void validateViewCoupons() {
-			WebElement coupons = driver.findElement(By.xpath("//span[text()='View coupons']"));
-			System.out.println(coupons.isDisplayed());
-			System.out.println(coupons.getText());
-		}
-		
-		public void couponsCount() {
-			WebElement count = driver.findElement(By.xpath("//div[@class='coupon-applied-message']"));
-			System.out.println(count.getText());
-		}
-		
-		public void clcikViewCoupons() {
-			driver.findElement(By.xpath("//span[text()='View coupons']")).click();
-		}
-		
-		public void validateAppliedCoupon() throws InterruptedException {
-			System.out.println(driver.findElement(By.xpath("//h1[@class='coupon-modal-heading']")).getText());
-			System.out.println(driver.findElement(By.xpath("//div[@class='applied-coupons']")).getText());
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//button[@class='close']")).click();
-			Thread.sleep(2000);
-		}
-		
+	}
+
+	public void scrollPayment() {
+		WebElement paymentReceived = driver.findElement(By.xpath("//span[text()='Payment received']"));
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()", paymentReceived);
+		return;
+	}
+
+	// Applied coupons view
+
+	public void validateViewCoupons() {
+		WebElement coupons = driver.findElement(By.xpath("//span[text()='View coupons']"));
+		System.out.println(coupons.isDisplayed());
+		System.out.println(coupons.getText());
+	}
+
+	public void couponsCount() {
+		WebElement count = driver.findElement(By.xpath("//div[@class='coupon-applied-message']"));
+		System.out.println(count.getText());
+	}
+
+	public void clcikViewCoupons() {
+		driver.findElement(By.xpath("//span[text()='View coupons']")).click();
+	}
+
+	public void validateAppliedCoupon() throws InterruptedException {
+		System.out.println(driver.findElement(By.xpath("//h1[@class='coupon-modal-heading']")).getText());
+		System.out.println(driver.findElement(By.xpath("//div[@class='applied-coupons']")).getText());
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='close']")).click();
+		Thread.sleep(2000);
+	}
+
 //Filter Functionality
-		
-		public void clickFilter() {
-			driver.findElement(filterIcon).isDisplayed();
-			driver.findElement(filterIcon).click();
-		}
-		
-		public boolean verifyFilterPopup() {
-			boolean popup = driver.findElement(filterWindow).isDisplayed();
-			return popup;
-		}
-		
-		public void invoiceMessage() {
-			driver.findElement(invoiceMessage).isDisplayed();
-			System.out.println(driver.findElement(invoiceMessage).getText());
-		}
-		
-		public void selectedPlaced() throws InterruptedException {
-			driver.findElement(statusDropdown).click();
-			Thread.sleep(1000);
-			driver.findElement(placedStatus).click();
-			Thread.sleep(1500);
-		}
-		
-		public void durationDefault() throws InterruptedException {
-			driver.findElement(threeMonths).click();
-			Thread.sleep(2000);
-		}
-		
-		public void customFromDuration() throws InterruptedException {
-			driver.findElement(fromDate).click();
-			driver.findElement(By.xpath("(//div[@aria-hidden='true'])[2]")).click();
-			Thread.sleep(1500);
-			driver.findElement(By.xpath("(//span[@class='btn border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold'])[1]")).click();
-			Thread.sleep(1500);
-		}
-		
-		public void customToDuration() throws InterruptedException {
-			driver.findElement(toDate).click();
-			driver.findElement(By.xpath("(//span[@class='btn border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold'])[1]")).click();
-			Thread.sleep(1500);
-		}
-		
-		public void clickApply() {
-			driver.findElement(apply).click();
-		}
-		
-		public void verifyFilterApplied() throws InterruptedException {
-			String applied = driver.findElement(filterApplied).getText();
-			System.out.println(applied);
-			Thread.sleep(2000);
-		}
-		
-		public void clickReset() throws InterruptedException {
-			driver.findElement(reset).click();
-			Thread.sleep(1500);
-		}
-		
-		public void clickClearAll() throws InterruptedException {
-			driver.findElement(clearAll).click();
-			Thread.sleep(1500);
-		}
-		
-		public String verifyMyOrderPage() {
-			return driver.findElement(By.xpath("(//*[text()='My orders'])[1]")).getText();
-		}
-		
-		public void clearedAppliedFilter() {
-			boolean cleared = driver.findElement(By.xpath("//div[@class='showorderCount mt-1']")).isDisplayed();
-			System.out.println("Cleared Applied filter: "+cleared);
-		}
-		
-		
-		
-		
+
+	public void clickFilter() {
+		driver.findElement(filterIcon).isDisplayed();
+		driver.findElement(filterIcon).click();
+	}
+
+	public boolean verifyFilterPopup() {
+		boolean popup = driver.findElement(filterWindow).isDisplayed();
+		return popup;
+	}
+
+	public void invoiceMessage() {
+		driver.findElement(invoiceMessage).isDisplayed();
+		System.out.println(driver.findElement(invoiceMessage).getText());
+	}
+
+	public void selectedPlaced() throws InterruptedException {
+		driver.findElement(statusDropdown).click();
+		Thread.sleep(1000);
+		driver.findElement(placedStatus).click();
+		Thread.sleep(1500);
+	}
+
+	public void durationDefault() throws InterruptedException {
+		driver.findElement(threeMonths).click();
+		Thread.sleep(2000);
+	}
+
+	public void customFromDuration() throws InterruptedException {
+		driver.findElement(fromDate).click();
+		driver.findElement(By.xpath("(//div[@aria-hidden='true'])[2]")).click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath(
+				"(//span[@class='btn border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold'])[1]"))
+				.click();
+		Thread.sleep(1500);
+	}
+
+	public void customToDuration() throws InterruptedException {
+		driver.findElement(toDate).click();
+		driver.findElement(By.xpath(
+				"(//span[@class='btn border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold'])[1]"))
+				.click();
+		Thread.sleep(1500);
+	}
+
+	public void clickApply() {
+		driver.findElement(apply).click();
+	}
+
+	public void verifyFilterApplied() throws InterruptedException {
+		String applied = driver.findElement(filterApplied).getText();
+		System.out.println(applied);
+		Thread.sleep(2000);
+	}
+
+	public void clickReset() throws InterruptedException {
+		driver.findElement(reset).click();
+		Thread.sleep(1500);
+	}
+
+	public void clickClearAll() throws InterruptedException {
+		driver.findElement(clearAll).click();
+		Thread.sleep(1500);
+	}
+
+	public String verifyMyOrderPage() {
+		return driver.findElement(By.xpath("(//*[text()='My orders'])[1]")).getText();
+	}
+
+	public void clearedAppliedFilter() {
+		boolean cleared = driver.findElement(By.xpath("//div[@class='showorderCount mt-1']")).isDisplayed();
+		System.out.println("Cleared Applied filter: " + cleared);
+	}
+
 	public WebElement getOrderNumber() {
 		return orderNumber;
 	}
 
-	
 	public WebElement getCancelButton() {
 		return cancelButton;
 	}
@@ -387,7 +384,6 @@ public class MyOrderPages {
 		return timer;
 	}
 
-	
 	public WebElement getCancel() {
 		return cancel;
 	}
@@ -423,7 +419,6 @@ public class MyOrderPages {
 	public String getCartEmptyMessage() {
 		return cartEmptyMessage;
 	}
-	
 
 	public String getOrderCancelMessage() {
 		return orderCancelMessage;
@@ -518,17 +513,20 @@ public class MyOrderPages {
 	}
 
 	public String getOrderNo() {
-		String orderNo= driver.findElement(By.xpath("//*[contains(text(),'Order number')]//following::div[1]")).getText();
+		String orderNo = driver.findElement(By.xpath("//*[contains(text(),'Order number')]//following::div[1]"))
+				.getText();
 		System.out.println("order number" + orderNo);
 		return orderNo;
 	}
-	
+
 	public String gettax() {
 		driver.findElement(By.xpath("//div[1]/div[1]/div[2]/div[2]/button[1]")).click();
-		String tax= driver.findElement(By.xpath("//div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]")).getText();
+		String tax = driver
+				.findElement(By.xpath("//div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]"))
+				.getText();
 		return tax;
 	}
-	
+
 	public void clickOrder() throws InterruptedException {
 
 		driver.findElement(order).click();
@@ -536,6 +534,7 @@ public class MyOrderPages {
 		driver.findElement(order).click();
 
 	}
+
 	public boolean isElementPresentpopup() {
 		try {
 			driver.findElement(By.xpath("//button[@label='Close dialog']"));
@@ -545,7 +544,7 @@ public class MyOrderPages {
 		}
 
 	}
-	
+
 	public void checkPopup() {
 
 		driver.findElement(By.xpath("//button[@label='Close dialog']")).click();
@@ -562,28 +561,25 @@ public class MyOrderPages {
 		Thread.sleep(10000);
 
 	}
-	public void closePopup()
-	{
+
+	public void closePopup() {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ESCAPE).build().perform();
 	}
-	
-	public void validateOrdersAwaitingPaymentHeader()
-	{
+
+	public void validateOrdersAwaitingPaymentHeader() {
 		driver.findElement(By.xpath("//*[normalize-space()='Orders awaiting payment']")).isDisplayed();
 	}
-	
-	public void validateAllOrdersHeader()
-	{
+
+	public void validateAllOrdersHeader() {
 		driver.findElement(By.xpath("//*[normalize-space()='All orders']")).isDisplayed();
 	}
-	
+
 	public void clickReviewAndPay() throws InterruptedException {
 
 		driver.findElement(By.xpath("(//*[contains(text(),'Review & pay')])[1]")).click();
 		Thread.sleep(10000);
 
 	}
-	
 
 }
