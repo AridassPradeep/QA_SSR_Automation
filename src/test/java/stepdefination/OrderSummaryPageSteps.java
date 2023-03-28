@@ -72,10 +72,10 @@ public class OrderSummaryPageSteps {
 		order.validateOrderNoinURL();
 	}
 
-	@Then("^Verifying payment status as Pending$")
-	public void verifying_payment_status_as_partial() throws Throwable {
+	@Then("^Verifying payment status as Full$")
+	public void verifying_payment_status_as_full() throws Throwable {
 		String pymntStatus = order.validatePaymentStatus();
-		assertThat(pymntStatus.contentEquals("Pending"));
+		assertThat(pymntStatus.contentEquals("Full"));
 	}
 
 	@And("^user logins to cloud scheduler$")

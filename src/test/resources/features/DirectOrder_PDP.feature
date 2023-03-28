@@ -175,11 +175,30 @@ Feature: Direct Order for PDP feature for registered user
       #| Email             | Password   | Gmail             |
       #| qatestuser@jsw.in | Admin@123$ | qatestuser@jsw.in |
 
-  @DirectPaymentHistory
-  Scenario: Verify payment history for Direct order
+  #@DirectPaymentHistory
+  #Scenario: Verify payment history for Direct order
+    #When user is able to click my order button
+    #And user is able to click view details button for DO
+    #And user is able to view Order summary page
+    #Then user is able to view Payment received section
+    #When user is able to click Payment history dropdown CTA
+    #Then user is able to view Direct order payment status
+    
+      Scenario: Verify my orders for Direct order
+    When user click on Buy from verified sellers
+    Then verify Buy directly from JSWsteel is displayed
+    When cart is empty or not
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item
+    When user click on Buy Now
+    And user click on proceed to pay on cart detail page
+    And user wait for sometime
     When user is able to click my order button
-    And user is able to click view details button for DO
-    And user is able to view Order summary page
-    Then user is able to view Payment received section
-    When user is able to click Payment history dropdown CTA
-    Then user is able to view Direct order payment status
+    And user clicks on ReviewAndPay
+    And user clicks on netBanking
+    And user select bank name to transfer from the drop down on payment page
+    Then verify bank is selected
+    And User click on PayNow
+    Then User navigates to RazorPay Page
+    
