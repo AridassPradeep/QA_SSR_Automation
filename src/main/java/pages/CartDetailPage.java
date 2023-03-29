@@ -141,10 +141,9 @@ public class CartDetailPage {
 
 	public void changeAddress(int index) {
 		driver.findElement(By.xpath("//a[contains(text(),'Change address')]")).click();
-		List<WebElement> deladress = driver.findElements(By.xpath("//input[@name='sel-address']"));
+		List<WebElement> deladress = driver.findElements(By.xpath("//div[contains(@class,'change-address-list')]"));
 		deladress.get(index).click();
 	}
-
 	public void selectDelivery() throws InterruptedException {
 		driver.findElement(By.xpath("//button[contains(text(),'Select for delivery')]")).click();
 		Thread.sleep(4000);
@@ -159,8 +158,8 @@ public class CartDetailPage {
 	}
 
 	public void verifyCgstSgst() {
-		driver.findElement(By.xpath("//div[contains(text(),'9% CGST')]")).isDisplayed();
-		driver.findElement(By.xpath("//div[contains(text(),'9% SGST')]")).isDisplayed();
+		driver.findElement(By.xpath("//div[contains(text(),'18% IGST')]")).isDisplayed();
+		//driver.findElement(By.xpath("//div[contains(text(),'9% SGST')]")).isDisplayed();
 		
 
 	}

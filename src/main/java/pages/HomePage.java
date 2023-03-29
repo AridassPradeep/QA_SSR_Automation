@@ -98,7 +98,7 @@ public class HomePage {
 	}
 
 	public void selectHotRolledProduct() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(steelMenu);
 		action.moveToElement(we).build().perform();
