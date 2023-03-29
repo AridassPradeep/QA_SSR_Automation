@@ -5,7 +5,7 @@ Feature: Order Summary page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "TestReg1@gmail.com" and  "Ramya@678"
+    When user enters logins with username with "testreg17@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
     When cart is empty or not
@@ -109,7 +109,6 @@ Feature: Order Summary page feature
     Then Verifying delivery days
 
   Scenario Outline: Veifying user can make netbanking payment for amount less than ₹10,00,000
-    When cart is empty or not
     Then user navigate to Home page
     When user is on Steel Menu on header section
     And user is able to select Colour coated from Steel Menu
