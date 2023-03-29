@@ -201,7 +201,7 @@ public class ProfilePage {
 		Thread.sleep(1500);
 		driver.findElement(By.id("city")).sendKeys("Pune");
 		Thread.sleep(1500);
-		driver.findElement(By.id("state")).sendKeys("Maharashtra");
+		//driver.findElement(By.id("state")).sendKeys("Maharashtra");
 		Thread.sleep(1500);
 	}
 

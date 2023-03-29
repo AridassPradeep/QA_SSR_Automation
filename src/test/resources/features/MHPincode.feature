@@ -5,7 +5,7 @@ Feature: Loading MH pincode
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "ramya1347@gmail.com" and  "Ramya@678"
+    When user enters logins with username with "TestReg0122@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -35,7 +35,9 @@ Feature: Loading MH pincode
     Given user is on product detail page of Steel item
     And user wait for sometime
     When user click on Buy Now
-    And user click on proceed to pay on cart detail page
+    And user click on proceed to pay on cart detail page and navigate to ordersummary page
+    And user clicks on ReviewAndPay
+    And user clicks on netBanking
     And user select bank name to transfer from the drop down on payment page
     Then verify bank is selected
     And User click on PayNow

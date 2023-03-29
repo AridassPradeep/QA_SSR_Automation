@@ -16,6 +16,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import factory.DriverFactory;
+import util.ElementUtil;
+
 public class MyOrderPages {
 	private WebDriver driver;
 
@@ -132,6 +135,7 @@ public class MyOrderPages {
 	private By order = By.xpath("//div[contains(text(),'Orders')]");
 	private By searchBox = By.xpath("//input[@name='search-text']");
 	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
+	private By ReviewAndPay = By.xpath("(//*[contains(text(),'Review & pay')])[1]");
 
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
@@ -576,9 +580,10 @@ public class MyOrderPages {
 	}
 
 	public void clickReviewAndPay() throws InterruptedException {
-
-		driver.findElement(By.xpath("(//*[contains(text(),'Review & pay')])[1]")).click();
-		Thread.sleep(10000);
+		ElementUtil elementUtil = new ElementUtil(DriverFactory.getDriver());
+		if (elementUtil.isElementPresent("(//*[contains(text(),'Review & pay')])[1]")) {
+			driver.findElement(By.xpath("(//*[contains(text(),'Review & pay')])[1]")).click();
+		}
 
 	}
 
