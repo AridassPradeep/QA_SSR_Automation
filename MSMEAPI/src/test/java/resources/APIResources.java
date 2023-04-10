@@ -10,6 +10,8 @@ public enum APIResources {
     cartSizeAPI("/cart/cart-size"),
 	addToCartAPI("/cart/addtocart"),
 	validateGSTAPI("/customer/v1/gst/validate"),
+	validateCouponAPI("/cart/v2/add-discount"),
+	validatemyOrderAPI("/order-service/order/my-orders?offset=0&limit=499"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	
 	private String resource;
