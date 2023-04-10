@@ -13,6 +13,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import resources.APIResources;
+import resources.ProjectVariables;
 import resources.TestDataBuild;
 import resources.Utils;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -20,29 +21,24 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 public class Coupon extends Utils {
 
-	RequestSpecification res;
-	ResponseSpecification resspec;
-	Response response;
-	TestDataBuild data = new TestDataBuild();
-
 	@Given("user calls {string} with {string} http request with queryParam {string} and {string}")
 	public void user_calls_with_http_request_with_query_param_and(String resource, String method, String param,
 			String value) throws IOException {
 
 		if (method.equalsIgnoreCase("Post")) {
-			res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"))
+			ProjectVariables.res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"))
 					.contentType(ContentType.JSON).queryParam(param, value);
 			APIResources resourceAPI = APIResources.valueOf(resource);
-			response = res.when().post(resourceAPI.getResource());
+			ProjectVariables.response = ProjectVariables.res.when().post(resourceAPI.getResource());
 
 		} else if (method.equalsIgnoreCase("Get")) {
 
-			res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"));
+			ProjectVariables.res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"));
 			APIResources resourceAPI = APIResources.valueOf(resource);
-			response = res.when().get(resourceAPI.getResource());
+			ProjectVariables.response = ProjectVariables.res.when().get(resourceAPI.getResource());
 
 		}
-		System.out.println(response.asPrettyString());
+		System.out.println(ProjectVariables.response.asPrettyString());
 	}
 
 }
