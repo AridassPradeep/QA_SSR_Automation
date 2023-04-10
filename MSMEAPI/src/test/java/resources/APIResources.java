@@ -9,6 +9,7 @@ public enum APIResources {
     registerAPI("/customer/register"),
     cartSizeAPI("/cart/cart-size"),
 	addToCartAPI("/cart/addtocart"),
+	validateGSTAPI("/customer/v1/gst/validate"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	
 	private String resource;

@@ -12,9 +12,13 @@ Feature: Validating CustomerAPI
   Scenario: Validate registration Verification
     Given user calls "registerAPI" with "Post" http request for registration
     Then the API call response is success with status code 200
-   # And validate the payload structure has "customerId"
+    And validate the payload structure has "customerId"
     And validate the login response time is less than "15000" ms
     And user calls "registerAPI" with "Post" http request for registration
-    
 
-    
+  @validateGst
+  Scenario: Validate GST
+    Given user calls "validateGSTAPI" with "Post" http request for "validateGST"
+    Then validate that the "validateGSTAPI"  call response is success with status code "200"
+    And validate the "validateGSTAPI" response time is less than "8000" ms
+    And validate the "validateGSTAPI" payload structure has "companyName"
