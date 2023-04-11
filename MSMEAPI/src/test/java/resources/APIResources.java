@@ -12,6 +12,7 @@ public enum APIResources {
 	validateGSTAPI("/customer/v1/gst/validate"),
 	validateCouponAPI("/cart/v2/add-discount"),
 	validatemyOrderAPI("/order-service/order/my-orders?offset=0&limit=499"),
+	createOrderAPI("/order/create"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	
 	private String resource;
