@@ -8,6 +8,7 @@ import resources.TestDataBuild;
 public class ProjectVariables {
     public static RequestSpecification res;
     public static  ResponseSpecification resspec;
+    public static String orderNum ;
     public static Response response;
     public static  TestDataBuild data = new TestDataBuild();
 }

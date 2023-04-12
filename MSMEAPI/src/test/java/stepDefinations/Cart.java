@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -65,6 +66,8 @@ public class Cart extends Utils {
 	public void wait_for_sometime() throws InterruptedException {
 	   Thread.sleep(8000);
 	}
+
+	
 
 
 }

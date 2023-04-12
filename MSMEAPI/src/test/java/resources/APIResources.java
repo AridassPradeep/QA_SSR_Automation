@@ -13,6 +13,10 @@ public enum APIResources {
 	validateCouponAPI("/cart/v2/add-discount"),
 	validatemyOrderAPI("/order-service/order/my-orders?offset=0&limit=499"),
 	createOrderAPI("/order/create"),
+	orderSummaryAPI("/order/summary/order-num"),
+	orderAPI("/order/order-num"),
+	bankAPI("payment/banks"),
+	paymentSummaryAPI("payment/paymentSummary/orderNumber"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	
 	private String resource;
