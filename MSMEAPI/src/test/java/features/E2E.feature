@@ -16,12 +16,15 @@ Feature: Validating E2e
     Given user calls "orderSummaryAPI" with "Get" http request with pathParam "<orderNum>"
     Then validate that the "orderSummaryAPI"  call response is success with status code "200"
     And validate the "orderSummaryAPI" response time is less than "5000" ms
-   # And validate the "orderSummaryAPI" payload structure has "pendingPaymentOrders"
-   Given user calls "orderAPI" with "Get" http request with pathParam "<orderNum>"
-   Then validate that the "orderAPI"  call response is success with status code "200"
-   
-   
-    
-    
-
-  
+    # And validate the "orderSummaryAPI" payload structure has "pendingPaymentOrders"
+    Given user calls "orderAPI" with "Get" http request with pathParam "<orderNum>"
+    Then validate that the "orderAPI"  call response is success with status code "200"
+    Given user calls "bankAPI" with "Get" http request for "validatebank"
+    Then validate that the "bankAPI"  call response is success with status code "200"
+    And validate the "bankAPI" response time is less than "5000" ms
+    And validate the "bankAPI" payload structure has "Bank of Maharashtra"
+    Given user calls "paymentSummaryAPI" with "Get" http request with pathParam "<orderNum>"
+    Then validate that the "paymentSummaryAPI"  call response is success with status code "200"
+    And validate the "paymentSummaryAPI" response time is less than "5000" ms
+    And validate the "paymentSummaryAPI" payload structure has "paymentLink"
+    And extract the ctorderId

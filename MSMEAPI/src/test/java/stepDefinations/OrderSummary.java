@@ -24,9 +24,15 @@ public class OrderSummary extends Utils {
 
 	@Then("extract the orderno")
 	public void extract_the_orderno() {
-		String responseBody = ProjectVariables.response.getBody().asString();
-		JsonPath jsonPath = new JsonPath(responseBody);
-		String ordernourl = jsonPath.getString("payments[0].paymentLink");
+		String ordernourl = Utils.getexpectedValue("payments[0].paymentLink");
+		ProjectVariables.orderNum = ordernourl.substring(ordernourl.indexOf("=") + 1);
+		System.out.println(ProjectVariables.orderNum);
+	}
+
+	@Then("extract the ctorderId")
+	public void extract_the_ctorderId() {
+
+		String ordernourl = Utils.getexpectedValue("payments[0].paymentLink");
 		ProjectVariables.orderNum = ordernourl.substring(ordernourl.indexOf("=") + 1);
 		System.out.println(ProjectVariables.orderNum);
 	}
@@ -34,11 +40,11 @@ public class OrderSummary extends Utils {
 	@Given("user calls {string} with {string} http request with pathParam {string}")
 	public void user_calls_with_http_request_with_path_param(String resource, String method, String pathParamValue)
 			throws IOException {
-		
+
 		if (method.equalsIgnoreCase("Post")) {
 
 		} else if (method.equalsIgnoreCase("Get")) {
-	
+
 			ProjectVariables.res = given().spec(requestSpecification())
 					.header("access_token", Utils.getGlobalValue("token")).pathParam("id", ProjectVariables.orderNum);
 			APIResources resourceAPI = APIResources.valueOf(resource);

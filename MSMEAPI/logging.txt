@@ -21,7 +21,7 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Wed, 12 Apr 2023 04:30:36 GMT
+date: Wed, 12 Apr 2023 13:48:30 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -31,7 +31,7 @@ Transfer-Encoding: chunked
     "orderCartSummary": {
         "identifier": {
             "type": "CART",
-            "id": "c8173465-7f1b-4afe-bd54-c3db75c28f0a",
+            "id": "61c96973-5cc2-41ea-bbcc-66441451b630",
             "category": "DISTRIBUTED",
             "version": 9,
             "isZeroAdvanceOrder": false
@@ -137,7 +137,7 @@ Transfer-Encoding: chunked
             {
                 "identifier": {
                     "type": "CART",
-                    "id": "c8173465-7f1b-4afe-bd54-c3db75c28f0a",
+                    "id": "61c96973-5cc2-41ea-bbcc-66441451b630",
                     "plantName": "Test Steel Agencies - Channel",
                     "category": "DISTRIBUTED",
                     "key": null
@@ -293,7 +293,7 @@ Transfer-Encoding: chunked
                     }
                 },
                 "paymentAwaited": {
-                    "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+                    "id": "8b879c81-8d00-44c7-b198-051363c3b519",
                     "type": "FINAL",
                     "version": 1,
                     "amount": {
@@ -317,7 +317,7 @@ Transfer-Encoding: chunked
                 "lastConfirmedPayment": null,
                 "payments": [
                     {
-                        "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+                        "id": "8b879c81-8d00-44c7-b198-051363c3b519",
                         "type": "FINAL",
                         "version": 1,
                         "amount": {
@@ -346,7 +346,7 @@ Transfer-Encoding: chunked
         "lineItemList": [
             {
                 "lineItemIdentifier": {
-                    "ctLineItemId": "ad2375f7-a28c-409e-84e2-0d46332c8026",
+                    "ctLineItemId": "1be5d64c-be7d-4543-b366-2f84fbd0eab1",
                     "sapLineItemId": "10"
                 },
                 "productSlug": "jsw-concreel-hd-chd-cement",
@@ -363,41 +363,6 @@ Transfer-Encoding: chunked
                 },
                 "deliveryStatus": [
                     {
-                        "state": "DIRECT_ORDER_DISPATCH_READY",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_DELIVERED",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DISPATCH",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_CONFIRMED",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_STOCK_READY",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
-                        "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
-                        "stage": "PENDING",
-                        "quantity": null
-                    },
-                    {
                         "state": "DIRECT_ORDER_PICKED_UP",
                         "stage": "PENDING",
                         "quantity": null
@@ -408,12 +373,12 @@ Transfer-Encoding: chunked
                         "quantity": null
                     },
                     {
-                        "state": "DELIVERED",
+                        "state": "CONFIRMED",
                         "stage": "PENDING",
                         "quantity": null
                     },
                     {
-                        "state": "DIRECT_ORDER_DISPATCHED",
+                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
                         "stage": "PENDING",
                         "quantity": null
                     },
@@ -428,7 +393,42 @@ Transfer-Encoding: chunked
                         }
                     },
                     {
-                        "state": "CONFIRMED",
+                        "state": "DIRECT_ORDER_CONFIRMED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DELIVERED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DELIVERED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCH_READY",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DISPATCH",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_STOCK_READY",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCHED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
                         "stage": "PENDING",
                         "quantity": null
                     }
@@ -911,7 +911,7 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Wed, 12 Apr 2023 04:30:36 GMT
+date: Wed, 12 Apr 2023 13:48:30 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -924,7 +924,7 @@ Transfer-Encoding: chunked
         "lineItemCount": 0
     },
     "orderCart": {
-        "id": "c8173465-7f1b-4afe-bd54-c3db75c28f0a",
+        "id": "61c96973-5cc2-41ea-bbcc-66441451b630",
         "version": "9",
         "lineItemCount": 1
     }
@@ -952,7 +952,7 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Wed, 12 Apr 2023 04:30:43 GMT
+date: Wed, 12 Apr 2023 13:48:34 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -961,10 +961,10 @@ Transfer-Encoding: chunked
 {
     "identifier": {
         "type": "ORDER",
-        "id": "ba23f1e9-b487-430b-938d-f71c09c7b37c",
+        "id": "99a9e244-f443-471b-b539-61a680dabdc8",
         "plantName": "Test Steel Agencies - Channel",
         "category": "DISTRIBUTED",
-        "key": "JOO-H1NTM09A"
+        "key": "JOO-4FA69WTS"
     },
     "totalLineItemPrice": {
         "centAmount": 18240000,
@@ -1117,7 +1117,7 @@ Transfer-Encoding: chunked
         }
     },
     "paymentAwaited": {
-        "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+        "id": "8b879c81-8d00-44c7-b198-051363c3b519",
         "type": "FINAL",
         "version": 1,
         "amount": {
@@ -1141,7 +1141,7 @@ Transfer-Encoding: chunked
     "lastConfirmedPayment": null,
     "payments": [
         {
-            "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+            "id": "8b879c81-8d00-44c7-b198-051363c3b519",
             "type": "FINAL",
             "version": 1,
             "amount": {
@@ -1158,7 +1158,7 @@ Transfer-Encoding: chunked
             "transactions": [
                 
             ],
-            "paymentLink": "https://qa-ssr.msme.jswone.in/payment?order_num=JOO-H1NTM09A",
+            "paymentLink": "https://qa-ssr.msme.jswone.in/payment?order_num=JOO-4FA69WTS",
             "paymentInitiator": "MSME"
         }
     ],
@@ -1167,12 +1167,12 @@ Transfer-Encoding: chunked
     ]
 }
 Request method:	GET
-Request URI:	https://qa.msme.jswone.in/order/summary/order-num/JOO-H1NTM09A
+Request URI:	https://qa.msme.jswone.in/order/summary/order-num/JOO-4FA69WTS
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	id=JOO-H1NTM09A
+Path params:	id=JOO-4FA69WTS
 Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
 				Accept=*/*
 				Content-Type=application/json
@@ -1188,7 +1188,7 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Wed, 12 Apr 2023 04:30:44 GMT
+date: Wed, 12 Apr 2023 13:48:38 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -1197,12 +1197,12 @@ Transfer-Encoding: chunked
 {
     "identifier": {
         "type": "ORDER",
-        "id": "ba23f1e9-b487-430b-938d-f71c09c7b37c",
+        "id": "99a9e244-f443-471b-b539-61a680dabdc8",
         "category": "DISTRIBUTED",
         "version": 5,
         "isZeroAdvanceOrder": false
     },
-    "orderNumber": "JOO-H1NTM09A",
+    "orderNumber": "JOO-4FA69WTS",
     "orderDate": "12 Apr 2023",
     "orderPaymentStatus": "PAYMENT_PENDING",
     "customerData": {
@@ -1303,10 +1303,10 @@ Transfer-Encoding: chunked
         {
             "identifier": {
                 "type": "ORDER",
-                "id": "ba23f1e9-b487-430b-938d-f71c09c7b37c",
+                "id": "99a9e244-f443-471b-b539-61a680dabdc8",
                 "plantName": "Test Steel Agencies - Channel",
                 "category": "DISTRIBUTED",
-                "key": "JOO-H1NTM09A"
+                "key": "JOO-4FA69WTS"
             },
             "totalLineItemPrice": {
                 "centAmount": 18240000,
@@ -1459,7 +1459,7 @@ Transfer-Encoding: chunked
                 }
             },
             "paymentAwaited": {
-                "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+                "id": "8b879c81-8d00-44c7-b198-051363c3b519",
                 "type": "FINAL",
                 "version": 2,
                 "amount": {
@@ -1483,7 +1483,7 @@ Transfer-Encoding: chunked
             "lastConfirmedPayment": null,
             "payments": [
                 {
-                    "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+                    "id": "8b879c81-8d00-44c7-b198-051363c3b519",
                     "type": "FINAL",
                     "version": 2,
                     "amount": {
@@ -1500,7 +1500,7 @@ Transfer-Encoding: chunked
                     "transactions": [
                         
                     ],
-                    "paymentLink": "https://qa-ssr.msme.jswone.in/payment?order_num=JOO-H1NTM09A",
+                    "paymentLink": "https://qa-ssr.msme.jswone.in/payment?order_num=JOO-4FA69WTS",
                     "paymentInitiator": "MSME"
                 }
             ],
@@ -1512,7 +1512,7 @@ Transfer-Encoding: chunked
     "lineItemList": [
         {
             "lineItemIdentifier": {
-                "ctLineItemId": "ad2375f7-a28c-409e-84e2-0d46332c8026",
+                "ctLineItemId": "1be5d64c-be7d-4543-b366-2f84fbd0eab1",
                 "sapLineItemId": "10"
             },
             "productSlug": "jsw-concreel-hd-chd-cement",
@@ -1529,37 +1529,12 @@ Transfer-Encoding: chunked
             },
             "deliveryStatus": [
                 {
-                    "state": "CONFIRMED",
-                    "stage": "PENDING",
-                    "quantity": null
-                },
-                {
-                    "state": "DIRECT_ORDER_PICKED_UP",
-                    "stage": "PENDING",
-                    "quantity": null
-                },
-                {
-                    "state": "DISPATCH",
-                    "stage": "PENDING",
-                    "quantity": null
-                },
-                {
                     "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
                     "stage": "PENDING",
                     "quantity": null
                 },
                 {
-                    "state": "DIRECT_ORDER_CONFIRMED",
-                    "stage": "PENDING",
-                    "quantity": null
-                },
-                {
-                    "state": "DIRECT_ORDER_DISPATCHED",
-                    "stage": "PENDING",
-                    "quantity": null
-                },
-                {
-                    "state": "DIRECT_ORDER_DELIVERED",
+                    "state": "DELIVERED",
                     "stage": "PENDING",
                     "quantity": null
                 },
@@ -1574,17 +1549,12 @@ Transfer-Encoding: chunked
                     }
                 },
                 {
-                    "state": "DIRECT_ORDER_STOCK_READY",
+                    "state": "DIRECT_ORDER_DISPATCH_READY",
                     "stage": "PENDING",
                     "quantity": null
                 },
                 {
-                    "state": "DELIVERED",
-                    "stage": "PENDING",
-                    "quantity": null
-                },
-                {
-                    "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                    "state": "DIRECT_ORDER_PICKED_UP",
                     "stage": "PENDING",
                     "quantity": null
                 },
@@ -1594,7 +1564,37 @@ Transfer-Encoding: chunked
                     "quantity": null
                 },
                 {
-                    "state": "DIRECT_ORDER_DISPATCH_READY",
+                    "state": "DIRECT_ORDER_CONFIRMED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_DISPATCHED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_STOCK_READY",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "CONFIRMED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_DELIVERED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DISPATCH",
                     "stage": "PENDING",
                     "quantity": null
                 }
@@ -2008,7 +2008,7 @@ Transfer-Encoding: chunked
             }
         }
     ],
-    "summaryLink": "https://qa-ssr.msme.jswone.in/order-summary?order_num=JOO-H1NTM09A",
+    "summaryLink": "https://qa-ssr.msme.jswone.in/order-summary?order_num=JOO-4FA69WTS",
     "shipments": [
         
     ],
@@ -2052,12 +2052,12 @@ Transfer-Encoding: chunked
     "estimatedDeliveryTimeline": null
 }
 Request method:	GET
-Request URI:	https://qa.msme.jswone.in/order/order-num/JOO-H1NTM09A
+Request URI:	https://qa.msme.jswone.in/order/order-num/JOO-4FA69WTS
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	id=JOO-H1NTM09A
+Path params:	id=JOO-4FA69WTS
 Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
 				Accept=*/*
 				Content-Type=application/json
@@ -2073,17 +2073,17 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Wed, 12 Apr 2023 04:30:44 GMT
+date: Wed, 12 Apr 2023 13:48:38 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
 Transfer-Encoding: chunked
 
 {
-    "id": "ba23f1e9-b487-430b-938d-f71c09c7b37c",
-    "version": 6,
-    "createdAt": 1681273837.774000000,
-    "lastModifiedAt": 1681273844.580000000,
+    "id": "99a9e244-f443-471b-b539-61a680dabdc8",
+    "version": 5,
+    "createdAt": 1681307311.956000000,
+    "lastModifiedAt": 1681307312.343000000,
     "lastModifiedBy": {
         "clientId": "t1THqbvDVBzLEtfpNAJRNLnG",
         "externalUserId": null,
@@ -2097,7 +2097,7 @@ Transfer-Encoding: chunked
         "anonymousId": null
     },
     "completedAt": null,
-    "orderNumber": "JOO-H1NTM09A",
+    "orderNumber": "JOO-4FA69WTS",
     "customerId": "3f0b1867-a4e5-426a-b48d-0e7cabc1a4b9",
     "customerEmail": "ramyatestuserssr@gmail.com",
     "anonymousId": null,
@@ -2107,7 +2107,7 @@ Transfer-Encoding: chunked
     },
     "lineItems": [
         {
-            "id": "ad2375f7-a28c-409e-84e2-0d46332c8026",
+            "id": "1be5d64c-be7d-4543-b366-2f84fbd0eab1",
             "productId": "a4a888c7-448f-4daa-a5a0-472c63e98f57",
             "productKey": "JSW-CONCREEL-HD-CEMENT",
             "name": {
@@ -5842,7 +5842,7 @@ Transfer-Encoding: chunked
                 "type": "centPrecision"
             },
             "quantity": 1900,
-            "addedAt": 1681273834.311000000,
+            "addedAt": 1681307308.383000000,
             "state": [
                 {
                     "quantity": 1900.0,
@@ -6759,12 +6759,12 @@ Transfer-Encoding: chunked
                 }
             },
             "shippingDetails": null,
-            "lastModifiedAt": 1681273834.311000000
+            "lastModifiedAt": 1681307308.383000000
         }
     ],
     "customLineItems": [
         {
-            "id": "b2c82a6b-05e7-4e03-8ff5-72bdde76e688",
+            "id": "1b03442e-bf39-43c7-a9eb-2ca348a29d09",
             "name": {
                 "en-US": "Parting Charge"
             },
@@ -6794,7 +6794,7 @@ Transfer-Encoding: chunked
                 "fractionDigits": 2,
                 "type": "centPrecision"
             },
-            "slug": "parting_charge_ad2375f7-a28c-409e-84e2-0d46332c8026",
+            "slug": "parting_charge_1be5d64c-be7d-4543-b366-2f84fbd0eab1",
             "quantity": 1,
             "state": [
                 {
@@ -6835,13 +6835,13 @@ Transfer-Encoding: chunked
                     "typeId": "type"
                 },
                 "fields": {
-                    "assoc_line_item_id": "ad2375f7-a28c-409e-84e2-0d46332c8026"
+                    "assoc_line_item_id": "1be5d64c-be7d-4543-b366-2f84fbd0eab1"
                 }
             },
             "shippingDetails": null
         },
         {
-            "id": "f8577690-0263-4768-b7d9-18c1e6d53f08",
+            "id": "54875ebe-0534-4f50-a355-74da0e6be5ce",
             "name": {
                 "en-US": "Freight Charge"
             },
@@ -6871,7 +6871,7 @@ Transfer-Encoding: chunked
                 "fractionDigits": 2,
                 "type": "centPrecision"
             },
-            "slug": "freight_charge_ad2375f7-a28c-409e-84e2-0d46332c8026",
+            "slug": "freight_charge_1be5d64c-be7d-4543-b366-2f84fbd0eab1",
             "quantity": 1,
             "state": [
                 {
@@ -6912,7 +6912,7 @@ Transfer-Encoding: chunked
                     "typeId": "type"
                 },
                 "fields": {
-                    "assoc_line_item_id": "ad2375f7-a28c-409e-84e2-0d46332c8026"
+                    "assoc_line_item_id": "1be5d64c-be7d-4543-b366-2f84fbd0eab1"
                 }
             },
             "shippingDetails": null
@@ -7105,12 +7105,12 @@ Transfer-Encoding: chunked
     ],
     "lastMessageSequenceNumber": 3,
     "cart": {
-        "id": "c8173465-7f1b-4afe-bd54-c3db75c28f0a",
+        "id": "61c96973-5cc2-41ea-bbcc-66441451b630",
         "obj": {
-            "id": "c8173465-7f1b-4afe-bd54-c3db75c28f0a",
+            "id": "61c96973-5cc2-41ea-bbcc-66441451b630",
             "version": 10,
-            "createdAt": 1681273834.319000000,
-            "lastModifiedAt": 1681273837.774000000,
+            "createdAt": 1681307308.391000000,
+            "lastModifiedAt": 1681307311.956000000,
             "key": null,
             "lastModifiedBy": {
                 "clientId": "t1THqbvDVBzLEtfpNAJRNLnG",
@@ -7133,7 +7133,7 @@ Transfer-Encoding: chunked
             },
             "lineItems": [
                 {
-                    "id": "ad2375f7-a28c-409e-84e2-0d46332c8026",
+                    "id": "1be5d64c-be7d-4543-b366-2f84fbd0eab1",
                     "productId": "a4a888c7-448f-4daa-a5a0-472c63e98f57",
                     "productKey": "JSW-CONCREEL-HD-CEMENT",
                     "name": {
@@ -7682,7 +7682,7 @@ Transfer-Encoding: chunked
                         "type": "centPrecision"
                     },
                     "quantity": 1900,
-                    "addedAt": 1681273834.311000000,
+                    "addedAt": 1681307308.383000000,
                     "state": [
                         {
                             "quantity": 1900.0,
@@ -7742,12 +7742,12 @@ Transfer-Encoding: chunked
                         }
                     },
                     "shippingDetails": null,
-                    "lastModifiedAt": 1681273834.311000000
+                    "lastModifiedAt": 1681307308.383000000
                 }
             ],
             "customLineItems": [
                 {
-                    "id": "b2c82a6b-05e7-4e03-8ff5-72bdde76e688",
+                    "id": "1b03442e-bf39-43c7-a9eb-2ca348a29d09",
                     "name": {
                         "en-US": "Parting Charge"
                     },
@@ -7777,7 +7777,7 @@ Transfer-Encoding: chunked
                         "fractionDigits": 2,
                         "type": "centPrecision"
                     },
-                    "slug": "parting_charge_ad2375f7-a28c-409e-84e2-0d46332c8026",
+                    "slug": "parting_charge_1be5d64c-be7d-4543-b366-2f84fbd0eab1",
                     "quantity": 1,
                     "state": [
                         {
@@ -7818,13 +7818,13 @@ Transfer-Encoding: chunked
                             "typeId": "type"
                         },
                         "fields": {
-                            "assoc_line_item_id": "ad2375f7-a28c-409e-84e2-0d46332c8026"
+                            "assoc_line_item_id": "1be5d64c-be7d-4543-b366-2f84fbd0eab1"
                         }
                     },
                     "shippingDetails": null
                 },
                 {
-                    "id": "f8577690-0263-4768-b7d9-18c1e6d53f08",
+                    "id": "54875ebe-0534-4f50-a355-74da0e6be5ce",
                     "name": {
                         "en-US": "Freight Charge"
                     },
@@ -7854,7 +7854,7 @@ Transfer-Encoding: chunked
                         "fractionDigits": 2,
                         "type": "centPrecision"
                     },
-                    "slug": "freight_charge_ad2375f7-a28c-409e-84e2-0d46332c8026",
+                    "slug": "freight_charge_1be5d64c-be7d-4543-b366-2f84fbd0eab1",
                     "quantity": 1,
                     "state": [
                         {
@@ -7895,7 +7895,7 @@ Transfer-Encoding: chunked
                             "typeId": "type"
                         },
                         "fields": {
-                            "assoc_line_item_id": "ad2375f7-a28c-409e-84e2-0d46332c8026"
+                            "assoc_line_item_id": "1be5d64c-be7d-4543-b366-2f84fbd0eab1"
                         }
                     },
                     "shippingDetails": null
@@ -8050,7 +8050,7 @@ Transfer-Encoding: chunked
             "paymentInfo": {
                 "payments": [
                     {
-                        "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+                        "id": "8b879c81-8d00-44c7-b198-051363c3b519",
                         "obj": null,
                         "typeId": "payment"
                     }
@@ -8077,7 +8077,6 @@ Transfer-Encoding: chunked
             "typeId": "type"
         },
         "fields": {
-            "paymentStatusInfo": "{\"key\":\"PENDING\",\"label\":\"Pending\",\"ctKey\":\"PENDING\",\"lastModifiedBy\":null,\"lastModifiedDate\":19459}",
             "phoneNumber": "8987878778",
             "custom_payment_status": "payment_pending",
             "seller_key": "TSA",
@@ -8088,7 +8087,7 @@ Transfer-Encoding: chunked
     "paymentInfo": {
         "payments": [
             {
-                "id": "8337e31f-1a88-48c5-98d5-72cca623065b",
+                "id": "8b879c81-8d00-44c7-b198-051363c3b519",
                 "obj": null,
                 "typeId": "payment"
             }
@@ -8104,5 +8103,332 @@ Transfer-Encoding: chunked
     ],
     "refusedGifts": [
         
+    ]
+}
+Request method:	GET
+Request URI:	https://qa.msme.jswone.in/payment/banks
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Wed, 12 Apr 2023 13:48:39 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "AUBL": "AU Small Finance Bank",
+    "AUBL_C": "AU Small Finance Bank - Corporate Banking",
+    "AIRP": "Airtel Payments Bank",
+    "UTIB_C": "Axis Bank - Corporate Banking",
+    "BARB_C": "Bank of Baroda - Corporate Banking",
+    "BARB_R": "Bank of Baroda - Retail Banking",
+    "VIJB": "Bank of Baroda - Retail Banking (Erstwhile Vijaya Bank)",
+    "BKID": "Bank of India",
+    "MAHB": "Bank of Maharashtra",
+    "CNRB": "Canara Bank",
+    "CSBK": "Catholic Syrian Bank",
+    "CBIN": "Central Bank of India",
+    "DCBL": "DCB Bank",
+    "DLXB": "Dhanlaxmi Bank",
+    "DLXB_C": "Dhanlaxmi Bank - Corporate Banking",
+    "ESFB": "Equitas Small Finance Bank",
+    "FDRL": "Federal Bank",
+    "FSFB": "Fincare Small Finance Bank",
+    "HDFC": "HDFC Bank",
+    "ICIC": "ICICI Bank",
+    "ICIC_C": "ICICI Bank - Corporate Banking",
+    "IBKL": "IDBI",
+    "IBKL_C": "IDBI - Corporate Banking",
+    "IDFB": "IDFC FIRST Bank",
+    "IDIB": "Indian Bank",
+    "ALLA": "Indian Bank (Erstwhile Allahabad Bank)",
+    "IDIB_C": "Indian Bank - Corporate Banking",
+    "IOBA": "Indian Overseas Bank",
+    "INDB": "Indusind Bank",
+    "JAKA": "Jammu and Kashmir Bank",
+    "JSFB": "Jana Small Finance Bank",
+    "KARB": "Karnataka Bank",
+    "KVBL": "Karur Vysya Bank",
+    "KKBK": "Kotak Mahindra Bank",
+    "LAVB_C": "Lakshmi Vilas Bank - Corporate Banking",
+    "NSPB": "NSDL Payments Bank",
+    "ORBC": "PNB (Erstwhile-Oriental Bank of Commerce)",
+    "UTBI": "PNB (Erstwhile-United Bank of India)",
+    "PSIB": "Punjab & Sind Bank",
+    "PUNB_C": "Punjab National Bank - Corporate Banking",
+    "PUNB_R": "Punjab National Bank - Retail Banking",
+    "RATN": "RBL Bank",
+    "RATN_C": "RBL Bank - Corporate Banking",
+    "ABNA": "Royal Bank of Scotland N.V.",
+    "SVCB": "SVC Co-Operative Bank Ltd.",
+    "SRCB": "Saraswat Co-operative Bank",
+    "SIBL": "South Indian Bank",
+    "SCBL": "Standard Chartered Bank",
+    "SBBJ": "State Bank of Bikaner and Jaipur",
+    "SBHY": "State Bank of Hyderabad",
+    "SBIN": "State Bank of India",
+    "SBMY": "State Bank of Mysore",
+    "STBP": "State Bank of Patiala",
+    "SBTR": "State Bank of Travancore",
+    "SYNB": "Syndicate Bank",
+    "TMBL": "Tamilnad Mercantile Bank",
+    "UCBA": "UCO Bank",
+    "UJVN": "Ujjivan Small Finance Bank",
+    "UBIN": "Union Bank of India",
+    "CORP": "Union Bank of India (Erstwhile Corporation Bank)",
+    "YESB": "Yes Bank"
+}
+Request method:	GET
+Request URI:	https://qa.msme.jswone.in/payment/paymentSummary/orderNumber/JOO-4FA69WTS
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	id=JOO-4FA69WTS
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Wed, 12 Apr 2023 13:48:39 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "identifier": {
+        "type": "ORDER",
+        "id": "99a9e244-f443-471b-b539-61a680dabdc8",
+        "plantName": "Test Steel Agencies - Channel",
+        "category": "DISTRIBUTED",
+        "key": "JOO-4FA69WTS"
+    },
+    "totalLineItemPrice": {
+        "centAmount": 18240000,
+        "currency": "INR",
+        "displayAmount": "1,82,400.00",
+        "absoluteDisplayAmount": "1,82,400",
+        "precisionAmount": 18240000000,
+        "precision": 5
+    },
+    "totalDiscountedLineItemPrice": {
+        "centAmount": 18240000,
+        "currency": "INR",
+        "displayAmount": "1,82,400.00",
+        "absoluteDisplayAmount": "1,82,400",
+        "precisionAmount": 18240000000,
+        "precision": 5
+    },
+    "totalLineItemTax": {
+        "centAmount": 5107200,
+        "currency": "INR",
+        "displayAmount": "51,072.00",
+        "absoluteDisplayAmount": "51,072",
+        "precisionAmount": 5107200000,
+        "precision": 5
+    },
+    "totalOrderAmount": {
+        "centAmount": 23347200,
+        "currency": "INR",
+        "displayAmount": "2,33,472.00",
+        "absoluteDisplayAmount": "2,33,472",
+        "precisionAmount": 23347200000,
+        "precision": 5
+    },
+    "totalPrice": {
+        "centAmount": 23347200,
+        "currency": "INR",
+        "displayAmount": "2,33,472.00",
+        "absoluteDisplayAmount": "2,33,472",
+        "precisionAmount": 23347200000,
+        "precision": 5
+    },
+    "totalReceivedAmount": {
+        "centAmount": 0,
+        "currency": null,
+        "displayAmount": null,
+        "absoluteDisplayAmount": null,
+        "precisionAmount": 0,
+        "precision": 0
+    },
+    "totalDueAmount": {
+        "centAmount": 23347200,
+        "currency": "INR",
+        "displayAmount": "2,33,472.00",
+        "absoluteDisplayAmount": "2,33,472",
+        "precisionAmount": 23347200000,
+        "precision": 5
+    },
+    "totalRequestedAmount": {
+        "centAmount": 23347200,
+        "currency": "INR",
+        "displayAmount": "2,33,472.00",
+        "absoluteDisplayAmount": "2,33,472",
+        "precisionAmount": 23347200000,
+        "precision": 5
+    },
+    "netAdvancePayable": {
+        "centAmount": 0,
+        "currency": null,
+        "displayAmount": null,
+        "absoluteDisplayAmount": null,
+        "precisionAmount": 0,
+        "precision": 0
+    },
+    "paymentBeforeDelivery": {
+        "centAmount": 23347200,
+        "currency": "INR",
+        "displayAmount": "2,33,472.00",
+        "absoluteDisplayAmount": "2,33,472",
+        "precisionAmount": 23347200000,
+        "precision": 5
+    },
+    "discounts": {
+        "sellerDiscount": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "platformDiscount": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        }
+    },
+    "adjustments": {
+        "advance": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "credit": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "tolerance": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        }
+    },
+    "charges": {
+        "delivery": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "other": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "discountedDelivery": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        }
+    },
+    "paymentAwaited": {
+        "id": "8b879c81-8d00-44c7-b198-051363c3b519",
+        "type": "FINAL",
+        "version": 2,
+        "amount": {
+            "centAmount": 23347200,
+            "currency": "INR",
+            "displayAmount": "2,33,472.00",
+            "absoluteDisplayAmount": "2,33,472",
+            "precisionAmount": 23347200000,
+            "precision": 5
+        },
+        "state": "PENDING",
+        "paymentMethod": null,
+        "paymentInterface": null,
+        "transactions": [
+            
+        ],
+        "paymentLink": null,
+        "paymentInitiator": "MSME"
+    },
+    "lastSuccessfulPayment": null,
+    "lastConfirmedPayment": null,
+    "payments": [
+        {
+            "id": "8b879c81-8d00-44c7-b198-051363c3b519",
+            "type": "FINAL",
+            "version": 2,
+            "amount": {
+                "centAmount": 23347200,
+                "currency": "INR",
+                "displayAmount": "2,33,472.00",
+                "absoluteDisplayAmount": "2,33,472",
+                "precisionAmount": 23347200000,
+                "precision": 5
+            },
+            "state": "PENDING",
+            "paymentMethod": null,
+            "paymentInterface": null,
+            "transactions": [
+                
+            ],
+            "paymentLink": "https://qa-ssr.msme.jswone.in/payment?order_num=JOO-4FA69WTS",
+            "paymentInitiator": "MSME"
+        }
+    ],
+    "associatedSkus": [
+        "JSW Concreel HD Cement - Master"
     ]
 }

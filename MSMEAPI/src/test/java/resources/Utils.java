@@ -63,5 +63,13 @@ public class Utils {
 		File data = new File("src/test/resources/payloads/" + filename + ".json");
 		return data;
 	}
+	
+	public static String getexpectedValue(String key) {
+		String responseBody = ProjectVariables.response.getBody().asString();
+		JsonPath jsonPath = new JsonPath(responseBody);
+		String expectedValue = jsonPath.getString(key);
+		return expectedValue;
+
+	}
 
 }
