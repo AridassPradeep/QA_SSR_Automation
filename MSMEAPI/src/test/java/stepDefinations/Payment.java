@@ -20,32 +20,37 @@ import resources.Utils;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
-public class OrderSummary extends Utils {
+public class Payment extends Utils {
 
-	@Then("extract the orderno")
-	public void extract_the_orderno() {
-		String ordernourl = Utils.getexpectedValue("payments[0].paymentLink");
-		ProjectVariables.orderNum = ordernourl.substring(ordernourl.indexOf("=") + 1);
-		System.out.println(ProjectVariables.orderNum);
+	@Then("extract the ctorderId")
+	public void extract_the_ctorderId() {
+
+		ProjectVariables.ctorderId = Utils.getexpectedValue("identifier.id");
+		System.out.println(ProjectVariables.ctorderId);
 	}
-
-
-	@Given("user calls {string} with {string} http request with pathParam {string}")
-	public void user_calls_with_http_request_with_path_param(String resource, String method, String pathParamValue)
-			throws IOException {
-
+	
+	@Given("user calls {string} with {string} http request with pathParam for {string}")
+	public void user_calls_with_http_request_with_path_param_for(String resource, String method, String pathParamValue) throws IOException
+	{
 		if (method.equalsIgnoreCase("Post")) {
+			
+			ProjectVariables.res = given().spec(requestSpecification())
+					.header("access_token", Utils.getGlobalValue("token")).pathParam("id", ProjectVariables.ctorderId);
+			APIResources resourceAPI = APIResources.valueOf(resource);
+			ProjectVariables.response = ProjectVariables.res.when().post(resourceAPI.getResource() + "/{id}");
+
 
 		} else if (method.equalsIgnoreCase("Get")) {
 
 			ProjectVariables.res = given().spec(requestSpecification())
-					.header("access_token", Utils.getGlobalValue("token")).pathParam("id", ProjectVariables.orderNum);
+					.header("access_token", Utils.getGlobalValue("token")).pathParam("id", ProjectVariables.ctorderId);
 			APIResources resourceAPI = APIResources.valueOf(resource);
 			ProjectVariables.response = ProjectVariables.res.when().get(resourceAPI.getResource() + "/{id}");
 
 		}
 		System.out.println(ProjectVariables.response.asPrettyString());
 	}
+
 	
 	
 

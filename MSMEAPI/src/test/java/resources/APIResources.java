@@ -17,6 +17,8 @@ public enum APIResources {
 	orderAPI("/order/order-num"),
 	bankAPI("payment/banks"),
 	paymentSummaryAPI("payment/paymentSummary/orderNumber"),
+	razorPayOrderAPI("payment/razorpayorder"),
+	captureTransactionAPI("payment/capture-transaction"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	
 	private String resource;
