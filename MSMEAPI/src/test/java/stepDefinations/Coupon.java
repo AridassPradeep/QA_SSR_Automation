@@ -33,9 +33,11 @@ public class Coupon extends Utils {
 
 		} else if (method.equalsIgnoreCase("Get")) {
 
-			ProjectVariables.res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"));
+			ProjectVariables.res = given().spec(requestSpecification()).header("access_token", Utils.getGlobalValue("token"))
+					.contentType(ContentType.JSON).queryParam(param, value);;
 			APIResources resourceAPI = APIResources.valueOf(resource);
 			ProjectVariables.response = ProjectVariables.res.when().get(resourceAPI.getResource());
+
 
 		}
 		System.out.println(ProjectVariables.response.asPrettyString());

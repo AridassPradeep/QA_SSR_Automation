@@ -1,5 +1,5 @@
 @E2E
-Feature: Validating E2e
+Feature: EndToEnd Regression Scenario
 
   Scenario: Verify EndToEndScenario
     Given user calls "addToCartAPI" with "Post" http request for "addToCart"

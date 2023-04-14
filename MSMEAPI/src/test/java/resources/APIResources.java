@@ -19,6 +19,13 @@ public enum APIResources {
 	paymentSummaryAPI("payment/paymentSummary/orderNumber"),
 	razorPayOrderAPI("payment/razorpayorder"),
 	captureTransactionAPI("payment/capture-transaction"),
+	ledgerAPI("customer/ledger?page=0&limit=10"),
+	ledgerTransactionDownloadAPI("customer/download-transaction"),
+	ledgerEmailStatementAPI("customer/ledger/share"),
+	plpAPI("catalog/breadcrumb/category"),
+	plpFilterAPI("product/projections/filter"),
+	profileAPI("customer/me/profile"),
+	updateprofileAPI("customer/profile"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	
 	private String resource;
