@@ -1,7 +1,7 @@
 @Profile
-Feature: Validating MyProfile
+Feature: Validating MyProfile API
 
-  @validateMyProfile
+  @validateMyProfile 
   Scenario: Validate MyProfileAPI
     Given user calls "profileAPI" with "Get" http request for "validateprofile"
     Then validate that the "profileAPI"  call response is success with status code "200"

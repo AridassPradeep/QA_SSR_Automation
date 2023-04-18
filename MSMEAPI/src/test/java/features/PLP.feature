@@ -1,5 +1,5 @@
 @PLP
-Feature: Validating Product Listing Page
+Feature: Validating Product Listing Page API
 
   @validatePLP
   Scenario Outline: Valid Product Listing Page

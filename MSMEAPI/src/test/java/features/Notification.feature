@@ -1,5 +1,5 @@
 @Notification
-Feature: Validating Notification
+Feature: Validating Notification API
 
   @smsNotifcation
   Scenario Outline: SMS Verification
