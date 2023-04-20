@@ -141,5 +141,5 @@ Feature: MyOrder page feature
 
     Examples: 
       | productQuanity |
-      |              5 |
+      |              3 |
 

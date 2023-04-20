@@ -29,12 +29,12 @@ public class DirectOrderPage {
 	private By directlyfromJSW = By.xpath("//span[contains(text(),'Buy directly from')]");
 	private By myrequirements = By.xpath("(//a[@class='links'])[2]");
 	private By requestprice = By.xpath("//span[text()='Request for price']");
-	private By viewrequirementlist = By.xpath("//*[contains(text(),'Requirement list')]");
+	private By viewrequirementlist = By.xpath("(//a[normalize-space()='Requirements cart (1 Item)'])[1]");
 	private By requestforprice = By.xpath("//span[contains(text(),'Request for price')]");
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
 	private By message = By.xpath("(//*[@class='mt-14'])[1]");
-	private By deliverydate = By.xpath("//div[2]/div/div/div[3]/div/div[1]/div/div/span");
+	private By deliverydate = By.xpath("(//span[@class='description'][normalize-space()='Delivery in 30 - 45 days'])[1]");
 	private By clickpasswordNext = By.xpath("//*[@id='passwordNext']/div/button/span");
 	private By uploadFiles = By.xpath("(//span[contains(text(),'Upload files')])[1]");
 	private By proceedtopaytop = By.xpath("//button[@id='oi-proceed-to-pay-notification']");
@@ -233,14 +233,14 @@ public class DirectOrderPage {
 
 	{
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//*[contains(text(),'Add to requirement cart')])[1]")).click();
-		
+		driver.findElement(By.xpath("(//span[contains(text(),'Add to requirements cart')])[1]")).click();
+		Thread.sleep(2000);
 	}
 
 	public void clickViewRequirementCart() throws InterruptedException
 
 	{	
-		driver.findElement(By.xpath("(//*[contains(text(),'View requirement cart')])[1]")).click();
+		driver.findElement(By.xpath("(//span[contains(text(),'View requirements cart')])[1]")).click();
 		
 	}
 
