@@ -17,7 +17,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/java/features", 
 monochrome = true,
-tags ="@RemoveCoupon",
+tags ="@MyRequirements",
 glue= {"stepDefinations"},
 plugin = { "pretty",
 				"json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html",

@@ -10,6 +10,7 @@ public class ProjectVariables {
     public static  ResponseSpecification resspec;
     public static String orderNum ;
     public static String ctorderId ;
+    public static String jwtToken ;
     public static Response response;
     public static  TestDataBuild data = new TestDataBuild();
 }

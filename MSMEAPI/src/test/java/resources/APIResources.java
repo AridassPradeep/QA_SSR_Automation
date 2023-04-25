@@ -6,6 +6,8 @@ public enum APIResources {
     notificationRegistrationsmsAPI("/notification/sms/send"),
     notificationEmailAPI("/notification/email/send/order"),
     loginAPI("/customer/login/"),
+    directUserloginAPI("/auth/login/"),
+    myrequirementsAPI("/order-service/requirement/my-requirements"),
     registerAPI("/customer/v1/register"),
     cartSizeAPI("/cart/cart-size"),
 	addToCartAPI("/cart/addtocart"),
