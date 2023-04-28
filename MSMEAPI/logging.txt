@@ -15,14 +15,40 @@ src\test\resources\payloads\directOrder.json
 HTTP/1.1 200 OK
 vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
 content-type: application/json
-date: Thu, 27 Apr 2023 17:53:24 GMT
+date: Fri, 28 Apr 2023 01:18:25 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
 Transfer-Encoding: chunked
 
 {
-    "jwtToken": "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMjcgMjM6MjM6MjQiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiYWU2ZTE5OGYtNjBlNy00Mjc5LTljMTUtZWNiMTM1M2Q2NzczIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjg1MjI5ODA0LCJ1c2VySWQiOiIzNzBmMGE0My04MzAxLTQ3YzYtYjM2OC1iMDg0MjIwMTM5ZTIiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8yNyAyMzoyMzoyNCIsImlhdCI6MTY4MjYxODAwNH0.oWFKw5LIOflLLbqtG25BE25KATNGPFblk654tohIG4HDCyGPQSVL9GhPXXv_S0OCMXdziQHf3rXHxRBrhbcQnA"
+    "jwtToken": "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMjggMDY6NDg6MjUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMzZhYzE0YTktNWRiMC00NmM4LTgyYTQtMTJhNDdlMTUwZDc4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjg1MjU2NTA1LCJ1c2VySWQiOiIzNzBmMGE0My04MzAxLTQ3YzYtYjM2OC1iMDg0MjIwMTM5ZTIiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8yOCAwNjo0ODoyNSIsImlhdCI6MTY4MjY0NDcwNX0._6d_1SXPhg8Amxlwq3-8pdISOls_FpUqHxOqLg3c7v_zJCvtD0E6T1TQiFbj6n8qZVqmw8Qxp9n-clwvUDmFCg"
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/auth/login/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\directOrder.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+content-type: application/json
+date: Fri, 28 Apr 2023 01:18:26 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "jwtToken": "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMjggMDY6NDg6MjYiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiOTcwYjQyZTYtYmUwZS00NDRjLWEzOTItYWRhNDJmNjRhMmJjIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjg1MjU2NTA2LCJ1c2VySWQiOiIzNzBmMGE0My04MzAxLTQ3YzYtYjM2OC1iMDg0MjIwMTM5ZTIiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8yOCAwNjo0ODoyNiIsImlhdCI6MTY4MjY0NDcwNn0.MIaT5uBP5xG5l0F8qVu619E0TRT4BtfqN6j7uhiYz2-FdC1I5g8EYW3Ok7YnBx5KaOLAmSzhsk6cn044YcWbEA"
 }
 Request method:	GET
 Request URI:	https://qa.msme.jswone.in/order-service/requirement/my-requirements
@@ -31,7 +57,7 @@ Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMjcgMjM6MjM6MjQiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiYWU2ZTE5OGYtNjBlNy00Mjc5LTljMTUtZWNiMTM1M2Q2NzczIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjg1MjI5ODA0LCJ1c2VySWQiOiIzNzBmMGE0My04MzAxLTQ3YzYtYjM2OC1iMDg0MjIwMTM5ZTIiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8yNyAyMzoyMzoyNCIsImlhdCI6MTY4MjYxODAwNH0.oWFKw5LIOflLLbqtG25BE25KATNGPFblk654tohIG4HDCyGPQSVL9GhPXXv_S0OCMXdziQHf3rXHxRBrhbcQnA
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMjggMDY6NDg6MjYiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiOTcwYjQyZTYtYmUwZS00NDRjLWEzOTItYWRhNDJmNjRhMmJjIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjg1MjU2NTA2LCJ1c2VySWQiOiIzNzBmMGE0My04MzAxLTQ3YzYtYjM2OC1iMDg0MjIwMTM5ZTIiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8yOCAwNjo0ODoyNiIsImlhdCI6MTY4MjY0NDcwNn0.MIaT5uBP5xG5l0F8qVu619E0TRT4BtfqN6j7uhiYz2-FdC1I5g8EYW3Ok7YnBx5KaOLAmSzhsk6cn044YcWbEA
 				Accept=*/*
 				Content-Type=application/json
 Cookies:		<none>
@@ -45,9 +71,9 @@ cache-control: no-cache, no-store, max-age=0, must-revalidate
 pragma: no-cache
 expires: 0
 x-frame-options: DENY
-set-cookie: JSESSIONID=2166ABFD72AB27EBCC1AA53F076B0916; Path=/order-service; HttpOnly
+set-cookie: JSESSIONID=F0D617054E044A1C6D23E897BD2D16FD; Path=/order-service; HttpOnly
 content-type: application/json
-date: Thu, 27 Apr 2023 17:53:26 GMT
+date: Fri, 28 Apr 2023 01:18:28 GMT
 server: Google Frontend
 via: 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
@@ -56,6 +82,40 @@ Transfer-Encoding: chunked
 {
     "customerId": "370f0a43-8301-47c6-b368-b084220139e2",
     "requirementCart": [
+        {
+            "requirementId": "JOI-L9ULZ8VB",
+            "requirementSubmissionDate": "2023-04-28 06:43:08",
+            "totalQuantity": 82.525,
+            "skus": [
+                {
+                    "productName": "JSW Steel HRPO Coils IS 1079:2017 HR2",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1500",
+                    "ctProdutId": "1079_2017-HR2-02",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel HRPO Coils IS 1079:2017 HR2\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/1WeHKwYdBeGFUJ7tKshRd7/61899ba0c73b7ae65c9ae774b9de7599/shutterstock_1844845063.jpg\",\"attributes\":{\"Thickness (mm)\":\"1.6 mm\",\"Width (mm)\":\"1500 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"1.6 mm\",\"WIDTH_MM\":\"1500 mm\"}}"
+                },
+                {
+                    "productName": "JSW Steel Hot Rolled Sheets IS 2062:2011 E350A",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 42.525,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "5 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E350A-02",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel Hot Rolled Sheets IS 2062:2011 E350A\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/uybdfpXojK0HzeFIhZb3T/0180291f86e3b9ef80c0a7ef10be96f7/shutterstock_391558495.jpg\",\"attributes\":{\"Thickness\":\"5 mm\",\"Width (mm)\":\"1250 mm\",\"Length\":\"2500 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"5 mm\",\"WIDTH_MM\":\"1250 mm\",\"LENGTH_MM\":\"2500 mm\"}}"
+                }
+            ]
+        },
         {
             "requirementId": "JOI-XUHOWNVT",
             "requirementSubmissionDate": "2023-04-20 11:33:27",
@@ -389,17 +449,16 @@ Transfer-Encoding: chunked
                     "productMetadata": null
                 },
                 {
-                    "productName": "MS HR Sheet 2062:2011 E350A",
+                    "productName": "MS CR Coil 513:2016 CR4",
                     "plant": "JSW Steel Vijayanagar",
-                    "quantity": 45.765,
+                    "quantity": 40.25,
                     "attributeMap": {
-                        "Thickness": "4 mm",
-                        "Length": "2500 mm",
-                        "Width": "1250 mm"
+                        "Thickness": "0.35 mm",
+                        "Width": "900 mm"
                     },
-                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
-                    "attributes": "4 x 1250 x 2500",
-                    "ctProdutId": "2062_2011-E350A-02",
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.35 x 900",
+                    "ctProdutId": "513_PART1_2016-CR4-01",
                     "productMetadata": null
                 },
                 {
@@ -416,6 +475,27 @@ Transfer-Encoding: chunked
                     "productMetadata": null
                 },
                 {
+                    "productName": "MS HR Sheet 2062:2011 E350A",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 45.765,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "4 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E350A-02",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-8V8JLNZN",
+            "requirementSubmissionDate": "2023-03-23 20:03:16",
+            "totalQuantity": 209.04,
+            "skus": [
+                {
                     "productName": "MS CR Coil 513:2016 CR4",
                     "plant": "JSW Steel Vijayanagar",
                     "quantity": 40.25,
@@ -427,24 +507,18 @@ Transfer-Encoding: chunked
                     "attributes": "0.35 x 900",
                     "ctProdutId": "513_PART1_2016-CR4-01",
                     "productMetadata": null
-                }
-            ]
-        },
-        {
-            "requirementId": "JOI-8V8JLNZN",
-            "requirementSubmissionDate": "2023-03-23 20:03:16",
-            "totalQuantity": 209.04,
-            "skus": [
+                },
                 {
-                    "productName": "MS WR Coil 7887:1992 SAE_1018",
+                    "productName": "MS HRPO Coil 1079:2017 HR2",
                     "plant": "JSW Steel Vijayanagar",
                     "quantity": 40.25,
                     "attributeMap": {
-                        "Diameter": "6.5 mm"
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
                     },
-                    "attributesToDisplay": "Dia (mm)",
-                    "attributes": "6.5",
-                    "ctProdutId": "7887_1992-SAE_1018",
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "1079_2017-HR2-02",
                     "productMetadata": null
                 },
                 {
@@ -462,6 +536,18 @@ Transfer-Encoding: chunked
                     "productMetadata": null
                 },
                 {
+                    "productName": "MS WR Coil 7887:1992 SAE_1018",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.25,
+                    "attributeMap": {
+                        "Diameter": "6.5 mm"
+                    },
+                    "attributesToDisplay": "Dia (mm)",
+                    "attributes": "6.5",
+                    "ctProdutId": "7887_1992-SAE_1018",
+                    "productMetadata": null
+                },
+                {
                     "productName": "MS HR Sheet 2062:2011 E350A",
                     "plant": "JSW Steel Vijayanagar",
                     "quantity": 45.765,
@@ -473,32 +559,6 @@ Transfer-Encoding: chunked
                     "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
                     "attributes": "4 x 1250 x 2500",
                     "ctProdutId": "2062_2011-E350A-02",
-                    "productMetadata": null
-                },
-                {
-                    "productName": "MS HRPO Coil 1079:2017 HR2",
-                    "plant": "JSW Steel Vijayanagar",
-                    "quantity": 40.25,
-                    "attributeMap": {
-                        "Thickness": "2 mm",
-                        "Width": "1250 mm"
-                    },
-                    "attributesToDisplay": "TH (mm) x WD (mm)",
-                    "attributes": "2 x 1250",
-                    "ctProdutId": "1079_2017-HR2-02",
-                    "productMetadata": null
-                },
-                {
-                    "productName": "MS CR Coil 513:2016 CR4",
-                    "plant": "JSW Steel Vijayanagar",
-                    "quantity": 40.25,
-                    "attributeMap": {
-                        "Thickness": "0.35 mm",
-                        "Width": "900 mm"
-                    },
-                    "attributesToDisplay": "TH (mm) x WD (mm)",
-                    "attributes": "0.35 x 900",
-                    "ctProdutId": "513_PART1_2016-CR4-01",
                     "productMetadata": null
                 }
             ]
@@ -561,16 +621,17 @@ Transfer-Encoding: chunked
                     "productMetadata": null
                 },
                 {
-                    "productName": "MS HRPO Coil 1079:2017 HR2",
+                    "productName": "MS CR Sheet 513:2016 CR1",
                     "plant": "JSW Steel Vijayanagar",
-                    "quantity": 40.25,
+                    "quantity": 42.525,
                     "attributeMap": {
-                        "Thickness": "2 mm",
+                        "Thickness": "0.4 mm",
+                        "Length": "2500 mm",
                         "Width": "1250 mm"
                     },
-                    "attributesToDisplay": "TH (mm) x WD (mm)",
-                    "attributes": "2 x 1250",
-                    "ctProdutId": "1079_2017-HR2-02",
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "0.4 x 1250 x 2500",
+                    "ctProdutId": "513_PART1_2016-CR1-02",
                     "productMetadata": null
                 },
                 {
@@ -587,17 +648,16 @@ Transfer-Encoding: chunked
                     "productMetadata": null
                 },
                 {
-                    "productName": "MS CR Sheet 513:2016 CR1",
+                    "productName": "MS HRPO Coil 1079:2017 HR2",
                     "plant": "JSW Steel Vijayanagar",
-                    "quantity": 42.525,
+                    "quantity": 40.25,
                     "attributeMap": {
-                        "Thickness": "0.4 mm",
-                        "Length": "2500 mm",
+                        "Thickness": "2 mm",
                         "Width": "1250 mm"
                     },
-                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
-                    "attributes": "0.4 x 1250 x 2500",
-                    "ctProdutId": "513_PART1_2016-CR1-02",
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "1079_2017-HR2-02",
                     "productMetadata": null
                 },
                 {
@@ -702,16 +762,15 @@ Transfer-Encoding: chunked
             "totalQuantity": 209.04,
             "skus": [
                 {
-                    "productName": "MS CR Coil 513:2016 CR4",
+                    "productName": "MS WR Coil 7887:1992 SAE_1018",
                     "plant": "JSW Steel Vijayanagar",
                     "quantity": 40.25,
                     "attributeMap": {
-                        "Thickness": "0.35 mm",
-                        "Width": "900 mm"
+                        "Diameter": "6.5 mm"
                     },
-                    "attributesToDisplay": "TH (mm) x WD (mm)",
-                    "attributes": "0.35 x 900",
-                    "ctProdutId": "513_PART1_2016-CR4-01",
+                    "attributesToDisplay": "Dia (mm)",
+                    "attributes": "6.5",
+                    "ctProdutId": "7887_1992-SAE_1018",
                     "productMetadata": null
                 },
                 {
@@ -729,15 +788,16 @@ Transfer-Encoding: chunked
                     "productMetadata": null
                 },
                 {
-                    "productName": "MS WR Coil 7887:1992 SAE_1018",
+                    "productName": "MS CR Coil 513:2016 CR4",
                     "plant": "JSW Steel Vijayanagar",
                     "quantity": 40.25,
                     "attributeMap": {
-                        "Diameter": "6.5 mm"
+                        "Thickness": "0.35 mm",
+                        "Width": "900 mm"
                     },
-                    "attributesToDisplay": "Dia (mm)",
-                    "attributes": "6.5",
-                    "ctProdutId": "7887_1992-SAE_1018",
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.35 x 900",
+                    "ctProdutId": "513_PART1_2016-CR4-01",
                     "productMetadata": null
                 },
                 {
@@ -775,6 +835,20 @@ Transfer-Encoding: chunked
             "totalQuantity": 209.04,
             "skus": [
                 {
+                    "productName": "MS CR Sheet 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 42.525,
+                    "attributeMap": {
+                        "Thickness": "0.4 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "0.4 x 1250 x 2500",
+                    "ctProdutId": "513_PART1_2016-CR1-02",
+                    "productMetadata": null
+                },
+                {
                     "productName": "MS WR Coil 7887:1992 SAE_1018",
                     "plant": "JSW Steel Vijayanagar",
                     "quantity": 40.25,
@@ -784,6 +858,19 @@ Transfer-Encoding: chunked
                     "attributesToDisplay": "Dia (mm)",
                     "attributes": "6.5",
                     "ctProdutId": "7887_1992-SAE_1018",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR4",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.25,
+                    "attributeMap": {
+                        "Thickness": "0.35 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.35 x 900",
+                    "ctProdutId": "513_PART1_2016-CR4-01",
                     "productMetadata": null
                 },
                 {
@@ -811,33 +898,6 @@ Transfer-Encoding: chunked
                     "attributesToDisplay": "TH (mm) x WD (mm)",
                     "attributes": "2 x 1250",
                     "ctProdutId": "1079_2017-HR2-02",
-                    "productMetadata": null
-                },
-                {
-                    "productName": "MS CR Sheet 513:2016 CR1",
-                    "plant": "JSW Steel Vijayanagar",
-                    "quantity": 42.525,
-                    "attributeMap": {
-                        "Thickness": "0.4 mm",
-                        "Length": "2500 mm",
-                        "Width": "1250 mm"
-                    },
-                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
-                    "attributes": "0.4 x 1250 x 2500",
-                    "ctProdutId": "513_PART1_2016-CR1-02",
-                    "productMetadata": null
-                },
-                {
-                    "productName": "MS CR Coil 513:2016 CR4",
-                    "plant": "JSW Steel Vijayanagar",
-                    "quantity": 40.25,
-                    "attributeMap": {
-                        "Thickness": "0.35 mm",
-                        "Width": "900 mm"
-                    },
-                    "attributesToDisplay": "TH (mm) x WD (mm)",
-                    "attributes": "0.35 x 900",
-                    "ctProdutId": "513_PART1_2016-CR4-01",
                     "productMetadata": null
                 }
             ]
@@ -1247,4 +1307,2316 @@ Transfer-Encoding: chunked
             ]
         }
     ]
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/product/plantSelector
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\PlantSelector.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Fri, 28 Apr 2023 01:18:29 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "success": true,
+    "channelName": "JSW Steel Vijaynagar Works",
+    "channelId": "9ed792af-18c6-43f9-a16e-818321f1459d",
+    "channelKey": "JSVW",
+    "distance": 595,
+    "errorMessage": null,
+    "displayErrorMessage": null,
+    "moq": 40.0,
+    "moqUnit": "MT",
+    "primaryUomQuantity": 42.525,
+    "primaryUomLabel": "MT"
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/cart/addtocart
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\AddToRequirementCart.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Fri, 28 Apr 2023 01:18:30 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "orderCartSummary": null,
+    "enquiryCartSummary": {
+        "identifier": {
+            "type": "CART",
+            "id": "c83dc525-87fa-4a7d-8bba-eaa0abc4c024",
+            "category": "DIRECT",
+            "version": 6,
+            "isZeroAdvanceOrder": false
+        },
+        "orderNumber": null,
+        "orderDate": "28 Apr 2023",
+        "orderPaymentStatus": null,
+        "customerData": {
+            "customerId": "3f0b1867-a4e5-426a-b48d-0e7cabc1a4b9",
+            "name": "ramya",
+            "email": "ramyatestuserssr@gmail.com",
+            "phoneNumber": "8987878778",
+            "companyName": "ALFALOGIC SOLUTIONS INDIA PRIVATE LIMITED",
+            "gstIn": "33AAGCA4932L2ZM",
+            "beneficiaryName": "JSW ONE PLATFORMS LIMITED",
+            "beneficiaryAccountNum": "ba_LUvVkfhWbrF4P7",
+            "ifscCode": "RAZR0000001",
+            "customerVAN": "1112220080486110",
+            "virtualAccountId": "va_LUvVkVbWX2dlso",
+            "salesClassification": "nonsuccess",
+            "bankName": null,
+            "testUser": false,
+            "userEmail": "ramyatestuserssr@gmail.com",
+            "opportunityOwnerEmail": null,
+            "razorPayBankName": "null",
+            "sfAccountId": "NA"
+        },
+        "orderStatus": null,
+        "totalOrderAmount": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "shippingMode": "Delivery",
+        "appliedDiscounts": [
+            
+        ],
+        "appliedDiscountsV2": [
+            
+        ],
+        "shippingAddress": {
+            "id": "AaPwvbeP",
+            "streetLine": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "streetLine2": null,
+            "streetLineAddress": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "postalCode": "600018",
+            "city": "",
+            "region": "CHENNAI",
+            "state": "TAMIL NADU",
+            "company": null,
+            "mobile": null
+        },
+        "billingAddress": {
+            "id": "AaPwvbeP",
+            "streetLine": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "streetLine2": null,
+            "streetLineAddress": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "postalCode": "600018",
+            "city": "",
+            "region": "CHENNAI",
+            "state": "TAMIL NADU",
+            "company": null,
+            "mobile": null
+        },
+        "distributorAddresses": [
+            {
+                "id": "2Z4A7MV0",
+                "streetLine": null,
+                "streetLine2": null,
+                "streetLineAddress": null,
+                "postalCode": "412308",
+                "city": "FURSUNGI",
+                "region": "Pune",
+                "state": "Maharashtra",
+                "company": null,
+                "mobile": null
+            }
+        ],
+        "totalQuantityDelivered": null,
+        "totalReadyForDispatch": null,
+        "totalQuantity": "40 MT",
+        "totalRemainingToBeDelivered": "40 MT",
+        "totalPaymentReceived": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "totalAmountOutstanding": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "paymentSummaryList": [
+            {
+                "identifier": {
+                    "type": "CART",
+                    "id": "c83dc525-87fa-4a7d-8bba-eaa0abc4c024",
+                    "plantName": "JSW Steel Vijaynagar Works",
+                    "category": "DIRECT",
+                    "key": null
+                },
+                "totalLineItemPrice": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalDiscountedLineItemPrice": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalLineItemTax": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalOrderAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalPrice": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalReceivedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalDueAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalRequestedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "netAdvancePayable": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "paymentBeforeDelivery": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "discounts": {
+                    "sellerDiscount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "platformDiscount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "adjustments": {
+                    "advance": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "credit": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "tolerance": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "charges": {
+                    "delivery": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "other": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedDelivery": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "paymentAwaited": null,
+                "lastSuccessfulPayment": null,
+                "lastConfirmedPayment": null,
+                "payments": [
+                    
+                ],
+                "associatedSkus": [
+                    "HRPO Coils IS 1079:2017 HR2 - 1.6 - 1500"
+                ]
+            }
+        ],
+        "lineItemList": [
+            {
+                "lineItemIdentifier": {
+                    "ctLineItemId": "02b30de4-7441-4d0e-abc4-8acd624e7014",
+                    "sapLineItemId": "10"
+                },
+                "productSlug": "1079_2017-hr2-02",
+                "productForm": "HRPKLCF",
+                "variantId": 12,
+                "variantKey": "HRPKLCF-1079_2017-HR2-1.6-1500",
+                "sku": "HRPO Coils IS 1079:2017 HR2 - 1.6 - 1500",
+                "imageUrl": "//images.ctfassets.net/o0otttl8ele8/1WeHKwYdBeGFUJ7tKshRd7/61899ba0c73b7ae65c9ae774b9de7599/shutterstock_1844845063.jpg",
+                "name": "JSW Steel HRPO Coils IS 1079:2017 HR2",
+                "sellerName": "JSW Steel Vijaynagar Works",
+                "sellerKey": "JSVW",
+                "attributes": {
+                    "Thickness (mm)": "1.6 mm",
+                    "Width (mm)": "1500 mm"
+                },
+                "deliveryStatus": [
+                    {
+                        "state": "DISPATCH",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "PLACED",
+                        "stage": "COMPLETE",
+                        "quantity": {
+                            "unit": "MT",
+                            "value": 40.0,
+                            "label": "MT",
+                            "priceLabel": "MT"
+                        }
+                    },
+                    {
+                        "state": "DIRECT_ORDER_PICKED_UP",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_CONFIRMED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DELIVERED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCHED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "CONFIRMED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_STOCK_READY",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DELIVERED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCH_READY",
+                        "stage": "PENDING",
+                        "quantity": null
+                    }
+                ],
+                "quantity": {
+                    "primaryQuantity": "40 MT",
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 40.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 40000,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": null
+                },
+                "totalQuantityReadyForDispatch": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": null,
+                    "ctUom": null,
+                    "secondaryUom": null
+                },
+                "payableAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "ctAttributes": {
+                    "THICKNESS_MM": "1.6 mm",
+                    "WIDTH_MM": "1500 mm"
+                },
+                "availableQuantity": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 0.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 0,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": null
+                },
+                "freightInclusivePrice": false,
+                "brand": "JSW Steel",
+                "channelName": "JSW Steel Vijaynagar Works",
+                "channelKey": "JSVW",
+                "channelAddress": {
+                    "id": "9ed792af-18c6-43f9-a16e-818321f1459d",
+                    "streetLine": "P.O: VIDYANAGAR VILLAGE, TORANAGALLU BALLARI ",
+                    "streetLine2": null,
+                    "streetLineAddress": null,
+                    "postalCode": "583275",
+                    "city": "VIDYANAGAR",
+                    "region": "VIDYANAGAR",
+                    "state": "KARNATAKA",
+                    "company": null,
+                    "mobile": null
+                },
+                "productType": "Steel HR Coil",
+                "grade": "1079:2017",
+                "subGrade": "HR2",
+                "lineItemTaxRatio": 0.18,
+                "lineItemAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "lineItemTaxedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "lineItemAmounts": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "taxedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedTaxedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "discountedTaxAmount": null,
+                    "lineItemTaxAmount": null
+                },
+                "lineItemAmountsV2": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "perUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "partingCharge": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "partingChargeTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "bendingCharge": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                }
+            }
+        ],
+        "summaryLink": "https://qa-ssr.msme.jswone.in/cart-detail",
+        "shipments": [
+            
+        ],
+        "sapInfo": {
+            "contractNumber": null,
+            "contractCreationDate": null,
+            "sapMetadata": null,
+            "orderCreationDate": "28/04/2023",
+            "validStartDate": null,
+            "validEndDate": null,
+            "soldPartyCode": null,
+            "distributionChannel": null,
+            "sapApprovalStatus": null,
+            "sapOrderNumber": null,
+            "sapOrderApprovedBy": null,
+            "sapOrderCreationDate": null,
+            "sapStatusRemarks": null
+        },
+        "summaryComments": {
+            "errors": null,
+            "warnings": null,
+            "messages": [
+                
+            ]
+        },
+        "customOrderStatus": {
+            "key": null,
+            "label": null,
+            "reasonForCancellation": null,
+            "reasonForDecline": null,
+            "lastModifiedBy": null,
+            "lastModifiedDate": 0
+        },
+        "customPaymentStatus": {
+            "key": null,
+            "label": null,
+            "ctKey": null,
+            "lastModifiedBy": null,
+            "lastModifiedDate": 0
+        },
+        "salesForceOpportunityId": null,
+        "purchaseOrderDocumentDetails": null,
+        "orderSummaryPdfDetails": null,
+        "estimatedDeliveryTimeline": null
+    }
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/product/plantSelector
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\PlantSelector.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Fri, 28 Apr 2023 01:18:31 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "success": true,
+    "channelName": "JSW Steel Vijaynagar Works",
+    "channelId": "9ed792af-18c6-43f9-a16e-818321f1459d",
+    "channelKey": "JSVW",
+    "distance": 595,
+    "errorMessage": null,
+    "displayErrorMessage": null,
+    "moq": 40.0,
+    "moqUnit": "MT",
+    "primaryUomQuantity": 42.525,
+    "primaryUomLabel": "MT"
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/cart/addtocart
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\AddToRequirementCart.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Fri, 28 Apr 2023 01:18:32 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "orderCartSummary": null,
+    "enquiryCartSummary": {
+        "identifier": {
+            "type": "CART",
+            "id": "c83dc525-87fa-4a7d-8bba-eaa0abc4c024",
+            "category": "DIRECT",
+            "version": 15,
+            "isZeroAdvanceOrder": false
+        },
+        "orderNumber": null,
+        "orderDate": "28 Apr 2023",
+        "orderPaymentStatus": null,
+        "customerData": {
+            "customerId": "3f0b1867-a4e5-426a-b48d-0e7cabc1a4b9",
+            "name": "ramya",
+            "email": "ramyatestuserssr@gmail.com",
+            "phoneNumber": "8987878778",
+            "companyName": "ALFALOGIC SOLUTIONS INDIA PRIVATE LIMITED",
+            "gstIn": "33AAGCA4932L2ZM",
+            "beneficiaryName": "JSW ONE PLATFORMS LIMITED",
+            "beneficiaryAccountNum": "ba_LUvVkfhWbrF4P7",
+            "ifscCode": "RAZR0000001",
+            "customerVAN": "1112220080486110",
+            "virtualAccountId": "va_LUvVkVbWX2dlso",
+            "salesClassification": "nonsuccess",
+            "bankName": null,
+            "testUser": false,
+            "userEmail": "ramyatestuserssr@gmail.com",
+            "opportunityOwnerEmail": null,
+            "razorPayBankName": "null",
+            "sfAccountId": "NA"
+        },
+        "orderStatus": null,
+        "totalOrderAmount": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "shippingMode": "Delivery",
+        "appliedDiscounts": [
+            
+        ],
+        "appliedDiscountsV2": [
+            
+        ],
+        "shippingAddress": {
+            "id": "AaPwvbeP",
+            "streetLine": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "streetLine2": null,
+            "streetLineAddress": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "postalCode": "600018",
+            "city": "",
+            "region": "CHENNAI",
+            "state": "TAMIL NADU",
+            "company": null,
+            "mobile": null
+        },
+        "billingAddress": {
+            "id": "AaPwvbeP",
+            "streetLine": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "streetLine2": null,
+            "streetLineAddress": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+            "postalCode": "600018",
+            "city": "",
+            "region": "CHENNAI",
+            "state": "TAMIL NADU",
+            "company": null,
+            "mobile": null
+        },
+        "distributorAddresses": [
+            {
+                "id": "2Z4A7MV0",
+                "streetLine": null,
+                "streetLine2": null,
+                "streetLineAddress": null,
+                "postalCode": "412308",
+                "city": "FURSUNGI",
+                "region": "Pune",
+                "state": "Maharashtra",
+                "company": null,
+                "mobile": null
+            }
+        ],
+        "totalQuantityDelivered": null,
+        "totalReadyForDispatch": null,
+        "totalQuantity": "80 MT",
+        "totalRemainingToBeDelivered": "80 MT",
+        "totalPaymentReceived": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "totalAmountOutstanding": {
+            "centAmount": 0,
+            "currency": null,
+            "displayAmount": null,
+            "absoluteDisplayAmount": null,
+            "precisionAmount": 0,
+            "precision": 0
+        },
+        "paymentSummaryList": [
+            {
+                "identifier": {
+                    "type": "CART",
+                    "id": "c83dc525-87fa-4a7d-8bba-eaa0abc4c024",
+                    "plantName": "JSW Steel Vijaynagar Works",
+                    "category": "DIRECT",
+                    "key": null
+                },
+                "totalLineItemPrice": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalDiscountedLineItemPrice": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalLineItemTax": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalOrderAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalPrice": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalReceivedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalDueAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "totalRequestedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "netAdvancePayable": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "paymentBeforeDelivery": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "discounts": {
+                    "sellerDiscount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "platformDiscount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "adjustments": {
+                    "advance": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "credit": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "tolerance": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "charges": {
+                    "delivery": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "other": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedDelivery": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                },
+                "paymentAwaited": null,
+                "lastSuccessfulPayment": null,
+                "lastConfirmedPayment": null,
+                "payments": [
+                    
+                ],
+                "associatedSkus": [
+                    "HRPO Coils IS 1079:2017 HR2 - 1.6 - 1500"
+                ]
+            }
+        ],
+        "lineItemList": [
+            {
+                "lineItemIdentifier": {
+                    "ctLineItemId": "02b30de4-7441-4d0e-abc4-8acd624e7014",
+                    "sapLineItemId": "10"
+                },
+                "productSlug": "1079_2017-hr2-02",
+                "productForm": "HRPKLCF",
+                "variantId": 12,
+                "variantKey": "HRPKLCF-1079_2017-HR2-1.6-1500",
+                "sku": "HRPO Coils IS 1079:2017 HR2 - 1.6 - 1500",
+                "imageUrl": "//images.ctfassets.net/o0otttl8ele8/1WeHKwYdBeGFUJ7tKshRd7/61899ba0c73b7ae65c9ae774b9de7599/shutterstock_1844845063.jpg",
+                "name": "JSW Steel HRPO Coils IS 1079:2017 HR2",
+                "sellerName": "JSW Steel Vijaynagar Works",
+                "sellerKey": "JSVW",
+                "attributes": {
+                    "Thickness (mm)": "1.6 mm",
+                    "Width (mm)": "1500 mm"
+                },
+                "deliveryStatus": [
+                    {
+                        "state": "DIRECT_ORDER_DISPATCH_READY",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_STOCK_READY",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DELIVERED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_PICKED_UP",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_DISPATCHED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_READY_FOR_PICKUP",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_CONFIRMED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "PLACED",
+                        "stage": "COMPLETE",
+                        "quantity": {
+                            "unit": "MT",
+                            "value": 80.0,
+                            "label": "MT",
+                            "priceLabel": "MT"
+                        }
+                    },
+                    {
+                        "state": "DELIVERED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "CONFIRMED",
+                        "stage": "PENDING",
+                        "quantity": null
+                    },
+                    {
+                        "state": "DISPATCH",
+                        "stage": "PENDING",
+                        "quantity": null
+                    }
+                ],
+                "quantity": {
+                    "primaryQuantity": "40 MT",
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 40.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 40000,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": null
+                },
+                "totalQuantityReadyForDispatch": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": null,
+                    "ctUom": null,
+                    "secondaryUom": null
+                },
+                "payableAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "ctAttributes": {
+                    "THICKNESS_MM": "1.6 mm",
+                    "WIDTH_MM": "1500 mm"
+                },
+                "availableQuantity": {
+                    "primaryQuantity": null,
+                    "secondaryQuantity": null,
+                    "primaryUom": {
+                        "unit": "MT",
+                        "value": 0.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    },
+                    "ctUom": {
+                        "unit": "KG",
+                        "value": 0,
+                        "label": "KG",
+                        "priceLabel": null
+                    },
+                    "secondaryUom": null
+                },
+                "freightInclusivePrice": false,
+                "brand": "JSW Steel",
+                "channelName": "JSW Steel Vijaynagar Works",
+                "channelKey": "JSVW",
+                "channelAddress": {
+                    "id": "9ed792af-18c6-43f9-a16e-818321f1459d",
+                    "streetLine": "P.O: VIDYANAGAR VILLAGE, TORANAGALLU BALLARI ",
+                    "streetLine2": null,
+                    "streetLineAddress": null,
+                    "postalCode": "583275",
+                    "city": "VIDYANAGAR",
+                    "region": "VIDYANAGAR",
+                    "state": "KARNATAKA",
+                    "company": null,
+                    "mobile": null
+                },
+                "productType": "Steel HR Coil",
+                "grade": "1079:2017",
+                "subGrade": "HR2",
+                "lineItemTaxRatio": 0.18,
+                "lineItemAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "lineItemTaxedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "lineItemAmounts": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "taxedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedTaxedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "discountedTaxAmount": null,
+                    "lineItemTaxAmount": null
+                },
+                "lineItemAmountsV2": {
+                    "payableAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "amount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "discountedAmount": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    },
+                    "perUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "perUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "discountedPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "discountedPerUnitAmountTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "previousPerUnitAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "partingCharge": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "partingChargeTax": {
+                        "totalTaxRatio": 0.18,
+                        "totalTaxAmount": {
+                            "centAmount": 0,
+                            "currency": "INR",
+                            "displayAmount": null,
+                            "absoluteDisplayAmount": null,
+                            "precisionAmount": 0,
+                            "precision": 5
+                        },
+                        "taxList": [
+                            {
+                                "taxAmount": {
+                                    "centAmount": 0,
+                                    "currency": "INR",
+                                    "displayAmount": null,
+                                    "absoluteDisplayAmount": null,
+                                    "precisionAmount": 0,
+                                    "precision": 5
+                                },
+                                "taxType": "IGST",
+                                "taxRatio": 0.18
+                            }
+                        ]
+                    },
+                    "bendingCharge": {
+                        "centAmount": 0,
+                        "currency": null,
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 0
+                    }
+                }
+            }
+        ],
+        "summaryLink": "https://qa-ssr.msme.jswone.in/cart-detail",
+        "shipments": [
+            
+        ],
+        "sapInfo": {
+            "contractNumber": null,
+            "contractCreationDate": null,
+            "sapMetadata": null,
+            "orderCreationDate": "28/04/2023",
+            "validStartDate": null,
+            "validEndDate": null,
+            "soldPartyCode": null,
+            "distributionChannel": null,
+            "sapApprovalStatus": null,
+            "sapOrderNumber": null,
+            "sapOrderApprovedBy": null,
+            "sapOrderCreationDate": null,
+            "sapStatusRemarks": null
+        },
+        "summaryComments": {
+            "errors": null,
+            "warnings": null,
+            "messages": [
+                
+            ]
+        },
+        "customOrderStatus": {
+            "key": null,
+            "label": null,
+            "reasonForCancellation": null,
+            "reasonForDecline": null,
+            "lastModifiedBy": null,
+            "lastModifiedDate": 0
+        },
+        "customPaymentStatus": {
+            "key": null,
+            "label": null,
+            "ctKey": null,
+            "lastModifiedBy": null,
+            "lastModifiedDate": 0
+        },
+        "salesForceOpportunityId": null,
+        "purchaseOrderDocumentDetails": null,
+        "orderSummaryPdfDetails": null,
+        "estimatedDeliveryTimeline": null
+    }
+}
+Request method:	GET
+Request URI:	https://qa.msme.jswone.in/payment/requestForPrice
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Fri, 28 Apr 2023 01:18:33 GMT
+server: Google Frontend
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "identifier": {
+        "type": "CART",
+        "id": "c83dc525-87fa-4a7d-8bba-eaa0abc4c024",
+        "category": "DIRECT",
+        "version": 15,
+        "isZeroAdvanceOrder": false
+    },
+    "orderNumber": null,
+    "orderDate": "28 Apr 2023",
+    "orderPaymentStatus": null,
+    "customerData": {
+        "customerId": "3f0b1867-a4e5-426a-b48d-0e7cabc1a4b9",
+        "name": "ramya",
+        "email": "ramyatestuserssr@gmail.com",
+        "phoneNumber": "8987878778",
+        "companyName": "ALFALOGIC SOLUTIONS INDIA PRIVATE LIMITED",
+        "gstIn": "33AAGCA4932L2ZM",
+        "beneficiaryName": "JSW ONE PLATFORMS LIMITED",
+        "beneficiaryAccountNum": "ba_LUvVkfhWbrF4P7",
+        "ifscCode": "RAZR0000001",
+        "customerVAN": "1112220080486110",
+        "virtualAccountId": "va_LUvVkVbWX2dlso",
+        "salesClassification": "nonsuccess",
+        "bankName": null,
+        "testUser": false,
+        "userEmail": "ramyatestuserssr@gmail.com",
+        "opportunityOwnerEmail": null,
+        "razorPayBankName": "null",
+        "sfAccountId": "NA"
+    },
+    "orderStatus": null,
+    "totalOrderAmount": {
+        "centAmount": 0,
+        "currency": null,
+        "displayAmount": null,
+        "absoluteDisplayAmount": null,
+        "precisionAmount": 0,
+        "precision": 0
+    },
+    "shippingMode": "Delivery",
+    "appliedDiscounts": [
+        
+    ],
+    "appliedDiscountsV2": [
+        
+    ],
+    "shippingAddress": {
+        "id": "AaPwvbeP",
+        "streetLine": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+        "streetLine2": null,
+        "streetLineAddress": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+        "postalCode": "600018",
+        "city": "",
+        "region": "CHENNAI",
+        "state": "TAMIL NADU",
+        "company": null,
+        "mobile": null
+    },
+    "billingAddress": {
+        "id": "AaPwvbeP",
+        "streetLine": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+        "streetLine2": null,
+        "streetLineAddress": "FIRST FLOOR, APN BUILDING, TTK ROAD 1ST CROSS STREET, ALWARPET",
+        "postalCode": "600018",
+        "city": "",
+        "region": "CHENNAI",
+        "state": "TAMIL NADU",
+        "company": null,
+        "mobile": null
+    },
+    "distributorAddresses": [
+        {
+            "id": "2Z4A7MV0",
+            "streetLine": null,
+            "streetLine2": null,
+            "streetLineAddress": null,
+            "postalCode": "412308",
+            "city": "FURSUNGI",
+            "region": "Pune",
+            "state": "Maharashtra",
+            "company": null,
+            "mobile": null
+        }
+    ],
+    "totalQuantityDelivered": null,
+    "totalReadyForDispatch": null,
+    "totalQuantity": "80 MT",
+    "totalRemainingToBeDelivered": "80 MT",
+    "totalPaymentReceived": {
+        "centAmount": 0,
+        "currency": null,
+        "displayAmount": null,
+        "absoluteDisplayAmount": null,
+        "precisionAmount": 0,
+        "precision": 0
+    },
+    "totalAmountOutstanding": {
+        "centAmount": 0,
+        "currency": null,
+        "displayAmount": null,
+        "absoluteDisplayAmount": null,
+        "precisionAmount": 0,
+        "precision": 0
+    },
+    "paymentSummaryList": [
+        {
+            "identifier": {
+                "type": "CART",
+                "id": "c83dc525-87fa-4a7d-8bba-eaa0abc4c024",
+                "plantName": "JSW Steel Vijaynagar Works",
+                "category": "DIRECT",
+                "key": null
+            },
+            "totalLineItemPrice": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalDiscountedLineItemPrice": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalLineItemTax": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalOrderAmount": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalPrice": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalReceivedAmount": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalDueAmount": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "totalRequestedAmount": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "netAdvancePayable": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "paymentBeforeDelivery": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "discounts": {
+                "sellerDiscount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "platformDiscount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                }
+            },
+            "adjustments": {
+                "advance": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "credit": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "tolerance": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                }
+            },
+            "charges": {
+                "delivery": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "other": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "discountedDelivery": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                }
+            },
+            "paymentAwaited": null,
+            "lastSuccessfulPayment": null,
+            "lastConfirmedPayment": null,
+            "payments": [
+                
+            ],
+            "associatedSkus": [
+                "HRPO Coils IS 1079:2017 HR2 - 1.6 - 1500"
+            ]
+        }
+    ],
+    "lineItemList": [
+        {
+            "lineItemIdentifier": {
+                "ctLineItemId": "02b30de4-7441-4d0e-abc4-8acd624e7014",
+                "sapLineItemId": "10"
+            },
+            "productSlug": "1079_2017-hr2-02",
+            "productForm": "HRPKLCF",
+            "variantId": 12,
+            "variantKey": "HRPKLCF-1079_2017-HR2-1.6-1500",
+            "sku": "HRPO Coils IS 1079:2017 HR2 - 1.6 - 1500",
+            "imageUrl": "//images.ctfassets.net/o0otttl8ele8/1WeHKwYdBeGFUJ7tKshRd7/61899ba0c73b7ae65c9ae774b9de7599/shutterstock_1844845063.jpg",
+            "name": "JSW Steel HRPO Coils IS 1079:2017 HR2",
+            "sellerName": "JSW Steel Vijaynagar Works",
+            "sellerKey": "JSVW",
+            "attributes": {
+                "Thickness (mm)": "1.6 mm",
+                "Width (mm)": "1500 mm"
+            },
+            "deliveryStatus": [
+                {
+                    "state": "DIRECT_ORDER_APPROVED_FOR_PICKUP",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_PICKED_UP",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DISPATCH",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_DISPATCH_READY",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_READY_FOR_PICKUP",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_DELIVERED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "CONFIRMED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_APPROVED_FOR_DISPATCH",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_CONFIRMED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_DISPATCHED",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "DIRECT_ORDER_STOCK_READY",
+                    "stage": "PENDING",
+                    "quantity": null
+                },
+                {
+                    "state": "PLACED",
+                    "stage": "COMPLETE",
+                    "quantity": {
+                        "unit": "MT",
+                        "value": 80.0,
+                        "label": "MT",
+                        "priceLabel": "MT"
+                    }
+                },
+                {
+                    "state": "DELIVERED",
+                    "stage": "PENDING",
+                    "quantity": null
+                }
+            ],
+            "quantity": {
+                "primaryQuantity": "40 MT",
+                "secondaryQuantity": null,
+                "primaryUom": {
+                    "unit": "MT",
+                    "value": 40.0,
+                    "label": "MT",
+                    "priceLabel": "MT"
+                },
+                "ctUom": {
+                    "unit": "KG",
+                    "value": 40000,
+                    "label": "KG",
+                    "priceLabel": null
+                },
+                "secondaryUom": null
+            },
+            "totalQuantityReadyForDispatch": {
+                "primaryQuantity": null,
+                "secondaryQuantity": null,
+                "primaryUom": null,
+                "ctUom": null,
+                "secondaryUom": null
+            },
+            "payableAmount": {
+                "centAmount": 0,
+                "currency": "INR",
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 5
+            },
+            "ctAttributes": {
+                "THICKNESS_MM": "1.6 mm",
+                "WIDTH_MM": "1500 mm"
+            },
+            "availableQuantity": {
+                "primaryQuantity": null,
+                "secondaryQuantity": null,
+                "primaryUom": {
+                    "unit": "MT",
+                    "value": 0.0,
+                    "label": "MT",
+                    "priceLabel": "MT"
+                },
+                "ctUom": {
+                    "unit": "KG",
+                    "value": 0,
+                    "label": "KG",
+                    "priceLabel": null
+                },
+                "secondaryUom": null
+            },
+            "freightInclusivePrice": false,
+            "brand": "JSW Steel",
+            "channelName": "JSW Steel Vijaynagar Works",
+            "channelKey": "JSVW",
+            "channelAddress": {
+                "id": "9ed792af-18c6-43f9-a16e-818321f1459d",
+                "streetLine": "P.O: VIDYANAGAR VILLAGE, TORANAGALLU BALLARI ",
+                "streetLine2": null,
+                "streetLineAddress": null,
+                "postalCode": "583275",
+                "city": "VIDYANAGAR",
+                "region": "VIDYANAGAR",
+                "state": "KARNATAKA",
+                "company": null,
+                "mobile": null
+            },
+            "productType": "Steel HR Coil",
+            "grade": "1079:2017",
+            "subGrade": "HR2",
+            "lineItemTaxRatio": 0.18,
+            "lineItemAmount": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "lineItemTaxedAmount": {
+                "centAmount": 0,
+                "currency": null,
+                "displayAmount": null,
+                "absoluteDisplayAmount": null,
+                "precisionAmount": 0,
+                "precision": 0
+            },
+            "lineItemAmounts": {
+                "payableAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "amount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "taxedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "discountedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "discountedTaxedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "perUnitAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "discountedPerUnitAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "previousPerUnitAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "discountedTaxAmount": null,
+                "lineItemTaxAmount": null
+            },
+            "lineItemAmountsV2": {
+                "payableAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "amount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "discountedAmount": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                },
+                "perUnitAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "perUnitAmountTax": {
+                    "totalTaxRatio": 0.18,
+                    "totalTaxAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "taxList": [
+                        {
+                            "taxAmount": {
+                                "centAmount": 0,
+                                "currency": "INR",
+                                "displayAmount": null,
+                                "absoluteDisplayAmount": null,
+                                "precisionAmount": 0,
+                                "precision": 5
+                            },
+                            "taxType": "IGST",
+                            "taxRatio": 0.18
+                        }
+                    ]
+                },
+                "discountedPerUnitAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "discountedPerUnitAmountTax": {
+                    "totalTaxRatio": 0.18,
+                    "totalTaxAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "taxList": [
+                        {
+                            "taxAmount": {
+                                "centAmount": 0,
+                                "currency": "INR",
+                                "displayAmount": null,
+                                "absoluteDisplayAmount": null,
+                                "precisionAmount": 0,
+                                "precision": 5
+                            },
+                            "taxType": "IGST",
+                            "taxRatio": 0.18
+                        }
+                    ]
+                },
+                "previousPerUnitAmount": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "partingCharge": {
+                    "centAmount": 0,
+                    "currency": "INR",
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 5
+                },
+                "partingChargeTax": {
+                    "totalTaxRatio": 0.18,
+                    "totalTaxAmount": {
+                        "centAmount": 0,
+                        "currency": "INR",
+                        "displayAmount": null,
+                        "absoluteDisplayAmount": null,
+                        "precisionAmount": 0,
+                        "precision": 5
+                    },
+                    "taxList": [
+                        {
+                            "taxAmount": {
+                                "centAmount": 0,
+                                "currency": "INR",
+                                "displayAmount": null,
+                                "absoluteDisplayAmount": null,
+                                "precisionAmount": 0,
+                                "precision": 5
+                            },
+                            "taxType": "IGST",
+                            "taxRatio": 0.18
+                        }
+                    ]
+                },
+                "bendingCharge": {
+                    "centAmount": 0,
+                    "currency": null,
+                    "displayAmount": null,
+                    "absoluteDisplayAmount": null,
+                    "precisionAmount": 0,
+                    "precision": 0
+                }
+            }
+        }
+    ],
+    "summaryLink": "https://qa-ssr.msme.jswone.in/cart-detail",
+    "shipments": [
+        
+    ],
+    "sapInfo": {
+        "contractNumber": null,
+        "contractCreationDate": null,
+        "sapMetadata": null,
+        "orderCreationDate": "28/04/2023",
+        "validStartDate": null,
+        "validEndDate": null,
+        "soldPartyCode": null,
+        "distributionChannel": null,
+        "sapApprovalStatus": null,
+        "sapOrderNumber": null,
+        "sapOrderApprovedBy": null,
+        "sapOrderCreationDate": null,
+        "sapStatusRemarks": null
+    },
+    "summaryComments": {
+        "errors": null,
+        "warnings": null,
+        "messages": [
+            
+        ]
+    },
+    "customOrderStatus": {
+        "key": null,
+        "label": null,
+        "reasonForCancellation": null,
+        "reasonForDecline": null,
+        "lastModifiedBy": null,
+        "lastModifiedDate": 0
+    },
+    "customPaymentStatus": {
+        "key": null,
+        "label": null,
+        "ctKey": null,
+        "lastModifiedBy": null,
+        "lastModifiedDate": 0
+    },
+    "salesForceOpportunityId": null,
+    "purchaseOrderDocumentDetails": null,
+    "orderSummaryPdfDetails": null,
+    "estimatedDeliveryTimeline": null
 }

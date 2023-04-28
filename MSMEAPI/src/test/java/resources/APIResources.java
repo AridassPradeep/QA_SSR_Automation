@@ -8,6 +8,8 @@ public enum APIResources {
     loginAPI("/customer/login/"),
     directUserloginAPI("/auth/login/"),
     myrequirementsAPI("/order-service/requirement/my-requirements"),
+    plantSelectorAPI("/product/plantSelector"),
+    requestForPriceAPI("/payment/requestForPrice"),
     registerAPI("/customer/v1/register"),
     cartSizeAPI("/cart/cart-size"),
 	addToCartAPI("/cart/addtocart"),

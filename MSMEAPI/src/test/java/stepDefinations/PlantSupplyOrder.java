@@ -20,22 +20,30 @@ public class PlantSupplyOrder extends Utils {
 	}
 
 	@Then("user calls {string} with {string} http request for {string} with header")
-	public void user_calls_with_http_request_for_with_header(String resource, String method,
-			String payloadBody) throws IOException {
+	public void user_calls_with_http_request_for_with_header(String resource, String method, String payloadBody)
+			throws IOException {
 		if (method.equalsIgnoreCase("Post")) {
-			ProjectVariables.res = given().spec(requestSpecification()).header("access_token", ProjectVariables.jwtToken)
-					.contentType(ContentType.JSON).body(Utils.getJsonData(payloadBody));
+			ProjectVariables.res = given().spec(requestSpecification())
+					.header("access_token", ProjectVariables.jwtToken).contentType(ContentType.JSON)
+					.body(Utils.getJsonData(payloadBody));
 			APIResources resourceAPI = APIResources.valueOf(resource);
 			ProjectVariables.response = ProjectVariables.res.when().post(resourceAPI.getResource());
 
 		} else if (method.equalsIgnoreCase("Get")) {
 
-			ProjectVariables.res = given().spec(requestSpecification()).header("access_token", ProjectVariables.jwtToken);
+			ProjectVariables.res = given().spec(requestSpecification()).header("access_token",
+					ProjectVariables.jwtToken);
 			APIResources resourceAPI = APIResources.valueOf(resource);
 			ProjectVariables.response = ProjectVariables.res.when().get(resourceAPI.getResource());
 
 		}
 		System.out.println(ProjectVariables.response.asPrettyString());
+	}
+
+	@Then("extract the channelId")
+	public void extract_the_channel_id() {
+		ProjectVariables.channelId = Utils.getexpectedValue("channelId");
+		System.out.println(ProjectVariables.channelId);
 	}
 
 }

@@ -12,5 +12,6 @@ public class ProjectVariables {
     public static String ctorderId ;
     public static String jwtToken ;
     public static Response response;
+    public static String channelId;
     public static  TestDataBuild data = new TestDataBuild();
 }
