@@ -28,9 +28,12 @@ public enum APIResources {
 	ledgerAPI("customer/ledger?page=0&limit=10"),
 	ledgerTransactionDownloadAPI("customer/download-transaction"),
 	ledgerEmailStatementAPI("customer/ledger/share"),
+	ledgerBlockedAmountAPI("order-service/order/ledger/blocked-amount"),
+    ledgerBlockedAmountDetailsAPI("order-service/order/ledger/blocked-amount/details"),
 	plpAPI("catalog/breadcrumb/category"),
 	plpFilterAPI("product/projections/filter"),
 	profileAPI("customer/me/profile"),
+	customerAPI("customer/me/v2"),
 	updateprofileAPI("customer/profile"),
 	clearCartAPI("/cart/delete-cart?cartType=cart");
 	

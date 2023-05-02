@@ -15,6 +15,23 @@ Feature: Validating LedgerAPI
     And validate the "ledgerTransactionDownloadAPI" response time is less than "4000" ms
     And validate the "ledgerTransactionDownloadAPI" payload structure has "Incoming payment"
 
+
+@validateBlockedAmountAPI
+  Scenario: Validate LedgerBlockedAPI
+    Given user calls "ledgerBlockedAmountAPI" with "Get" http request for "TransactionDownload"
+    Then validate that the "ledgerBlockedAmountAPI"  call response is success with status code "200"
+    And validate the "ledgerBlockedAmountAPI" response time is less than "4000" ms
+    And validate the "ledgerBlockedAmountAPI" payload structure has "centAmount"
+
+
+@validateBlockedAmountDetailsAPI
+  Scenario: Validate LedgerBlockedAPIDetails
+    Given user calls "ledgerBlockedAmountDetailsAPI" with "Get" http request for "TransactionDownload"
+    Then validate that the "ledgerBlockedAmountDetailsAPI"  call response is success with status code "200"
+    And validate the "ledgerBlockedAmountDetailsAPI" response time is less than "4000" ms
+    And validate the "ledgerBlockedAmountDetailsAPI" payload structure has "blockedAmount"
+
+
  @validateLedger
   Scenario Outline: Valid Email ledger statement
     Given user calls "ledgerEmailStatementAPI" with "Post" http request with queryParam "<Param>" and "<Email>"
