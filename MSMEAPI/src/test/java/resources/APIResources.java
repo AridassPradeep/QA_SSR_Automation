@@ -35,7 +35,10 @@ public enum APIResources {
 	profileAPI("customer/me/profile"),
 	customerAPI("customer/me/v2"),
 	updateprofileAPI("customer/profile"),
-	clearCartAPI("/cart/delete-cart?cartType=cart");
+	clearCartAPI("/cart/delete-cart?cartType=cart"),
+	cartSumamryAPI("/cart/summary"),
+	validateCartAPI("/cart/validateCart"),
+	removeCartItemAPI("/cart/removecartitem?itemId=fcf76ecf-a62a-41a1-b716-d19f97d7cacf");
 	
 	private String resource;
 	

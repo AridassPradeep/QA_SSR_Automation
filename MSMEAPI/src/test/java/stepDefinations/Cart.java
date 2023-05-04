@@ -7,13 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
 import resources.APIResources;
 import resources.ProjectVariables;
-import resources.TestDataBuild;
 import resources.Utils;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -58,13 +53,18 @@ public class Cart extends Utils {
 	@And("^validate the \"([^\"]*)\" payload structure has \"([^\"]*)\"$")
 	public void validate_the_something_payload_structure_has_something(String strArg1, String validationKeyword)
 			throws Throwable {
-		assertThat(ProjectVariables.response.asPrettyString(), containsString(validationKeyword));
-
+		assertThat(ProjectVariables.response.asPrettyString(), containsString(validationKeyword));		
 	}
 	
 	@Then("wait for sometime")
 	public void wait_for_sometime() throws InterruptedException {
 	   Thread.sleep(8000);
+	}
+	
+	@Then("extract the ctLineItemId")
+	public void extract_the_ctLineItemId() {
+		ProjectVariables.ctLineItemId = Utils.getexpectedValue("orderCartSummary.lineItemList[0].lineItemIdentifier.ctLineItemId");
+		System.out.println(ProjectVariables.ctLineItemId);
 	}
 
 	
