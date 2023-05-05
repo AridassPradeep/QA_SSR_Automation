@@ -29,9 +29,8 @@ Feature: Validating CartAPI
     Then validate that the "clearCartAPI"  call response is success with status code "201"
     And validate the "clearCartAPI" response time is less than "4000" ms
     And validate the "clearCartAPI" payload structure has "customerData"
-    
-    
-    @RemoveCart
+
+  @RemoveCart
   Scenario: Verify Remove cart api is working
     Given user calls "addToCartAPI" with "Post" http request for "addToCart"
     Then validate that the "addToCartAPI"  call response is success with status code "200"
@@ -41,14 +40,10 @@ Feature: Validating CartAPI
     Then validate that the "cartSumamryAPI"  call response is success with status code "200"
     And validate the "cartSumamryAPI" response time is less than "4000" ms
     And validate the "cartSumamryAPI" payload structure has "ctLineItemId"
-     And extract the ctLineItemId
-   
+    And extract the ctLineItemId
+    And user calls "removeCartItemAPI" with "Post" http request with queryParam for "itemId"
+    Then validate that the "removeCartItemAPI"  call response is success with status code "200"
+    And validate the "removeCartItemAPI" response time is less than "4000" ms
+    And validate the "removeCartItemAPI" payload structure has "orderCartSummary"
     
-  
-    
-    
-    #And user calls "removeCartItemAPI" with "Post" http request for "addToCart"
-    #Then validate that the "removeCartItemAPI"  call response is success with status code "201"
-    #And validate the "removeCartItemAPI" response time is less than "4000" ms
-    #And validate the "cremoveCartItemAPI" payload structure has "customerData"
     

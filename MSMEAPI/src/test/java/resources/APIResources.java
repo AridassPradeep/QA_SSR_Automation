@@ -38,7 +38,9 @@ public enum APIResources {
 	clearCartAPI("/cart/delete-cart?cartType=cart"),
 	cartSumamryAPI("/cart/summary"),
 	validateCartAPI("/cart/validateCart"),
-	removeCartItemAPI("/cart/removecartitem?itemId=fcf76ecf-a62a-41a1-b716-d19f97d7cacf");
+	removeCartItemAPI("/cart/removecartitem"),
+	SLOAPI("data-sync/import/sales-opp");
+	;
 	
 	private String resource;
 	
