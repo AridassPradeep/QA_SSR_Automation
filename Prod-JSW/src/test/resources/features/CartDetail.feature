@@ -1,4 +1,4 @@
-@cart
+
 Feature: Cart Detail Page feature
 
   Background: User opens website
@@ -62,7 +62,7 @@ Feature: Cart Detail Page feature
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
-
+@cart
   Scenario: Verify selfpickup
     When cart is empty or not
     Then user navigate to Home page

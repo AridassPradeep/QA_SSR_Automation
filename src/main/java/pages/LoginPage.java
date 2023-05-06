@@ -15,6 +15,7 @@ public class LoginPage {
 	private WebDriver driver;
 
 	private By loginButton = By.xpath("//div[2]/div[1]/button[1]");
+	private By loginButtonBlogs = By.xpath("//button[@id='login-cta']");
 	private By email = By.xpath("//input[@id='email']");
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//button[@id='login-to-continue']");
@@ -57,6 +58,10 @@ public boolean validateuserMenu() throws InterruptedException {
 	public void clickLoginButton() throws InterruptedException {
 		Thread.sleep(4000);
 		driver.findElement(loginButton).click();
+	}
+	public void clickLoginButtonBlogs() throws InterruptedException {
+		Thread.sleep(4000);
+		driver.findElement(loginButtonBlogs).click();
 	}
 	
 	public void clickloginByEmail() {

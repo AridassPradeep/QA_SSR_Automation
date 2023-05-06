@@ -1,9 +1,14 @@
 package pages;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import util.ElementUtil;
 
 public class RegistrationPage {
 
@@ -66,6 +71,12 @@ public class RegistrationPage {
 	public void clickRegisterButton() {
 		driver.findElement(register).click();
 	}
+	public void clickRegisterButtonBlogs() {
+		driver.findElement(register).click();
+		ElementUtil et= new ElementUtil(driver);
+		et.SwitchWindow(2);		
+	}
+
 
 	public void enterUserName(String name) {
 		driver.findElement(fullName).sendKeys(name);

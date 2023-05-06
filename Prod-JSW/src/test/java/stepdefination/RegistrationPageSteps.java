@@ -40,6 +40,11 @@ public class RegistrationPageSteps {
 		registrationPage.clickRegisterButton();
 
 	}
+	@When("user clicks on register button in blogsPage")
+	public void user_clicks_on_register_buttonBlogs() throws InterruptedException {
+		registrationPage.clickRegisterButtonBlogs();
+
+	}
 
 	@When("user enters username with {string}")
 	public void user_enters_username_with(String name) throws InterruptedException {

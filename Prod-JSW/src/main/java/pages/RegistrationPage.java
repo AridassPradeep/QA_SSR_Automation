@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import util.ElementUtil;
+
 public class RegistrationPage {
 
 	private WebDriver driver;
@@ -66,6 +68,12 @@ public class RegistrationPage {
 
 	public void clickRegisterButton() {
 		driver.findElement(register).click();
+	}
+	
+	public void clickRegisterButtonBlogs() {
+		driver.findElement(register).click();
+		ElementUtil et= new ElementUtil(driver);
+		et.SwitchWindow(2);		
 	}
 
 	public void enterUserName(String name) {

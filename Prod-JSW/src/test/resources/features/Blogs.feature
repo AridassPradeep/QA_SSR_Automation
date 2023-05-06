@@ -24,3 +24,22 @@ Feature: Blog feature
     Then user is able to navigate to blog page through homepage
     And user click on a section like product
     Then recent blogs is displayed
+    
+      Scenario Outline: Verify registration in blogs
+    When user clicks on Blogs in header menu
+    Then user is able to navigate to blog page through homepage
+    When user clicks on register button in blogsPage
+    When user enters username with "<username>"
+    And user enters mobile with "<mobileno>"
+    And user enters gstno with "<GSTIN>"
+
+    Examples: 
+      | username | mobileno   | GSTIN           | companyemail        | password  |
+      | ramya    | 7000000014 | 32AAIAS3118C1Z0 | bamya9347@gmail.com | Ramya@678 |
+
+  @blogs
+  Scenario: Verify login in blogs section
+    When user clicks on Blogs in header menu
+    Then user is able to navigate to blog page through homepage
+    When user clicks on login button in blogsPage
+    When user click  on login by email
