@@ -21,7 +21,7 @@ public class CartDetailPage {
 	private By TandCimgtext = By.xpath("//div[@class='img_p']");
 	private By checkbox = By.xpath("//input[@id='termsCondition']");
 	private By techspec = By.xpath("//input[@id='termsCondition']//following::label[1]");
-	private By deliverydate = By.xpath("//div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/span[1]");
+	private By deliverydate = By.xpath("(//*[text()='Delivery in 2 - 5 days'])[1]");
 	private By apply = By.xpath("(//div[@class='coupon-persuasion-container'])[1]");
 	private By applied = By.xpath("(//div[@class='coupon-applied-container'])[1]");
 
@@ -170,4 +170,18 @@ public class CartDetailPage {
 	
 
 	}
+	public void verifyBillTo()
+	{
+		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
+	}
+	
+	public void verifyshipTo()
+	{
+		WebElement block=driver.findElement(By.xpath("//div[@class='delivery-add-wrap']"));
+		block.findElement(By.xpath("(//label[normalize-space()='Ship to'])[1]")).isDisplayed();
+		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
+	}
+	
+	
+
 }

@@ -198,5 +198,16 @@ public class CartDetailSteps {
 	public void user_is_on_product_detail_page_of_welding_wire_item() throws Throwable {
 		pdpreguser.WeldingFluxDetails();
 	}
+	
+	@Then("verify bill To in cart section")
+	public void verify_bill_to_in_cart_section() {
+		cartdpage.verifyBillTo();
+	   
+	}
+	@Then("verify Ship to in cart section")
+	public void verify_ship_to_in_cart_section() {
+		cartdpage.verifyshipTo();
+	   
+	}
 
 }
