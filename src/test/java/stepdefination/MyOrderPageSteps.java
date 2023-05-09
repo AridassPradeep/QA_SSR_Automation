@@ -1,6 +1,7 @@
 package stepdefination;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
@@ -21,8 +22,9 @@ public class MyOrderPageSteps {
 	@When("user is able to click view details button")
 	public void user_is_able_to_click_view_details_button() throws InterruptedException {
 		//order.scrollingDown(order.getViewDetails());
-		Thread.sleep(2000);
-		order.getViewDetails().click();
+		order.clickViewDetails();
+		
+		
 	}
 
 	@When("user is able to click view price breakup button to view detailed cost list of the ordered product")

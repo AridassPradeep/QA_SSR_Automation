@@ -103,5 +103,11 @@ public class OrderSummaryPageSteps {
 		String pymntStatus = order.validatePaymentStatus();
 		assertThat(pymntStatus.contentEquals("Full"));
 	}
+	
+	@When("user is able to navigate to ordersumamryPage")
+	public void user_is_able_to_navigate_to_ordersumamry_page() {
+		order.validateOrderSummary();
+	    
+	}
 
 }

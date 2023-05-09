@@ -18,7 +18,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 @CucumberOptions(features = { "src/test/resources/features/" }, 
 glue = { "stepdefination","hooks" }, 
 monochrome = true, 
-tags = "@MyOrdersDirectUser",
+tags = "@MyOrder",
 dryRun = false, stepNotifications = true, 
 plugin = { "pretty",
 				"json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html",

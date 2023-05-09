@@ -136,7 +136,7 @@ public class MyOrderPages {
 	private By searchBox = By.xpath("//input[@id='basic.textInput']");
 	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
 	private By ReviewAndPay = By.xpath("(//*[contains(text(),'Review & pay')])[1]");
-
+	private By ViewDetails = By.xpath("//*[text()='View details']");
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
 		PageFactory.initElements(driver, this);
@@ -602,6 +602,11 @@ public class MyOrderPages {
 		List<WebElement>lt =driver.findElements(By.xpath("//*[text()='View details']"));
 		System.out.println("No of orders"+lt.size());
         
+	}
+	
+	public void clickViewDetails()
+	{
+		driver.findElement(By.xpath("(//*[normalize-space()='Order number:']//following::a[1])[1]//div")).click();
 	}
 
 
