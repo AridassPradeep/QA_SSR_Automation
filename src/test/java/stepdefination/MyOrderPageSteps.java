@@ -370,14 +370,24 @@ public class MyOrderPageSteps {
 	    	order.validateOrdersAwaitingPaymentHeader();
 	    }
 
-	    @And("^user is able to view All orders header$")
-	    public void user_is_able_to_view_all_orders_header() throws Throwable {
-	        order.validateAllOrdersHeader();
+	    @And("^user is able to view My orders header$")
+	    public void user_is_able_to_view_my_orders_header() throws Throwable {
+	        order.validatemyOrdersHeader();
 	    }
 	    
 	    @When("user clicks on ReviewAndPay")
 		public void user_clicks_on_review_and_pay() throws InterruptedException {
 			order.clickReviewAndPay();
 		}
+	    
+	    @And("^verify active,delivered and cancelled tab$")
+	    public void verify_active_delivered_and_cancelledTab() throws Throwable {
+	        order.verifyActiveDeliveredAndCancelled();
+	    }
+	    
+	    @And("^count list of orders$")
+	    public void count_listoforders() throws Throwable {
+	        order.countlistofOrders();
+	    }
 
 	}

@@ -575,8 +575,12 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("//*[normalize-space()='Orders awaiting payment']")).isDisplayed();
 	}
 
-	public void validateAllOrdersHeader() {
-		driver.findElement(By.xpath("//*[normalize-space()='All orders']")).isDisplayed();
+	public void validatemyOrdersHeader() {
+		WebElement block = driver.findElement(By.xpath("(//div[@class='common-container'])[3]"));
+		block.findElement(By.xpath(
+				"(//p[@class='typography-h3 typography-md-h2 typography-font-bold typography-font-md-semibold'])[1]"))
+				.isDisplayed();
+
 	}
 
 	public void clickReviewAndPay() throws InterruptedException {
@@ -584,7 +588,21 @@ public class MyOrderPages {
 		if (elementUtil.isElementPresent("(//*[contains(text(),'Review & pay')])[1]")) {
 			driver.findElement(By.xpath("(//*[contains(text(),'Review & pay')])[1]")).click();
 		}
-
 	}
+
+	public void verifyActiveDeliveredAndCancelled() throws InterruptedException {
+		driver.findElement(By.xpath("//button[normalize-space()='All']")).isDisplayed();
+      driver.findElement(By.xpath("//button[normalize-space()='Active']")).isDisplayed();
+      driver.findElement(By.xpath("//button[normalize-space()='Delivered']")).isDisplayed();
+      driver.findElement(By.xpath("//button[normalize-space()='Cancelled']")).isDisplayed();
+      
+	}
+	
+	public void countlistofOrders() throws InterruptedException {
+		List<WebElement>lt =driver.findElements(By.xpath("//*[text()='View details']"));
+		System.out.println("No of orders"+lt.size());
+        
+	}
+
 
 }

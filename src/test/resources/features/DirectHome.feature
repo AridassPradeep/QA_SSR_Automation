@@ -60,3 +60,15 @@ Feature: Direct home page feature
     Then user is able to naviage from Blog & article page to direct home page
     And user is able to click View all articles to navigate Blogs & article page
     Then user navigate from Blog page to Home page
+
+  @MyOrdersDirectUser
+  Scenario: Verify user is able navigate MyOrders page
+    Given user is able to view Myorders CTA
+    When user is able to click the Myorders CTA
+    And user is navigate to MyOrder page
+    #Then user is able to view Orders awaiting payment header
+    And user is able to view My orders header
+    And verify active,delivered and cancelled tab
+    And count list of orders
+    
+    

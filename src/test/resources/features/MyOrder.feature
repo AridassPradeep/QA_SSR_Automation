@@ -14,7 +14,7 @@ Feature: MyOrder page feature
     When user is able to click the Myorders CTA
     And user is navigate to MyOrder page
     Then user is able to view Orders awaiting payment header
-    And user is able to view All orders header
+    And user is able to view My orders header
 
   #Then user is able to verify the message displayed on the Filter icon
   #Scenario: Verify the Status filter option is working
@@ -117,7 +117,6 @@ Feature: MyOrder page feature
   #And user is able to write remark
   #And user is able to click cancelorder button
   #Then user is able to view cancelled message
-
   @ReviewAndPay
   Scenario Outline: Verify In my order page, user can review and pay and navigates to payment page
     When cart is empty or not
@@ -143,3 +142,12 @@ Feature: MyOrder page feature
       | productQuanity |
       |              3 |
 
+  @EnhancedOrder
+  Scenario: Verify user is able to verify enhanced orderpage
+    Given user is able to view Myorders CTA
+    When user is able to click the Myorders CTA
+    And user is navigate to MyOrder page
+    Then user is able to view Orders awaiting payment header
+    And user is able to view My orders header
+    And verify active,delivered and cancelled tab
+    And count list of orders
