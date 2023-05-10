@@ -20,6 +20,12 @@ public class LoginPageSteps {
 		loginPage.clickLoginButton();
 	}
 	
+	@When("user clicks on login button on homePage")
+	public void user_clicks_on_login_buttonHomePage() throws InterruptedException {
+		loginPage.clickLoginButtonBlogs();
+	}
+	
+	
 	@When("user clicks on login button in blogsPage")
 	public void user_clicks_on_login_buttonBlogs() throws InterruptedException {
 		loginPage.clickLoginButtonBlogs();

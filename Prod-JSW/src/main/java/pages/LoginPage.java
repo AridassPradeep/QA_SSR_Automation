@@ -53,10 +53,7 @@ public boolean validateuserMenu() throws InterruptedException {
 	}
 
 	public void clickLoginButton() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.switchTo().frame(0);
-		driver.findElement(By.xpath("//button[@id='close-icon']")).click();
-		driver.switchTo().defaultContent();
+		Thread.sleep(4000);
 		driver.findElement(loginButton).click();
 	}
 	

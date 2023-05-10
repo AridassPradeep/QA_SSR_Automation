@@ -568,5 +568,16 @@ public class PDPRegisteredUserPage {
 		System.out.println("SellerName: " + sellerName);
 
 	}
+	public void SteelDetails(String quantity) throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[2]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'Width')]//following::div[2]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys(quantity);
+		Thread.sleep(3500);
+
+	}
 
 }

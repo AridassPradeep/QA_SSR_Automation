@@ -359,5 +359,10 @@ public class PDPRegisteredUserSteps {
 	public void user_click_cement_menu_on_header_section() throws InterruptedException {
 		homePage.validateCement();
 	}
+	
+	@Given("^user is on product detail page of Steel item and enters \"([^\"]*)\"$")
+    public void user_is_on_product_detail_page_of_steel_item_and_enters_something(String quantity) throws Throwable {
+		 pdpreguser.SteelDetails(quantity);
+    }
 
 }

@@ -180,5 +180,10 @@ public class OrderSummaryPage {
 
 	}
 	
+	public void validateOrderSummary()
+	{
+		driver.findElement(By.xpath("//span[normalize-space()='Order summary']")).isDisplayed();
+	}
+	
 
 }

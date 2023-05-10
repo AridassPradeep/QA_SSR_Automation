@@ -94,3 +94,17 @@ Feature: Cart Detail Page feature
     #And user click on Buy Now
     #Then verify freight charges are displayed
     #And verify subtotal is equal to sum of price,tax and freight charges
+    
+      @BillTo
+  Scenario: Verify bill To and ShipTo in cart section
+    When cart is empty or not
+    Then user navigate to Home page
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user clicks on Add To Cart button available in the right side of the webpage
+    Then verify that the product should be added in the cart
+    When user click on Cart icon on homepage
+    Then verify delivery is by 2-5 days
+    And verify bill To in cart section
+    And verify Ship to in cart section

@@ -6,7 +6,7 @@ Feature: Registration page feature
     Given user is on home page
     When user clicks on register button
 
-  @sanityExe
+  @sanityExe @Reg
   Scenario Outline: Validate Registration with success message and proceed to home button is displayed
     When user enters username with "<username>"
     And user enters mobile with "<mobileno>"
@@ -20,7 +20,7 @@ Feature: Registration page feature
     Then Thankyou page is displayed
     Then proceed to home is displayed
     And user is on home page
-    When user clicks on login button
+    When user clicks on login button on homePage
     When user click  on login by email
     When user enters logins with username with "<companyemail>" and  "<password>"
     And user clicks on signin
@@ -28,7 +28,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail           | password  |
-      | ramya    | 9102798203 | 21AGGPC5604G1Z3 | testprodpol2@gmail.com | Ramya@678 |
+      | ramya    | 9102798206 | 06AAKPW0438J1ZE  | testprodpol5@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"

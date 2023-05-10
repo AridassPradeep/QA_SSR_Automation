@@ -1,4 +1,4 @@
-@blogs
+
 Feature: Blog feature
 
   Background: User opens website
@@ -25,6 +25,7 @@ Feature: Blog feature
     And user click on a section like product
     Then recent blogs is displayed
     
+    @blogs
       Scenario Outline: Verify registration in blogs
     When user clicks on Blogs in header menu
     Then user is able to navigate to blog page through homepage

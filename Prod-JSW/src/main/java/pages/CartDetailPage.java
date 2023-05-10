@@ -132,8 +132,8 @@ public class CartDetailPage {
 	public void removeHRInCart() throws InterruptedException {
 		driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
 		Thread.sleep(2000);
-		WebElement remove = driver.findElement(By.xpath(
-				"//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::div[2]"));
+		WebElement remove = driver.findElement(By
+				.xpath("//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::div[2]"));
 		remove.click();
 		driver.findElement(By.xpath("//*[text()='Proceed']")).click();
 		Thread.sleep(8000);
@@ -161,14 +161,22 @@ public class CartDetailPage {
 	public void verifyCgstSgst() {
 		driver.findElement(By.xpath("//div[contains(text(),'9% CGST')]")).isDisplayed();
 		driver.findElement(By.xpath("//div[contains(text(),'9% SGST')]")).isDisplayed();
-		
 
 	}
-	
-	public void verifysubTotal() {
-		String subtotal=driver.findElement(By.xpath("//div[2]/div[1]/div[1]/div[4]/div[2]/div[1]")).getText();
-		System.out.println("subtotal"+subtotal );
-	
 
+	public void verifysubTotal() {
+		String subtotal = driver.findElement(By.xpath("//div[2]/div[1]/div[1]/div[4]/div[2]/div[1]")).getText();
+		System.out.println("subtotal" + subtotal);
+
+	}
+
+	public void verifyBillTo() {
+		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
+	}
+
+	public void verifyshipTo() {
+		WebElement block = driver.findElement(By.xpath("//div[@class='delivery-add-wrap']"));
+		block.findElement(By.xpath("(//label[normalize-space()='Ship to'])[1]")).isDisplayed();
+		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
 	}
 }

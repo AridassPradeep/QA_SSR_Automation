@@ -19,9 +19,9 @@ public class MyOrderPageSteps {
 
 	@When("user is able to click view details button")
 	public void user_is_able_to_click_view_details_button() throws InterruptedException {
-		//order.scrollingDown(order.getViewDetails());
+		// order.scrollingDown(order.getViewDetails());
 		Thread.sleep(2000);
-		order.getViewDetails().click();
+		order.clickViewDetails();
 	}
 
 	@When("user is able to click view price breakup button to view detailed cost list of the ordered product")
@@ -34,7 +34,8 @@ public class MyOrderPageSteps {
 
 	@Then("user is again click the  view price breakup button to close")
 	public void user_is_again_click_the_view_price_breakup_button_to_close() throws InterruptedException {
-		order.getViewPriceBreakup().click();;
+		order.getViewPriceBreakup().click();
+		;
 		Thread.sleep(2000);
 	}
 
@@ -368,27 +369,39 @@ public class MyOrderPageSteps {
 
 	@Then("user is able to view Orders awaiting payment header")
 	public void user_is_able_to_view_orders_awaiting_payment_header() {
-     
+
 		order.validateOrderAwaitingPayment();
 	}
 
 	@Then("user is able to view All orders header")
 	public void user_is_able_to_view_all_orders_header() {
-      order.validateMYOrders();
+		order.validateMYOrders();
 
 	}
-	
+
 	@When("user clicks on ledger")
 	public void user_clicks_on_ledger() {
 		order.clickViewLedger();
 	}
-	
+
 	@When("user clicks on ReviewAndPay")
 	public void user_clicks_on_review_and_pay() throws InterruptedException {
 		order.clickReviewAndPay();
 	}
 
+	@And("^user is able to view My orders header$")
+	public void user_is_able_to_view_my_orders_header() throws Throwable {
+		order.validatemyOrdersHeader();
+	}
 
+	@And("^count list of orders$")
+	public void count_listoforders() throws Throwable {
+		order.countlistofOrders();
+	}
 
+	@And("^verify active,delivered and cancelled tab$")
+	public void verify_active_delivered_and_cancelledTab() throws Throwable {
+		order.verifyActiveDeliveredAndCancelled();
+	}
 
 }
