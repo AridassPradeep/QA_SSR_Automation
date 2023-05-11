@@ -364,8 +364,7 @@ public class MyOrderPageSteps {
 			Thread.sleep(2000);
 			order.enterOrdernoSearchBox(Orderno);
 
-		}
-		
+		}	
 
 	    @Then("^user is able to view Orders awaiting payment header$")
 	    public void user_is_able_to_view_orders_awaiting_payment_header() throws Throwable {

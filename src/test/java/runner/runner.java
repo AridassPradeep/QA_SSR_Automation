@@ -18,7 +18,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 @CucumberOptions(features = { "src/test/resources/features/" }, 
 glue = { "stepdefination","hooks" }, 
 monochrome = true, 
-tags = "@MyOrder",
+tags = "@Contentful",
 dryRun = false, stepNotifications = true, 
 plugin = { "pretty",
 				"json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html",
@@ -26,7 +26,7 @@ plugin = { "pretty",
 
 public class runner {
 	@AfterClass
-	public static void tearDown() {
+	public static void tSearDown() {
 		File reportOutputDirectory = new File("target");
 		List<String> jsonFiles = new ArrayList<>();
 		jsonFiles.add("target/cucumber-report/cucumber.json");
