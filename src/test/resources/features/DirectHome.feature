@@ -70,5 +70,12 @@ Feature: Direct home page feature
     And user is able to view My orders header
     And verify active,delivered and cancelled tab
     And count list of orders
+    And verify Order placed
+    And verify Bill to,Ship to
+    And verify Order number
+    And verify Payment details
+    And verify Item details
+    And verify Order Status
+    And verify clicking on View details navigates to order summaryPage
     
     

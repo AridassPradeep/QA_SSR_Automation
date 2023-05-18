@@ -281,6 +281,7 @@ public class Paymentpage {
 		driver.switchTo().window(ar.get(0));
 		driver.navigate().refresh();
 		driver.findElement(successmessage).isDisplayed();
+		System.out.println(driver.findElement(By.xpath("//div[normalize-space()='Order number']//following::div[1]")).getText());
 
 	}
 

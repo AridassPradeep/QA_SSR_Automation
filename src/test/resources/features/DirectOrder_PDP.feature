@@ -118,7 +118,7 @@ Feature: Direct Order for PDP feature for registered user
     #Then verify Requirement list is displayed
     #When user click on Request for price
     #Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
-    #When user login to google cloud
+    When user login to google cloud
     #And login to google cloud with gmail "<Gmail>"
     #And login to google cloud with password "<Password>"
     #And click gmail next button

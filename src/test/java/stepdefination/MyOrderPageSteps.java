@@ -390,5 +390,44 @@ public class MyOrderPageSteps {
 	    public void count_listoforders() throws Throwable {
 	        order.countlistofOrders();
 	    }
+	    
+	    @When("verify Order placed")
+	    public void verify_order_placed() {
+	      
+	    }
+	    
+	    @When("verify Bill to,Ship to")
+	    public void verify_bill_to_ship_to() {
+	      
+	    }
+	    
+	    @When("verify Order number")
+	    public void verify_order_number() {
+	      
+	    }
+	    
+	    @When("verify Payment details")
+	    public void verify_payment_details() {
+	      
+	    }
+	    
+	    @When("verify Item details")
+	    public void verify_item_details() {
+	       
+	    }
+	    
+	    @When("verify Order Status")
+	    public void verify_order_status() {
+	       
+	    }
+	    
+  
+	    public void verify_clicking_on_view_details_navigates_to_order_summary_page() {
+	     
+	    }
+
+
+
+
 
 	}

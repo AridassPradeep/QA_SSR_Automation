@@ -608,6 +608,12 @@ public class MyOrderPages {
 	{
 		driver.findElement(By.xpath("(//*[normalize-space()='Order number:']//following::a[1])[1]//div")).click();
 	}
+	
+	public void clickViewDetails1()
+	{
+			
+	}
+
 
 
 }
