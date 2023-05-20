@@ -1,6 +1,7 @@
 package stepdefination;
 
 import factory.DriverFactory;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.OMSPage;
 import pages.PDPRegisteredUserPage;
@@ -13,6 +14,11 @@ public class OMSPageStep {
 	@When("user login to OMS")
 	public void user_login_to_OMS() throws InterruptedException {
 		omspage.goToOMS();
+	}
+	
+	@Then("user navigates to OMS ShipmentsPage")
+	public void user_navigates_to_oms_shipments_page() throws InterruptedException {
+		omspage.goToOMSShipmentPage();
 	}
 
 }

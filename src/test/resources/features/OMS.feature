@@ -2,15 +2,15 @@
 Feature: Verify OMS
 
   Background: User opens website
-    Given user is on home page
-    When user clicks on login button
-    When user click  on login by email
-    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
-    And user clicks on signin
-    Then user homepage is displayed
+    #Given user is on home page
+    #When user clicks on login button
+    #When user click  on login by email
+    #When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
+    #And user clicks on signin
+    #Then user homepage is displayed
 
 @OMS
-  Scenario: Bank Payment for product that is added to cart
+  Scenario: Verify Shipment in OMS
     When cart is empty or not
     Then user navigate to Home page
     When user clicks HR from Steel Navigation Menu
@@ -28,3 +28,9 @@ Feature: Verify OMS
     And User click on success button
     Then order sucessfully placed message should be displayed
     And user login to OMS
+    And user navigates to OMS ShipmentsPage
+    
+    @OMS1
+  Scenario: Verify Shipment in OMS
+    And user login to OMS
+    And user navigates to OMS ShipmentsPage

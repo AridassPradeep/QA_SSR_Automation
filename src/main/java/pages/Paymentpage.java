@@ -19,6 +19,7 @@ import util.ElementUtil;
 public class Paymentpage {
 
 	private WebDriver driver;
+	public static String orderno;
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By buynow = By.xpath("//button[@id='btn-buy-now']");
@@ -281,8 +282,9 @@ public class Paymentpage {
 		driver.switchTo().window(ar.get(0));
 		driver.navigate().refresh();
 		driver.findElement(successmessage).isDisplayed();
-		System.out.println(driver.findElement(By.xpath("//div[normalize-space()='Order number']//following::div[1]")).getText());
-
+		orderno=driver.findElement(By.xpath("//div[normalize-space()='Order number']//following::div[1]")).getText();
+		System.out.println(orderno);
+		
 	}
 
 	public void validateunsuccessfulmsg() {
