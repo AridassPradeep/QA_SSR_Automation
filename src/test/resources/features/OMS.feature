@@ -1,13 +1,13 @@
-@OMS
+
 Feature: Verify OMS
 
   Background: User opens website
-    #Given user is on home page
-    #When user clicks on login button
-    #When user click  on login by email
-    #When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
-    #And user clicks on signin
-    #Then user homepage is displayed
+    Given user is on home page
+    When user clicks on login button
+    When user click  on login by email
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
+    And user clicks on signin
+    Then user homepage is displayed
 
 @OMS
   Scenario: Verify Shipment in OMS

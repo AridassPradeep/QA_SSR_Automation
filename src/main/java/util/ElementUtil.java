@@ -1,5 +1,10 @@
 package util;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -37,6 +42,24 @@ public class ElementUtil {
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		System.out.print(ar);
 		driver.switchTo().window(ar.get(index));
+
+	}
+	
+	public static void UploadFile(String filePath) throws AWTException
+	{
+		StringSelection fileSelection = new StringSelection(filePath);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(fileSelection, null);
+
+		Robot robot = new Robot();
+		robot.delay(2000);
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		robot.delay(8000);
 
 	}
 

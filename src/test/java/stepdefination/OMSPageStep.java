@@ -1,5 +1,7 @@
 package stepdefination;
 
+import java.awt.AWTException;
+
 import factory.DriverFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,7 +19,7 @@ public class OMSPageStep {
 	}
 	
 	@Then("user navigates to OMS ShipmentsPage")
-	public void user_navigates_to_oms_shipments_page() throws InterruptedException {
+	public void user_navigates_to_oms_shipments_page() throws InterruptedException, AWTException {
 		omspage.goToOMSShipmentPage();
 	}
 
