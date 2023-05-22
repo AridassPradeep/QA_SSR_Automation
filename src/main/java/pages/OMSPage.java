@@ -63,10 +63,8 @@ public class OMSPage {
 		String xpath2 = "']";
 		driver.findElement(By.xpath(xpath1 + orderno + xpath2)).click();
 		Thread.sleep(3000);
-		Set<String> handles = driver.getWindowHandles();
-		ArrayList<String> ar = new ArrayList<String>(handles);
-		System.out.print(ar);
-		driver.switchTo().window(ar.get(1));
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
 
 		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
 		Thread.sleep(3000);
@@ -85,7 +83,8 @@ public class OMSPage {
 		driver.findElement(By.xpath("//*[text()='Quantity']//following::td[4]//input")).sendKeys(totalOrderqtynumber);
 
 		driver.findElement(By.xpath("(//*[text()='Scheduled dispatch date'])[1]//following::div[1]//input"))
-				.sendKeys("23/05/2023");
+				.sendKeys(ElementUtil.date(2));
+		
 
 		driver.findElement(By.xpath("//span[normalize-space()='Delivery type']//following::div[1]")).click();
 		driver.findElement(By.xpath("//li[normalize-space()='Delivery']")).click();
@@ -96,8 +95,8 @@ public class OMSPage {
 		driver.findElement(By.xpath("((//*[text()='Planned'])[2]//parent::div[1])[1]")).click();
 		driver.findElement(By.xpath("//*[text()='Ready for dispatch']")).click();
 		driver.findElement(By.xpath("(//*[text()='Dispatch date'])[2]//following::div[1]//input"))
-				.sendKeys("23/05/2023");
-		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input")).sendKeys("25/05/2023");
+				.sendKeys(ElementUtil.date(2));
+		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input")).sendKeys(ElementUtil.date(4));
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
@@ -119,20 +118,19 @@ public class OMSPage {
 		driver.findElement(By.xpath("(//*[text()='Quantity invoiced']//following::div[3]//div[1]//input)[2]"))
 				.sendKeys(totalOrderqtynumber);
 
-		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[1]//input")).sendKeys("25/05/2023");
-		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[6]//input")).sendKeys("25/05/2023");
+		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[1]//input")).sendKeys(ElementUtil.date(4));
+		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[6]//input")).sendKeys(ElementUtil.date(4));
 
 		Thread.sleep(5000);
 		WebElement fileUploadButton = driver.findElement(By.xpath("//*[text()='Invoices']//following::div[1]//p"));
 		fileUploadButton.click();
-		
+
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\invoice.pdf";
-		ElementUtil.UploadFile(filePath) ;
+		ElementUtil.UploadFile(filePath);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(10000);
-
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
+		ElementUtil scrl = new ElementUtil(driver);
+		scrl.scrollUp();
 
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
 		driver.findElement(By.xpath("//*[text()='Completed']")).click();
@@ -153,6 +151,12 @@ public class OMSPage {
 		} else {
 			System.out.println("Order status is incorrect is not delivered.");
 		}
+		
+		driver.get("https://qa-ssr.msme.jswone.in/order-summary?order_num="+orderno);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[normalize-space()='Track shipments']")).click();
+		driver.findElement(By.xpath("//th[normalize-space()='Shipment ID']")).isDisplayed();
+		Thread.sleep(5000);
 
 	}
 
