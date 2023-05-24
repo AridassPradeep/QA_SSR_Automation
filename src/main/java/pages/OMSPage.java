@@ -33,6 +33,7 @@ public class OMSPage {
 	private By emailTextBox = By.xpath("//input[@type='email']");
 	private By nextBtn = By.xpath("//span[normalize-space()='Next']");
 	private By passwordBox = By.xpath("//input[@type='password']");
+	String orderno = Paymentpage.orderno;
 
 	public OMSPage(WebDriver driver) {
 		this.driver = driver;
@@ -56,7 +57,7 @@ public class OMSPage {
 	}
 
 	public void goToOMSShipmentPage() throws InterruptedException, AWTException {
-		String orderno = Paymentpage.orderno;
+		
 		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
 		Thread.sleep(3000);
 		String xpath1 = "//a[normalize-space()='";
@@ -71,6 +72,12 @@ public class OMSPage {
 		driver.findElement(By.xpath("//button[normalize-space()='Create shipment']")).click();
 
 		Thread.sleep(3000);
+		
+		
+	}
+	
+	public void createCompletedShipment() throws InterruptedException, AWTException
+	{
 		driver.findElement(By.xpath("(//*[text()='Seller name'])[1]//parent::div[1]")).click();
 		driver.findElement(By.xpath("(//li[@role='option'])[1]")).click();
 
@@ -152,11 +159,16 @@ public class OMSPage {
 			System.out.println("Order status is incorrect is not delivered.");
 		}
 		
+	}
+	public void navigateToshipMentsPageCCP() throws InterruptedException
+	{
 		driver.get("https://qa-ssr.msme.jswone.in/order-summary?order_num="+orderno);
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[normalize-space()='Track shipments']")).click();
 		driver.findElement(By.xpath("//th[normalize-space()='Shipment ID']")).isDisplayed();
+		driver.findElement(By.xpath("//a[@class='typography-font-bold typography-text-primary-main']")).click();
 		Thread.sleep(5000);
+		//driver.findElement(By.xpath("//p[normalize-space()='Delivered']")).isDisplayed();
 
 	}
 

@@ -29,8 +29,7 @@ Feature: Verify OMS
     Then order sucessfully placed message should be displayed
     And user login to OMS
     And user navigates to OMS ShipmentsPage
+    And user creates a completed shipment in OMS
+    And user navigates to ShipmentDetails Page in CCP
     
-    @OMS1
-  Scenario: Verify Shipment in OMS
-    And user login to OMS
-    And user navigates to OMS ShipmentsPage
+

@@ -22,5 +22,15 @@ public class OMSPageStep {
 	public void user_navigates_to_oms_shipments_page() throws InterruptedException, AWTException {
 		omspage.goToOMSShipmentPage();
 	}
+	
+	@Then("user creates a completed shipment in OMS")
+	public void user_creates_completed_shipment() throws InterruptedException, AWTException {
+		omspage.createCompletedShipment();
+	}
+	
+	@Then("user navigates to ShipmentDetails Page in CCP")
+	public void user_navigates_to_shipments_page() throws InterruptedException, AWTException {
+		omspage.navigateToshipMentsPageCCP();
+	}
 
 }
