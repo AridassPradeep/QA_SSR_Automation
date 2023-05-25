@@ -17,7 +17,7 @@ Feature: Direct Order for PDP feature for registered user
     When user click on Buy directly from JSWsteel
     Then Buy from verified sellers is displayed
 
-  @sanityExe
+  @sanityExe 
   Scenario: Verify Request for Price is submitted successfully
     When cart is empty or not
     Then user navigate to Home page
@@ -30,7 +30,7 @@ Feature: Direct Order for PDP feature for registered user
     And user click on ViewRequirement
     Then verify Request Price is displayed on rightside
     When user click Request Price
-    Then verify View requirements list is displayed
+    Then verify View requirements cart is displayed
     When user click View requirements list
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 
@@ -46,7 +46,7 @@ Feature: Direct Order for PDP feature for registered user
     Then verify Request Price is displayed on rightside
     Then verify delivery date is displayed from 30-45 days
     When user click Request Price
-    Then verify View requirements list is displayed
+     Then verify View requirements cart is displayed
     When user click View requirements list
 
   Scenario: Verify multiple products added before Request for price
@@ -66,7 +66,7 @@ Feature: Direct Order for PDP feature for registered user
     And user click on ViewRequirement
     Then verify Request Price is displayed on rightside
     When user click Request Price
-    Then verify View requirements list is displayed
+     Then verify View requirements cart is displayed
     When user click View requirements list
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
 

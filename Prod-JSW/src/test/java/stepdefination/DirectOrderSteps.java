@@ -122,7 +122,7 @@ public class DirectOrderSteps {
 		doppage.clickRequestPrice();
 	}
 
-	@Then("verify View requirements list is displayed")
+	@Then("verify View requirements cart is displayed")
 	public void verify_view_requirements_list_is_displayed() throws InterruptedException {
 		Thread.sleep(4000);
 		doppage.validateViewRequirementList();
