@@ -5,7 +5,7 @@ Feature: Stainless Steel feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "pradeep.mani99@gmail.com" and  "Test@123"
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -48,7 +48,7 @@ Feature: Stainless Steel feature
     And click on reset
     Then all products to be displayed
 
-@StainlessSteel
+  @StainlessSteel
   Scenario: Verify order placed successfully after adding a stainless product to cart
     When cart is empty or not
     Then user navigate to Home page
@@ -69,7 +69,6 @@ Feature: Stainless Steel feature
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
 
-  
   Scenario: Verify user is able to add steel and stainless steel from same seller
     When cart is empty or not
     Then user navigate to Home page

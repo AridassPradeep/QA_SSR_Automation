@@ -16,12 +16,20 @@ Feature: Ledger Information validation
     And validate previous statement is displayed
     And validate companyname and GSTNo
     And validate user is able to download ledger statement
-    
 
-  @Ledger
   Scenario: Verify ledger page is accesible from myorders page
     Given user is able to view Myorders CTA
     When user is able to click the Myorders CTA
     And user is navigate to MyOrder page
     And user clicks on view ledger
     Then verify user navigates to ledger page
+
+  Scenario: Verify Blocked AmountInfo
+    When user navigates to ledger page
+    And user click on View details in ledgerPage
+    Then user can see blocked amount info
+
+  Scenario: Verify Email for ledger is sent sucessfully
+    When user navigates to ledger page
+    And user click on email in ledgerPage and sent email
+    Then user can see email sent sucessfully message

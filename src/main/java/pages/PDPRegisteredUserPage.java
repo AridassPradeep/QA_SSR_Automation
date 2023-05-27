@@ -436,7 +436,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("17");
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("41");
 		Thread.sleep(2000);
 
 	}
