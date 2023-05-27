@@ -609,10 +609,34 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("(//*[normalize-space()='Order number:']//following::a[1])[1]//div")).click();
 	}
 	
-	public void clickViewDetails1()
+	public void verifyOrderPlaced()
 	{
-			
+		driver.findElement(By.xpath("(//*[text()='Order placed'])[1]")).isDisplayed();
 	}
+	public void verifyBillToShipTo()
+	{
+		driver.findElement(By.xpath("(//*[text()='Bill to'])[1]")).isDisplayed();
+		driver.findElement(By.xpath("(//*[text()='Ship to'])[1]")).isDisplayed();
+	}
+	public void verifyOrderNumber()
+	{
+		driver.findElement(By.xpath("(//*[text()='Ship to'])[1]")).isDisplayed();
+	}
+	public void verifyPaymentDetails()
+	{
+		driver.findElement(By.xpath("((//div[@class='order-status-details-container'])[1]//following::div[20]//p)[1]")).isDisplayed();
+	}
+	public void verifyItemDetails()
+	{
+		driver.findElement(By.xpath("((//div[@class='order-status-details-container'])[1]//following::div[6]//p)[1]")).isDisplayed();
+	}
+	public void verifyOrderStatus()
+	{
+		driver.findElement(By.xpath("(//div[@class='order-status-details-container'])[1]")).isDisplayed();
+	}
+	
+	
+	
 
 
 

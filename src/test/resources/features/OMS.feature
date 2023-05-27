@@ -31,5 +31,6 @@ Feature: Verify OMS
     And user navigates to OMS ShipmentsPage
     And user creates a completed shipment in OMS
     And user navigates to ShipmentDetails Page in CCP
+    And user clicks on viewDocuments
     
 

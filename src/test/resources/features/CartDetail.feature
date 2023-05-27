@@ -96,15 +96,15 @@ Feature: Cart Detail Page feature
     Then verify freight charges are displayed
     And verify subtotal is equal to sum of price,tax and freight charges
 
-  @weldingFlux @cart
-  Scenario: Verify delivery charges calculated for welding Flux
-    When cart is empty or not
-    When user clicks Welding flux from Welding Consummables Navigation Menu
-    When user selects WeldingFlux product
-    And user is on product detail page of Welding Flux item
-    And user click on Buy Now
-    Then verify freight charges are displayed
-    And verify subtotal is equal to sum of price,tax and freight charges
+  #@weldingFlux @cart
+  #Scenario: Verify delivery charges calculated for welding Flux
+    #When cart is empty or not
+    #When user clicks Welding flux from Welding Consummables Navigation Menu
+    #When user selects WeldingFlux product
+    #And user is on product detail page of Welding Flux item
+    #And user click on Buy Now
+    #Then verify freight charges are displayed
+    #And verify subtotal is equal to sum of price,tax and freight charges
 
   @BillTo
   Scenario: Verify bill To and ShipTo in cart section

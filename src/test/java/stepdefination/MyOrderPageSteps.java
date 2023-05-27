@@ -393,38 +393,41 @@ public class MyOrderPageSteps {
 	    
 	    @When("verify Order placed")
 	    public void verify_order_placed() {
-	      
+	    	order.verifyOrderPlaced();
 	    }
 	    
 	    @When("verify Bill to,Ship to")
 	    public void verify_bill_to_ship_to() {
-	      
+	    	order.verifyBillToShipTo();
 	    }
 	    
 	    @When("verify Order number")
 	    public void verify_order_number() {
-	      
+	    	order.verifyOrderNumber();
 	    }
 	    
 	    @When("verify Payment details")
 	    public void verify_payment_details() {
-	      
+	    	order.verifyPaymentDetails();
 	    }
 	    
 	    @When("verify Item details")
 	    public void verify_item_details() {
-	       
+	    	order.verifyItemDetails();
 	    }
 	    
 	    @When("verify Order Status")
 	    public void verify_order_status() {
-	       
+	    	order.verifyOrderStatus();
 	    }
 	    
   
-	    public void verify_clicking_on_view_details_navigates_to_order_summary_page() {
-	     
+	    @When("verify clicking on View details navigates to order summaryPage")
+	    public void verify_clicking_on_view_details_navigates_to_order_summary_page() throws InterruptedException {
+	    	order.countlistofOrders();
 	    }
+
+
 
 
 

@@ -5,7 +5,7 @@ Feature: Ledger Information validation
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "qatestuser@jsw.in" and  "Admin@123$"
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -14,8 +14,9 @@ Feature: Ledger Information validation
     Then user request date for specific period
     Then validate Ledger request sent message is displayed
     And validate previous statement is displayed
-    And validate user is able to download ledger statement
     And validate companyname and GSTNo
+    And validate user is able to download ledger statement
+    
 
   @Ledger
   Scenario: Verify ledger page is accesible from myorders page

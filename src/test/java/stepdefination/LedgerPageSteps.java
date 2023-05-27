@@ -45,7 +45,7 @@ public class LedgerPageSteps {
 	@And("^validate companyname and GSTNo")
 	public void validate_companyname_andGSTNo() throws Throwable {
 		ledgerPage.validateCompanyNameAndGSTNo();
-		assertThat(ledgerPage.validateCompanyNameAndGSTNo()).contains("(27AAACI1195H3ZK)");
+		assertThat(ledgerPage.validateCompanyNameAndGSTNo()).contains("(33AAGCA4932L2ZM)");
 	}
 
 	@When("user clicks on view ledger")

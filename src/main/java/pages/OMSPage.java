@@ -171,5 +171,12 @@ public class OMSPage {
 		//driver.findElement(By.xpath("//p[normalize-space()='Delivered']")).isDisplayed();
 
 	}
+	
+	public void navigateToViewDocuments() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//span[normalize-space()='View documents']")).click();
+		driver.findElement(By.xpath("//*[@class='typography-sub-heading typography-md-h5 typography-font-semibold d-inline-block ml-2']")).click();
+		Thread.sleep(5000);
+	}
 
 }

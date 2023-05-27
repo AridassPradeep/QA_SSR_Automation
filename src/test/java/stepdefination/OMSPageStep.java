@@ -32,5 +32,11 @@ public class OMSPageStep {
 	public void user_navigates_to_shipments_page() throws InterruptedException, AWTException {
 		omspage.navigateToshipMentsPageCCP();
 	}
+	
+	@Then("user clicks on viewDocuments")
+	public void user_clicks_on_view_documents() throws InterruptedException {
+		omspage.navigateToViewDocuments();
+	}
+
 
 }
