@@ -24,6 +24,14 @@ Feature: Ledger Information validation
     And user clicks on view ledger
     Then verify user navigates to ledger page
 
+ Scenario: Verify user can navigate to to ledger page from profile
+    When user click on the profile menu
+    Then Dropdown should be lsited
+    When user click on the ledger submmenu
+    And switch to ledger window
+    Then user request date for specific period
+    Then validate Ledger request sent message is displayed
+    
   Scenario: Verify Blocked AmountInfo
     When user navigates to ledger page
     And user click on View details in ledgerPage

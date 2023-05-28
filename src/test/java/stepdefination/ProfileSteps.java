@@ -199,4 +199,11 @@ public class ProfileSteps {
 	    public void user_is_able_check_the_default_address_is_in_MH_pincode() throws InterruptedException {
 	    	profilepage.clickMHDefaultAddress();
 	    }
+		
+		@When("user click on the ledger submmenu")
+		public void user_click_on_the_ledger_submmenu() throws InterruptedException {
+			// Write code here that turns the phrase above into concrete actions
+			profilepage.clickLedgerMenu();
+
+		}
 }

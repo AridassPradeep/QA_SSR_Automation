@@ -100,5 +100,10 @@ public class LedgerPage {
 		String sucessmsg=driver.findElement(By.xpath("//div[@class='email-send-success-container']//span")).getText();
 		System.out.println(sucessmsg);
 	}
+	
+	public void switchToLedgerWindow() {
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
+	}
 
 }

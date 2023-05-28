@@ -29,6 +29,7 @@ public class ProfilePage {
 	private By addAddress = By.xpath("//*[text()='+ Add a new address']");
 	private By DeleteAddress = By.xpath("//div[@class='delete-button']");
 	private By Addresses = By.xpath("//*[text()='Addresses']");
+	private By LedgerMenu = By.linkText("Ledger");
 
 	public ProfilePage(WebDriver driver) {
 		this.driver = driver;
@@ -241,6 +242,12 @@ public class ProfilePage {
 			driver.findElement(By.xpath("//div[contains(text(),'Maharashtra Steel')]")).click();
 			Thread.sleep(2000);
 		}
+	}
+	
+	public void clickLedgerMenu() throws InterruptedException {
+
+		driver.findElement(LedgerMenu).click();
+		Thread.sleep(2000);
 	}
 
 }

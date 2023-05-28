@@ -72,6 +72,11 @@ public class LedgerPageSteps {
 	public void user_can_see_email_sent_sucessfully_message() {
 		ledgerPage.verifyEmail();
 	}
+	
+	 @When("switch to ledger window")
+	    public void switch_to_ledger_window() {
+	    	ledgerPage.switchToLedgerWindow();
+	    }
 
 
 

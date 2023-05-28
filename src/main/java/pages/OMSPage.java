@@ -33,6 +33,7 @@ public class OMSPage {
 	private By emailTextBox = By.xpath("//input[@type='email']");
 	private By nextBtn = By.xpath("//span[normalize-space()='Next']");
 	private By passwordBox = By.xpath("//input[@type='password']");
+	private By TrackShipments = By.xpath("//button[normalize-space()='Track shipments']");
 	String orderno = Paymentpage.orderno;
 
 	public OMSPage(WebDriver driver) {
@@ -163,7 +164,9 @@ public class OMSPage {
 	public void navigateToshipMentsPageCCP() throws InterruptedException
 	{
 		driver.get("https://qa-ssr.msme.jswone.in/order-summary?order_num="+orderno);
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
+		ElementUtil obj = new ElementUtil(driver);
+		obj.MigrationUtil(TrackShipments);
 		driver.findElement(By.xpath("//button[normalize-space()='Track shipments']")).click();
 		driver.findElement(By.xpath("//th[normalize-space()='Shipment ID']")).isDisplayed();
 		driver.findElement(By.xpath("//a[@class='typography-font-bold typography-text-primary-main']")).click();
