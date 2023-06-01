@@ -52,34 +52,30 @@ public class LedgerPageSteps {
 	public void user_clicks_on_view_ledger() {
 		ledgerPage.clickonLedger();
 	}
-	
+
 	@When("user click on View details in ledgerPage")
 	public void user_click_on_view_details_in_ledger_page() {
 		ledgerPage.clickViewDetails();
 	}
-	
+
 	@Then("user can see blocked amount info")
 	public void user_can_see_blocked_amount_info() {
 		ledgerPage.verifyBlockedInfo();
 	}
-	
+
 	@When("user click on email in ledgerPage and sent email")
 	public void user_click_on_email_in_ledger_page_and_sent_email() throws InterruptedException {
 		ledgerPage.EmailDetails();
 	}
-	
+
 	@Then("user can see email sent sucessfully message")
 	public void user_can_see_email_sent_sucessfully_message() {
 		ledgerPage.verifyEmail();
 	}
-	
-	 @When("switch to ledger window")
-	    public void switch_to_ledger_window() {
-	    	ledgerPage.switchToLedgerWindow();
-	    }
 
-
-
-
+	@When("switch to ledger window")
+	public void switch_to_ledger_window() {
+		ledgerPage.switchToLedgerWindow();
+	}
 
 }

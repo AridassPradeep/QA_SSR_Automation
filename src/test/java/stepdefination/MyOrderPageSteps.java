@@ -1,8 +1,5 @@
 package stepdefination;
 
-import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import pages.MyOrderPages;
@@ -10,7 +7,7 @@ import pages.MyOrderPages;
 public class MyOrderPageSteps {
 	
 
-	MyOrderPages order = new MyOrderPages(DriverFactory.getDriver());
+	private MyOrderPages order = new MyOrderPages(DriverFactory.getDriver());
 	public String Orderno;
 	public String tax;
 

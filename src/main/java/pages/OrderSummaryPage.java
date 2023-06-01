@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import util.ElementUtil;
+
 public class OrderSummaryPage {
 
 	private WebDriver driver;
@@ -110,8 +112,8 @@ public class OrderSummaryPage {
 	}
 
 	public void viewDetails() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(ViewDetails));
+		ElementUtil wt= new ElementUtil(driver);
+		wt.MigrationUtil(ViewDetails);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
 		driver.findElement(ViewDetails).click();
@@ -132,8 +134,8 @@ public class OrderSummaryPage {
 	}
 
 	public void validateOrderNoinURL() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(DeliveryDays));
+		ElementUtil wt= new ElementUtil(driver);
+		wt.MigrationUtil(DeliveryDays);
 		url = driver.getCurrentUrl();
 		String order_num = url.substring(url.lastIndexOf("=") + 1);
 		System.out.print("order num" + order_num);

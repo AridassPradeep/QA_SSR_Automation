@@ -137,7 +137,10 @@ public class MyOrderPages {
 	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
 	private By ReviewAndPay = By.xpath("(//*[contains(text(),'Review & pay')])[1]");
 	private By ViewDetails = By.xpath("//*[text()='View details']");
-	public MyOrderPages(WebDriver driver2) {
+	
+	
+	
+	public  MyOrderPages(WebDriver driver2){
 		this.driver = driver2;
 		PageFactory.initElements(driver, this);
 	}

@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -260,7 +261,7 @@ public class Paymentpage {
 
 	{
 		Thread.sleep(5000);
-		WebDriverWait wait = new WebDriverWait(driver,60);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		Set<String> windows = driver.getWindowHandles();
 		String parent = driver.getWindowHandle();

@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -351,11 +352,10 @@ public class PDPDiscountPage {
 	   //driver.findElement(By.xpath("//*[contains(text(),'Coupon applied successfully')]")).isDisplayed();
 		
 		
-		@SuppressWarnings("deprecation")
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)							
-				.withTimeout(30, TimeUnit.SECONDS) 			
-				.pollingEvery(1, TimeUnit.SECONDS) 			
-				.ignoring(NoSuchElementException.class);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+			       .withTimeout(Duration.ofSeconds(30L))
+			       .pollingEvery(Duration.ofSeconds(5L))
+			       .ignoring(NoSuchElementException.class);
 		
 	WebElement button = wait.until(new Function<WebDriver, WebElement>(){
 		
