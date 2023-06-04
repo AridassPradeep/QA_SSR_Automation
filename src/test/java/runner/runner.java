@@ -15,12 +15,12 @@ import net.masterthought.cucumber.json.support.Status;
 import net.masterthought.cucumber.sorting.SortingMethod;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/features/" }, 
-glue = { "stepdefination","hooks" }, 
+@CucumberOptions(features = { "src/test/resources/features/" }, glue = { "stepdefination",
+		"hooks" }, 
 monochrome = true, 
-//tags = "@DirectOrderPDP",
-dryRun = false, stepNotifications = true, 
-plugin = { "pretty",
+tags = "@Ledger", 
+dryRun = false, 
+stepNotifications = true, plugin = { "pretty",
 				"json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html",
 				"rerun:target/failedrerun.txt" })
 
@@ -35,7 +35,7 @@ public class runner {
 		String projectName = "JSW MSME Project";
 
 		Configuration configuration = new Configuration(reportOutputDirectory, projectName);
-		
+
 		configuration.setNotFailingStatuses(Collections.singleton(Status.SKIPPED));
 		configuration.setBuildNumber(buildNumber);
 		configuration.addClassifications("Platform", "Windows");

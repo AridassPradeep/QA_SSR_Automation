@@ -1,4 +1,4 @@
-
+@OMS
 Feature: Verify OMS
 
   Background: User opens website
@@ -9,7 +9,7 @@ Feature: Verify OMS
     And user clicks on signin
     Then user homepage is displayed
 
-@OMS
+
   Scenario: Verify Shipment in OMS
     When cart is empty or not
     Then user navigate to Home page

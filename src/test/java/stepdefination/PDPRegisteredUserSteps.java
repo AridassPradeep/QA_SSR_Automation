@@ -213,7 +213,7 @@ public class PDPRegisteredUserSteps {
 
 			String quantity = form.get("quantity");
 			pdpreguser.stainlessSteelDetailsAddquantity(quantity);
-			
+
 			String moqMsg = form.get("MOQMessage");
 			String actualErrorMessage = pdpreguser.MOQErrorMessage();
 			System.out.println("Expected MOQ Message " + moqMsg);
@@ -225,18 +225,41 @@ public class PDPRegisteredUserSteps {
 
 	}
 
+	@Then("user add quantity in buyAgain and validate MOQ messages")
+	public void user_add_quantityinBuyAgain(DataTable Moq) throws InterruptedException {
+
+		List<Map<String, String>> data = Moq.asMaps(String.class, String.class);
+		for (Map<String, String> form : data) {
+
+			String quantity = form.get("quantity");
+			pdpreguser.BuyAgainAddquantity(quantity);
+
+			String moqMsg = form.get("MOQMessage");
+			String actualErrorMessage = pdpreguser.BuyAgainMOQErrorMessage();
+			System.out.println("Expected MOQ Message " + moqMsg);
+			System.out.println("Actual MOQ Message" + actualErrorMessage);
+			Assert.assertTrue(actualErrorMessage.contains(moqMsg));
+			Thread.sleep(2000);
+
+		}
+
+	}
+
+	@When("user add quantity in buyAgain and addToCart")
+	public void user_add_quantity_in_buy_again_and_add_to_cart() throws InterruptedException {
+		pdpreguser.BuyAgainAddquantity();
+	}
+
 	@Given("user is on product detail page of Steel item")
 	public void user_is_on_product_detail_page_of_steel_item() throws InterruptedException {
 		pdpreguser.SteelDetails();
 
 	}
-	
+
 	@Given("^user is on product detail page of Steel item and enters \"([^\"]*)\"$")
-    public void user_is_on_product_detail_page_of_steel_item_and_enters_something(String quantity) throws Throwable {
-		 pdpreguser.SteelDetails(quantity);
-    }
-	
-	
+	public void user_is_on_product_detail_page_of_steel_item_and_enters_something(String quantity) throws Throwable {
+		pdpreguser.SteelDetails(quantity);
+	}
 
 	@And("^user is on Cement Product page$")
 	public void user_is_on_cement_product_page() throws Throwable {
@@ -276,6 +299,13 @@ public class PDPRegisteredUserSteps {
 	public void validate_add_to_cartbuttondisabled() throws InterruptedException {
 
 		Assert.assertFalse(pdpreguser.validateAddToCartisDisabled());
+
+	}
+
+	@Given("validate BuyAgainadd to cart button is disabled")
+	public void validate_BuyAgainadd_to_cartbuttondisabled() throws InterruptedException {
+
+		Assert.assertFalse(pdpreguser.validateBuyAgainAddToCartisDisabled());
 
 	}
 

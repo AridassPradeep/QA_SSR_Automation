@@ -74,15 +74,30 @@ Feature: Home page feature
     Then Verify for sub links are available under Legal category
     Then Verify for help line number is present in footer section
     Then Verify for support email address is present in footer section
- # Scenario: Verify enquiry form
- #   Then Verify the mandatory fields in Enquiry Section for Registered Users
- #   Then Verify the submit button is enabled only once all the mandatory fields entered
- #   Then Verify the action on wrong data entered
- #   Then Verify the validation of the fields
- #   Then Verify the Enquiry Headings, and labels in Enquiry Section for Registered user.
- #   Then Verify For logged in user on Enquiry form Name, mobile number and email id should be pre-populated.
- #   Then Verify that the Enquiry section available in the JSW Home Page for Registered User
- #   Then Verify the Enquiry form banner displayed on the Home Page
- #   Then Verify the Enquiry form banner displayed on the Home Page for registered User
- #   Then Verify that "Thanks Popup" is displaying based on the successful submission of enquiry form
+
+  # Scenario: Verify enquiry form
+  #   Then Verify the mandatory fields in Enquiry Section for Registered Users
+  #   Then Verify the submit button is enabled only once all the mandatory fields entered
+  #   Then Verify the action on wrong data entered
+  #   Then Verify the validation of the fields
+  #   Then Verify the Enquiry Headings, and labels in Enquiry Section for Registered user.
+  #   Then Verify For logged in user on Enquiry form Name, mobile number and email id should be pre-populated.
+  #   Then Verify that the Enquiry section available in the JSW Home Page for Registered User
+  #   Then Verify the Enquiry form banner displayed on the Home Page
+  #   Then Verify the Enquiry form banner displayed on the Home Page for registered User
+  #   Then Verify that "Thanks Popup" is displaying based on the successful submission of enquiry form
   #  Then Verify Query id is generated once query is submitted by the registered user.
+
+  Scenario: Verify Buy Again In HomePage
+    When user add quantity in buyAgain and validate MOQ messages
+      | quantity | MOQMessage                                                          |
+      |      000 | Add a quantity equal to or above the Minimum Order Quantity of 1.1M |
+      |    10000 | Please enter quantity below 9999 MT                                 |
+    And validate BuyAgainadd to cart button is disabled
+
+  @BuyAgain
+  Scenario: Verify User can AddtoCart In HomePage
+    When cart is empty or not
+    Then user navigate to Home page
+    When user add quantity in buyAgain and addToCart
+    Then verify that the product should be added in the cart

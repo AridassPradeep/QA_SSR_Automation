@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import util.ElementUtil;
+
 public class PDPRegisteredUserPage {
 
 	private WebDriver driver;
@@ -23,6 +25,8 @@ public class PDPRegisteredUserPage {
 			.xpath("//button[contains(@class,'list-group-item list-group-item-action in-active')]");
 	private By addquantity = By.xpath("//div[2]/div[1]/div[1]/div[1]/button[1]/img[1]");
 	private By addtocartbutton = By.xpath("//*[@id='product-add-to-cart']");
+	private By BuyAgainaddtocartbutton = By.xpath(
+			"//btn[@class='primary-btn w-100 add-to-cart-cta small-btn d-flex align-items-center justify-content-center d-md-inline-block']");
 	private By diameter = By.xpath("//div[contains(@class,'size_1')]/child::div[@class='dimension-size']");
 	private By productselectwirerod = By.xpath("//div[@class='product-plp1 col-sm-12 col-xxl-4']");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -97,7 +101,8 @@ public class PDPRegisteredUserPage {
 	public void selectWeldingWireProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//a[contains(text(),'Ador AUTOMELT B-71 Steel F7A4/P4-EM12K SAW Welding Flux')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Ador AUTOMELT B-71 Steel F7A4/P4-EM12K SAW Welding Flux')]"))
+				.click();
 
 	}
 
@@ -323,14 +328,49 @@ public class PDPRegisteredUserPage {
 
 	}
 
+	public void BuyAgainAddquantity(String quantity) throws InterruptedException {
+		driver.findElement(By.xpath("//input[@id='buy-again-quantity-input']")).clear();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='buy-again-quantity-input']")).sendKeys(quantity);
+		Thread.sleep(3000);
+
+	}
+
+	public void BuyAgainAddquantity() throws InterruptedException {
+		driver.findElement(By.xpath("//input[@id='buy-again-quantity-input']")).clear();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='buy-again-quantity-input']")).sendKeys("10");
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath(
+				"//btn[@class='primary-btn w-100 add-to-cart-cta small-btn d-flex align-items-center justify-content-center d-md-inline-block']"))
+				.click();
+
+	}
+
 	public String MOQErrorMessage() {
-		String actualErrorMessage = driver.findElement(By.xpath("(//input[@id='inputQty'])[1]//following::div[4]")).getText();
+		String actualErrorMessage = driver
+				.findElement(By.xpath("//input[@id='buy-again-quantity-input']//following::div[3]//p")).getText();
+		return actualErrorMessage;
+	}
+
+	public String BuyAgainMOQErrorMessage() {
+		String actualErrorMessage = driver.findElement(By.xpath("//div[@class='quantity-error']//p")).getText();
 		return actualErrorMessage;
 	}
 
 	public boolean validateAddToCartisDisabled() throws InterruptedException {
 		Thread.sleep(5000);
 		return driver.findElement(addtocartbutton).isEnabled();
+
+	}
+
+	public boolean validateBuyAgainAddToCartisDisabled() throws InterruptedException {
+
+		ElementUtil obj = new ElementUtil(driver);
+		boolean BuyAgainAddToCart = obj.isElementPresent(
+				"//btn[@class='primary-btn w-100 add-to-cart-cta small-btn d-flex align-items-center justify-content-center d-md-inline-block']");
+		return BuyAgainAddToCart;
 
 	}
 
@@ -562,7 +602,5 @@ public class PDPRegisteredUserPage {
 		System.out.println("SellerName: " + sellerName);
 
 	}
-
-	
 
 }
