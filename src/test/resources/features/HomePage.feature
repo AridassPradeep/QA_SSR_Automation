@@ -88,6 +88,7 @@ Feature: Home page feature
   #   Then Verify that "Thanks Popup" is displaying based on the successful submission of enquiry form
   #  Then Verify Query id is generated once query is submitted by the registered user.
 
+@BuyAgain
   Scenario: Verify Buy Again In HomePage
     When user add quantity in buyAgain and validate MOQ messages
       | quantity | MOQMessage                                                          |
@@ -95,7 +96,7 @@ Feature: Home page feature
       |    10000 | Please enter quantity below 9999 MT                                 |
     And validate BuyAgainadd to cart button is disabled
 
-  @BuyAgain
+  
   Scenario: Verify User can AddtoCart In HomePage
     When cart is empty or not
     Then user navigate to Home page

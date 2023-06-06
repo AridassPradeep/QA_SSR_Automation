@@ -348,14 +348,14 @@ public class PDPRegisteredUserPage {
 
 	}
 
-	public String MOQErrorMessage() {
+	public String BuyAgainMOQErrorMessage() {
 		String actualErrorMessage = driver
 				.findElement(By.xpath("//input[@id='buy-again-quantity-input']//following::div[3]//p")).getText();
 		return actualErrorMessage;
 	}
 
-	public String BuyAgainMOQErrorMessage() {
-		String actualErrorMessage = driver.findElement(By.xpath("//div[@class='quantity-error']//p")).getText();
+	public String MOQErrorMessage() {
+		String actualErrorMessage = driver.findElement(By.xpath("(//div[@class='switch-qty-section'])[1]//preceding::div[1]")).getText();
 		return actualErrorMessage;
 	}
 
