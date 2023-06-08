@@ -1,4 +1,4 @@
-@demo
+@demo @MyProfile
 Feature: Profile page feature
 
   Background: User opens website
@@ -18,7 +18,6 @@ Feature: Profile page feature
     Then Verify the Login button is displaying in the Home Page Header
     Then Verify the Register Button is displaying in Home Page header.
 
-  
   Scenario: Verify the Customer shall not be able to access ‘Logout’ under the profile icon
     When user click on the profile menu
     Then Dropdown should be lsited
@@ -27,7 +26,6 @@ Feature: Profile page feature
     When user click on the profile menu
     Then LogoutDropdown should not be lsited
 
-@MyProfile
   Scenario: Verify the user able to save profile details
     When user click on the profile menu
     Then Dropdown should be lsited
@@ -43,12 +41,12 @@ Feature: Profile page feature
     #Then Account Copy icon is populated
     When user  click the IFSC
     Then IFSC Copy icon is populated
-    # When user select the industrial sector
-    #When user select the industrial sector
-    #Then interest area should be selected
-    When user click the Save button
-    Then Profile details should be saved
 
+  # When user select the industrial sector
+  #When user select the industrial sector
+  #Then interest area should be selected
+  #When user click the Save button
+  #Then Profile details should be saved
   Scenario: Verify the user is able to edit existing billing address
     When user click on the profile menu
     Then Dropdown should be lsited

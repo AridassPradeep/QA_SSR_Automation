@@ -53,13 +53,10 @@ public class ProfileSteps {
 	}
 
 	@Then("Profile should be added with new Udyam Number")
-	/*
-	 * public void profile_should_be_added_with_new_udyam_number() {
-	 * Assert.assertTrue(profilepage.compareTitle());
-	 * 
-	 * 
-	 * }
-	 */
+
+	public void profile_should_be_added_with_new_udyam_number() {
+		profilepage.validateUdyam();
+	}
 
 	/*
 	 * @Then("Profile should be display the interest absed on industrial sector")
@@ -130,7 +127,7 @@ public class ProfileSteps {
 		profilepage.ok();
 
 	}
-	
+
 	@Then("user clicks on addresses")
 	public void user_clicks_on_addresses() {
 		profilepage.clickAddresses();
@@ -143,13 +140,13 @@ public class ProfileSteps {
 
 	@When("user adds a new adresses and fill all details and save it")
 	public void user_adds_a_new_adresses_and_fill_all_details_and_save_it() throws InterruptedException {
-		//profilepage.cancelNewAddress();
+		// profilepage.cancelNewAddress();
 		Thread.sleep(3000);
 		profilepage.addAddress();
 		Thread.sleep(3000);
-		
+
 	}
-	
+
 	@Then("addrees is displayed in shipping address column")
 	public void addrees_is_displayed_in_shipping_address_column() {
 
@@ -168,53 +165,53 @@ public class ProfileSteps {
 
 	@Then("edit company adress")
 	public void edit_company_adress() throws InterruptedException {
-		
+
 		profilepage.EditBillingAddress();
 
 	}
-	//MH pincode
-	
-		@Then("user is able to click Add a new address CTA")
-		public void user_is_able_to_click_add_a_new_address_cta() throws InterruptedException {
-			profilepage.addNewAddress();
-		}
-		
-		@Then("user is able to enter Company name, Pincode, Address, City and State")
-		public void user_is_able_to_enter_company_name_pincode_address_city_and_state() throws InterruptedException {
-			profilepage.MHaddress();
-		}
-		
-		@Then("user is able to make this address as a default address")
-		public void user_is_able_to_make_this_address_as_a_default_address() throws InterruptedException {
-			profilepage.defaultAddress();
-		}
-		
-		@Then("user is able to delete the existing MH pincode address")
-		public void user_is_able_to_delete_the_existing_MH_pincode_address() throws InterruptedException {
-			profilepage.deleteExistingAddress();
-			Thread.sleep(3000);
-		}
-		
-		@When("user is able check the default address is in MH pincode")
-	    public void user_is_able_check_the_default_address_is_in_MH_pincode() throws InterruptedException {
-	    	profilepage.clickMHDefaultAddress();
-	    }
-		
-		@When("user click on the ledger submmenu")
-		public void user_click_on_the_ledger_submmenu() throws InterruptedException {
-			profilepage.clickLedgerMenu();
+	// MH pincode
 
-		}
-		
-		@Then("user can logout from profilePage")
-		public void user_can_logout_from_profile_page() throws InterruptedException {
-			profilepage.LogOut();
-		   
-		}
-		
-		@Then("LogoutDropdown should not be lsited")
-		public void logout_dropdown_should_not_be_lsited() throws InterruptedException {
-			;
-			Assert.assertFalse(profilepage.validateLogOutInProfileMenu());
-		}
+	@Then("user is able to click Add a new address CTA")
+	public void user_is_able_to_click_add_a_new_address_cta() throws InterruptedException {
+		profilepage.addNewAddress();
+	}
+
+	@Then("user is able to enter Company name, Pincode, Address, City and State")
+	public void user_is_able_to_enter_company_name_pincode_address_city_and_state() throws InterruptedException {
+		profilepage.MHaddress();
+	}
+
+	@Then("user is able to make this address as a default address")
+	public void user_is_able_to_make_this_address_as_a_default_address() throws InterruptedException {
+		profilepage.defaultAddress();
+	}
+
+	@Then("user is able to delete the existing MH pincode address")
+	public void user_is_able_to_delete_the_existing_MH_pincode_address() throws InterruptedException {
+		profilepage.deleteExistingAddress();
+		Thread.sleep(3000);
+	}
+
+	@When("user is able check the default address is in MH pincode")
+	public void user_is_able_check_the_default_address_is_in_MH_pincode() throws InterruptedException {
+		profilepage.clickMHDefaultAddress();
+	}
+
+	@When("user click on the ledger submmenu")
+	public void user_click_on_the_ledger_submmenu() throws InterruptedException {
+		profilepage.clickLedgerMenu();
+
+	}
+
+	@Then("user can logout from profilePage")
+	public void user_can_logout_from_profile_page() throws InterruptedException {
+		profilepage.LogOut();
+
+	}
+
+	@Then("LogoutDropdown should not be lsited")
+	public void logout_dropdown_should_not_be_lsited() throws InterruptedException {
+		;
+		Assert.assertFalse(profilepage.validateLogOutInProfileMenu());
+	}
 }

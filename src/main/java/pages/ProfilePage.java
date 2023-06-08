@@ -15,7 +15,7 @@ public class ProfilePage {
 	private By MyProfileButton = By.className("drop-heading");
 	private By SubMenu = By.linkText("Profile");
 	private By Designation = By.name("designation");
-	private By Udyam = By.name("udyam");
+	private By Udyam = By.xpath("//input[@name='udyam']");
 	private By Options = By.xpath("//option[contains(text(),'Select an option')]");
 	private By Interest = By.xpath("//div[@id='__nuxt']");
 	private By Msg = By.xpath("//div[contains(text(),'Your changes have been saved.')]");
@@ -24,8 +24,8 @@ public class ProfilePage {
 	private By Bcopy = By.xpath(" (//div[@class='copy-icon'])[1]");
 	private By Accountnumber = By.xpath("//span[contains(text(),'1112220057850296')]");
 	private By Acopy = By.xpath(" (//div[@class='copy-icon'])[2]");
-	private By IFSC = By.xpath("//span[contains(text(),'RAZR0000001')]");
-	private By Icopy = By.xpath(" (//div[@class='copy-icon'])[3]");
+	private By IFSC = By.xpath("//p[@class='text-center with-success-icon']");
+	private By Icopy = By.xpath("(//div[contains(text(),'Copy')])[4]");
 	private By Save = By.xpath("//button[contains(text(),'Save details')]");
 	private By Ok = By.xpath("//button[contains(text(),'Ok')]");
 	private By addAddress = By.xpath("//*[text()='+ Add a new address']");
@@ -62,8 +62,16 @@ public class ProfilePage {
 	 * driver.findElement(Title).isDisplayed(); }
 	 */
 	public void clickUdyam() throws InterruptedException {
+		driver.findElement(By.xpath("//div[@class='edit-profile-icon']")).click();
 		driver.findElement(Udyam).sendKeys("U1233243543543543");
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		driver.findElement(By.xpath("//button[normalize-space()='Ok']")).click();
+	}
+	
+	public void validateUdyam()
+	{
+		driver.findElement(By.xpath("//div[contains(text(),'U1233-24-35-4354354')]")).isDisplayed();
 	}
 
 	public void clickOption() throws InterruptedException {
@@ -103,9 +111,8 @@ public class ProfilePage {
 	}
 
 	public void clickIFSC() throws InterruptedException {
-		driver.findElement(IFSC).click();
+		//driver.findElement(IFSC).click();
 		driver.findElement(Icopy).click();
-		Thread.sleep(3000);
 	}
 
 	public void verifycopyifsc() throws InterruptedException {
