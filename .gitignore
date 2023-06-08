@@ -54,3 +54,4 @@ Thumbs.db
 *.html
 
 *.browserstack.err
+*.runner.java

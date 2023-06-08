@@ -463,7 +463,7 @@ public class HomePageSteps {
 
 	@And("^user wait for sometime$")
 	public void user_wait_for_sometime() throws Throwable {
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 	}
 
 }

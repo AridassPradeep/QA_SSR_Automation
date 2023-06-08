@@ -202,8 +202,19 @@ public class ProfileSteps {
 		
 		@When("user click on the ledger submmenu")
 		public void user_click_on_the_ledger_submmenu() throws InterruptedException {
-			// Write code here that turns the phrase above into concrete actions
 			profilepage.clickLedgerMenu();
 
+		}
+		
+		@Then("user can logout from profilePage")
+		public void user_can_logout_from_profile_page() throws InterruptedException {
+			profilepage.LogOut();
+		   
+		}
+		
+		@Then("LogoutDropdown should not be lsited")
+		public void logout_dropdown_should_not_be_lsited() throws InterruptedException {
+			;
+			Assert.assertFalse(profilepage.validateLogOutInProfileMenu());
 		}
 }

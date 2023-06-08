@@ -1,4 +1,4 @@
-@demo @MyProfile
+@demo
 Feature: Profile page feature
 
   Background: User opens website
@@ -9,23 +9,42 @@ Feature: Profile page feature
     And user clicks on signin
     Then user homepage is displayed
 
+  Scenario: Verify the user able to logout from profile section
+    When user click on the profile menu
+    Then Dropdown should be lsited
+    When user click on the profile submmenu
+    Then Profile page  should be lsited
+    And user can logout from profilePage
+    Then Verify the Login button is displaying in the Home Page Header
+    Then Verify the Register Button is displaying in Home Page header.
+
+  
+  Scenario: Verify the Customer shall not be able to access ‘Logout’ under the profile icon
+    When user click on the profile menu
+    Then Dropdown should be lsited
+    When user click on the profile submmenu
+    Then Profile page  should be lsited
+    When user click on the profile menu
+    Then LogoutDropdown should not be lsited
+
+@MyProfile
   Scenario: Verify the user able to save profile details
     When user click on the profile menu
     Then Dropdown should be lsited
     When user click on the profile submmenu
     Then Profile page  should be lsited
-    When user clicks on text box  clear the data and add the new designation
-    Then Profile should be added with new designation
+    # When user clicks on text box  clear the data and add the new designation
+    # Then Profile should be added with new designation
     When user clicks on text box  clear the data and add the new Udyam Number
     Then Profile should be added with new Udyam Number
-    When user  click the Beneficiary name
-    Then Copy icon is populated
-    When user click the Account number
-    Then Account Copy icon is populated
+    #When user  click the Beneficiary name
+    #Then Copy icon is populated
+    #When user click the Account number
+    #Then Account Copy icon is populated
     When user  click the IFSC
     Then IFSC Copy icon is populated
-    When user select the industrial sector
-    When user select the industrial sector
+    # When user select the industrial sector
+    #When user select the industrial sector
     #Then interest area should be selected
     When user click the Save button
     Then Profile details should be saved

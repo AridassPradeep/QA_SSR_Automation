@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import util.ElementUtil;
+
 public class ProfilePage {
 	private WebDriver driver;
 
@@ -30,6 +32,8 @@ public class ProfilePage {
 	private By DeleteAddress = By.xpath("//div[@class='delete-button']");
 	private By Addresses = By.xpath("//*[text()='Addresses']");
 	private By LedgerMenu = By.linkText("Ledger");
+	private By Logout = By.xpath("(//*[text()='Logout'])[2]");
+	
 
 	public ProfilePage(WebDriver driver) {
 		this.driver = driver;
@@ -248,6 +252,22 @@ public class ProfilePage {
 
 		driver.findElement(LedgerMenu).click();
 		Thread.sleep(2000);
+	}
+	
+	public void LogOut() throws InterruptedException {
+
+		driver.findElement(Logout).click();
+		Thread.sleep(2000);
+	}
+	
+	public boolean validateLogOutInProfileMenu() throws InterruptedException {
+
+		//WebElement dropdownmenu= driver.findElement(By.xpath("(//section[@class='drop-body'])[1]"));
+		//dropdownmenu.findElement(By.xpath("//div[@class='user-dropdown-item']"));
+		ElementUtil obj= new ElementUtil(driver);
+		boolean LogoutVisibility=obj.isElementPresent("//div[@class='user-dropdown-item']");
+		return LogoutVisibility;
+		
 	}
 
 }
