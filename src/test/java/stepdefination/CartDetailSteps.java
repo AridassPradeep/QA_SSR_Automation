@@ -130,13 +130,13 @@ public class CartDetailSteps {
 
 	@When("user click on change address to thrissur")
 	public void user_click_on_change_address_to_thrissur() {
-		cartdpage.changeAddress(0);
+		cartdpage.changeAddress(1);
 
 	}
 
 	@When("user click on change address to chandigarh")
 	public void user_click_on_change_address_to_chandigarh() {
-		cartdpage.changeAddress(1);
+		cartdpage.changeAddress(0);
 
 	}
 

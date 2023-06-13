@@ -141,11 +141,11 @@ public class CartDetailPage {
 
 	public void changeAddress(int index) {
 		driver.findElement(By.xpath("//a[contains(text(),'Change address')]")).click();
-		List<WebElement> deladress = driver.findElements(By.xpath("//div[contains(@class,'change-address-list')]"));
+		List<WebElement> deladress = driver.findElements(By.xpath("//div[@class='d-flex change-address-list']"));
 		deladress.get(index).click();
 	}
 	public void selectDelivery() throws InterruptedException {
-		driver.findElement(By.xpath("//button[contains(text(),'Select for delivery')]")).click();
+		driver.findElement(By.xpath("(//button[contains(text(),'Deliver here')])[2]")).click();
 		Thread.sleep(4000);
 
 	}

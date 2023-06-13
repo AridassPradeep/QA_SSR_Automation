@@ -100,7 +100,7 @@ Feature: Payment and Cart Scenarios for single and multiple product
     #And user click on confirm payment
     #Then verify payment success message is displayed
 
-@sanityExe
+@sanityExe @Payment1
   Scenario: Bank Payment for product that is added to cart
     When cart is empty or not
     Then user navigate to Home page

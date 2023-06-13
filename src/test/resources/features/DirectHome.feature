@@ -5,7 +5,7 @@ Feature: Direct home page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "hari5465@yopmail.com" and  "Hari5465#"
+    When user enters logins with username with "shalin.shah@royalcyber.com" and  "Test@1234"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -47,7 +47,14 @@ Feature: Direct home page feature
     And user is able to navigate to PLP page
     Then user is able to navigate to direct home page from PLP page
     And user is able to navigate PDP page by clicking Configure and request
-    And user fills directorder product details
+    When user is on Steel Menu on header section
+    And user is able to select Wire rods from Steel Menu
+    And user click on product name of Wire product displayed on the page
+    And user is on Wire Product page
+    And user is able to click Add to requirement cart
+    When user clicks HR from Steel Navigation Menu
+    When user selects Steel product
+    Given user is on product detail page of Steel item for DirectOrder
     And user is able to click Add to requirement cart
     And user is able to click View requirement cart
     And user is able to view request price button
@@ -77,5 +84,3 @@ Feature: Direct home page feature
     And verify Item details
     And verify Order Status
     And verify clicking on View details navigates to order summaryPage
-    
-    
