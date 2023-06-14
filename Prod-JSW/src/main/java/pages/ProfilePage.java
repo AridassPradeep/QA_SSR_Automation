@@ -21,7 +21,7 @@ public class ProfilePage {
 	private By Title = By.xpath("//a[@id='__BVID__389___BV_tab_button__']");
 	private By Bname = By.xpath("//span[contains(text(),'Jsw One Platforms Limited')]");
 	private By Bcopy = By.xpath(" (//div[@class='copy-icon'])[1]");
-	private By Accountnumber = By.xpath("//span[contains(text(),'2223333114907710')]");
+	private By Accountnumber = By.xpath("//span[contains(text(),'2223330077734701')]");
 	private By Acopy = By.xpath(" (//div[@class='copy-icon'])[2]");
 	private By IFSC = By.xpath("//span[contains(text(),'RATN0VAAPIS')]");
 	private By Icopy = By.xpath(" (//div[@class='copy-icon'])[3]");

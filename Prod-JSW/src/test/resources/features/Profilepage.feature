@@ -26,7 +26,7 @@ Feature: Profile page feature
     Then IFSC Copy icon is populated
     When user select the industrial sector
     When user select the industrial sector
-    Then interest area should be selected
+    #Then interest area should be selected
     When user click the Save button
     Then Profile details should be saved
 

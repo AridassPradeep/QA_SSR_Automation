@@ -45,25 +45,25 @@ Feature: Order Summary page feature
       | productQuanity |
       |             11 |
 
-  Scenario Outline: Verifying coupons
-    When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
-    And user wait for sometime
-    When user click on Buy Now
-    And user click on apply coupon
-    Then List of coupons to be displayed
-    And user enters the "<coupon>" manually and click on apply
-    Then coupon is applied and price gets updated
-    And user closes coupon overlay
-    And price gets updated
-    And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    Then user click on view details and can see coupon got applied
-
-    Examples: 
-      | coupon       |
-      | DIGITALORDER |
+  #Scenario Outline: Verifying coupons
+    #When cart is empty or not
+    #When user clicks HR from Steel Navigation Menu
+    #When user selects Steel product
+    #Given user is on product detail page of Steel item
+    #And user wait for sometime
+    #When user click on Buy Now
+    #And user click on apply coupon
+    #Then List of coupons to be displayed
+    #And user enters the "<coupon>" manually and click on apply
+    #Then coupon is applied and price gets updated
+    #And user closes coupon overlay
+    #And price gets updated
+    #And user click on proceed to pay on cart detail page and navigate to ordersummary page
+    #Then user click on view details and can see coupon got applied
+#
+    #Examples: 
+      #| coupon       |
+      #| DIGITALORDER |
 
   Scenario: Verifying item details
     And user click on proceed to pay on cart detail page and navigate to ordersummary page

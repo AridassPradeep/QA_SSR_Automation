@@ -126,9 +126,10 @@ public class MyOrderPages {
 	private By filterApplied = By.xpath("//div[@class='d-md-inline-flex d-lg-inline-flex my-4']");
 
 	private By order = By.xpath("//div[contains(text(),'Orders')]");
-	private By searchBox = By.xpath("//input[@name='search-text']");
+	private By searchBox = By.xpath("//input[@id='basic.textInput']");
 	private By FirstOrderNo = By.xpath("//div[@data-testid= 'cell-0-orderNumber']");
-
+	private By ReviewAndPay = By.xpath("(//*[contains(text(),'Review & pay')])[1]");
+	private By ViewDetails = By.xpath("//*[text()='View details']");
 	public MyOrderPages(WebDriver driver2) {
 		this.driver = driver2;
 		PageFactory.initElements(driver, this);
@@ -548,12 +549,12 @@ public class MyOrderPages {
 		driver.findElement(By.xpath("//button[@label='Close dialog']")).click();
 
 	}
-
+	
 	public void enterOrdernoSearchBox(String orderno) throws InterruptedException {
 
 		driver.findElement(searchBox).sendKeys(orderno);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@data-testid='search-button']")).click();
+		driver.findElement(By.xpath("//button[@aria-label='search-button']//*[name()='svg']")).click();
 		Thread.sleep(2000);
 		driver.findElement(FirstOrderNo).click();
 		Thread.sleep(10000);

@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import factory.DriverFactory;
 import util.ElementUtil;
 
 public class RegistrationPage {
@@ -35,9 +36,6 @@ public class RegistrationPage {
 	private By gstCompanyName = By.xpath("//div[contains(@class,'comp-name')]");
 	private By gstCompanyAddress = By.xpath("//div[contains(@class,'comp-addr')]");
 
-	
-	
-	
 	public RegistrationPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -60,6 +58,19 @@ public class RegistrationPage {
 		driver.findElement(loginButton).click();
 	}
 
+	public void closeRegPopup() throws InterruptedException {
+		Thread.sleep(4000);
+		try {
+			driver.switchTo().frame(0);
+			driver.findElement(By.xpath("//button[@id='close-icon']")).click();
+		} catch (Exception e) {
+
+			System.out.println("popup not availiable");
+			driver.switchTo().defaultContent();
+		}
+
+	}
+
 	public void Login(String uname, String pwd) {
 		driver.findElement(email).sendKeys(uname);
 		driver.findElement(password).sendKeys(pwd);
@@ -69,11 +80,11 @@ public class RegistrationPage {
 	public void clickRegisterButton() {
 		driver.findElement(register).click();
 	}
-	
+
 	public void clickRegisterButtonBlogs() {
 		driver.findElement(register).click();
-		ElementUtil et= new ElementUtil(driver);
-		et.SwitchWindow(2);		
+		ElementUtil et = new ElementUtil(driver);
+		et.SwitchWindow(2);
 	}
 
 	public void enterUserName(String name) {
@@ -122,7 +133,7 @@ public class RegistrationPage {
 
 		return errorMsg;
 	}
-	
+
 	public String getEmailErrorMessage() {
 		String errorMsg = driver.findElement(EmailerrorMessage).getText();
 		return errorMsg;
@@ -161,7 +172,7 @@ public class RegistrationPage {
 		Thread.sleep(4000);
 		return driver.findElement(By.xpath("//*[text()='Login']")).isEnabled();
 	}
-	
+
 	public boolean validateRegistationPopup() throws InterruptedException {
 		Thread.sleep(4000);
 		return driver.findElement(By.xpath("(//*[text()='Register Now'])[1]")).isEnabled();

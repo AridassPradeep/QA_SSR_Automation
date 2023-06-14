@@ -26,9 +26,9 @@ Feature: Registration page feature
     And user clicks on signin
     Then user homepage is displayed
 
-    Examples: 
-      | username | mobileno   | GSTIN           | companyemail           | password  |
-      | ramya    | 9102798206 | 06AAKPW0438J1ZE  | testprodpol5@gmail.com | Ramya@678 |
+   Examples: 
+      | username | mobileno   | GSTIN           | companyemail          | password  |
+      | ramya    | 9791098212 | 21AABCC3310K2ZA | TestRegPol903@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"

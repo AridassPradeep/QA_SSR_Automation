@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import util.ElementUtil;
 
@@ -13,9 +14,10 @@ public class LedgerPage {
 
 	private WebDriver driver;
 	private By RecentBlogs = By.xpath("//UL[@class='v-pagination theme--light']");
-	private By FromRequestStatement = By.xpath("//label[@for='fromDate']//following::input[1]");
+	private By FromRequestStatement = By.xpath("//input[@id='request-ledger-statement-from-mobile']");
 	private By ToRequestStatement = By.xpath("//input[@id='request-ledger-statement-to-mobile']");
 	private By Request = By.xpath("//button[@id='request-ledger-statement-submit-btn']");
+	private By Download = By.xpath("//div[normalize-space()='Download']");
 
 	public LedgerPage(WebDriver driver) {
 		this.driver = driver;
@@ -34,10 +36,13 @@ public class LedgerPage {
 		Thread.sleep(5000);
 	}
 
-	public void requestStatement() throws InterruptedException {
-		Thread.sleep(4000);
-		driver.findElement(FromRequestStatement).sendKeys("12112021");
-		driver.findElement(ToRequestStatement).sendKeys("12122022");
+	public String validateLedgerPage() {
+		return driver.findElement(By.xpath("(//*[text()='Ledger'])[2]")).getText();
+	}
+
+	public void requestStatement() {
+		driver.findElement(FromRequestStatement).sendKeys("10052023");
+		driver.findElement(ToRequestStatement).sendKeys("25052023");
 		driver.findElement(Request).click();
 	}
 
@@ -47,21 +52,67 @@ public class LedgerPage {
 	}
 
 	public void validatePreviousStatement() {
-		driver.findElement(By.xpath(
-				"//div[@class='typography-h5 typography-md-h3 typography-font-semibold typography-font-md-bold']"))
-				.isDisplayed();
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollUp();
+		driver.findElement(By.xpath("//th[normalize-space()='Transaction details']")).isDisplayed();
+		driver.findElement(By.xpath("//th[normalize-space()='Order ID']")).isDisplayed();
+		driver.findElement(By.xpath("//th[normalize-space()='Amount']")).isDisplayed();
+		driver.findElement(By.xpath("//th[normalize-space()='Balance']")).isDisplayed();
+		driver.findElement(By.xpath("//th[normalize-space()='Date & time']")).isDisplayed();
 
 	}
 
 	public void validateDownload() {
-		driver.findElement(By.xpath("(//button[@class='text-btn'])[1]")).isEnabled();
+		driver.findElement(Download).isEnabled();
+		driver.findElement(Download).click();
+	}
+
+	public String validateCompanyNameAndGSTNo() {
+		driver.findElement(By.xpath("//*[text()='M FLORIST']")).isDisplayed();
+		String GstNo = driver
+				.findElement(By.xpath("//*[text()='M FLORIST']//following::div[1]"))
+				.getText();
+		return GstNo;
+
+	}
+
+	public void clickonLedger() throws InterruptedException {
+		//Thread.sleep(5500);
+		WebElement nameInputField = driver.findElement(By.xpath("//div[2]/a[1]/button[1]"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", nameInputField);
+		
+		//driver.findElement(By.xpath("//button[normalize-space()='View ledger']")).click();
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
+	}
+
+	public void clickViewDetails() {
+
+		driver.findElement(By.xpath("//span[@role='button']")).click();
+	}
+
+	public void verifyBlockedInfo() {
+
+		driver.findElement(By.xpath("//*[text()='Blocked amount info']")).isDisplayed();
+	}
+	
+	public void EmailDetails() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//img[@class='email-ledger-icon']")).click();
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("v_laxminarayan.jena@jsw.in");
+		driver.findElement(By.xpath("(//button[@id='share-ledger'])[2]")).click();
+	}
+	
+	public void verifyEmail()
+	{
+		String sucessmsg=driver.findElement(By.xpath("//div[@class='email-send-success-container']//span")).getText();
+		System.out.println(sucessmsg);
 	}
 	
 	public void switchToLedgerWindow() {
-		Set<String> handles=driver.getWindowHandles();
-		ArrayList<String> ar= new ArrayList<String>(handles);
-		System.out.print(ar);
-		driver.switchTo().window(ar.get(1));
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
 	}
 
 }
