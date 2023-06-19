@@ -182,6 +182,27 @@ public class CartDetailPage {
 		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
 	}
 	
+	public void changeAddress()
+	{
+		driver.findElement(By.xpath("//a[normalize-space()='Change address']")).click();
+	}
+	
+	public void addNewAddress()
+	{
+		driver.findElement(By.xpath("(//div[@role='button'])[1]")).click();
+	}
+	
+	public void fillAddressInformation() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//input[@id='company']")).sendKeys("companyname1");
+		driver.findElement(By.xpath("//input[@id='addressLineOne']")).sendKeys("address1");
+		driver.findElement(By.xpath("//input[@id='pincode']")).sendKeys("753010");
+		driver.findElement(By.xpath("//input[@id='city']")).sendKeys("cuttack");
+		driver.findElement(By.xpath("(//input[@id='defaultAddress'])[2]")).click();
+		driver.findElement(By.xpath("(//button[@id='save-change'])[2]")).click();
+		Thread.sleep(6000);
+	}
+	
 	
 
 }

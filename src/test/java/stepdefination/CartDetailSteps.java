@@ -209,5 +209,27 @@ public class CartDetailSteps {
 		cartdpage.verifyshipTo();
 	   
 	}
+	
+	@When("user click on change address")
+	public void user_click_on_change_address() {
+		cartdpage.changeAddress();
+	}
+	
+	@When("user click on Add new Address")
+	public void user_click_on_add_new_address() {
+		cartdpage.addNewAddress();
+	}
+	
+	@When("user fill address information and save changes")
+	public void user_fill_address_information_and_save_changes() throws InterruptedException {
+		cartdpage.fillAddressInformation();
+	}
+
+
+
+
+
+
+
 
 }
