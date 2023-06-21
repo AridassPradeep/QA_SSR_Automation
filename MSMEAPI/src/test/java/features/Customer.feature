@@ -3,10 +3,10 @@ Feature: Validating CustomerAPI
 
   @Login
   Scenario: Verify valid login
-    When user calls "loginAPI" with "Post" http request
-    Then the API call response is success with status code 200
-    And validate the payload structure has "Bearer"
-    And validate the login response time is less than "5000" ms
+     Given user calls "loginAPI" with "Post" http request for "login"
+    Then validate that the "loginAPI"  call response is success with status code "200"
+    And validate the "loginAPI" response time is less than "5000" ms
+    And validate the "loginAPI" payload structure has "jwtToken"
 
   @validateGst
   Scenario: Validate GST
