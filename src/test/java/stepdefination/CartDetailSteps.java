@@ -1,5 +1,7 @@
 package stepdefination;
 
+import java.awt.AWTException;
+
 import org.junit.Assert;
 
 import factory.DriverFactory;
@@ -211,7 +213,7 @@ public class CartDetailSteps {
 	}
 	
 	@When("user click on change address")
-	public void user_click_on_change_address() {
+	public void user_click_on_change_address() throws InterruptedException {
 		cartdpage.changeAddress();
 	}
 	
@@ -221,9 +223,38 @@ public class CartDetailSteps {
 	}
 	
 	@When("user fill address information and save changes")
-	public void user_fill_address_information_and_save_changes() throws InterruptedException {
+	public void user_fill_address_information_and_save_changes() throws InterruptedException, AWTException {
 		cartdpage.fillAddressInformation();
 	}
+	
+	@When("user click on newlycreated address")
+	public void user_click_on_newlycreated_address() {
+		cartdpage.clickNewlycreatedAddress();
+	}
+	
+	@When("user click on Deliver here")
+	public void user_click_on_deliver_here() {
+		cartdpage.clickDeliverHere();
+	}
+	
+	@When("user click on edit address and update address information details")
+	public void user_click_on_edit_address_and_update_address_information_details() throws InterruptedException, AWTException {
+		cartdpage.editAddress();
+	}
+	
+	@When("user click on remove address")
+	public void user_click_on_remove_address_and_update_address_information_details() throws InterruptedException, AWTException {
+		cartdpage.removeAddress();
+	}
+
+
+
+
+
+
+
+
+
 
 
 

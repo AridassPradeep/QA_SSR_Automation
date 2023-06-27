@@ -2,9 +2,16 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
+import util.ElementUtil;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -132,8 +139,8 @@ public class CartDetailPage {
 	public void removeHRInCart() throws InterruptedException {
 		driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
 		Thread.sleep(2000);
-		WebElement remove = driver.findElement(By.xpath(
-				"//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::div[2]"));
+		WebElement remove = driver.findElement(By
+				.xpath("//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::div[2]"));
 		remove.click();
 		driver.findElement(By.xpath("//*[text()='Proceed']")).click();
 		Thread.sleep(8000);
@@ -144,6 +151,7 @@ public class CartDetailPage {
 		List<WebElement> deladress = driver.findElements(By.xpath("//div[@class='d-flex change-address-list']"));
 		deladress.get(index).click();
 	}
+
 	public void selectDelivery() throws InterruptedException {
 		driver.findElement(By.xpath("(//button[contains(text(),'Deliver here')])[2]")).click();
 		Thread.sleep(4000);
@@ -159,50 +167,74 @@ public class CartDetailPage {
 
 	public void verifyCgstSgst() {
 		driver.findElement(By.xpath("//div[contains(text(),'18% IGST')]")).isDisplayed();
-		//driver.findElement(By.xpath("//div[contains(text(),'9% SGST')]")).isDisplayed();
-		
+		// driver.findElement(By.xpath("//div[contains(text(),'9%
+		// SGST')]")).isDisplayed();
 
 	}
-	
+
 	public void verifysubTotal() {
-		String subtotal=driver.findElement(By.xpath("//div[2]/div[1]/div[1]/div[4]/div[2]/div[1]")).getText();
-		System.out.println("subtotal"+subtotal );
-	
+		String subtotal = driver.findElement(By.xpath("//div[2]/div[1]/div[1]/div[4]/div[2]/div[1]")).getText();
+		System.out.println("subtotal" + subtotal);
 
 	}
-	public void verifyBillTo()
-	{
+
+	public void verifyBillTo() {
 		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
 	}
-	
-	public void verifyshipTo()
-	{
-		WebElement block=driver.findElement(By.xpath("//div[@class='delivery-add-wrap']"));
+
+	public void verifyshipTo() {
+		WebElement block = driver.findElement(By.xpath("//div[@class='delivery-add-wrap']"));
 		block.findElement(By.xpath("(//label[normalize-space()='Ship to'])[1]")).isDisplayed();
 		driver.findElement(By.xpath("//*[normalize-space()='Bill to']")).isDisplayed();
 	}
-	
-	public void changeAddress()
-	{
+
+	public void changeAddress() throws InterruptedException {
+		Thread.sleep(2500);
 		driver.findElement(By.xpath("//a[normalize-space()='Change address']")).click();
 	}
-	
-	public void addNewAddress()
-	{
-		driver.findElement(By.xpath("(//div[@role='button'])[1]")).click();
+
+	public void addNewAddress() {
+		driver.findElement(By.xpath("//*[contains(text(),'Add new')]")).click();
 	}
-	
-	public void fillAddressInformation() throws InterruptedException
-	{
+
+	public void fillAddressInformation() throws InterruptedException, AWTException {
 		driver.findElement(By.xpath("//input[@id='company']")).sendKeys("companyname1");
 		driver.findElement(By.xpath("//input[@id='addressLineOne']")).sendKeys("address1");
 		driver.findElement(By.xpath("//input[@id='pincode']")).sendKeys("753010");
 		driver.findElement(By.xpath("//input[@id='city']")).sendKeys("cuttack");
 		driver.findElement(By.xpath("(//input[@id='defaultAddress'])[2]")).click();
+
+		ElementUtil.zoomout();
 		driver.findElement(By.xpath("(//button[@id='save-change'])[2]")).click();
 		Thread.sleep(6000);
 	}
+
+	public void clickNewlycreatedAddress() {
+		driver.findElement(By.xpath("(//div[normalize-space()='Companyname1'])[1]")).click();
+	}
+
+	public void clickDeliverHere() {
+		driver.findElement(By.xpath("( //*[contains(text(),'Deliver here')])[2]")).click();
+	}
+
+	public void editAddress() throws InterruptedException, AWTException {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(" //*[contains(text(),'Companyname')]//following::img[2]")).click();
+		driver.findElement(By.xpath(" //*[contains(text(),'Edit')]")).click();
+		driver.findElement(By.xpath("//input[@id='mobile']")).clear();
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("8090909009");
+		ElementUtil.zoomout();
+		driver.findElement(By.xpath("(//button[@id='save-change'])[2]")).click();
+		Thread.sleep(6000);
+
+	}
+	public void removeAddress() throws InterruptedException, AWTException {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[contains(text(),'Companyname')]//following::img[2]")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'Remove address')]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'Proceed')])[3]")).click();
 	
-	
+
+	}
 
 }

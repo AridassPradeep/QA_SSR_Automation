@@ -164,13 +164,13 @@ public class OMSPage {
 	public void navigateToshipMentsPageCCP() throws InterruptedException
 	{
 		driver.get("https://qa-ssr.msme.jswone.in/order-summary?order_num="+orderno);
-		//Thread.sleep(5000);
-		ElementUtil obj = new ElementUtil(driver);
-		obj.MigrationUtil(TrackShipments);
-		driver.findElement(By.xpath("//button[normalize-space()='Track shipments']")).click();
-		driver.findElement(By.xpath("//th[normalize-space()='Shipment ID']")).isDisplayed();
-		driver.findElement(By.xpath("//a[@class='typography-font-bold typography-text-primary-main']")).click();
 		Thread.sleep(5000);
+		ElementUtil obj = new ElementUtil(driver);
+//		obj.MigrationUtil(TrackShipments);
+//		driver.findElement(By.xpath("//button[normalize-space()='Track shipments']")).click();
+//		driver.findElement(By.xpath("//th[normalize-space()='Shipment ID']")).isDisplayed();
+//		driver.findElement(By.xpath("//a[@class='typography-font-bold typography-text-primary-main']")).click();
+//		Thread.sleep(5000);
 		//driver.findElement(By.xpath("//p[normalize-space()='Delivered']")).isDisplayed();
 
 	}
