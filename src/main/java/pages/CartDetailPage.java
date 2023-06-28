@@ -202,7 +202,7 @@ public class CartDetailPage {
 		driver.findElement(By.xpath("//input[@id='addressLineOne']")).sendKeys("address1");
 		driver.findElement(By.xpath("//input[@id='pincode']")).sendKeys("753010");
 		driver.findElement(By.xpath("//input[@id='city']")).sendKeys("cuttack");
-		driver.findElement(By.xpath("(//input[@id='defaultAddress'])[2]")).click();
+		//driver.findElement(By.xpath("(//input[@id='defaultAddress'])[2]")).click();
 
 		ElementUtil.zoomout();
 		driver.findElement(By.xpath("(//button[@id='save-change'])[2]")).click();
@@ -213,13 +213,15 @@ public class CartDetailPage {
 		driver.findElement(By.xpath("(//div[normalize-space()='Companyname1'])[1]")).click();
 	}
 
-	public void clickDeliverHere() {
-		driver.findElement(By.xpath("( //*[contains(text(),'Deliver here')])[2]")).click();
+	public void clickDeliverHere() throws InterruptedException, AWTException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@class='button primary-btn large-btn w-50 s-ml-10']")).click();
+		ElementUtil.Esc();
 	}
 
 	public void editAddress() throws InterruptedException, AWTException {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(" //*[contains(text(),'Companyname')]//following::img[2]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'Companyname1')]//following::img[starts-with(@class,'option')])[1]")).click();
 		driver.findElement(By.xpath(" //*[contains(text(),'Edit')]")).click();
 		driver.findElement(By.xpath("//input[@id='mobile']")).clear();
 		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("8090909009");
@@ -229,10 +231,13 @@ public class CartDetailPage {
 
 	}
 	public void removeAddress() throws InterruptedException, AWTException {
+		Thread.sleep(3500);
+		driver.findElement(By.xpath("(//*[contains(text(),'Companyname1')]//following::img[starts-with(@class,'option')])[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[contains(text(),'Companyname')]//following::img[2]")).click();
 		driver.findElement(By.xpath("//*[contains(text(),'Remove address')]")).click();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Proceed')])[3]")).click();
+		Thread.sleep(6000);
 	
 
 	}

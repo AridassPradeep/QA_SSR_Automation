@@ -68,7 +68,7 @@ public class ElementUtil {
 	
 	public static void zoomout() throws AWTException {		
 		Robot robot = new Robot();
-		robot.delay(2000);
+		robot.delay(3200);
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_MINUS);
 		robot.keyRelease(KeyEvent.VK_MINUS);
@@ -76,6 +76,15 @@ public class ElementUtil {
 		robot.delay(2000);
 
 	}
+	
+	public static void Esc() throws AWTException {		
+		Robot robot = new Robot();
+		robot.delay(2000);
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.delay(2000);
+
+	}
+
 
 	public static String date() {
 		LocalDate currentDate = LocalDate.now();

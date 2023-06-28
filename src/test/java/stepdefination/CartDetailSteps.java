@@ -233,7 +233,7 @@ public class CartDetailSteps {
 	}
 	
 	@When("user click on Deliver here")
-	public void user_click_on_deliver_here() {
+	public void user_click_on_deliver_here() throws InterruptedException, AWTException {
 		cartdpage.clickDeliverHere();
 	}
 	
