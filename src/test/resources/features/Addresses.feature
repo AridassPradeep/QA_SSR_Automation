@@ -1,4 +1,4 @@
- @Addresses
+@Addresses
 Feature: User can Change, edit, remove & add delivery address
 
   Background: User opens website
@@ -24,9 +24,7 @@ Feature: User can Change, edit, remove & add delivery address
     And user fill address information and save changes
     And user click on change address
     And user click on remove address
-    
 
- 
   Scenario: User can change deliver address and deliver here
     When cart is empty or not
     Then user navigate to Home page
@@ -44,7 +42,6 @@ Feature: User can Change, edit, remove & add delivery address
     And user click on Deliver here
     And user click on change address
     And user click on remove address
-
 
   Scenario: User can edit address
     When cart is empty or not

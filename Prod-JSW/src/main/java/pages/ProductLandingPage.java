@@ -199,14 +199,14 @@ public class ProductLandingPage {
 	public void clickonProduct() {
 
 		List<WebElement> productList = driver.findElements(By.xpath("//div[@class='plp-prod-img']"));
-		productList.get(1).click();
+		productList.get(0).click();
 	}
 
 	public void validatedeliveryDate() throws InterruptedException {
          
 		Thread.sleep(2200);
 		List<WebElement> productList = driver.findElements(By.xpath("//span[@class='deliveryschedule']"));
-		System.out.println("Delivery Date: " + productList.get(1).getText());
+		System.out.println("Delivery Date: " + productList.get(0).getText());
 	}
 
 	public void validatePrice() throws InterruptedException {
@@ -279,7 +279,7 @@ public class ProductLandingPage {
 	public void verifyGradesForCoated() throws InterruptedException {
 		driver.findElement(By.xpath("//div[contains(text(),'Grade')]"));
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@value='15961:2012']")).isDisplayed();
+		driver.findElement(By.xpath("//input[@value='IS 15961:2012']")).isDisplayed();
 		driver.findElement(By.xpath("//label[contains(text(),'15961:2012')]")).click();
 
 

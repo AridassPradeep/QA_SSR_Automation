@@ -95,7 +95,7 @@ public class ProfileSteps {
 	@When("user  click the IFSC")
 	public void user_click_the_IFSC() throws InterruptedException {
 
-		profilepage.clickIFSC();
+		profilepage.clickIFSCCopyBtn();
 
 	}
 
@@ -157,9 +157,9 @@ public class ProfileSteps {
 
 	}
 
-	@Then("user clicks on edit billing address")
+	@Then("user view billing address")
 	public void user_clicks_on_edit_billing_address() throws InterruptedException {
-		profilepage.ClickEditBillingAddress();
+		profilepage.viewBillingAddress();
 
 	}
 
@@ -214,4 +214,5 @@ public class ProfileSteps {
 		;
 		Assert.assertFalse(profilepage.validateLogOutInProfileMenu());
 	}
+	
 }

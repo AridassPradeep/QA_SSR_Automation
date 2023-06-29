@@ -145,7 +145,7 @@ public class ProfileSteps {
 	}
 
 	@Then("user can delete existing shipping addresses")
-	public void user_can_delete_existing_shipping_addresses() {
+	public void user_can_delete_existing_shipping_addresses() throws InterruptedException {
 		profilepage.DeleteAddresses();
 	}
 
@@ -168,9 +168,9 @@ public class ProfileSteps {
 
 	}
 
-	@Then("user clicks on edit billing address")
+	@Then("user view billing address")
 	public void user_clicks_on_edit_billing_address() throws InterruptedException {
-		profilepage.ClickEditBillingAddress();
+		profilepage.viewBillingAddress();
 
 	}
 
@@ -207,4 +207,16 @@ public class ProfileSteps {
 	    public void user_is_able_check_the_default_address_is_in_MH_pincode() throws InterruptedException {
 	    	profilepage.clickMHDefaultAddress();
 	    }
+		@Then("user can logout from profilePage")
+		public void user_can_logout_from_profile_page() throws InterruptedException {
+			profilepage.LogOut();
+
+		}
+
+		@Then("LogoutDropdown should not be lsited")
+		public void logout_dropdown_should_not_be_lsited() throws InterruptedException {
+			;
+			Assert.assertFalse(profilepage.validateLogOutInProfileMenu());
+		}
+	
 }

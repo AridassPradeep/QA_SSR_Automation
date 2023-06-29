@@ -1,4 +1,4 @@
-
+@cart
 Feature: Cart Detail Page feature
 
   Background: User opens website
@@ -62,7 +62,7 @@ Feature: Cart Detail Page feature
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
-@cart
+
   Scenario: Verify selfpickup
     When cart is empty or not
     Then user navigate to Home page
@@ -77,31 +77,32 @@ Feature: Cart Detail Page feature
     Then verify bank is selected
     And User click on PayNow
     Then User navigates to RazorPay Page
+
   #Scenario: Verify delivery charges calculated for welding electrodes
-    #When cart is empty or not
-    #When user clicks Welding electordes from Welding Consummables Navigation Menu
-    #When user selects WeldingElectrode product
-    #And user is on product detail page of Welding electordes item
-    #And user click on Buy Now
-    #Then verify freight charges are displayed
-    #And verify subtotal is equal to sum of price,tax and freight charges
-#
+  #When cart is empty or not
+  #When user clicks Welding electordes from Welding Consummables Navigation Menu
+  #When user selects WeldingElectrode product
+  #And user is on product detail page of Welding electordes item
+  #And user click on Buy Now
+  #Then verify freight charges are displayed
+  #And verify subtotal is equal to sum of price,tax and freight charges
+  #
   #Scenario: Verify delivery charges calculated for welding wires
-    #When cart is empty or not
-    #When user clicks Welding wire from Welding Consummables Navigation Menu
-    #When user selects WeldingWire product
-    #And user is on product detail page of Welding wire item
-    #And user click on Buy Now
-    #Then verify freight charges are displayed
-    #And verify subtotal is equal to sum of price,tax and freight charges
-    
-      @BillTo
+  #When cart is empty or not
+  #When user clicks Welding wire from Welding Consummables Navigation Menu
+  #When user selects WeldingWire product
+  #And user is on product detail page of Welding wire item
+  #And user click on Buy Now
+  #Then verify freight charges are displayed
+  #And verify subtotal is equal to sum of price,tax and freight charges
+  @BillTo
   Scenario: Verify bill To and ShipTo in cart section
     When cart is empty or not
     Then user navigate to Home page
-    When user click Cement Menu on header section
-    And user click on product name of Cement product displayed on the page
-    And user is on Cement Product page
+    When user is on Steel Menu on header section
+    And user is able to select Cold rolled from Steel Menu
+    And user click on product name of Cold rolled product displayed on the page
+    And user is on ColdRolled Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage

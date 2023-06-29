@@ -46,7 +46,7 @@ public class OrderSummaryPage {
 			"//*[@class='bottom-section-card']//*[@class='description'][normalize-space()='Delivery in 2 - 5 days']");
 	private By ItemDetailsProduct = By.xpath("//div[@class='product-link']");
 	private By Shipping = By.xpath("//div[@class='shipping-address']");
-	private By Billing = By.xpath("//div[normalize-space()='Billing address:']");
+	private By Billing = By.xpath("//div[@class='biling-address']");
 	private By BatchQuery = By.xpath("//a[normalize-space()='process-customer-balance']//following::td[9]//button");
 
 	public OrderSummaryPage(WebDriver driver) {

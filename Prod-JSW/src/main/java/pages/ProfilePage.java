@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import util.ElementUtil;
+
 public class ProfilePage {
 	private WebDriver driver;
 
@@ -24,12 +26,13 @@ public class ProfilePage {
 	private By Accountnumber = By.xpath("//span[contains(text(),'2223330077734701')]");
 	private By Acopy = By.xpath(" (//div[@class='copy-icon'])[2]");
 	private By IFSC = By.xpath("//span[contains(text(),'RATN0VAAPIS')]");
-	private By Icopy = By.xpath(" (//div[@class='copy-icon'])[3]");
+	private By Icopy = By.xpath("//span[contains(text(),'RATN0VAAPIS')]//following::img[1]");
 	private By Save = By.xpath("//button[contains(text(),'Save details')]");
 	private By Ok = By.xpath("//button[contains(text(),'Ok')]");
-	private By addAddress = By.xpath("//*[text()='+ Add a new address']");
-	private By DeleteAddress = By.xpath("//div[@class='delete-button']");
+	private By addAddress = By.xpath("//*[contains(text(),'Add address')]");
+	private By DeleteAddress = By.xpath("(//img[@class='delete-icon pointer'])[1]");
 	private By Addresses = By.xpath("//*[text()='Addresses']");
+	private By Logout = By.xpath("(//*[text()='Logout'])[2]");
 
 	public ProfilePage(WebDriver driver) {
 		this.driver = driver;
@@ -105,7 +108,7 @@ public class ProfilePage {
 	}
 
 	public void clickIFSC() throws InterruptedException {
-		driver.findElement(IFSC).click();
+		//driver.findElement(IFSC).click();
 		driver.findElement(Icopy).click();
 		Thread.sleep(3000);
 	}
@@ -140,21 +143,25 @@ public class ProfilePage {
 		driver.findElement(Addresses).click();
 	}
 
-	public void DeleteAddresses() {
+	public void DeleteAddresses() throws InterruptedException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,800)", "");
 		driver.findElement(DeleteAddress).click();
+		Thread.sleep(1200);
+		driver.findElement(By.xpath("//button[contains(text(),'Proceed')]")).click();
+		Thread.sleep(3200);
 	}
 
-	public void addAddress() {
+	public void addAddress() throws InterruptedException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,400)", "");
 		driver.findElement(addAddress).click();
 		driver.findElement(By.id("company")).sendKeys("Spark Avertising");
 		driver.findElement(By.id("pincode")).sendKeys("600032");
-		driver.findElement(By.id("address")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
+		driver.findElement(By.id("addressLineOne")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
 		driver.findElement(By.id("city")).sendKeys("Chennai");
-		driver.findElement(By.xpath("//button[text()='Save address']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//button[@id='save-change'])[2]")).click();
 	}
 
 	public void cancelNewAddress() {
@@ -163,15 +170,15 @@ public class ProfilePage {
 		driver.findElement(addAddress).click();
 		driver.findElement(By.id("company")).sendKeys("Spark Avertising");
 		driver.findElement(By.id("pincode")).sendKeys("600032");
-		driver.findElement(By.id("address")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
+		driver.findElement(By.id("addressLineOne")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
 		driver.findElement(By.id("city")).sendKeys("Chennai");
 		driver.findElement(By.id("state")).sendKeys("Tamil Nadu");
 		driver.findElement(By.xpath("//div[text()='Cancel']")).click();
 	}
-	public void ClickEditBillingAddress() throws InterruptedException
+	public void viewBillingAddress() throws InterruptedException
 	{
 		
-		driver.findElement(By.xpath("//div[@class='edit-button']")).click();
+		driver.findElement(By.xpath("//*[text()='Bill to']")).isDisplayed();
 		
 		//List<WebElement> editAddressButtons=driver.findElements(By.xpath("//div[@class='edit-button']"));
 		// editAddressButtons.get(1).click();
@@ -249,5 +256,21 @@ public class ProfilePage {
 			}
 		}
 	    
+		public void LogOut() throws InterruptedException {
+
+			driver.findElement(Logout).click();
+			Thread.sleep(2000);
+		}
+		
+		public boolean validateLogOutInProfileMenu() throws InterruptedException {
+
+			//WebElement dropdownmenu= driver.findElement(By.xpath("(//section[@class='drop-body'])[1]"));
+			//dropdownmenu.findElement(By.xpath("//div[@class='user-dropdown-item']"));
+			ElementUtil obj= new ElementUtil(driver);
+			boolean LogoutVisibility=obj.isElementPresent("//div[@class='user-dropdown-item']");
+			return LogoutVisibility;
+			
+		}
+
 	}
 

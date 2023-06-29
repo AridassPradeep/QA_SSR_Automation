@@ -25,11 +25,11 @@ public class ProfilePage {
 	private By Accountnumber = By.xpath("//span[contains(text(),'1112220057850296')]");
 	private By Acopy = By.xpath(" (//div[@class='copy-icon'])[2]");
 	private By IFSC = By.xpath("//p[@class='text-center with-success-icon']");
-	private By Icopy = By.xpath("(//div[contains(text(),'Copy')])[4]");
+	private By Icopy = By.xpath("//span[contains(text(),'RAZR0000001')]//following::img[1]");
 	private By Save = By.xpath("//button[contains(text(),'Save details')]");
 	private By Ok = By.xpath("//button[contains(text(),'Ok')]");
-	private By addAddress = By.xpath("//*[text()='+ Add a new address']");
-	private By DeleteAddress = By.xpath("//div[@class='delete-button']");
+	private By addAddress = By.xpath("//*[contains(text(),'Add address')]");
+	private By DeleteAddress = By.xpath("(//img[@class='delete-icon pointer'])[1]");
 	private By Addresses = By.xpath("//*[text()='Addresses']");
 	private By LedgerMenu = By.linkText("Ledger");
 	private By Logout = By.xpath("(//*[text()='Logout'])[2]");
@@ -110,8 +110,7 @@ public class ProfilePage {
 		System.out.println(driver.findElement(Accountnumber).getText());
 	}
 
-	public void clickIFSC() throws InterruptedException {
-		//driver.findElement(IFSC).click();
+	public void clickIFSCCopyBtn() throws InterruptedException {
 		driver.findElement(Icopy).click();
 	}
 
@@ -151,15 +150,16 @@ public class ProfilePage {
 		driver.findElement(DeleteAddress).click();
 	}
 
-	public void addAddress() {
+	public void addAddress() throws InterruptedException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,400)", "");
 		driver.findElement(addAddress).click();
 		driver.findElement(By.id("company")).sendKeys("Spark Avertising");
 		driver.findElement(By.id("pincode")).sendKeys("600032");
-		driver.findElement(By.id("address")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
+		driver.findElement(By.id("addressLineOne")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
 		driver.findElement(By.id("city")).sendKeys("Chennai");
-		driver.findElement(By.xpath("//button[text()='Save address']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//button[@id='save-change'])[2]")).click();
 	}
 
 	public void cancelNewAddress() {
@@ -168,7 +168,7 @@ public class ProfilePage {
 		driver.findElement(addAddress).click();
 		driver.findElement(By.id("company")).sendKeys("Spark Avertising");
 		driver.findElement(By.id("pincode")).sendKeys("600032");
-		driver.findElement(By.id("address")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
+		driver.findElement(By.id("addressLineOne")).sendKeys("A-4, 3rd Phase, Labour Colony, SIDCO Industrial Estate");
 		driver.findElement(By.id("city")).sendKeys("Chennai");
 		driver.findElement(By.id("state")).sendKeys("Tamil Nadu");
 		driver.findElement(By.xpath("//div[text()='Cancel']")).click();
@@ -191,6 +191,14 @@ public class ProfilePage {
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//button[contains(text(),'Save address')]")).click();
 
+	}
+	public void viewBillingAddress() throws InterruptedException
+	{
+		
+		driver.findElement(By.xpath("//*[text()='Bill to']")).isDisplayed();
+		
+		//List<WebElement> editAddressButtons=driver.findElements(By.xpath("//div[@class='edit-button']"));
+		// editAddressButtons.get(1).click();
 	}
 
 	// MH Pincode
