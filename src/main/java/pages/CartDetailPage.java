@@ -166,7 +166,7 @@ public class CartDetailPage {
 	}
 
 	public void verifyCgstSgst() {
-		driver.findElement(By.xpath("//div[contains(text(),'18% IGST')]")).isDisplayed();
+		driver.findElement(By.xpath("//div[contains(text(),'18%')]")).isDisplayed();
 		// driver.findElement(By.xpath("//div[contains(text(),'9%
 		// SGST')]")).isDisplayed();
 

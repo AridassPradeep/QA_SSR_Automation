@@ -159,7 +159,7 @@ public class CartDetailSteps {
 
 	}
 
-	@Then("^verify 9% CGST and 9% SGST is displayed$")
+	@Then("^verify 18%Tax is displayed$")
 	public void verify_9_cgst_and_9_sgst_is_displayed() throws Throwable {
 		cartdpage.verifyCgstSgst();
 

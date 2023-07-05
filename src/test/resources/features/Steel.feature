@@ -152,9 +152,11 @@ Feature: Steel feature
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     When user click on pickup checkbox
-    And user click on proceed to pay on cart detail page
-    #Then verify netbanking is disabled
-    #When user enter UTR and validate it
-      #| A12345678901234556 |
-    #And user click on confirm payment
-    #Then verify payment success message is displayed
+       And user click on proceed to pay on cart detail page
+    And user select bank name to transfer from the drop down on payment page
+    Then verify bank is selected
+    And User click on PayNow
+    Then User navigates to RazorPay Page
+    And User click on success button
+    Then verify after successful payment page navigates to ORDER summary page
+    Then order sucessfully placed message should be displayed

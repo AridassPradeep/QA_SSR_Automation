@@ -354,7 +354,7 @@ public class PDPDiscountPage {
 		
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 			       .withTimeout(Duration.ofSeconds(30L))
-			       .pollingEvery(Duration.ofSeconds(5L))
+			       .pollingEvery(Duration.ofSeconds(1L))
 			       .ignoring(NoSuchElementException.class);
 		
 	WebElement button = wait.until(new Function<WebDriver, WebElement>(){
