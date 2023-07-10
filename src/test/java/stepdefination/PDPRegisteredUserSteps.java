@@ -270,6 +270,10 @@ public class PDPRegisteredUserSteps {
 	public void user_is_on_wire_product_page() throws Throwable {
 		pdpreguser.WireDetails();
 	}
+	@And("^user is on Wire Product page forDirectOrder$")
+	public void user_is_on_wire_product_pageDirectOrder() throws Throwable {
+		pdpreguser.WireDetailsDirectOrder();
+	}
 
 	@Given("user is on product detail page of CR Coil item")
 	public void user_is_on_product_detail_page_of_CRCoilsteel_item() throws InterruptedException {

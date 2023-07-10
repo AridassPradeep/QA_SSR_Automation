@@ -72,7 +72,7 @@ public class PDPRegisteredUserPage {
 	public void selectSteelProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250BR')]")).click();
 
 		/*
 		 * List<WebElement> productlist = driver.findElements(productselect); for (int i
@@ -405,7 +405,7 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("55");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("59");
 		Thread.sleep(3500);
 
 	}
@@ -477,6 +477,14 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("4");
+		Thread.sleep(2000);
+
+	}
+	public void WireDetailsDirectOrder() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("40");
 		Thread.sleep(2000);
 
 	}

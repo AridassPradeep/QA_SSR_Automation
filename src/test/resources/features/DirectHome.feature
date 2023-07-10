@@ -50,11 +50,7 @@ Feature: Direct home page feature
     When user is on Steel Menu on header section
     And user is able to select Wire rods from Steel Menu
     And user click on product name of Wire product displayed on the page
-    And user is on Wire Product page
-    And user is able to click Add to requirement cart
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item for DirectOrder
+    And user is on Wire Product page forDirectOrder
     And user is able to click Add to requirement cart
     And user is able to click View requirement cart
     And user is able to view request price button

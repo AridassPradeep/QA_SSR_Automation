@@ -35,18 +35,7 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user can minimise  item details and billing adress
 
-  Scenario: Verifying netbanking is disabled for order more than 10 lakhs
-    When user is on Steel Menu on header section
-    And user is able to select Wire rods from Steel Menu
-    And user click on product name of Wire product displayed on the page
-    And user is on Wire Product page
-    When user clicks on Add To Cart button available in the right side of the webpage
-    Then verify that the product should be added in the cart
-    When user click on Cart icon on homepage
-    When user click on pickup checkbox
-    And user click on proceed to pay on cart detail page and navigate to ordersummary page
-    Then verify netbanking is disabled
-
+@netbankingdisabled
   Scenario Outline: Validate  netbanking is disabled for order more than 10 lakhs
     When cart is empty or not
     Then user navigate to Home page
