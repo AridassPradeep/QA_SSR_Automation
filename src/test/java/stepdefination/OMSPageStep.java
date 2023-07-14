@@ -28,6 +28,11 @@ public class OMSPageStep {
 		omspage.createCompletedShipment();
 	}
 	
+	
+	@Then("user creates multiple shipment in OMS")
+	public void user_creates_multiple_shipment() throws InterruptedException, AWTException {
+		omspage.createMultiShipment();
+	}
 	@Then("user navigates to ShipmentDetails Page in CCP")
 	public void user_navigates_to_shipments_page() throws InterruptedException, AWTException {
 		omspage.navigateToshipMentsPageCCP();

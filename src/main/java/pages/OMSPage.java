@@ -35,6 +35,7 @@ public class OMSPage {
 	private By passwordBox = By.xpath("//input[@type='password']");
 	private By TrackShipments = By.xpath("//button[normalize-space()='Track shipments']");
 	String orderno = Paymentpage.orderno;
+	// String orderno = "JOO-8CR5PH91";
 
 	public OMSPage(WebDriver driver) {
 		this.driver = driver;
@@ -58,7 +59,7 @@ public class OMSPage {
 	}
 
 	public void goToOMSShipmentPage() throws InterruptedException, AWTException {
-		
+
 		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
 		Thread.sleep(3000);
 		String xpath1 = "//a[normalize-space()='";
@@ -70,15 +71,15 @@ public class OMSPage {
 
 		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
 		Thread.sleep(3000);
+
+	}
+
+	public void createCompletedShipment() throws InterruptedException, AWTException
+
+	{
 		driver.findElement(By.xpath("//button[normalize-space()='Create shipment']")).click();
 
 		Thread.sleep(3000);
-		
-		
-	}
-	
-	public void createCompletedShipment() throws InterruptedException, AWTException
-	{
 		driver.findElement(By.xpath("(//*[text()='Seller name'])[1]//parent::div[1]")).click();
 		driver.findElement(By.xpath("(//li[@role='option'])[1]")).click();
 
@@ -92,7 +93,6 @@ public class OMSPage {
 
 		driver.findElement(By.xpath("(//*[text()='Scheduled dispatch date'])[1]//following::div[1]//input"))
 				.sendKeys(ElementUtil.date(2));
-		
 
 		driver.findElement(By.xpath("//span[normalize-space()='Delivery type']//following::div[1]")).click();
 		driver.findElement(By.xpath("//li[normalize-space()='Delivery']")).click();
@@ -104,7 +104,8 @@ public class OMSPage {
 		driver.findElement(By.xpath("//*[text()='Ready for dispatch']")).click();
 		driver.findElement(By.xpath("(//*[text()='Dispatch date'])[2]//following::div[1]//input"))
 				.sendKeys(ElementUtil.date(2));
-		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input")).sendKeys(ElementUtil.date(4));
+		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input"))
+				.sendKeys(ElementUtil.date(4));
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
@@ -126,8 +127,10 @@ public class OMSPage {
 		driver.findElement(By.xpath("(//*[text()='Quantity invoiced']//following::div[3]//div[1]//input)[2]"))
 				.sendKeys(totalOrderqtynumber);
 
-		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[1]//input")).sendKeys(ElementUtil.date(4));
-		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[6]//input")).sendKeys(ElementUtil.date(4));
+		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[1]//input"))
+				.sendKeys(ElementUtil.date(4));
+		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[6]//input"))
+				.sendKeys(ElementUtil.date(4));
 
 		Thread.sleep(5000);
 		WebElement fileUploadButton = driver.findElement(By.xpath("//*[text()='Invoices']//following::div[1]//p"));
@@ -159,11 +162,50 @@ public class OMSPage {
 		} else {
 			System.out.println("Order status is incorrect is not delivered.");
 		}
-		
+
 	}
-	public void navigateToshipMentsPageCCP() throws InterruptedException
+
+	public void createMultiShipment() throws InterruptedException, AWTException
+
 	{
-		driver.get("https://qa-ssr.msme.jswone.in/order-summary?order_num="+orderno);
+
+		for (int i = 0; i < 2; i++) {
+			driver.findElement(By.xpath("//button[normalize-space()='Create shipment']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//*[text()='Seller name'])[1]//parent::div[1]")).click();
+			driver.findElement(By.xpath("(//li[@role='option'])[1]")).click();
+
+			String totalOrderqty = driver.findElement(By.xpath("//*[text()='Total order qty']//following::td[2]"))
+					.getText();
+
+			String totalOrderqtynumber = totalOrderqty.substring(0, totalOrderqty.indexOf(" "));
+			System.out.println("totalOrderqty" + totalOrderqtynumber);
+
+			Thread.sleep(2500);
+			if (i == 0) {
+				driver.findElement(By.xpath("//*[text()='Quantity']//following::td[4]//input")).sendKeys("1");
+				driver.findElement(By.xpath("(//*[text()='Scheduled dispatch date'])[1]//following::div[1]//input"))
+						.sendKeys(ElementUtil.date(2));
+
+			} else {
+				driver.findElement(By.xpath("//*[text()='Quantity']//following::td[4]//input")).sendKeys("1");
+				driver.findElement(By.xpath("(//*[text()='Scheduled dispatch date'])[2]//following::div[1]//input"))
+						.sendKeys(ElementUtil.date(2));
+
+			}
+			Thread.sleep(2500);
+
+			driver.findElement(By.xpath("//span[normalize-space()='Delivery type']//following::div[1]")).click();
+			driver.findElement(By.xpath("//li[normalize-space()='Delivery']")).click();
+
+			driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
+			Thread.sleep(2000);
+		}
+
+	}
+
+	public void navigateToshipMentsPageCCP() throws InterruptedException {
+		driver.get("https://qa-ssr.msme.jswone.in/order-summary?order_num=" + orderno);
 		Thread.sleep(5000);
 		ElementUtil obj = new ElementUtil(driver);
 //		obj.MigrationUtil(TrackShipments);
@@ -171,14 +213,15 @@ public class OMSPage {
 //		driver.findElement(By.xpath("//th[normalize-space()='Shipment ID']")).isDisplayed();
 //		driver.findElement(By.xpath("//a[@class='typography-font-bold typography-text-primary-main']")).click();
 //		Thread.sleep(5000);
-		//driver.findElement(By.xpath("//p[normalize-space()='Delivered']")).isDisplayed();
+		// driver.findElement(By.xpath("//p[normalize-space()='Delivered']")).isDisplayed();
 
 	}
-	
-	public void navigateToViewDocuments() throws InterruptedException
-	{
+
+	public void navigateToViewDocuments() throws InterruptedException {
 		driver.findElement(By.xpath("//span[normalize-space()='View documents']")).click();
-		driver.findElement(By.xpath("//*[@class='typography-sub-heading typography-md-h5 typography-font-semibold d-inline-block ml-2']")).click();
+		driver.findElement(By.xpath(
+				"//*[@class='typography-sub-heading typography-md-h5 typography-font-semibold d-inline-block ml-2']"))
+				.click();
 		Thread.sleep(5000);
 	}
 
