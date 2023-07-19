@@ -109,7 +109,7 @@ public class Paymentpage {
 		Thread.sleep(3000);
 		WebElement dropdown = driver.findElement(banklistnew);
 		Select select = new Select(dropdown);
-		select.selectByVisibleText("HDFC Bank");
+		select.selectByVisibleText("ICICI Bank");
 
 	}
 	
@@ -218,14 +218,14 @@ public class Paymentpage {
 	public void selectBank() throws InterruptedException {
 		Thread.sleep(3000);
 		Select bank = new Select(driver.findElement(By.id("banks")));
-		bank.selectByVisibleText("HDFC Bank");
+		bank.selectByVisibleText("ICICI Bank");
 
 	}
 
 	public void selectBankNew() throws InterruptedException {
 		Thread.sleep(3000);
 		Select bank = new Select(driver.findElement(banklistnew));
-		bank.selectByVisibleText("HDFC Bank");
+		bank.selectByVisibleText("ICICI Bank");
 
 	}
 	

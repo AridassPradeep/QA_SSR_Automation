@@ -2,6 +2,7 @@ package pages;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -223,6 +224,37 @@ public class OMSPage {
 				"//*[@class='typography-sub-heading typography-md-h5 typography-font-semibold d-inline-block ml-2']"))
 				.click();
 		Thread.sleep(5000);
+	}
+
+	public void navigateToshipmentDetailsPage() throws InterruptedException {
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-YU7LBGHI?tab=shipments");
+		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
+	}
+
+	public void uploadsMultiinvoices() throws InterruptedException, AWTException {
+		Thread.sleep(5000);
+		WebElement fileUploadButton = driver.findElement(By.xpath("//*[text()='Invoices']//following::div[1]//p"));
+		fileUploadButton.click();
+		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\invoice.pdf";
+		ElementUtil.UploadFile(filePath);
+		fileUploadButton.click();
+		String filePath1 = System.getProperty("user.dir") + "\\src\\test\\resources\\testData\\invoice2.pdf";
+		ElementUtil.UploadFile(filePath1);
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
+
+	}
+
+	public void deleteAllInvoicesUploaded() throws InterruptedException {
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDown();
+		driver.findElement(By.xpath("(//p[normalize-space()='Invoices']//following::div[1]//p)[2]")).click();
+		List<WebElement> deleteBtn = driver.findElements(By.xpath("//img[@alt='Trash icon']"));
+		System.out.println(deleteBtn.size());
+		for (int i = 0; i < deleteBtn.size(); i++) {
+			driver.findElement(By.xpath("//img[@alt='Trash icon']")).click();
+			Thread.sleep(5000);
+		}
+
 	}
 
 }

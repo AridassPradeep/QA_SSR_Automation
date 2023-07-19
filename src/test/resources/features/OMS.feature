@@ -54,4 +54,12 @@ Feature: Verify OMS
     And user login to OMS
     And user navigates to OMS ShipmentsPage
     And user creates multiple shipment in OMS
+    
+    
+    @MultiInvoiceUploadAndDelete
+ Scenario: Verify Multi file upload and delete 
+     Given user login to OMS
+     And user navigates to shipment detailsPage
+     And uploads multi invoices
+     And can delete all invoices uploaded
   

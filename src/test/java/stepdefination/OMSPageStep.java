@@ -3,6 +3,7 @@ package stepdefination;
 import java.awt.AWTException;
 
 import factory.DriverFactory;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.OMSPage;
@@ -42,6 +43,23 @@ public class OMSPageStep {
 	public void user_clicks_on_view_documents() throws InterruptedException {
 		omspage.navigateToViewDocuments();
 	}
+
+	@Given("user navigates to shipment detailsPage")
+	public void user_navigates_to_shipment_details_page() throws InterruptedException {
+		omspage.navigateToshipmentDetailsPage();
+	}
+	
+	@Given("uploads multi invoices")
+	public void uploads_multi_invoices() throws InterruptedException, AWTException {
+		omspage.uploadsMultiinvoices();
+	}
+	@Given("can delete all invoices uploaded")
+	public void can_delete_all_invoices_uploaded() throws InterruptedException {
+		omspage.deleteAllInvoicesUploaded();
+	}
+
+
+
 
 
 }
