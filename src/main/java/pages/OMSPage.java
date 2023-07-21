@@ -230,6 +230,11 @@ public class OMSPage {
 		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-YU7LBGHI?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
+	
+	public void navigateToinvoicedshipmentDetailsPage() throws InterruptedException {
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-NPMW1YI1?tab=shipments");
+		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
+	}
 
 	public void uploadsMultiinvoices() throws InterruptedException, AWTException {
 		Thread.sleep(5000);

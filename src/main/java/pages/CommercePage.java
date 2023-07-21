@@ -59,8 +59,8 @@ public class CommercePage {
 	}
 
 	public void entersProductName(String productName) {
-		driver.findElement(By.xpath("//input[@id='localized-text-field-2.en-US']")).sendKeys(productName);
-		driver.findElement(By.xpath("//textarea[@id='localized-multiline-text-field-2.en-US']")).sendKeys(productName);
+		driver.findElement(By.xpath("(//*[text()='EN-US'])[1]//following::input[1]")).sendKeys(productName);
+		//driver.findElement(By.xpath("//textarea[@id='localized-multiline-text-field-2.en-US']")).sendKeys(productName);
 		driver.findElement(By.xpath("//input[@name='key']")).sendKeys(productName);
 		driver.findElement(By.xpath("//input[@id='masterVariant.attributes.GRADE']")).sendKeys("1");
 

@@ -49,6 +49,12 @@ public class OMSPageStep {
 		omspage.navigateToshipmentDetailsPage();
 	}
 	
+	@Given("user navigates to invoiced shipment detailsPage")
+	public void user_navigates_to_invoicedshipment_details_page() throws InterruptedException {
+		omspage.navigateToinvoicedshipmentDetailsPage();
+	}
+	
+	
 	@Given("uploads multi invoices")
 	public void uploads_multi_invoices() throws InterruptedException, AWTException {
 		omspage.uploadsMultiinvoices();
@@ -57,6 +63,18 @@ public class OMSPageStep {
 	public void can_delete_all_invoices_uploaded() throws InterruptedException {
 		omspage.deleteAllInvoicesUploaded();
 	}
+	
+	@Given("clickon PartialHold Details and Update")
+	public void clickon_partial_hold_details_and_update() {
+	   
+	}
+	
+	@Given("navigate to Payouts Tab")
+	public void navigate_to_payouts_tab() {
+	   
+	}
+
+
 
 
 

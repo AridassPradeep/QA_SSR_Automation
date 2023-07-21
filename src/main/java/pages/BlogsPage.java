@@ -15,7 +15,7 @@ public class BlogsPage {
 	private By Technology = By.linkText("Technology");
 	private By Product = By.linkText("Product");
 	private By Pagination = By.xpath("//UL[@class='v-pagination theme--light']");
-	private By RecentBlogs = By.xpath("//UL[@class='v-pagination theme--light']");
+	private By RecentBlogs = By.xpath("//*[text()='Recent blogs']");
 
 	public BlogsPage(WebDriver driver) {
 		this.driver = driver;
@@ -26,7 +26,7 @@ public class BlogsPage {
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		System.out.print(ar);
-		driver.switchTo().window(ar.get(1));
+		driver.switchTo().window(ar.get(0));
 		String title = driver.getTitle();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -43,7 +43,7 @@ public class BlogsPage {
 	}
 
 	public void validatePagination() {
-		driver.findElement(By.xpath("//UL[@class='v-pagination theme--light']")).isDisplayed();
+		driver.findElement(By.xpath("//*[@aria-label='Pagination']")).isDisplayed();
 		
 	}
 	

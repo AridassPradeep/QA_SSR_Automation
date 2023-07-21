@@ -3,17 +3,22 @@ Feature: Blog feature
 
   Background: User opens website
     Given user is on home page
+
+  Scenario: Verify user is able to navigate to blog page through homepage
     When user clicks on login button
     When user click  on login by email
     When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
     And user clicks on signin
     Then user homepage is displayed
-
-  Scenario: Verify user is able to navigate to blog page through homepage
     When user clicks on Blogs in header menu
     Then user is able to navigate to blog page through homepage
 
   Scenario: Verify header section and pagination in blogs
+    When user clicks on login button
+    When user click  on login by email
+    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
+    And user clicks on signin
+    Then user homepage is displayed
     When user clicks on Blogs in header menu
     Then user is able to navigate to blog page through homepage
     And user is able to see All, Business,Sustainaibilty,Technology,News,Product in header

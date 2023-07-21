@@ -18,4 +18,4 @@ Feature: Product Creation
 
     Examples: 
       | productname      |
-      | TMTSteelQAAuto4  |
+      | TMTSteelQAAutz  |

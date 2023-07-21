@@ -19,7 +19,7 @@ public class RegistrationPage {
 	private By mobileno = By.xpath("//div[1]/div[1]/div[1]/div[1]/input[1]");
 	private By password = By.xpath("//input[@type='password']");
 	private By signIn = By.xpath("//div[2]/div[2]/button[1]");
-	private By register = By.xpath("//*[text()='Register']");
+	private By register = By.xpath("(//*[contains(text(),'Register')])[2]");
 	private By fullName = By.xpath("//input[@id='fullName']");
 	private By mobile = By.xpath("//input[@id='mobile']");
 	private By gstin = By.xpath("//input[@id='mobile']//following::input[1]");
@@ -73,8 +73,8 @@ public class RegistrationPage {
 	}
 	public void clickRegisterButtonBlogs() {
 		driver.findElement(register).click();
-		ElementUtil et= new ElementUtil(driver);
-		et.SwitchWindow(2);		
+//		ElementUtil et= new ElementUtil(driver);
+//		et.SwitchWindow(2);		
 	}
 
 
