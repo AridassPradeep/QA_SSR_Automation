@@ -1,4 +1,4 @@
-@OrderSummary
+
 Feature: Order Summary page feature
 
   Background: User opens website
@@ -36,7 +36,7 @@ Feature: Order Summary page feature
     Then user can minimise  item details and billing adress
 
 @netbankingdisabled
-  Scenario Outline: Validate  netbanking is disabled for order more than 10 lakhs
+  Scenario Outline: Validate  netbanking is disabled for order more than 10 lakhs in ordersumamry
     When cart is empty or not
     Then user navigate to Home page
     When user is on Steel Menu on header section
@@ -97,7 +97,8 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then Verifying delivery days
 
-  Scenario Outline: Veifying user can make netbanking payment for amount less than ₹10,00,000
+@OrderSummary @E2E
+  Scenario Outline: Veifying user can see the order in orderpage after extracting orderid
     Then user navigate to Home page
     When user is on Steel Menu on header section
     And user is able to select Colour coated from Steel Menu
@@ -117,6 +118,15 @@ Feature: Order Summary page feature
     And User click on success button
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
+    Then user can see order number in url instead of order id
+    And user is able to view Myorders CTA
+    When user is able to click the Myorders CTA
+    And user is navigate to MyOrder page
+    #Then user is able to view Orders awaiting payment header
+    And user is able to view My orders header
+    And verify active,delivered and cancelled tab
+    And count list of orders
+    And verify the order generated is dispalying in MyordersPage
 
     Examples: 
       | productQuanity |

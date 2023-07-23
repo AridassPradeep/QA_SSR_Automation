@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 		
 		glue = {"stepdefination", "hooks"},
 		monochrome = true,	
-	   // tags = "@blogs",
+	   // tags = "@DiscountCoupon",
 		dryRun = false,
 		stepNotifications=true,
 		plugin = {

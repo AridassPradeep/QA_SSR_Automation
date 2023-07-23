@@ -58,9 +58,11 @@ public class CommercePage {
 
 	}
 
-	public void entersProductName(String productName) {
+	public void entersProductName(String productName) throws InterruptedException {
+		productName= productName+ElementUtil.generateRandomString(4) ;
 		driver.findElement(By.xpath("(//*[text()='EN-US'])[1]//following::input[1]")).sendKeys(productName);
 		//driver.findElement(By.xpath("//textarea[@id='localized-multiline-text-field-2.en-US']")).sendKeys(productName);
+		productName= productName+ElementUtil.generateRandomString(4) ;
 		driver.findElement(By.xpath("//input[@name='key']")).sendKeys(productName);
 		driver.findElement(By.xpath("//input[@id='masterVariant.attributes.GRADE']")).sendKeys("1");
 
@@ -69,6 +71,7 @@ public class CommercePage {
 	public void clickAddVariant(String productName) throws InterruptedException {
 		driver.findElement(By.xpath("(//span[contains(text(),'Add variant')])[2]")).click();
 		Thread.sleep(2000);
+		productName= productName+ElementUtil.generateRandomString(4) ;
 		driver.findElement(By.xpath("//input[@id='variant-sku']")).sendKeys(productName + "Sku");
 		driver.findElement(By.xpath("//input[@id='variant-key']")).sendKeys(productName + "Variant");
 		driver.findElement(By.xpath("//span[contains(text(),'Save')]")).click();

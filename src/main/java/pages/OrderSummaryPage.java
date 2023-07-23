@@ -17,11 +17,14 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.ElementUtil;
+import util.ScenarioContext;
+import util.Context;
 
 public class OrderSummaryPage {
 
 	private WebDriver driver;
 	String url = "";
+	public static String orderno;
 
 	private By RecentBlogs = By.xpath("//UL[@class='v-pagination theme--light']");
 	private By OrderNumber = By.xpath("//div[normalize-space()='Order number']//following::div[1]");
@@ -112,7 +115,7 @@ public class OrderSummaryPage {
 	}
 
 	public void viewDetails() throws InterruptedException {
-		ElementUtil wt= new ElementUtil(driver);
+		ElementUtil wt = new ElementUtil(driver);
 		wt.MigrationUtil(ViewDetails);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
@@ -134,12 +137,13 @@ public class OrderSummaryPage {
 	}
 
 	public void validateOrderNoinURL() throws InterruptedException {
-		ElementUtil wt= new ElementUtil(driver);
+		ElementUtil wt = new ElementUtil(driver);
 		wt.MigrationUtil(DeliveryDays);
 		url = driver.getCurrentUrl();
-		String order_num = url.substring(url.lastIndexOf("=") + 1);
-		System.out.print("order num" + order_num);
-		assertThat(order_num.contains("JOO"));
+		orderno = url.substring(url.lastIndexOf("=") + 1);
+		System.out.print("order num" + orderno);
+		assertThat(orderno.contains("JOO"));
+
 	}
 
 	public String validatePaymentStatus() throws InterruptedException {
@@ -164,11 +168,10 @@ public class OrderSummaryPage {
 
 	public void navigateToOrder() throws InterruptedException {
 		driver.get(url);
-		
+
 	}
-	
-	public void validateSucessfulMsg()
-	{
+
+	public void validateSucessfulMsg() {
 		while (true) {
 			try {
 				WebElement element = driver.findElement(By.xpath("//*[text()='Your order payment is successful']"));
@@ -181,12 +184,29 @@ public class OrderSummaryPage {
 		}
 
 	}
-	public void validateOrderSummary()
-	{
+
+	public void validateOrderSummary() {
 		driver.findElement(By.xpath("//span[normalize-space()='Order summary']")).isDisplayed();
 	}
-	
-	
-	
+
+	public void validateOrderNoinDisplayedinOrderPage() throws InterruptedException {
+
+		String xpath1 = "//*[text()='";
+		String xpath3 = "']";
+		orderno = extractSubstring(orderno);
+		String orderxpath = xpath1 + orderno + xpath3;
+		System.out.println(orderxpath);
+		driver.findElement(By.xpath(orderxpath)).isDisplayed();
+
+	}
+
+	public static String extractSubstring(String inputString) {
+		int endIndex = inputString.indexOf('&');
+		if (endIndex != -1) {
+			return inputString.substring(0, endIndex);
+		} else {
+			return inputString;
+		}
+	}
 
 }

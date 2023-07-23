@@ -140,7 +140,7 @@ public class CartDetailPage {
 		driver.findElement(By.xpath("//button[contains(text(),'×')]")).click();
 		Thread.sleep(2000);
 		WebElement remove = driver.findElement(By
-				.xpath("//div[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250A')]//following::div[2]"));
+				.xpath("//div[@class='product-link']//following::img[1]"));
 		remove.click();
 		driver.findElement(By.xpath("//*[text()='Proceed']")).click();
 		Thread.sleep(8000);

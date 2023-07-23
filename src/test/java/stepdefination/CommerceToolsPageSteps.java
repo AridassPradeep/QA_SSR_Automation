@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.CommercePage;
 
+
 public class CommerceToolsPageSteps {
 
 	private CommercePage commercePage = new CommercePage(DriverFactory.getDriver());
@@ -41,7 +42,7 @@ public class CommerceToolsPageSteps {
 	}
 	
 	@Given("enters {string}")
-	public void enters(String productName) {
+	public void enters(String productName) throws InterruptedException {
 		commercePage.entersProductName(productName);
 	  
 	}

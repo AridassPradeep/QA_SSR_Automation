@@ -29,7 +29,7 @@ public class DirectOrderPage {
 	private By directlyfromJSW = By.xpath("//span[contains(text(),'Buy directly from')]");
 	private By myrequirements = By.xpath("(//a[@class='links'])[2]");
 	private By requestprice = By.xpath("//span[text()='Request for price']");
-	private By viewrequirementlist = By.xpath("(//a[normalize-space()='Requirements cart (1 Item)'])[1]");
+	private By viewrequirementlist = By.xpath("//*[contains(text(),'Requirements')]");
 	private By requestforprice = By.xpath("//span[contains(text(),'Request for price')]");
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
@@ -254,8 +254,8 @@ public class DirectOrderPage {
 		driver.findElement(requestprice).click();
 	}
 
-	public void validateViewRequirementList() {
-
+	public void validateViewRequirementList() throws InterruptedException {
+		
 		driver.findElement(viewrequirementlist).isDisplayed();
 
 	}
