@@ -78,6 +78,14 @@ public class ElementUtil {
 
 	}
 	
+	public static void enter() throws AWTException {		
+		Robot robot = new Robot();
+		robot.delay(3200);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.delay(2000);
+
+	}
+	
 	public static void Esc() throws AWTException {		
 		Robot robot = new Robot();
 		robot.delay(2000);

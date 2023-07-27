@@ -307,6 +307,8 @@ public class OMSPage {
 	
 	public void updatePartialHold()
 	{
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDown();
 		driver.findElement(By.xpath("//*[text()='Partial hold']//preceding::span[1]")).click();
 		driver.findElement(By.xpath("//input[@placeholder='Enter the hold amount']")).sendKeys("10000");
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("partial hold");

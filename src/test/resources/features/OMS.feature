@@ -94,3 +94,6 @@ Feature: Verify OMS
     And navigate to Payouts Tab
     Then Validate QualityIssues should be same as entered partial amount value
     And intiate payout is disabled
+    
+    
+   

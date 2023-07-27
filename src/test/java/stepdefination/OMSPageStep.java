@@ -116,26 +116,8 @@ public class OMSPageStep {
 		String errorMsg=omspage.validateDeleteMSG(ErrorMSG);
 		Assert.assertTrue(errorMsg.contains(ErrorMSG)); 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
 
 
 
