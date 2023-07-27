@@ -3,6 +3,7 @@ package pages;
 import java.awt.AWTException;
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.xml.xpath.XPath;
 
@@ -163,7 +164,7 @@ public class HomePage {
 
 	public CartDetailPage clickonCart() {
 		//driver.findElement(cartIcon).click();
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(cartIcon)).click();
 		return new CartDetailPage(driver);
 	}

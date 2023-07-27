@@ -1,4 +1,4 @@
-
+@OrderSummary
 Feature: Order Summary page feature
 
   Background: User opens website
@@ -35,7 +35,7 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then user can minimise  item details and billing adress
 
-@netbankingdisabled
+  @netbankingdisabled
   Scenario Outline: Validate  netbanking is disabled for order more than 10 lakhs in ordersumamry
     When cart is empty or not
     Then user navigate to Home page
@@ -97,7 +97,7 @@ Feature: Order Summary page feature
     And user click on proceed to pay on cart detail page and navigate to ordersummary page
     Then Verifying delivery days
 
-@OrderSummary @E2E
+  @E2E
   Scenario Outline: Veifying user can see the order in orderpage after extracting orderid
     Then user navigate to Home page
     When user is on Steel Menu on header section

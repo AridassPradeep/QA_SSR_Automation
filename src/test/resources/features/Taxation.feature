@@ -1,4 +1,4 @@
-
+@Taxation
 Feature: Tax calculation on Order summary & My Order pages
 
   Background: User opens website
@@ -9,7 +9,7 @@ Feature: Tax calculation on Order summary & My Order pages
     And user clicks on signin
     Then user homepage is displayed
 
-@Taxation
+
   Scenario: Verify Tax calculation when shipping adress is chennai
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -29,7 +29,7 @@ Feature: Tax calculation on Order summary & My Order pages
     And gets the order details
     And user login to merchant centre username with "v_laxminarayan.jena@jsw.in" and  "123Tmnas$"
     And user click on order and search orderno in mc
-    Then verify 18%Tax is displayed
+    Then verify 9%Tax is displayed
     And verify tax matches in mc and UI
     
 
@@ -54,7 +54,7 @@ Feature: Tax calculation on Order summary & My Order pages
     And gets the order details
     And user login to merchant centre username with "v_laxminarayan.jena@jsw.in" and  "123Tmnas$"
     And user click on order and search orderno in mc
-    Then verify 18%Tax is displayed
+    Then verify 9%Tax is displayed
     And verify tax matches in mc and UI
 
   @thrissur
@@ -79,5 +79,5 @@ Feature: Tax calculation on Order summary & My Order pages
     And gets the order details
     And user login to merchant centre username with "v_laxminarayan.jena@jsw.in" and  "123Tmnas$"
     And user click on order and search orderno in mc
-    Then verify 18%Tax is displayed
+    Then verify 9%Tax is displayed
     And verify tax matches in mc and UI

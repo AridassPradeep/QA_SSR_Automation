@@ -227,12 +227,17 @@ public class OMSPage {
 	}
 
 	public void navigateToshipmentDetailsPage() throws InterruptedException {
-		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-YU7LBGHI?tab=shipments");
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-7P23W9AS?tab=shipments");
+		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
+	}
+	
+	public void navigateToDeliveredshipmentDetailsPage() throws InterruptedException {
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-7P23W9AS?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
 	
 	public void navigateToinvoicedshipmentDetailsPage() throws InterruptedException {
-		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-NPMW1YI1?tab=shipments");
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-FVWWQJUI?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
 
@@ -260,6 +265,52 @@ public class OMSPage {
 			Thread.sleep(5000);
 		}
 
+	}
+	
+	public void clickAttachments() throws InterruptedException {
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDown();
+		driver.findElement(By.xpath("(//p[normalize-space()='Invoices']//following::div[1]//p)[2]")).click();
+		List<WebElement> deleteBtn = driver.findElements(By.xpath("//img[@alt='Trash icon']"));
+		System.out.println(deleteBtn.size());
+		for (int i = 0; i < deleteBtn.size(); i++) {
+			driver.findElement(By.xpath("//img[@alt='Trash icon']")).click();
+			Thread.sleep(5000);
+		}
+
+	}
+	
+	public void deleteInvoicesinInvoicedShipment() throws InterruptedException {
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDown();
+		driver.findElement(By.xpath("(//p[normalize-space()='Invoices']//following::div[1]//p)[2]")).click();
+		List<WebElement> deleteBtn = driver.findElements(By.xpath("//img[@alt='Trash icon']"));
+		System.out.println(deleteBtn.size());
+		for (int i = 0; i < deleteBtn.size(); i++) {
+			driver.findElement(By.xpath("//img[@alt='Trash icon']")).click();
+		}
+
+	}
+	
+	public String validateDeleteMSG(String ErrorMSG)
+	{
+		String xpath1="//*[contains(text(),'";
+		String xpath2="')]";
+		String xpath3=xpath1+ErrorMSG+xpath2;		
+		String actualMsg= driver.findElement(By.xpath(xpath3)).getText();
+		System.out.println(actualMsg);
+		return actualMsg;
+		
+	}
+	
+	
+	
+	public void updatePartialHold()
+	{
+		driver.findElement(By.xpath("//*[text()='Partial hold']//preceding::span[1]")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Enter the hold amount']")).sendKeys("10000");
+		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("partial hold");
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
 
 }
