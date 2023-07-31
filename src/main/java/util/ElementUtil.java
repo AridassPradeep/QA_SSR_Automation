@@ -93,6 +93,17 @@ public class ElementUtil {
 		robot.delay(2000);
 
 	}
+	
+	public static void DoubleKeyDownEnter() throws AWTException {		
+		Robot robot = new Robot();
+		robot.delay(2000);
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.delay(2000);
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.delay(2000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+
+	}
 
 
 	public static String date() {
