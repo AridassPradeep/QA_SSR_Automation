@@ -36,6 +36,7 @@ public class OMSPage {
 	private By passwordBox = By.xpath("//input[@type='password']");
 	private By TrackShipments = By.xpath("//button[normalize-space()='Track shipments']");
 	String orderno = Paymentpage.orderno;
+	String SForderno = SFPage.SFOrderNo;
 	// String orderno = "JOO-8CR5PH91";
 
 	public OMSPage(WebDriver driver) {
@@ -71,6 +72,20 @@ public class OMSPage {
 		obj.SwitchWindow(1);
 
 		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
+		Thread.sleep(3000);
+
+	}
+	
+	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
+
+		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
+		Thread.sleep(3000);
+		String xpath1 = "//a[normalize-space()='";
+		String xpath2 = "']";
+		driver.findElement(By.xpath(xpath1 + SForderno  + xpath2)).click();
+		Thread.sleep(3000);
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
 		Thread.sleep(3000);
 
 	}

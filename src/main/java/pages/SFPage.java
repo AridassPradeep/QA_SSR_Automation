@@ -13,13 +13,21 @@ import util.ElementUtil;
 public class SFPage {
 
 	private WebDriver driver;
+	public static String SFOrderNo;
 
 	private By username = By.xpath("//input[@id='username']");
 	private By passwordTextBox = By.xpath("//input[@id='password']");
 	private By LoginBtn = By.xpath("//input[@id='Login']");
 	private By sourceSellerQuote = By.xpath("//label[text()='Source Seller Quote']/following::input");
+	private By OrderTab= By.xpath("//a[contains(text(),'Order')]");
+	private By OrderNo= By.xpath("//span[@title='Order Number']//following::div[7]//a");
+	private By quickOpportunity = By.xpath("//button[normalize-space()='Quick Opportunity']");
 	private By sucessMsg = By.xpath("//*[text()='Success']");
-
+	private By saveBtn = By.xpath("(//button[text()='Save'])[2]");
+	private By sucessOrderCreatedMsg = By.xpath("//*[contains(text(),'Order is created successfully with Order Number')]");
+	
+	
+	
 	public SFPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -37,14 +45,13 @@ public class SFPage {
 	}
 
 	public void goToAccounts() {
-		//driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/r/Account/0019D00000TfVQ0QAN/view");
-
-		driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/r/Account/0019D00000RMEvhQAH/view");
+		driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/r/Account/0019D00000TfVQ0QAN/view");
+       //driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/r/Account/0019D00000RMEvhQAH/view");
 
 	}
 
 	public void clickNewOpportunity() {
-		driver.findElement(By.xpath("//button[normalize-space()='Quick Opportunity']")).click();
+		driver.findElement(quickOpportunity).click();
 	}
 
 	public void fillSKURequirementDetails() throws InterruptedException, AWTException {
@@ -54,7 +61,7 @@ public class SFPage {
 				.sendKeys("MS HR Sheet 2062:2011 E250A");
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@placeholder='Search Products...']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		ElementUtil.DoubleKeyDownEnter();
 		driver.findElement(By.xpath("(//label[text()='Primary Revised Quantity']/following::input)[1]")).sendKeys("5");
 		driver.findElement(By.xpath("(//label[text()='Thickness (mm)']/following::input)[1]")).sendKeys("2");
@@ -92,8 +99,9 @@ public class SFPage {
 		 Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[text()='Move to awaiting documents']")).click();
 		wt.MigrationUtil(sucessMsg);
-		Thread.sleep(8000);
-		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+		wt.MigrationUtil(saveBtn);
+		Thread.sleep(10000);
+		driver.findElement(saveBtn).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//lightning-formatted-text[text()='Awaiting documents']//following::span[1]"))
 				.click();
@@ -122,13 +130,20 @@ public class SFPage {
 		saveBtn.click();
 		Thread.sleep(14000);
 		saveBtn.click();
+	}
+	
+	public void orderDetails() throws InterruptedException
+	{
 		driver.findElement(By.xpath("//button[text()='Create Order']")).click();
 		Thread.sleep(14000);
 		driver.findElement(By.xpath("(//button[text()='Create Order'])[2]")).click();
-		Thread.sleep(140000);
-		driver.findElement(By.xpath("//a[contains(text(),'Order')]")).click();
-		
-
+		ElementUtil wt = new ElementUtil(driver);
+		wt.MigrationUtil(sucessOrderCreatedMsg);
+		Thread.sleep(4000);
+		driver.findElement(OrderTab).click();
+		Thread.sleep(4000);
+		SFOrderNo=driver.findElement(OrderNo).getAttribute("title");
+		System.out.println("Order No" +SFOrderNo);
 	}
 
 }

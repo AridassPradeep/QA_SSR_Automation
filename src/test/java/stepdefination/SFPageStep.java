@@ -26,9 +26,17 @@ public class SFPageStep {
 		sfpage.clickNewOpportunity();
 	}
 
-	@Given("fill SKURequirement Details")
+	@Given("fill SKURequirement Details and process Opportunity")
 	public void fill_sku_requirement_details() throws InterruptedException, AWTException {
 		sfpage.fillSKURequirementDetails();
 	}
+	
+	@Given("create order and extract orderno from SF")
+	public void create_order_and_extract_orderno_from_sf() throws InterruptedException {
+		sfpage.orderDetails();
+	}
+
+
+
 
 }
