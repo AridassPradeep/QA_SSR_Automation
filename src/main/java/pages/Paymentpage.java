@@ -44,6 +44,7 @@ public class Paymentpage {
 	private By successmessage = By.xpath("//div[@class='order-details-field-value payment-status-success']");
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
 	private By advancePaymentMessage = By.xpath("//div[text()='Your order payment is successful']");
+	private By FullPaymentMessage = By.xpath("//div[@class='notification-text']");
 	private By user = By.xpath("//div[@class='drop-down-whole']");
 	private By UTR = By.xpath("//div[@class='utr-field']/input");
 	private By confirmPayment = By.xpath("//button[@class='bold-text confirm-btn primary']");
@@ -241,6 +242,12 @@ public class Paymentpage {
 		driver.findElement(payNow).click();
 
 	}
+	
+	public void clickFullPaymentPayNow() {
+		driver.findElement(By.xpath("//button[text()[normalize-space()='Pay now']]")).click();
+
+	}
+	
 
 	public void clickPaymentSucess() {
 		Set<String> handles = driver.getWindowHandles();

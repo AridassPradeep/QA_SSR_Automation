@@ -130,7 +130,7 @@ public class SFPage {
 		driver.findElement(By.xpath("(//label[text()='Advance Value']/following::input)[1]")).sendKeys("15000");
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 		wt.WaitUtilElementInvisible(spinnerWheel);
-		Thread.sleep(11000);
+		Thread.sleep(6000);
 		wt.WaitUtilClickable( processOpportunityBtn);
 		driver.findElement(By.xpath("//button[text()='Process Opportunity']")).click();
 		driver.findElement(By.xpath("(//label[text()='Delivery Timeline']/following::input)[1]")).sendKeys("2");

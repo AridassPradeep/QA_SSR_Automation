@@ -344,18 +344,37 @@ public class OMSPage {
 		return advanceAmount;
 	}
 	
+	public String verifyFullPaymentRequestMsg()
+	{
+		String FullPaymentRequestMsg=driver.findElement(By.xpath("//div[text()[normalize-space()='Please pay the required amount as per the payment request']]")).getText();
+		System.out.println("paymentStatus " + FullPaymentRequestMsg);
+		return FullPaymentRequestMsg;
+	}
+	
 	public void navigatePaymentTab()
 	{
 		driver.findElement(By.xpath("//button[text()='Payments']")).click();
 	}
 	
-	public void selectPaymentType(String paymentRequestType)
+	public void selectPaymentType(String paymentRequestType) throws InterruptedException
 	{
+		String pendingAmt=driver.findElement(By.xpath("//p[text()='Pending amount']/following-sibling::p")).getText();
 		driver.findElement(By.xpath("//button[text()='Request payment']")).click();
 		driver.findElement(By.xpath("(//span[text()='Payment type'])[2]//following::div[1]")).click();
-		driver.findElement(By.xpath("//li[@data-value='PART']")).click();
-		driver.findElement(By.xpath("//input[@type='number']")).sendKeys("2000");
+		String xpath1="//li[@data-value='";
+		String xpath2="']";
+		driver.findElement(By.xpath(xpath1+paymentRequestType+xpath2)).click();
+		if(paymentRequestType.equals("PART"))
+		{
+			driver.findElement(By.xpath("//input[@type='number']")).sendKeys("2000");
+		}
+		else
+		{
+			driver.findElement(By.xpath("//input[@type='number']")).sendKeys(pendingAmt);
+		}
+		
 		driver.findElement(By.xpath("//button[text()='Send request']")).click();
+		
 	}
 	
 	

@@ -145,13 +145,19 @@ public class OMSPageStep {
 	   
 	}
 	
+	@Then("verify Full Payment Msg {string}")
+	public void verify_full_payment_msg(String PayfullAmountMsg) {
+		String FullPaymentRequestMsg = omspage.verifyFullPaymentRequestMsg();
+		Assert.assertTrue(FullPaymentRequestMsg.contains(PayfullAmountMsg));
+	}
+	
 	@Then("navigates to PaymentTab")
 	public void navigates_to_payment_tab() {
 		omspage.navigatePaymentTab();
 	}
 
 	@Then("select PaymentRequest as {string} and send request")
-	public void select_payment_request_as_and_send_request(String paymentRequestType) {
+	public void select_payment_request_as_and_send_request(String paymentRequestType) throws InterruptedException {
 		omspage.selectPaymentType(paymentRequestType);
 	}
 

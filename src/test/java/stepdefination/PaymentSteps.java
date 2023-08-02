@@ -33,29 +33,27 @@ public class PaymentSteps {
 		Thread.sleep(3000);
 		pmtpage.clickBuyNow();
 	}
-	
-	
 
-    @And("^user click on selfpickup$")
-    public void user_click_on_selfpickup() throws Throwable {
-    	pmtpage.clickSelfPickup();
-    }
-    
-    @Then("^Pickup address will be available msg to be displayed$")
-    public void pickup_from_to_be_displayed() throws Throwable {
-    	pmtpage.verifyPickupFrom();
-        
-    }
-    
-    @When("user click on proceed to pay on cart detail page and navigate to ordersummary page")
-	public void user_click_on_proceed_to_pay_on_cart_detail_pageand_navigate_to_ordersummarypag() throws InterruptedException {
+	@And("^user click on selfpickup$")
+	public void user_click_on_selfpickup() throws Throwable {
+		pmtpage.clickSelfPickup();
+	}
+
+	@Then("^Pickup address will be available msg to be displayed$")
+	public void pickup_from_to_be_displayed() throws Throwable {
+		pmtpage.verifyPickupFrom();
+
+	}
+
+	@When("user click on proceed to pay on cart detail page and navigate to ordersummary page")
+	public void user_click_on_proceed_to_pay_on_cart_detail_pageand_navigate_to_ordersummarypag()
+			throws InterruptedException {
 		pmtpage.validatecartdetailpage();
 		Thread.sleep(3000);
 		pmtpage.scroll();
 		pmtpage.clickproceedtopay();
-		
-	}
 
+	}
 
 	@When("user click on proceed to pay on cart detail page")
 	public void user_click_on_proceed_to_pay_on_cart_detail_page() throws InterruptedException {
@@ -86,12 +84,12 @@ public class PaymentSteps {
 		pmtpage.validateBankList();
 		pmtpage.clickBankList();
 	}
-	
+
 	@And("^user select \"([^\"]*)\" to transfer from the drop down on payment page$")
-    public void user_select_something_to_transfer_from_the_drop_down_on_payment_page(String bank) throws Throwable {
+	public void user_select_something_to_transfer_from_the_drop_down_on_payment_page(String bank) throws Throwable {
 		pmtpage.clickSelectedBank(bank);
-		//pmtpage.clickBankList();
-    }
+		// pmtpage.clickBankList();
+	}
 
 	@When("user select bank name to transfer from the drop down")
 	public void user_select_bank_name_to_transfer_from_the_drop_down() throws InterruptedException {
@@ -104,12 +102,11 @@ public class PaymentSteps {
 		// pmtpage.validateBankSelected();
 		pmtpage.selectBankNew();
 	}
-	
 
-    @Then("^verify \"([^\"]*)\" is selected$")
-    public void verify_something_is_selected(String bank) throws Throwable {
-    	pmtpage.selectBankNew(bank);
-    }
+	@Then("^verify \"([^\"]*)\" is selected$")
+	public void verify_something_is_selected(String bank) throws Throwable {
+		pmtpage.selectBankNew(bank);
+	}
 
 	@When("user click on {string} on cart detail page")
 	public void user_click_on_on_cart_detail_page(String string) {
@@ -120,7 +117,12 @@ public class PaymentSteps {
 	public void user_click_on_pay_now() throws InterruptedException {
 
 		pmtpage.clickPayNow();
-		//Thread.sleep(11000);
+		// Thread.sleep(11000);
+	}
+
+	@Then("user clicks on PayNow")
+	public void user_clicks_on_pay_now() {
+		pmtpage.clickFullPaymentPayNow();
 	}
 
 	@Then("User navigates to RazorPay Page")
@@ -147,11 +149,11 @@ public class PaymentSteps {
 		pmtpage.validateOrderSuccessfulmsg();
 	}
 
-	
 	@Then("Advance order sucessfully placed message should be displayed")
 	public void advance_order_sucessfully_placed_message_should_be_displayed() {
 		pmtpage.validateAdvanceOrderPaymentSuccessfulmsg();
 	}
+
 	@Then("Verify user navigates to payment gateway page")
 	public void verify_user_navigates_to_payment_gateway_page() {
 
@@ -220,13 +222,13 @@ public class PaymentSteps {
 	@When("user click on confirm payment")
 	public void user_click_on_confirm_payment() throws InterruptedException {
 
-		//pmtpage.clickConfirmPayment();
-		//Thread.sleep(15000);
+		// pmtpage.clickConfirmPayment();
+		// Thread.sleep(15000);
 	}
 
 	@Then("verify neftbanking is disabled")
 	public void verify_neftbanking_is_disabled() throws InterruptedException {
-		//pmtpage.validateNetBanking();
+		// pmtpage.validateNetBanking();
 		pmtpage.validateNeftBanking();
 	}
 
@@ -243,14 +245,13 @@ public class PaymentSteps {
 		Thread.sleep(3000);
 
 	}
-	
-	
+
 	@When("user logout of the account")
-	public void user_logout_of_the_account() throws InterruptedException
-	{
-		
-	pmtpage.clickLogOut();	
+	public void user_logout_of_the_account() throws InterruptedException {
+
+		pmtpage.clickLogOut();
 	}
+
 	@When("check cart is empty")
 	public void check_cart_is_empty() throws Exception {
 		if (pmtpage.isElementPresentcart())
@@ -260,10 +261,10 @@ public class PaymentSteps {
 			pmtpage.deleteProductfromCartdo();
 		}
 	}
-	
+
 	@When("user click on proceed and confirm later")
 	public void user_click_on_proceed_and_confirm_later() {
-	    pmtpage.clickConfirmLater();
+		pmtpage.clickConfirmLater();
 	}
 
 	@Then("verify payment pending message is displayed")
@@ -273,13 +274,12 @@ public class PaymentSteps {
 
 	@Then("user is able to see Make payment CTA on order summary page")
 	public void user_is_able_to_see_make_payment_cta_on_order_summary_page() {
-	   pmtpage.validateMakePayment();
+		pmtpage.validateMakePayment();
 	}
-	
-	
+
 	@When("user clicks on netBanking")
 	public void user_clicks_on_net_banking() throws InterruptedException {
 		pmtpage.clickpayViaNetBanking();
 	}
-	
+
 }
