@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.ElementUtil;
 
@@ -18,12 +20,15 @@ public class SFPage {
 	private By username = By.xpath("//input[@id='username']");
 	private By passwordTextBox = By.xpath("//input[@id='password']");
 	private By LoginBtn = By.xpath("//input[@id='Login']");
+	private By spinnerWheel = By.xpath("(//div[@class='spinner'])[2]");
 	private By sourceSellerQuote = By.xpath("//label[text()='Source Seller Quote']/following::input");
 	private By OrderTab= By.xpath("//a[contains(text(),'Order')]");
 	private By OrderNo= By.xpath("//span[@title='Order Number']//following::div[7]//a");
 	private By quickOpportunity = By.xpath("//button[normalize-space()='Quick Opportunity']");
 	private By sucessMsg = By.xpath("//*[text()='Success']");
 	private By saveBtn = By.xpath("(//button[text()='Save'])[2]");
+	private By processOpportunityBtn = By.xpath("//button[text()='Process Opportunity']");
+	
 	private By sucessOrderCreatedMsg = By.xpath("//*[contains(text(),'Order is created successfully with Order Number')]");
 	
 	
@@ -63,9 +68,12 @@ public class SFPage {
 		driver.findElement(By.xpath("//input[@placeholder='Search Products...']")).click();
 		Thread.sleep(4000);
 		ElementUtil.DoubleKeyDownEnter();
-		driver.findElement(By.xpath("(//label[text()='Primary Revised Quantity']/following::input)[1]")).sendKeys("5");
+		driver.findElement(By.xpath("(//label[text()='Primary Revised Quantity']/following::input)[1]")).sendKeys("7");
 		driver.findElement(By.xpath("(//label[text()='Thickness (mm)']/following::input)[1]")).sendKeys("2");
 		driver.findElement(By.xpath("//label[text()='Length (mm)']/following::input")).sendKeys("1500");
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		WebElement elemnt = driver.findElement(By.xpath("(//button[text()='Save'])[2]"));
+		je.executeScript("arguments[0].scrollIntoView(true);", elemnt);
 		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
 		Thread.sleep(15000);
 		driver.findElement(By.xpath("//button[text()='Process Opportunity']")).click();
@@ -90,9 +98,8 @@ public class SFPage {
 		driver.findElement(By.xpath("//label[text()='Source Seller Quote']/following::input")).sendKeys("40000");
 		driver.findElement(By.xpath("//label[text()='Source Seller Quote']/following::input")).click();
 
-		WebElement elemnt = driver.findElement(By.xpath("(//button[text()='Save'])[2]"));
-		JavascriptExecutor je = (JavascriptExecutor) driver;
-		je.executeScript("arguments[0].scrollIntoView(true);", elemnt);
+		WebElement Saveelemnt = driver.findElement(By.xpath("(//button[text()='Save'])[2]"));
+		je.executeScript("arguments[0].scrollIntoView(true);", Saveelemnt);
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
 		wt.MigrationUtil(sucessMsg);
@@ -100,7 +107,7 @@ public class SFPage {
 		driver.findElement(By.xpath("//button[text()='Move to awaiting documents']")).click();
 		wt.MigrationUtil(sucessMsg);
 		wt.MigrationUtil(saveBtn);
-		Thread.sleep(10000);
+		Thread.sleep(14000);
 		driver.findElement(saveBtn).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//lightning-formatted-text[text()='Awaiting documents']//following::span[1]"))
@@ -122,12 +129,16 @@ public class SFPage {
 		driver.findElement(By.xpath("(//label[text()='Advance Value']/following::input)[1]")).clear();
 		driver.findElement(By.xpath("(//label[text()='Advance Value']/following::input)[1]")).sendKeys("15000");
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-		Thread.sleep(10000);
+		wt.WaitUtilElementInvisible(spinnerWheel);
+		Thread.sleep(11000);
+		wt.WaitUtilClickable( processOpportunityBtn);
 		driver.findElement(By.xpath("//button[text()='Process Opportunity']")).click();
 		driver.findElement(By.xpath("(//label[text()='Delivery Timeline']/following::input)[1]")).sendKeys("2");
 		WebElement saveBtn = driver.findElement(By.xpath("(//button[text()='Save'])[2]"));
 		je.executeScript("arguments[0].scrollIntoView(true);",  saveBtn);
 		saveBtn.click();
+		//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("(//div[@class='spinner'])[2]")));
+		wt.WaitUtilElementInvisible(spinnerWheel);
 		Thread.sleep(14000);
 		saveBtn.click();
 	}
@@ -145,5 +156,24 @@ public class SFPage {
 		SFOrderNo=driver.findElement(OrderNo).getAttribute("title");
 		System.out.println("Order No" +SFOrderNo);
 	}
+	public void closeRestTabs()
+	{
+		try {
+            String currentTabId = driver.getWindowHandle();
+            java.util.Set<String> allTabIds = driver.getWindowHandles();
+            for (String tabId : allTabIds) {
+                if (!tabId.equals(currentTabId)) {
+                    driver.switchTo().window(tabId);
+                    driver.close();
+                }
+            }
+            driver.switchTo().window(currentTabId);
+        } catch(Exception e) {
+        }
+
+	}
+	
+	
+
 
 }

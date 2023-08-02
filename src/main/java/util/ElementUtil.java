@@ -27,7 +27,7 @@ public class ElementUtil {
 	}
 
 	public void MigrationUtil(By loctr) {
-		WebDriverWait wait = new WebDriverWait(driver,60);
+		WebDriverWait wait = new WebDriverWait(driver,90);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(loctr));
 
 	}
@@ -35,6 +35,13 @@ public class ElementUtil {
 	public void WaitUtilClickable(By loctr) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(loctr));
+
+	}
+	
+	public void WaitUtilElementInvisible(By loctr) {
+		WebDriverWait wait = new WebDriverWait(driver,90);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(loctr));
+		
 
 	}
 

@@ -43,6 +43,7 @@ public class Paymentpage {
 	private By Success = By.xpath("//button[@class='success']");
 	private By successmessage = By.xpath("//div[@class='order-details-field-value payment-status-success']");
 	private By unsuccessmessage = By.xpath("//div[@class='alert alert-danger error-alert']");
+	private By advancePaymentMessage = By.xpath("//div[text()='Your order payment is successful']");
 	private By user = By.xpath("//div[@class='drop-down-whole']");
 	private By UTR = By.xpath("//div[@class='utr-field']/input");
 	private By confirmPayment = By.xpath("//button[@class='bold-text confirm-btn primary']");
@@ -296,6 +297,17 @@ public class Paymentpage {
 		driver.findElement(unsuccessmessage).isDisplayed();
 
 	}
+	
+    public void validateAdvanceOrderPaymentSuccessfulmsg() {
+		
+		Set<String> handles = driver.getWindowHandles();
+		ArrayList<String> ar = new ArrayList<String>(handles);
+		driver.switchTo().window(ar.get(0));
+		driver.navigate().refresh();
+		driver.findElement(advancePaymentMessage).isDisplayed();
+		
+	}
+
 
 	public void enterUTR(String UTRnumber) {
 		driver.findElement(UTR).clear();

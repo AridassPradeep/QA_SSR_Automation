@@ -329,5 +329,36 @@ public class OMSPage {
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("partial hold");
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
+	
+	public String verifyPaymentStatus()
+	{
+		String paymentStatus=driver.findElement(By.xpath("//p[text()='Payment status']//following::p[1]")).getText();
+		System.out.println("paymentStatus " + paymentStatus);
+		return paymentStatus;
+	}
+	
+	public String verifyAdvanceAmount()
+	{
+		String advanceAmount=driver.findElement(By.xpath("//p[text()='Advance amount']/following-sibling::p")).getText();
+		System.out.println("advanceAmount" + advanceAmount) ;
+		return advanceAmount;
+	}
+	
+	public void navigatePaymentTab()
+	{
+		driver.findElement(By.xpath("//button[text()='Payments']")).click();
+	}
+	
+	public void selectPaymentType(String paymentRequestType)
+	{
+		driver.findElement(By.xpath("//button[text()='Request payment']")).click();
+		driver.findElement(By.xpath("(//span[text()='Payment type'])[2]//following::div[1]")).click();
+		driver.findElement(By.xpath("//li[@data-value='PART']")).click();
+		driver.findElement(By.xpath("//input[@type='number']")).sendKeys("2000");
+		driver.findElement(By.xpath("//button[text()='Send request']")).click();
+	}
+	
+	
+	
 
 }

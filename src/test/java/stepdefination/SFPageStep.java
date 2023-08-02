@@ -4,6 +4,7 @@ import java.awt.AWTException;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import pages.SFPage;
 
 public class SFPageStep {
@@ -35,8 +36,11 @@ public class SFPageStep {
 	public void create_order_and_extract_orderno_from_sf() throws InterruptedException {
 		sfpage.orderDetails();
 	}
+	@Then("close rest open tabs")
+	public void close_rest_open_tabs() {
+		sfpage.closeRestTabs();
+	}
 
-
-
+	
 
 }

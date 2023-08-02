@@ -147,6 +147,11 @@ public class PaymentSteps {
 		pmtpage.validateOrderSuccessfulmsg();
 	}
 
+	
+	@Then("Advance order sucessfully placed message should be displayed")
+	public void advance_order_sucessfully_placed_message_should_be_displayed() {
+		pmtpage.validateAdvanceOrderPaymentSuccessfulmsg();
+	}
 	@Then("Verify user navigates to payment gateway page")
 	public void verify_user_navigates_to_payment_gateway_page() {
 

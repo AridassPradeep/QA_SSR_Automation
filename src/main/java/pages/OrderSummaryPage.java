@@ -189,6 +189,20 @@ public class OrderSummaryPage {
 		driver.findElement(By.xpath("//span[normalize-space()='Order summary']")).isDisplayed();
 	}
 
+	public void navigateToSFAdvanceOrderCCP() throws InterruptedException {
+		String url1 = "https://qa-ssr.msme.jswone.in/order-summary?order_num=";
+		String orderno = SFPage.SFOrderNo;
+		driver.get(url1 + orderno);
+		Thread.sleep(3000);
+	}
+
+	public String verifyAdvancePaymentNotificationText() {
+		String AdvanceNotificationText = driver
+				.findElement(By.xpath("//*[contains(text(),'Your order is awaiting advance payment of')]")).getText();
+		System.out.println(AdvanceNotificationText);
+		return AdvanceNotificationText;
+	}
+
 	public void validateOrderNoinDisplayedinOrderPage() throws InterruptedException {
 
 		String xpath1 = "//*[text()='";

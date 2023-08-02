@@ -109,5 +109,23 @@ public class OrderSummaryPageSteps {
 		order.validateOrderSummary();
 	    
 	}
+	
+	@When("user navigates to SF order in CCP")
+	public void user_navigates_to_sf_order_in_ccp() throws InterruptedException {
+		order.navigateToSFAdvanceOrderCCP();
+	}
+	
+	@Then("verify Adavance Payment Msg {string}")
+	public void verify_adavance_payment_msg(String string) {
+
+		String AdvancePaymentText = order.verifyAdvancePaymentNotificationText();
+		assertThat(AdvancePaymentText.contentEquals("Your order is awaiting advance payment of "));
+	}
+
+
+
+
+
+
 
 }
