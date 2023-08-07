@@ -100,12 +100,20 @@ Feature: Order Summary page feature
   @E2E
   Scenario Outline: Veifying user can see the order in orderpage after extracting orderid
     Then user navigate to Home page
-    When user is on Steel Menu on header section
-    And user is able to select Colour coated from Steel Menu
-    And user selects Colour coated product
-    And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    
+     When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    
+   # When user is on Steel Menu on header section
+   #  And user is able to select Colour coated from Steel Menu
+   #  And user selects Colour coated product
+   #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+   #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page and navigate to ordersummary page

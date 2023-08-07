@@ -12,11 +12,18 @@ Feature: User can Change, edit, remove & add delivery address
   Scenario: User can add address
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     #When user click on pickup checkbox
     And user click on change address
@@ -28,11 +35,18 @@ Feature: User can Change, edit, remove & add delivery address
   Scenario: User can change deliver address and deliver here
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     And user click on change address
     And user click on Add new Address
@@ -46,11 +60,18 @@ Feature: User can Change, edit, remove & add delivery address
   Scenario: User can edit address
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on change address
@@ -64,11 +85,18 @@ Feature: User can Change, edit, remove & add delivery address
   Scenario: User can remove address
     When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on change address

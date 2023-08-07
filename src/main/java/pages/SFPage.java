@@ -146,7 +146,7 @@ public class SFPage {
 	public void orderDetails() throws InterruptedException
 	{
 		driver.findElement(By.xpath("//button[text()='Create Order']")).click();
-		Thread.sleep(14000);
+		Thread.sleep(24000);
 		driver.findElement(By.xpath("(//button[text()='Create Order'])[2]")).click();
 		ElementUtil wt = new ElementUtil(driver);
 		wt.MigrationUtil(sucessOrderCreatedMsg);

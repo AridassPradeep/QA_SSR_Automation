@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
@@ -75,14 +76,31 @@ public class OMSPage {
 		Thread.sleep(3000);
 
 	}
-	
+
+	public void goToOMSShipmentPageSFOrder() throws InterruptedException, AWTException {
+
+		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
+		Thread.sleep(3000);
+		String xpath1 = "//a[normalize-space()='";
+		String xpath2 = "']";
+		driver.findElement(By.xpath(xpath1 + SForderno + xpath2)).click();
+		Thread.sleep(3000);
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
+
+		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+	}
+
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
 
 		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
 		Thread.sleep(3000);
 		String xpath1 = "//a[normalize-space()='";
 		String xpath2 = "']";
-		driver.findElement(By.xpath(xpath1 + SForderno  + xpath2)).click();
+		driver.findElement(By.xpath(xpath1 + SForderno + xpath2)).click();
 		Thread.sleep(3000);
 		ElementUtil obj = new ElementUtil(driver);
 		obj.SwitchWindow(1);
@@ -90,7 +108,7 @@ public class OMSPage {
 
 	}
 
-	public void createCompletedShipment() throws InterruptedException, AWTException
+	public void createCompletedShipment(String InvoiceQty) throws InterruptedException, AWTException
 
 	{
 		driver.findElement(By.xpath("//button[normalize-space()='Create shipment']")).click();
@@ -105,10 +123,12 @@ public class OMSPage {
 		String totalOrderqtynumber = totalOrderqty.substring(0, totalOrderqty.indexOf(" "));
 		System.out.println("totalOrderqty" + totalOrderqtynumber);
 		Thread.sleep(2500);
-		driver.findElement(By.xpath("//*[text()='Quantity']//following::td[4]//input")).sendKeys(totalOrderqtynumber);
+		driver.findElement(By.xpath("(//label[text()='Seller name']/following::input)[2]")).clear();
+		driver.findElement(By.xpath("(//label[text()='Seller name']/following::input)[2]"))
+				.sendKeys(totalOrderqtynumber);
 
-		driver.findElement(By.xpath("(//*[text()='Scheduled dispatch date'])[1]//following::div[1]//input"))
-				.sendKeys(ElementUtil.date(2));
+		driver.findElement(By.xpath("(//span[text()='Scheduled dispatch date']/following::input)[1]"))
+				.sendKeys(ElementUtil.date(4));
 
 		driver.findElement(By.xpath("//span[normalize-space()='Delivery type']//following::div[1]")).click();
 		driver.findElement(By.xpath("//li[normalize-space()='Delivery']")).click();
@@ -122,31 +142,35 @@ public class OMSPage {
 				.sendKeys(ElementUtil.date(2));
 		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input"))
 				.sendKeys(ElementUtil.date(4));
-		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
-
-		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
-		driver.findElement(By.xpath("//*[text()='Dispatched']")).click();
-		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
-
-		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
-		driver.findElement(By.xpath("//*[text()='Delivered']")).click();
-		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
-
-		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
-		driver.findElement(By.xpath("//*[text()='Invoiced']")).click();
 
 		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[1]//input")).sendKeys("123");
 		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[3]//input")).sendKeys("123");
 
 		driver.findElement(By.xpath("(//*[text()='Quantity invoiced']//following::div[3]//div[1]//input)[1]"))
-				.sendKeys(totalOrderqtynumber);
+				.sendKeys(InvoiceQty);
 		driver.findElement(By.xpath("(//*[text()='Quantity invoiced']//following::div[3]//div[1]//input)[2]"))
-				.sendKeys(totalOrderqtynumber);
+				.sendKeys(InvoiceQty);
+		driver.findElement(By.xpath("//p[text()='Invoice date']//following::div[2]//input"))
+				.sendKeys(ElementUtil.date(0));
+		driver.findElement(By.xpath("//p[text()='Invoice date']//following::div[4]//input"))
+				.sendKeys(ElementUtil.date(0));
 
-		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[1]//input"))
-				.sendKeys(ElementUtil.date(4));
-		driver.findElement(By.xpath("//*[text()='Invoice date']//following::div[6]//input"))
-				.sendKeys(ElementUtil.date(4));
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
+		Thread.sleep(4000);
+		ElementUtil scrl = new ElementUtil(driver);
+		scrl.scrollUp();
+
+		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[text()='Dispatched']")).click();
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
+		driver.findElement(By.xpath("//*[text()='Delivered']")).click();
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
+		driver.findElement(By.xpath("//*[text()='Invoiced']")).click();
 
 		Thread.sleep(5000);
 		WebElement fileUploadButton = driver.findElement(By.xpath("//*[text()='Invoices']//following::div[1]//p"));
@@ -156,7 +180,6 @@ public class OMSPage {
 		ElementUtil.UploadFile(filePath);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(10000);
-		ElementUtil scrl = new ElementUtil(driver);
 		scrl.scrollUp();
 
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
@@ -245,12 +268,12 @@ public class OMSPage {
 		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-7P23W9AS?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
-	
+
 	public void navigateToDeliveredshipmentDetailsPage() throws InterruptedException {
 		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-7P23W9AS?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
-	
+
 	public void navigateToinvoicedshipmentDetailsPage() throws InterruptedException {
 		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-FVWWQJUI?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
@@ -281,7 +304,7 @@ public class OMSPage {
 		}
 
 	}
-	
+
 	public void clickAttachments() throws InterruptedException {
 		ElementUtil obj = new ElementUtil(driver);
 		obj.scrollDown();
@@ -294,7 +317,7 @@ public class OMSPage {
 		}
 
 	}
-	
+
 	public void deleteInvoicesinInvoicedShipment() throws InterruptedException {
 		ElementUtil obj = new ElementUtil(driver);
 		obj.scrollDown();
@@ -306,22 +329,18 @@ public class OMSPage {
 		}
 
 	}
-	
-	public String validateDeleteMSG(String ErrorMSG)
-	{
-		String xpath1="//*[contains(text(),'";
-		String xpath2="')]";
-		String xpath3=xpath1+ErrorMSG+xpath2;		
-		String actualMsg= driver.findElement(By.xpath(xpath3)).getText();
+
+	public String validateDeleteMSG(String ErrorMSG) {
+		String xpath1 = "//*[contains(text(),'";
+		String xpath2 = "')]";
+		String xpath3 = xpath1 + ErrorMSG + xpath2;
+		String actualMsg = driver.findElement(By.xpath(xpath3)).getText();
 		System.out.println(actualMsg);
 		return actualMsg;
-		
+
 	}
-	
-	
-	
-	public void updatePartialHold()
-	{
+
+	public void updatePartialHold() {
 		ElementUtil obj = new ElementUtil(driver);
 		obj.scrollDown();
 		driver.findElement(By.xpath("//*[text()='Partial hold']//preceding::span[1]")).click();
@@ -329,55 +348,60 @@ public class OMSPage {
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("partial hold");
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
-	
-	public String verifyPaymentStatus()
-	{
-		String paymentStatus=driver.findElement(By.xpath("//p[text()='Payment status']//following::p[1]")).getText();
+
+	public String verifyPaymentStatus() {
+		String paymentStatus = driver.findElement(By.xpath("//p[text()='Payment status']//following::p[1]")).getText();
 		System.out.println("paymentStatus " + paymentStatus);
 		return paymentStatus;
 	}
-	
-	public String verifyAdvanceAmount()
-	{
-		String advanceAmount=driver.findElement(By.xpath("//p[text()='Advance amount']/following-sibling::p")).getText();
-		System.out.println("advanceAmount" + advanceAmount) ;
+
+	public String verifyAdvanceAmount() {
+		String advanceAmount = driver.findElement(By.xpath("//p[text()='Advance amount']/following-sibling::p"))
+				.getText();
+		System.out.println("advanceAmount" + advanceAmount);
 		return advanceAmount;
 	}
-	
-	public String verifyFullPaymentRequestMsg()
-	{
-		String FullPaymentRequestMsg=driver.findElement(By.xpath("//div[text()[normalize-space()='Please pay the required amount as per the payment request']]")).getText();
+
+	public String verifyFullPaymentRequestMsg() {
+		String FullPaymentRequestMsg = driver
+				.findElement(By.xpath(
+						"//div[text()[normalize-space()='Please pay the required amount as per the payment request']]"))
+				.getText();
 		System.out.println("paymentStatus " + FullPaymentRequestMsg);
 		return FullPaymentRequestMsg;
 	}
-	
-	public void navigatePaymentTab()
-	{
+
+	public void navigatePaymentTab() {
 		driver.findElement(By.xpath("//button[text()='Payments']")).click();
 	}
-	
-	public void selectPaymentType(String paymentRequestType) throws InterruptedException
-	{
-		String pendingAmt=driver.findElement(By.xpath("//p[text()='Pending amount']/following-sibling::p")).getText();
+
+	public void selectPaymentType(String paymentRequestType) throws InterruptedException {
+		String pendingAmt = driver.findElement(By.xpath("//p[text()='Pending amount']/following-sibling::p")).getText();
 		driver.findElement(By.xpath("//button[text()='Request payment']")).click();
 		driver.findElement(By.xpath("(//span[text()='Payment type'])[2]//following::div[1]")).click();
-		String xpath1="//li[@data-value='";
-		String xpath2="']";
-		driver.findElement(By.xpath(xpath1+paymentRequestType+xpath2)).click();
-		if(paymentRequestType.equals("PART"))
-		{
+		String xpath1 = "//li[@data-value='";
+		String xpath2 = "']";
+		driver.findElement(By.xpath(xpath1 + paymentRequestType + xpath2)).click();
+		if (paymentRequestType.equals("PART")) {
 			driver.findElement(By.xpath("//input[@type='number']")).sendKeys("2000");
-		}
-		else
-		{
+		} else {
 			driver.findElement(By.xpath("//input[@type='number']")).sendKeys(pendingAmt);
 		}
-		
+
 		driver.findElement(By.xpath("//button[text()='Send request']")).click();
-		
+
 	}
-	
-	
-	
+
+	public void verifyPositiveTolerance() {
+		String amountString = driver
+				.findElement(By.xpath("//p[text()='Positive tolerance amount']/following-sibling::p")).getText();
+		String cleanedAmount = amountString.replace("₹", "").replace(",", "");
+
+		double number = Double.parseDouble(cleanedAmount);
+		int toleranceValue = (int) number;
+
+		System.out.println("Tolerance value: " + toleranceValue );
+		Assert.assertTrue(toleranceValue  > 1);
+	}
 
 }

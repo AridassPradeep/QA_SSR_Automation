@@ -41,7 +41,8 @@ public class CartDetailPage {
 
 	}
 
-	public void clickCart() {
+	public void clickCart() throws AWTException {
+		ElementUtil.Esc(); 
 		driver.findElement(Cart).click();
 	}
 

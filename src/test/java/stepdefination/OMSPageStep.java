@@ -27,16 +27,24 @@ public class OMSPageStep {
 	public void user_navigates_to_oms_shipments_page() throws InterruptedException, AWTException {
 		omspage.goToOMSShipmentPage();
 	}
+	
+	@Then("user navigates to OMS ShipmentsPage with SFOrder")
+	public void user_navigates_to_oms_shipments_pageSFOrder() throws InterruptedException, AWTException {
+		omspage.goToOMSShipmentPageSFOrder();
+	}
+	
 
 	@Then("user navigates to OMS OrderDetailsPage")
 	public void user_navigates_to_oms_OrderDetails_pageCreatedFromSF() throws InterruptedException, AWTException {
 		omspage.goToOMSOrderDetailsPageCreatedFromSF();
 	}
 
-	@Then("user creates a completed shipment in OMS")
-	public void user_creates_completed_shipment() throws InterruptedException, AWTException {
-		omspage.createCompletedShipment();
+	@When("user creates a completed shipment in OMS with invoiceQty {string}")
+	public void user_creates_a_completed_shipment_in_oms_with_invoice_qty(String InvoiceQty) throws InterruptedException, AWTException {
+		omspage.createCompletedShipment(InvoiceQty);
 	}
+
+
 
 	@Then("user creates multiple shipment in OMS")
 	public void user_creates_multiple_shipment() throws InterruptedException, AWTException {
@@ -163,7 +171,10 @@ public class OMSPageStep {
 
 
 
-
+	@Then("verify Positive tolerance amount")
+	public void verify_positive_tolerance_amount() {
+		omspage.verifyPositiveTolerance();
+	}
 
 
 

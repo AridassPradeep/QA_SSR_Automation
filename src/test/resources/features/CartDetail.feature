@@ -10,38 +10,59 @@ Feature: Cart Detail Page feature
     Then user homepage is displayed
 
   Scenario: Verify terms and condition page is displayed
-    When cart is empty or not
+  When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     And user click on Terms&condition on cart detail page
     Then Verify Terms&condition page is displayed with some text
 
   Scenario: Verify "Technical Specification" below proceed to pay button
-    When cart is empty or not
+   When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     Then Verify "Technical Specification" is displayed below Proceed to pay button
 
   Scenario: Verify order placed successfully after pickup checkbox
-    When cart is empty or not
+   When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     When user click on pickup checkbox
@@ -55,13 +76,20 @@ Feature: Cart Detail Page feature
     Then order sucessfully placed message should be displayed
 
   Scenario: Verify Delivery by 2-5 days
-    When cart is empty or not
+  When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR Sheet series from Steel Categories Menu
-    When user selects HR Stainless Steel product
-    Given user is on product detail page of Stainless Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days

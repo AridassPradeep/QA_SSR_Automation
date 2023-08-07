@@ -25,7 +25,7 @@ public class CartDetailSteps {
 	PDPRegisteredUserPage pdpreguser = new PDPRegisteredUserPage(DriverFactory.getDriver());
 
 	@When("user click on Cart icon on homepage")
-	public void user_click_on_cart_icon_on_homepage() {
+	public void user_click_on_cart_icon_on_homepage() throws AWTException {
 		cartdpage.clickCart();
 	}
 
@@ -65,7 +65,7 @@ public class CartDetailSteps {
 	// Discount
 
 	@When("user is on cart page")
-	public void user_is_on_cart_page() throws InterruptedException {
+	public void user_is_on_cart_page() throws InterruptedException, AWTException {
 		Thread.sleep(5000);
 		cartdpage.clickCart();
 		cartdpage.validateCartPage();

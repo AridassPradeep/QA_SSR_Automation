@@ -10,13 +10,20 @@ Feature: Verify OMS
 
   @OMS
   Scenario: Verify Shipment in OMS
-    When cart is empty or not
+   When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+    # When user is on Steel Menu on header section
+    #  And user is able to select Colour coated from Steel Menu
+    #  And user selects Colour coated product
+    #  And user is on product detail page of colour coated product and add quantiy with quantity "<productQuanity>"
+    #  When user clicks on Add To Cart button available in the right side of the webpage
+    # Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page
@@ -28,17 +35,23 @@ Feature: Verify OMS
     Then order sucessfully placed message should be displayed
     And user login to OMS
     And user navigates to OMS ShipmentsPage
-    And user creates a completed shipment in OMS
+    And user creates a completed shipment in OMS with invoiceQty "7"
     And user navigates to ShipmentDetails Page in CCP
     And user clicks on viewDocuments
 
   @MultiShipment
   Scenario: Verify Multi Shipment in OMS
-    When cart is empty or not
+     # When cart is empty or not
+   # Then user navigate to Home page
+    #When user clicks HR from Steel Navigation Menu
+    #When user selects Steel product
+    #Given user is on product detail page of Steel item
+   When cart is empty or not
     Then user navigate to Home page
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
-    Given user is on product detail page of Steel item
+    When user is on Welding consumables Menu on header section
+    And user is able to select WeldingFluxes from Welding consumables Menu
+    And user click on product name of WeldingFlux product displayed on the page
+    And user is on WeldingFlux Product page
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     When user click on Cart icon on homepage
