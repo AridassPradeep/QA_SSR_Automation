@@ -36,6 +36,8 @@ public class OMSPage {
 	private By nextBtn = By.xpath("//span[normalize-space()='Next']");
 	private By passwordBox = By.xpath("//input[@type='password']");
 	private By TrackShipments = By.xpath("//button[normalize-space()='Track shipments']");
+	private By LorryReceipts = By.xpath("//p[text()='Lorry receipts']");
+	
 	String orderno = Paymentpage.orderno;
 	String SForderno = SFPage.SFOrderNo;
 	// String orderno = "JOO-8CR5PH91";
@@ -92,6 +94,13 @@ public class OMSPage {
 		Thread.sleep(3000);
 		driver.navigate().refresh();
 		Thread.sleep(3000);
+	}
+	
+	public void navigateToShipmentsTab() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
 
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
@@ -275,7 +284,7 @@ public class OMSPage {
 	}
 
 	public void navigateToinvoicedshipmentDetailsPage() throws InterruptedException {
-		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-FVWWQJUI?tab=shipments");
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-VYT07FDX?tab=shipments");
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
 
@@ -340,12 +349,52 @@ public class OMSPage {
 
 	}
 
-	public void updatePartialHold() {
+	public void updatePartialHold() throws InterruptedException, AWTException {
 		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDownToElement(LorryReceipts) ;
+		Thread.sleep(2000);
 		obj.scrollDown();
-		driver.findElement(By.xpath("//*[text()='Partial hold']//preceding::span[1]")).click();
-		driver.findElement(By.xpath("//input[@placeholder='Enter the hold amount']")).sendKeys("10000");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='PARTIAL_HOLD']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Enter the hold amount']")).clear();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@placeholder='Enter the hold amount']")).click();
+		ElementUtil.selectAllDelete();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@placeholder='Enter the hold amount']")).sendKeys("5000");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).clear();
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("partial hold");
+		
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
+	}
+	
+	public void updateFullHold() throws InterruptedException, AWTException {
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDownToElement(LorryReceipts) ;
+		Thread.sleep(2000);
+		obj.scrollDown();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='FULL_HOLD']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).clear();
+		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("Full hold");
+		
+		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
+	}
+	
+	public void updateRelease() throws InterruptedException, AWTException {
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollDownToElement(LorryReceipts) ;
+		Thread.sleep(2000);
+		obj.scrollDown();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@value='RELEASE']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).clear();
+		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("Release");
+		
+	
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
 
@@ -403,5 +452,56 @@ public class OMSPage {
 		System.out.println("Tolerance value: " + toleranceValue );
 		Assert.assertTrue(toleranceValue  > 1);
 	}
+	
+	public void clickReconciliation()
+	{
+		driver.findElement(By.xpath("//button[normalize-space()='Reconciliation']")).click();
+	}
+	public void refund()
+	{
+		driver.findElement(By.xpath("//button[text()='Initate refund']")).click();
+		driver.findElement(By.xpath("//input[@type='number']")).sendKeys("0");
+		driver.findElement(By.xpath("//button[text()='Submit']")).click();
+		driver.findElement(By.xpath("//*[text()='Refund initiated successfully']")).isDisplayed();
+	}
+	
+	public void navigateToPayouts() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		ElementUtil obj = new ElementUtil(driver);
+		obj.scrollUp();
+		
+		driver.findElement(By.xpath("//button[text()='Payouts']")).click();
+		driver.findElement(By.xpath("//p[text()='Shipment no.']")).click();
+	}
+	
+	public void qualitiesIssuesForPartialPayout()
+	{
+		String qualityIssue=driver.findElement(By.xpath("//p[text()='Quality issues']/following-sibling::p")).getText();
+		System.out.println(qualityIssue);
+		
+	}
+	
+	public boolean intiatePayout()
+	{
+		
+		 ElementUtil elementUtil = new ElementUtil(driver);
+		 boolean inititatePayoutbtn=elementUtil.isElementPresent("//button[(@tabindex='0') and (text()='Initiate payout')]");
+		System.out.println(inititatePayoutbtn);
+		return inititatePayoutbtn;
+		
+	}
+	
+	public void clickInitiatePayout()
+	{
+		driver.findElement(By.xpath("//button[(@tabindex='0') and (text()='Initiate payout')]")).click();
+	}
+	
+	public void clickInitiatePayoutConfirmBtn() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//button[text()='Confirm']")).click();
+		Thread.sleep(4000);
+	}
+	
 
 }

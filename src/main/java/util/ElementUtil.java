@@ -15,6 +15,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -117,6 +118,19 @@ public class ElementUtil {
 		robot.keyPress(KeyEvent.VK_ENTER);
 
 	}
+	
+	public static void selectAllDelete() throws AWTException {		
+		Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        // Simulate pressing Delete
+        robot.keyPress(KeyEvent.VK_DELETE);
+        robot.keyRelease(KeyEvent.VK_DELETE);
+
+	}
 
 
 	public static String date() {
@@ -142,6 +156,12 @@ public class ElementUtil {
 	public void scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+	}
+	
+	public void scrollDownToElement(By trackShipments) {
+		WebElement elementToScrollTo = driver.findElement(trackShipments);
+	    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	    jsExecutor.executeScript("arguments[0].scrollIntoView(true);", elementToScrollTo);
 	}
 	
 	public static String generateRandomString(int length) {
