@@ -1,4 +1,4 @@
-@OMS
+@OMS @OMSShipment
 Feature: Verify Shipment
 
   Background: User opens website

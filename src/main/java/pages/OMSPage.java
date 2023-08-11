@@ -37,6 +37,8 @@ public class OMSPage {
 	private By passwordBox = By.xpath("//input[@type='password']");
 	private By TrackShipments = By.xpath("//button[normalize-space()='Track shipments']");
 	private By LorryReceipts = By.xpath("//p[text()='Lorry receipts']");
+	private By ViewDocuments = By.xpath("//p[text()='View order documents']");
+	
 	
 	String orderno = Paymentpage.orderno;
 	String SForderno = SFPage.SFOrderNo;
@@ -266,9 +268,13 @@ public class OMSPage {
 	}
 
 	public void navigateToViewDocuments() throws InterruptedException {
-		driver.findElement(By.xpath("//span[normalize-space()='View documents']")).click();
+		ElementUtil obj = new ElementUtil(driver);
+		Thread.sleep(2000);
+		obj.scrollDownToElement(ViewDocuments);
+		Thread.sleep(2000);
+		driver.findElement(ViewDocuments).click();
 		driver.findElement(By.xpath(
-				"//*[@class='typography-sub-heading typography-md-h5 typography-font-semibold d-inline-block ml-2']"))
+				"(//span[text()='Download all'])[1]"))
 				.click();
 		Thread.sleep(5000);
 	}

@@ -1,5 +1,5 @@
-@OMS
-Feature: Verify Payout
+@OMS @OMSPayout
+Feature: Verify Payout scenarios
 
   Background: User opens website
     Given user is on home page

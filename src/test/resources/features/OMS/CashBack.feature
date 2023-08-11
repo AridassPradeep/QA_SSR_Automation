@@ -2,7 +2,7 @@
 Feature: Verify Cashback
 
   @Cashback
-  Scenario: Verify Shipment in OMS
+  Scenario: Verify Cashback in OMS
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
