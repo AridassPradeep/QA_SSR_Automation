@@ -109,11 +109,13 @@ Feature: Steel feature
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
+    And click on escape btn
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
+     And click on escape btn
     When user click on Cart icon on homepage
     When user click on pickup checkbox
     And user click on proceed to pay on cart detail page

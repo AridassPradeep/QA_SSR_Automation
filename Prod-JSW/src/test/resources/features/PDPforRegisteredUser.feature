@@ -139,7 +139,7 @@ Feature: Product Detail Page feature for Registered User
     And user is on ColdRolled Product page
     And user add quantity and validate MOQ messages
       | quantity | MOQMessage                                                           |
-      |        1 | Add a quantity equal to or above the Minimum Order Quantity of 3.0MT |
+      |        1 | Add a quantity equal to or above the minimum order quantity of 3.0MT |
       #|      4000 | The maximum available quantity for your selection is 68.0MT          |
       | 10000000 | Please enter quantity below 9999 MT                                  |
     And validate add to cart button is disabled

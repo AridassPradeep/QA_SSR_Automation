@@ -2,12 +2,15 @@ package stepdefination;
 
 import static org.fest.assertions.api.Assertions.*;
 
+import java.awt.AWTException;
+
 import org.junit.Assert;
 
 import factory.DriverFactory;
 import pages.HomePage;
 import pages.ProductPage;
 import pages.RegistrationPage;
+import util.ElementUtil;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -466,5 +469,11 @@ public class HomePageSteps {
 	public void user_wait_for_sometime() throws Throwable {
 		Thread.sleep(6000);
 	}
+	@Then("click on escape btn")
+	public void click_on_escape_btn() throws AWTException {
+	   ElementUtil.Esc();
+	}
+
+
 
 }

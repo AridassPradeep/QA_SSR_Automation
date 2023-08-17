@@ -16,7 +16,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/resources/features/" }, glue = { "stepdefination", "hooks" }, monochrome = true,
-tags = "@MyProfile", 
+tags = "@steelnetbanking", 
 		dryRun = false, stepNotifications = true, plugin = { "pretty", "json:target/cucumber-report/cucumber.json",
 				"html:target/cucumber-report/cucumber.html", "rerun:target/failedrerun.txt" })
 
