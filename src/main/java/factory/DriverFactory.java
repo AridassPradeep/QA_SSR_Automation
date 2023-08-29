@@ -37,6 +37,9 @@ public class DriverFactory {
 
 		if (browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + "\\src\\test\\resources\\drivers\\chromedriver.exe");
+
 			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
@@ -65,7 +68,7 @@ public class DriverFactory {
 		}
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
-		getDriver().manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return getDriver();
 
 	}
