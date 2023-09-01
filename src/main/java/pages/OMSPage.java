@@ -104,6 +104,20 @@ public class OMSPage {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
+	
+	public void navigateToOrderDetailsTab() throws InterruptedException
+	{
+
+		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
+		Thread.sleep(3000);
+		String xpath1 = "//a[normalize-space()='";
+		String xpath2 = "']";
+		driver.findElement(By.xpath(xpath1 + orderno + xpath2)).click();
+		Thread.sleep(3000);
+		ElementUtil obj = new ElementUtil(driver);
+		obj.SwitchWindow(1);
+		Thread.sleep(3000);
+	}
 
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
 
@@ -153,9 +167,10 @@ public class OMSPage {
 				.sendKeys(ElementUtil.date(2));
 		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input"))
 				.sendKeys(ElementUtil.date(4));
-
-		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[1]//input")).sendKeys("123");
-		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[3]//input")).sendKeys("123");
+         
+		String InvoiceNo=ElementUtil.generateRandomIntegerString(5);
+		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[1]//input")).sendKeys(InvoiceNo);
+		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[3]//input")).sendKeys(InvoiceNo);
 
 		driver.findElement(By.xpath("(//*[text()='Quantity invoiced']//following::div[3]//div[1]//input)[1]"))
 				.sendKeys(InvoiceQty);

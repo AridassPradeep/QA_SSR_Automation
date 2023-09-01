@@ -104,6 +104,15 @@ public class OMSPageStep {
 		omspage.navigateToShipmentsTab();
 
 	}
+	
+	@Then("user navigates to OMS OrderPage")
+	public void user_navigates_to_oms_order_page() throws InterruptedException {
+		omspage.navigateToOrderDetailsTab();
+	   
+	}
+
+
+
 
 	@Then("Validate QualityIssues should be same as entered partial amount value")
 	public void validate_quality_issues_should_be_same_as_entered_partial_amount_value() {
