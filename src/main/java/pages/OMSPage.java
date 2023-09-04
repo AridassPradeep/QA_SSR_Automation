@@ -98,6 +98,14 @@ public class OMSPage {
 		Thread.sleep(3000);
 	}
 	
+	public void goToOMSShipmentPageSFOrderURL() throws InterruptedException, AWTException {
+
+		driver.get("https://qa-oms.msme.jswone.in/order-list/"+SForderno);
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+	}
+	
 	public void navigateToShipmentsTab() throws InterruptedException
 	{
 		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
@@ -116,6 +124,13 @@ public class OMSPage {
 		Thread.sleep(3000);
 		ElementUtil obj = new ElementUtil(driver);
 		obj.SwitchWindow(1);
+		Thread.sleep(3000);
+	}
+	
+	public void navigateToOrderDetailsTabThroughUrl() throws InterruptedException
+	{
+
+		driver.get("https://qa-oms.msme.jswone.in/order-list/" +orderno);
 		Thread.sleep(3000);
 	}
 

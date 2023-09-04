@@ -7,6 +7,7 @@ public class OrderDetailsPage {
 
 	private WebDriver driver;
 	private By PaymentStatus = By.xpath("//p[text()='Payment status']//parent::div[1]//following::div[3]//p");
+	private By PaymentType = By.xpath("//p[text()='Payment type']//parent::div[1]//p[2]");
 
 	public OrderDetailsPage(WebDriver driver) {
 		this.driver = driver;
@@ -18,9 +19,10 @@ public class OrderDetailsPage {
 		return payementStatus;
 	}
 	
-	public void verifyPaymentType()
+	public String verifyPaymentType()
 	{
-		
+		String payementType=driver.findElement(PaymentType ).getText();
+		return payementType;
 	}
 
 

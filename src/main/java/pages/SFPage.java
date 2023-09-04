@@ -23,7 +23,7 @@ public class SFPage {
 	private By spinnerWheel = By.xpath("(//div[@class='spinner'])[2]");
 	private By sourceSellerQuote = By.xpath("//label[text()='Source Seller Quote']/following::input");
 	private By OrderTab= By.xpath("//a[contains(text(),'Order')]");
-	private By OrderNo= By.xpath("//span[@title='Order Number']//following::div[7]//a");
+	private By OrderNo= By.xpath("//span[@title='Order Number']//following::div[7]//span");
 	private By quickOpportunity = By.xpath("//button[normalize-space()='Quick Opportunity']");
 	private By sucessMsg = By.xpath("//*[text()='Success']");
 	private By saveBtn = By.xpath("(//button[text()='Save'])[2]");
@@ -83,8 +83,9 @@ public class SFPage {
 		driver.findElement(By.xpath("//*[text()='Self pickup']")).click();
 		driver.findElement(By.xpath("//button[@aria-label='Sales Requested Timeline, --None--']")).click();
 		driver.findElement(By.xpath("//*[text()='2 days']")).click();
-		driver.findElement(By.xpath("(//label[text()='Advance Value']/following::input)[1]")).sendKeys("20000");
-		driver.findElement(By.xpath("(//label[text()='Special delivery instructions']/following::input)[1]"))
+		driver.findElement(By.xpath("(//label[text()='Advance %']/following::input)[1]")).sendKeys("95");
+		driver.findElement(By.xpath("(//label[text()='Cashback']/following::input)[1]")).sendKeys("200");
+		driver.findElement(By.xpath("(//label[text()='Special delivery instructions (Flows in PI)']/following::input)[1]"))
 				.sendKeys("advance");
 		driver.findElement(By.xpath("(//label[text()='Width (mm)']/following::input)[1]")).sendKeys("1500");
 
@@ -123,7 +124,17 @@ public class SFPage {
 		WebElement tdcElement = driver.findElement(By.xpath("//label[text()='Payment Type']"));
 		je.executeScript("arguments[0].scrollIntoView(true);", tdcElement);
 		tdcElement1.click();
-		Thread.sleep(2000);
+		wt.scrollUp();
+	
+		WebElement PaymntType = driver.findElement(By.xpath("//label[text()='Sales Update']"));
+		je.executeScript("arguments[0].scrollIntoView(true);", PaymntType);
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//label[text()='Payment Type']/following::div[4]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[text()='Cash & Carry - Advance']")).click();
+		Thread.sleep(4000);
+		
 		WebElement AdvancePayment = driver.findElement(By.xpath("//span[text()='Direct Opportunity']"));
 		je.executeScript("arguments[0].scrollIntoView(true);", AdvancePayment);
 		driver.findElement(By.xpath("(//label[text()='Advance Value']/following::input)[1]")).clear();
@@ -151,6 +162,7 @@ public class SFPage {
 		ElementUtil wt = new ElementUtil(driver);
 		wt.MigrationUtil(sucessOrderCreatedMsg);
 		Thread.sleep(4000);
+		wt.scrollUp();
 		driver.findElement(OrderTab).click();
 		Thread.sleep(4000);
 		SFOrderNo=driver.findElement(OrderNo).getAttribute("title");

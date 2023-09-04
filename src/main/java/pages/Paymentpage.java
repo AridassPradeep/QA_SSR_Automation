@@ -27,7 +27,7 @@ public class Paymentpage {
 	private By payViaNetBanking = By.xpath(
 			"//div[@id='pay-via-section-desktop']//button[@class='pay-via-netbanking-button'][normalize-space()='Pay via netbanking']");
 	private By proceedtopay = By.xpath("//button[@class='proceed-to-pay primary']");
-		
+
 	// private By proceedtopay = By.xpath("//button[@class='btn m-3
 	// purchase-button']");
 	// private By banklist = By.xpath("//select[@id='BanksList']");
@@ -69,21 +69,23 @@ public class Paymentpage {
 //		elementUtil.MigrationUtil(proceedtopay);
 
 	}
-	
+
 	public void clickSelfPickup() {
 
 		driver.findElement(By.xpath("//input[@id='Pickuprom']")).click();
 
 	}
-	
+
 	public void verifyPickupFrom() {
 
-		driver.findElement(By.xpath("//p[@class='typography-sub-heading typography-md-h6 typography-font-medium typography-text-black s-ml-8']")).isDisplayed();
+		driver.findElement(By.xpath(
+				"//p[@class='typography-sub-heading typography-md-h6 typography-font-medium typography-text-black s-ml-8']"))
+				.isDisplayed();
 
 	}
 
 	public void validatecartdetailpage() {
-		
+
 		driver.findElement(proceedtopay).isDisplayed();
 	}
 
@@ -96,7 +98,7 @@ public class Paymentpage {
 
 		driver.findElement(proceedtopay).click();
 	}
-	
+
 	public void clickpayViaNetBanking() {
 
 		driver.findElement(payViaNetBanking).click();
@@ -114,7 +116,7 @@ public class Paymentpage {
 		select.selectByVisibleText("ICICI Bank");
 
 	}
-	
+
 	public void clickSelectedBank(String bank) throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement dropdown = driver.findElement(banklistnew);
@@ -230,7 +232,7 @@ public class Paymentpage {
 		bank.selectByVisibleText("ICICI Bank");
 
 	}
-	
+
 	public void selectBankNew(String bankname) throws InterruptedException {
 		Thread.sleep(3000);
 		Select bank = new Select(driver.findElement(banklistnew));
@@ -242,12 +244,11 @@ public class Paymentpage {
 		driver.findElement(payNow).click();
 
 	}
-	
+
 	public void clickFullPaymentPayNow() {
 		driver.findElement(By.xpath("//button[text()[normalize-space()='Pay now']]")).click();
 
 	}
-	
 
 	public void clickPaymentSucess() {
 		Set<String> handles = driver.getWindowHandles();
@@ -269,7 +270,7 @@ public class Paymentpage {
 
 	{
 		Thread.sleep(5000);
-		WebDriverWait wait = new WebDriverWait(driver,60);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		Set<String> windows = driver.getWindowHandles();
 		String parent = driver.getWindowHandle();
@@ -285,15 +286,20 @@ public class Paymentpage {
 	}
 
 	public void validateOrderSuccessfulmsg() {
-		
+
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.navigate().refresh();
 		driver.findElement(successmessage).isDisplayed();
-		orderno=driver.findElement(By.xpath("//div[normalize-space()='Order number']//following::div[1]")).getText();
+		orderno = driver.findElement(By.xpath("//div[normalize-space()='Order number']//following::div[1]")).getText();
 		System.out.println(orderno);
-		
+
+	}
+
+	public void extractOrderNoFromPaymentPage() {
+		orderno = driver.findElement(By.xpath("//span[text()='Order number']//following::span[1]")).getText();
+		System.out.println(orderno);
 	}
 
 	public void validateunsuccessfulmsg() {
@@ -304,17 +310,16 @@ public class Paymentpage {
 		driver.findElement(unsuccessmessage).isDisplayed();
 
 	}
-	
-    public void validateAdvanceOrderPaymentSuccessfulmsg() {
-		
+
+	public void validateAdvanceOrderPaymentSuccessfulmsg() {
+
 		Set<String> handles = driver.getWindowHandles();
 		ArrayList<String> ar = new ArrayList<String>(handles);
 		driver.switchTo().window(ar.get(0));
 		driver.navigate().refresh();
 		driver.findElement(advancePaymentMessage).isDisplayed();
-		
-	}
 
+	}
 
 	public void enterUTR(String UTRnumber) {
 		driver.findElement(UTR).clear();
@@ -377,12 +382,13 @@ public class Paymentpage {
 	}
 
 	public void validateNetBanking() {
-		//driver.findElement(netbankingdisabled).isDisplayed();
+		// driver.findElement(netbankingdisabled).isDisplayed();
 		driver.findElement(By.linkText("NEFT/RTGS")).click();
 
 	}
+
 	public void validateNeftBanking() {
-		//driver.findElement(netbankingdisabled).isDisplayed();
+		// driver.findElement(netbankingdisabled).isDisplayed();
 		driver.findElement(By.linkText("NEFT/RTGS")).isEnabled();
 
 	}
@@ -391,8 +397,6 @@ public class Paymentpage {
 		Thread.sleep(3000);
 		driver.findElement(confirmPayment).click();
 	}
-
-	
 
 	public void clickProceedToPayPMTPage() {
 

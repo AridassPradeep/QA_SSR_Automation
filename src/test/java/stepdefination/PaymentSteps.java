@@ -148,6 +148,11 @@ public class PaymentSteps {
 	public void order_sucessfully_placed_message_should_be_displayed() {
 		pmtpage.validateOrderSuccessfulmsg();
 	}
+	
+	@Then("extract orderno from paymentPage")
+	public void extract_orderno_from_paymentPage() {
+		pmtpage.extractOrderNoFromPaymentPage();
+	}
 
 	@Then("Advance order sucessfully placed message should be displayed")
 	public void advance_order_sucessfully_placed_message_should_be_displayed() {

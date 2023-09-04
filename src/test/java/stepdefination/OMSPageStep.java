@@ -31,6 +31,11 @@ public class OMSPageStep {
 	public void user_navigates_to_oms_shipments_pageSFOrder() throws InterruptedException, AWTException {
 		omspage.goToOMSShipmentPageSFOrder();
 	}
+	
+	@Then("user navigates to OMS OrderPage with SFOrder")
+	public void user_navigates_to_oms_order_pageSFOrderURL() throws InterruptedException, AWTException {
+		omspage.goToOMSShipmentPageSFOrderURL();
+	}
 
 	@Then("user navigates to OMS OrderDetailsPage")
 	public void user_navigates_to_oms_OrderDetails_pageCreatedFromSF() throws InterruptedException, AWTException {
@@ -107,7 +112,8 @@ public class OMSPageStep {
 	
 	@Then("user navigates to OMS OrderPage")
 	public void user_navigates_to_oms_order_page() throws InterruptedException {
-		omspage.navigateToOrderDetailsTab();
+		//omspage.navigateToOrderDetailsTab();
+		omspage.navigateToOrderDetailsTabThroughUrl() ;
 	   
 	}
 
