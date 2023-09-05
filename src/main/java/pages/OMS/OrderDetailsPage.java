@@ -24,6 +24,25 @@ public class OrderDetailsPage {
 		String payementType=driver.findElement(PaymentType ).getText();
 		return payementType;
 	}
+	
+	public void verifyCashBack()
+	{
+		driver.findElement(By.xpath("//p[text()='₹200.00 (per MT)']")).isDisplayed();
+	}
+	
+	public void verifyPIPO() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//span[text()='Verify PI/PO']//preceding::input[1]")).click();
+		driver.findElement(By.xpath("(//button[text()='Update'])[2]")).click();
+		Thread.sleep(2500);
+		driver.navigate().refresh();
+	}
+	
+	public String verifyOrderStatus() {
+		String OrderStatusValue=driver.findElement(By.xpath("//p[text()='Order status']//following::div[1]//input")).getAttribute("value");
+		return OrderStatusValue;
+		
+	}
 
 
 	

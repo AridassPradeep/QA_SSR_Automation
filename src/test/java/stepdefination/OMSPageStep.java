@@ -12,9 +12,12 @@ import pages.OMSPage;
 import pages.OrderSummaryPage;
 import pages.PDPRegisteredUserPage;
 import pages.Paymentpage;
+import pages.OMS.OrderDetailsPage;
 
 public class OMSPageStep {
 	OMSPage omspage = new OMSPage(DriverFactory.getDriver());
+	OrderDetailsPage orderDetailsPage = new OrderDetailsPage(DriverFactory.getDriver());
+	
 	OrderSummaryPage order = new OrderSummaryPage(DriverFactory.getDriver());
 
 	@When("user login to OMS")
@@ -225,5 +228,23 @@ public class OMSPageStep {
 	public void click_on_initiate_refund() {
 		omspage.refund();
 	}
+	
+	@Then("click verify PI\\/PO")
+	public void click_verify_pi_po() throws InterruptedException {
+		orderDetailsPage.verifyPIPO();
+	   
+	}
+	
+	@Then("verify order status value is {string}")
+	public void verify_order_status_value_is(String OrderStats) {
+		String orderStatus=orderDetailsPage.verifyOrderStatus();
+		Assert.assertEquals(orderStatus, OrderStats);
+	}
+
+
+
+
+
+
 
 }

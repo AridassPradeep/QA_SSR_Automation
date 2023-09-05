@@ -26,6 +26,14 @@ public class OrderDetailPageSteps {
 		Assert.assertTrue(actualPaymentType.contains(PaymntType)); 
 		
 	}
+	
+	@Then("verify buyer cashback")
+	public void verify_buyer_cashback() {
+		orderDetailsPage.verifyCashBack();
+	}
+
+
+
 
 
 

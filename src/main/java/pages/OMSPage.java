@@ -132,6 +132,7 @@ public class OMSPage {
 
 		driver.get("https://qa-oms.msme.jswone.in/order-list/" +orderno);
 		Thread.sleep(3000);
+		driver.navigate().refresh();
 	}
 
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
