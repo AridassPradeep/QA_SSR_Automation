@@ -1,7 +1,10 @@
 package pages.OMS;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+
 
 public class OrderDetailsPage {
 
@@ -43,6 +46,17 @@ public class OrderDetailsPage {
 		return OrderStatusValue;
 		
 	}
+	
+	@SuppressWarnings("deprecation")
+	public void verifyOrderedValue()
+	{
+		String TotalOrderAmount=driver.findElement(By.xpath("//p[text()='Total order amount']//following::p[1]")).getText();
+		String orderedValue=driver.findElement(By.xpath("//span[text()='Ordered value']//following::td[8]")).getText();
+		Assert.assertEquals(TotalOrderAmount, orderedValue);
+	}
+
+
+
 
 
 	
