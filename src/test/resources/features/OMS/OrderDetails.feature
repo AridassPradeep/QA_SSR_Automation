@@ -134,4 +134,7 @@ Feature: Verify Order Details
     Then order sucessfully placed message should be displayed
     And user login to OMS
     And user navigates to OMS OrderPage
+    And extract order value from ERPV2API
+    And validate the ERPV2API contract
     And verify Ordered value matches with ordersummary value
+     

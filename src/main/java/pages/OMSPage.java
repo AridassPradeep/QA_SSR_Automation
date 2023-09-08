@@ -30,6 +30,7 @@ import java.awt.event.KeyEvent;
 public class OMSPage {
 
 	private WebDriver driver;
+	public static String ERPorderno;
 
 	private By googleLogin = By.xpath("//*[text()='Login with Google']");
 	private By emailTextBox = By.xpath("//input[@type='email']");
@@ -133,6 +134,7 @@ public class OMSPage {
 		driver.get("https://qa-oms.msme.jswone.in/order-list/" +orderno);
 		Thread.sleep(3000);
 		driver.navigate().refresh();
+		ERPorderno=orderno;
 	}
 
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {

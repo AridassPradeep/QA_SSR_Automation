@@ -5,10 +5,13 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 
@@ -18,6 +21,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 
 public class ElementUtil {
 
@@ -191,6 +197,21 @@ public class ElementUtil {
 
         return sb.toString();
     }
+	
+	public static String getGlobalValue(String key) throws IOException {
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
+		prop.load(fis);
+		return prop.getProperty(key);
+	}
+
+	public static String getJsonPath(Response response, String key) {
+		String resp = response.asString();
+		JsonPath js = new JsonPath(resp);
+		return js.get(key).toString();
+
+	}
 }
 
 

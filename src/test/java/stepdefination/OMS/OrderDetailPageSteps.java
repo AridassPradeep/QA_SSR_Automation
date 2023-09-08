@@ -1,5 +1,7 @@
 package stepdefination.OMS;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 
 import factory.DriverFactory;
@@ -34,6 +36,18 @@ public class OrderDetailPageSteps {
 	@Then("verify Ordered value matches with ordersummary value")
 	public void verify_ordered_value_matches_with_ordersummary_value() {
 		orderDetailsPage.verifyOrderedValue();
+	}
+
+	@Then("extract order value from ERPV2API")
+	public void extract_order_value_from_erpv2api() throws IOException {
+		orderDetailsPage.validateOrderValueFromV2API();
+
+	}
+
+	@Then("validate the ERPV2API contract")
+	public void validate_the_erpv2api_contract() throws IOException {
+		orderDetailsPage.validateV2OrderDetailsAPIContract();
+
 	}
 
 }
