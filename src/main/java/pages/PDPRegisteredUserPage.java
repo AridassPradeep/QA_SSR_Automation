@@ -1,5 +1,6 @@
 package pages;
 
+import java.awt.AWTException;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -177,9 +178,10 @@ public class PDPRegisteredUserPage {
 
 	}
 
-	public void validateAddedtoCart() throws InterruptedException {
+	public void validateAddedtoCart() throws InterruptedException, AWTException {
 
 		Thread.sleep(5000);
+		ElementUtil.Esc();
 		driver.findElement(cartcount).isDisplayed();
 
 	}

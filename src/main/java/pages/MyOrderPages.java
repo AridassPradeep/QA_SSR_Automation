@@ -139,10 +139,8 @@ public class MyOrderPages {
 	private By ViewDetails = By.xpath("//*[text()='View details']");
 	
 	
-	
-	public  MyOrderPages(WebDriver driver2){
-		this.driver = driver2;
-		PageFactory.initElements(driver, this);
+	public  MyOrderPages(WebDriver driver){
+		this.driver = driver;
 	}
 
 	public void validateCancelmge() throws InterruptedException {

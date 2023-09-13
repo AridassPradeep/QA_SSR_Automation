@@ -34,19 +34,19 @@ public class ElementUtil {
 	}
 
 	public void MigrationUtil(By loctr) {
-		WebDriverWait wait = new WebDriverWait(driver,90);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(loctr));
 
 	}
 	
 	public void WaitUtilClickable(By loctr) {
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(loctr));
 
 	}
 	
 	public void WaitUtilElementInvisible(By loctr) {
-		WebDriverWait wait = new WebDriverWait(driver,90);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(loctr));
 		
 

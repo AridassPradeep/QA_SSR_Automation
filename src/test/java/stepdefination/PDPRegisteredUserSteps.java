@@ -6,6 +6,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.awt.AWTException;
 import java.util.List;
 import java.util.Map;
 
@@ -61,7 +63,7 @@ public class PDPRegisteredUserSteps {
 	}
 
 	@Then("verify that the product should be added in the cart")
-	public void verify_that_the_product_should_be_added_in_the_cart() throws InterruptedException {
+	public void verify_that_the_product_should_be_added_in_the_cart() throws InterruptedException, AWTException {
 		Thread.sleep(2000);
 		pdpreguser.validateAddedtoCart();
 

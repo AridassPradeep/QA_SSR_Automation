@@ -164,7 +164,7 @@ public class HomePage {
 
 	public CartDetailPage clickonCart() {
 		//driver.findElement(cartIcon).click();
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(cartIcon)).click();
 		return new CartDetailPage(driver);
 	}

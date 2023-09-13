@@ -94,9 +94,9 @@ private WebDriver driver;
 		return;
 	}
 		
-	public DirectHomePage(WebDriver driver2) {
-		this.driver = driver2;
-		PageFactory.initElements(driver, this);
+
+	public DirectHomePage(WebDriver driver) {
+		this.driver = driver;
 	}
 
 	public void futurePage() {
