@@ -480,7 +480,7 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//div[contains(text(),'Diameter')]//following::div[3]//div//button[2]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='inputQty']")).sendKeys("4");
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 
 	}
 	public void WireDetailsDirectOrder() throws InterruptedException {
