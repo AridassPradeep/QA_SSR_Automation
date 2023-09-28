@@ -26,6 +26,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 public class OMSPage {
 
@@ -132,6 +133,17 @@ public class OMSPage {
 	{
 
 		driver.get("https://qa-oms.msme.jswone.in/order-list/" +orderno);
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		ERPorderno=orderno;
+	}
+	
+
+	public void navigateToOrderDetailsTabUsingSFOrderNo() throws InterruptedException, IOException
+	{
+		String url = ElementUtil.getGlobalValue("omsUrl")+"order-list/" + SForderno;
+		System.out.println("Order URL-" +url);
+		driver.get(url);
 		Thread.sleep(3000);
 		driver.navigate().refresh();
 		ERPorderno=orderno;

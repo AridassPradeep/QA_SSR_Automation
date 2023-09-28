@@ -1,6 +1,7 @@
 package stepdefination;
 
 import java.awt.AWTException;
+import java.io.IOException;
 
 import org.junit.Assert;
 
@@ -119,6 +120,12 @@ public class OMSPageStep {
 		omspage.navigateToOrderDetailsTabThroughUrl() ;
 	   
 	}
+	
+	@When("user navigates to OMS OrderPage using SFOrderNo")
+	public void user_navigates_to_oms_order_page_using_sf_order_no() throws InterruptedException, IOException {
+		omspage.navigateToOrderDetailsTabUsingSFOrderNo() ;
+	}
+
 
 
 

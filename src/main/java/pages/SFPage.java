@@ -23,11 +23,13 @@ public class SFPage {
 	private By spinnerWheel = By.xpath("(//div[@class='spinner'])[2]");
 	private By sourceSellerQuote = By.xpath("//label[text()='Source Seller Quote']/following::input");
 	private By OrderTab = By.xpath("//a[contains(text(),'Order')]");
-	private By OrderNo = By.xpath("//span[@title='Order Number']//following::div[7]//span");
+	private By OrderNo = By.xpath("//span[@title='Order Number']//following::div[7]//a");
 	private By quickOpportunity = By.xpath("//button[normalize-space()='Quick Opportunity']");
 	private By sucessMsg = By.xpath("//*[text()='Success']");
 	private By saveBtn = By.xpath("(//button[text()='Save'])[2]");
 	private By processOpportunityBtn = By.xpath("//button[text()='Process Opportunity']");
+	private By DeleteCartBtn = By.xpath("//button[text()='Delete Cart']");
+	
 
 	private By sucessOrderCreatedMsg = By
 			.xpath("//*[contains(text(),'Order is created successfully with Order Number')]");
@@ -97,6 +99,11 @@ public class SFPage {
 		driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']")).sendKeys("JSW Steel Vijayanagar");
 		ElementUtil.DoubleKeyDownEnter();
 
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']")).sendKeys("JSW Steel Vijayanagar");
+		ElementUtil.DoubleKeyDownEnter();
+
 		wt.MigrationUtil(sourceSellerQuote);
 		driver.findElement(By.xpath("//label[text()='Source Seller Quote']/following::input")).sendKeys("40000");
 		driver.findElement(By.xpath("//label[text()='Source Seller Quote']/following::input")).click();
@@ -105,26 +112,33 @@ public class SFPage {
 		je.executeScript("arguments[0].scrollIntoView(true);", Saveelemnt);
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+		// driver.findElement(By.xpath("//input[@name='Delivery_Timeline__c']")).sendKeys("2");
+
 		wt.MigrationUtil(sucessMsg);
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[text()='Move to awaiting documents']")).click();
 		wt.MigrationUtil(sucessMsg);
 		wt.MigrationUtil(saveBtn);
 		Thread.sleep(14000);
-		driver.findElement(saveBtn).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//lightning-formatted-text[text()='Awaiting documents']//following::span[1]"))
+
+		/* driver.findElement(By.xpath("//lightning-formatted-text[text()='Awaiting documents']//following::span[1]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[text()='Awaiting documents']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[text()='Awaiting Payment']")).click();
 		Thread.sleep(4000);
+		*/
+		driver.findElement(saveBtn).click();
+		Thread.sleep(5000);
+
 		System.out.println(driver.getCurrentUrl());
+		WebElement tdcElement = driver.findElement(By.xpath("//*[text()='Average CM']"));
+		je.executeScript("arguments[0].scrollIntoView(true);", tdcElement);
+		driver.findElement(By.xpath("//button[@title='Edit TDC required?']")).click();
 		WebElement tdcElement1 = driver
 				.findElement(By.xpath("(//span[text()='TDC required?'])[1]//following::input[1]"));
-		WebElement tdcElement = driver.findElement(By.xpath("//label[text()='Payment Type']"));
-		je.executeScript("arguments[0].scrollIntoView(true);", tdcElement);
 		tdcElement1.click();
 		WebElement AdvancePayment = driver.findElement(By.xpath("//span[text()='Direct Opportunity']"));
 		je.executeScript("arguments[0].scrollIntoView(true);", AdvancePayment);
@@ -139,29 +153,35 @@ public class SFPage {
 		je.executeScript("arguments[0].scrollIntoView(true);", saveBtn);
 		saveBtn.click();
 		wt.WaitUtilElementInvisible(spinnerWheel);
-		Thread.sleep(13000);
+		Thread.sleep(8000);
 		saveBtn.click();
 		wt.WaitUtilElementInvisible(spinnerWheel);
-		wt.WaitUtilClickable(processOpportunityBtn);
-		Thread.sleep(14000);
+		//wt.WaitUtilClickable(processOpportunityBtn);
+		Thread.sleep(2000);
 		wt.scrollUp();
 		WebElement EndElement = driver.findElement(By.xpath("//span[text()='Description']"));
-		je.executeScript("arguments[0].scrollIntoView(true);", EndElement );
+		je.executeScript("arguments[0].scrollIntoView(true);", EndElement);
 		driver.findElement(By.xpath("//button[@title='Edit Payment Type']//span[1]")).click();
 		driver.findElement(By.xpath("//label[text()='Payment Type']/following::div[4]")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//*[text()='Cash & Carry - Advance']")).click();
+		wt.scrollUp();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("(//span[text()='Awaiting documents'])[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[text()='Awaiting Payment']")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 		Thread.sleep(24000);
-		
+
 	}
 
 	public void orderDetails() throws InterruptedException {
 		driver.findElement(By.xpath("//button[text()='Create Order']")).click();
 		Thread.sleep(24000);
-		driver.findElement(By.xpath("(//button[text()='Create Order'])[2]")).click();
 		ElementUtil wt = new ElementUtil(driver);
+		wt.MigrationUtil(DeleteCartBtn );
+		driver.findElement(By.xpath("(//button[text()='Create Order'])[2]")).click();
 		wt.MigrationUtil(sucessOrderCreatedMsg);
 		Thread.sleep(4000);
 		wt.scrollUp();
