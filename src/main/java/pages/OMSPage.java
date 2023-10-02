@@ -141,12 +141,15 @@ public class OMSPage {
 
 	public void navigateToOrderDetailsTabUsingSFOrderNo() throws InterruptedException, IOException
 	{
-		String url = ElementUtil.getGlobalValue("omsUrl")+"order-list/" + SForderno;
+	/*	String url = ElementUtil.getGlobalValue("omsUrl")+"order-list/" + SForderno;
 		System.out.println("Order URL-" +url);
 		driver.get(url);
 		Thread.sleep(3000);
 		driver.navigate().refresh();
-		ERPorderno=orderno;
+		ERPorderno=SForderno;
+		*/
+		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-3SM1KPCB?tab=orderDetails");
+		
 	}
 
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
@@ -552,6 +555,22 @@ public class OMSPage {
 	{
 		driver.findElement(By.xpath("//button[text()='Confirm']")).click();
 		Thread.sleep(4000);
+	}
+	
+	public void clickPlannedShipment()
+	{
+		driver.findElement(By.xpath("//button[normalize-space()='Planned Shipment']")).click();
+	}
+	
+	public void requestPayment() throws InterruptedException
+	{
+		String qty=driver.findElement(By.xpath("//*[text()='Total quantity']//following::td[3]")).getText();
+		driver.findElement(By.xpath("//input[@placeholder='Enter quantity']")).sendKeys(ElementUtil.extractNumber(qty));
+		driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+		driver.findElement(By.xpath("//*[text()='Request payment']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='dd/mm/yyyy']")).sendKeys(ElementUtil.date());
+		driver.findElement(By.xpath("//*[text()='Confirm']")).click();
+		Thread.sleep(9000);
 	}
 	
 

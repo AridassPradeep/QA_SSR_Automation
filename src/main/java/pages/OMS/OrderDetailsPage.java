@@ -74,6 +74,7 @@ public class OrderDetailsPage {
 		String bearerToken = ElementUtil.getGlobalValue("ERPbearerToken");
 
 		String url = ElementUtil.getGlobalValue("omsUrl")+"oms/order/v2/number/" + OMSPage.ERPorderno;
+		System.out.println("api ur" +url);
 		response = RestAssured.given().header("Authorization", "Bearer " + bearerToken).when().get(url).then()
 				.statusCode(200).extract().response();
 		APIdisplayAmount = ElementUtil.getJsonPath(response, "orderAmount.displayAmount");
