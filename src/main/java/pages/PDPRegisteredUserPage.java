@@ -73,7 +73,7 @@ public class PDPRegisteredUserPage {
 	public void selectSteelProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E250BR')]")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/div[4]/div[2]/div/div[4]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[1]/a")).click();
 
 		/*
 		 * List<WebElement> productlist = driver.findElements(productselect); for (int i
@@ -402,12 +402,12 @@ public class PDPRegisteredUserPage {
 	//
 	public void SteelDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[2]")).click();
-		driver.findElement(By.xpath("//div[contains(text(),'Width')]//following::div[2]//div//button[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"d-body\"]/div[4]/div/div[1]/div[1]/div[2]/div[2]/div[5]/div[1]/div/div[2]/div/button[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"d-body\"]/div[4]/div/div[1]/div[1]/div[2]/div[2]/div[5]/div[2]/div/div[2]/div/button[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("70");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("25");
 		Thread.sleep(3500);
 
 	}
