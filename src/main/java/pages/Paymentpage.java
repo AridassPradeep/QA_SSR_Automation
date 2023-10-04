@@ -94,8 +94,8 @@ public class Paymentpage {
 		j.executeScript("window.scrollTo(0,500)", "");
 	}
 
-	public void clickproceedtopay() {
-
+	public void clickproceedtopay() throws InterruptedException {
+		Thread.sleep(5000);
 		driver.findElement(proceedtopay).click();
 	}
 

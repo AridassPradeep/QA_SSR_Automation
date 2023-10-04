@@ -132,7 +132,7 @@ public boolean validateuserMenu() throws InterruptedException {
 	
 	public void enterPhoneNo()
 	{
-		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("9901798142");
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("8011230001");
 		driver.findElement(By.xpath("//*[text()='or']")).click();
 	}
 	
