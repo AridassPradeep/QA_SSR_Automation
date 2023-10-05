@@ -110,9 +110,8 @@ public class ElementUtil {
 	
 	public static void Esc() throws AWTException {		
 		Robot robot = new Robot();
-		robot.delay(2000);
 		robot.keyPress(KeyEvent.VK_ESCAPE);
-		robot.delay(2000);
+		robot.delay(3200);
 
 	}
 	

@@ -40,8 +40,7 @@ public class OMSPage {
 	private By TrackShipments = By.xpath("//button[normalize-space()='Track shipments']");
 	private By LorryReceipts = By.xpath("//p[text()='Lorry receipts']");
 	private By ViewDocuments = By.xpath("//p[text()='View order documents']");
-	
-	
+
 	String orderno = Paymentpage.orderno;
 	String SForderno = SFPage.SFOrderNo;
 	// String orderno = "JOO-8CR5PH91";
@@ -99,24 +98,22 @@ public class OMSPage {
 		driver.navigate().refresh();
 		Thread.sleep(3000);
 	}
-	
+
 	public void goToOMSShipmentPageSFOrderURL() throws InterruptedException, AWTException {
 
-		driver.get("https://qa-oms.msme.jswone.in/order-list/"+SForderno);
+		driver.get("https://qa-oms.msme.jswone.in/order-list/" + SForderno);
 		Thread.sleep(3000);
 		driver.navigate().refresh();
 		Thread.sleep(3000);
 	}
-	
-	public void navigateToShipmentsTab() throws InterruptedException
-	{
+
+	public void navigateToShipmentsTab() throws InterruptedException {
 		driver.findElement(By.xpath("//*[text()='Shipments']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[normalize-space()='Shipment no.']")).click();
 	}
-	
-	public void navigateToOrderDetailsTab() throws InterruptedException
-	{
+
+	public void navigateToOrderDetailsTab() throws InterruptedException {
 
 		driver.get("https://qa-oms.msme.jswone.in/order-list/?filterValue=today");
 		Thread.sleep(3000);
@@ -128,28 +125,23 @@ public class OMSPage {
 		obj.SwitchWindow(1);
 		Thread.sleep(3000);
 	}
-	
-	public void navigateToOrderDetailsTabThroughUrl() throws InterruptedException
-	{
 
-		driver.get("https://qa-oms.msme.jswone.in/order-list/" +orderno);
+	public void navigateToOrderDetailsTabThroughUrl() throws InterruptedException {
+
+		driver.get("https://qa-oms.msme.jswone.in/order-list/" + orderno);
 		Thread.sleep(3000);
 		driver.navigate().refresh();
-		ERPorderno=orderno;
+		ERPorderno = orderno;
 	}
-	
 
-	public void navigateToOrderDetailsTabUsingSFOrderNo() throws InterruptedException, IOException
-	{
-	/*	String url = ElementUtil.getGlobalValue("omsUrl")+"order-list/" + SForderno;
-		System.out.println("Order URL-" +url);
-		driver.get(url);
-		Thread.sleep(3000);
-		driver.navigate().refresh();
-		ERPorderno=SForderno;
-		*/
+	public void navigateToOrderDetailsTabUsingSFOrderNo() throws InterruptedException, IOException {
+		/*
+		 * String url = ElementUtil.getGlobalValue("omsUrl")+"order-list/" + SForderno;
+		 * System.out.println("Order URL-" +url); driver.get(url); Thread.sleep(3000);
+		 * driver.navigate().refresh(); ERPorderno=SForderno;
+		 */
 		driver.get("https://qa-oms.msme.jswone.in/order-list/JOO-3SM1KPCB?tab=orderDetails");
-		
+
 	}
 
 	public void goToOMSOrderDetailsPageCreatedFromSF() throws InterruptedException, AWTException {
@@ -185,10 +177,10 @@ public class OMSPage {
 		driver.findElement(By.xpath("(//label[text()='Seller name']/following::input)[2]"))
 				.sendKeys(totalOrderqtynumber);
 
-		driver.findElement(By.xpath("(//span[text()='Scheduled dispatch date']/following::input)[1]"))
+		driver.findElement(By.xpath("(//*[text()='Scheduled dispatch date']/following::input)[1]"))
 				.sendKeys(ElementUtil.date(4));
 
-		driver.findElement(By.xpath("//span[normalize-space()='Delivery type']//following::div[1]")).click();
+		driver.findElement(By.xpath("//*[text()='Delivery type']//following::div[1]")).click();
 		driver.findElement(By.xpath("//li[normalize-space()='Delivery']")).click();
 
 		driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
@@ -200,8 +192,8 @@ public class OMSPage {
 				.sendKeys(ElementUtil.date(2));
 		driver.findElement(By.xpath("//*[text()='Delivery date']//following::div[1]//input"))
 				.sendKeys(ElementUtil.date(4));
-         
-		String InvoiceNo=ElementUtil.generateRandomIntegerString(5);
+
+		String InvoiceNo = ElementUtil.generateRandomIntegerString(5);
 		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[1]//input")).sendKeys(InvoiceNo);
 		driver.findElement(By.xpath("//*[text()='Invoice No.']//following::div[3]//input")).sendKeys(InvoiceNo);
 
@@ -214,8 +206,12 @@ public class OMSPage {
 		driver.findElement(By.xpath("//p[text()='Invoice date']//following::div[4]//input"))
 				.sendKeys(ElementUtil.date(0));
 
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(4000);
+		driver.get(url);
+		driver.findElement(By.xpath("//p[text()='Shipment no.']")).click();
 		ElementUtil scrl = new ElementUtil(driver);
 		scrl.scrollUp();
 
@@ -224,10 +220,20 @@ public class OMSPage {
 		driver.findElement(By.xpath("//*[text()='Dispatched']")).click();
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(4000);
+
+		driver.get(url);
+		driver.findElement(By.xpath("//p[text()='Shipment no.']")).click();
+		scrl.scrollUp();
+
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
 		driver.findElement(By.xpath("//*[text()='Delivered']")).click();
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(4000);
+
+		driver.get(url);
+		driver.findElement(By.xpath("//p[text()='Shipment no.']")).click();
+		scrl.scrollUp();
+
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
 		driver.findElement(By.xpath("//*[text()='Invoiced']")).click();
 
@@ -239,6 +245,9 @@ public class OMSPage {
 		ElementUtil.UploadFile(filePath);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(10000);
+
+		driver.get(url);
+		driver.findElement(By.xpath("//p[text()='Shipment no.']")).click();
 		scrl.scrollUp();
 
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
@@ -246,6 +255,7 @@ public class OMSPage {
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 
 		Thread.sleep(5000);
+		driver.get(url);
 		driver.findElement(By.xpath("//*[text()='Order details']")).click();
 
 		Thread.sleep(5000);
@@ -321,9 +331,7 @@ public class OMSPage {
 		obj.scrollDownToElement(ViewDocuments);
 		Thread.sleep(2000);
 		driver.findElement(ViewDocuments).click();
-		driver.findElement(By.xpath(
-				"(//span[text()='Download all'])[1]"))
-				.click();
+		driver.findElement(By.xpath("(//span[text()='Download all'])[1]")).click();
 		Thread.sleep(5000);
 	}
 
@@ -405,7 +413,7 @@ public class OMSPage {
 
 	public void updatePartialHold() throws InterruptedException, AWTException {
 		ElementUtil obj = new ElementUtil(driver);
-		obj.scrollDownToElement(LorryReceipts) ;
+		obj.scrollDownToElement(LorryReceipts);
 		Thread.sleep(2000);
 		obj.scrollDown();
 		Thread.sleep(2000);
@@ -419,13 +427,13 @@ public class OMSPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).clear();
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("partial hold");
-		
+
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
-	
+
 	public void updateFullHold() throws InterruptedException, AWTException {
 		ElementUtil obj = new ElementUtil(driver);
-		obj.scrollDownToElement(LorryReceipts) ;
+		obj.scrollDownToElement(LorryReceipts);
 		Thread.sleep(2000);
 		obj.scrollDown();
 		Thread.sleep(2000);
@@ -433,13 +441,13 @@ public class OMSPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).clear();
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("Full hold");
-		
+
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
-	
+
 	public void updateRelease() throws InterruptedException, AWTException {
 		ElementUtil obj = new ElementUtil(driver);
-		obj.scrollDownToElement(LorryReceipts) ;
+		obj.scrollDownToElement(LorryReceipts);
 		Thread.sleep(2000);
 		obj.scrollDown();
 		Thread.sleep(2000);
@@ -447,8 +455,7 @@ public class OMSPage {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).clear();
 		driver.findElement(By.xpath("//*[text()='Invoice comment']/following::textarea[1]")).sendKeys("Release");
-		
-	
+
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 	}
 
@@ -503,75 +510,67 @@ public class OMSPage {
 		double number = Double.parseDouble(cleanedAmount);
 		int toleranceValue = (int) number;
 
-		System.out.println("Tolerance value: " + toleranceValue );
-		Assert.assertTrue(toleranceValue  > 1);
+		System.out.println("Tolerance value: " + toleranceValue);
+		Assert.assertTrue(toleranceValue > 1);
 	}
-	
-	public void clickReconciliation()
-	{
+
+	public void clickReconciliation() {
 		driver.findElement(By.xpath("//button[normalize-space()='Reconciliation']")).click();
 	}
-	public void refund()
-	{
+
+	public void refund() {
 		driver.findElement(By.xpath("//button[text()='Initate refund']")).click();
 		driver.findElement(By.xpath("//input[@type='number']")).sendKeys("0");
 		driver.findElement(By.xpath("//button[text()='Submit']")).click();
 		driver.findElement(By.xpath("//*[text()='Refund initiated successfully']")).isDisplayed();
 	}
-	
-	public void navigateToPayouts() throws InterruptedException
-	{
+
+	public void navigateToPayouts() throws InterruptedException {
 		Thread.sleep(4000);
 		ElementUtil obj = new ElementUtil(driver);
 		obj.scrollUp();
-		
+
 		driver.findElement(By.xpath("//button[text()='Payouts']")).click();
 		driver.findElement(By.xpath("//p[text()='Shipment no.']")).click();
 	}
-	
-	public void qualitiesIssuesForPartialPayout()
-	{
-		String qualityIssue=driver.findElement(By.xpath("//p[text()='Quality issues']/following-sibling::p")).getText();
+
+	public void qualitiesIssuesForPartialPayout() {
+		String qualityIssue = driver.findElement(By.xpath("//p[text()='Quality issues']/following-sibling::p"))
+				.getText();
 		System.out.println(qualityIssue);
-		
+
 	}
-	
-	public boolean intiatePayout()
-	{
-		
-		 ElementUtil elementUtil = new ElementUtil(driver);
-		 boolean inititatePayoutbtn=elementUtil.isElementPresent("//button[(@tabindex='0') and (text()='Initiate payout')]");
+
+	public boolean intiatePayout() {
+
+		ElementUtil elementUtil = new ElementUtil(driver);
+		boolean inititatePayoutbtn = elementUtil
+				.isElementPresent("//button[(@tabindex='0') and (text()='Initiate payout')]");
 		System.out.println(inititatePayoutbtn);
 		return inititatePayoutbtn;
-		
+
 	}
-	
-	public void clickInitiatePayout()
-	{
+
+	public void clickInitiatePayout() {
 		driver.findElement(By.xpath("//button[(@tabindex='0') and (text()='Initiate payout')]")).click();
 	}
-	
-	public void clickInitiatePayoutConfirmBtn() throws InterruptedException
-	{
+
+	public void clickInitiatePayoutConfirmBtn() throws InterruptedException {
 		driver.findElement(By.xpath("//button[text()='Confirm']")).click();
 		Thread.sleep(4000);
 	}
-	
-	public void clickPlannedShipment()
-	{
+
+	public void clickPlannedShipment() {
 		driver.findElement(By.xpath("//button[normalize-space()='Planned Shipment']")).click();
 	}
-	
-	public void requestPayment() throws InterruptedException
-	{
-		String qty=driver.findElement(By.xpath("//*[text()='Total quantity']//following::td[3]")).getText();
+
+	public void requestPayment() throws InterruptedException {
+		String qty = driver.findElement(By.xpath("//*[text()='Total quantity']//following::td[3]")).getText();
 		driver.findElement(By.xpath("//input[@placeholder='Enter quantity']")).sendKeys(ElementUtil.extractNumber(qty));
 		driver.findElement(By.xpath("//input[@type='checkbox']")).click();
 		driver.findElement(By.xpath("//*[text()='Request payment']")).click();
 		driver.findElement(By.xpath("//input[@placeholder='dd/mm/yyyy']")).sendKeys(ElementUtil.date());
 		driver.findElement(By.xpath("//*[text()='Confirm']")).click();
-		Thread.sleep(9000);
 	}
-	
 
 }

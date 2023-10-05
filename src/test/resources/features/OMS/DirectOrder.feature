@@ -21,3 +21,4 @@ Feature: Verify Direct Order Details
     #And user navigates to automated order
     And click on Planned Shipment
     And enter Planned shipment details and request payment
+    And approves payment in SF

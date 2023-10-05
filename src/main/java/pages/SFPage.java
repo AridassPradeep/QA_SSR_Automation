@@ -29,6 +29,9 @@ public class SFPage {
 	private By saveBtn = By.xpath("(//button[text()='Save'])[2]");
 	private By processOpportunityBtn = By.xpath("//button[text()='Process Opportunity']");
 	private By DeleteCartBtn = By.xpath("//button[text()='Delete Cart']");
+	private By ActionBtn = By.xpath("//a[@class='rowActionsPlaceHolder slds-button slds-button--icon-x-small slds-button--icon-border-filled keyboardMode--trigger']");
+	
+	
 	
 
 	private By sucessOrderCreatedMsg = By
@@ -212,6 +215,17 @@ public class SFPage {
 		} catch (Exception e) {
 		}
 
+	}
+	public void approvePayment() throws InterruptedException
+	{
+		goToSF();
+		driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/o/ProcessInstanceWorkitem/list?filterName=00B5g00000GiocQEAR");
+		ElementUtil wt = new ElementUtil(driver);
+		wt.WaitUtilClickable(ActionBtn);
+		driver.findElement(By.xpath("//a[@class='rowActionsPlaceHolder slds-button slds-button--icon-x-small slds-button--icon-border-filled keyboardMode--trigger']")).click();
+		driver.findElement(By.xpath("//a[@title='Approve']")).click();
+		driver.findElement(By.xpath("(//*[text()='Approve'])[1]")).click();
+		Thread.sleep(9000);
 	}
 
 }

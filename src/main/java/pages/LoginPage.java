@@ -49,6 +49,15 @@ public class LoginPage {
 
 	}
 	
+	public boolean validateMyOrder() throws InterruptedException {
+		
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+		return driver.findElement(By.xpath("//a[contains(text(),'My orders')]")).isDisplayed();
+		
+
+	}
+	
 public boolean validateuserMenu() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(loginuserMenu).isDisplayed();
