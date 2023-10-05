@@ -52,7 +52,6 @@ Feature: Steel feature
     And click on reset
     Then all products to be displayed
 
-
   Scenario: Verify Buy Now button and net banking with an order placed unsuccessfully
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
