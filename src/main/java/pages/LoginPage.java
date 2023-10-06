@@ -49,6 +49,15 @@ public class LoginPage {
 
 	}
 	
+	public boolean validateMyOrder() throws InterruptedException {
+		
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+		return driver.findElement(By.xpath("//a[contains(text(),'My orders')]")).isDisplayed();
+		
+
+	}
+	
 public boolean validateuserMenu() throws InterruptedException {
 		Thread.sleep(3000);
 		return driver.findElement(loginuserMenu).isDisplayed();
@@ -132,7 +141,7 @@ public boolean validateuserMenu() throws InterruptedException {
 	
 	public void enterPhoneNo()
 	{
-		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("8011230001");
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("9901798142");
 		driver.findElement(By.xpath("//*[text()='or']")).click();
 	}
 	

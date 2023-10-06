@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -40,7 +42,7 @@ public class ElementUtil {
 	}
 	
 	public void WaitUtilClickable(By loctr) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		wait.until(ExpectedConditions.elementToBeClickable(loctr));
 
 	}
@@ -108,15 +110,14 @@ public class ElementUtil {
 	
 	public static void Esc() throws AWTException {		
 		Robot robot = new Robot();
-		robot.delay(2000);
 		robot.keyPress(KeyEvent.VK_ESCAPE);
-		robot.delay(2000);
+		robot.delay(3200);
 
 	}
 	
 	public static void DoubleKeyDownEnter() throws AWTException {		
 		Robot robot = new Robot();
-		robot.delay(2000);
+		robot.delay(3000);
 		robot.keyPress(KeyEvent.VK_DOWN);
 		robot.delay(2000);
 		robot.keyPress(KeyEvent.VK_DOWN);
@@ -212,6 +213,17 @@ public class ElementUtil {
 		return js.get(key).toString();
 
 	}
+	
+	public static String extractNumber(String input) {
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(input);
+
+        if (matcher.find()) {
+            return matcher.group();
+        } else {
+            return "No number found";
+        }
+    }
 }
 
 

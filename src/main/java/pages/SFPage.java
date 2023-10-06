@@ -29,6 +29,9 @@ public class SFPage {
 	private By saveBtn = By.xpath("(//button[text()='Save'])[2]");
 	private By processOpportunityBtn = By.xpath("//button[text()='Process Opportunity']");
 	private By DeleteCartBtn = By.xpath("//button[text()='Delete Cart']");
+	private By ActionBtn = By.xpath("//a[@class='rowActionsPlaceHolder slds-button slds-button--icon-x-small slds-button--icon-border-filled keyboardMode--trigger']");
+	
+	
 	
 
 	private By sucessOrderCreatedMsg = By
@@ -58,6 +61,9 @@ public class SFPage {
 	}
 
 	public void clickNewOpportunity() {
+		ElementUtil wt = new ElementUtil(driver);
+		driver.navigate().refresh();
+		wt.WaitUtilClickable(quickOpportunity);
 		driver.findElement(quickOpportunity).click();
 	}
 
@@ -77,8 +83,9 @@ public class SFPage {
 		WebElement elemnt = driver.findElement(By.xpath("(//button[text()='Save'])[2]"));
 		je.executeScript("arguments[0].scrollIntoView(true);", elemnt);
 		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
-		Thread.sleep(15000);
 		ElementUtil wt = new ElementUtil(driver);
+		wt.WaitUtilElementInvisible(spinnerWheel);
+		Thread.sleep(15000);
 		driver.findElement(By.xpath("//button[text()='Process Opportunity']")).click();
 		driver.findElement(By.xpath("(//button[@title='Show More'])[1]")).click();
 		driver.findElement(By.xpath("//button[@aria-label='Delivery Instructions, Select Delivery Instructions']"))
@@ -96,12 +103,13 @@ public class SFPage {
 		driver.findElement(By.xpath("(//label[text()='Final Distributor Quote']/following::input)[1]"))
 				.sendKeys("40000");
 
-		driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']")).sendKeys("JSW Steel Vijayanagar");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//label[text()='Source Seller Name'])//following::div[1]//input")).sendKeys("JSW Steel Vijayanagar");
 		ElementUtil.DoubleKeyDownEnter();
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']")).sendKeys("JSW Steel Vijayanagar");
+		driver.findElement(By.xpath("(//label[text()='Seller Name'])//following::div[1]//input")).sendKeys("JSW Steel Vijayanagar");
 		ElementUtil.DoubleKeyDownEnter();
 
 		wt.MigrationUtil(sourceSellerQuote);
@@ -178,9 +186,11 @@ public class SFPage {
 
 	public void orderDetails() throws InterruptedException {
 		driver.findElement(By.xpath("//button[text()='Create Order']")).click();
-		Thread.sleep(24000);
+		Thread.sleep(20000);
 		ElementUtil wt = new ElementUtil(driver);
-		wt.MigrationUtil(DeleteCartBtn );
+		//wt.MigrationUtil(DeleteCartBtn );
+		wt.WaitUtilClickable(DeleteCartBtn);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//button[text()='Create Order'])[2]")).click();
 		wt.MigrationUtil(sucessOrderCreatedMsg);
 		Thread.sleep(4000);
@@ -205,6 +215,17 @@ public class SFPage {
 		} catch (Exception e) {
 		}
 
+	}
+	public void approvePayment() throws InterruptedException
+	{
+		goToSF();
+		driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/o/ProcessInstanceWorkitem/list?filterName=00B5g00000GiocQEAR");
+		ElementUtil wt = new ElementUtil(driver);
+		wt.WaitUtilClickable(ActionBtn);
+		driver.findElement(By.xpath("//a[@class='rowActionsPlaceHolder slds-button slds-button--icon-x-small slds-button--icon-border-filled keyboardMode--trigger']")).click();
+		driver.findElement(By.xpath("//a[@title='Approve']")).click();
+		driver.findElement(By.xpath("(//*[text()='Approve'])[1]")).click();
+		Thread.sleep(9000);
 	}
 
 }

@@ -18,7 +18,7 @@ import pages.OMS.OrderDetailsPage;
 public class OMSPageStep {
 	OMSPage omspage = new OMSPage(DriverFactory.getDriver());
 	OrderDetailsPage orderDetailsPage = new OrderDetailsPage(DriverFactory.getDriver());
-	
+
 	OrderSummaryPage order = new OrderSummaryPage(DriverFactory.getDriver());
 
 	@When("user login to OMS")
@@ -35,7 +35,7 @@ public class OMSPageStep {
 	public void user_navigates_to_oms_shipments_pageSFOrder() throws InterruptedException, AWTException {
 		omspage.goToOMSShipmentPageSFOrder();
 	}
-	
+
 	@Then("user navigates to OMS OrderPage with SFOrder")
 	public void user_navigates_to_oms_order_pageSFOrderURL() throws InterruptedException, AWTException {
 		omspage.goToOMSShipmentPageSFOrderURL();
@@ -107,28 +107,24 @@ public class OMSPageStep {
 		omspage.navigateToPayouts();
 
 	}
-	
+
 	@Given("navigate to Shipment Tab")
 	public void navigate_to_Shipment_tab() throws InterruptedException {
 		omspage.navigateToShipmentsTab();
 
 	}
-	
+
 	@Then("user navigates to OMS OrderPage")
 	public void user_navigates_to_oms_order_page() throws InterruptedException {
-		//omspage.navigateToOrderDetailsTab();
-		omspage.navigateToOrderDetailsTabThroughUrl() ;
-	   
+		// omspage.navigateToOrderDetailsTab();
+		omspage.navigateToOrderDetailsTabThroughUrl();
+
 	}
-	
+
 	@When("user navigates to OMS OrderPage using SFOrderNo")
 	public void user_navigates_to_oms_order_page_using_sf_order_no() throws InterruptedException, IOException {
-		omspage.navigateToOrderDetailsTabUsingSFOrderNo() ;
+		omspage.navigateToOrderDetailsTabUsingSFOrderNo();
 	}
-
-
-
-
 
 	@Then("Validate QualityIssues should be same as entered partial amount value")
 	public void validate_quality_issues_should_be_same_as_entered_partial_amount_value() {
@@ -150,16 +146,17 @@ public class OMSPageStep {
 		Assert.assertFalse(omspage.intiatePayout());
 
 	}
-	
+
 	@Then("click on InitiatePayout")
 	public void click_on_initiate_payout() {
 		omspage.clickInitiatePayout();
-	 
+
 	}
+
 	@Then("confirm Payout")
 	public void confirm_payout() throws InterruptedException {
 		omspage.clickInitiatePayoutConfirmBtn();
-	   
+
 	}
 
 	@Given("clickon Release Payout and Update")
@@ -235,21 +232,28 @@ public class OMSPageStep {
 	public void click_on_initiate_refund() {
 		omspage.refund();
 	}
-	
+
 	@Then("click verify PI\\/PO")
 	public void click_verify_pi_po() throws InterruptedException {
 		orderDetailsPage.verifyPIPO();
-	   
+
 	}
-	
+
 	@Then("verify order status value is {string}")
 	public void verify_order_status_value_is(String OrderStats) {
-		String orderStatus=orderDetailsPage.verifyOrderStatus();
+		String orderStatus = orderDetailsPage.verifyOrderStatus();
 		Assert.assertEquals(orderStatus, OrderStats);
 	}
 
-
-
+	@Given("click on Planned Shipment")
+	public void click_on_planned_shipment() {
+		omspage.clickPlannedShipment();
+	}
+	
+	@Given("enter Planned shipment details and request payment")
+	public void enter_planned_shipment_details_and_request_payment() throws InterruptedException {
+		omspage.requestPayment();
+	}
 
 
 

@@ -31,16 +31,20 @@ public class SFPageStep {
 	public void fill_sku_requirement_details() throws InterruptedException, AWTException {
 		sfpage.fillSKURequirementDetails();
 	}
-	
+
 	@Given("create order and extract orderno from SF")
 	public void create_order_and_extract_orderno_from_sf() throws InterruptedException {
 		sfpage.orderDetails();
 	}
+
 	@Then("close rest open tabs")
 	public void close_rest_open_tabs() {
 		sfpage.closeRestTabs();
 	}
 
-	
+	@Given("approves payment in SF")
+	public void approves_payment_in_sf() throws InterruptedException {
+		sfpage.approvePayment();
+	}
 
 }
