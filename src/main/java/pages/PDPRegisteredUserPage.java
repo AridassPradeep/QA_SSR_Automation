@@ -73,7 +73,7 @@ public class PDPRegisteredUserPage {
 	public void selectSteelProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/div[4]/div[2]/div/div[4]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[1]/a")).click();
+		driver.findElement(By.xpath("//a[@title='JSW Steel Hot Rolled Sheets IS 2062:2011 E350A")).click();
 
 		/*
 		 * List<WebElement> productlist = driver.findElements(productselect); for (int i
@@ -305,7 +305,7 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//div[contains(text(),'Length (mm)')]//following::div[2]//div//button[1]"))
 				.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("50");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("25");
 		Thread.sleep(4000);
 
 	}
@@ -401,12 +401,16 @@ public class PDPRegisteredUserPage {
 
 	//
 	public void SteelDetails() throws InterruptedException {
+		// For thickness
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id=\"d-body\"]/div[4]/div/div[1]/div[1]/div[2]/div[2]/div[5]/div[1]/div/div[2]/div/button[1]")).click();
-		driver.findElement(By.xpath("//*[@id=\"d-body\"]/div[4]/div/div[1]/div[1]/div[2]/div[2]/div[5]/div[2]/div/div[2]/div/button[1]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'4')]")).click();
+		//for width
+		driver.findElement(By.xpath("//button[contains(text(), '1250')]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(text(),'Length')]//following::div[2]//div//button[1]")).click();
+		//for length
+		driver.findElement(By.xpath("//button[contains(text(),'2500')]")).click();
 		Thread.sleep(2000);
+		//for quantity
 		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("25");
 		Thread.sleep(3500);
 
@@ -470,7 +474,7 @@ public class PDPRegisteredUserPage {
 
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@id='inputQty'])[2]")).sendKeys("3600");
+		driver.findElement(By.xpath("(//input[@id='inputQty'])[2]")).sendKeys("400");
 		Thread.sleep(6000);
 
 	}

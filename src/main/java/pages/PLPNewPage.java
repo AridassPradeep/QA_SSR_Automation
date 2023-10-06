@@ -343,7 +343,7 @@ public class PLPNewPage {
 	public void selectCementProduct() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//a[contains(text(),'JSW Portland Slag Cement')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Compcem Cement')]")).click();
 
 	}
 
