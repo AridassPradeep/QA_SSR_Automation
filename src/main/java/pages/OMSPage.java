@@ -252,9 +252,10 @@ public class OMSPage {
 
 		driver.findElement(By.xpath("//*[text()='Shipment status']//following::div[1]")).click();
 		driver.findElement(By.xpath("//*[text()='Completed']")).click();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		driver.get(url);
 		driver.findElement(By.xpath("//*[text()='Order details']")).click();
 
@@ -519,10 +520,10 @@ public class OMSPage {
 	}
 
 	public void refund() {
-		driver.findElement(By.xpath("//button[text()='Initate refund']")).click();
+		driver.findElement(By.xpath("//p[text()='Initate refund']")).click();
 		driver.findElement(By.xpath("//input[@type='number']")).sendKeys("0");
-		driver.findElement(By.xpath("//button[text()='Submit']")).click();
-		driver.findElement(By.xpath("//*[text()='Refund initiated successfully']")).isDisplayed();
+		driver.findElement(By.xpath("//*[text()='Submit']")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'Refund is initiated')]")).isDisplayed();
 	}
 
 	public void navigateToPayouts() throws InterruptedException {
