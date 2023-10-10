@@ -57,7 +57,7 @@ Feature: Login page feature
 
     Examples: 
       | phoneno    |
-      | 9218775234 |
+      | 8011230001 |
 
   Scenario Outline: Verify error message for incorrectemail and incorrect password
     When user enters logins with username with "<email>" and  "<password>"

@@ -73,7 +73,7 @@ public class PDPRegisteredUserPage {
 	public void selectSteelProductreguser() throws InterruptedException {
 		Thread.sleep(2000);
 
-	driver.findElement(By.xpath("//a[@title='JSW Steel Hot Rolled Sheets IS 2062:2011 E350A")).click();
+	driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E350A')]")).click();
 
 
 		/*
