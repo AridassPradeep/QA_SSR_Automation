@@ -25,7 +25,7 @@ public class DirectOrderPage {
 
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By quantity = By.xpath("//input[@class='input-quant']");
-	private By buyfromverified = By.xpath("//span[contains(text(),'Buy from verified sellers')]");
+	private By buyfromverified = By.xpath("//span[contains(text(),'Purchase now')]");
 	private By directlyfromJSW = By.xpath("//span[contains(text(),'Buy directly from')]");
 	private By myrequirements = By.xpath("(//a[@class='links'])[2]");
 	private By requestprice = By.xpath("//span[text()='Request for price']");
@@ -240,7 +240,7 @@ public class DirectOrderPage {
 	public void clickViewRequirementCart() throws InterruptedException
 
 	{	
-		driver.findElement(By.xpath("(//span[contains(text(),'View requirements cart')])[1]")).click();
+		driver.findElement(By.xpath("//btn[contains(text(), 'View requirements cart')]")).click();
 		
 	}
 

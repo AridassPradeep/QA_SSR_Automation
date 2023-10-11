@@ -26,7 +26,7 @@ public class HomePage {
 	private By address = By.xpath("//*[@id=\'address-dropdown\']");
 	private By connectWithUs = By.xpath("//span[text()='Connect with us']");
 	private By helpLineNumber = By.xpath("//div[@class='ph-num']");
-	private By SociaMediaLogos = By.xpath("//div[@class='social-icons-out']");
+	private By SociaMediaLogos = By.xpath("//div[contains(@class, 'social-icons-out')]/a");
 	private By footerpartContainer = By.xpath("//div[@id='footer-cotain']");
 	private By sliderContainerImages = By.xpath("//*[@id=\'carousel_nelosakfom\']/div[1]/div/div/div/img");// img[@class='top-br-img']
 	private By mapIcon = By.xpath("//i[@class='fas fa-map-marker-alt']");
