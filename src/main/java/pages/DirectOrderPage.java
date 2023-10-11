@@ -240,7 +240,7 @@ public class DirectOrderPage {
 	public void clickViewRequirementCart() throws InterruptedException
 
 	{	
-		driver.findElement(By.xpath("//div[@class='s-pt-32']//btn[contains(text(), 'View requirements cart')]")).click();
+		driver.findElement(By.xpath("//btn[contains(text(), 'View requirements cart')]")).click();
 		
 	}
 
