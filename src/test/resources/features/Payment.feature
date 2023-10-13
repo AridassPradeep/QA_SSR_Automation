@@ -86,6 +86,7 @@ Feature: Payment and Cart Scenarios for single and multiple product
     When user clicks on Add To Cart button available in the right side of the webpage
     Then verify that the product should be added in the cart
     Then verify Cart icon would appear with 1
+    And close the side panel
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item
