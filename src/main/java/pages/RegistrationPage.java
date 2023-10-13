@@ -24,7 +24,7 @@ public class RegistrationPage {
 	private By mobile = By.xpath("//input[@id='mobile']");
 	private By gstin = By.xpath("//input[@id='mobile']//following::input[1]");
 	private By companyemail = By.xpath("//input[@id='mobile']//following::input[2]");
-	private By agreeTerms = By.xpath("//label[@for='terms']");
+	private By agreeTerms = By.xpath("//input[@id='terms']");
 	private By next = By.xpath("//*[@id='register-next']");
 	private By userpassword = By.xpath("//input[@name='password']");
 	private By confirmpassword = By.xpath("//input[@name='confirmPassword']");

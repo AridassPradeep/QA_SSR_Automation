@@ -1,5 +1,6 @@
 package stepdefination;
 
+import io.cucumber.java.en.And;
 import org.junit.Assert;
 
 import factory.DriverFactory;
@@ -10,6 +11,8 @@ import pages.PDPDiscountPage;
 import pages.PDPRegisteredUserPage;
 import pages.PDPpage;
 import pages.ProductLandingPage;
+
+import java.awt.*;
 
 public class PDPwithDiscountSteps {
 
@@ -59,6 +62,10 @@ public class PDPwithDiscountSteps {
 	@Then("verify Cart icon would appear with {int}")
 	public void verify_cart_icon_would_appear_with(Integer int1) {
 		pdpdispage.validateCartIcon1();
+	}
+	@And("close the side panel")
+	public void close_side_panel() throws AWTException {
+		pdpdispage.esacapeButton();
 	}
 
 	@When("user click on cart icon with {int}")

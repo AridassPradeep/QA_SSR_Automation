@@ -1,5 +1,6 @@
 package pages;
 
+import java.awt.*;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.ElementUtil;
 
 public class PDPDiscountPage {
 
@@ -174,7 +176,9 @@ public class PDPDiscountPage {
 
 		driver.findElement(cart1).isDisplayed();
 	}
-
+	public void esacapeButton() throws AWTException {
+		ElementUtil.Esc();
+	}
 	public void clickCartIcon1() {
 
 		driver.findElement(cart1).click();
