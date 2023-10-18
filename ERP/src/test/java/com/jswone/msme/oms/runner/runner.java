@@ -15,10 +15,10 @@ import net.masterthought.cucumber.json.support.Status;
 import net.masterthought.cucumber.sorting.SortingMethod;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/features/" }, glue = { "stepdefination",
-		"hooks" }, 
+@CucumberOptions(features = { "src/test/resources/com/jswone/msme/oms/features" }, glue = { "com.jswone.msme.oms.stepdefination",
+		"com.jswone.msme.oms.hooks" }, 
 monochrome = true, 
-tags = "@OrderDetailsOMS",
+tags = " @Dashboard",
 dryRun = false, 
 stepNotifications = true, plugin = { "pretty",
 				"json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html",

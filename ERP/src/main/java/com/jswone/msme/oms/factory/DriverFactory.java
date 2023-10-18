@@ -37,7 +37,7 @@ public class DriverFactory {
 		if (browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "\\src\\test\\resources\\drivers\\chromedriver.exe");
+					System.getProperty("user.dir") + "\\src\\test\\resources\\com\\jswone\\msme\\oms\\drivers\\chromedriver.exe");
 
 			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equals("edge")) {
