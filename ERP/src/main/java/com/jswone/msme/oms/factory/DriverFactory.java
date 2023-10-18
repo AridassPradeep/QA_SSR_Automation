@@ -16,7 +16,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.net.URL;
-import java.time.Duration;
 
 public class DriverFactory {
 

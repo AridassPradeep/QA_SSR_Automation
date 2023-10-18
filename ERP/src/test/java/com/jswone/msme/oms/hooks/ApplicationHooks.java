@@ -1,4 +1,4 @@
-package hooks;
+package com.jswone.msme.oms.hooks;
 
 import java.util.Properties;
 
@@ -6,8 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import factory.DriverFactory;
-import util.ConfigReader;
+import com.jswone.msme.oms.factory.DriverFactory;
+import com.jswone.msme.oms.util.ConfigReader;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -31,7 +31,7 @@ public class ApplicationHooks {
 		String browserName = prop.getProperty("browser");
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);
-		
+
 	}
 
 	@After(order = 0)
