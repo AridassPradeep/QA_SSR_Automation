@@ -18,7 +18,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 @CucumberOptions(features = { "src/test/resources/features/" }, glue = { "stepdefination",
 		"hooks" }, 
 monochrome = true, 
-tags = "@steelnetbanking",
+tags = "@OrderDetailsOMS",
 dryRun = false, 
 stepNotifications = true, plugin = { "pretty",
 				"json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html",
@@ -46,7 +46,7 @@ public class runner {
 		ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
 		reportBuilder.generateReports();
 
-	}
+	}                                               
 
 }
 

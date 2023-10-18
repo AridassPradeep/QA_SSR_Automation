@@ -30,7 +30,7 @@ public class SauceLabsWeb {
 			e.printStackTrace();
 		}
 
-        driver.navigate().to("https://www.jswonemsme.com/");
+        driver.navigate().to("https://qa-oms.msme.jswone.in/");
         driver.quit();
     }
 }
