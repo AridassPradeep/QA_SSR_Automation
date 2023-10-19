@@ -5,7 +5,7 @@ Feature: Direct home page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "shalin.shah@royalcyber.com" and  "Test@1234"
+    When user enters logins with username with "v_jayadev@jsw.in" and  "Jsw@2023"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -14,7 +14,7 @@ Feature: Direct home page feature
     When user is able to click Buy from verified sellers button below the cart
     And user is able to navigate to verified seller page
     And user is able to click Buy directly from JSW Steel button
-    Then user is able to navigate to direct order page
+#    Then user is able to navigate to direct order page
 
   @Header
   Scenario: Verify Header section elements

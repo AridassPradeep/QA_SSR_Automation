@@ -59,7 +59,7 @@ public class HomePage {
 	// Footer
 	private By footerSection = By.xpath("//div[@class='main-footer']");
 	private By footerJSWLogo = By.xpath("//img[@alt='JSW Logo']");
-	private By emailSupport = By.xpath("//*[@id=\'footer-cotain\']/div/div[1]/div/div[3]/div[2]/a");
+	private By emailSupport = By.xpath("//div[contains(@class, 'email contact-info')]//a[@id='f-email-us']");
 
 	// HomepageVerification
 	private By steelCategory = By.xpath("//*[@id=\"Steel\"]");

@@ -31,15 +31,16 @@ Feature: Login page feature
       | email               | password  |
       | ramya1347@gmail.com | Ramya@678 |
 
-  Scenario Outline: verify the forget password link is properly working
-    When user clicks on forgotpassword
-    And user enters email id with Email "<Email>"
-    And user clicks on submit
-    Then verify the confirmation message
-
-    Examples: 
-      | Email                          |
-      | v_sreenivas.gundlapalli@jsw.in |
+# Already covered in forgot password
+#  Scenario Outline: verify the forget password link is properly working
+#    When user clicks on forgotpassword
+#    And user enters email id with Email "<Email>"
+#    And user clicks on submit
+#    Then verify the confirmation message
+#
+#    Examples:
+#      | Email                          |
+#      | v_sreenivas.gundlapalli@jsw.in |
 
   Scenario Outline: verify the Register link is available and properly working
     When user clicks on register button from login screen
@@ -57,7 +58,7 @@ Feature: Login page feature
 
     Examples: 
       | phoneno    |
-      | 8011230001 |
+      | 8012330201 |
 
   Scenario Outline: Verify error message for incorrectemail and incorrect password
     When user enters logins with username with "<email>" and  "<password>"

@@ -206,7 +206,7 @@ public class ProfilePage {
 	public void addNewAddress() throws InterruptedException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("window.scrollTo(0,400)", "");
-		WebElement add = driver.findElement(By.xpath("//button[contains(text(),'+ Add a new address')]"));
+		WebElement add = driver.findElement(addAddress);
 		System.out.println(add.isDisplayed());
 		add.click();
 		Thread.sleep(2000);
@@ -217,7 +217,7 @@ public class ProfilePage {
 		Thread.sleep(1500);
 		driver.findElement(By.id("pincode")).sendKeys("411002");
 		Thread.sleep(1500);
-		driver.findElement(By.id("address")).sendKeys("1051/52, New Nana Peth, Bhawani Peth");
+		driver.findElement(By.id("addressLineOne")).sendKeys("1051/52, New Nana Peth, Bhawani Peth");
 		Thread.sleep(1500);
 		driver.findElement(By.id("city")).sendKeys("Pune");
 		Thread.sleep(1500);
@@ -226,9 +226,9 @@ public class ProfilePage {
 	}
 
 	public void defaultAddress() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@id='defaultAddress']")).click();
+		driver.findElement(By.xpath("//div[@class='d-none d-md-block']/div[@class='checkbox-wrapper']/div[@class='label-set custom-checkbox custom-control d-flex align-items-center']/input[@id='defaultAddress' and not(@disabled)]")).click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//button[text()='Save address']")).click();
+		driver.findElement(By.xpath("//div[@class='d-none d-md-block']/button[contains(text(), 'Save changes')]\n")).click();
 		Thread.sleep(5500);
 	}
 

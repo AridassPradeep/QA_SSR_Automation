@@ -78,7 +78,6 @@ public class Forgotpasswordpage {
 
 	public void forgotpassword(String Email) {
 		driver.findElement(email).sendKeys(Email);
-		driver.findElement(By.xpath("//*[contains(text(),'Password')]")).click();
 	}
 
 	public void newPassword(String NewPassword) throws InterruptedException {

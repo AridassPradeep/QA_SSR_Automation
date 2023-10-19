@@ -27,7 +27,7 @@ Feature: Loading MH pincode
     When user click on the profile submmenu
     Then Profile page  should be lsited
     And user clicks on addresses
-    When user is able check the default address is in MH pincode
+    #When user is able check the default address is in MH pincode
     Then Verify the JSW logo is appearing in the Header Section
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

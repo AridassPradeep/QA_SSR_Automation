@@ -5,14 +5,16 @@ import org.junit.Assert;
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import pages.DirectHomePage;
+import pages.DirectOrderPage;
 
 public class DirectHomePageStep {
 
 	DirectHomePage direct = new DirectHomePage(DriverFactory.getDriver());
+	DirectOrderPage dop = new DirectOrderPage(DriverFactory.getDriver());
 
 	@When("user is able to click Buy from verified sellers button below the cart")
 	public void user_is_able_to_click_buy_from_verified_sellers_button_below_the_cart() throws InterruptedException {
-		direct.getDistributorHomePage().click();
+		dop.validateBuyFromVerified();
 		Thread.sleep(3000);
 
 	}
