@@ -19,7 +19,7 @@ Feature: Forgotpassword  feature
     #And click ok
     Examples: 
       | Email                          |
-      | v_sreenivas.gundlapalli@jsw.in |
+      | aakash.prasad@jsw.in |
 
   Scenario Outline: validate user should navigate to registartion screen if  email id is not registered
     When user clicks on forgotpassword
@@ -30,7 +30,7 @@ Feature: Forgotpassword  feature
 
     Examples: 
       | Email                  |
-      | mshirisha038@gmail.com |
+      | mshiri1sha038@gmail.com |
 
   Scenario Outline: If user enters wrong email format then error message should be triggered
     When user clicks on forgotpassword

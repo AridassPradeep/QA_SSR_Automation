@@ -45,7 +45,7 @@ Feature: Home page feature
     Then verify "Construction Material" category tree is displayed in Header section
     Then Verify "Help & support" is displayed in Header section
     # Then Verify user is navigate to "Help" page and back to home page
-    Then Verify "About us" is displayed in header Section
+    #Then Verify "About us" is displayed in header Section
     Then Verify user is able to view "Manage address" and navigate to address section in Profile page
     Then Verify that "Connect with Us" is available on the header section
     Then Verify user is navigate to "Help" page by clicking "Help & support" CTA

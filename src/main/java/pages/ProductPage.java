@@ -185,10 +185,10 @@ public class ProductPage {
 		Thread.sleep(3000);
 	}
 
-	public void clickWeldingFluxProduct() {
+	public void clickWeldingFluxProduct() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[contains(text(),'Ador AUTOMELT B-71 Steel F7A4/P4-EM12K SAW Welding Flux')]"))
 				.click();
-
 	}
 	
 	public void WeldingFluxDetails() throws InterruptedException

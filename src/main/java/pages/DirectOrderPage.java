@@ -425,9 +425,9 @@ public class DirectOrderPage {
 
 	public void loginMerchantCentre(String Email, String Password) throws InterruptedException {
 		driver.findElement(merchantEmail).sendKeys(Email);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(merchantPassword).sendKeys(Password);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(merchantloginButton).click();
 
 	}

@@ -29,18 +29,18 @@ Feature: Login page feature
 
     Examples: 
       | email                   | password  |
-      | testjswone4@yopmail.com | Ramya@678 |
+      | ramyatestuserssr@gmail.com | Ramya@678 |
 
-
-  Scenario Outline: verify the forget password link is properly working
-    When user clicks on forgotpassword
-    And user enters email id with Email "<Email>"
-    And user clicks on submit
-    Then verify the confirmation message
-
-    Examples: 
-      | Email                   |
-      | qatestuser@jsw.in |
+# Commenting as it is already covered in ForgotPassword file
+#  Scenario Outline: verify the forget password link is properly working
+#    When user clicks on forgotpassword
+#    And user enters email id with Email "<Email>"
+#    And user clicks on submit
+#    Then verify the confirmation message
+#
+#    Examples:
+#      | Email                   |
+#      | qatestuser@jsw.in |
  
   Scenario Outline: verify the Register link is available and properly working
     When user clicks on register button from login screen
@@ -93,7 +93,7 @@ Feature: Login page feature
 
     Examples: 
       | email                   | password  |
-      | testjswone4@yopmail.com | Ramya@678 |
+      | ramyatestuserssr@gmail.com | Ramya@678 |
 
   Scenario Outline: Validate User is prompted to log in screen instead of continuation of registration process for already registered in JSW One site members.
     When user closes the signin popup

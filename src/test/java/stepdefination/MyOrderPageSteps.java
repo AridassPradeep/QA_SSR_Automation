@@ -248,7 +248,8 @@ public class MyOrderPageSteps {
 
 	@When("user is able to view Myorders CTA")
 	public void user_is_able_to_view_myorders_cta() throws InterruptedException {
-		System.out.println(order.getMyOrder().getText());
+		System.out.println(order.getMyOrder().isDisplayed());
+
 		Thread.sleep(2000);
 
 	}

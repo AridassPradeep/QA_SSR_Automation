@@ -31,7 +31,7 @@ Feature: NewCoupons-Product Detail Page with discount
       | coupon  |
       | CEMENT5 |
 
-  @Couponsection 
+  @Couponsection
   Scenario: Check Discount section displayed on PDP page
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -42,7 +42,7 @@ Feature: NewCoupons-Product Detail Page with discount
     Then user is able to view details of the list of coupon code
     Then user is able to verify the coupons code displayed as Caps
 
-  @Knowmore 
+  @Knowmore
   Scenario: Check Discount coupons view on PDP page and able to know more about coupon description by clicking know more
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu
@@ -148,7 +148,7 @@ Feature: NewCoupons-Product Detail Page with discount
   #    When user is removed products from cart line
   #    Then User shall see modified pricing of the cart
   #    And Applied coupons remain in active if applicable to the modified cart context
-  
+
 
   Scenario Outline: Verify remove product in cart line and price will be update and coupons remain active
     When cart is empty or not
