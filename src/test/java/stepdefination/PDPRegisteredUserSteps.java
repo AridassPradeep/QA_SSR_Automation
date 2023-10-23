@@ -156,6 +156,12 @@ public class PDPRegisteredUserSteps {
 		pdpreguser.selectProductcoldrolled();
 	}
 
+	@When("user clicks on Hot rolled  then coils ,sheet is clicked")
+	public void product_deal_is_clicked() throws InterruptedException {
+		Thread.sleep(2000);
+		pdpreguser.clickDealProduct();
+	}
+
 	@Given("deal is visible")
 	public void deal_is_visible() throws InterruptedException {
 		Thread.sleep(2000);
@@ -172,6 +178,15 @@ public class PDPRegisteredUserSteps {
 		Thread.sleep(2000);
 		pdpreguser.validateLowestPriceSeller();
 
+	}
+
+	@Then("user enters the quantity")
+	public void userEnterQuantityForDealPill() throws InterruptedException {
+		pdpreguser.userSelectsQuantity();
+	}
+	@Then("Check the price if it is less")
+	public void comparedDealPillPrice() throws InterruptedException {
+		pdpreguser.compareDealPillPrice();
 	}
 
 	@Then("verify best price is displayed on right side")
@@ -380,6 +395,7 @@ public class PDPRegisteredUserSteps {
 	@When("user is on TMT Product page")
 	public void user_is_on_tmt_product_page() throws InterruptedException {
 		pdpreguser.TMTDetails();
+		Thread.sleep(3000);
 	}
 
 	@When("Straight, bent button is visible")
