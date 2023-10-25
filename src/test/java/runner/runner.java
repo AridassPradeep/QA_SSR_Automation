@@ -19,7 +19,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 		"hooks" }, 
 monochrome = true, 
 
-tags = "@sanityExe",
+tags = "@TestAakash",
 
 dryRun = false, 
 stepNotifications = true, plugin = { "pretty",

@@ -55,7 +55,7 @@ public class DirectPLPPageStep {
 
 	@When("user is able to click Buy from verified sellers page")
 	public void user_is_able_to_click_buy_from_verified_sellers_page() throws InterruptedException {
-	   plp.getVerifiedSeller().click();
+	   plp.clickPurchaseNow();
 	   Thread.sleep(5000);
 	}
 

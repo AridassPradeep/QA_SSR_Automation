@@ -84,6 +84,10 @@ public class DirectPLPPage {
 		return verifiedSeller;
 	}
 
+	public void clickPurchaseNow(){
+		driver.findElement(By.xpath("//span[contains(text(),'Purchase now')]"));
+	}
+
 
 	public WebElement getSellerPLPPage() {
 		return sellerPLPPage;

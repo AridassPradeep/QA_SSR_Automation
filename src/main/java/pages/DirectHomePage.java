@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import io.cucumber.java.bs.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,7 @@ private WebDriver driver;
 
 
 
-	@FindBy(xpath = "//a[contains(text(),'Steel')]")
+	@FindBy(xpath = "//button[contains(@class, 'btn view-all btn-outline-primary primary') and contains(text(), 'View all')]")
 	private WebElement steelCategories;
 	@FindBy(xpath = "//span[text()='Buy from verified sellers']")
 	private WebElement distributorHomePage;
@@ -153,6 +154,14 @@ private WebDriver driver;
 		return homePage;
 	}
 
+	public void clickViewAllHomePage(){
+		driver.findElement(By.xpath("//button[contains(@class, 'btn view-all btn-outline-primary primary') and contains(text(), 'View all')]"));
+	}
+
+	public void navigateToHomePage(){
+		driver.findElement(By.xpath("//img[@alt='JSW One MSME']")).click();
+	}
+
 	public WebElement getRequirements() {
 		return requirements;
 	}
@@ -185,8 +194,8 @@ private WebDriver driver;
 		return readFuture;
 	}
 
-	public WebElement getReadTransport() {
-		return readTransport;
+	public void clickGetReadTransport() {
+		driver.findElement(By.xpath("(//button[contains(text(),'Read now')])[3]"));
 	}
 	
 	public String getFutureTitle() {
@@ -205,8 +214,8 @@ private WebDriver driver;
 		return readScheme;
 	}
 
-	public WebElement getViewMoreArticle() {
-		return viewMoreArticle;
+	public void clickGetViewMoreArticle() {
+		driver.findElement(By.xpath("//a[@class='btn view-all-articles-btn btn-outline-primary']"));
 	}
 
 	public WebElement getFuture() {

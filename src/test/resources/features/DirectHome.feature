@@ -12,9 +12,8 @@ Feature: Direct home page feature
   @DirectPage
   Scenario: Verify the user is navigate to distributor page and direct page
     When user is able to click Buy from verified sellers button below the cart
-    And user is able to navigate to verified seller page
     And user is able to click Buy directly from JSW Steel button
-#    Then user is able to navigate to direct order page
+    Then user is able to navigate to direct home page from PLP page
 
   @Header
   Scenario: Verify Header section elements
@@ -39,7 +38,7 @@ Feature: Direct home page feature
   #	Scenario: Verify the user navigate to Requirement page
   #	When user is able to click My requirements header visible above the Buy from verified sellers
   #	Then user is able navigate to direct home page
-  @Categories
+  @Categories @TestAakash
   Scenario: User is verify the view categories section
     When user is able to scroll down to categories section
     And user is able to view All Categories on home page
