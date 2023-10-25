@@ -492,7 +492,7 @@ public class HomePage {
 	public void validateTMT() throws InterruptedException {
 		driver.findElement(tmt).isDisplayed();
 		driver.findElement(tmt).click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 	}
 
 	public void validateWelding() throws InterruptedException {

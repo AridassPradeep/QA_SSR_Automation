@@ -128,6 +128,7 @@ Feature: Order Summary page feature
     Then order sucessfully placed message should be displayed
     Then user can see order number in url instead of order id
     And user is able to view Myorders CTA
+    And user navigate to Home page
     When user is able to click the Myorders CTA
     And user is navigate to MyOrder page
     #Then user is able to view Orders awaiting payment header

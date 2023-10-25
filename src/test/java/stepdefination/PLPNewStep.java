@@ -273,13 +273,13 @@ public class PLPNewStep {
 	@When("user click TMT Menu on header section")
 	public void user_click_tmt_menu_on_header_section() throws InterruptedException {
 		homePage.validateTMT();
-
 	}
 
 	@When("user is able to view TMT Steel products on PLP page")
 	public void user_is_able_to_view_tmt_steel_products_on_plp_page() throws InterruptedException {
+		Thread.sleep(3000);
 		homePage.validateTMT();
-
+		Thread.sleep(5000);
 	}
 
 	@Then("Breadcrump should display HOME > Construction materials > Construction Steel > TMT")
@@ -330,8 +330,9 @@ public class PLPNewStep {
 	@When("user click on product name of TMT Steel product displayed on the page")
 	public void user_click_on_product_name_of_tmt_steel_product_displayed_on_the_page() throws InterruptedException {
 		plpn.Pdpnavigate();
+		Thread.sleep(4000);
 		plpn.verifyTMTPDPpage();
-
+		Thread.sleep(4000);
 	}
 
 	@And("^user click on product name of Cement product displayed on the page$")

@@ -14,7 +14,7 @@ Feature: NeftPayment
     Then user homepage is displayed
     When cart is empty or not
 
-  
+
   Scenario Outline: Verifying NEFT Payment
     Then user navigate to Home page
      When user is on Steel Menu on header section

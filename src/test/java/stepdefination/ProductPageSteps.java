@@ -61,6 +61,7 @@ public class ProductPageSteps {
 	@And("^user is on WeldingFlux Product page$")
 	public void user_is_on_weldingflux_product_page() throws Throwable {
 		productpage.WeldingFluxDetails();
+		Thread.sleep(5000);
 	}
 
 }

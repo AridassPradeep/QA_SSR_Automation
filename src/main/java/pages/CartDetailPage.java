@@ -211,7 +211,7 @@ public class CartDetailPage {
 	}
 
 	public void clickNewlycreatedAddress() {
-		driver.findElement(By.xpath("(//div[normalize-space()='Companyname1'])[1]")).click();
+		driver.findElement(By.xpath("(//div[@id=\"address-modal-content___BV_modal_body_\"]/div/div)[3]")).click();
 	}
 
 	public void clickDeliverHere() throws InterruptedException, AWTException {
@@ -233,7 +233,7 @@ public class CartDetailPage {
 	}
 	public void removeAddress() throws InterruptedException, AWTException {
 		Thread.sleep(3500);
-		driver.findElement(By.xpath("(//*[contains(text(),'Companyname1')]//following::img[starts-with(@class,'option')])[1]")).click();
+		driver.findElement(By.xpath("(//img[@class=\"option-icon s-pl-8\"])[2]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[contains(text(),'Remove address')]")).click();
 		Thread.sleep(2000);

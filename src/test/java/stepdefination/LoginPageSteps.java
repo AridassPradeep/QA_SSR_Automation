@@ -30,9 +30,10 @@ public class LoginPageSteps {
 	}
 
 	@When("user enters logins with username with {string} and  {string}")
-	public void user_enters_logins_with_username_with_and(String uname, String pwd) {
+	public void user_enters_logins_with_username_with_and(String uname, String pwd) throws InterruptedException {
 
 		loginPage.Login(uname, pwd);
+		Thread.sleep(3000);
 	}
 
 	@When("user clicks on signin")

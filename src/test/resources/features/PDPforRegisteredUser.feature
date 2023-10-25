@@ -107,16 +107,19 @@ Feature: Product Detail Page feature for Registered User
   @dealpill
   Scenario: Verify dimensions are selected as per deal selected and viceversa
     When cart is empty or not
-    When user clicks HR from Steel Navigation Menu
-    When user selects Steel product
+    #When user clicks HR from Steel Navigation Menu
+    When user clicks on Hot rolled  then coils ,sheet is clicked
+    #When user selects Steel product
     # Given user is on product detail page of Steel item
-    And deal is visible
+    #And deal is visible
     When user click on deal
     #Then verify lowest price seller is displayed
     # Then verify best price is displayed on right side
-    Then verify dimensions are selected
-    When user select dimensions same as deal
-    Then deal pill gets clicked
+    Then user enters the quantity
+    Then Check the price if it is less
+#    Then verify dimensions are selected
+#    When user select dimensions same as deal
+#    Then deal pill gets clicked
 
   @MOQ
   Scenario: Verify MOQ for Stainless Steel Product

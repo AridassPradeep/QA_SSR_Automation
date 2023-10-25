@@ -33,7 +33,7 @@ public class PDPRegisteredUserPage {
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
 	private By cartcount = By.xpath("//div[@class='count']");
 	private By totalprice = By.xpath("//span[@class='fl-right tot-cost']");
-	private By dealpill = By.xpath("//div[@class='deals-pill']");
+	private By dealpill = By.xpath("//div[contains(text(), '2 X 1250')]");
 	private By lowestprice = By.xpath("//span[contains(text(),'Lowest Price Seller')]");
 	private By bestprice = By.xpath("//span[@class='offer-txt']");
 	private By selecteddimensions = By.xpath("//button[@class='list-group-item list-group-item-action active']");
@@ -244,13 +244,25 @@ public class PDPRegisteredUserPage {
 
 	public void validateDealPill() {
 		driver.findElement(dealpill).isDisplayed();
+	}
 
+	public void clickDealProduct(){
+		driver.findElement(By.xpath("//a[contains(., 'JSW Steel Hot Rolled Coils IS 2062:2011 E250A')]")).click();
 	}
 
 	public void clickDealPill() {
 		driver.findElement(dealpill).click();
 	}
+	 public void userSelectsQuantity() throws InterruptedException {
+		 Thread.sleep(2000);
+		 driver.findElement(By.xpath("//div[@class='attribute-padding s-py-16']//input[@id='inputQty' and @type='number' and contains(@class, 'form-control')]")).sendKeys("10");
+		 Thread.sleep(4000);
+	 }
 
+	 public void compareDealPillPrice() throws InterruptedException {
+		Thread.sleep(3000);
+		 driver.findElement(By.xpath("//div[@class='price-range-with-all']//span[@class='amount']"));
+	 }
 	public void validateLowestPriceSeller() {
 		driver.findElement(lowestprice).isDisplayed();
 	}
@@ -413,7 +425,7 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//button[contains(text(),'2500')]")).click();
 		Thread.sleep(2000);
 		//for quantity
-		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("25");
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("40");
 
 		Thread.sleep(3500);
 

@@ -46,8 +46,8 @@ public class SFPage {
 		driver.get("https://jswoneplatforms--prdreplica.sandbox.lightning.force.com/lightning/page/home");
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		driver.findElement(username).sendKeys("v_laxminarayan.jena@jsw.in");
-		driver.findElement(passwordTextBox).sendKeys("Ramya@123");
+		driver.findElement(username).sendKeys("aakash.prasad@jsw.in");
+		driver.findElement(passwordTextBox).sendKeys("Aakash@123");
 		driver.findElement(LoginBtn).click();
 		Thread.sleep(4000);
 
