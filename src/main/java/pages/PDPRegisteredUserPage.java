@@ -1,12 +1,17 @@
 package pages;
 
 import java.awt.AWTException;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.List;
+
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import org.openqa.selenium.interactions.SourceType;
 import util.ElementUtil;
 
 public class PDPRegisteredUserPage {
@@ -250,18 +255,40 @@ public class PDPRegisteredUserPage {
 		driver.findElement(By.xpath("//a[contains(., 'JSW Steel Hot Rolled Coils IS 2062:2011 E250A')]")).click();
 	}
 
+	private String beforeValue;
 	public void clickDealPill() {
 		driver.findElement(dealpill).click();
 	}
 	 public void userSelectsQuantity() throws InterruptedException {
 		 Thread.sleep(2000);
+		 beforeValue = String.valueOf(driver.findElement(By.xpath("(//div[@class='price-range-with-all']//span[@class='amount'])[1]")).getText());
+		 System.out.println(beforeValue);
 		 driver.findElement(By.xpath("//div[@class='attribute-padding s-py-16']//input[@id='inputQty' and @type='number' and contains(@class, 'form-control')]")).sendKeys("10");
 		 Thread.sleep(4000);
 	 }
 
-	 public void compareDealPillPrice() throws InterruptedException {
+	public static double parseCurrencyValue(String currencyValue) {
+		// Remove currency symbol "₹" and commas, then parse into a double
+		String cleanedValue = currencyValue.replaceAll("[₹,]", "");
+		try {
+			return NumberFormat.getInstance().parse(cleanedValue).doubleValue();
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return 0.0; // Handle parsing error as needed
+		}
+	}
+
+	 public boolean compareDealPillPrice() throws InterruptedException {
 		Thread.sleep(3000);
-		 driver.findElement(By.xpath("//div[@class='price-range-with-all']//span[@class='amount']"));
+		 String afterValue = String.valueOf(driver.findElement(By.xpath("(//div[@class='price-range-with-all']//span[@class='amount'])[1]")).getText());
+		 double parsedBeforePrice = parseCurrencyValue(beforeValue);
+		 double parsedAfterPrice = parseCurrencyValue(afterValue);
+		 System.out.println(parsedBeforePrice);
+		 System.out.println(parsedAfterPrice);
+		 if(parsedBeforePrice>parsedAfterPrice){
+			 return true;
+		 }
+		 return false;
 	 }
 	public void validateLowestPriceSeller() {
 		driver.findElement(lowestprice).isDisplayed();

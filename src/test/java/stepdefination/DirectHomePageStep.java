@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebElement;
 import pages.DirectHomePage;
 import pages.DirectOrderPage;
 
@@ -28,8 +29,9 @@ public class DirectHomePageStep {
 
 	@When("user is able to click Buy directly from JSW Steel button")
 	public void user_is_able_to_click_buy_directly_from_jsw_steel_button() throws InterruptedException {
-		direct.scroll(direct.getDirectHomePage());
-		direct.getDirectHomePage().click();
+//		direct.scroll(direct.getDirectHomePage());
+//		direct.getDirectHomePage().click();
+		dop.clickBuyNowDirect();
 		Thread.sleep(3000);
 
 	}
@@ -87,7 +89,7 @@ public class DirectHomePageStep {
 
 	@Then("user is able to navigate to direct home page from PLP page")
 	public void user_is_able_to_navigate_to_direct_home_page_from_plp_page() throws InterruptedException {
-		direct.getHomePage().click();
+		direct.navigateToHomePage();
 		Thread.sleep(3000);
 
 	}
@@ -128,7 +130,7 @@ public class DirectHomePageStep {
 
 	@When("user is able to navigate blog by clicking Read now")
 	public void user_is_able_to_navigate_blog_by_clicking_read_now() throws InterruptedException {
-		direct.getReadTransport().click();
+		direct.clickGetReadTransport();
 		Thread.sleep(3000);
 	}
 
@@ -146,9 +148,8 @@ public class DirectHomePageStep {
 
 	@Then("user is able to click View all articles to navigate Blogs & article page")
 	public void user_is_able_to_click_view_all_articles_to_navigate_blogs_article_page() throws InterruptedException {
-		direct.getBlogsArticles().isDisplayed();
 		Thread.sleep(3000);
-		direct.getViewMoreArticle().click();
+		direct.clickGetViewMoreArticle();
 		Thread.sleep(3000);
 	}
 

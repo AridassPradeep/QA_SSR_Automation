@@ -5,7 +5,7 @@ Feature: Direct PLP page navigation
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "hari5465@yopmail.com" and  "Hari5465#"
+    When user enters logins with username with "v_jayadev@jsw.in" and  "Jsw@2023"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -21,7 +21,8 @@ Feature: Direct PLP page navigation
     And user is able to view PLP page of direct order
     And user is able to click Buy from verified sellers page
     And user is able to view PLP page of current seller order
-    Then user is navigate to direct order PLP page by clicking Buy directly from JSW Steel
+    # Requirement cart feature neeeds to be added
+    #Then user is navigate to direct order PLP page by clicking Buy directly from JSW Steel
 
   @PriceView
   Scenario: Verify price of the product can't show in the PLP page

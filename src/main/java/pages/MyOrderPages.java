@@ -356,8 +356,12 @@ public class MyOrderPages {
 		Thread.sleep(1500);
 	}
 
-	public String verifyMyOrderPage() {
-		return driver.findElement(By.xpath("(//*[text()='My orders'])[1]")).getText();
+	public void  clickMyOrderPage() {
+		driver.findElement(By.xpath("(//*[text()='My orders'])[1]")).click();
+	}
+
+	public void viewAllOrderHeader(){
+		driver.findElement(By.xpath("//button[contains(@class, 'active') and contains(text(), 'All')]")).isDisplayed();
 	}
 
 	public void clearedAppliedFilter() {
@@ -532,6 +536,14 @@ public class MyOrderPages {
 		return tax;
 	}
 
+	public void viewMyOrderCTA() {
+		driver.findElement(By.xpath("//a[contains(text(),'My orders')]")).isDisplayed();
+	}
+
+	public void clickMyOrderCTA() {
+		driver.findElement(By.xpath("//a[contains(text(),'My orders')]"));
+	}
+
 	public void clickOrder() throws InterruptedException {
 
 		driver.findElement(order).click();
@@ -579,7 +591,7 @@ public class MyOrderPages {
 	public void validatemyOrdersHeader() {
 		WebElement block = driver.findElement(By.xpath("(//div[@class='common-container'])[3]"));
 		block.findElement(By.xpath(
-				"(//p[@class='typography-h3 typography-md-h2 typography-font-bold typography-font-md-semibold'])[1]"))
+				"/html/body//div[@class='header-container']"))
 				.isDisplayed();
 
 	}

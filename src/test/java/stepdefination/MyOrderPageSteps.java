@@ -14,7 +14,7 @@ public class MyOrderPageSteps {
 
 	@When("user is able to click my order button")
 	public void user_is_able_to_click_my_order_button() {
-		order.getMyOrder().click();
+		order.clickMyOrderCTA();
 	}
 
 	@When("user is able to click view details button")
@@ -248,24 +248,27 @@ public class MyOrderPageSteps {
 
 	@When("user is able to view Myorders CTA")
 	public void user_is_able_to_view_myorders_cta() throws InterruptedException {
-		System.out.println(order.getMyOrder().isDisplayed());
-
+		order.viewMyOrderCTA();
 		Thread.sleep(2000);
-
 	}
 
 	@When("user is able to click the Myorders CTA")
 	public void user_is_able_to_click_the_myorders_cta() throws InterruptedException {
-		order.getMyOrder().click();
+		order.clickMyOrderCTA();
 		Thread.sleep(3000);
 
 	}
 
 	@When("user is navigate to MyOrder page")
 	public void user_is_navigate_to_my_order_page() throws InterruptedException {
-		order.verifyMyOrderPage();
-		Thread.sleep(1500);
+		order.clickMyOrderPage();
+		Thread.sleep(100000);
 
+	}
+
+	@And("user is able to view All orders header")
+	public void userIsABleToViewAllOrder(){
+		order.viewAllOrderHeader();
 	}
 
 	@Then("user is able to verify the message displayed on the Filter icon")

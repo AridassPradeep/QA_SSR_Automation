@@ -71,6 +71,10 @@ public class DirectOrderPage {
 
 	}
 
+	public void clickBuyNowDirect(){
+		driver.findElement(By.xpath("//button[@class='br-cta primary']/span")).click();
+	}
+
 	public void clickonJswSteel() {
 		driver.findElement(By.xpath("//span[contains(text(),'Buy directly from')]")).click();
 
