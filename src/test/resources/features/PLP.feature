@@ -1,4 +1,4 @@
-@PLP
+@PLP @FailedRunner1
 Feature: Verification of PLP functionality feature
 
   Background: User opens website

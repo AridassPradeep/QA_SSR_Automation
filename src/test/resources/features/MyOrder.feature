@@ -1,4 +1,4 @@
-@MyOrder
+@MyOrder @FailedRunner1
 Feature: MyOrder page feature
 
   Background: User opens website

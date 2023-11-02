@@ -1,4 +1,4 @@
- @demo @Payment
+ @demo @Payment @FailedRunner1
 Feature: Payment and Cart Scenarios for single and multiple product
 
   Background: User opens website

@@ -1,4 +1,4 @@
-@regression @Login
+@regression @Login @FailedRunner1
 Feature: Login page feature
 
   Background: User opens website

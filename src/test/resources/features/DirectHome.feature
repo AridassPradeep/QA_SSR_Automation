@@ -1,4 +1,4 @@
-@DirectHome
+@DirectHome @FailedRunner1
 Feature: Direct home page feature
 
   Background: User opens website
@@ -38,7 +38,7 @@ Feature: Direct home page feature
   #	Scenario: Verify the user navigate to Requirement page
   #	When user is able to click My requirements header visible above the Buy from verified sellers
   #	Then user is able navigate to direct home page
-  @Categories @TestAakash
+  @Categories
   Scenario: User is verify the view categories section
     When user is able to scroll down to categories section
     And user is able to view All Categories on home page

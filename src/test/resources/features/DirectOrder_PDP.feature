@@ -1,4 +1,4 @@
-@DirectOrderPDP
+@DirectOrderPDP @FailedRunner1
 Feature: Direct Order for PDP feature for registered user
 
   Background: User opens website

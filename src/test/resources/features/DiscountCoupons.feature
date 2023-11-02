@@ -1,4 +1,4 @@
-@DiscountCoupon
+@DiscountCoupon @FailedRunner1
 Feature: NewCoupons-Product Detail Page with discount
 
   Background: User opens website
