@@ -1,4 +1,4 @@
-@ForgetPassword
+@ForgetPassword @FailedRunner1
 Feature: Forgotpassword  feature
 
   Background: User opens website

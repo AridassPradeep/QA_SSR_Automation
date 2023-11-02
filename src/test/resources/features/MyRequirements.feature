@@ -1,4 +1,4 @@
-@MyRequirements
+@MyRequirements @FailedRunner1
 Feature: My Requirements validation
 
   Background: User opens website

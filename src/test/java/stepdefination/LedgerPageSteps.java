@@ -8,6 +8,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
+
 public class LedgerPageSteps {
 
 	private LedgerPage ledgerPage = new LedgerPage(DriverFactory.getDriver());
@@ -15,6 +17,7 @@ public class LedgerPageSteps {
 	@When("^user navigates to ledger page$")
 	public void user_navigates_to_ledger_page() throws Throwable {
 		ledgerPage.navigateToLedgerPage();
+		Thread.sleep(4000);
 	}
 
 	@Then("^verify user navigates to ledger page$")
@@ -46,6 +49,66 @@ public class LedgerPageSteps {
 	public void validate_companyname_andGSTNo() throws Throwable {
 		ledgerPage.validateCompanyNameAndGSTNo();
 		assertThat(ledgerPage.validateCompanyNameAndGSTNo()).contains("(33AAGCA4932L2ZM)");
+	}
+
+	@And("user checks the Net balance in CCP")
+	public void user_checks_netbalance_ccp() throws Throwable {
+		ledgerPage.checkNetBalanceInCCP();
+	}
+
+	@And("user checks the limit in CCP")
+	public void user_checks_limit_ccp() throws Throwable {
+		ledgerPage.checklimitInCCP();
+	}
+
+	@And("user checks the balance in CCP")
+	public void user_checks_balance_ccp() throws Throwable {
+		ledgerPage.checkBalanceInCCP();
+	}
+
+	@And("user login to ERP")
+	public void userLoginToERP() throws IOException, InterruptedException {
+		ledgerPage.erpLogin();
+	}
+
+	@And("user checks limit in ERP")
+	public void user_check_limit_erp() throws IOException, InterruptedException {
+		ledgerPage.checkLimitERP();
+	}
+
+	@And("user matches both limits")
+	public void user_matches_both_limits() throws IOException, InterruptedException {
+		ledgerPage.compareCreditLimit();
+	}
+
+	@And("user navigate to ledger page of ERP")
+	public void navigateTotLedgerInERP() throws InterruptedException {
+		ledgerPage.navigateLedgerERP();
+	}
+
+	@And("user clicks on search button in ERP ledger")
+	public void enter_search_data_in_erp_ledger() throws InterruptedException {
+		ledgerPage.enterSearchDataERPLedger();
+	}
+
+	@And("user navigate to BuyerMIS in ERP")
+	public void user_navigate_buyerMIS_erp() throws InterruptedException {
+		ledgerPage.navigateToBuyerMIS();
+	}
+
+	@And("user click search and stores the ledger balance")
+	public void click_show_result_erp() throws InterruptedException {
+		ledgerPage.clickShowResultERP();
+	}
+
+	@And("user matches the net balance")
+	public void match_netbalance_from_erp_to_ccp() throws InterruptedException {
+		ledgerPage.matchNetLedgerBalanceFromERPToCCP();
+	}
+
+	@And("user matches the balance")
+	public void match_balance_from_erp_to_ccp() throws InterruptedException {
+		ledgerPage.matchLedgerBalanceFromERPToCCP();
 	}
 
 	@When("user clicks on view ledger")

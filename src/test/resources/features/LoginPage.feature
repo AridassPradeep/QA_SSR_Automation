@@ -1,4 +1,4 @@
-@demo @Login
+@demo @Login @FailedRunner1
 Feature: Login page feature
 
   Background: User opens website

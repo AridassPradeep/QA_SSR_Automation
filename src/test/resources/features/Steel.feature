@@ -2,7 +2,7 @@
 #https://dashboard.razorpay.com/app/smartcollect/virtualaccounts?count=25&id=va_IYQmzJQHLDMvoB
 #username: jsw.one@jsw.in
 #password: Jsw@1234
-@sanityExe @demo @steel
+@sanityExe @demo @steel @FailedRunner1
 Feature: Steel feature
 
   Background: User opens website

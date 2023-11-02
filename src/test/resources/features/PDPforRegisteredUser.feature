@@ -1,4 +1,4 @@
-@PDPRegisteredUser
+@PDPRegisteredUser @FailedRunner1
 Feature: Product Detail Page feature for Registered User
 
   Background: User opens website

@@ -1,5 +1,5 @@
 #1)change 1st scenario data-change mobile no,email and gstin otherwise it will throw error
-@Registration
+@Registration @FailedRunner1
 Feature: Registration page feature
 
   Background: User opens website
@@ -22,7 +22,7 @@ Feature: Registration page feature
 
     Examples: 
       | username | mobileno   | GSTIN           | companyemail                  | password  |
-      | aakashautomation299    | 8210031235 | 33AAACT6357Q1ZT | aakashautomationtest299@gmail.com | Aakash@123 |
+      | aakashautomation019    | 8210031019 | 08AAFCS2085P1ZR | aakashautomationtest019@gmail.com | Aakash@123 |
 
   Scenario Outline: Validate  user is able to enter the user details and can proceed to password creation page
     When user enters username with "<username>"

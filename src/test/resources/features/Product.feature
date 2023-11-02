@@ -1,4 +1,4 @@
-@Product
+@Product @FailedRunner1
 Feature: Product Detail Page -All Products
 
   Background: User opens website

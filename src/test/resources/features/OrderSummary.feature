@@ -1,4 +1,4 @@
-@OrderSummary
+@OrderSummary @FailedRunner1
 Feature: Order Summary page feature
 
   Background: User opens website

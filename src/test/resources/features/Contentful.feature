@@ -1,4 +1,4 @@
-@Contentful
+@Contentful @FailedRunner1
 Feature: Product Creation
 
   Background: User opens website
