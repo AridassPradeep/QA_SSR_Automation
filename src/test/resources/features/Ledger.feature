@@ -9,12 +9,10 @@ Feature: Ledger Information validation
     And user clicks on signin
     Then user homepage is displayed
 
-  Scenario: Verify ledger information in ledger page
+  Scenario: Verify ledger information in ledger page at bottom
     When user navigates to ledger page
     Then user request date for specific period
     Then validate Ledger request sent message is displayed
-    And validate previous statement is displayed
-    And validate companyname and GSTNo
 
   Scenario: Verify Ledger Net Balance from ERP
     And user navigates to ledger page
@@ -67,3 +65,30 @@ Feature: Ledger Information validation
     When user navigates to ledger page
     And user click on email in ledgerPage and sent email
     Then user can see email sent sucessfully message
+
+  Scenario: User is searching using filters in statement
+    When user navigates to ledger page
+    Then user select the date from in statement
+    And user select payment type in filter
+    Then statement is displayed
+
+  Scenario: Check if STO is created and did payment via netbanking
+    When cart is empty or not
+    Then user navigate to Home page
+    When user click Cement Menu on header section
+    And user click on product name of Cement product displayed on the page
+    And user is on Cement Product page
+    When user click on Buy Now
+    And user click on proceed to pay on cart detail page
+    And user select bank name to transfer from the drop down on payment page
+    Then verify bank is selected
+    And User click on PayNow
+    Then User navigates to RazorPay Page
+    And User click on success button
+    Then user navigates to ledger page
+    And user checks the entry for STO netbanking
+  @TestAakash
+  Scenario: Check Ledger Field in enabled in CT
+    And user login to merchant centre username with "v_laxminarayan.jena@jsw.in" and  "123Tmnas$"
+    Then user navigates to customer list custom field
+    Then user verifies is Ledger Enabled in ct

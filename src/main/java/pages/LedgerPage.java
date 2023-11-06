@@ -24,9 +24,10 @@ public class LedgerPage {
 	double parsedERPBalance;
 
 	private WebDriver driver;
+	Paymentpage paymentpage = new Paymentpage();
 	private By RecentBlogs = By.xpath("//UL[@class='v-pagination theme--light']");
-	private By FromRequestStatement = By.xpath("//input[@id='request-ledger-statement-from-mobile']");
-	private By ToRequestStatement = By.xpath("//input[@id='request-ledger-statement-to-mobile']");
+	private By FromRequestStatement = By.xpath("(//input[@id='request-ledger-statement-from-mobile'])[2]");
+	private By ToRequestStatement = By.xpath("(//input[@id='request-ledger-statement-to-mobile'])[2]");
 	private By Request = By.xpath("//button[@id='request-ledger-statement-submit-btn']");
 	private By Download = By.xpath("//div[normalize-space()='Download']");
 	//ERP
@@ -52,19 +53,54 @@ public class LedgerPage {
 		Thread.sleep(5000);
 	}
 
+	public void checkEntrySTONetbanking(){
+		String latestNetBankingEntry = driver.findElement(By.xpath("")).getText();
+		double parsedLatestNetBankingEntry = parseCurrencyValue(latestNetBankingEntry);
+		String orderAmountNetBanking = Paymentpage.orderAmountOnNetBanking;
+		System.out.println(orderAmountNetBanking);
+		System.out.println(latestNetBankingEntry);
+		double parsedOrderAmountNetBanking = parseCurrencyValue(orderAmountNetBanking);
+		Assert.assertEquals(parsedOrderAmountNetBanking, parsedLatestNetBankingEntry, 0.01);
+	}
+
 	public String validateLedgerPage() {
 		return driver.findElement(By.xpath("(//*[text()='Ledger'])[2]")).getText();
 	}
 
+	public void clickFromStatement(){
+		driver.findElement(By.xpath("(//input[@id='request-ledger-statement-from-mobile'])[1]")).click();
+		String targetFromDateLabel = "November 1, 2023";
+		driver.findElement(By.xpath("//span[@aria-label='" + targetFromDateLabel + "']")).click();
+		driver.findElement(By.xpath("(//input[@id='request-ledger-statement-to-mobile'])[1]")).click();
+		String targetToDateLabel = "November 2, 2023";
+		driver.findElement(By.xpath("(//span[@aria-label='November 2, 2023'])[2]")).click();
+		driver.findElement(Request).click();
+	}
+
 	public void requestStatement() {
-		driver.findElement(FromRequestStatement).sendKeys("10052023");
-		driver.findElement(ToRequestStatement).sendKeys("25052023");
+		driver.findElement(FromRequestStatement).click();
+		String targetFromDateLabel = "November 1, 2023";
+		driver.findElement(By.xpath("//span[@aria-label='" + targetFromDateLabel + "']")).click();
+		driver.findElement(ToRequestStatement).click();
+		String targetToDateLabel = "November 2, 2023";
+		driver.findElement(By.xpath("(//span[@aria-label='November 2, 2023'])[2]")).click();
 		driver.findElement(Request).click();
 	}
 
 	public void validateMsg() {
 		String msg = driver.findElement(By.xpath("//*[text()='Ledger request sent']")).getText();
 		System.out.println("Message" + msg);
+	}
+
+	public void selectPaymentTypeFilter() throws InterruptedException {
+		driver.findElement(By.xpath("//span[text()='Payment type']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//label[contains(., 'Cash advance')]/input[@type='checkbox']")).click();
+		Thread.sleep(2000);
+	}
+
+	public void displayStatementTable(){
+		driver.findElement(By.xpath("(//table[@class='table table-borderless mb-0']/tbody/tr[@class='desktop-row'])[1]")).isDisplayed();
 	}
 
 	public void validatePreviousStatement() {
@@ -195,7 +231,7 @@ public class LedgerPage {
 	
 	public void EmailDetails() throws InterruptedException
 	{
-		driver.findElement(By.xpath("//img[@class='email-ledger-icon']")).click();
+		driver.findElement(By.xpath("//div[text()='Email']")).click();
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("v_laxminarayan.jena@jsw.in");
 		driver.findElement(By.xpath("(//button[@id='share-ledger'])[2]")).click();
 	}

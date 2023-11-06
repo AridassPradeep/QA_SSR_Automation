@@ -20,6 +20,30 @@ public class LedgerPageSteps {
 		Thread.sleep(4000);
 	}
 
+	@When("user checks the entry for STO netbanking")
+	public void user_checks_entry_sto_netbanking() throws Throwable {
+		ledgerPage.checkEntrySTONetbanking();
+		Thread.sleep(4000);
+	}
+
+	@When("user select the date from in statement")
+	public void user_clicks_from_statement() throws Throwable {
+		ledgerPage.clickFromStatement();
+		Thread.sleep(4000);
+	}
+
+	@When("user select payment type in filter")
+	public void select_payment_type_filter() throws Throwable {
+		ledgerPage.selectPaymentTypeFilter();
+		Thread.sleep(4000);
+	}
+
+	@When("statement is displayed")
+	public void statement_is_displayed() throws Throwable {
+		ledgerPage.displayStatementTable();
+		Thread.sleep(4000);
+	}
+
 	@Then("^verify user navigates to ledger page$")
 	public void Verifyuser_navigates_to_ledger_page() throws Throwable {
 		assertThat(ledgerPage.validateLedgerPage()).contains("Ledger");
