@@ -20,6 +20,12 @@ public class LedgerPageSteps {
 		Thread.sleep(4000);
 	}
 
+	@When("user navigates to ledger page after payment")
+	public void user_navigates_ledger_after_payment() throws Throwable {
+		ledgerPage.navigateToLedgerPagAfterPayment();
+		Thread.sleep(4000);
+	}
+
 	@When("user checks the entry for STO netbanking")
 	public void user_checks_entry_sto_netbanking() throws Throwable {
 		ledgerPage.checkEntrySTONetbanking();

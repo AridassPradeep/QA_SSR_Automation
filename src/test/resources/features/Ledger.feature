@@ -1,4 +1,4 @@
-@Ledger
+@Ledger @TestAakash
 Feature: Ledger Information validation
 
   Background: User opens website
@@ -85,9 +85,9 @@ Feature: Ledger Information validation
     And User click on PayNow
     Then User navigates to RazorPay Page
     And User click on success button
-    Then user navigates to ledger page
+    Then user navigates to ledger page after payment
     And user checks the entry for STO netbanking
-  @TestAakash
+
   Scenario: Check Ledger Field in enabled in CT
     And user login to merchant centre username with "v_laxminarayan.jena@jsw.in" and  "123Tmnas$"
     Then user navigates to customer list custom field

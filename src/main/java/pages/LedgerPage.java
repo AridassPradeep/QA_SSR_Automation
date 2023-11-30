@@ -53,6 +53,11 @@ public class LedgerPage {
 		Thread.sleep(5000);
 	}
 
+	public void navigateToLedgerPagAfterPayment() throws InterruptedException {
+		driver.get("https://qa-ssr.msme.jswone.in/ledger");
+		Thread.sleep(3000);
+	}
+
 	public void checkEntrySTONetbanking(){
 		String latestNetBankingEntry = driver.findElement(By.xpath("")).getText();
 		double parsedLatestNetBankingEntry = parseCurrencyValue(latestNetBankingEntry);
@@ -70,11 +75,11 @@ public class LedgerPage {
 	public void clickFromStatement(){
 		driver.findElement(By.xpath("(//input[@id='request-ledger-statement-from-mobile'])[1]")).click();
 		String targetFromDateLabel = "November 1, 2023";
-		driver.findElement(By.xpath("//span[@aria-label='" + targetFromDateLabel + "']")).click();
+		driver.findElement(By.xpath("(//span[@aria-label='November 1, 2023'])[3]")).click();
 		driver.findElement(By.xpath("(//input[@id='request-ledger-statement-to-mobile'])[1]")).click();
 		String targetToDateLabel = "November 2, 2023";
-		driver.findElement(By.xpath("(//span[@aria-label='November 2, 2023'])[2]")).click();
-		driver.findElement(Request).click();
+		driver.findElement(By.xpath("(//span[@aria-label='November 2, 2023'])[4]")).click();
+		//driver.findElement(Request).click();
 	}
 
 	public void requestStatement() {
@@ -221,7 +226,7 @@ public class LedgerPage {
 
 	public void clickViewDetails() {
 
-		driver.findElement(By.xpath("//span[@role='button']")).click();
+		driver.findElement(By.xpath("(//div[@class='d-flex typography-sub-heading typography-md-h6 typography-font-bold typography-text-primary-main show-cursor'])[1]")).click();
 	}
 
 	public void verifyBlockedInfo() {
