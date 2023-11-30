@@ -289,6 +289,16 @@ public class DirectOrderSteps {
 
 	}
 
+	@When("user navigates to customer list custom field")
+	public void user_navigates_custom_field_ct() throws InterruptedException {
+		doppage.customFieldCT();
+	}
+
+	@When("user verifies is Ledger Enabled in ct")
+	public void user_verifies_ledger_enabled() throws InterruptedException {
+		doppage.scrollAndVerifyLedgerEnabled();
+	}
+
 	@When("user click on order and search orderno")
 	public void user_click_on_order_and_search_orderno() throws InterruptedException {
 		doppage.clickOrder();

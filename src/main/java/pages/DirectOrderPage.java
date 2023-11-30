@@ -11,7 +11,9 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.awt.AWTException;
@@ -434,6 +436,19 @@ public class DirectOrderPage {
 		Thread.sleep(3000);
 		driver.findElement(merchantloginButton).click();
 
+	}
+
+	public void customFieldCT(){
+		driver.get("https://mc.australia-southeast1.gcp.commercetools.com/one_ecom_dev/customers/f5a92453-6675-4aca-8d14-4868987a29fa/custom-fields");
+	}
+
+	public void scrollAndVerifyLedgerEnabled(){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+		String isLedgerEnabled = driver.findElement(By.xpath("//input[@name='custom.fields.isLedgerEnabled']")).getAttribute("value");
+		System.out.println(isLedgerEnabled);
+		String toBeCompared = "true";
+		assert toBeCompared.equals("true");
 	}
 
 	public void clickOrder() throws InterruptedException {

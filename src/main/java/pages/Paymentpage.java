@@ -19,9 +19,19 @@ import util.ElementUtil;
 
 public class Paymentpage {
 
+	static String  orderAmountOnNetBanking;
+
 	private WebDriver driver;
 	public static String orderno;
 	private By quantity = By.xpath("//input[@class='input-quant']");
+
+	public Paymentpage() {
+	}
+
+	public String getOrderAmountOnNetBanking() {
+		return orderAmountOnNetBanking;
+	}
+
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By buynow = By.xpath("//button[@id='btn-buy-now']");
 	private By payViaNetBanking = By.xpath(
@@ -100,7 +110,7 @@ public class Paymentpage {
 	}
 
 	public void clickpayViaNetBanking() {
-
+		orderAmountOnNetBanking = driver.findElement(By.xpath("//span[@class='amount']")).getText();
 		driver.findElement(payViaNetBanking).click();
 	}
 
