@@ -1,14 +1,18 @@
 {
   "channelId": "c9f608fa-0f62-40a9-b328-6a21a986180a",
   "uomCalculationRequest": {
-    "productVariantKey": "JSW-CONCREEL-HD-CEMENT-MASTER",
+    "productVariantKey": "ADOR-METALBOND-E6013-2.5-350",
     "customAttributes": [
       {
-        "key": "QUANTITY",
-        "value": "1900"
+        "key": "NUMBER_OF_BOXES",
+        "value": "3"
       }
     ],
-    "attributesMeta": []
+    "attributesMeta": [
+      "DIAMETER_MM",
+      "LENGTH_MM",
+      "BOX_SIZE_KG"
+    ]
   },
   "parting": null,
   "cartType": "order",

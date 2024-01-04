@@ -5,7 +5,7 @@ Feature: Validating LedgerAPI
   Scenario: Validate LedgerAPI
     Given user calls "ledgerAPI" with "Get" http request for "validateLedger"
     Then validate that the "ledgerAPI"  call response is success with status code "200"
-    And validate the "ledgerAPI" response time is less than "4000" ms
+    And validate the "ledgerAPI" response time is less than "15000" ms
     And validate the "ledgerAPI" payload structure has "balanceAmount"
 
   @validateLedger

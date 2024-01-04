@@ -1,0 +1,3211 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "orderCartSummary": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            },
+            "version": {
+              "type": "integer"
+            },
+            "isZeroAdvanceOrder": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "id",
+            "category",
+            "version",
+            "isZeroAdvanceOrder"
+          ]
+        },
+        "orderNumber": {
+          "type": "null"
+        },
+        "orderDate": {
+          "type": "string"
+        },
+        "orderPaymentStatus": {
+          "type": "null"
+        },
+        "customerData": {
+          "type": "object",
+          "properties": {
+            "customerId": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phoneNumber": {
+              "type": "string"
+            },
+            "companyName": {
+              "type": "string"
+            },
+            "gstIn": {
+              "type": "string"
+            },
+            "beneficiaryName": {
+              "type": "string"
+            },
+            "beneficiaryAccountNum": {
+              "type": "string"
+            },
+            "ifscCode": {
+              "type": "string"
+            },
+            "customerVAN": {
+              "type": "string"
+            },
+            "virtualAccountId": {
+              "type": "string"
+            },
+            "salesClassification": {
+              "type": "string"
+            },
+            "bankName": {
+              "type": "null"
+            },
+            "testUser": {
+              "type": "boolean"
+            },
+            "userEmail": {
+              "type": "string"
+            },
+            "opportunityOwnerEmail": {
+              "type": "null"
+            },
+            "razorPayBankName": {
+              "type": "string"
+            },
+            "sfAccountId": {
+              "type": "string"
+            },
+            "customerPan": {
+              "type": "string"
+            },
+            "customerAccountType": {
+              "type": "string"
+            },
+            "businessDivision": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "customerId",
+            "name",
+            "email",
+            "phoneNumber",
+            "companyName",
+            "gstIn",
+            "beneficiaryName",
+            "beneficiaryAccountNum",
+            "ifscCode",
+            "customerVAN",
+            "virtualAccountId",
+            "salesClassification",
+            "bankName",
+            "testUser",
+            "userEmail",
+            "opportunityOwnerEmail",
+            "razorPayBankName",
+            "sfAccountId",
+            "customerPan",
+            "customerAccountType",
+            "businessDivision"
+          ]
+        },
+        "orderStatus": {
+          "type": "null"
+        },
+        "totalOrderAmount": {
+          "type": "object",
+          "properties": {
+            "centAmount": {
+              "type": "integer"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "displayAmount": {
+              "type": "string"
+            },
+            "absoluteDisplayAmount": {
+              "type": "string"
+            },
+            "precisionAmount": {
+              "type": "integer"
+            },
+            "precision": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "centAmount",
+            "currency",
+            "displayAmount",
+            "absoluteDisplayAmount",
+            "precisionAmount",
+            "precision"
+          ]
+        },
+        "shippingMode": {
+          "type": "string"
+        },
+        "appliedDiscounts": {
+          "type": "array",
+          "items": {}
+        },
+        "appliedDiscountsV2": {
+          "type": "array",
+          "items": {}
+        },
+        "shippingAddress": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "streetLine": {
+              "type": "string"
+            },
+            "streetLine2": {
+              "type": "null"
+            },
+            "streetLineAddress": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "company": {
+              "type": "null"
+            },
+            "mobile": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "streetLine",
+            "streetLine2",
+            "streetLineAddress",
+            "postalCode",
+            "city",
+            "region",
+            "state",
+            "company",
+            "mobile"
+          ]
+        },
+        "billingAddress": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "streetLine": {
+              "type": "string"
+            },
+            "streetLine2": {
+              "type": "null"
+            },
+            "streetLineAddress": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "company": {
+              "type": "null"
+            },
+            "mobile": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "streetLine",
+            "streetLine2",
+            "streetLineAddress",
+            "postalCode",
+            "city",
+            "region",
+            "state",
+            "company",
+            "mobile"
+          ]
+        },
+        "distributorAddresses": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "streetLine": {
+                  "type": "string"
+                },
+                "streetLine2": {
+                  "type": "null"
+                },
+                "streetLineAddress": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "mobile": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "streetLine",
+                "streetLine2",
+                "streetLineAddress",
+                "postalCode",
+                "city",
+                "region",
+                "state",
+                "company",
+                "mobile"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "streetLine": {
+                  "type": "string"
+                },
+                "streetLine2": {
+                  "type": "null"
+                },
+                "streetLineAddress": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "mobile": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "id",
+                "streetLine",
+                "streetLine2",
+                "streetLineAddress",
+                "postalCode",
+                "city",
+                "region",
+                "state",
+                "company",
+                "mobile"
+              ]
+            }
+          ]
+        },
+        "totalQuantityDelivered": {
+          "type": "null"
+        },
+        "totalReadyForDispatch": {
+          "type": "null"
+        },
+        "totalQuantity": {
+          "type": "null"
+        },
+        "totalRemainingToBeDelivered": {
+          "type": "null"
+        },
+        "totalPaymentReceived": {
+          "type": "object",
+          "properties": {
+            "centAmount": {
+              "type": "integer"
+            },
+            "currency": {
+              "type": "null"
+            },
+            "displayAmount": {
+              "type": "null"
+            },
+            "absoluteDisplayAmount": {
+              "type": "null"
+            },
+            "precisionAmount": {
+              "type": "integer"
+            },
+            "precision": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "centAmount",
+            "currency",
+            "displayAmount",
+            "absoluteDisplayAmount",
+            "precisionAmount",
+            "precision"
+          ]
+        },
+        "totalAmountOutstanding": {
+          "type": "object",
+          "properties": {
+            "centAmount": {
+              "type": "integer"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "displayAmount": {
+              "type": "string"
+            },
+            "absoluteDisplayAmount": {
+              "type": "string"
+            },
+            "precisionAmount": {
+              "type": "integer"
+            },
+            "precision": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "centAmount",
+            "currency",
+            "displayAmount",
+            "absoluteDisplayAmount",
+            "precisionAmount",
+            "precision"
+          ]
+        },
+        "paymentSummaryList": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "identifier": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "plantName": {
+                      "type": "string"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "id",
+                    "plantName",
+                    "category",
+                    "key"
+                  ]
+                },
+                "totalLineItemPrice": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalDiscountedLineItemPrice": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalLineItemTax": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalOrderAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalPrice": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalReceivedAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "null"
+                    },
+                    "displayAmount": {
+                      "type": "null"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "null"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalDueAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "totalRequestedAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "netAdvancePayable": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "null"
+                    },
+                    "displayAmount": {
+                      "type": "null"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "null"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "paymentBeforeDelivery": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "discounts": {
+                  "type": "object",
+                  "properties": {
+                    "sellerDiscount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "platformDiscount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "sellerDiscount",
+                    "platformDiscount"
+                  ]
+                },
+                "adjustments": {
+                  "type": "object",
+                  "properties": {
+                    "advance": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "credit": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "tolerance": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "advance",
+                    "credit",
+                    "tolerance"
+                  ]
+                },
+                "charges": {
+                  "type": "object",
+                  "properties": {
+                    "delivery": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "other": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedDelivery": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "delivery",
+                    "other",
+                    "discountedDelivery"
+                  ]
+                },
+                "paymentAwaited": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "integer"
+                    },
+                    "amount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "paymentMethod": {
+                      "type": "null"
+                    },
+                    "paymentInterface": {
+                      "type": "null"
+                    },
+                    "transactions": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "paymentLink": {
+                      "type": "null"
+                    },
+                    "paymentInitiator": {
+                      "type": "string"
+                    },
+                    "invoiceDueDate": {
+                      "type": "null"
+                    },
+                    "paymentCreationDate": {
+                      "type": "string"
+                    },
+                    "invoiceNumber": {
+                      "type": "null"
+                    },
+                    "shipmentNumber": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "type",
+                    "version",
+                    "amount",
+                    "state",
+                    "paymentMethod",
+                    "paymentInterface",
+                    "transactions",
+                    "paymentLink",
+                    "paymentInitiator",
+                    "invoiceDueDate",
+                    "paymentCreationDate",
+                    "invoiceNumber",
+                    "shipmentNumber"
+                  ]
+                },
+                "lastSuccessfulPayment": {
+                  "type": "null"
+                },
+                "lastConfirmedPayment": {
+                  "type": "null"
+                },
+                "payments": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "amount": {
+                          "type": "object",
+                          "properties": {
+                            "centAmount": {
+                              "type": "integer"
+                            },
+                            "currency": {
+                              "type": "string"
+                            },
+                            "displayAmount": {
+                              "type": "string"
+                            },
+                            "absoluteDisplayAmount": {
+                              "type": "string"
+                            },
+                            "precisionAmount": {
+                              "type": "integer"
+                            },
+                            "precision": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "centAmount",
+                            "currency",
+                            "displayAmount",
+                            "absoluteDisplayAmount",
+                            "precisionAmount",
+                            "precision"
+                          ]
+                        },
+                        "state": {
+                          "type": "string"
+                        },
+                        "paymentMethod": {
+                          "type": "null"
+                        },
+                        "paymentInterface": {
+                          "type": "null"
+                        },
+                        "transactions": {
+                          "type": "array",
+                          "items": {}
+                        },
+                        "paymentLink": {
+                          "type": "string"
+                        },
+                        "paymentInitiator": {
+                          "type": "string"
+                        },
+                        "invoiceDueDate": {
+                          "type": "null"
+                        },
+                        "paymentCreationDate": {
+                          "type": "string"
+                        },
+                        "invoiceNumber": {
+                          "type": "null"
+                        },
+                        "shipmentNumber": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "type",
+                        "version",
+                        "amount",
+                        "state",
+                        "paymentMethod",
+                        "paymentInterface",
+                        "transactions",
+                        "paymentLink",
+                        "paymentInitiator",
+                        "invoiceDueDate",
+                        "paymentCreationDate",
+                        "invoiceNumber",
+                        "shipmentNumber"
+                      ]
+                    }
+                  ]
+                },
+                "associatedSkus": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "identifier",
+                "totalLineItemPrice",
+                "totalDiscountedLineItemPrice",
+                "totalLineItemTax",
+                "totalOrderAmount",
+                "totalPrice",
+                "totalReceivedAmount",
+                "totalDueAmount",
+                "totalRequestedAmount",
+                "netAdvancePayable",
+                "paymentBeforeDelivery",
+                "discounts",
+                "adjustments",
+                "charges",
+                "paymentAwaited",
+                "lastSuccessfulPayment",
+                "lastConfirmedPayment",
+                "payments",
+                "associatedSkus"
+              ]
+            }
+          ]
+        },
+        "lineItemList": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "lineItemIdentifier": {
+                  "type": "object",
+                  "properties": {
+                    "ctLineItemId": {
+                      "type": "string"
+                    },
+                    "sapLineItemId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ctLineItemId",
+                    "sapLineItemId"
+                  ]
+                },
+                "productSlug": {
+                  "type": "string"
+                },
+                "productForm": {
+                  "type": "string"
+                },
+                "productKey": {
+                  "type": "string"
+                },
+                "variantId": {
+                  "type": "integer"
+                },
+                "variantKey": {
+                  "type": "string"
+                },
+                "sku": {
+                  "type": "string"
+                },
+                "imageUrl": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "sellerName": {
+                  "type": "string"
+                },
+                "sellerKey": {
+                  "type": "string"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "Diameter": {
+                      "type": "string"
+                    },
+                    "Length": {
+                      "type": "string"
+                    },
+                    "Box size": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Diameter",
+                    "Length",
+                    "Box size"
+                  ]
+                },
+                "deliveryStatus": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string"
+                        },
+                        "stage": {
+                          "type": "string"
+                        },
+                        "quantity": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "stage",
+                        "quantity"
+                      ]
+                    }
+                  ]
+                },
+                "quantity": {
+                  "type": "object",
+                  "properties": {
+                    "primaryQuantity": {
+                      "type": "string"
+                    },
+                    "secondaryQuantity": {
+                      "type": "string"
+                    },
+                    "primaryUom": {
+                      "type": "object",
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "priceLabel": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "unit",
+                        "value",
+                        "label",
+                        "priceLabel"
+                      ]
+                    },
+                    "ctUom": {
+                      "type": "object",
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "integer"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "priceLabel": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "unit",
+                        "value",
+                        "label",
+                        "priceLabel"
+                      ]
+                    },
+                    "secondaryUom": {
+                      "type": "object",
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "priceLabel": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "unit",
+                        "value",
+                        "label",
+                        "priceLabel"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "primaryQuantity",
+                    "secondaryQuantity",
+                    "primaryUom",
+                    "ctUom",
+                    "secondaryUom"
+                  ]
+                },
+                "totalQuantityReadyForDispatch": {
+                  "type": "object",
+                  "properties": {
+                    "primaryQuantity": {
+                      "type": "null"
+                    },
+                    "secondaryQuantity": {
+                      "type": "null"
+                    },
+                    "primaryUom": {
+                      "type": "null"
+                    },
+                    "ctUom": {
+                      "type": "null"
+                    },
+                    "secondaryUom": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "primaryQuantity",
+                    "secondaryQuantity",
+                    "primaryUom",
+                    "ctUom",
+                    "secondaryUom"
+                  ]
+                },
+                "payableAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "null"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "null"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "ctAttributes": {
+                  "type": "object",
+                  "properties": {
+                    "DIAMETER_MM": {
+                      "type": "string"
+                    },
+                    "LENGTH_MM": {
+                      "type": "string"
+                    },
+                    "BOX_SIZE_KG": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "DIAMETER_MM",
+                    "LENGTH_MM",
+                    "BOX_SIZE_KG"
+                  ]
+                },
+                "availableQuantity": {
+                  "type": "object",
+                  "properties": {
+                    "primaryQuantity": {
+                      "type": "null"
+                    },
+                    "secondaryQuantity": {
+                      "type": "null"
+                    },
+                    "primaryUom": {
+                      "type": "object",
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "priceLabel": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "unit",
+                        "value",
+                        "label",
+                        "priceLabel"
+                      ]
+                    },
+                    "ctUom": {
+                      "type": "object",
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "integer"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "priceLabel": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "unit",
+                        "value",
+                        "label",
+                        "priceLabel"
+                      ]
+                    },
+                    "secondaryUom": {
+                      "type": "object",
+                      "properties": {
+                        "unit": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "priceLabel": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "unit",
+                        "value",
+                        "label",
+                        "priceLabel"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "primaryQuantity",
+                    "secondaryQuantity",
+                    "primaryUom",
+                    "ctUom",
+                    "secondaryUom"
+                  ]
+                },
+                "freightInclusivePrice": {
+                  "type": "boolean"
+                },
+                "brand": {
+                  "type": "string"
+                },
+                "channelName": {
+                  "type": "string"
+                },
+                "channelKey": {
+                  "type": "string"
+                },
+                "vendorMasterId": {
+                  "type": "string"
+                },
+                "channelAddress": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "streetLine": {
+                      "type": "string"
+                    },
+                    "streetLine2": {
+                      "type": "null"
+                    },
+                    "streetLineAddress": {
+                      "type": "null"
+                    },
+                    "postalCode": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "region": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "company": {
+                      "type": "null"
+                    },
+                    "mobile": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "streetLine",
+                    "streetLine2",
+                    "streetLineAddress",
+                    "postalCode",
+                    "city",
+                    "region",
+                    "state",
+                    "company",
+                    "mobile"
+                  ]
+                },
+                "productType": {
+                  "type": "string"
+                },
+                "grade": {
+                  "type": "string"
+                },
+                "subGrade": {
+                  "type": "string"
+                },
+                "lineItemTaxRatio": {
+                  "type": "number"
+                },
+                "lineItemAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "lineItemTaxedAmount": {
+                  "type": "object",
+                  "properties": {
+                    "centAmount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "displayAmount": {
+                      "type": "string"
+                    },
+                    "absoluteDisplayAmount": {
+                      "type": "string"
+                    },
+                    "precisionAmount": {
+                      "type": "integer"
+                    },
+                    "precision": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "centAmount",
+                    "currency",
+                    "displayAmount",
+                    "absoluteDisplayAmount",
+                    "precisionAmount",
+                    "precision"
+                  ]
+                },
+                "lineItemAmounts": {
+                  "type": "object",
+                  "properties": {
+                    "payableAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "amount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "taxedAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedTaxedAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "perUnitAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedPerUnitAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "previousPerUnitAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedTaxAmount": {
+                      "type": "null"
+                    },
+                    "lineItemTaxAmount": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "payableAmount",
+                    "amount",
+                    "taxedAmount",
+                    "discountedAmount",
+                    "discountedTaxedAmount",
+                    "perUnitAmount",
+                    "discountedPerUnitAmount",
+                    "previousPerUnitAmount",
+                    "discountedTaxAmount",
+                    "lineItemTaxAmount"
+                  ]
+                },
+                "lineItemAmountsV2": {
+                  "type": "object",
+                  "properties": {
+                    "payableAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "amount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "perUnitAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "perUnitAmountTax": {
+                      "type": "object",
+                      "properties": {
+                        "totalTaxRatio": {
+                          "type": "number"
+                        },
+                        "totalTaxAmount": {
+                          "type": "object",
+                          "properties": {
+                            "centAmount": {
+                              "type": "integer"
+                            },
+                            "currency": {
+                              "type": "string"
+                            },
+                            "displayAmount": {
+                              "type": "string"
+                            },
+                            "absoluteDisplayAmount": {
+                              "type": "string"
+                            },
+                            "precisionAmount": {
+                              "type": "integer"
+                            },
+                            "precision": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "centAmount",
+                            "currency",
+                            "displayAmount",
+                            "absoluteDisplayAmount",
+                            "precisionAmount",
+                            "precision"
+                          ]
+                        },
+                        "taxList": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "taxAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "centAmount": {
+                                      "type": "integer"
+                                    },
+                                    "currency": {
+                                      "type": "string"
+                                    },
+                                    "displayAmount": {
+                                      "type": "string"
+                                    },
+                                    "absoluteDisplayAmount": {
+                                      "type": "string"
+                                    },
+                                    "precisionAmount": {
+                                      "type": "integer"
+                                    },
+                                    "precision": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "centAmount",
+                                    "currency",
+                                    "displayAmount",
+                                    "absoluteDisplayAmount",
+                                    "precisionAmount",
+                                    "precision"
+                                  ]
+                                },
+                                "taxType": {
+                                  "type": "string"
+                                },
+                                "taxRatio": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "taxAmount",
+                                "taxType",
+                                "taxRatio"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "totalTaxRatio",
+                        "totalTaxAmount",
+                        "taxList"
+                      ]
+                    },
+                    "discountedPerUnitAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "discountedPerUnitAmountTax": {
+                      "type": "object",
+                      "properties": {
+                        "totalTaxRatio": {
+                          "type": "number"
+                        },
+                        "totalTaxAmount": {
+                          "type": "object",
+                          "properties": {
+                            "centAmount": {
+                              "type": "integer"
+                            },
+                            "currency": {
+                              "type": "string"
+                            },
+                            "displayAmount": {
+                              "type": "string"
+                            },
+                            "absoluteDisplayAmount": {
+                              "type": "string"
+                            },
+                            "precisionAmount": {
+                              "type": "integer"
+                            },
+                            "precision": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "centAmount",
+                            "currency",
+                            "displayAmount",
+                            "absoluteDisplayAmount",
+                            "precisionAmount",
+                            "precision"
+                          ]
+                        },
+                        "taxList": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "taxAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "centAmount": {
+                                      "type": "integer"
+                                    },
+                                    "currency": {
+                                      "type": "string"
+                                    },
+                                    "displayAmount": {
+                                      "type": "string"
+                                    },
+                                    "absoluteDisplayAmount": {
+                                      "type": "string"
+                                    },
+                                    "precisionAmount": {
+                                      "type": "integer"
+                                    },
+                                    "precision": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "centAmount",
+                                    "currency",
+                                    "displayAmount",
+                                    "absoluteDisplayAmount",
+                                    "precisionAmount",
+                                    "precision"
+                                  ]
+                                },
+                                "taxType": {
+                                  "type": "string"
+                                },
+                                "taxRatio": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "taxAmount",
+                                "taxType",
+                                "taxRatio"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "totalTaxRatio",
+                        "totalTaxAmount",
+                        "taxList"
+                      ]
+                    },
+                    "previousPerUnitAmount": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "displayAmount": {
+                          "type": "string"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "string"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "taxOnDiscountAmount": {
+                      "type": "object",
+                      "properties": {
+                        "totalTaxRatio": {
+                          "type": "number"
+                        },
+                        "totalTaxAmount": {
+                          "type": "object",
+                          "properties": {
+                            "centAmount": {
+                              "type": "integer"
+                            },
+                            "currency": {
+                              "type": "string"
+                            },
+                            "displayAmount": {
+                              "type": "string"
+                            },
+                            "absoluteDisplayAmount": {
+                              "type": "string"
+                            },
+                            "precisionAmount": {
+                              "type": "integer"
+                            },
+                            "precision": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "centAmount",
+                            "currency",
+                            "displayAmount",
+                            "absoluteDisplayAmount",
+                            "precisionAmount",
+                            "precision"
+                          ]
+                        },
+                        "taxList": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "taxAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "centAmount": {
+                                      "type": "integer"
+                                    },
+                                    "currency": {
+                                      "type": "string"
+                                    },
+                                    "displayAmount": {
+                                      "type": "string"
+                                    },
+                                    "absoluteDisplayAmount": {
+                                      "type": "string"
+                                    },
+                                    "precisionAmount": {
+                                      "type": "integer"
+                                    },
+                                    "precision": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "centAmount",
+                                    "currency",
+                                    "displayAmount",
+                                    "absoluteDisplayAmount",
+                                    "precisionAmount",
+                                    "precision"
+                                  ]
+                                },
+                                "taxType": {
+                                  "type": "string"
+                                },
+                                "taxRatio": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "taxAmount",
+                                "taxType",
+                                "taxRatio"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "totalTaxRatio",
+                        "totalTaxAmount",
+                        "taxList"
+                      ]
+                    },
+                    "taxOnlineItemAmount": {
+                      "type": "object",
+                      "properties": {
+                        "totalTaxRatio": {
+                          "type": "number"
+                        },
+                        "totalTaxAmount": {
+                          "type": "object",
+                          "properties": {
+                            "centAmount": {
+                              "type": "integer"
+                            },
+                            "currency": {
+                              "type": "string"
+                            },
+                            "displayAmount": {
+                              "type": "string"
+                            },
+                            "absoluteDisplayAmount": {
+                              "type": "string"
+                            },
+                            "precisionAmount": {
+                              "type": "integer"
+                            },
+                            "precision": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "centAmount",
+                            "currency",
+                            "displayAmount",
+                            "absoluteDisplayAmount",
+                            "precisionAmount",
+                            "precision"
+                          ]
+                        },
+                        "taxList": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "taxAmount": {
+                                  "type": "object",
+                                  "properties": {
+                                    "centAmount": {
+                                      "type": "integer"
+                                    },
+                                    "currency": {
+                                      "type": "string"
+                                    },
+                                    "displayAmount": {
+                                      "type": "string"
+                                    },
+                                    "absoluteDisplayAmount": {
+                                      "type": "string"
+                                    },
+                                    "precisionAmount": {
+                                      "type": "integer"
+                                    },
+                                    "precision": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "centAmount",
+                                    "currency",
+                                    "displayAmount",
+                                    "absoluteDisplayAmount",
+                                    "precisionAmount",
+                                    "precision"
+                                  ]
+                                },
+                                "taxType": {
+                                  "type": "string"
+                                },
+                                "taxRatio": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "taxAmount",
+                                "taxType",
+                                "taxRatio"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "totalTaxRatio",
+                        "totalTaxAmount",
+                        "taxList"
+                      ]
+                    },
+                    "partingCharge": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    },
+                    "bendingCharge": {
+                      "type": "object",
+                      "properties": {
+                        "centAmount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "null"
+                        },
+                        "displayAmount": {
+                          "type": "null"
+                        },
+                        "absoluteDisplayAmount": {
+                          "type": "null"
+                        },
+                        "precisionAmount": {
+                          "type": "integer"
+                        },
+                        "precision": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "centAmount",
+                        "currency",
+                        "displayAmount",
+                        "absoluteDisplayAmount",
+                        "precisionAmount",
+                        "precision"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "payableAmount",
+                    "amount",
+                    "discountedAmount",
+                    "perUnitAmount",
+                    "perUnitAmountTax",
+                    "discountedPerUnitAmount",
+                    "discountedPerUnitAmountTax",
+                    "previousPerUnitAmount",
+                    "taxOnDiscountAmount",
+                    "taxOnlineItemAmount",
+                    "partingCharge",
+                    "bendingCharge"
+                  ]
+                },
+                "addedAt": {
+                  "type": "string"
+                },
+                "lastModifiedAt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "lineItemIdentifier",
+                "productSlug",
+                "productForm",
+                "productKey",
+                "variantId",
+                "variantKey",
+                "sku",
+                "imageUrl",
+                "name",
+                "sellerName",
+                "sellerKey",
+                "attributes",
+                "deliveryStatus",
+                "quantity",
+                "totalQuantityReadyForDispatch",
+                "payableAmount",
+                "ctAttributes",
+                "availableQuantity",
+                "freightInclusivePrice",
+                "brand",
+                "channelName",
+                "channelKey",
+                "vendorMasterId",
+                "channelAddress",
+                "productType",
+                "grade",
+                "subGrade",
+                "lineItemTaxRatio",
+                "lineItemAmount",
+                "lineItemTaxedAmount",
+                "lineItemAmounts",
+                "lineItemAmountsV2",
+                "addedAt",
+                "lastModifiedAt"
+              ]
+            }
+          ]
+        },
+        "summaryLink": {
+          "type": "string"
+        },
+        "shipments": {
+          "type": "array",
+          "items": {}
+        },
+        "sapInfo": {
+          "type": "object",
+          "properties": {
+            "contractNumber": {
+              "type": "null"
+            },
+            "contractCreationDate": {
+              "type": "null"
+            },
+            "sapMetadata": {
+              "type": "null"
+            },
+            "orderCreationDate": {
+              "type": "string"
+            },
+            "validStartDate": {
+              "type": "null"
+            },
+            "validEndDate": {
+              "type": "null"
+            },
+            "soldPartyCode": {
+              "type": "null"
+            },
+            "distributionChannel": {
+              "type": "null"
+            },
+            "sapApprovalStatus": {
+              "type": "null"
+            },
+            "sapOrderNumber": {
+              "type": "null"
+            },
+            "sapOrderApprovedBy": {
+              "type": "null"
+            },
+            "sapOrderCreationDate": {
+              "type": "null"
+            },
+            "sapStatusRemarks": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "contractNumber",
+            "contractCreationDate",
+            "sapMetadata",
+            "orderCreationDate",
+            "validStartDate",
+            "validEndDate",
+            "soldPartyCode",
+            "distributionChannel",
+            "sapApprovalStatus",
+            "sapOrderNumber",
+            "sapOrderApprovedBy",
+            "sapOrderCreationDate",
+            "sapStatusRemarks"
+          ]
+        },
+        "summaryComments": {
+          "type": "object",
+          "properties": {
+            "errors": {
+              "type": "null"
+            },
+            "warnings": {
+              "type": "null"
+            },
+            "messages": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "errors",
+            "warnings",
+            "messages"
+          ]
+        },
+        "customOrderStatus": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "null"
+            },
+            "label": {
+              "type": "null"
+            },
+            "reasonForCancellation": {
+              "type": "null"
+            },
+            "reasonForDecline": {
+              "type": "null"
+            },
+            "lastModifiedBy": {
+              "type": "null"
+            },
+            "lastModifiedDate": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "key",
+            "label",
+            "reasonForCancellation",
+            "reasonForDecline",
+            "lastModifiedBy",
+            "lastModifiedDate"
+          ]
+        },
+        "customPaymentStatus": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "null"
+            },
+            "label": {
+              "type": "null"
+            },
+            "ctKey": {
+              "type": "null"
+            },
+            "lastModifiedBy": {
+              "type": "null"
+            },
+            "lastModifiedDate": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "key",
+            "label",
+            "ctKey",
+            "lastModifiedBy",
+            "lastModifiedDate"
+          ]
+        },
+        "salesForceOpportunityId": {
+          "type": "null"
+        },
+        "purchaseOrderDocumentDetails": {
+          "type": "null"
+        },
+        "slcPurchaseOrderDocumentDetails": {
+          "type": "null"
+        },
+        "orderSummaryPdfDetails": {
+          "type": "null"
+        },
+        "estimatedDeliveryTimeline": {
+          "type": "null"
+        },
+        "creditDetails": {
+          "type": "null"
+        },
+        "orderPaymentType": {
+          "type": "null"
+        },
+        "isCashbackChanged": {
+          "type": "null"
+        },
+        "advancePercentage": {
+          "type": "number"
+        },
+        "otherDataMap": {
+          "type": "object",
+          "properties": {
+            "delivery_attribute": {
+              "type": "string"
+            },
+            "totalCashback": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "delivery_attribute",
+            "totalCashback"
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "orderNumber",
+        "orderDate",
+        "orderPaymentStatus",
+        "customerData",
+        "orderStatus",
+        "totalOrderAmount",
+        "shippingMode",
+        "appliedDiscounts",
+        "appliedDiscountsV2",
+        "shippingAddress",
+        "billingAddress",
+        "distributorAddresses",
+        "totalQuantityDelivered",
+        "totalReadyForDispatch",
+        "totalQuantity",
+        "totalRemainingToBeDelivered",
+        "totalPaymentReceived",
+        "totalAmountOutstanding",
+        "paymentSummaryList",
+        "lineItemList",
+        "summaryLink",
+        "shipments",
+        "sapInfo",
+        "summaryComments",
+        "customOrderStatus",
+        "customPaymentStatus",
+        "salesForceOpportunityId",
+        "purchaseOrderDocumentDetails",
+        "slcPurchaseOrderDocumentDetails",
+        "orderSummaryPdfDetails",
+        "estimatedDeliveryTimeline",
+        "creditDetails",
+        "orderPaymentType",
+        "isCashbackChanged",
+        "advancePercentage",
+        "otherDataMap"
+      ]
+    },
+    "enquiryCartSummary": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "orderCartSummary",
+    "enquiryCartSummary"
+  ]
+}

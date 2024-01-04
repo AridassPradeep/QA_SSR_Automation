@@ -7,6 +7,7 @@ Feature: Validating MyProfile API
     Then validate that the "profileAPI"  call response is success with status code "200"
     And validate the "profileAPI" response time is less than "4000" ms
     And validate the "profileAPI" payload structure has "firstName"
+    And validate the MyProfile API contract
 
   @updateProfile
   Scenario: Validate UpdateProfileAPI

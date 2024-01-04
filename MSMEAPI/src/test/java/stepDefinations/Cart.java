@@ -3,17 +3,22 @@ package stepDefinations;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.io.IOException;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
+
 import resources.APIResources;
 import resources.ProjectVariables;
 import resources.Utils;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+
+
 
 public class Cart extends Utils {
 
@@ -43,6 +48,7 @@ public class Cart extends Utils {
 	public void validate_that_the_something_call_response_is_success_with_status_code_something(String strArg1,
 			String responseCode) throws Throwable {
 		assertEquals(ProjectVariables.response.getStatusCode(), Integer.parseInt(responseCode));
+		
 	}
 
 	@And("^validate the \"([^\"]*)\" response time is less than \"([^\"]*)\" ms$")
@@ -56,8 +62,10 @@ public class Cart extends Utils {
 	@And("^validate the \"([^\"]*)\" payload structure has \"([^\"]*)\"$")
 	public void validate_the_something_payload_structure_has_something(String strArg1, String validationKeyword)
 			throws Throwable {
+
+		System.out.println(ProjectVariables.response.asPrettyString());
 		assertThat(ProjectVariables.response.asPrettyString(), containsString(validationKeyword));
-	}
+		}
 
 	@Then("wait for sometime")
 	public void wait_for_sometime() throws InterruptedException {
@@ -86,5 +94,17 @@ public class Cart extends Utils {
 		}
 		System.out.println(ProjectVariables.response.asPrettyString());
 	}
+	
+	@Then("validate {string} schema")
+	public void validate_schema(String FileName) {
+		File schemaFile = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\schemas\\"+FileName+".json");
+		 ProjectVariables.response.then().assertThat().body(matchesJsonSchema(schemaFile));
+			
+	}
 
-}
+
+	
+	}
+
+
+

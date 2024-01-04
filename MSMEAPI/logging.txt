@@ -1,17 +1,2114 @@
 Request method:	POST
-Request URI:	https://qa.msme.jswone.in/data-sync/import/sales-opp
+Request URI:	https://qa.msme.jswone.in/auth/login/
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMDQvMTAgMTI6MDc6MDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTU4MDcwMzUtZDhjOS00ZWRmLTk3M2EtZDRlYzZlMDlkYWU4IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNjgzNzIwNDI1LCJ1c2VySWQiOiIzZjBiMTg2Ny1hNGU1LTQyNmEtYjQ4ZC0wZTdjYWJjMWE0YjkiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyMy8wNS8xMCAxMjowNzowNSIsImlhdCI6MTY4MTEwODYyNX0.iiMqVazQcBOwyqwWJS6O1tzbbWFUlGoLc9Et2yaZqsJUgGczIsCcNkTH4NvD69zGGkLvbAysH0ik2JAHwRuajA
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMTIvMTkgMTU6MjQ6MTMiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMGFkY2MxMzktYjM4ZC00ZTQ2LWE4YjktZTRkZDI2ZGJjOTA2IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA1NTkxNDUzLCJ1c2VySWQiOiJkODI2Zjk5ZC0xNTYwLTQ4MjgtOTU4Ny1hZmJmZWEwZTViZDYiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMS8xOCAxNToyNDoxMyIsImlhdCI6MTcwMjk3OTY1M30.m2aX4gr4Yuh_fIP9vFZKSGMwKfQLWfPsbsMfDVCVJrzGT25nRSyA0MO_w1qNXkJUfbGofn--e4y-GcAQqXk6Ug
 				Accept=*/*
 				Content-Type=application/json
 Cookies:		<none>
 Multiparts:		<none>
 Body:
-src\test\resources\payloads\slo.json
+src\test\resources\payloads\directOrder.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+content-type: application/json
+date: Thu, 04 Jan 2024 06:50:45 GMT
+server: Google Frontend
+via: 1.1 google, 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "jwtToken": "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjQvMDEvMDQgMTI6MjA6NDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMTc0MzQxMjUtNWViNS00NjJlLTkyMmEtZmRkOTU1N2RmZTFkIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA2OTYyODQ1LCJ1c2VySWQiOiI0YTUyMjNiZi0wYmFkLTQ5OTgtYjI0Zi05MWI0MmYzNGMxZTciLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMi8wMyAxMjoyMDo0NSIsImlhdCI6MTcwNDM1MTA0NX0.nTnE-txkMpP2-LTyckR9felSBt6bMJafHCgHu46wkszWIrmbqO0S5RfI1oI-LM9V269DrerhSyFjU6am_SAokg"
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/auth/login/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMTIvMTkgMTU6MjQ6MTMiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMGFkY2MxMzktYjM4ZC00ZTQ2LWE4YjktZTRkZDI2ZGJjOTA2IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA1NTkxNDUzLCJ1c2VySWQiOiJkODI2Zjk5ZC0xNTYwLTQ4MjgtOTU4Ny1hZmJmZWEwZTViZDYiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMS8xOCAxNToyNDoxMyIsImlhdCI6MTcwMjk3OTY1M30.m2aX4gr4Yuh_fIP9vFZKSGMwKfQLWfPsbsMfDVCVJrzGT25nRSyA0MO_w1qNXkJUfbGofn--e4y-GcAQqXk6Ug
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\directOrder.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+content-type: application/json
+date: Thu, 04 Jan 2024 06:50:45 GMT
+server: Google Frontend
+via: 1.1 google, 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "jwtToken": "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjQvMDEvMDQgMTI6MjA6NDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiOWZhMjZmZjUtYjY3OC00NWEyLWE0YTUtODdjY2RiYmI1YmVkIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA2OTYyODQ1LCJ1c2VySWQiOiI0YTUyMjNiZi0wYmFkLTQ5OTgtYjI0Zi05MWI0MmYzNGMxZTciLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMi8wMyAxMjoyMDo0NSIsImlhdCI6MTcwNDM1MTA0NX0.BIUewtjyJAfRuiwjvU3FbpAlp2PXjgMbmPix4z93wh1u3g-EstdMlpcPg_CYAcIT9XgYoNOWdUmps1_Q7D7uZw"
+}
+Request method:	GET
+Request URI:	https://qa.msme.jswone.in/order-service/requirement/my-requirements
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjQvMDEvMDQgMTI6MjA6NDUiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiOWZhMjZmZjUtYjY3OC00NWEyLWE0YTUtODdjY2RiYmI1YmVkIiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA2OTYyODQ1LCJ1c2VySWQiOiI0YTUyMjNiZi0wYmFkLTQ5OTgtYjI0Zi05MWI0MmYzNGMxZTciLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMi8wMyAxMjoyMDo0NSIsImlhdCI6MTcwNDM1MTA0NX0.BIUewtjyJAfRuiwjvU3FbpAlp2PXjgMbmPix4z93wh1u3g-EstdMlpcPg_CYAcIT9XgYoNOWdUmps1_Q7D7uZw
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+set-cookie: JSESSIONID=B4406D2F633949558D6BAF195450F0FC; Path=/order-service; HttpOnly
+content-type: application/json
+date: Thu, 04 Jan 2024 06:50:47 GMT
+server: Google Frontend
+via: 1.1 google, 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "customerId": "4a5223bf-0bad-4998-b24f-91b42f34c1e7",
+    "requirementCart": [
+        {
+            "requirementId": "JOI-D7AH965C",
+            "requirementSubmissionDate": "2023-12-26 19:17:05",
+            "totalQuantity": 33.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-JZ1R3LGD",
+            "requirementSubmissionDate": "2023-12-26 12:32:52",
+            "totalQuantity": 100.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E350A",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 100.0,
+                    "attributeMap": {
+                        "Thickness": "8 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "8 x 1250",
+                    "ctProdutId": "2062_2011-E350A-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-RNI0301R",
+            "requirementSubmissionDate": "2023-12-26 12:31:30",
+            "totalQuantity": 45.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E350A",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 45.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 1500",
+                    "ctProdutId": "2062_2011-E350A-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-G6HJY3OV",
+            "requirementSubmissionDate": "2023-12-26 12:19:29",
+            "totalQuantity": 43.0,
+            "skus": [
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-PGMYLD1L",
+            "requirementSubmissionDate": "2023-12-20 12:08:21",
+            "totalQuantity": 667.0,
+            "skus": [
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 667.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-954Y78JD",
+            "requirementSubmissionDate": "2023-12-20 09:46:16",
+            "totalQuantity": 69.9,
+            "skus": [
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Sheet 2062:2011 E350BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.9,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "2.5 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E350BR-02",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-KVK1RA7W",
+            "requirementSubmissionDate": "2023-12-14 09:49:20",
+            "totalQuantity": 348.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 32.0,
+                    "attributeMap": {
+                        "Thickness": "0.4 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.4 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "0.45 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.45 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 30.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 31.0,
+                    "attributeMap": {
+                        "Thickness": "0.35 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.35 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 34.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "0.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.6 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-6KOXIB6Q",
+            "requirementSubmissionDate": "2023-12-13 18:05:34",
+            "totalQuantity": 96.0,
+            "skus": [
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 70.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-25N5Q1E0",
+            "requirementSubmissionDate": "2023-12-11 13:30:43",
+            "totalQuantity": 52.0,
+            "skus": [
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 25.0,
+                    "attributeMap": {
+                        "Thickness": "0.35 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.35 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-EISL00AV",
+            "requirementSubmissionDate": "2023-12-04 16:57:06",
+            "totalQuantity": 28.986,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JODL Maharashtra",
+                    "quantity": 28.986,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-X8BCEQIP",
+            "requirementSubmissionDate": "2023-11-21 17:59:55",
+            "totalQuantity": 132.0,
+            "skus": [
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 44.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 45.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-GRP7LFRW",
+            "requirementSubmissionDate": "2023-11-21 17:23:49",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-M09TZVLD",
+            "requirementSubmissionDate": "2023-11-20 17:31:53",
+            "totalQuantity": 145.0,
+            "skus": [
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "0.4 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.4 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "0.45 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.45 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-KL20U16W",
+            "requirementSubmissionDate": "2023-11-16 18:52:51",
+            "totalQuantity": 368.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 333.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-1R9RDU8W",
+            "requirementSubmissionDate": "2023-11-09 10:57:01",
+            "totalQuantity": 1013.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 37.0,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "5 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 38.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 37.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "0.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.6 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 36.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 39.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 31.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 77.0,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "4 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "0.9 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.9 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 66.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 38.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 34.0,
+                    "attributeMap": {
+                        "Thickness": "0.8 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.8 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 30.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.0,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "4 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 65.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "4 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 47.0,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 56.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-VL3JCO5K",
+            "requirementSubmissionDate": "2023-11-09 10:52:02",
+            "totalQuantity": 1013.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 37.0,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "5 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 37.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "0.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.6 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 36.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 39.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 31.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 77.0,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "4 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "0.9 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.9 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 66.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 38.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 34.0,
+                    "attributeMap": {
+                        "Thickness": "0.8 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.8 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 30.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.0,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "4 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 65.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "4 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "4 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 47.0,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 56.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 38.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-DR9QVUJ6",
+            "requirementSubmissionDate": "2023-11-08 18:19:48",
+            "totalQuantity": 25.0,
+            "skus": [
+                {
+                    "productName": "JSW Steel Hot Rolled Coils IS 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 25.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel Hot Rolled Coils IS 2062:2011 E250BR\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/7fY5BhlngTvs5rOCHSEd2a/4689247652b9689c0cfe59ece23e98d5/shutterstock_508620727.jpg\",\"attributes\":{\"Thickness (mm)\":\"1.6 mm\",\"Width (mm)\":\"900 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"1.6 mm\",\"WIDTH_MM\":\"900 mm\"}}"
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-PUOY0VC5",
+            "requirementSubmissionDate": "2023-11-08 13:01:44",
+            "totalQuantity": 117.0,
+            "skus": [
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 83.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": "{\"productTitle\":\"JSW Neosteel Fe550D TMT Rebar\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/39r1HTWv37a7UYg52gU74i/81afa54fa1e9ae748e51f11146f9e149/jsw-tmt-500x500.jpeg\",\"attributes\":{\"Diameter\":\"10 mm\"},\"ctAttributes\":{\"DIAMETER_MM\":\"10 mm\"}}"
+                },
+                {
+                    "productName": "JSW Steel Hot Rolled Coils IS 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 34.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel Hot Rolled Coils IS 2062:2011 E250BR\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/7fY5BhlngTvs5rOCHSEd2a/4689247652b9689c0cfe59ece23e98d5/shutterstock_508620727.jpg\",\"attributes\":{\"Thickness (mm)\":\"1.6 mm\",\"Width (mm)\":\"900 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"1.6 mm\",\"WIDTH_MM\":\"900 mm\"}}"
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-ANOV274J",
+            "requirementSubmissionDate": "2023-11-07 18:38:09",
+            "totalQuantity": 206.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 25.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 56.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "0.45 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.45 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-WNBG9CMF",
+            "requirementSubmissionDate": "2023-11-07 18:05:10",
+            "totalQuantity": 41.0,
+            "skus": [
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 41.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-VNH4GDPV",
+            "requirementSubmissionDate": "2023-11-07 18:03:03",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-L4A4D0WA",
+            "requirementSubmissionDate": "2023-11-07 16:51:26",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-I2SOJ1R4",
+            "requirementSubmissionDate": "2023-11-07 15:55:27",
+            "totalQuantity": 563.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 25.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 43.0,
+                    "attributeMap": {
+                        "Thickness": "0.45 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.45 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 41.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 37.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 37.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 58.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 35.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 31.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 34.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 36.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 32.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-COZ0LQ4N",
+            "requirementSubmissionDate": "2023-11-07 15:47:54",
+            "totalQuantity": 33.0,
+            "skus": [
+                {
+                    "productName": "MS CR Coil 513:2016 CR1",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "0.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "0.5 x 1250",
+                    "ctProdutId": "513_PART1_2016-CR1-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-IZL68H43",
+            "requirementSubmissionDate": "2023-11-07 15:45:03",
+            "totalQuantity": 228.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 30.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 31.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 32.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 25.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-FFK7YWL8",
+            "requirementSubmissionDate": "2023-11-07 15:39:47",
+            "totalQuantity": 135.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 28.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1500 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1500",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 25.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 26.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 29.0,
+                    "attributeMap": {
+                        "Thickness": "2 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-K01WUDG7",
+            "requirementSubmissionDate": "2023-11-07 12:52:01",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-5W544UGY",
+            "requirementSubmissionDate": "2023-11-07 12:51:42",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-U4IIVXMP",
+            "requirementSubmissionDate": "2023-11-07 12:48:43",
+            "totalQuantity": 44.0,
+            "skus": [
+                {
+                    "productName": "JSW Neosteel Fe550D TMT Rebar - 10",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 44.0,
+                    "attributeMap": {
+                        
+                    },
+                    "attributesToDisplay": null,
+                    "attributes": null,
+                    "ctProdutId": "JSW-NEOSTEEL-FE550D-TMT-10",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-OQQ00AX3",
+            "requirementSubmissionDate": "2023-11-07 12:47:24",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-OJQBVDM1",
+            "requirementSubmissionDate": "2023-11-07 12:45:01",
+            "totalQuantity": 99.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                },
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "3 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "3 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-KTC58H3M",
+            "requirementSubmissionDate": "2023-11-07 12:42:03",
+            "totalQuantity": 33.0,
+            "skus": [
+                {
+                    "productName": "MS HR Coil 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "1.6 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-RPSLAO76",
+            "requirementSubmissionDate": "2023-11-07 12:39:02",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-VT6DCQ1P",
+            "requirementSubmissionDate": "2023-11-07 12:27:56",
+            "totalQuantity": 33.0,
+            "skus": [
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-3SFSUDDX",
+            "requirementSubmissionDate": "2023-11-07 12:24:30",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-OK4KS8YD",
+            "requirementSubmissionDate": "2023-11-07 12:20:54",
+            "totalQuantity": 33.0,
+            "skus": [
+                {
+                    "productName": "MS HR Sheet 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 33.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": null
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-WUPSZ0HN",
+            "requirementSubmissionDate": "2023-11-07 12:17:53",
+            "totalQuantity": 0.0,
+            "skus": [
+                
+            ]
+        },
+        {
+            "requirementId": "JOI-4D4S2HIR",
+            "requirementSubmissionDate": "2023-11-01 09:57:14",
+            "totalQuantity": 27.0,
+            "skus": [
+                {
+                    "productName": "JSW Steel Hot Rolled Sheets IS 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 27.0,
+                    "attributeMap": {
+                        "Thickness": "1.6 mm",
+                        "Length": "2500 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm) x LN (mm)",
+                    "attributes": "1.6 x 1250 x 2500",
+                    "ctProdutId": "2062_2011-E250BR-02",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel Hot Rolled Sheets IS 2062:2011 E250BR\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/uybdfpXojK0HzeFIhZb3T/0180291f86e3b9ef80c0a7ef10be96f7/shutterstock_391558495.jpg\",\"attributes\":{\"Thickness\":\"1.6 mm\",\"Width (mm)\":\"1250 mm\",\"Length\":\"2500 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"1.6 mm\",\"WIDTH_MM\":\"1250 mm\",\"LENGTH_MM\":\"2500 mm\"}}"
+                }
+            ]
+        },
+        {
+            "requirementId": "JOI-WZDNBSA9",
+            "requirementSubmissionDate": "2023-10-06 18:56:51",
+            "totalQuantity": 44.0,
+            "skus": [
+                {
+                    "productName": "JSW Steel Hot Rolled Coils IS 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 40.0,
+                    "attributeMap": {
+                        "Thickness": "2.5 mm",
+                        "Width": "1250 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.5 x 1250",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel Hot Rolled Coils IS 2062:2011 E250BR\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/7fY5BhlngTvs5rOCHSEd2a/4689247652b9689c0cfe59ece23e98d5/shutterstock_508620727.jpg\",\"attributes\":{\"Thickness (mm)\":\"2.5 mm\",\"Width (mm)\":\"1250 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"2.5 mm\",\"WIDTH_MM\":\"1250 mm\"}}"
+                },
+                {
+                    "productName": "JSW Steel Hot Rolled Coils IS 2062:2011 E250BR",
+                    "plant": "JSW Steel Vijayanagar",
+                    "quantity": 4.0,
+                    "attributeMap": {
+                        "Thickness": "2.9 mm",
+                        "Width": "900 mm"
+                    },
+                    "attributesToDisplay": "TH (mm) x WD (mm)",
+                    "attributes": "2.9 x 900",
+                    "ctProdutId": "2062_2011-E250BR-01",
+                    "productMetadata": "{\"productTitle\":\"JSW Steel Hot Rolled Coils IS 2062:2011 E250BR\",\"brand\":\"JSW Steel\",\"imageUrl\":\"//images.ctfassets.net/o0otttl8ele8/7fY5BhlngTvs5rOCHSEd2a/4689247652b9689c0cfe59ece23e98d5/shutterstock_508620727.jpg\",\"attributes\":{\"Thickness (mm)\":\"2.9 mm\",\"Width (mm)\":\"900 mm\"},\"ctAttributes\":{\"THICKNESS_MM\":\"2.9 mm\",\"WIDTH_MM\":\"900 mm\"}}"
+                }
+            ]
+        }
+    ]
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/product/plantSelector
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMTIvMTkgMTU6MjQ6MTMiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMGFkY2MxMzktYjM4ZC00ZTQ2LWE4YjktZTRkZDI2ZGJjOTA2IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA1NTkxNDUzLCJ1c2VySWQiOiJkODI2Zjk5ZC0xNTYwLTQ4MjgtOTU4Ny1hZmJmZWEwZTViZDYiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMS8xOCAxNToyNDoxMyIsImlhdCI6MTcwMjk3OTY1M30.m2aX4gr4Yuh_fIP9vFZKSGMwKfQLWfPsbsMfDVCVJrzGT25nRSyA0MO_w1qNXkJUfbGofn--e4y-GcAQqXk6Ug
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\PlantSelector.json
 HTTP/1.1 200 OK
 vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
 x-content-type-options: nosniff
@@ -21,22 +2118,126 @@ pragma: no-cache
 expires: 0
 x-frame-options: DENY
 content-type: application/json
-date: Fri, 05 May 2023 03:36:22 GMT
+date: Thu, 04 Jan 2024 06:50:48 GMT
 server: Google Frontend
-via: 1.1 google
+via: 1.1 google, 1.1 google
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
 Transfer-Encoding: chunked
 
 {
-    "customerId": "a5fabf2c-9bb0-4e61-a8d6-0d9b18c02ffb",
-    "cartId": null,
-    "cartVersion": null,
-    "price": "80,000.00",
-    "taxes": "14,400.00",
-    "deliveryCharge": null,
-    "otherCharges": null,
-    "subTotal": "94,400.00",
-    "amountDue": "94,400.00",
-    "orderId": "57b1506b-59ab-493e-b340-b8e424b60890",
-    "orderNumber": "JOO-09E6KZNE"
+    "success": true,
+    "channelName": "JSW Steel Vijaynagar Works",
+    "channelId": "9ed792af-18c6-43f9-a16e-818321f1459d",
+    "channelKey": "JSVW",
+    "distance": 1292,
+    "errorMessage": null,
+    "displayErrorMessage": null,
+    "moq": 25.0,
+    "moqUnit": "MT",
+    "primaryUomQuantity": 42.525,
+    "primaryUomLabel": "MT"
 }
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/cart/addtocart
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMTIvMTkgMTU6MjQ6MTMiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMGFkY2MxMzktYjM4ZC00ZTQ2LWE4YjktZTRkZDI2ZGJjOTA2IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA1NTkxNDUzLCJ1c2VySWQiOiJkODI2Zjk5ZC0xNTYwLTQ4MjgtOTU4Ny1hZmJmZWEwZTViZDYiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMS8xOCAxNToyNDoxMyIsImlhdCI6MTcwMjk3OTY1M30.m2aX4gr4Yuh_fIP9vFZKSGMwKfQLWfPsbsMfDVCVJrzGT25nRSyA0MO_w1qNXkJUfbGofn--e4y-GcAQqXk6Ug
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\AddToRequirementCart.json
+HTTP/1.1 500 Internal Server Error
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: text/plain;charset=ISO-8859-1
+x-cloud-trace-context: e7626bee408b51f44b3fa2a094a2ebaa;o=1
+date: Thu, 04 Jan 2024 06:50:49 GMT
+server: Google Frontend
+Content-Length: 97
+via: 1.1 google, 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+interface com.commercetools.api.models.cart.CartChangeLineItemQuantityAction: quantity is missing
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/product/plantSelector
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMTIvMTkgMTU6MjQ6MTMiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMGFkY2MxMzktYjM4ZC00ZTQ2LWE4YjktZTRkZDI2ZGJjOTA2IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA1NTkxNDUzLCJ1c2VySWQiOiJkODI2Zjk5ZC0xNTYwLTQ4MjgtOTU4Ny1hZmJmZWEwZTViZDYiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMS8xOCAxNToyNDoxMyIsImlhdCI6MTcwMjk3OTY1M30.m2aX4gr4Yuh_fIP9vFZKSGMwKfQLWfPsbsMfDVCVJrzGT25nRSyA0MO_w1qNXkJUfbGofn--e4y-GcAQqXk6Ug
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\PlantSelector.json
+HTTP/1.1 200 OK
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: application/json
+date: Thu, 04 Jan 2024 06:50:49 GMT
+server: Google Frontend
+via: 1.1 google, 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Transfer-Encoding: chunked
+
+{
+    "success": true,
+    "channelName": "JSW Steel Vijaynagar Works",
+    "channelId": "9ed792af-18c6-43f9-a16e-818321f1459d",
+    "channelKey": "JSVW",
+    "distance": 1292,
+    "errorMessage": null,
+    "displayErrorMessage": null,
+    "moq": 25.0,
+    "moqUnit": "MT",
+    "primaryUomQuantity": 42.525,
+    "primaryUomLabel": "MT"
+}
+Request method:	POST
+Request URI:	https://qa.msme.jswone.in/cart/addtocart
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		access_token=eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbkNyZWF0ZWRBdCI6IjIwMjMvMTIvMTkgMTU6MjQ6MTMiLCJzdG9yZUtleSI6Im1zbWUiLCJ4LWNvcnJlbGF0aW9uLWlkIjoiMGFkY2MxMzktYjM4ZC00ZTQ2LWE4YjktZTRkZDI2ZGJjOTA2IiwidXNlclR5cGUiOiJSIiwiZXhwIjoxNzA1NTkxNDUzLCJ1c2VySWQiOiJkODI2Zjk5ZC0xNTYwLTQ4MjgtOTU4Ny1hZmJmZWEwZTViZDYiLCJ0b2tlbkV4cGlyZUF0IjoiMjAyNC8wMS8xOCAxNToyNDoxMyIsImlhdCI6MTcwMjk3OTY1M30.m2aX4gr4Yuh_fIP9vFZKSGMwKfQLWfPsbsMfDVCVJrzGT25nRSyA0MO_w1qNXkJUfbGofn--e4y-GcAQqXk6Ug
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+src\test\resources\payloads\AddToRequirementCart.json
+HTTP/1.1 500 Internal Server Error
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-type: text/plain;charset=ISO-8859-1
+x-cloud-trace-context: 53d8b3710212e9c853f984c0cb9cd6e9
+date: Thu, 04 Jan 2024 06:50:50 GMT
+server: Google Frontend
+Content-Length: 97
+via: 1.1 google, 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+interface com.commercetools.api.models.cart.CartChangeLineItemQuantityAction: quantity is missing

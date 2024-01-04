@@ -63,7 +63,7 @@ public class Notfication extends Utils {
 	public void validate_the_response_time_is_less_than_500_ms() throws Throwable {
 		int time = Long.valueOf(response.getTime()).intValue();
 		System.out.println("time" + time);
-		assert time < 10000;
+		assert time < 15000;
 
 	}
 

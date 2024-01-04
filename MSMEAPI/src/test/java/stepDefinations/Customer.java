@@ -1,9 +1,14 @@
 package stepDefinations;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.hamcrest.*;
 
@@ -17,6 +22,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import resources.APIResources;
+import resources.ProjectVariables;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -65,6 +71,18 @@ public class Customer extends Utils {
 		String reponseMsg = getJsonPath(response, "token_type");
 		assertNotNull(reponseMsg);
 		assertEquals(reponseMsg, validationKeyword);
+	}
+
+	@Then("validate the MyProfile API contract")
+	public void profile_api_contract() throws FileNotFoundException {
+
+		System.out.println(ProjectVariables.response.asPrettyString());
+		assertThat(ProjectVariables.response.asPrettyString(), containsString("companyName"));
+
+		FileInputStream fis = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\test\\resources\\schemas\\MyProfileSchema.json");
+
+		ProjectVariables.response.then().assertThat().body(matchesJsonSchema(fis));
 	}
 
 }
