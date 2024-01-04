@@ -8,12 +8,12 @@ Feature: Validating LedgerAPI
     And validate the "ledgerAPI" response time is less than "15000" ms
     And validate the "ledgerAPI" payload structure has "balanceAmount"
 
-  @validateLedger
+  @validateLedgerDownload
   Scenario: Validate LedgerAPI Transaction Download
     Given user calls "ledgerTransactionDownloadAPI" with "Get" http request for "TransactionDownload"
     Then validate that the "ledgerTransactionDownloadAPI"  call response is success with status code "200"
     And validate the "ledgerTransactionDownloadAPI" response time is less than "4000" ms
-    And validate the "ledgerTransactionDownloadAPI" payload structure has "Incoming payment"
+    And validate the "ledgerTransactionDownloadAPI" payload structure has "Balance"
 
 
 @validateBlockedAmountAPI
