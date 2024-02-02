@@ -13,13 +13,15 @@ public class MyOrderPageSteps {
 	public String tax;
 
 	@When("user is able to click my order button")
-	public void user_is_able_to_click_my_order_button() {
+	public void user_is_able_to_click_my_order_button() throws InterruptedException {
 		order.clickMyOrderCTA();
+		Thread.sleep(2000);
 	}
 
 	@When("user is able to click view details button")
 	public void user_is_able_to_click_view_details_button() throws InterruptedException {
 		// order.scrollingDown(order.getViewDetails());
+		Thread.sleep(2000);
 		order.clickViewDetails();
 
 	}
@@ -394,6 +396,7 @@ public class MyOrderPageSteps {
 	@And("^count list of orders$")
 	public void count_listoforders() throws Throwable {
 		order.countlistofOrders();
+		Thread.sleep(1500);
 	}
 
 	@When("verify Order placed")

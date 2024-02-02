@@ -58,4 +58,9 @@ public class BlogsPage {
 		
 	}
 
+	public String validateBlogsURL() {
+		String s = driver.getCurrentUrl();
+		System.out.println(s);
+		return s;
+	}
 }

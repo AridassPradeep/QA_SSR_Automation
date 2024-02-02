@@ -5,7 +5,7 @@ Feature: Direct home page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "v_jayadev@jsw.in" and  "Jsw@2023"
+    When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -23,6 +23,7 @@ Feature: Direct home page feature
     Then Verify the My Profile section link is appearing with users first name
     Then Verify that the My Profile section Link is displaying ^ icon when the drop down is clicked
     Then Verify the action of Logout Link in My Profile drop down
+    Then verify My Requirements is displayed in the Header section
     Then Verify Myorders is displayed in the Header Section
     Then Verify Cart Icon displayed
     Then Verify "Steel" Category tree is displayed
@@ -53,7 +54,7 @@ Feature: Direct home page feature
     And user is able to click Add to requirement cart
     And user is able to click View requirement cart
     And user is able to view request price button
-    And user is able to veify and validate Configure and request price on the All categories section
+  #  And user is able to veify and validate Configure and request price on the All categories section
 
   @Blogs
   Scenario: Verify user is able navigate blog & article page

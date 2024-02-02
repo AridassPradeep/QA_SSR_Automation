@@ -380,7 +380,8 @@ public class PLPSteps {
 
 	@When("user selects Steel product")
 	public void user_selects_steel_product() throws InterruptedException {
-		pdpreguser.selectSteelProductreguser();
+	//	pdpreguser.selectSteelProductreguser();
+		pdpreguser.selectDirectSteelProductreguser();
 	}
 	
 	@When("user selects CR Coil Steel product")

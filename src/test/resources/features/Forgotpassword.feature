@@ -6,9 +6,9 @@ Feature: Forgotpassword  feature
     When user clicks on login button
     When user click  on login by email
 
-  Scenario: verify the forgot password link is properly working
+  Scenario Outline: verify the forgot password link is properly working
     And user clicks on forgotpassword
-
+@f
   Scenario Outline: validate user got password reset link sent successfully message
     When user clicks on forgotpassword
     And user enters email id with Email "<Email>"
@@ -19,7 +19,8 @@ Feature: Forgotpassword  feature
     #And click ok
     Examples: 
       | Email                          |
-      | aakash.prasad@jsw.in |
+#      | aakash.prasad@jsw.in |
+      | demoqa1@yopmail.com           |
 
   Scenario Outline: validate user should navigate to registartion screen if  email id is not registered
     When user clicks on forgotpassword

@@ -454,6 +454,8 @@ public class HomePageSteps {
 	@Then("user navigate to Home page")
 	public void user_navigate_to_home_page() throws InterruptedException {
 		homePage.clickonHomePageLogo();
+		homePage.clickDistributor();
+
 	}
 
 	@And("^user refresh the page$")
@@ -463,7 +465,7 @@ public class HomePageSteps {
 
 	@And("^user wait for sometime$")
 	public void user_wait_for_sometime() throws Throwable {
-		Thread.sleep(8000);
+		Thread.sleep(10000);
 	}
 
 }

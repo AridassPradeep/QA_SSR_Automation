@@ -18,10 +18,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 
 	private WebDriver driver;
-	private By JSWLogo = By.xpath("//img[@alt='JSW One MSME']");
+	private By JSWLogo = By.xpath("//header/div[1]/div/div[1]/a/img");
 	private By search = By.id("SearchText");
 	private By languageIndicator = By.xpath("//div[@data-value='ENG']");
-	private By cartIcon = By.xpath("//a[@href='/cart-detail']");
+	private By cartIcon = By.xpath("//header/div[1]/div/div[3]/a/div");
 	private By noofCartItems = By.xpath("//div[@class='count']");
 	private By address = By.xpath("//*[@id=\'address-dropdown\']");
 	private By connectWithUs = By.xpath("//span[text()='Connect with us']");
@@ -44,9 +44,9 @@ public class HomePage {
 	// Header
 	private By userName = By.id("drop-down-head");
 	private By myOrder = By.xpath("//a[text()='My orders']");
-	private By steelTree = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[1]");
-	private By stainlessSteelTree = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[2]");
-	private By constructionMaterial = By.xpath("(//a[@class='nav-link-jsw nav-active-link-jsw'])[3]");
+	private By steelTree = By.xpath("(//a[@class='nav-link-jsw'])[1]");
+	private By stainlessSteelTree = By.xpath("(//a[@class='nav-link-jsw'])[2]");
+	private By constructionMaterial = By.xpath("(//a[@class='nav-link-jsw'])[3]");
 	private By helpSupport = By.xpath(
 			"(//a[contains(@class,'nav-link-jsw nav-active-link-jsw')]/following::a[contains(text(),'Help & support')])[1]");
 	private By aboutUs = By.xpath(
@@ -82,6 +82,8 @@ public class HomePage {
 	private By viewAllWelding = By.xpath("//h2[@id='Welding Consumables']//following::button[text()=' View all']");
 	private By Blogs = By.linkText("Blogs");
 	private By cement = By.xpath("//div[@class='navigation-item'][4]");
+	private By Direct = By.xpath("(//span[text()='Plan your purchase '])[1]");
+	private By Distributor = By.xpath("(//span[text()='Purchase now'])[1]");
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -108,7 +110,7 @@ public class HomePage {
 		WebElement we1 = driver.findElement(By.partialLinkText("Hot rolled"));
 		action.moveToElement(we1).build().perform();
 
-		driver.findElement(By.xpath("//div[1]/div/ul/li[1]/div/ul/li[1]/a")).click();
+		driver.findElement(By.xpath("//div[1]/div[1]/ul/li[1]/div[2]/a")).click();
 		Thread.sleep(3000);
 	}
 
@@ -153,6 +155,22 @@ public class HomePage {
 
 	}
 
+	public boolean isElementPresent() throws Exception {
+		try {
+			driver.findElement(Direct);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+		public void clickDistributor() {
+			driver.findElement(Distributor).click();
+		}
+
+		public void clickDirect() {
+			driver.findElement(Direct).click();
+		}
 	public void clickonHomePageLogo() throws InterruptedException {
 		driver.findElement(JSWLogo).click();
 		Thread.sleep(2000);

@@ -5,7 +5,7 @@ Feature: Ledger Information validation
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "aakash.pra323sad@jsw.in" and  "Aakash@123"
+    When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 
@@ -13,7 +13,7 @@ Feature: Ledger Information validation
     When user navigates to ledger page
     Then user request date for specific period
     Then validate Ledger request sent message is displayed
-
+  @l1
   Scenario: Verify Ledger Net Balance from ERP
     And user navigates to ledger page
     And user checks the Net balance in CCP

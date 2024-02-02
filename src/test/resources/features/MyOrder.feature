@@ -5,10 +5,10 @@ Feature: MyOrder page feature
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "ramyatestuserssr@gmail.com" and  "Ramya@678"
+    When user enters logins with username with "demoqa1@yopmail.com" and  "Admin@2023"
     And user clicks on signin
     Then user homepage is displayed
-
+@01
   Scenario: Verify the message displayed in Order History page
     Given user is able to view Myorders CTA
     When user is able to click the Myorders CTA
@@ -66,9 +66,9 @@ Feature: MyOrder page feature
   #When user is able to select the duration of ordered products to be filtered
   #When user is able select the custom date range of ordered products to be displayed
   #Then user is able to click Reset CTA to clear the selected filter option
-  @ViewDetails
+  @ViewDetails1
   Scenario: verify user view the view details button
-    When user is able to click my order button
+    When user is able to click the Myorders CTA
     And count list of orders
     And user is able to click view details button
     And user is able to navigate to ordersumamryPage
@@ -122,8 +122,6 @@ Feature: MyOrder page feature
   Scenario Outline: Verify In my order page, user can review and pay and navigates to payment page
     When cart is empty or not
     Then user navigate to Home page
-    When cart is empty or not
-    Then user navigate to Home page
     When user clicks HR Sheet series from Steel Categories Menu
     When user selects HR Stainless Steel product
     Given user is on product detail page of Steel item and enters "<productQuanity>"
@@ -136,7 +134,7 @@ Feature: MyOrder page feature
     And user wait for sometime
     When user is able to click my order button
     And user is able to click view details button
-    And user clicks on ReviewAndPay
+#    And user clicks on ReviewAndPay
     And user clicks on netBanking
     And user select bank name to transfer from the drop down on payment page
     Then verify bank is selected

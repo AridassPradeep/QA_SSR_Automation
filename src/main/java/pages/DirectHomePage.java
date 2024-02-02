@@ -23,13 +23,17 @@ private WebDriver driver;
 
 
 
-	@FindBy(xpath = "//button[contains(@class, 'btn view-all btn-outline-primary primary') and contains(text(), 'View all')]")
+	@FindBy(xpath = "//*[@id=\'Steel\']")
 	private WebElement steelCategories;
-	@FindBy(xpath = "//span[text()='Buy from verified sellers']")
+	@FindBy(xpath = "//h2[@id='Steel']")
+	private WebElement steelCategory;
+	@FindBy(xpath ="//div[3]/div/div/div/div/div/div/div[2]/div[3]/button")
+	private WebElement steelViewAll;
+	@FindBy(xpath = "(//span[text()='Purchase now'])[1]")
 	private WebElement distributorHomePage;
 	@FindBy(xpath = "//*[@id=\'product\']/div[76]/span[17]/span")
 	private WebElement distributorDeliveryTime;
-	@FindBy(xpath = "//span[text()='Buy directly from ']")
+	@FindBy(xpath = "(//span[text()='Plan your purchase '])[1]")
 	private WebElement directHomePage;
 	@FindBy(xpath = "//img[@alt='JSW One MSME']")
 	private WebElement homePage;
@@ -46,9 +50,9 @@ private WebDriver driver;
 	private WebElement deliveryTime;
 	@FindBy(xpath = "//div[@class='prodduct-list-inner-container']")
 	private WebElement PLP;
-	@FindBy(xpath = "(//span[text()='Configure & request price'])[1]")
+	@FindBy(xpath = "//a[@title='JSW Steel Hot Rolled Coils IS 2062:2011 E250BR']")
 	private WebElement configure;
-	@FindBy(xpath = "//span[text()='Request for price']")
+	@FindBy(xpath = "//div[2]/div/div[3]/button")
 	private WebElement requestPrice;
 	@FindBy(xpath = "//div[@class='blog-container-out']")
 	private WebElement blogsArticles;
@@ -72,29 +76,47 @@ private WebDriver driver;
 //	@FindBy(xpath = "//div[@class='custum-details']")
 	@FindBy(xpath = "//*[@id=\'__layout\']/div/div[2]/div[3]/div[2]/div[2]/a")
 	private WebElement enquiryScroll;
+
+
 	public WebElement getConfigure() {
 		return configure;
 	}
 
 	public WebElement getRequestPrice() {
-		return requestPrice;
+		return driver.findElement(By.xpath("//div[2]/div/div[3]/button"));
 	}
 
 	@FindBy(className = "custum-details")
 	private WebElement enquiry;
 	@FindBy(className = "how-direct-works")
 	private WebElement workFlowBanner;
-	@FindBy(xpath = "(//button[contains(text(),'View all')])[1]")
+	@FindBy(xpath = "//div[3]/div/div/div/div/div/div/div[2]/div[3]/button")
 	private WebElement viewAll;
 	
-	
+	public void scrollCategory(WebElement element) {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("window.scrollTo(0,500)", element);
+		return;
+	}
+
+	public void scrollSteelView(WebElement element) {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("window.scrollTo(0,750)", element);
+		return;
+	}
 	
 	public void scroll(WebElement element) {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		j.executeScript("arguments[0].scrollIntoView()", element);
+		j.executeScript("window.scrollTo(0,1500)", element);
 		return;
 	}
-		
+
+    public void scrollHome(WebElement element) {
+        JavascriptExecutor j = (JavascriptExecutor) driver;
+        j.executeScript("window.scrollTo(0,0)", element);
+        return;
+    }
+
 
 	public DirectHomePage(WebDriver driver) {
 		this.driver = driver;
@@ -108,9 +130,32 @@ private WebDriver driver;
 		driver.findElement((By) directHomePage).isDisplayed();
 		return;
 	}
-	
+
+	public void validateRequiremeentPage() {
+		driver.findElement(By.xpath("//a[text()='My requirements']")).isDisplayed();
+		return;
+	}
+
+	public void clickMyRequirementPage() {
+		driver.findElement(By.xpath("//a[text()='My requirements']")).click();
+		return;
+	}
+
+	public void validateConfigure() {
+		driver.findElement(By.xpath("(//a[@class='prod-plpimage1name'])[1]")).isDisplayed();
+		return;
+	}
+	public void clickConfigure() {
+		driver.findElement(By.xpath("(//a[@class='prod-plpimage1name'])[1]")).click();
+		return;
+	}
 	public void distributorBannerPage() {
 		driver.findElement((By) distributorHomePage).isDisplayed();
+		return;
+	}
+
+	public void clickDistributor() {
+		driver.findElement((By) distributorHomePage).click();
 		return;
 	}
 	
@@ -154,6 +199,10 @@ private WebDriver driver;
 		return homePage;
 	}
 
+	public void clickHomePage() {
+		driver.findElement(By.xpath("//img[@alt='JSW One MSME']")).click();
+	}
+
 	public void clickViewAllHomePage(){
 		driver.findElement(By.xpath("//button[contains(@class, 'btn view-all btn-outline-primary primary') and contains(text(), 'View all')]"));
 	}
@@ -183,7 +232,8 @@ private WebDriver driver;
 	}
 
 	public WebElement getPLP() {
-		return PLP;
+		return driver.findElement(By.xpath("//div[@class='prodduct-list-inner-container']//following::h1"));
+
 	}
 
 	public WebElement getBlogsArticles() {
@@ -215,7 +265,7 @@ private WebDriver driver;
 	}
 
 	public void clickGetViewMoreArticle() {
-		driver.findElement(By.xpath("//a[@class='btn view-all-articles-btn btn-outline-primary']"));
+		driver.findElement(By.xpath("//a[@class='btn view-all-articles-btn btn-outline-primary']")).click();
 	}
 
 	public WebElement getFuture() {
@@ -247,8 +297,10 @@ private WebDriver driver;
 	}
 
 	public WebElement getViewAll() {
-		return viewAll;
+	  return driver.findElement(By.xpath("//h2[@id='Steel']//following::button[text()=' View all']"));
 	}
-	
+	public WebElement getSteelViewAll() {
+		return steelCategory;
+	}
 		
 }

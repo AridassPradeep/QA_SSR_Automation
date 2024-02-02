@@ -45,6 +45,10 @@ public class LedgerPage {
 
 	}
 
+	public void clickPurchaseNow() {
+		driver.findElement(By.xpath("(//span[text()='Purchase now'])[1]")).click();
+	}
+
 	public void navigateToLedgerPage() throws InterruptedException {
 		String currentUrl = driver.getCurrentUrl();
 		String ledgerUrl = currentUrl + "ledger";
@@ -84,11 +88,11 @@ public class LedgerPage {
 
 	public void requestStatement() {
 		driver.findElement(FromRequestStatement).click();
-		String targetFromDateLabel = "November 1, 2023";
+		String targetFromDateLabel = "January 1, 2024";
 		driver.findElement(By.xpath("//span[@aria-label='" + targetFromDateLabel + "']")).click();
 		driver.findElement(ToRequestStatement).click();
-		String targetToDateLabel = "November 2, 2023";
-		driver.findElement(By.xpath("(//span[@aria-label='November 2, 2023'])[2]")).click();
+		String targetToDateLabel = "January 23, 2024";
+		driver.findElement(By.xpath("(//span[@aria-label='January 23, 2024'])[2]")).click();
 		driver.findElement(Request).click();
 	}
 
@@ -135,7 +139,7 @@ public class LedgerPage {
 
 	public void erpLogin() throws InterruptedException, IOException {
 		driver.get("https://qa-oms.msme.jswone.in/oauth2/redirect?token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYWthc2gucHJhc2FkQGpzdy5pbiIsImF1dGgiOiJST0xFX1VTRVIiLCJpYXQiOjE2OTg3MzA0NDUsImV4cCI6MTcwMTMyMjQ0NX0.-8oXQpG38pi0FUxdW_jLs35Epu_k8BQyYXajD41YJ19N5Y7WAsQgFZBhbyvhdhZ5HivpmiD9YnReNfpeuFwQKA");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 
 	public void checkLimitERP(){
@@ -176,9 +180,9 @@ public class LedgerPage {
 	}
 
 	public void enterSearchDataERPLedger() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@id=\"search-bar\"]")).sendKeys("27AAFCD0915M1ZL");
+		driver.findElement(By.xpath("//input[@id=\"search-bar\"]")).sendKeys("29CIEPR8080H1ZP");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//p[contains(text(), 'DUNZO DIGITAL PRIVATE LIMITED')]")).click();
+		driver.findElement(By.xpath("//p[contains(text(), 'BANGALORE STEELS')]")).click();
 		Thread.sleep(2000);
 	}
 

@@ -13,7 +13,7 @@ public class PLPNewPage {
 
 	private WebDriver driver;
 
-	private By steelMenu = By.xpath("//header/div[3]/div[1]/div[1]/div[1]/a[1]");
+	private By steelMenu = By.xpath("//header/div[3]/div/div[1]/div[1]/div[2]/a");
 	private By steelPLP = By.xpath("//*[@class='list-title desc']");
 	private By breadcrump = By.xpath("//div[@class='breadcrumb-url']");
 	private By hotRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[1]/a");
@@ -343,7 +343,7 @@ public class PLPNewPage {
 	public void selectCementProduct() throws InterruptedException {
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//a[contains(text(),'JSW Compcem Cement')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Power Pro Cement')]")).click();
 
 	}
 

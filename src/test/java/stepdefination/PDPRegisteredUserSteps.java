@@ -65,6 +65,8 @@ public class PDPRegisteredUserSteps {
 	@Then("verify that the product should be added in the cart")
 	public void verify_that_the_product_should_be_added_in_the_cart() throws InterruptedException, AWTException {
 		Thread.sleep(2000);
+		pdpreguser.clickViewCart();
+		Thread.sleep(2500);
 		pdpreguser.validateAddedtoCart();
 
 	}
@@ -269,8 +271,8 @@ public class PDPRegisteredUserSteps {
 
 	@Given("user is on product detail page of Steel item")
 	public void user_is_on_product_detail_page_of_steel_item() throws InterruptedException {
-		pdpreguser.SteelDetails();
-
+		//pdpreguser.SteelDetails();
+		pdpreguser.SteelDirectSteelDetails();
 	}
 
 	@Given("^user is on product detail page of Steel item and enters \"([^\"]*)\"$")
@@ -306,7 +308,7 @@ public class PDPRegisteredUserSteps {
 
 	@Given("user is on product detail page of Steel item for DirectOrder")
 	public void user_is_on_product_detail_page_of_steel_itemDirectOrder() throws InterruptedException {
-		pdpreguser.DirectOrderSteelDetails();
+		pdpreguser.SteelDirectSteelDetails();
 
 	}
 

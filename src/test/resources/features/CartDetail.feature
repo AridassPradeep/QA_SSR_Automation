@@ -74,7 +74,7 @@ Feature: Cart Detail Page feature
     And User click on success button
     Then verify after successful payment page navigates to ORDER summary page
     Then order sucessfully placed message should be displayed
-
+@d1
   Scenario: Verify Delivery by 2-5 days
   When cart is empty or not
     Then user navigate to Home page
@@ -94,7 +94,7 @@ Feature: Cart Detail Page feature
     When user click on Cart icon on homepage
     Then verify delivery is by 2-5 days
 
-  @cart
+  @cart1
   Scenario: Verify selfpickup
     When cart is empty or not
     When user clicks HR from Steel Navigation Menu

@@ -54,30 +54,28 @@ public class DirectHomePageStep {
 	@Then("user is able navigate to direct home page")
 	public void user_is_able_navigate_to_direct_home_page() throws InterruptedException {
 		Thread.sleep(3000);
-		direct.getHomePage().click();
+		direct.getDirectHomePage().click();
 		Thread.sleep(3000);
 
 	}
 
 	@When("user is able to scroll down to categories section")
 	public void user_is_able_to_scroll_down_to_categories_section() throws InterruptedException {
-		direct.scroll(direct.getSteelCategories());
+		direct.scrollCategory(direct.getSteelCategories());
 		Thread.sleep(3000);
 
 	}
 
 	@When("user is able to view All Categories on home page")
 	public void user_is_able_to_view_all_categories_on_home_page() throws InterruptedException {
-		direct.scroll(direct.getViewAll());
-		direct.getViewAll().isDisplayed();
+		direct.scrollSteelView(direct.getSteelViewAll());
 		Thread.sleep(3000);
 	}
 
 	@When("user is able to click view all button in All categories section")
 	public void user_is_able_to_click_view_all_button_in_all_categories_section() throws InterruptedException {
 		direct.getViewAll().click();
-		Thread.sleep(3000);
-
+		Thread.sleep(1500);
 	}
 
 	@When("user is able to navigate to PLP page")
@@ -94,6 +92,15 @@ public class DirectHomePageStep {
 
 	}
 
+	@Then("verify My Requirements is displayed in the Header section")
+	public void verify_my_requirements_is_displayed_in_the_header_section() throws InterruptedException {
+		direct.validateRequiremeentPage();
+		Thread.sleep(2000);
+		direct.clickMyRequirementPage();
+		Thread.sleep(3000);
+		direct.clickHomePage();
+	}
+
 	@Then("user is able to verify and validate delivery date on the All categories section")
 	public void user_is_able_to_verify_and_validate_delivery_date_on_the_all_categories_section()
 			throws InterruptedException {
@@ -105,25 +112,30 @@ public class DirectHomePageStep {
 	}
 
 	@Then("user is able to navigate PDP page by clicking Configure and request")
-	public void user_is_able_to_navigate_plp_page_by_clicking_configure_and_request() throws InterruptedException {
-		direct.getConfigure().click();
+	public void user_is_able_to_navigate_pdp_page_by_clicking_configure_and_request() throws InterruptedException {
+		direct.scrollSteelView(direct.getSteelViewAll());
+		Thread.sleep(2000);
+		direct.clickConfigure();
 		Thread.sleep(3000);
 
 	}
 
 	@Then("user is able to view request price button")
 	public void user_is_able_to_view_request_price_button() throws InterruptedException {
-		direct.getRequestPrice().isDisplayed();
+//		direct.getRequestPrice().isDisplayed();
+//		Thread.sleep(2000);
 		direct.getRequestPrice().click();
-		Thread.sleep(3000);
-		direct.getHomePage().click();
+		Thread.sleep(4000);
+		direct.clickHomePage();
 		Thread.sleep(3000);
 	}
 
 	@Then("user is able to veify and validate Configure and request price on the All categories section")
 	public void user_is_able_to_veify_and_validate_configure_and_request_price_on_the_all_categories_section()
 			throws InterruptedException {
-		direct.getPrice().isDisplayed();
+		direct.scrollSteelView(direct.getSteelViewAll());
+		Thread.sleep(3000);
+		direct.getRequestPrice().isDisplayed();
 		Thread.sleep(3000);
 
 	}
@@ -142,21 +154,20 @@ public class DirectHomePageStep {
 
 	@Then("user is able to naviage from Blog & article page to direct home page")
 	public void user_is_able_to_naviage_from_blog_article_page_to_direct_home_page() throws InterruptedException {
-		direct.getHomePage();
+		direct.clickHomePage();
 		Thread.sleep(3000);
 	}
 
 	@Then("user is able to click View all articles to navigate Blogs & article page")
 	public void user_is_able_to_click_view_all_articles_to_navigate_blogs_article_page() throws InterruptedException {
-		Thread.sleep(3000);
 		direct.clickGetViewMoreArticle();
 		Thread.sleep(3000);
 	}
 
 	@Then("user navigate from Blog page to Home page")
 	public void user_navigate_from_blog_page_to_home_page() throws InterruptedException {
-		direct.scroll(direct.getBlogsArticles());
-		Thread.sleep(3000);
+		direct.clickHomePage();
+		Thread.sleep(1500);
 	}
 
 	@When("user is able to view enquiry window below the articles")

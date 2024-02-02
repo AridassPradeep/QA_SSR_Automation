@@ -44,7 +44,8 @@ public class DirectPLPPage {
 
 	public void scroll(WebElement element) {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		j.executeScript("arguments[0].scrollIntoView()", element);
+	//	j.executeScript("arguments[0].scrollIntoView()", element);
+		j.executeScript("window.scrollTo(0,1550)", element);
 		return;
 	}
 	

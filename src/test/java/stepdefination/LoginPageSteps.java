@@ -58,8 +58,8 @@ public class LoginPageSteps {
 	}
 
 	@When("user clicks on forgotpassword")
-	public void user_clicks_on_forgotpassword() {
-
+	public void user_clicks_on_forgotpassword() throws InterruptedException {
+		Thread.sleep(2000);
 		loginPage.clickForgotPassword();
 
 	}

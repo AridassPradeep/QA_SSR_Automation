@@ -61,6 +61,7 @@ public class PaymentSteps {
 		Thread.sleep(3000);
 		pmtpage.scroll();
 		pmtpage.clickproceedtopay();
+		Thread.sleep(5000);
 		pmtpage.clickpayViaNetBanking();
 		Thread.sleep(5000);
 	}

@@ -5,7 +5,7 @@ Feature: Direct PLP page navigation
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "v_jayadev@jsw.in" and  "Jsw@2023"
+    When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
 

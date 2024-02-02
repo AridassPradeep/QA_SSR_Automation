@@ -101,8 +101,9 @@ public class DirectOrderSteps {
 
 	
 	@Then("verify Request Price is displayed on rightside")
-	public void verify_request_price_is_displayed_on_rightside() {
+	public void verify_request_price_is_displayed_on_rightside() throws InterruptedException {
 		doppage.validateRequestPrice();
+		Thread.sleep(5000);
 	}
 
 	@When("user enter dimension for product")
@@ -122,11 +123,14 @@ public class DirectOrderSteps {
 	@And("^user is able to click Add to requirement cart$")
 	public void user_is_able_to_click_add_to_requirement_cart() throws Throwable {
 		doppage.clickAddToRequirementCart() ;
+		Thread.sleep(2000);
 	}
 	
 	@And("^user is able to click View requirement cart$")
 	public void user_is_able_to_click_view_requirement_cart() throws Throwable {
+		Thread.sleep(3000);
 		doppage.clickViewRequirementCart() ;
+		Thread.sleep(3000);
 	}
 
 	@When("user enter quantity and dimensions for the product")
@@ -140,6 +144,7 @@ public class DirectOrderSteps {
 	public void user_click_request_price() throws InterruptedException {
 		Thread.sleep(2000);
 		doppage.clickRequestPrice();
+		Thread.sleep(5000);
 	}
 
 	@Then("verify View requirements list is displayed")
@@ -172,7 +177,7 @@ public class DirectOrderSteps {
 
 	@Then("verify Message {string} is displayed.")
 	public void verify_message_is_displayed(String string) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		doppage.validateMessage();
 	}
 

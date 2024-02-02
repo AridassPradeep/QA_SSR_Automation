@@ -3,6 +3,7 @@ package stepdefination;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 import factory.DriverFactory;
+import pages.DirectHomePage;
 import pages.LedgerPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -16,6 +17,8 @@ public class LedgerPageSteps {
 
 	@When("^user navigates to ledger page$")
 	public void user_navigates_to_ledger_page() throws Throwable {
+		ledgerPage.clickPurchaseNow();
+		Thread.sleep(2000);
 		ledgerPage.navigateToLedgerPage();
 		Thread.sleep(4000);
 	}

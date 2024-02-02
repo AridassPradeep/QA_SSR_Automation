@@ -357,7 +357,7 @@ public class MyOrderPages {
 	}
 
 	public void  clickMyOrderPage() {
-		driver.findElement(By.xpath("(//*[text()='My orders'])[1]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'My orders')]")).click();
 	}
 
 	public void viewAllOrderHeader(){
@@ -541,7 +541,7 @@ public class MyOrderPages {
 	}
 
 	public void clickMyOrderCTA() {
-		driver.findElement(By.xpath("//a[contains(text(),'My orders')]"));
+		driver.findElement(By.xpath("//a[contains(text(),'My orders')]")).click();
 	}
 
 	public void clickOrder() throws InterruptedException {

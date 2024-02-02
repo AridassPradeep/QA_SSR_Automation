@@ -24,18 +24,19 @@ import java.awt.datatransfer.StringSelection;
 
 public class DirectOrderPage {
 	private WebDriver driver;
+	public static String requirementID;
 
 	private By alldimensions = By.xpath("//li[contains(@class,'product-list')]");
 	private By quantity = By.xpath("//input[@class='input-quant']");
 	private By buyfromverified = By.xpath("//span[contains(text(),'Purchase now')]");
-	private By directlyfromJSW = By.xpath("//span[contains(text(),'Buy directly from')]");
+	private By directlyfromJSW = By.xpath("//span[contains(text(),'Plan your purchase ')]");
 	private By myrequirements = By.xpath("(//a[@class='links'])[2]");
 	private By requestprice = By.xpath("//span[text()='Request for price']");
 	private By viewrequirementlist = By.xpath("//*[contains(text(),'Requirements')]");
 	private By requestforprice = By.xpath("//span[contains(text(),'Request for price')]");
 	private By requirementTab = By.xpath("(//a[@role='tab'])[1]");
 	private By quantitybutton = By.xpath("//button[@class='btn btn-quant']");
-	private By message = By.xpath("(//*[@class='mt-14'])[1]");
+	private By message = By.xpath("//div[@class='mt-12 typography-md-h5 typography-sub-heading typography-font-semibold']");
 	private By deliverydate = By.xpath("(//span[@class='description'][normalize-space()='Delivery in 30 - 45 days'])[1]");
 	private By clickpasswordNext = By.xpath("//*[@id='passwordNext']/div/button/span");
 	private By uploadFiles = By.xpath("(//span[contains(text(),'Upload files')])[1]");
@@ -73,6 +74,11 @@ public class DirectOrderPage {
 
 	}
 
+	public void scroll(WebElement element) {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()", element);
+		return;
+	}
 	public void clickBuyNowDirect(){
 		driver.findElement(By.xpath("//button[@class='br-cta primary']/span")).click();
 	}
@@ -246,8 +252,25 @@ public class DirectOrderPage {
 	public void clickViewRequirementCart() throws InterruptedException
 
 	{	
-		driver.findElement(By.xpath("//btn[contains(text(), 'View requirements cart')]")).click();
+		driver.findElement(By.xpath("//btn[contains(text(),'View requirements cart')]")).click();
 		
+	}
+
+	public void scroll()	{
+		WebElement element = driver.findElement(By.xpath("//div[contains(text(),'Total order quantity')]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("element.scrollTo()");
+
+	}
+
+	public void clickClose() {
+		driver.findElement(By.xpath("//button[@class='close']")).click();
+		return;
+	}
+
+	public void navigateRequirementCartPage() {
+		driver.findElement(By.xpath("//div[@class='cart-icon-container full-cart']")).click();
+		return;
 	}
 
 	public void validateRequestPrice() {
@@ -297,6 +320,10 @@ public class DirectOrderPage {
 
 	public void validateMessage() {
 		driver.findElement(message).isDisplayed();
+		String requirementID = driver.findElement(By.xpath("//span[@class='typography-text-primary-main typography-font-semibold']")).getText();
+		System.out.println(requirementID);
+		//orderno = driver.findElement(By.xpath("//div[normalize-space()='Order number']//following::div[1]")).getText();
+		//		System.out.println(orderno);
 	}
 
 	public void clickMyRequirements() {
@@ -317,28 +344,34 @@ public class DirectOrderPage {
 
 	public void clickRemoveButton() throws Exception {
 
-		List<WebElement> lt = driver.findElements(By.xpath("//div[@class='product-name-price']//div[2]//div"));
-		for (int i = 0; i < lt.size(); i++) {
-			driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
+//		List<WebElement> lt = driver.findElements(By.xpath("//div[@class='product-name-price']//div[2]//div"));
+//		for (int i = 0; i < lt.size(); i++) {
+//			driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//*[text()='Proceed']")).click();
+//			Thread.sleep(3000);
+//		}
+		//driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div"));
+		driver.findElement(By.xpath("//div[@class='product-name-price']//div[2]//div")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[text()='Proceed']")).click();
 			Thread.sleep(2000);
-		}
 
-		while (!isElementPresentemptycart()) {
 
-			/*
-			 * driver.findElement(By.xpath("(//a[@role='button'])")).click();
-			 * driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
-			 * Thread.sleep(2000); //
-			 * driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).
-			 * click();
-			 * driver.findElement(By.xpath("//span[text()='Remove item']")).click();
-			 * Thread.sleep(2000);
-			 * 
-			 */
-
-		}
+//		while (isElementPresentemptycart()) {
+//
+//			/*
+//			 * driver.findElement(By.xpath("(//a[@role='button'])")).click();
+//			 * driver.findElement(By.xpath("(//span[text()='Remove'])")).click();
+//			 * Thread.sleep(2000); //
+//			 * driver.findElement(By.xpath("//button[@class='remove_item_btn primary']")).
+//			 * click();
+//			 * driver.findElement(By.xpath("//span[text()='Remove item']")).click();
+//			 * Thread.sleep(2000);
+//			 *
+//			 */
+//
+//		}
 
 	}
 

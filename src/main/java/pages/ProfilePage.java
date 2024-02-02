@@ -30,7 +30,7 @@ public class ProfilePage {
 	private By Ok = By.xpath("//button[contains(text(),'Ok')]");
 	private By addAddress = By.xpath("//*[contains(text(),'Add address')]");
 	private By DeleteAddress = By.xpath("(//img[@class='delete-icon pointer'])[1]");
-	private By Addresses = By.xpath("//*[text()='Addresses']");
+	private By Addresses = By.xpath("(//*[text()='Addresses'])[2]");
 	private By LedgerMenu = By.linkText("Ledger");
 	private By Logout = By.xpath("(//*[text()='Logout'])[2]");
 	

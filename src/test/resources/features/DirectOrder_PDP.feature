@@ -5,9 +5,10 @@ Feature: Direct Order for PDP feature for registered user
     Given user is on home page
     When user clicks on login button
     When user click  on login by email
-    When user enters logins with username with "v_jayadev@jsw.in" and  "Jsw@2023"
+    When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
+
 
   Scenario: Verify Buy from verified sellers is displayed on rightside of the page
     Given user is on home page
@@ -30,7 +31,7 @@ Feature: Direct Order for PDP feature for registered user
     And user is able to click View requirement cart
     Then verify View requirements list is displayed
     When user click Request Price
-    Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
+    Then verify Message "Your Pricing request has been submitted." is displayed.
 
   Scenario: Delivery 30-45 days is displayed
     When Buy from verified sellers is displayed
@@ -66,7 +67,7 @@ Feature: Direct Order for PDP feature for registered user
     Then verify View requirements list is displayed
     When user click Request Price
     Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
-
+@s1
   Scenario: Verify product is added to cart
     #When cart is empty or not
     When Buy from verified sellers is displayed
@@ -96,7 +97,7 @@ Feature: Direct Order for PDP feature for registered user
     When user click on remove button on the product
     Then verify no product in requirement list
 
-  @DirectneftPaymentMultiSeller
+  @DirectneftPaymentMultiSeller 
   Scenario Outline: Verify multiple products from different seller added before Request for price
     When Buy from verified sellers is displayed
     When cart is empty or not
@@ -106,6 +107,7 @@ Feature: Direct Order for PDP feature for registered user
     And user click on product name of Wire product displayed on the page
     And user is on Wire Product page forDirectOrder
     And user is able to click Add to requirement cart
+    And user is able to click View requirement cart
     When user clicks HR from Steel Navigation Menu
     When user selects Steel product
     Given user is on product detail page of Steel item for DirectOrder
@@ -113,7 +115,7 @@ Feature: Direct Order for PDP feature for registered user
     And user is able to click View requirement cart
     Then verify View requirements list is displayed
     When user click Request Price
-    Then verify Message "Your Pricing request has been submitted. Our support team will reach out to you within 24hrs." is displayed.
+    Then verify Message "Your price request is successfully submitted." is displayed.
 
   #@DirectPDP
   #Scenario Outline: Verify Confirm payment is made successfully
@@ -193,7 +195,7 @@ Feature: Direct Order for PDP feature for registered user
   #Then user is able to view Payment received section
   #When user is able to click Payment history dropdown CTA
   #Then user is able to view Direct order payment status
-  
+
   Scenario: Verify my orders for Direct order
     When user click on Buy from verified sellers
     Then verify Buy directly from JSWsteel is displayed

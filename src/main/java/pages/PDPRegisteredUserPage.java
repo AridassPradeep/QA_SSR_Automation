@@ -67,7 +67,7 @@ public class PDPRegisteredUserPage {
 		List<WebElement> productselected = driver.findElements(productselect);
 
 		for (int i = 0; i < productselected.size(); i++) {
-			if (productselected.get(i).getText().equals("JSW Steel Hot Rolled Sheets IS 2062:2011 E250A")) {
+			if (productselected.get(i).getText().equals("JSW Steel Hot Rolled Coils IS 2062:2011 E250BR")) {
 				productselected.get(i).click();
 			}
 			break;
@@ -79,6 +79,34 @@ public class PDPRegisteredUserPage {
 		Thread.sleep(2000);
 
 	driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Sheets IS 2062:2011 E350A')]")).click();
+
+
+		/*
+		 * List<WebElement> productlist = driver.findElements(productselect); for (int i
+		 * = 0; i < productlist.size(); i++) { if (productlist.get(i).getText().
+		 * equals("JSW Steel Hot Rolled Sheets IS 2062:2011 E250A")) {
+		 * productlist.get(i).click(); } break; }
+		 */
+	}
+
+	public void selectDirectSteelProductreguser() throws InterruptedException {
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//a[@title='JSW Steel Hot Rolled Coils IS 2062:2011 E250BR']")).click();
+
+
+		/*
+		 * List<WebElement> productlist = driver.findElements(productselect); for (int i
+		 * = 0; i < productlist.size(); i++) { if (productlist.get(i).getText().
+		 * equals("JSW Steel Hot Rolled Sheets IS 2062:2011 E250A")) {
+		 * productlist.get(i).click(); } break; }
+		 */
+	}
+
+	public void selectSteelCoilsProductreguser() throws InterruptedException {
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//a[contains(text(),'JSW Steel Hot Rolled Coils IS 2062:2011 E250BR')]")).click();
 
 
 		/*
@@ -182,6 +210,10 @@ public class PDPRegisteredUserPage {
 	public void clickQuantity() {
 		driver.findElement(quantitybutton).click();
 
+	}
+
+	public void clickViewCart() throws InterruptedException	{
+		driver.findElement(By.xpath("//btn[text()='View cart']")).click();
 	}
 
 	public void validateAddedtoCart() throws InterruptedException, AWTException {
@@ -458,6 +490,37 @@ public class PDPRegisteredUserPage {
 
 	}
 
+	public void SteelCoilsDetails() throws InterruptedException {
+		// For thickness
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),'1.6')]")).click();
+		//for width
+		driver.findElement(By.xpath("//button[contains(text(), '1250')]")).click();
+
+		Thread.sleep(2000);
+		//for quantity
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("4.525");
+
+		Thread.sleep(3500);
+
+	}
+
+	public void SteelDirectSteelDetails() throws InterruptedException {
+		// For thickness
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[contains(text(),'1.6')]")).click();
+		//for width
+		driver.findElement(By.xpath("//button[contains(text(), '900')]")).click();
+	//	driver.findElement(By.xpath("//button[contains(text(), '2500')]")).click();
+		Thread.sleep(2000);
+		//for quantity
+		driver.findElement(By.xpath("//div[1]/div[2]/div[1]/div[1]/input[1]")).sendKeys("6.525");
+
+		Thread.sleep(3500);
+
+	}
+
+
 	public void SteelDetails(String quantity) throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[contains(text(),'Thickness')]//following::div[3]//div//button[2]")).click();
@@ -516,7 +579,7 @@ public class PDPRegisteredUserPage {
 
 	public void CementDetails() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//input[@id='inputQty'])[2]")).sendKeys("400");
+		driver.findElement(By.xpath("(//input[@id='inputQty'])[2]")).sendKeys("210");
 		Thread.sleep(6000);
 
 	}
