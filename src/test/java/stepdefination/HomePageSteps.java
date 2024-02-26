@@ -454,7 +454,7 @@ public class HomePageSteps {
 	@Then("user navigate to Home page")
 	public void user_navigate_to_home_page() throws InterruptedException {
 		homePage.clickonHomePageLogo();
-		homePage.clickDistributor();
+	//	homePage.clickDistributor();
 
 	}
 

@@ -75,7 +75,7 @@ public class HomePage {
 	private By blogViewall = By.xpath("//a[@class='btn view-all-articles-btn btn-outline-primary']");
 	private By videosection = By.xpath("//span[@class='play-button']");
 	private By workflow = By.xpath("(//div[@class='owl-carousel owl-theme owl-loaded owl-drag'])[4]");
-	private By tmt = By.xpath("//div[3]/div[1]/div[1]/div[3]/a[1]");
+	private By tmt = By.xpath("//*/div[3]/div/div[1]/div[3]/div/a");
 	private By welding = By.xpath("//div[1]/div[5]/a[1]");
 	private By weldingCategory = By.xpath("//h2[@id='Welding Consumables']");
 	private By weldingProductsList = By.xpath("//h2[@id='Welding Consumables']//following::ul[@class='categorylist']");

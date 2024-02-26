@@ -19,7 +19,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 		"hooks" }, 
 monochrome = true, 
 
-tags = "@ReviewAndPay",
+tags = "@Login",
 
 dryRun = false, 
 stepNotifications = true, plugin = { "pretty",

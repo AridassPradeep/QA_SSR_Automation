@@ -31,6 +31,7 @@ public class CartDetailPage {
 	private By deliverydate = By.xpath("(//*[text()='Delivery in 2 - 5 days'])[1]");
 	private By apply = By.xpath("(//div[@class='coupon-persuasion-container'])[1]");
 	private By applied = By.xpath("(//div[@class='coupon-applied-container'])[1]");
+	private By selfPickUp = By.xpath("//input[@id='Pickuprom']");
 
 	public CartDetailPage(WebDriver driver) {
 		this.driver = driver;
@@ -76,6 +77,10 @@ public class CartDetailPage {
 		WebElement checkboxTerms = driver.findElement(By.xpath("//input[@id='termsCondition']"));
 		// jse.executeScript("arguments[0].click();", checkboxTerms);
 
+	}
+
+	public void clickSelfPickup() {
+		driver.findElement(selfPickUp).click();
 	}
 
 	public void validateDeliveryDate() {

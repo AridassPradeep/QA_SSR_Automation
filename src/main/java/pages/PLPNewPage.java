@@ -299,7 +299,7 @@ public class PLPNewPage {
 	public void Pdpnavigate() throws InterruptedException {
 		List<WebElement> TMTproducts = driver.findElements(By.xpath("//a[@class='prod-plpimage1name']"));
 		System.out.println("No. of TMT products: " + TMTproducts.size());
-		driver.findElement(By.xpath("//a[@title='JSW Neosteel Fe550D CRS TMT Rebar']']")).click();
+		driver.findElement(By.xpath("//a[@title='JSW Neosteel Fe550D CRS TMT Rebar']")).click();
 		Thread.sleep(2000);
 	}
 
