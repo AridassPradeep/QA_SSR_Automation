@@ -381,6 +381,7 @@ public class MyOrderPageSteps {
 	@And("^user is able to view My orders header$")
 	public void user_is_able_to_view_my_orders_header() throws Throwable {
 		order.validatemyOrdersHeader();
+		Thread.sleep(2000);
 	}
 
 	@When("user clicks on ReviewAndPay")

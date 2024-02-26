@@ -18,11 +18,15 @@ public class MyRequirementsSteps {
 	@Then("verify Requirements ID is getting displayed")
 	public void verify_requirements_id_is_getting_displayed() {
 		MyRequirementspage .verifyRequirementsID();
+
 	}
 	
 	@Then("validate product details")
-	public void validate_product_details() {
-		MyRequirementspage.validateProductDetails(); 
+	public void validate_product_details() throws InterruptedException {
+		MyRequirementspage.clickToViewProductDetails();
+		Thread.sleep(2000);
+		MyRequirementspage.validateProductDetails();
+		Thread.sleep(2000);
 	}
 	
 	@Then("validate Total quantity")

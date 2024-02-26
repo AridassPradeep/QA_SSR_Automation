@@ -1,4 +1,4 @@
-@demo @Login @FailedRunner1
+@demo @Login1 @FailedRunner1
 Feature: Login page feature
 
   Background: User opens website
@@ -21,7 +21,7 @@ Feature: Login page feature
     And user click on getOTP
     And user enter wrong otp
     Then user homepage should not be displayed
-
+@a
   Scenario Outline: verify the user able to login with Email and password
     When user enters logins with username with "<email>" and  "<password>"
     And user clicks on signin

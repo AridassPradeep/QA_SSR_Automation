@@ -76,7 +76,7 @@ public class LoginPageSteps {
 
 	@When("proper alert message is displayed for login screen")
 	public void proper_alert_message_is_displayed_for_login_screen() {
-		System.out.println(loginPage.validateErrorMessage());
+		System.out.println("Error message: " +loginPage.validateErrorMessage());
 	}
 	
 	@Then("proper alert message for wrong password is displayed for login screen")
@@ -130,6 +130,7 @@ public class LoginPageSteps {
 	
 	@And("user enter otp")
 	public void user_enter_otp() throws InterruptedException, MalformedURLException {
+		Thread.sleep(5000);
 		loginPage.enterOTP();
 		
 	}

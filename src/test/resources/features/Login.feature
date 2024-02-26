@@ -14,7 +14,6 @@ Feature: Login page feature
     And user enter otp
     Then user homepage should be displayed
 
-  @Otp
   Scenario: verify invalid OTP Login functionality
     When user click  on login by otp
     And user enter phone no
@@ -50,6 +49,7 @@ Feature: Login page feature
       | username |
       | ramya    |
 
+ @Otp12
   Scenario Outline: verify the proper error message is displaying if the user enters non registered Phone Number
     When user click  on login by otp
     And user enter "<phoneno>"
@@ -58,7 +58,7 @@ Feature: Login page feature
 
     Examples: 
       | phoneno    |
-      | 9218775234 |
+      | 5658545458 |
 
   Scenario Outline: Verify error message for incorrectemail and incorrect password
     When user enters logins with username with "<email>" and  "<password>"

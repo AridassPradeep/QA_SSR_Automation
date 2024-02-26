@@ -23,7 +23,8 @@ public class LoginPage {
 	private By forgotPassword = By.xpath("//*[contains(text(),'Forgot')]");
 	private By otptextbox = By.xpath("//*[text()='OTP on registered mobile number']");
 	private By signInregister = By.xpath("//*[@id='signin-register']");
-	private By errorMessage = By.xpath("//div[contains(text(),'Please enter your registered mobile to login')]");
+//	private By errorMessage = By.xpath("//div[contains(text(),'Please enter your registered mobile to login')]");
+	private By errorMessage = By.xpath("//div[1]/div/div[2]/div[2]/div[1]/div[2]/div");
 	private By WrongPasswordErrorMessage = By.xpath("//div[contains(text(),'Wrong password. Please try again with the correct password')]");
 	private By loginByEmail = By.xpath("//button[contains(text(),'Login via email')]");
 	
@@ -141,8 +142,8 @@ public boolean validateuserMenu() throws InterruptedException {
 	
 	public void enterPhoneNo()
 	{
-		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("8011230001");
-		driver.findElement(By.xpath("//*[text()='or']")).click();
+		driver.findElement(By.xpath("//input[@id='mobile']")).sendKeys("9566885302");
+	//	driver.findElement(By.xpath("//*[text()='or']")).click();
 	}
 	
 	public void enterPhoneNo(String phNo)
@@ -163,7 +164,7 @@ public boolean validateuserMenu() throws InterruptedException {
 	public void enterOTP() throws InterruptedException, MalformedURLException
 	{
 		
-		Thread.sleep(60000);
+		Thread.sleep(10000);
 		/*
 		String otp=OtpUtil.getOTP();
 		System.out.println("The OTP is " + otp);

@@ -7,7 +7,7 @@ Feature: My Requirements validation
     When user click  on login by email
 
   Scenario: Verify myrequirement section for direct order
-    When user enters logins with username with "shalin.shah@royalcyber.com" and  "Test@1234"
+    When user enters logins with username with "jswtestqa03@yopmail.com" and  "Admin@2024"
     And user clicks on signin
     Then user homepage is displayed
     And user clicks on myrequirement tab
