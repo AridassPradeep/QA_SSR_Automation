@@ -1,4 +1,4 @@
-@PLP @FailedRunner1
+@PA01 @PLP @FailedRunner1
 Feature: Verification of PLP functionality feature
 
   Background: User opens website
@@ -196,12 +196,12 @@ Feature: Verification of PLP functionality feature
   Scenario: Display BreadCrumb for Construction Steel
     When user click TMT Menu on header section
     And user is able to view TMT Steel products on PLP page
-    Then Breadcrump should display HOME > Construction materials > Construction Steel > TMT
+    Then Breadcrump should display HOME > Construction materials  > TMT
 
   Scenario: Check BreadCrumb hyperlink is working fine
     When user click TMT Menu on header section
     And user is able to view TMT Steel products on PLP page
-    Then Breadcrump should display HOME > Construction materials > Construction Steel > TMT
+    Then Breadcrump should display HOME > Construction materials  > TMT
     When user click on Construction Steel hyper link in breadcrumb
     Then product page should navigate to Construction Steel
     When user click on Construction materials hyper link in breadcrumb
@@ -242,14 +242,14 @@ Feature: Verification of PLP functionality feature
   Scenario: Check for Reset Hyperlink availability on page
     When user click TMT Menu on header section
     Then user is select JSW Steel from Brand at Filter section
-    Then user is select IS 1786:2008 Fe 550D from Grade at Filter section for TMT
+    Then user is select IS 1786:2008 Fe 650 from Grade at Filter section for TMT
     When user  click on Reset Hyper link
     Then All the filters should be removed and products should display and no filters has to be selected"
 
   Scenario: Check applied Filters are shown above the products
     When user click TMT Menu on header section
     Then user is select JSW Steel from Brand at Filter section
-    Then user is select IS 1786:2008 Fe 550D from Grade at Filter section for TMT
+    Then user is select IS 1786:2008 Fe 650 from Grade at Filter section for TMT
     Then Filters applied should be shown above the Products display applied filters should display with cross button"
 
   Scenario: Check for Reset CTA enabled if filters applied more than 2 filters
@@ -279,7 +279,7 @@ Feature: Verification of PLP functionality feature
   Scenario: cancel/close all filters shown above the prodcts
     When user click TMT Menu on header section
     Then user is select JSW Steel from Brand at Filter section
-    Then user is select IS 1786:2008 Fe 550D from Grade at Filter section for TMT
+    Then user is select IS 1786:2008 Fe 650 from Grade at Filter section for TMT
     Then user is select the Diameter - Min and Max values for TMT
     Then Filters applied should be shown above the Products display
     And user click on cross mark for all filters shown

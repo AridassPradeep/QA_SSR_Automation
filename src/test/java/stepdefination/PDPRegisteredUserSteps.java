@@ -272,7 +272,8 @@ public class PDPRegisteredUserSteps {
 	@Given("user is on product detail page of Steel item")
 	public void user_is_on_product_detail_page_of_steel_item() throws InterruptedException {
 		//pdpreguser.SteelDetails();
-		pdpreguser.SteelDirectSteelDetails();
+		//pdpreguser.SteelDirectSteelDetails();
+		pdpreguser.SteelCoilsDetails();
 	}
 
 	@Given("^user is on product detail page of Steel item and enters \"([^\"]*)\"$")

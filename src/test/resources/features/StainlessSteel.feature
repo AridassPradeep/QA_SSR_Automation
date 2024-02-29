@@ -1,4 +1,4 @@
-@sanityExe @demo @TestStainless @FailedRunner1
+ @PA0 @sanityExe @demo @TestStainless @FailedRunner1
 Feature: Stainless Steel feature
 
   Background: User opens website
