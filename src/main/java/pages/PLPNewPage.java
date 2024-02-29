@@ -16,11 +16,11 @@ public class PLPNewPage {
 	private By steelMenu = By.xpath("//header/div[3]/div/div[1]/div[1]/div[2]/a");
 	private By steelPLP = By.xpath("//*[@class='list-title desc']");
 	private By breadcrump = By.xpath("//div[@class='breadcrumb-url']");
-	private By hotRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[1]/a");
-	private By coldRolledMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[2]/a");
-	private By wireRodMenu = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[3]/a");
-	private By coated = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[4]/a");
-	private By colourCoated = By.xpath("//div[3]/div/div[1]/div[1]/div/ul/li[5]/a");
+	private By hotRolledMenu = By.xpath("//div[1]/div[1]/ul/li[1]/div[2]/a");
+	private By coldRolledMenu = By.xpath("//div[1]/div[1]/ul/li[2]/div[2]/a");
+	private By wireRodMenu = By.xpath("//div[1]/div[1]/ul/li[3]/div[2]/a");
+	private By coated = By.xpath("//div[1]/div[1]/ul/li[4]/div[2]/a");
+	private By colourCoated = By.xpath("//div[1]/div[1]/ul/li[5]/div[2]/a");
 
 	private By metalAndAlloys = By.xpath("//span[contains(text(),'Metals and Alloys')]");
 	private By steel = By.xpath("//span[contains(text(),'Steel')]");
@@ -29,7 +29,7 @@ public class PLPNewPage {
 	// TMT
 	private By constructionSteel = By.xpath("//span[contains(text(),'Construction Steel')]");
 	private By constructionMaterials = By.xpath("//span[contains(text(),'Construction materials')]");
-	private By gradeTMT = By.xpath("//label[contains(text(),'IS 1786:2008 Fe 550D')]");
+	private By gradeTMT = By.xpath("//label[contains(text(),'IS 1786:2008 Fe 650')]");
 	private By diameterMin = By.xpath("//div[@class='range-left']");
 	private By minValue = By.xpath("//option[@value='8.0']");
 	private By maxValue = By.xpath("//option[text()='Max']//following::option[@value='40.0']");
@@ -244,8 +244,8 @@ public class PLPNewPage {
 	}
 
 	public String countSteelProd() {
-		System.out.println(driver.findElement(By.xpath("//span[@class='right-list-value']")).getText());
-		return driver.findElement(By.xpath("//span[@class='right-list-value']")).getText();
+		System.out.println(driver.findElement(By.xpath("//span[@class='right-list-value showing-color']")).getText());
+		return driver.findElement(By.xpath("//span[@class='right-list-value showing-color']")).getText();
 	}
 
 	public void thicknessMin() throws InterruptedException {

@@ -336,7 +336,7 @@ public class ProductLandingPage {
 	
 	public void  TotalProductCount()
 	{
-		String totalcount=driver.findElement(By.xpath("//span[@class='right-list-value']//b")).getText();
+		String totalcount=driver.findElement(By.xpath("//span[@class='right-list-value showing-color']//b")).getText();
 		System.out.println("Total no of products - " +totalcount);
 	}
 	

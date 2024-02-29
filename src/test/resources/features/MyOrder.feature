@@ -8,7 +8,7 @@ Feature: MyOrder page feature
     When user enters logins with username with "demoqa2@yopmail.com" and  "Admin@123"
     And user clicks on signin
     Then user homepage is displayed
-@01
+
   Scenario: Verify the message displayed in Order History page
     Given user is able to view Myorders CTA
     When user is able to click the Myorders CTA

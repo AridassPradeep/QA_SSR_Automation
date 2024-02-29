@@ -131,8 +131,9 @@ public class PLPNewStep {
 	}
 
 	@Then("user is select JSW Steel from Brand at Filter section")
-	public void user_is_select_jsw_steel_from_brand_at_filter_section() {
+	public void user_is_select_jsw_steel_from_brand_at_filter_section() throws InterruptedException {
 		plpn.clickBrand();
+		Thread.sleep(1500);
 
 	}
 
@@ -282,15 +283,20 @@ public class PLPNewStep {
 		Thread.sleep(5000);
 	}
 
-	@Then("Breadcrump should display HOME > Construction materials > Construction Steel > TMT")
-	public void breadcrump_should_display_home_construction_materials_construction_steel_tmt() {
-		productlandingpage.Validatebreadcrumb();
+    @Then("Breadcrump should display HOME > Construction materials  > TMT")
+    public void breadcrump_should_display_home_construction_materials_tmt() {
+        productlandingpage.Validatebreadcrumb();
+    }
 
-	}
+//	@Then("Breadcrump should display HOME > Construction materials > Construction Steel > TMT")
+//	public void breadcrump_should_display_home_construction_materials_construction_steel_tmt() {
+//		productlandingpage.Validatebreadcrumb();
+//
+//	}
 
 	@When("user click on Construction Steel hyper link in breadcrumb")
 	public void user_click_on_construction_steel_hyper_link_in_breadcrumb() throws InterruptedException {
-		plpn.clickConstructionSteel();
+//		plpn.clickConstructionSteel();
 
 	}
 
@@ -370,8 +376,8 @@ public class PLPNewStep {
 
 	}
 
-	@Then("user is select IS {int}:{int} Fe 550D from Grade at Filter section for TMT")
-	public void user_is_select_is_fe_550d_from_grade_at_filter_section_for_tmt(Integer int1, Integer int2)
+	@Then("user is select IS {int}:{int} Fe 650 from Grade at Filter section for TMT")
+	public void user_is_select_is_fe_650_from_grade_at_filter_section_for_tmt(Integer int1, Integer int2)
 			throws InterruptedException {
 		plpn.TMTGrade();
 

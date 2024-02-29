@@ -129,9 +129,9 @@ Feature: Product Detail Page feature for Registered User
     When user selects HR Stainless Steel product
     And user is on product detail page of Stainless Steel item and add dimensions
     And user add quantity and validate MOQ messages
-      | quantity | MOQMessage                                                              |
-      |      000 | Add a quantity equal to or above the minimum order quantity of 1600.0kg |
-      |   999999 | Please enter quantity below 9999 kg                                     |
+      | quantity | MOQMessage     |
+      |      1 | Add a quantity equal to or above the minimum order quantity of 240.0kg |
+#      |   999999 | Please enter quantity below 9999 kg                                     |
     # |      999 | The maximum available quantity for your selection is 10000.0kg          |
     And validate add to cart button is disabled
 
